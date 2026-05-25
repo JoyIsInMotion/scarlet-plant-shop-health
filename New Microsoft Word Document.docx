@@ -1,0 +1,415 @@
+🌹 Scarlet
+Building a Full-Stack Flower Shop App
+Workshop – Full Stack Apps with AI
+Practical workshop for the course 'Full Stack Apps with AI' — build a multi-platform full-stack flower shop platform with Next.js, React, PostgreSQL and Expo, using Git and AI dev agents.
+
+Technology Stack
+Layer	Technology
+Back-end	TypeScript + Next.js 14 + Drizzle ORM + PostgreSQL (Neon)
+Front-end	TypeScript + Next.js + React + Tailwind CSS
+Mobile app	React Native + Expo
+AI	Google Gemini 2.0 Flash — plant health analysis & species ID
+Storage	Cloudflare R2 (S3-compatible) for photos & product images
+i18n	next-intl (web) · i18next (mobile) — Bulgarian default + English
+Deployment	Netlify (web) · EAS (mobile)
+
+ 
+Project Description: Scarlet
+Build Scarlet -- a boutique flower shop platform with an embedded AI-powered plant health tracking feature targeting Bulgarian users (bilingual BG/EN).
+
+The app has two core domains: (1) a flower shop where customers can browse and order flowers, and (2) a personal plant collection tracker with AI health analysis.
+
+Roles in the App
+•	Visitor: can view the home page, browse the flower catalog, and register.
+•	User: can manage own profile, personal plant collection, view orders, and use the AI plant scan.
+•	Admin (optional): can manage the plant species catalog, flower products, and user accounts.
+
+Visitors
+Visitors are anonymous users who visit the Scarlet website.
+•	Visitors can see the home page, browse the flower catalog, and register (by email + password).
+•	Visitors can view the public plant species catalog.
+
+Registered Users
+Registered users have a profile with name, email and photo (optional) and can login / logout.
+•	Users can maintain a personal plant collection (add, edit, remove plants).
+•	Each plant can have a photo, health score, care stats, and an optional link to the species catalog.
+•	Users can request an AI plant health analysis (up to 5 per day).
+•	Users can browse and order flowers from the shop.
+
+Plant Collection & AI Analysis
+The core feature of Scarlet — users track their plants and get AI-powered health insights.
+•	Plants table — personal plant owned by a user. Holds health score, care stats, photo, and optional species link.
+•	Plant Species Catalog — global reference database of 500+ species with bilingual names (BG/EN), care guides, and scientific info.
+•	AI Scan (Quick Scan) — ad-hoc photo upload to analyze an unknown plant without saving it first.
+•	AI Analysis (Saved Plant) — deep analysis of a saved plant: health score 0–100, issues with severity, care recommendations.
+•	Rate limit: 5 analyses per user per 24 hours (DB-enforced).
+•	AI provider: Google Gemini 2.0 Flash via @google/generative-ai.
+
+Flower Shop
+The shop section lets customers browse and purchase flowers.
+•	Product catalog with categories, prices, and photos (stored in Cloudflare R2).
+•	Users can add items to a cart and place orders.
+•	Order history visible in the user profile.
+
+Web App and Mobile App
+•	Web app — the primary app. Implements full functionality: auth, user profile, plant collection, AI scan, flower shop, orders.
+•	Mobile app — scope-limited companion app. Implements: login / register, view personal plants, AI quick scan, view active orders.
+
+ 
+Project Requirements
+Capstone project requirements for all students.
+
+Technologies
+•	Backend: Next.js 14 App Router + Neon serverless PostgreSQL + Drizzle ORM.
+•	Frontend: Next.js + React + TypeScript + Tailwind CSS.
+•	Mobile: React Native + Expo (Expo Router).
+•	AI: Google Gemini 2.0 Flash for plant analysis.
+•	Storage: Cloudflare R2 for photos and product images.
+•	i18n: next-intl (web) and i18next (mobile) — Bulgarian default, English secondary.
+•	Deployment: Netlify (web) + EAS (mobile).
+
+Architecture
+•	Client-server architecture: React frontend + Next.js backend (Server Actions for web, RESTful API for mobile).
+•	Node.js monorepo: apps/web (Next.js) + apps/mobile (Expo) + packages/shared (TypeScript types & Zod validators).
+•	Structure business logic in a service layer consumed by Server Actions and the RESTful API.
+•	Modular design: split into self-contained UI pages, components, services, route handlers, and utils.
+•	Define an AGENTS.md file with agent instructions, architectural guidelines, technology standards, and project-wide conventions.
+
+User Interface (UI)
+•	Implement a modern, user-friendly UI with a warm floral aesthetic.
+•	Implement responsive design for desktop and mobile browsers.
+•	Split UI into reusable components and sub-components.
+•	Use icons, effects and visual cues (e.g. plant health badges, seasonal flower highlights).
+•	Use server-side components in Next.js by default; add 'use client' only when needed.
+
+Backend
+•	Use Neon DB (serverless PostgreSQL) accessed via @neondatabase/serverless HTTP driver.
+•	Use Drizzle ORM for schema migrations and DB access — never raw SQL.
+•	Implement business logic as a service layer, consumed by Server Actions and API routes.
+•	Implement a RESTful API for the mobile app.
+•	Implement server-side paging to prevent performance issues for large datasets.
+•	Use Cloudflare R2 for all user-uploaded photos and product images.
+
+Authentication and Authorization
+•	Use bcrypt / argon2 for secure password hashing.
+•	Use JWT tokens: access tokens (15 min) + refresh tokens (7 days). Web uses httpOnly cookies; mobile uses expo-secure-store + Bearer header.
+•	Use withAuth(handler, options) wrapper for all protected API routes.
+•	Never expose password_hash in API responses.
+
+Database
+•	Design the PostgreSQL schema with normalization, relationships, and indexing.
+•	Always use Drizzle Kit migrations when changing the schema.
+•	Seed enough sample data (plants, species, products, orders) to ensure realistic testing.
+
+i18n
+•	Bulgarian (bg) is the default language.
+•	Translation keys live in apps/web/src/messages/bg.json and apps/web/src/messages/en.json.
+•	Mobile keys mirror web keys in apps/mobile/src/i18n/bg.json and apps/mobile/src/i18n/en.json.
+•	Use namespace prefixes: nav.*, auth.*, plants.*, catalog.*, shop.*, admin.*, ai.*, common.*
+•	All text visible to users must use useTranslations() (web) or useTranslation() (mobile) — no hardcoded strings.
+
+Deployment
+•	Deploy the Next.js web app live on the Internet via Netlify.
+•	Deploy the Expo app as a Web export via EAS / Netlify.
+•	Provide sample credentials (e.g. demo@scarlet.com / demo123) to simplify testing.
+•	Configure all environment variables: DATABASE_URL, JWT secrets, R2 credentials, GOOGLE_AI_API_KEY.
+
+GitHub Repo
+•	Use a GitHub repo to hold all project assets.
+•	Commit and push each successful change during development.
+•	Generate project documentation in the README (description, architecture, DB schema, setup guide).
+
+ 
+Steps to Build the Project
+Follow these steps (or similar) to build the app incrementally.
+
+Create a VS Code Project
+Create a new project workspace in VS Code, e.g. scarlet.
+
+Define the Repo Structure
+Use a monorepo holding the following project assets:
+•	package.json → dependencies and scripts for the entire repo
+•	apps/web/ → Next.js Web app (back-end + front-end)
+◦	apps/web/src/app/ → front-end client app
+◦	apps/web/src/app/api/ → backend API endpoints
+◦	apps/web/src/services/ → app business logic
+◦	apps/web/src/lib/db/ → DB schema and scripts
+◦	apps/web/src/lib/ai/ → AI plant analyzer (plant-analyzer.ts)
+◦	apps/web/src/drizzle/ → Drizzle ORM migrations
+◦	apps/web/src/messages/ → i18n translation files (bg.json, en.json)
+•	apps/mobile/ → Expo mobile app
+◦	apps/mobile/src/ → Expo mobile app code
+◦	apps/mobile/src/i18n/ → mobile translation files
+•	packages/shared/ → shared TypeScript types and Zod validators (User, Plant, Product, Order, ...)
+
+Steps to follow:
+1.	Initialize the monorepo: npm init
+2.	Initialize a new Next.js app in apps/web/:  npx create-next-app@latest apps/web
+3.	Initialize a new Expo app in apps/mobile/:  npx create-expo-app@latest apps/mobile
+4.	Create packages/shared to hold shared types: mkdir -p packages/shared/src
+5.	Create npm run build and npm run dev scripts in the root project.
+
+Setup GitHub Repo
+Commit and push the project into a GitHub repo.
+•	Discard any nested sub-project Git repos; initialize one new monorepo at the root.
+•	Configure .gitignore (exclude node_modules, .env.local, .next, dist).
+•	Restart VS Code after creating the monorepo to reload Source Control correctly.
+•	Publish the project to GitHub.
+
+Setup AGENTS.md Instructions
+Write an AGENTS.md instructions file to provide app context and guidelines for the AI dev agent.
+Define 3 different AGENTS.md files:
+•	AGENTS.md (root) — agent instructions for the entire project (web + mobile):
+◦	Brief project description: Scarlet — boutique flower shop + plant health tracker
+◦	Back-end, front-end, mobile apps
+◦	Folder structure
+•	apps/web/AGENTS.md — agent instructions for the Next.js Web app:
+◦	Scarlet: flower shop + plant collection tracker (users browse flowers, manage plants, run AI scans)
+◦	Technologies: Next.js 14 + Neon DB + Drizzle ORM + React + Tailwind + Gemini AI + next-intl
+◦	Architectural guidelines: service layer, modular design, auth (JWT + httpOnly cookies), database
+◦	UI guidelines: floral aesthetic, responsive design, server-rendered components, bilingual (BG/EN)
+•	apps/mobile/AGENTS.md — agent instructions for the Expo mobile app:
+◦	Scarlet mobile: view personal plants, AI quick scan, view active orders
+◦	Technologies: Expo, React Native, Expo Router, i18next
+◦	Back-end: Scarlet RESTful API, with Bearer token auth
+◦	Mobile UI guidelines: user-friendly UI, stack navigation, responsive layout, native alert fallbacks for Web
+
+ 
+Steps to Build the Next.js Project
+
+Create Neon DB
+Create a new project in Neon DB, e.g. ScarletDB.
+Configure the Neon DB connection settings in .env.local:
+DATABASE_URL=<your_db_url_from_neon.com>
+GOOGLE_AI_API_KEY=<your_gemini_api_key>
+JWT_SECRET=<random_secret>
+JWT_REFRESH_SECRET=<random_refresh_secret>
+R2_BUCKET_URL=<cloudflare_r2_url>
+
+Design the Database
+Design the initial database schema. Key tables:
+•	users (email, password_hash, name, photoUrl) — app users
+•	plants (user_id, name, photo_url, health_score, care_stats, species_id?) — personal plant collection
+•	plant_species (name_bg, name_en, scientific_name, family, care_guide, difficulty) — global species catalog
+•	plant_stats
+•	ai_analyses (plant_id?, user_id, photo_url, result_json, created_at) — AI health analysis results
+•	products (name_bg, name_en, category, price, photo_url, stock) — flower shop products
+•	orders (user_id, status, total, created_at) — customer orders
+•	order_items (order_id, product_id, quantity, price) — items in each order
+
+Use simple numbers as IDs for table rows.
+Install libraries: Drizzle ORM, Drizzle Kit, @neondatabase/serverless, dotenv, @google/generative-ai.
+Create the Drizzle schema file, then generate and run migrations:
+npm run db:generate
+npm run db:migrate
+
+Seed Sample Data
+Create a script npm run db:seed to seed sample data.
+Create sample users:
+◦	admin@scarlet.com / admin123 (admin role)
+◦	demo@scarlet.com / demo123 (regular user)
+◦	maria@scarlet.com / pass123
+◦	ivan@scarlet.com / pass123
+Create sample plant species (500+ entries from a CSV or AI-generated list).
+Create sample plants for demo user (5–10 plants with photos and health scores).
+Create sample flower products (roses, tulips, orchids, etc.) with prices and photos.
+Insert sample orders for the demo user.
+Insert sample AI analyses for demo user plants.
+npm run db:seed
+
+Public Pages and Layout
+Create the public pages of the app:
+•	Home Page — hero section with Scarlet branding, featured flowers, and register / login buttons.
+•	Login Page — login form (client component). Put in route group (auth).
+•	Register Page — registration form (client component). Put in route group (auth).
+•	Flower Catalog — public product listing, filterable by category.
+•	Plant Species Catalog — public bilingual species browser (BG/EN).
+•	Define the app layout: header, main, footer. Implement responsive layout for the header.
+
+Login / Logout
+•	Implement auth with JWT: access tokens (15 min) in httpOnly cookies + refresh tokens (7 days).
+•	Keep user passwords hashed with bcrypt.
+•	Implement server-side auth logic as Server Actions.
+•	Show the currently logged-in user in the site header.
+•	When no user is logged in, show [Login] | [Register] links.
+•	Protect all routes except home, catalog, and auth pages to require logged-in users.
+
+User Dashboard
+Create the User Dashboard page: /dashboard
+•	Section My Plants-- list all users plants as cards (photo, name, health score badge, last analysis date).
+•	Section My Plants-- list all users plants as cards (photo, name, health score badge, last analysis date).
+•	Section My Plants-- list all users plants as cards (photo, name, health score badge, last analysis date).
+•	Display [Dashboard] link in the header navigation for logged-in users.
+•	After user login, redirect to the User Dashboard.
+
+Plant Collection
+Create pages for managing the user's personal plant collection:
+•	/plants — list all user's plants
+•	/plants/new — add a new plant (name, photo upload, optional species link)
+•	/plants/[id] — view plant detail (health history, AI analyses, care tips)
+•	/plants/[id]/edit — edit plant info
+•	Trigger an AI analysis from the plant detail page (POST /api/plants/[id]/ai-analysis).
+•	Display health score with a visual indicator (0–100 scale, color-coded).
+•	Show identified issues with severity levels and care recommendations.
+
+AI Quick Scan Page
+Create a dedicated /scan page for ad-hoc AI plant scanning:
+•	User uploads a photo (or takes one on mobile) of any plant.
+•	The app sends the photo to POST /api/ai/quick-scan.
+•	Display the AI result: species identification (common name BG/EN, scientific name, family, care difficulty) + health assessment (score, issues, recommendations).
+•	Rate limit: 5 analyses per user per 24 hours, enforced in the DB.
+•	The result is stored in the ai_analyses table and linked to the user.
+•	User can optionally save the identified plant to their personal collection.
+
+Flower Shop
+Create the flower shop pages:
+•	/shop — flower product catalog with category filter and search
+•	/shop/[id] — product detail page (photo, description, price, add to cart)
+•	/cart — shopping cart
+•	/orders — user order history
+
+ 
+Minimalistic RESTful API
+Build a RESTful API in the Next.js project for mobile app clients. Start from basic functionality.
+
+Auth	POST /api/auth/login — login by email + password → return JWT access token
+
+Auth	POST /api/auth/refresh — refresh JWT access token using refresh token
+
+Plants	GET /api/plants — list user's plants (with JWT auth, with paging)
+
+Plants	GET /api/plants/[id] — plant detail (name, photo, health score, species, AI analyses)
+
+AI	POST /api/plants/[id]/ai-analysis — run AI health analysis on a saved plant
+
+AI	POST /api/ai/quick-scan — ad-hoc AI scan from a photo (no plant ID required)
+
+Shop	GET /api/products — list flower products (with paging, category filter)
+
+Orders	GET /api/orders — list user's orders (with JWT auth)
+
+Catalog	GET /api/species — list plant species catalog (public, with paging, BG/EN search)
+
+Docs	GET /api/docs — display API documentation as HTML (needed for the Expo app)
+
+ 
+Steps to Build the Expo Project
+Build the Expo mobile app with core functionality: login, view plants, AI quick scan, view orders.
+
+Add API Docs to AGENTS.md
+Add API docs URL to apps/mobile/AGENTS.md:
+# API Docs
+Back-end API documentation: http://localhost:3000/api/docs
+Back-end API source code: ../apps/web/src/app/api
+
+Home Page
+Build the app layout, navigation and home page:
+•	Empty the project — remove all template pages, styles, themes, and example assets.
+•	Create empty screens: Home | Login | Plants | Plant Detail | Scan
+•	Implement stack navigation between screens.
+•	Home page — welcome message with Scarlet branding + login link.
+
+Login / Logout
+Configure the RESTful API URL in .env:
+EXPO_PUBLIC_API_BASE_URL=http://localhost:3000/api
+Build login / logout functionality using the API endpoints:
+•	Implement a login form with error handling.
+•	Store JWT access token securely using expo-secure-store.
+•	Implement a [Logout] button on the home screen.
+•	Make all app screens (except Home and Login) require a logged-in user.
+•	Fix CORS policy errors in the backend if needed.
+
+Plants Screen
+Implement the Plants screen:
+•	List user's plants (with paging) as scrollable cards.
+•	Display plant photo, name, health score badge.
+•	Clicking a plant card opens the Plant Detail screen.
+
+Plant Detail Screen
+Implement the Plant Detail screen:
+•	Display full plant info: name, photo, health score, care stats, species info.
+•	Display latest AI analysis result (score, issues, recommendations).
+•	[Run AI Analysis] button — triggers a new analysis for the saved plant.
+
+AI Quick Scan Screen
+Implement the AI Quick Scan screen:
+•	Photo upload or camera capture (using expo-image-picker).
+•	Send photo to POST /api/ai/quick-scan and display results.
+•	Show: species identification (BG/EN name, scientific name, care difficulty) + health score + issues.
+•	Option to save the identified plant to the user's collection.
+
+ 
+Deploy the Next.js App to Netlify
+Deploy the Next.js app from GitHub to Netlify.
+•	Connect the GitHub repo to Netlify.
+•	Set Base Directory: apps/web
+•	Configure all environment variables: DATABASE_URL, JWT_SECRET, JWT_REFRESH_SECRET, GOOGLE_AI_API_KEY, R2_BUCKET_URL, R2_ACCESS_KEY, R2_SECRET_KEY.
+•	Deploy and verify all API endpoints are reachable.
+
+Deploy the Expo App to Netlify
+Deploy the Expo app from GitHub to Netlify (as a Web export).
+•	Configure EXPO_PUBLIC_API_BASE_URL to point to the deployed Next.js API URL.
+•	Deploy the Expo Web export.
+•	Optionally build an Android APK via EAS and publish it in GitHub Releases.
+
+ 
+Advanced Web App Functionality
+Advanced functionality for the Next.js web app, to be built as next steps.
+
+Dashboard Paging
+Implement server-side paging for plants and orders in the User Dashboard to prevent UI freezing.
+
+Plant Species Catalog — Admin
+Implement admin-only pages to manage the plant species catalog:
+•	/admin/species — list all species
+•	/admin/species/new — add new species
+•	/admin/species/[id]/edit — edit species details
+•	Optionally use AI to auto-enrich species data (care guides, native regions) in bulk.
+
+Flower Shop Management — Admin
+Implement admin-only pages to manage flower products:
+•	/admin/products — list all products
+•	/admin/products/new — add new product with photo upload
+•	/admin/products/[id]/edit — edit product details and stock
+
+AI Analysis History
+Implement a dedicated history page for AI analyses:
+•	/plants/[id]/analyses — list all AI analyses for a plant, ordered by date.
+•	Display health score trend over time as a simple chart.
+•	Allow users to compare analyses side by side.
+
+Plant Care Reminders
+Implement care reminders based on AI recommendations:
+•	Users can set watering, fertilizing, and repotting reminders for each plant.
+•	Reminders stored in a plant_reminders table.
+•	Display upcoming reminders on the User Dashboard.
+
+ 
+Advanced Mobile App Functionality
+Additional functionality for further work on the mobile app.
+
+Order Placement
+•	Extend the RESTful API to support browsing flower products and placing orders.
+•	Implement a simple shop screen with product listing and cart.
+
+Push Notifications
+•	Use Expo Push Notifications to remind users of plant care tasks.
+•	Triggered server-side when a reminder is due.
+
+Registration
+•	Add user registration to the mobile app.
+•	Extend the RESTful API to support user registration.
+
+ 
+Performance Test
+Implement a performance test with large datasets:
+•	Seed the database with 500 plant species.
+•	Seed the database with 5,000 plants across the first 10 users.
+•	Seed the database with 3,000 users.
+•	Seed the database with 10,000 flower products.
+•	Test the app UI to identify where the UI hangs or works slowly.
+•	Implement paging, DB indexes and other optimizations.
+
+
+🌹 Scarlet Flower Shop  ·  Workshop Document
+Full Stack Apps with AI  ·  github.com/JoyIsInMotion/scarlet-plant-shop-health

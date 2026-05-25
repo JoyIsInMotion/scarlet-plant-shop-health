@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --scarlet: #dc2626;
+  --scarlet-dark: #b91c1c;
+  --scarlet-light: #fca5a5;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-scarlet: var(--scarlet);
+  --color-scarlet-dark: var(--scarlet-dark);
+  --color-scarlet-light: var(--scarlet-light);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.health-ring-excellent { stroke: #22c55e; }
+.health-ring-good { stroke: #84cc16; }
+.health-ring-fair { stroke: #eab308; }
+.health-ring-poor { stroke: #f97316; }
+.health-ring-critical { stroke: #ef4444; }
