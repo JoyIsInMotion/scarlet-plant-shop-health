@@ -1,4 +1,4 @@
-import { eq, ilike, or, and, asc, desc } from 'drizzle-orm';
+import { eq, ilike, or, and, asc, desc, count } from 'drizzle-orm';
 import { db } from '@/lib/db';
 import { products } from '@/lib/db/schema';
 import { slugify } from '@/lib/utils/slugify';
@@ -24,15 +24,13 @@ export async function listProducts(query: {
   }
 
   const col = query.sort === 'price' ? products.price : products.createdAt;
-  const items = await db
-    .select()
-    .from(products)
-    .where(and(...conditions))
-    .orderBy(orderFn(col))
-    .limit(query.limit)
-    .offset(query.offset);
+  const baseQuery = db.select().from(products).where(and(...conditions));
+  const [items, [{ total }]] = await Promise.all([
+    baseQuery.orderBy(orderFn(col)).limit(query.limit).offset(query.offset),
+    db.select({ total: count() }).from(products).where(and(...conditions)),
+  ]);
 
-  return { items, limit: query.limit, offset: query.offset, hasMore: items.length === query.limit };
+  return { items, total: Number(total), limit: query.limit, offset: query.offset, hasMore: query.offset + items.length < Number(total) };
 }
 
 export async function getProduct(idOrSlug: string) {

@@ -1,7 +1,7 @@
-import Link from 'next/link';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { cn } from '@/lib/utils/cn';
 import { Button } from './button';
+import { Link } from '@/i18n/navigation';
 
 interface PaginationProps {
   page: number;

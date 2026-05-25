@@ -4,6 +4,7 @@ import { ShoppingBag, ChevronRight } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import { Pagination } from '@/components/ui/pagination';
 import { useCart } from '@/hooks/use-cart';
 import { useToast } from '@/hooks/use-toast';
 import { Link } from '@/i18n/navigation';
@@ -26,13 +27,15 @@ interface ShopClientProps {
   total: number;
   locale: string;
   initialParams: Record<string, string>;
+  page: number;
+  pageSize: number;
 }
 
 const CATEGORIES = [
   'bouquet', 'potted_plant', 'succulent', 'tropical', 'seasonal', 'accessories',
 ] as const;
 
-export function ShopClient({ products, total, locale, initialParams }: ShopClientProps) {
+export function ShopClient({ products, total, locale, initialParams, page, pageSize }: ShopClientProps) {
   const t = useTranslations();
   const currentLocale = useLocale();
   const { add } = useCart();
@@ -60,8 +63,8 @@ export function ShopClient({ products, total, locale, initialParams }: ShopClien
   }
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-      <div className="mb-8 rounded-3xl border border-red-100 bg-gradient-to-br from-white via-white to-rose-50 p-6 shadow-sm">
+    <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+      <div className="mb-6 rounded-[2rem] border border-red-100 bg-gradient-to-br from-white via-white to-rose-50 p-5 shadow-sm sm:p-6">
         <div className="max-w-3xl space-y-3">
           <p className="text-xs font-semibold uppercase tracking-[0.24em] text-red-500">{t('nav.shop')}</p>
           <h1 className="text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl">{t('shop.title')}</h1>
@@ -70,8 +73,9 @@ export function ShopClient({ products, total, locale, initialParams }: ShopClien
         </div>
       </div>
 
-      <form method="get" className="mb-6 rounded-3xl border border-gray-200 bg-white p-4 shadow-sm">
-        <div className="grid gap-3 lg:grid-cols-[1.4fr_1fr_1fr_auto]">
+      <form method="get" className="mb-6 rounded-[2rem] border border-gray-200 bg-white p-4 shadow-sm">
+        <input type="hidden" name="page" value="1" />
+        <div className="grid gap-3 lg:grid-cols-[1.6fr_1fr_1fr_auto]">
           <input
             name="search"
             defaultValue={initialParams.search ?? ''}
@@ -111,7 +115,8 @@ export function ShopClient({ products, total, locale, initialParams }: ShopClien
           <p>{t('common.noResults')}</p>
         </div>
       ) : (
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
+        <>
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
           {products.map((p) => (
             <Card key={p.id} className="group overflow-hidden border-gray-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
               <Link href={`/shop/${p.slug}`} className="block">
@@ -168,7 +173,29 @@ export function ShopClient({ products, total, locale, initialParams }: ShopClien
               </CardContent>
             </Card>
           ))}
-        </div>
+          </div>
+
+          {total > pageSize && (
+            <div className="mt-8 flex flex-col items-center gap-2">
+              <Pagination
+                page={page}
+                total={total}
+                limit={pageSize}
+                getHref={(nextPage) => {
+                  const params = new URLSearchParams();
+                  params.set('page', String(nextPage));
+                  if (initialParams.search) params.set('search', initialParams.search);
+                  if (initialParams.category) params.set('category', initialParams.category);
+                  if (initialParams.sort) params.set('sort', initialParams.sort);
+                  return `?${params.toString()}`;
+                }}
+              />
+              <p className="text-xs text-gray-400">
+                {(page - 1) * pageSize + 1}–{Math.min(page * pageSize, total)} {currentLocale === 'en' ? 'of' : 'от'} {total}
+              </p>
+            </div>
+          )}
+        </>
       )}
     </div>
   );
