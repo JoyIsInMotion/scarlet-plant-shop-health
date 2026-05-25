@@ -1,0 +1,157 @@
+import { eq, ilike } from 'drizzle-orm';
+import { db } from '@/lib/db';
+import { plants, aiAnalyses, plantSpecies } from '@/lib/db/schema';
+import { analyzePlantImage } from '@/lib/ai/plant-analyzer';
+import { checkAIRateLimit } from '@/lib/ai/rate-limit';
+import { uploadToR2 } from '@/lib/r2/client';
+import { MAX_FILE_SIZE_BYTES, ALLOWED_IMAGE_TYPES } from '@scarlet/shared';
+import { randomUUID } from 'crypto';
+import { ServiceError } from './service-error';
+
+async function enforceRateLimit(userId: string, role: string) {
+  try {
+    await checkAIRateLimit(userId, role as 'user' | 'admin');
+  } catch (e: unknown) {
+    const error = e as { status?: number; message: string };
+    if (error.status === 429) throw new ServiceError(error.message, 429);
+    throw e;
+  }
+}
+
+export async function analyzeSavedPlant(plantId: string, userId: string, role: string) {
+  const [plant] = await db
+    .select({ userId: plants.userId, imageUrl: plants.imageUrl, speciesConfirmed: plants.speciesConfirmed })
+    .from(plants)
+    .where(eq(plants.id, plantId))
+    .limit(1);
+
+  if (!plant) throw new ServiceError('Plant not found', 404);
+  if (plant.userId !== userId && role !== 'admin') throw new ServiceError('Forbidden', 403);
+  if (!plant.imageUrl) throw new ServiceError('Plant has no image to analyze', 400);
+
+  await enforceRateLimit(userId, role);
+
+  const imgRes = await fetch(plant.imageUrl);
+  if (!imgRes.ok) throw new ServiceError('Failed to fetch plant image', 500);
+  const imgBuffer = Buffer.from(await imgRes.arrayBuffer());
+  const contentType = imgRes.headers.get('content-type') ?? 'image/jpeg';
+
+  const analysis = await analyzePlantImage(imgBuffer, contentType as 'image/jpeg');
+
+  // Match existing species or create unverified catalog entry for high-confidence hits
+  let matchedSpeciesId: string | null = null;
+  if (analysis.species.scientific_name) {
+    const [match] = await db
+      .select({ id: plantSpecies.id })
+      .from(plantSpecies)
+      .where(ilike(plantSpecies.scientificName, analysis.species.scientific_name))
+      .limit(1);
+
+    if (match) {
+      matchedSpeciesId = match.id;
+    } else if (analysis.confidence === 'high') {
+      const [newSpecies] = await db
+        .insert(plantSpecies)
+        .values({
+          scientificName: analysis.species.scientific_name,
+          commonNameEn: analysis.species.common_name,
+          family: analysis.species.family,
+          nativeRegionEn: analysis.species.native_region,
+          careDifficulty: analysis.species.care_difficulty,
+          isVerified: false,
+        })
+        .returning({ id: plantSpecies.id });
+      matchedSpeciesId = newSpecies.id;
+    }
+  }
+
+  const [savedAnalysis] = await db
+    .insert(aiAnalyses)
+    .values({
+      plantId,
+      userId,
+      imageUrl: plant.imageUrl,
+      healthScore: analysis.health.health_score,
+      overallCondition: analysis.health.overall_condition,
+      issues: analysis.health.issues,
+      careRecommendations: analysis.health.care_recommendations,
+      wateringNeeded: analysis.health.watering_needed,
+      identifiedCommonName: analysis.species.common_name,
+      identifiedScientificName: analysis.species.scientific_name,
+      identifiedFamily: analysis.species.family,
+      identifiedNativeRegion: analysis.species.native_region,
+      identifiedCareDifficulty: analysis.species.care_difficulty,
+      matchedSpeciesId,
+      confidence: analysis.confidence,
+      modelUsed: 'gemini-2.0-flash',
+    })
+    .returning();
+
+  if (['medium', 'high'].includes(analysis.confidence)) {
+    const plantUpdates: Record<string, unknown> = { updatedAt: new Date() };
+    if (analysis.health.health_score !== null) plantUpdates.healthScore = analysis.health.health_score;
+    if (matchedSpeciesId && !plant.speciesConfirmed) plantUpdates.speciesId = matchedSpeciesId;
+    await db.update(plants).set(plantUpdates).where(eq(plants.id, plantId));
+  }
+
+  const matchedSpecies = matchedSpeciesId
+    ? (await db.select().from(plantSpecies).where(eq(plantSpecies.id, matchedSpeciesId)).limit(1))[0]
+    : null;
+
+  return { analysis: savedAnalysis, matchedSpecies };
+}
+
+export async function quickScan(userId: string, role: string, file: File) {
+  if (file.size > MAX_FILE_SIZE_BYTES) throw new ServiceError('File too large (max 5MB)', 400);
+  if (!ALLOWED_IMAGE_TYPES.includes(file.type as (typeof ALLOWED_IMAGE_TYPES)[number])) {
+    throw new ServiceError('Invalid file type. Use JPEG, PNG, or WebP', 400);
+  }
+
+  await enforceRateLimit(userId, role);
+
+  const ext = file.type.split('/')[1];
+  const key = `scans/${userId}/${randomUUID()}.${ext}`;
+  const buffer = Buffer.from(await file.arrayBuffer());
+  const imageUrl = await uploadToR2(key, buffer, file.type);
+
+  const analysis = await analyzePlantImage(buffer, file.type as 'image/jpeg');
+
+  // Only match; quick scans don't create new catalog entries
+  let matchedSpeciesId: string | null = null;
+  if (analysis.species.scientific_name) {
+    const [match] = await db
+      .select({ id: plantSpecies.id })
+      .from(plantSpecies)
+      .where(ilike(plantSpecies.scientificName, analysis.species.scientific_name))
+      .limit(1);
+    if (match) matchedSpeciesId = match.id;
+  }
+
+  const [savedAnalysis] = await db
+    .insert(aiAnalyses)
+    .values({
+      plantId: null,
+      userId,
+      imageUrl,
+      healthScore: analysis.health.health_score,
+      overallCondition: analysis.health.overall_condition,
+      issues: analysis.health.issues,
+      careRecommendations: analysis.health.care_recommendations,
+      wateringNeeded: analysis.health.watering_needed,
+      identifiedCommonName: analysis.species.common_name,
+      identifiedScientificName: analysis.species.scientific_name,
+      identifiedFamily: analysis.species.family,
+      identifiedNativeRegion: analysis.species.native_region,
+      identifiedCareDifficulty: analysis.species.care_difficulty,
+      matchedSpeciesId,
+      confidence: analysis.confidence,
+      modelUsed: 'gemini-2.0-flash',
+    })
+    .returning();
+
+  const matchedSpecies = matchedSpeciesId
+    ? (await db.select().from(plantSpecies).where(eq(plantSpecies.id, matchedSpeciesId)).limit(1))[0]
+    : null;
+
+  return { analysis: savedAnalysis, imageUrl, matchedSpecies };
+}
