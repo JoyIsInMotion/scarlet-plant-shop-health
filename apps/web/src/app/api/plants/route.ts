@@ -11,8 +11,10 @@ async function getPlants(req: NextRequest) {
   const sp = req.nextUrl.searchParams;
   const limit = Math.min(parseInt(sp.get('limit') ?? '20', 10), 100);
   const cursor = sp.get('cursor') ?? undefined;
+  const rawOffset = sp.get('offset');
+  const offset = rawOffset !== null ? parseInt(rawOffset, 10) : undefined;
 
-  return ok(await plantsService.listPlants(auth.sub, limit, cursor));
+  return ok(await plantsService.listPlants(auth.sub, limit, { cursor, offset }));
 }
 
 async function createPlant(req: NextRequest) {

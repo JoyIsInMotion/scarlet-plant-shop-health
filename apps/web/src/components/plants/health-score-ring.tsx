@@ -28,8 +28,10 @@ export function HealthScoreRing({ score, size = 80, className }: HealthScoreRing
   const progress = (score / 100) * circumference;
   const color = getColor(score);
 
+  const large = size >= 64;
+
   return (
-    <div className={cn('relative inline-flex items-center justify-center', className)}>
+    <div className={cn('relative inline-flex flex-shrink-0 items-center justify-center', className)}>
       <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} className="-rotate-90">
         <circle
           cx={size / 2}
@@ -53,10 +55,12 @@ export function HealthScoreRing({ score, size = 80, className }: HealthScoreRing
         />
       </svg>
       <div className="absolute flex flex-col items-center">
-        <span className="text-lg font-bold" style={{ color }}>
+        <span className={cn('font-bold', large ? 'text-lg' : 'text-sm')} style={{ color }}>
           {Math.round(score)}
         </span>
-        <span className="text-xs text-gray-500 leading-none">{getLabel(score)}</span>
+        {large && (
+          <span className="text-xs text-gray-500 leading-none">{getLabel(score)}</span>
+        )}
       </div>
     </div>
   );

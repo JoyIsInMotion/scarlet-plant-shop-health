@@ -1,4 +1,4 @@
-import { eq, and, desc, lt, gte, lte } from 'drizzle-orm';
+import { eq, and, desc, lt, gte, lte, count } from 'drizzle-orm';
 import { db } from '@/lib/db';
 import { plants, plantSpecies, plantStats, aiAnalyses } from '@/lib/db/schema';
 import { plantSchema, plantStatSchema, MAX_FILE_SIZE_BYTES, ALLOWED_IMAGE_TYPES } from '@scarlet/shared';
@@ -6,32 +6,55 @@ import { uploadToR2 } from '@/lib/r2/client';
 import { randomUUID } from 'crypto';
 import { ServiceError } from './service-error';
 
-export async function listPlants(userId: string, limit: number, cursor?: string) {
-  const conditions = [eq(plants.userId, userId), eq(plants.isArchived, false)];
-  if (cursor) conditions.push(lt(plants.createdAt, new Date(cursor)));
+const plantSelectShape = {
+  id: plants.id,
+  userId: plants.userId,
+  speciesId: plants.speciesId,
+  customName: plants.customName,
+  healthScore: plants.healthScore,
+  lastWatered: plants.lastWatered,
+  imageUrl: plants.imageUrl,
+  isArchived: plants.isArchived,
+  speciesConfirmed: plants.speciesConfirmed,
+  createdAt: plants.createdAt,
+  updatedAt: plants.updatedAt,
+  species: {
+    id: plantSpecies.id,
+    commonNameBg: plantSpecies.commonNameBg,
+    commonNameEn: plantSpecies.commonNameEn,
+    scientificName: plantSpecies.scientificName,
+    careDifficulty: plantSpecies.careDifficulty,
+    imageUrl: plantSpecies.imageUrl,
+  },
+};
+
+export async function listPlants(
+  userId: string,
+  limit: number,
+  options: { cursor?: string; offset?: number } = {},
+) {
+  const baseConditions = [eq(plants.userId, userId), eq(plants.isArchived, false)];
+
+  if (options.offset !== undefined) {
+    const [items, [{ total }]] = await Promise.all([
+      db
+        .select(plantSelectShape)
+        .from(plants)
+        .leftJoin(plantSpecies, eq(plants.speciesId, plantSpecies.id))
+        .where(and(...baseConditions))
+        .orderBy(desc(plants.createdAt))
+        .limit(limit)
+        .offset(options.offset),
+      db.select({ total: count() }).from(plants).where(and(...baseConditions)),
+    ]);
+    return { plants: items, total, hasMore: options.offset + limit < total, nextCursor: null };
+  }
+
+  const conditions = [...baseConditions];
+  if (options.cursor) conditions.push(lt(plants.createdAt, new Date(options.cursor)));
 
   const items = await db
-    .select({
-      id: plants.id,
-      userId: plants.userId,
-      speciesId: plants.speciesId,
-      customName: plants.customName,
-      healthScore: plants.healthScore,
-      lastWatered: plants.lastWatered,
-      imageUrl: plants.imageUrl,
-      isArchived: plants.isArchived,
-      speciesConfirmed: plants.speciesConfirmed,
-      createdAt: plants.createdAt,
-      updatedAt: plants.updatedAt,
-      species: {
-        id: plantSpecies.id,
-        commonNameBg: plantSpecies.commonNameBg,
-        commonNameEn: plantSpecies.commonNameEn,
-        scientificName: plantSpecies.scientificName,
-        careDifficulty: plantSpecies.careDifficulty,
-        imageUrl: plantSpecies.imageUrl,
-      },
-    })
+    .select(plantSelectShape)
     .from(plants)
     .leftJoin(plantSpecies, eq(plants.speciesId, plantSpecies.id))
     .where(and(...conditions))
@@ -42,7 +65,7 @@ export async function listPlants(userId: string, limit: number, cursor?: string)
   const result = hasMore ? items.slice(0, limit) : items;
   const nextCursor = hasMore ? result[result.length - 1].createdAt.toISOString() : null;
 
-  return { plants: result, nextCursor, hasMore };
+  return { plants: result, total: null, nextCursor, hasMore };
 }
 
 export async function getPlant(id: string, userId: string, role: string) {

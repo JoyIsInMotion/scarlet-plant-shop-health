@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import { AIAnalysisCard } from './ai-analysis-card';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -13,6 +13,7 @@ interface AIAnalysisHistoryProps {
 
 export function AIAnalysisHistory({ analyses }: AIAnalysisHistoryProps) {
   const t = useTranslations();
+  const locale = useLocale();
   const [expanded, setExpanded] = useState<string | null>(analyses[0]?.id ?? null);
 
   if (analyses.length === 0) return null;
@@ -29,12 +30,12 @@ export function AIAnalysisHistory({ analyses }: AIAnalysisHistoryProps) {
               <div className="flex items-center justify-between gap-2">
                 <div className="flex items-center gap-2">
                   <CardTitle className="text-sm font-medium">
-                    {new Date(a.analyzedAt).toLocaleString('bg-BG', {
+                    {new Intl.DateTimeFormat(locale, {
                       day: '2-digit',
                       month: 'short',
                       hour: '2-digit',
                       minute: '2-digit',
-                    })}
+                    }).format(new Date(a.analyzedAt))}
                   </CardTitle>
                   {a.healthScore != null && (
                     <Badge variant={a.healthScore >= 60 ? 'success' : a.healthScore >= 40 ? 'warning' : 'danger'}>

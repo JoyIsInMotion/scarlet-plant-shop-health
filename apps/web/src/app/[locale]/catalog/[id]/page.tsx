@@ -1,10 +1,10 @@
 import { getTranslations, getLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
-import Link from 'next/link';
 import { ArrowLeft, CheckCircle2, Leaf } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Link } from '@/i18n/navigation';
 import type { Metadata } from 'next';
 
 async function getSpecies(id: string) {
@@ -34,10 +34,10 @@ export default async function SpeciesDetailPage({ params }: { params: Promise<{ 
   const careGuide = species.careGuide as Record<string, { bg: string; en: string }> | null;
 
   return (
-    <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
-      <div className="flex items-center gap-3 mb-6">
+    <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6 lg:px-8">
+      <div className="mb-8 flex items-center gap-3">
         <Button variant="ghost" size="icon" asChild>
-          <Link href="catalog"><ArrowLeft className="h-4 w-4" /></Link>
+          <Link href="/catalog"><ArrowLeft className="h-4 w-4" /></Link>
         </Button>
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2">
@@ -48,10 +48,10 @@ export default async function SpeciesDetailPage({ params }: { params: Promise<{ 
         </div>
       </div>
 
-      <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-[1.05fr_0.95fr]">
         {/* Image */}
         <div>
-          <div className="aspect-[4/3] rounded-xl overflow-hidden bg-gray-100">
+          <div className="aspect-[4/3] rounded-3xl overflow-hidden bg-gray-100 shadow-sm">
             {species.imageUrl ? (
               <img src={species.imageUrl} alt={name} className="h-full w-full object-cover" />
             ) : (
@@ -68,7 +68,7 @@ export default async function SpeciesDetailPage({ params }: { params: Promise<{ 
 
         {/* Info */}
         <div className="space-y-4">
-          <Card>
+          <Card className="border-gray-200 shadow-sm">
             <CardContent className="pt-4 space-y-3">
               <div className="grid grid-cols-2 gap-3 text-sm">
                 <div>
@@ -102,7 +102,7 @@ export default async function SpeciesDetailPage({ params }: { params: Promise<{ 
 
           {/* Care guide */}
           {careGuide && Object.keys(careGuide).length > 0 && (
-            <Card>
+            <Card className="border-gray-200 shadow-sm">
               <CardHeader className="pb-2">
                 <CardTitle className="text-sm">{t('catalog.careGuide')}</CardTitle>
               </CardHeader>

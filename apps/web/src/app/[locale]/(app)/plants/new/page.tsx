@@ -3,14 +3,13 @@ import { useState, useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { useRouter } from 'next/navigation';
-import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { ArrowLeft, Upload, Leaf } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { useToast } from '@/hooks/use-toast';
+import { Link, useRouter } from '@/i18n/navigation';
 
 const schema = z.object({
   customName: z.string().min(1),
@@ -80,7 +79,7 @@ export default function NewPlantPage() {
     <div className="mx-auto max-w-xl px-4 py-8 sm:px-6">
       <div className="flex items-center gap-3 mb-6">
         <Button variant="ghost" size="icon" asChild>
-          <Link href="dashboard"><ArrowLeft className="h-4 w-4" /></Link>
+          <Link href="/dashboard"><ArrowLeft className="h-4 w-4" /></Link>
         </Button>
         <h1 className="text-2xl font-bold text-gray-900">{t('plants.addPlant')}</h1>
       </div>
@@ -112,7 +111,7 @@ export default function NewPlantPage() {
           <CardContent className="pt-4 space-y-4">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1.5">{t('plants.plantName')} *</label>
-              <Input placeholder="Моята роза" {...register('customName')} />
+              <Input placeholder={t('plants.namePlaceholder')} {...register('customName')} />
               {errors.customName && <p className="mt-1 text-xs text-red-600">{t('errors.required')}</p>}
             </div>
 
@@ -127,7 +126,7 @@ export default function NewPlantPage() {
 
         <div className="flex gap-3">
           <Button variant="outline" asChild className="flex-1">
-            <Link href="dashboard">{t('common.cancel')}</Link>
+            <Link href="/dashboard">{t('common.cancel')}</Link>
           </Button>
           <Button type="submit" isLoading={isSubmitting} className="flex-1">
             {t('common.save')}

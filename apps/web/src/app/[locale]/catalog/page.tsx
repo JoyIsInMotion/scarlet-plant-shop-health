@@ -1,8 +1,8 @@
-import { getTranslations } from 'next-intl/server';
-import Link from 'next/link';
+import { getLocale, getTranslations } from 'next-intl/server';
 import { CheckCircle2, Leaf } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
+import { Link } from '@/i18n/navigation';
 import type { Metadata } from 'next';
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -25,6 +25,7 @@ export default async function CatalogPage({
   searchParams: Promise<Record<string, string>>;
 }) {
   const t = await getTranslations();
+  const locale = await getLocale();
   const sp = await searchParams;
   const { species, total } = await getSpecies(sp);
 
@@ -37,9 +38,11 @@ export default async function CatalogPage({
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-      <div className="mb-6">
-        <h1 className="text-2xl font-bold text-gray-900">{t('catalog.title')}</h1>
-        <p className="text-sm text-gray-500 mt-1">{t('catalog.subtitle')} · {total} вида</p>
+      <div className="mb-8 rounded-3xl border border-emerald-100 bg-gradient-to-br from-white via-white to-emerald-50 p-6 shadow-sm">
+        <p className="text-xs font-semibold uppercase tracking-[0.24em] text-emerald-600">{t('catalog.title')}</p>
+        <h1 className="mt-2 text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl">{t('catalog.title')}</h1>
+        <p className="mt-3 max-w-2xl text-sm leading-6 text-gray-600 sm:text-base">{t('catalog.subtitle')}</p>
+        <p className="mt-3 text-sm font-medium text-gray-500">{total} {locale === 'en' ? 'species' : 'вида'}</p>
       </div>
 
       {/* Filters */}
@@ -84,10 +87,16 @@ export default async function CatalogPage({
             imageUrl: string | null;
           }) => (
             <Link key={s.id} href={`/catalog/${s.id}`}>
-              <Card className="overflow-hidden hover:shadow-md transition-shadow cursor-pointer h-full">
-                <div className="aspect-[4/3] bg-gray-100 relative">
+              <Card className="group h-full overflow-hidden border-gray-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+                <div className="relative aspect-[4/3] bg-gray-100">
                   {s.imageUrl ? (
-                    <img src={s.imageUrl} alt={s.commonNameBg ?? s.scientificName} className="h-full w-full object-cover" />
+                    <img
+                      src={s.imageUrl}
+                      alt={locale === 'en'
+                        ? (s.commonNameEn ?? s.commonNameBg ?? s.scientificName)
+                        : (s.commonNameBg ?? s.commonNameEn ?? s.scientificName)}
+                      className="h-full w-full object-cover"
+                    />
                   ) : (
                     <div className="flex h-full items-center justify-center">
                       <Leaf className="h-10 w-10 text-gray-300" />
@@ -99,14 +108,16 @@ export default async function CatalogPage({
                     </span>
                   )}
                 </div>
-                <CardContent className="pt-3 pb-4">
-                  <p className="font-semibold text-gray-900 truncate">
-                    {s.commonNameBg ?? s.commonNameEn ?? s.scientificName}
+                <CardContent className="space-y-1.5 pt-3 pb-4">
+                  <p className="truncate font-semibold text-gray-900">
+                    {locale === 'en'
+                      ? (s.commonNameEn ?? s.commonNameBg ?? s.scientificName)
+                      : (s.commonNameBg ?? s.commonNameEn ?? s.scientificName)}
                   </p>
-                  <p className="text-xs italic text-gray-400 truncate mt-0.5">{s.scientificName}</p>
+                  <p className="mt-0.5 truncate text-xs italic text-gray-400">{s.scientificName}</p>
                   {s.careDifficulty && (
                     <Badge
-                      className="mt-2"
+                      className="mt-2 rounded-full"
                       variant={s.careDifficulty === 'easy' ? 'success' : s.careDifficulty === 'moderate' ? 'warning' : 'danger'}
                     >
                       {t(`catalog.${s.careDifficulty as 'easy' | 'moderate' | 'difficult'}`)}

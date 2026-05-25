@@ -1,10 +1,10 @@
 'use client';
-import Link from 'next/link';
 import { Droplets, Calendar, Leaf } from 'lucide-react';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { HealthScoreRing } from './health-score-ring';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
+import { Link } from '@/i18n/navigation';
 import type { Plant } from '@scarlet/shared';
 
 interface PlantCardProps {
@@ -13,16 +13,22 @@ interface PlantCardProps {
 
 export function PlantCard({ plant }: PlantCardProps) {
   const t = useTranslations('plants');
+  const locale = useLocale();
+  const speciesName = plant.speciesName ?? (plant.species
+    ? (locale === 'en'
+      ? plant.species.commonNameEn ?? plant.species.commonNameBg ?? plant.species.scientificName
+      : plant.species.commonNameBg ?? plant.species.commonNameEn ?? plant.species.scientificName)
+    : null);
 
   return (
     <Link href={`/plants/${plant.id}`}>
-      <Card className="overflow-hidden hover:shadow-md transition-shadow cursor-pointer h-full">
+      <Card className="group h-full overflow-hidden border-gray-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
         <div className="aspect-[4/3] bg-gray-100 relative overflow-hidden">
           {plant.imageUrl ? (
             <img
               src={plant.imageUrl}
               alt={plant.customName}
-              className="h-full w-full object-cover"
+              className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
           ) : (
             <div className="flex h-full items-center justify-center">
@@ -39,8 +45,8 @@ export function PlantCard({ plant }: PlantCardProps) {
           <div className="flex items-start justify-between gap-2">
             <div className="min-w-0">
               <h3 className="font-semibold text-gray-900 truncate">{plant.customName}</h3>
-              {plant.speciesName && (
-                <p className="text-xs text-gray-500 truncate italic mt-0.5">{plant.speciesName}</p>
+              {speciesName && (
+                <p className="text-xs text-gray-500 truncate italic mt-0.5">{speciesName}</p>
               )}
             </div>
             <HealthScoreRing score={plant.healthScore} size={52} />
@@ -50,7 +56,7 @@ export function PlantCard({ plant }: PlantCardProps) {
             {plant.lastWatered && (
               <span className="flex items-center gap-1">
                 <Droplets className="h-3.5 w-3.5 text-blue-400" />
-                {new Date(plant.lastWatered).toLocaleDateString()}
+                {new Intl.DateTimeFormat(locale, { day: '2-digit', month: 'short' }).format(new Date(plant.lastWatered))}
               </span>
             )}
             {plant.speciesId && (
