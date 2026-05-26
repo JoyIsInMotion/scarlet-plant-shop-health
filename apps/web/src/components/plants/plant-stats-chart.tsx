@@ -1,4 +1,5 @@
 'use client';
+import { useState, useEffect } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { useLocale, useTranslations } from 'next-intl';
 import { Card, CardContent } from '@/components/ui/card';
@@ -19,6 +20,8 @@ const METRIC_COLORS: Record<string, string> = {
 export function PlantStatsChart({ stats }: PlantStatsChartProps) {
   const t = useTranslations('stats');
   const locale = useLocale();
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
 
   const orderedMetrics = ['water', 'light', 'humidity', 'temperature', 'fertilizer'] as const;
   const metrics = orderedMetrics.filter((metric) => stats.some((stat) => stat.metricType === metric));
@@ -55,27 +58,31 @@ export function PlantStatsChart({ stats }: PlantStatsChartProps) {
               </div>
 
               <div className="h-44">
-                <ResponsiveContainer width="100%" height="100%">
-                  <LineChart data={chartData} margin={{ top: 8, right: 8, left: -12, bottom: 0 }}>
-                    <CartesianGrid strokeDasharray="3 3" stroke="#f3f4f6" />
-                    <XAxis dataKey="label" tick={{ fontSize: 11 }} tickLine={false} axisLine={false} />
-                    <YAxis tick={{ fontSize: 11 }} tickLine={false} axisLine={false} width={32} />
-                    <Tooltip
-                      contentStyle={{ fontSize: 12, borderRadius: 12, border: '1px solid #e5e7eb' }}
-                      labelStyle={{ fontWeight: 600 }}
-                      formatter={(value) => [String(value ?? ''), t(metric)] as [string, string]}
-                    />
-                    <Line
-                      type="monotone"
-                      dataKey="value"
-                      name={t(metric)}
-                      stroke={METRIC_COLORS[metric] ?? '#6b7280'}
-                      strokeWidth={3}
-                      dot={{ r: 3 }}
-                      activeDot={{ r: 5 }}
-                    />
-                  </LineChart>
-                </ResponsiveContainer>
+                {mounted ? (
+                  <ResponsiveContainer width="100%" height="100%">
+                    <LineChart data={chartData} margin={{ top: 8, right: 8, left: -12, bottom: 0 }}>
+                      <CartesianGrid strokeDasharray="3 3" stroke="#f3f4f6" />
+                      <XAxis dataKey="label" tick={{ fontSize: 11 }} tickLine={false} axisLine={false} />
+                      <YAxis tick={{ fontSize: 11 }} tickLine={false} axisLine={false} width={32} />
+                      <Tooltip
+                        contentStyle={{ fontSize: 12, borderRadius: 12, border: '1px solid #e5e7eb' }}
+                        labelStyle={{ fontWeight: 600 }}
+                        formatter={(value) => [String(value ?? ''), t(metric)] as [string, string]}
+                      />
+                      <Line
+                        type="monotone"
+                        dataKey="value"
+                        name={t(metric)}
+                        stroke={METRIC_COLORS[metric] ?? '#6b7280'}
+                        strokeWidth={3}
+                        dot={{ r: 3 }}
+                        activeDot={{ r: 5 }}
+                      />
+                    </LineChart>
+                  </ResponsiveContainer>
+                ) : (
+                  <div className="h-full rounded-lg bg-gray-50 animate-pulse" />
+                )}
               </div>
 
               {latest?.notes && <p className="text-xs leading-5 text-gray-500">{latest.notes}</p>}
