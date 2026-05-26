@@ -86,7 +86,9 @@
     "manageCollection": "Review, edit and track your plant collection.",
     "noStats": "No care records have been added yet.",
     "updateImage": "Replace image",
-    "saveChanges": "Save changes"
+    "saveChanges": "Save changes",
+    "currentPhoto": "Current photo",
+    "noPhotos": "No photos yet"
   },
   "stats": {
     "water": "Water",
@@ -160,7 +162,14 @@
     "uploadImage": "Upload a plant photo",
     "dragAndDrop": "Drag and drop or click to select",
     "linkToPlant": "Link to plant",
-    "analysisComplete": "Analysis complete"
+    "analysisComplete": "Analysis complete",
+    "statusMessage": {
+      "excellent": "Your plant is thriving!",
+      "good": "Your plant is doing well",
+      "fair": "Needs some attention",
+      "poor": "Not doing well",
+      "critical": "Urgent care needed!"
+    }
   },
   "shop": {
     "title": "Shop",

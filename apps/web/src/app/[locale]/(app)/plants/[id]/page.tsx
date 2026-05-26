@@ -3,9 +3,8 @@ import { cookies } from 'next/headers';
 import { notFound } from 'next/navigation';
 import { ArrowLeft, Pencil, Leaf, Droplets, ExternalLink } from 'lucide-react';
 import { PlantStatsChart } from '@/components/plants/plant-stats-chart';
-import { HealthScoreRing } from '@/components/plants/health-score-ring';
+import { PlantPhotoGallery } from '@/components/plants/plant-photo-gallery';
 import { AIAnalysisButton } from '@/components/plants/ai-analysis-button';
-import { AIAnalysisHistory } from '@/components/plants/ai-analysis-history';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -74,9 +73,10 @@ export default async function PlantDetailPage({ params }: { params: Promise<{ id
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6 lg:px-8">
-      <div className="mb-8 flex items-center gap-3">
+      {/* ── Header ── */}
+      <div className="mb-6 flex items-center gap-3">
         <Button variant="ghost" size="icon" asChild>
-          <Link href="/dashboard"><ArrowLeft className="h-4 w-4" /></Link>
+          <Link href="/plants"><ArrowLeft className="h-4 w-4" /></Link>
         </Button>
         <div className="flex-1 min-w-0">
           <h1 className="text-2xl font-bold text-gray-900 truncate">{plant.customName}</h1>
@@ -92,42 +92,71 @@ export default async function PlantDetailPage({ params }: { params: Promise<{ id
         </Button>
       </div>
 
-      <div className="grid grid-cols-1 gap-6 xl:grid-cols-[1.05fr_0.95fr]">
+      {/* ── Main grid ── */}
+      <div className="grid grid-cols-1 gap-6 xl:grid-cols-[1.1fr_0.9fr]">
+
+        {/* Left: Photo gallery with sliding photos + health details */}
+        <PlantPhotoGallery plant={plant} analyses={analyses} />
+
+        {/* Right: Actions + info */}
         <div className="space-y-4">
-          <Card className="overflow-hidden border-gray-200 shadow-sm">
-            <div className="aspect-[4/3] bg-gray-100 relative">
-              {plant.imageUrl ? (
-                <img src={plant.imageUrl} alt={plant.customName} className="h-full w-full object-cover" />
-              ) : (
-                <div className="flex h-full items-center justify-center">
-                  <Leaf className="h-16 w-16 text-gray-300" />
-                </div>
-              )}
-            </div>
-            <CardContent className="pt-4">
-              <div className="flex items-center justify-between gap-4">
-                <div className="space-y-2">
-                  {plant.lastWatered && (
-                    <p className="flex items-center gap-1.5 text-sm text-gray-600">
-                      <Droplets className="h-4 w-4 text-blue-400" />
-                      {t('plants.lastWatered')}: {new Intl.DateTimeFormat(locale, { day: '2-digit', month: 'long', year: 'numeric' }).format(new Date(plant.lastWatered))}
-                    </p>
-                  )}
-                  {plant.speciesId && (
-                    <p className="flex items-center gap-1.5 text-sm text-green-600">
-                      <Leaf className="h-4 w-4" />
-                      {t('plants.linked')}
-                      {plant.speciesConfirmed && (
-                        <Badge variant="success" className="ml-1">{t('plants.speciesConfirmed')}</Badge>
-                      )}
-                    </p>
-                  )}
-                </div>
-                <HealthScoreRing score={plant.healthScore} size={72} />
-              </div>
+
+          {/* AI scan */}
+          <Card className="border-gray-200 shadow-sm">
+            <CardHeader className="pb-2">
+              <CardTitle className="text-base">{t('ai.scanButton')}</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <AIAnalysisButton plantId={id} />
             </CardContent>
           </Card>
 
+          {/* Care stats */}
+          {stats.length > 0 ? (
+            <Card className="border-gray-200 shadow-sm">
+              <CardHeader>
+                <CardTitle className="text-base">{t('plants.careStats')}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <PlantStatsChart stats={stats} />
+              </CardContent>
+            </Card>
+          ) : (
+            <Card className="border-dashed border-gray-200 bg-gray-50 shadow-none">
+              <CardContent className="p-5 text-sm text-gray-500">
+                <p className="font-medium text-gray-900">{t('plants.careStats')}</p>
+                <p className="mt-1">{t('plants.noStats')}</p>
+              </CardContent>
+            </Card>
+          )}
+
+          {/* Watering + catalog meta */}
+          <Card className="border-gray-200 shadow-sm">
+            <CardContent className="pt-4 pb-4 space-y-2">
+              {plant.lastWatered && (
+                <p className="flex items-center gap-1.5 text-sm text-gray-600">
+                  <Droplets className="h-4 w-4 text-blue-400" />
+                  {t('plants.lastWatered')}:{' '}
+                  {new Intl.DateTimeFormat(locale, {
+                    day: '2-digit',
+                    month: 'long',
+                    year: 'numeric',
+                  }).format(new Date(plant.lastWatered))}
+                </p>
+              )}
+              {plant.speciesId && (
+                <p className="flex items-center gap-1.5 text-sm text-green-600">
+                  <Leaf className="h-4 w-4" />
+                  {t('plants.linked')}
+                  {plant.speciesConfirmed && (
+                    <Badge variant="success" className="ml-1">{t('plants.speciesConfirmed')}</Badge>
+                  )}
+                </p>
+              )}
+            </CardContent>
+          </Card>
+
+          {/* Species mini-card */}
           {species && (
             <Card className="border-gray-200 shadow-sm">
               <CardHeader className="py-3">
@@ -153,7 +182,9 @@ export default async function PlantDetailPage({ params }: { params: Promise<{ id
                       species.careDifficulty === 'easy' ? 'success' :
                       species.careDifficulty === 'moderate' ? 'warning' : 'danger'
                     }>
-                      {species.careDifficulty ? t(`catalog.${species.careDifficulty as 'easy' | 'moderate' | 'difficult'}`) : '—'}
+                      {species.careDifficulty
+                        ? t(`catalog.${species.careDifficulty as 'easy' | 'moderate' | 'difficult'}`)
+                        : '—'}
                     </Badge>
                   </div>
                 </div>
@@ -161,44 +192,7 @@ export default async function PlantDetailPage({ params }: { params: Promise<{ id
             </Card>
           )}
         </div>
-
-        <div className="space-y-4">
-          <Card className="border-gray-200 shadow-sm">
-            <CardHeader>
-              <CardTitle className="text-base">{t('ai.scanButton')}</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <AIAnalysisButton plantId={id} />
-            </CardContent>
-          </Card>
-
-          {stats.length > 0 ? (
-            <Card className="border-gray-200 shadow-sm">
-              <CardHeader>
-                <CardTitle className="text-base">{t('plants.careStats')}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <PlantStatsChart stats={stats} />
-              </CardContent>
-            </Card>
-          ) : (
-            <Card className="border-dashed border-gray-200 bg-gray-50 shadow-none">
-              <CardContent className="p-6 text-sm text-gray-500">
-                <p className="font-medium text-gray-900">{t('plants.careStats')}</p>
-                <p className="mt-1">{t('plants.noStats')}</p>
-              </CardContent>
-            </Card>
-          )}
-        </div>
       </div>
-
-      {/* Analysis history */}
-      {analyses.length > 0 && (
-        <div className="mt-6">
-          <h2 className="text-lg font-semibold text-gray-900 mb-3">{t('plants.analysisHistory')}</h2>
-          <AIAnalysisHistory analyses={analyses} />
-        </div>
-      )}
     </div>
   );
 }
