@@ -67,7 +67,11 @@ export async function analyzePlantImage(
 
   const text = result.response.text().trim();
   // Strip potential markdown code fences Gemini sometimes adds
-  const json = text.replace(/^```(?:json)?\n?/, '').replace(/\n?```$/, '');
+  const json = text.replace(/^```(?:json)?\n?/, '').replace(/\n?```$/, '').trim();
 
-  return JSON.parse(json) as PlantAnalysisResult;
+  try {
+    return JSON.parse(json) as PlantAnalysisResult;
+  } catch {
+    throw new Error(`Unexpected AI response: ${json.slice(0, 300)}`);
+  }
 }

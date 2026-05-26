@@ -34,9 +34,11 @@ export async function analyzeSavedPlant(plantId: string, userId: string, role: s
   const imgRes = await fetch(plant.imageUrl);
   if (!imgRes.ok) throw new ServiceError('Failed to fetch plant image', 500);
   const imgBuffer = Buffer.from(await imgRes.arrayBuffer());
-  const contentType = imgRes.headers.get('content-type') ?? 'image/jpeg';
+  const rawType = imgRes.headers.get('content-type') ?? 'image/jpeg';
+  const allowedMimes = ['image/jpeg', 'image/png', 'image/webp'] as const;
+  const mimeType = allowedMimes.find((m) => rawType.startsWith(m)) ?? 'image/jpeg';
 
-  const analysis = await analyzePlantImage(imgBuffer, contentType as 'image/jpeg');
+  const analysis = await analyzePlantImage(imgBuffer, mimeType);
 
   // Match existing species or create unverified catalog entry for high-confidence hits
   let matchedSpeciesId: string | null = null;

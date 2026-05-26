@@ -15,7 +15,8 @@ async function analyzeWithAI(req: NextRequest, ctx: Ctx) {
     return ok(await aiService.analyzeSavedPlant(id, auth.sub, auth.role));
   } catch (e) {
     if (e instanceof ServiceError) return err(e.message, e.status);
-    throw e;
+    console.error('[ai-analysis]', e);
+    return err('AI analysis failed. Please try again.', 500);
   }
 }
 
