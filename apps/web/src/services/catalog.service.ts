@@ -29,6 +29,8 @@ export async function listSpecies(query: {
     conditions.push(eq(plantSpecies.isVerified, true));
   }
 
+  const where = conditions.length ? and(...conditions) : undefined;
+
   const base = db
     .select({
       id: plantSpecies.id,
@@ -42,11 +44,16 @@ export async function listSpecies(query: {
     })
     .from(plantSpecies);
 
-  const items = conditions.length
-    ? await base.where(and(...conditions)).limit(query.limit).offset(query.offset)
-    : await base.limit(query.limit).offset(query.offset);
+  const [items, [{ value: total }]] = await Promise.all([
+    where
+      ? base.where(where).limit(query.limit).offset(query.offset)
+      : base.limit(query.limit).offset(query.offset),
+    where
+      ? db.select({ value: count() }).from(plantSpecies).where(where)
+      : db.select({ value: count() }).from(plantSpecies),
+  ]);
 
-  return { items, limit: query.limit, offset: query.offset, hasMore: items.length === query.limit };
+  return { species: items, total: Number(total), limit: query.limit, offset: query.offset };
 }
 
 export async function getSpecies(id: string) {
