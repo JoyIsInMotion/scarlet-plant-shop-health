@@ -4,7 +4,7 @@ import { routing } from './i18n/routing';
 
 const intlMiddleware = createMiddleware(routing);
 
-const protectedPaths = ['/dashboard', '/plants', '/scan', '/profile', '/admin'];
+const protectedPaths = ['/plants', '/scan', '/profile', '/admin'];
 const adminPaths = ['/admin'];
 
 function isProtected(pathname: string): boolean {
@@ -53,7 +53,7 @@ export default function middleware(request: NextRequest) {
 
       if (isAdmin(pathname) && payload.role !== 'admin') {
         const locale = pathname.startsWith('/en') ? 'en' : 'bg';
-        return NextResponse.redirect(new URL(locale === 'en' ? '/en/dashboard' : '/dashboard', request.url));
+        return NextResponse.redirect(new URL(locale === 'en' ? '/en/plants' : '/plants', request.url));
       }
     } catch {
       const locale = pathname.startsWith('/en') ? 'en' : 'bg';

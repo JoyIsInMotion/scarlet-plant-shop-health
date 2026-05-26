@@ -1,6 +1,6 @@
 'use client';
 import { useTranslations } from 'next-intl';
-import { Flower2, ShoppingBag, Leaf, BookOpen, ScanLine, LayoutDashboard, User, ShieldCheck, LogOut, Menu, X } from 'lucide-react';
+import { Flower2, ShoppingBag, Leaf, BookOpen, ScanLine, User, ShieldCheck, LogOut, Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import { useAuth } from '@/providers/auth-provider';
 import { LanguageSwitcher } from './language-switcher';
@@ -24,7 +24,6 @@ export function Navbar() {
 
   const authLinks = user
     ? [
-        { href: '/dashboard', label: t('nav.dashboard'), icon: LayoutDashboard },
         { href: '/plants', label: t('nav.myPlants'), icon: Leaf },
         { href: '/scan', label: t('nav.scan'), icon: ScanLine },
         ...(user.role === 'admin' ? [{ href: '/admin', label: t('nav.admin'), icon: ShieldCheck }] : []),

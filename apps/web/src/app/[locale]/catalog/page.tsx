@@ -3,20 +3,12 @@ import { CheckCircle2, Leaf } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import { Link } from '@/i18n/navigation';
+import { listSpecies } from '@/services/catalog.service';
 import type { Metadata } from 'next';
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('catalog');
   return { title: t('title') };
-}
-
-async function getSpecies(searchParams: Record<string, string>) {
-  const base = process.env.NEXT_PUBLIC_APP_URL ?? 'http://localhost:3000';
-  const params = new URLSearchParams({ limit: '24', ...searchParams });
-  const res = await fetch(`${base}/api/catalog?${params}`, { cache: 'no-store' });
-  if (!res.ok) return { species: [], total: 0 };
-  const { data } = await res.json();
-  return { species: data?.species ?? [], total: data?.total ?? 0 };
 }
 
 export default async function CatalogPage({
@@ -27,7 +19,13 @@ export default async function CatalogPage({
   const t = await getTranslations();
   const locale = await getLocale();
   const sp = await searchParams;
-  const { species, total } = await getSpecies(sp);
+  const { species, total } = await listSpecies({
+    limit: 24,
+    offset: parseInt(sp.offset ?? '0', 10),
+    search: sp.search || undefined,
+    difficulty: sp.careDifficulty || undefined,
+    verifiedOnly: false,
+  });
 
   const difficulties = [
     { value: '', label: t('catalog.allDifficulties') },
@@ -46,7 +44,7 @@ export default async function CatalogPage({
       </div>
 
       {/* Filters */}
-      <form className="flex flex-col sm:flex-row gap-3 mb-6">
+      <form method="get" className="flex flex-col sm:flex-row gap-3 mb-6">
         <input
           name="search"
           defaultValue={sp.search ?? ''}

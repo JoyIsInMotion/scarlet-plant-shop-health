@@ -43,7 +43,7 @@ export default function RegisterPage() {
         throw new Error(error ?? t('errors.serverError'));
       }
       await refresh();
-      router.push('/dashboard');
+      router.push('/plants');
     } catch (err: unknown) {
       toast({
         title: t('common.error'),

@@ -73,7 +73,7 @@ export function ShopClient({ products, total, locale, initialParams, page, pageS
         </div>
       </div>
 
-      <form method="get" action="/shop" className="mb-6 rounded-[2rem] border border-gray-200 bg-white p-4 shadow-sm">
+      <form method="get" className="mb-6 rounded-[2rem] border border-gray-200 bg-white p-4 shadow-sm">
         <input type="hidden" name="page" value="1" />
         <div className="grid gap-3 lg:grid-cols-[minmax(0,1.7fr)_minmax(11rem,1fr)_minmax(11rem,1fr)_auto]">
           <input

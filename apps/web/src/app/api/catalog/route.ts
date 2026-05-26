@@ -10,8 +10,8 @@ export async function GET(req: NextRequest) {
     await catalogService.listSpecies({
       limit: Math.min(parseInt(sp.get('limit') ?? '20', 10), 100),
       offset: parseInt(sp.get('offset') ?? '0', 10),
-      search: sp.get('search') ?? undefined,
-      difficulty: sp.get('difficulty') ?? sp.get('careDifficulty') ?? undefined,
+      search: sp.get('search') || undefined,
+      difficulty: sp.get('difficulty') || sp.get('careDifficulty') || undefined,
       verifiedOnly: sp.get('verified') === 'true',
     })
   );

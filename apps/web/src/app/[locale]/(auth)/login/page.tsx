@@ -24,7 +24,7 @@ export default function LoginPage() {
   const { toast } = useToast();
   const router = useRouter();
   const searchParams = useSearchParams();
-  const from = searchParams.get('from') ?? '/dashboard';
+  const from = searchParams.get('from') ?? '/plants';
 
   const {
     register,

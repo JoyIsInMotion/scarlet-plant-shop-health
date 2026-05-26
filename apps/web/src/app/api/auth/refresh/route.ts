@@ -1,5 +1,6 @@
 import { NextRequest } from 'next/server';
 import { ok, err } from '@/lib/api/response';
+import { setAuthCookies } from '@/lib/auth/cookies';
 import * as authService from '@/services/auth.service';
 import { ServiceError } from '@/services/service-error';
 
@@ -11,6 +12,7 @@ export async function POST(req: NextRequest) {
     if (!token) return err('Refresh token required', 400);
 
     const result = await authService.refresh(token);
+    await setAuthCookies(result.accessToken, result.refreshToken);
     return ok(result);
   } catch (e) {
     if (e instanceof ServiceError) return err(e.message, e.status);
