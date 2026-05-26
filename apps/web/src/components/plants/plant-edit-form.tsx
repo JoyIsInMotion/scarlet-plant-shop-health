@@ -69,7 +69,7 @@ export function PlantEditForm({ plant }: PlantEditFormProps) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           customName: values.customName,
-          lastWatered: values.lastWatered || null,
+          lastWatered: values.lastWatered ? new Date(values.lastWatered).toISOString() : null,
         }),
       });
 
