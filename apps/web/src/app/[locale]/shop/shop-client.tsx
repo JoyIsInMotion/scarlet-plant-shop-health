@@ -45,10 +45,6 @@ export function ShopClient({ products, total, locale, initialParams, page, pageS
     return locale === 'en' ? p.nameEn : p.nameBg;
   }
 
-  function getDescription(p: Product) {
-    return locale === 'en' ? p.descriptionEn : p.descriptionBg;
-  }
-
   function formatPrice(price: string) {
     return new Intl.NumberFormat(currentLocale === 'en' ? 'en' : 'bg', {
       style: 'currency',
@@ -131,29 +127,24 @@ export function ShopClient({ products, total, locale, initialParams, page, pageS
                 </div>
               </Link>
               <CardContent className="flex flex-1 flex-col p-4">
-                <div className="mb-3 flex items-start justify-between gap-3">
-                  <div className="min-w-0 flex-1 pr-2">
-                    <Link href={`/shop/${p.slug}`} className="line-clamp-2 text-lg font-semibold text-gray-900 transition-colors hover:text-red-700">
-                      {getName(p)}
-                    </Link>
-                    <p className="mt-1 line-clamp-2 text-sm text-gray-500">
-                      {getDescription(p) ?? t('shop.noDescription')}
-                    </p>
-                  </div>
-                  <Badge variant="default" className="shrink-0 rounded-full">
+                <div className="mb-4 flex items-start justify-between gap-2">
+                  <Link href={`/shop/${p.slug}`} className="line-clamp-2 text-base font-semibold text-gray-900 transition-colors hover:text-red-700">
+                    {getName(p)}
+                  </Link>
+                  <Badge variant="default" className="shrink-0 rounded-full text-xs">
                     {t(`shop.category.${p.category as typeof CATEGORIES[number]}`)}
                   </Badge>
                 </div>
 
-                <div className="mt-auto flex flex-col gap-4">
-                  <div className="flex items-start justify-between gap-3">
+                <div className="mt-auto space-y-3">
+                  <div className="flex items-center justify-between gap-2">
                     <div>
-                      <span className="block text-lg font-bold text-gray-900">{formatPrice(p.price)}</span>
-                      <span className="text-xs text-gray-500">
+                      <span className="block text-xl font-bold text-gray-900">{formatPrice(p.price)}</span>
+                      <span className="text-xs text-gray-400">
                         {p.stock > 0 ? `${p.stock} ${t('shop.inStock')}` : t('shop.outOfStock')}
                       </span>
                     </div>
-                    <Button asChild variant="ghost" size="sm" className="rounded-full px-0 text-red-700 hover:bg-red-50 hover:text-red-800">
+                    <Button asChild variant="ghost" size="sm" className="rounded-full text-red-700 hover:bg-red-50 hover:text-red-800">
                       <Link href={`/shop/${p.slug}`} className="inline-flex items-center gap-1">
                         {t('shop.viewDetails')}
                         <ChevronRight className="h-4 w-4" />
@@ -164,7 +155,7 @@ export function ShopClient({ products, total, locale, initialParams, page, pageS
                     size="sm"
                     onClick={() => handleAddToCart(p)}
                     disabled={p.stock === 0}
-                    className="h-11 w-full rounded-2xl"
+                    className="h-10 w-full rounded-2xl"
                   >
                     <ShoppingBag className="h-3.5 w-3.5" />
                     {p.stock === 0 ? t('shop.outOfStock') : t('shop.addToCart')}

@@ -33,12 +33,14 @@ export async function listProducts(query: {
   return { items, total: Number(total), limit: query.limit, offset: query.offset, hasMore: query.offset + items.length < Number(total) };
 }
 
+const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+
 export async function getProduct(idOrSlug: string) {
-  const [product] = await db
-    .select()
-    .from(products)
-    .where(or(eq(products.id, idOrSlug), eq(products.slug, idOrSlug)))
-    .limit(1);
+  const condition = UUID_RE.test(idOrSlug)
+    ? or(eq(products.id, idOrSlug), eq(products.slug, idOrSlug))
+    : eq(products.slug, idOrSlug);
+
+  const [product] = await db.select().from(products).where(condition).limit(1);
 
   if (!product) throw new ServiceError('Product not found', 404);
   return product;
