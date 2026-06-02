@@ -147,10 +147,14 @@
     "careRecommendations": "Препоръки за грижи",
     "wateringNeeded": "Необходимо е поливане",
     "confidence": {
+      "label": "Точност",
       "low": "Ниска увереност",
       "medium": "Средна увереност",
       "high": "Висока увереност"
     },
+    "unknownPlant": "Неизвестно растение",
+    "showDetails": "Покажи технически детайли",
+    "hideDetails": "Скрий технически детайли",
     "severity": {
       "low": "Нисък",
       "medium": "Среден",
@@ -163,6 +167,16 @@
     "dragAndDrop": "Плъзнете и пуснете или кликнете за избор",
     "linkToPlant": "Свържи с растение",
     "analysisComplete": "Анализът е завършен",
+    "careBasics": {
+      "light": "Светлина",
+      "watering": "Вода",
+      "drying": "Сушене",
+      "temperature": "Темп",
+      "humidity": "Влажност",
+      "fertilizer": "Тор",
+      "soil": "Почва",
+      "toxicity": "Домашни"
+    },
     "statusMessage": {
       "excellent": "Растението ти процъфтява!",
       "good": "Растението ти е добре",

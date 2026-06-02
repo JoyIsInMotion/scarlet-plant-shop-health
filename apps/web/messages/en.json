@@ -147,10 +147,14 @@
     "careRecommendations": "Care recommendations",
     "wateringNeeded": "Watering needed",
     "confidence": {
+      "label": "Confidence",
       "low": "Low confidence",
       "medium": "Medium confidence",
       "high": "High confidence"
     },
+    "unknownPlant": "Unknown plant",
+    "showDetails": "Show technical details",
+    "hideDetails": "Hide technical details",
     "severity": {
       "low": "Low",
       "medium": "Medium",
@@ -163,6 +167,16 @@
     "dragAndDrop": "Drag and drop or click to select",
     "linkToPlant": "Link to plant",
     "analysisComplete": "Analysis complete",
+    "careBasics": {
+      "light": "Light",
+      "watering": "Water",
+      "drying": "Drying",
+      "temperature": "Temp",
+      "humidity": "Humidity",
+      "fertilizer": "Fertilizer",
+      "soil": "Soil",
+      "toxicity": "Pets"
+    },
     "statusMessage": {
       "excellent": "Your plant is thriving!",
       "good": "Your plant is doing well",

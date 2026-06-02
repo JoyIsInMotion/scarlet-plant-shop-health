@@ -3,9 +3,9 @@ import Groq from 'groq-sdk';
 const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 
 export interface AIIssue {
-  name: string;
+  name: { en: string; bg: string };
   severity: 'low' | 'medium' | 'high';
-  description: string;
+  description: { en: string; bg: string };
 }
 
 export interface PlantAnalysisResult {
@@ -20,14 +20,30 @@ export interface PlantAnalysisResult {
     health_score: number | null;
     overall_condition: 'excellent' | 'good' | 'fair' | 'poor' | 'critical' | null;
     issues: AIIssue[];
-    care_recommendations: string[];
+    care_recommendations: Array<{ en: string; bg: string }>;
     watering_needed: boolean;
   };
+  friendly_advice: {
+    en: string;
+    bg: string;
+  };
+  care_basics: {
+    light: { en: string | null; bg: string | null };
+    watering: { en: string | null; bg: string | null };
+    drying: { en: string | null; bg: string | null };
+    temperature: { en: string | null; bg: string | null };
+    humidity: { en: string | null; bg: string | null };
+    fertilizer: { en: string | null; bg: string | null };
+    soil: { en: string | null; bg: string | null };
+    toxicity: { en: string | null; bg: string | null };
+  } | null;
   confidence: 'low' | 'medium' | 'high';
 }
 
-const PLANT_ANALYSIS_PROMPT = `You are an expert botanist and plant health specialist. Analyze this plant photo carefully.
-Perform TWO tasks: (1) identify the plant species, (2) assess its health.
+const PLANT_ANALYSIS_PROMPT = `You are a friendly plant care expert helping everyday plant owners — not botanists. Analyze this plant photo carefully.
+
+First identify the plant species, then give advice that is SPECIFIC to that species — not generic tips that could apply to any plant.
+
 Return ONLY valid JSON matching this exact schema with no markdown fencing or extra text:
 {
   "species": {
@@ -40,14 +56,44 @@ Return ONLY valid JSON matching this exact schema with no markdown fencing or ex
   "health": {
     "health_score": <integer 0-100 or null if cannot assess>,
     "overall_condition": "<excellent|good|fair|poor|critical or null>",
-    "issues": [{ "name": "<issue name>", "severity": "<low|medium|high>", "description": "<one concise sentence>" }],
-    "care_recommendations": ["<specific actionable recommendation>"],
+    "issues": [{ "name": { "en": "<short issue name in English>", "bg": "<short issue name in Bulgarian>" }, "severity": "<low|medium|high>", "description": { "en": "<one plain sentence in English describing exactly what you see in THIS photo>", "bg": "<same sentence in Bulgarian>" } }],
+    "care_recommendations": [{ "en": "<specific tip in English>", "bg": "<same tip in Bulgarian>" }],
     "watering_needed": <true|false>
+  },
+  "friendly_advice": {
+    "en": "<2-3 warm sentences. Name the plant, describe what you actually see in the photo, then give the single most important thing the owner should know about caring for THIS specific plant. Plain English.>",
+    "bg": "<same 2-3 sentences in natural Bulgarian, naming the plant in Bulgarian if possible. Address the owner warmly.>"
+  },
+  "care_basics": {
+    "light": { "en": "<e.g. 'Bright indirect light' or 'Full sun'>", "bg": "<e.g. 'Ярка непряка светлина' или 'Пълно слънце'>" },
+    "watering": { "en": "<e.g. 'Every 7-10 days' or 'When soil is dry'>", "bg": "<e.g. 'Всеки 7-10 дни' или 'Когато почвата е суха'>" },
+    "drying": { "en": "<e.g. 'Let dry between waterings' or 'Keep moist'>", "bg": "<e.g. 'Оставете да пресъхне между поливанията' или 'Поддържайте влажно'>" },
+    "temperature": { "en": "<e.g. '18-24°C' or '65-75°F'>", "bg": "<e.g. '18-24°C'>" },
+    "humidity": { "en": "<e.g. 'Low' or '50-70% humidity'>", "bg": "<e.g. 'Ниска' или '50-70% влажност'>" },
+    "fertilizer": { "en": "<e.g. 'Monthly during growing season'>", "bg": "<e.g. 'Месечно през растежния период'>" },
+    "soil": { "en": "<e.g. 'Well-draining potting mix'>", "bg": "<e.g. 'Добре дренирана почвена смес'>" },
+    "toxicity": { "en": "<'Safe for pets' or 'Toxic to cats' or 'Toxic to dogs' or 'Toxic to both'>", "bg": "<e.g. 'Безопасно за домашни животни' или 'Токсично за котки'>" }
   },
   "confidence": "<low|medium|high>"
 }
-If no health issues are detected, return an empty issues array.
-If you cannot clearly see a plant, set confidence to "low" and health_score to null.`;
+
+SPECIES-SPECIFIC ADVICE RULES:
+- Every care_recommendation must be tailored to the identified species. 'Sempervivum loves full sun and nearly no water' is good. 'Keep in a bright spot' is too generic — rejected.
+- Mention the plant's name or type in friendly_advice so the owner knows you recognized it.
+- For succulents (Sempervivum, Echeveria, Aloe, Haworthia, Crassula, etc.): mention their drought tolerance, outdoor/full-sun preference, and that less water is better.
+- For tropical plants (Monstera, Pothos, Ficus, etc.): mention indirect light needs and humidity preference.
+- For flowering plants: mention bloom care specific to that species.
+- issues must describe what you actually SEE in the photo, not theoretical problems.
+- care_basics fields must be SHORT (2-7 words each), SPECIFIC to this plant type, and provided in BOTH English AND Bulgarian.
+- care_recommendations must be provided in BOTH English AND Bulgarian languages.
+- When in doubt about plant needs, recommend AVOIDING OVERWATERING rather than watering (overwatering is the #1 killer of houseplants).
+
+WATERING RULES:
+- Set watering_needed to TRUE only if you can SEE: shriveled/wrinkled leaves, wilting stems, or visibly bone-dry cracked soil.
+- Set watering_needed to FALSE if the plant looks firm and healthy or shows ANY signs of moisture.
+- Succulents and cacti: only flag watering if leaves are visibly soft and shriveled. When in doubt → false.
+- NEVER add "water" as a care_recommendation. Instead recommend: "Avoid overwatering" or "Let soil dry between waterings" or specific prevention tips.
+- care_recommendations should focus on preventing common mistakes for THIS species, not watering instructions.`;
 
 export const MODEL_NAME = 'meta-llama/llama-4-scout-17b-16e-instruct';
 

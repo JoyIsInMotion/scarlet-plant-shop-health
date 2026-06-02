@@ -46,9 +46,9 @@ export interface PlantStat {
 }
 
 export interface AIIssue {
-  name: string;
+  name: string | { en: string; bg: string };
   severity: 'low' | 'medium' | 'high';
-  description: string;
+  description: string | { en: string; bg: string };
 }
 
 export interface AIAnalysis {
@@ -59,7 +59,7 @@ export interface AIAnalysis {
   healthScore: number | null;
   overallCondition: AICondition | null;
   issues: AIIssue[];
-  careRecommendations: string[];
+  careRecommendations: Array<{ en: string; bg: string }>;
   wateringNeeded: boolean | null;
   identifiedCommonName: string | null;
   identifiedScientificName: string | null;
@@ -71,4 +71,16 @@ export interface AIAnalysis {
   matchedSpecies?: PlantSpecies | null;
   modelUsed: string;
   analyzedAt: string;
+  adviceEn?: string | null;
+  adviceBg?: string | null;
+  careBasics?: {
+    light: { en: string | null; bg: string | null };
+    watering: { en: string | null; bg: string | null };
+    drying: { en: string | null; bg: string | null };
+    temperature: { en: string | null; bg: string | null };
+    humidity: { en: string | null; bg: string | null };
+    fertilizer: { en: string | null; bg: string | null };
+    soil: { en: string | null; bg: string | null };
+    toxicity: { en: string | null; bg: string | null };
+  } | null;
 }

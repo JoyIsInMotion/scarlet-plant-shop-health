@@ -42,7 +42,8 @@ export function QuickScanUploader() {
       const res = await apiFetch('/api/ai/quick-scan', { method: 'POST', body: form });
       const json = await res.json();
       if (!res.ok) throw new Error(json.error ?? t('errors.serverError'));
-      setAnalysis(json.data.analysis);
+      const { analysis, advice, careBasics } = json.data;
+      setAnalysis({ ...analysis, adviceEn: advice?.en ?? null, adviceBg: advice?.bg ?? null, careBasics });
       toast({ title: t('ai.analysisComplete'), variant: 'success' });
     } catch (err: unknown) {
       toast({

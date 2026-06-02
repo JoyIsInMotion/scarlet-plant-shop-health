@@ -110,7 +110,7 @@ export async function analyzeSavedPlant(plantId: string, userId: string, role: s
     ? (await db.select().from(plantSpecies).where(eq(plantSpecies.id, matchedSpeciesId)).limit(1))[0]
     : null;
 
-  return { analysis: savedAnalysis, matchedSpecies };
+  return { analysis: savedAnalysis, matchedSpecies, advice: analysis.friendly_advice ?? null, careBasics: analysis.care_basics ?? null };
 }
 
 export async function quickScan(userId: string, role: string, file: File) {
@@ -182,5 +182,5 @@ export async function quickScan(userId: string, role: string, file: File) {
     ? (await db.select().from(plantSpecies).where(eq(plantSpecies.id, matchedSpeciesId)).limit(1))[0]
     : null;
 
-  return { analysis: savedAnalysis, imageUrl, matchedSpecies };
+  return { analysis: savedAnalysis, imageUrl, matchedSpecies, advice: analysis.friendly_advice ?? null, careBasics: analysis.care_basics ?? null };
 }
