@@ -277,6 +277,14 @@
     "email": "Email",
     "hours": "Opening hours"
   },
+  "analyses": {
+    "title": "Analysis History",
+    "scans": "scans",
+    "noAnalyses": "No analyses yet",
+    "noAnalysesDesc": "Run an AI scan from the plant page to see the health history here.",
+    "goToPlant": "Go to plant",
+    "healthTrend": "Health score trend"
+  },
   "errors": {
     "required": "This field is required",
     "invalidEmail": "Invalid email address",

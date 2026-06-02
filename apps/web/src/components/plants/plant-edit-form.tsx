@@ -11,6 +11,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent } from '@/components/ui/card';
 import { useToast } from '@/hooks/use-toast';
+import { apiFetch } from '@/lib/api/client';
 import type { Plant } from '@scarlet/shared';
 
 const schema = z.object({
@@ -81,7 +82,7 @@ export function PlantEditForm({ plant }: PlantEditFormProps) {
       if (imageFile) {
         const form = new FormData();
         form.append('image', imageFile);
-        const uploadRes = await fetch(`/api/plants/${plant.id}/image`, { method: 'POST', body: form });
+        const uploadRes = await apiFetch(`/api/plants/${plant.id}/image`, { method: 'POST', body: form });
         if (!uploadRes.ok) {
           const { error } = await uploadRes.json();
           throw new Error(error ?? t('errors.serverError'));

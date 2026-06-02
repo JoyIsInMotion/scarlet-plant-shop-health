@@ -1,7 +1,7 @@
 import { getLocale, getTranslations } from 'next-intl/server';
 import { cookies } from 'next/headers';
 import { notFound } from 'next/navigation';
-import { ArrowLeft, Pencil, Leaf, Droplets, ExternalLink } from 'lucide-react';
+import { ArrowLeft, Pencil, Leaf, Droplets, ExternalLink, History } from 'lucide-react';
 import { PlantStatsChart } from '@/components/plants/plant-stats-chart';
 import { PlantPhotoGallery } from '@/components/plants/plant-photo-gallery';
 import { AIAnalysisButton } from '@/components/plants/ai-analysis-button';
@@ -104,7 +104,17 @@ export default async function PlantDetailPage({ params }: { params: Promise<{ id
           {/* AI scan */}
           <Card className="border-gray-200 shadow-sm">
             <CardHeader className="pb-2">
-              <CardTitle className="text-base">{t('ai.scanButton')}</CardTitle>
+              <div className="flex items-center justify-between">
+                <CardTitle className="text-base">{t('ai.scanButton')}</CardTitle>
+                {analyses.length > 0 && (
+                  <Button variant="ghost" size="sm" asChild className="rounded-full text-xs gap-1">
+                    <Link href={`/plants/${id}/analyses`}>
+                      <History className="h-3.5 w-3.5" />
+                      {t('plants.analysisHistory')}
+                    </Link>
+                  </Button>
+                )}
+              </div>
             </CardHeader>
             <CardContent>
               <AIAnalysisButton plantId={id} />

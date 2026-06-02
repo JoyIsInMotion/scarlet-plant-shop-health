@@ -346,38 +346,6 @@ async function main() {
     await chunkInsert(schema.orderItems, itemRows, 500);
   }
 
-  // ── AI analyses ───────────────────────────────────────────────────────────
-  console.log('🤖 Seeding 500 AI analyses...');
-  const conditions  = schema.aiConditionEnum.enumValues;
-  const confidences = schema.aiConfidenceEnum.enumValues;
-  const demoPlants  = insertedPlants.filter(p => p.userId === demo.id);
-  const analysisRows = Array.from({ length: 500 }, () => {
-    const plant   = faker.helpers.arrayElement(demoPlants.length ? demoPlants : insertedPlants);
-    const species = insertedSpecies[Math.floor(Math.random() * insertedSpecies.length)];
-    const score   = parseFloat(faker.number.float({ min: 30, max: 100, fractionDigits: 1 }).toFixed(1));
-    return {
-      plantId:                   plant.id,
-      userId:                    plant.userId,
-      imageUrl:                  `https://example.com/analyses/${faker.string.uuid()}.jpg`,
-      healthScore:               score,
-      overallCondition:          faker.helpers.arrayElement(conditions),
-      issues:                    score < 60
-        ? [{ name: 'Yellowing leaves', severity: 'moderate', description: 'Lower leaves showing signs of yellowing.' }]
-        : [],
-      careRecommendations:       ['Water regularly', 'Ensure adequate light'],
-      wateringNeeded:            faker.datatype.boolean(),
-      identifiedCommonName:      species.commonNameEn,
-      identifiedScientificName:  species.scientificName,
-      identifiedFamily:          species.family,
-      identifiedCareDifficulty:  species.careDifficulty,
-      matchedSpeciesId:          species.id,
-      confidence:                faker.helpers.arrayElement(confidences),
-      modelUsed:                 'gemini-1.5-flash',
-      analyzedAt:                faker.date.recent({ days: 90 }),
-    };
-  });
-  await chunkInsert(schema.aiAnalyses, analysisRows, 250);
-
   // ── Summary ───────────────────────────────────────────────────────────────
   console.log('\n✅ Seed complete!');
   console.log(`   users          : ${insertedUsers.length}`);
@@ -386,8 +354,7 @@ async function main() {
   console.log(`   plant_stats    : ${statsRows.length}`);
   console.log(`   products       : ${insertedProducts.length}`);
   console.log(`   orders         : 2000`);
-  console.log(`   ai_analyses    : ${analysisRows.length}`);
-  console.log(`   TOTAL ≈ ${statsRows.length + 2000 + analysisRows.length + insertedPlants.length + insertedProducts.length + insertedSpecies.length + insertedUsers.length} rows`);
+  console.log(`   TOTAL ≈ ${statsRows.length + 2000 + insertedPlants.length + insertedProducts.length + insertedSpecies.length + insertedUsers.length} rows`);
   process.exit(0);
 }
 

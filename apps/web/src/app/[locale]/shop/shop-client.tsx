@@ -1,9 +1,6 @@
 'use client';
 import { useLocale, useTranslations } from 'next-intl';
-import { ShoppingBag, ChevronRight } from 'lucide-react';
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
+import { ShoppingBag, Flower2, SlidersHorizontal } from 'lucide-react';
 import { Pagination } from '@/components/ui/pagination';
 import { useCart } from '@/hooks/use-cart';
 import { useToast } from '@/hooks/use-toast';
@@ -58,116 +55,148 @@ export function ShopClient({ products, total, locale, initialParams, page, pageS
     toast({ title: t('shop.addToCart'), description: getName(p), variant: 'success' });
   }
 
+  const activeCategory = initialParams.category ?? '';
+
   return (
-    <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-      <div className="mb-6 rounded-[2rem] border border-red-100 bg-gradient-to-br from-white via-white to-rose-50 p-5 shadow-sm sm:p-6">
-        <div className="max-w-3xl space-y-3">
-          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-red-500">{t('nav.shop')}</p>
-          <h1 className="text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl">{t('shop.title')}</h1>
-          <p className="text-sm leading-6 text-gray-600 sm:text-base">{t('shop.subtitle')}</p>
-          <p className="text-sm font-medium text-gray-500">{total} {currentLocale === 'en' ? 'products' : 'продукта'}</p>
-        </div>
+    <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+
+      {/* ── Page header ── */}
+      <div className="mb-8 border-b border-border pb-6">
+        <p className="mb-2 text-[11px] font-bold uppercase tracking-[0.28em] text-scarlet">
+          {t('nav.shop')}
+        </p>
+        <h1 className="font-display text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+          {t('shop.title')}
+        </h1>
+        <p className="mt-2 text-sm text-muted">
+          {t('shop.subtitle')}&nbsp;·&nbsp;
+          <span className="font-medium text-foreground">
+            {total} {currentLocale === 'en' ? 'products' : 'продукта'}
+          </span>
+        </p>
       </div>
 
-      <form method="get" className="mb-6 rounded-[2rem] border border-gray-200 bg-white p-4 shadow-sm">
+      {/* ── Category quick-links ── */}
+      <div className="mb-6 flex flex-wrap gap-2">
+        <Link
+          href="/shop"
+          className={`rounded-full border px-4 py-1.5 text-xs font-semibold transition-colors ${
+            activeCategory === ''
+              ? 'border-scarlet bg-scarlet text-white'
+              : 'border-border bg-surface text-muted hover:border-scarlet/40 hover:text-scarlet'
+          }`}
+        >
+          {t('shop.allCategories')}
+        </Link>
+        {CATEGORIES.map((c) => (
+          <Link
+            key={c}
+            href={`/shop?category=${c}`}
+            className={`rounded-full border px-4 py-1.5 text-xs font-semibold transition-colors ${
+              activeCategory === c
+                ? 'border-scarlet bg-scarlet text-white'
+                : 'border-border bg-surface text-muted hover:border-scarlet/40 hover:text-scarlet'
+            }`}
+          >
+            {t(`shop.category.${c}`)}
+          </Link>
+        ))}
+      </div>
+
+      {/* ── Search + sort ── */}
+      <form method="get" className="mb-8">
         <input type="hidden" name="page" value="1" />
-        <div className="grid gap-3 lg:grid-cols-[minmax(0,1.7fr)_minmax(11rem,1fr)_minmax(11rem,1fr)_auto]">
+        {activeCategory && <input type="hidden" name="category" value={activeCategory} />}
+        <div className="flex flex-wrap items-center gap-2">
+          <SlidersHorizontal className="h-4 w-4 text-muted" />
           <input
             name="search"
             defaultValue={initialParams.search ?? ''}
             placeholder={t('common.search')}
-            className="h-11 rounded-2xl border border-gray-200 bg-gray-50 px-4 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-red-500"
+            className="h-9 min-w-[160px] flex-1 rounded-xl border border-border bg-surface px-3 text-sm text-foreground placeholder:text-muted-light focus:outline-none focus:ring-2 focus:ring-scarlet/30 sm:flex-none"
           />
-          <select
-            name="category"
-            defaultValue={initialParams.category ?? ''}
-            className="h-11 rounded-2xl border border-gray-200 bg-gray-50 px-4 text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-red-500"
-          >
-            <option value="">{t('shop.allCategories')}</option>
-            {CATEGORIES.map((c) => (
-              <option key={c} value={c}>{t(`shop.category.${c}`)}</option>
-            ))}
-          </select>
           <select
             name="sort"
             defaultValue={initialParams.sort ?? 'createdAt'}
-            className="h-11 rounded-2xl border border-gray-200 bg-gray-50 px-4 text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-red-500"
+            className="h-9 rounded-xl border border-border bg-surface px-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-scarlet/30"
           >
             <option value="createdAt">{t('shop.newest')}</option>
             <option value="price">{t('shop.priceDesc')}</option>
           </select>
           <button
             type="submit"
-            className="inline-flex h-11 items-center justify-center gap-2 rounded-2xl bg-red-600 px-5 text-sm font-semibold text-white transition-colors hover:bg-red-700"
+            className="h-9 rounded-xl bg-scarlet px-5 text-sm font-semibold text-white transition-colors hover:bg-scarlet-dark"
           >
             {t('common.search')}
           </button>
         </div>
       </form>
 
+      {/* ── Products ── */}
       {products.length === 0 ? (
-        <div className="rounded-3xl border border-dashed border-gray-200 bg-white py-16 text-center text-gray-400">
-          <ShoppingBag className="h-12 w-12 mx-auto mb-3 opacity-30" />
-          <p>{t('common.noResults')}</p>
+        <div className="flex flex-col items-center justify-center py-24 text-muted">
+          <Flower2 className="mb-3 h-10 w-10 opacity-20" />
+          <p className="text-sm">{t('common.noResults')}</p>
         </div>
       ) : (
         <>
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
-          {products.map((p) => (
-            <Card key={p.id} className="group flex h-full flex-col overflow-hidden border-gray-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-              <Link href={`/shop/${p.slug}`} className="block shrink-0">
-                <div className="aspect-[4/3] overflow-hidden bg-gray-100">
-                  {p.imageUrl ? (
-                    <img src={p.imageUrl} alt={getName(p)} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
-                  ) : (
-                    <div className="flex h-full items-center justify-center">
-                      <ShoppingBag className="h-10 w-10 text-gray-300" />
-                    </div>
-                  )}
-                </div>
-              </Link>
-              <CardContent className="flex flex-1 flex-col p-4">
-                <div className="mb-4 flex items-start justify-between gap-2">
-                  <Link href={`/shop/${p.slug}`} className="line-clamp-2 text-base font-semibold text-gray-900 transition-colors hover:text-red-700">
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            {products.map((p) => (
+              <div
+                key={p.id}
+                className="group flex flex-col overflow-hidden rounded-2xl border border-border-light bg-surface transition-all duration-200 hover:border-border hover:shadow-lg hover:shadow-scarlet/5"
+              >
+                {/* Image */}
+                <Link href={`/shop/${p.slug}`} className="block shrink-0">
+                  <div className="aspect-square overflow-hidden bg-cream">
+                    {p.imageUrl ? (
+                      <img
+                        src={p.imageUrl}
+                        alt={getName(p)}
+                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                    ) : (
+                      <div className="flex h-full items-center justify-center">
+                        <Flower2 className="h-10 w-10 text-border" />
+                      </div>
+                    )}
+                  </div>
+                </Link>
+
+                {/* Info */}
+                <div className="flex flex-1 flex-col p-3.5">
+                  <p className="mb-0.5 text-[10px] font-semibold uppercase tracking-widest text-muted-light">
+                    {t(`shop.category.${p.category as typeof CATEGORIES[number]}`)}
+                  </p>
+                  <Link
+                    href={`/shop/${p.slug}`}
+                    className="mb-3 line-clamp-2 text-sm font-semibold leading-snug text-foreground transition-colors hover:text-scarlet"
+                  >
                     {getName(p)}
                   </Link>
-                  <Badge variant="default" className="shrink-0 rounded-full text-xs">
-                    {t(`shop.category.${p.category as typeof CATEGORIES[number]}`)}
-                  </Badge>
-                </div>
 
-                <div className="mt-auto space-y-3">
-                  <div className="flex items-center justify-between gap-2">
-                    <div>
-                      <span className="block text-xl font-bold text-gray-900">{formatPrice(p.price)}</span>
-                      <span className="text-xs text-gray-400">
-                        {p.stock > 0 ? `${p.stock} ${t('shop.inStock')}` : t('shop.outOfStock')}
-                      </span>
+                  <div className="mt-auto">
+                    <div className="mb-2.5 flex items-baseline justify-between">
+                      <p className="text-base font-bold text-foreground">{formatPrice(p.price)}</p>
+                      <p className="text-[10px] text-muted-light">
+                        {p.stock > 0 ? `${p.stock} бр.` : t('shop.outOfStock')}
+                      </p>
                     </div>
-                    <Button asChild variant="ghost" size="sm" className="rounded-full text-red-700 hover:bg-red-50 hover:text-red-800">
-                      <Link href={`/shop/${p.slug}`} className="inline-flex items-center gap-1">
-                        {t('shop.viewDetails')}
-                        <ChevronRight className="h-4 w-4" />
-                      </Link>
-                    </Button>
+                    <button
+                      onClick={() => handleAddToCart(p)}
+                      disabled={p.stock === 0}
+                      className="w-full rounded-xl bg-scarlet py-2 text-xs font-semibold text-white transition-all hover:bg-scarlet-dark disabled:cursor-not-allowed disabled:opacity-40"
+                    >
+                      {p.stock === 0 ? t('shop.outOfStock') : t('shop.addToCart')}
+                    </button>
                   </div>
-                  <Button
-                    size="sm"
-                    onClick={() => handleAddToCart(p)}
-                    disabled={p.stock === 0}
-                    className="h-10 w-full rounded-2xl"
-                  >
-                    <ShoppingBag className="h-3.5 w-3.5" />
-                    {p.stock === 0 ? t('shop.outOfStock') : t('shop.addToCart')}
-                  </Button>
                 </div>
-              </CardContent>
-            </Card>
-          ))}
+              </div>
+            ))}
           </div>
 
           {total > pageSize && (
-            <div className="mt-8 flex flex-col items-center gap-2">
+            <div className="mt-10 flex flex-col items-center gap-2">
               <Pagination
                 page={page}
                 total={total}
@@ -181,7 +210,7 @@ export function ShopClient({ products, total, locale, initialParams, page, pageS
                   return `?${params.toString()}`;
                 }}
               />
-              <p className="text-xs text-gray-400">
+              <p className="text-xs text-muted">
                 {(page - 1) * pageSize + 1}–{Math.min(page * pageSize, total)} {currentLocale === 'en' ? 'of' : 'от'} {total}
               </p>
             </div>

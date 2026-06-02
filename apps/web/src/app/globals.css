@@ -1,36 +1,71 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --scarlet: #dc2626;
-  --scarlet-dark: #b91c1c;
-  --scarlet-light: #fca5a5;
+  /* ── Brand: Scarlet Rose ── */
+  --scarlet: #C2375A;
+  --scarlet-dark: #A02649;
+  --scarlet-light: #FCEEF3;
+  --rose: #E8829A;
+
+  /* ── Botanical Sage ── */
+  --botanical: #5A7A65;
+  --botanical-dark: #3D5A49;
+  --botanical-light: #EDF4EF;
+
+  /* ── Backgrounds — always light, no dark mode ── */
+  --background: #FFFFFF;
+  --surface: #FFFFFF;
+  --cream: #FDF7F9;        /* barely-blush white for hero sections */
+  --subtle: #F9EEF3;       /* soft pink for hover / active states  */
+
+  /* ── Text ── */
+  --foreground: #1A0D12;
+  --muted: #7A6070;
+  --muted-light: #B8A0AC;
+
+  /* ── Borders ── */
+  --border: #EDD8E2;
+  --border-light: #F7EEF2;
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-cream: var(--cream);
+  --color-subtle: var(--subtle);
   --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-muted-light: var(--muted-light);
+
   --color-scarlet: var(--scarlet);
   --color-scarlet-dark: var(--scarlet-dark);
   --color-scarlet-light: var(--scarlet-light);
+  --color-rose: var(--rose);
+
+  --color-botanical: var(--botanical);
+  --color-botanical-dark: var(--botanical-dark);
+  --color-botanical-light: var(--botanical-light);
+
+  --color-border: var(--border);
+  --color-border-light: var(--border-light);
+
+  /* ── Fonts ── */
+  --font-display: var(--font-playfair), Georgia, 'Times New Roman', serif;
+  --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* No dark mode — these reference sites are always light */
 
 body {
-  background: var(--background);
+  background: #ffffff;
   color: var(--foreground);
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: var(--font-sans);
+  color-scheme: light;
 }
 
+/* ── Health indicator rings ── */
 .health-ring-excellent { stroke: #22c55e; }
-.health-ring-good { stroke: #84cc16; }
-.health-ring-fair { stroke: #eab308; }
-.health-ring-poor { stroke: #f97316; }
-.health-ring-critical { stroke: #ef4444; }
+.health-ring-good      { stroke: #84cc16; }
+.health-ring-fair      { stroke: #eab308; }
+.health-ring-poor      { stroke: #f97316; }
+.health-ring-critical  { stroke: #ef4444; }

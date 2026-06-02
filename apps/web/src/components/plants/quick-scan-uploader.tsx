@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { AIAnalysisCard } from './ai-analysis-card';
 import { useToast } from '@/hooks/use-toast';
 import { LoadingSpinner } from '@/components/ui/loading-spinner';
+import { apiFetch } from '@/lib/api/client';
 import type { AIAnalysis } from '@scarlet/shared';
 
 export function QuickScanUploader() {
@@ -38,7 +39,7 @@ export function QuickScanUploader() {
     try {
       const form = new FormData();
       form.append('image', file);
-      const res = await fetch('/api/ai/quick-scan', { method: 'POST', body: form });
+      const res = await apiFetch('/api/ai/quick-scan', { method: 'POST', body: form });
       const json = await res.json();
       if (!res.ok) throw new Error(json.error ?? t('errors.serverError'));
       setAnalysis(json.data.analysis);
