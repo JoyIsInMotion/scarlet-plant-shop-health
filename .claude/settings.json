@@ -1,6 +1,7 @@
 {
   "permissions": {
     "allow": [
+      "Bash(npm *)",
       "PowerShell(ls -r \"c:\\\\Users\\\\GRIGS\\\\Documents\\\\joy softuni\\\\scarlet-plant-shop-health-main\\\\packages\\\\shared\\\\src\" 2>/dev/null | ForEach-Object { $_.FullName.Replace\\(\"c:\\\\Users\\\\GRIGS\\\\Documents\\\\joy softuni\\\\scarlet-plant-shop-health-main\\\\\", \"\"\\) })",
       "PowerShell(head -50)",
       "PowerShell(Get-ChildItem -Path \"c:\\\\Users\\\\GRIGS\\\\Documents\\\\joy softuni\\\\scarlet-plant-shop-health-main\\\\apps\\\\web\" -Recurse -Force | Where-Object { $_.Name -match \"\\(seed|fixture\\)\" })",

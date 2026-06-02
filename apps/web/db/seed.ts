@@ -6,6 +6,7 @@ import { drizzle } from 'drizzle-orm/neon-http';
 import * as schema from '../src/lib/db/schema';
 import bcrypt from 'bcryptjs';
 import { faker } from '@faker-js/faker';
+import { SPECIES_IMAGES, PRODUCT_IMAGES } from './images';
 
 faker.seed(42);
 
@@ -175,36 +176,41 @@ type P = [string, string, string, string, string, number, typeof schema.productC
 //        nameBg  nameEn  descBg  descEn  slug    price  category                                                 stock
 
 const PRODUCTS: P[] = [
-  ['Червена роза — букет',          'Red Rose Bouquet',            'Класически букет от 11 ярко червени рози, символ на любовта.',         'Classic bouquet of 11 bright red roses, a symbol of love.',             'red-rose-bouquet',           29.99, 'bouquet',      50],
-  ['Бяла роза — букет',             'White Rose Bouquet',          'Елегантен букет от 11 бели рози, идеален за всяко тържество.',          'Elegant bouquet of 11 white roses, perfect for any celebration.',       'white-rose-bouquet',         27.99, 'bouquet',      40],
-  ['Смесен пролетен букет',         'Mixed Spring Bouquet',        'Цветен букет от сезонни пролетни цветя.',                               'Colourful bouquet of seasonal spring flowers.',                         'mixed-spring-bouquet',       34.99, 'bouquet',      30],
-  ['Лилав лале букет',              'Purple Tulip Bouquet',        'Букет от 15 лилави лалета, свежо и елегантно.',                         'Bouquet of 15 purple tulips, fresh and elegant.',                       'purple-tulip-bouquet',       24.99, 'bouquet',      35],
-  ['Слънчогледов букет',            'Sunflower Bouquet',           'Ярък букет от 7 слънчогледа, носещ радост.',                            'Bright bouquet of 7 sunflowers bringing joy.',                          'sunflower-bouquet',          22.99, 'bouquet',      45],
-  ['Хризантема букет',              'Chrysanthemum Bouquet',       'Пищен букет от смесени хризантеми.',                                   'Lush bouquet of mixed chrysanthemums.',                                 'chrysanthemum-bouquet',      19.99, 'bouquet',      55],
-  ['Рози и герберов букет',         'Rose and Gerbera Bouquet',    'Красиво съчетание от рози и герберки.',                                 'Beautiful combination of roses and gerberas.',                          'rose-gerbera-bouquet',       32.99, 'bouquet',      25],
-  ['Романтичен букет',              'Romantic Bouquet',            'Луксозен букет от алена роза, лилиум и гербера.',                       'Luxurious bouquet of scarlet rose, lily and gerbera.',                  'romantic-bouquet',           44.99, 'bouquet',      20],
-  ['Нарцис букет',                  'Daffodil Bouquet',            'Свеж пролетен букет от 20 нарциса.',                                    'Fresh spring bouquet of 20 daffodils.',                                 'daffodil-bouquet',           18.99, 'bouquet',      60],
-  ['Зюмбюл букет',                  'Hyacinth Bouquet',            'Ароматен букет от цветни зюмбюли.',                                     'Fragrant bouquet of colourful hyacinths.',                              'hyacinth-bouquet',           21.99, 'bouquet',      40],
-  ['Монстера в саксия',             'Monstera in Pot',             'Монстера делициоза в декоративна саксия — топхит за дома.',             'Monstera deliciosa in a decorative pot — a home bestseller.',           'monstera-pot',               49.99, 'potted_plant', 20],
-  ['Фикус лирата в саксия',         'Fiddle-Leaf Fig in Pot',      'Впечатляващ фикус лирата за модерен интериор.',                         'Impressive fiddle-leaf fig for modern interiors.',                      'fiddle-leaf-fig-pot',        59.99, 'potted_plant', 15],
-  ['Спатифилум в саксия',           'Peace Lily in Pot',           'Спатифилум — елегантно растение за пречистване на въздуха.',            'Peace lily — elegant air-purifying plant.',                             'peace-lily-pot',             24.99, 'potted_plant', 30],
-  ['Замиокулкас в саксия',          'ZZ Plant in Pot',             'Нискомаслено и красиво растение за всяка стая.',                        'Low-maintenance and beautiful plant for any room.',                     'zz-plant-pot',               29.99, 'potted_plant', 25],
-  ['Антуриум в саксия',             'Anthurium in Pot',            'Антуриум с ярки лакирани цветове — перфектен подарък.',                 'Anthurium with bright lacquered blooms — a perfect gift.',              'anthurium-pot',              34.99, 'potted_plant', 20],
-  ['Потос в кашпа',                 'Pothos in Hanging Pot',       'Ефектен потос в окачена кашпа за свеж зелен акцент.',                   'Eye-catching pothos in a hanging pot for a fresh green accent.',        'pothos-hanging-pot',         19.99, 'potted_plant', 35],
-  ['Здравец в саксия',              'Geranium in Pot',             'Цъфтящ здравец, идеален за балкон или перваз.',                         'Blooming geranium, ideal for balcony or windowsill.',                   'geranium-pot',               14.99, 'potted_plant', 50],
-  ['Циклама в саксия',              'Cyclamen in Pot',             'Нежна циклама в пастелни нюанси.',                                      'Delicate cyclamen in pastel shades.',                                   'cyclamen-pot',               17.99, 'potted_plant', 40],
-  ['Ехеверия сукулент',             'Echeveria Succulent',         'Миниатюрна розетка ехеверия в теракотена саксия.',                      'Miniature echeveria rosette in a terracotta pot.',                      'echeveria-succulent',        12.99, 'succulent',    60],
-  ['Смесен сукулент сет',           'Mixed Succulent Set',         'Комплект от 3 различни сукулента в мини саксии.',                       'Set of 3 different succulents in mini pots.',                           'mixed-succulent-set',        21.99, 'succulent',    40],
-  ['Кактус Опунция',                'Bunny Ears Cactus',           'Сладурска опунция с форма на зайчи уши.',                               'Cute opuntia shaped like bunny ears.',                                  'bunny-ears-cactus',           9.99, 'succulent',    55],
-  ['Нефритено дърво',               'Jade Plant',                  'Класическо нефритено дърво — символ на богатство.',                     'Classic jade plant — a symbol of prosperity.',                          'jade-plant',                 16.99, 'succulent',    45],
-  ['Алое вера',                     'Aloe Vera Plant',             'Алое вера в саксия — лечебно и декоративно.',                           'Aloe vera in a pot — medicinal and decorative.',                        'aloe-vera-plant',            14.99, 'succulent',    50],
-  ['Монстера адансони тропик',      'Monstera Adansonii Tropical', 'Деликатна монстера адансони с ажурни листа.',                           'Delicate monstera adansonii with lacy leaves.',                         'monstera-adansonii-tropical', 39.99, 'tropical',    18],
-  ['Стрелиция Птица на рая',        'Bird of Paradise',            'Екзотична стрелиция — атрактивно тропическо растение.',                 'Exotic strelitzia — an eye-catching tropical plant.',                   'bird-of-paradise',           69.99, 'tropical',    10],
-  ['Арека палма',                   'Areca Palm',                  'Изящна арека палма за средиземноморска атмосфера.',                     'Graceful areca palm for a Mediterranean atmosphere.',                   'areca-palm',                 54.99, 'tropical',    12],
-  ['Аглаонема тропик',              'Aglaonema Tropical',          'Пъстра аглаонема с декоративни листа.',                                 'Variegated aglaonema with decorative leaves.',                          'aglaonema-tropical',         27.99, 'tropical',    22],
-  ['Пролетна украса — лале',        'Spring Tulip Decoration',     'Лале в саксия за пролетна украса.',                                     'Tulip in a pot for spring decoration.',                                 'spring-tulip-deco',          13.99, 'seasonal',    70],
-  ['Коледна звезда',                'Christmas Poinsettia',        'Традиционна коледна звезда (пуансетия) в червено.',                     'Traditional red Christmas poinsettia.',                                 'christmas-poinsettia',       15.99, 'seasonal',    80],
-  ['Великденски зюмбюл',            'Easter Hyacinth',             'Ароматен зюмбюл в пастелна саксия за Великден.',                        'Fragrant hyacinth in a pastel pot for Easter.',                         'easter-hyacinth',            16.99, 'seasonal',    60],
+  // bouquets
+  ['Червена роза — букет',          'Red Rose Bouquet',            'Класически букет от 11 ярко червени рози, символ на любовта.',         'Classic bouquet of 11 bright red roses, a symbol of love.',             'red-rose-bouquet',            29.99, 'bouquet',      50],
+  ['Бяла роза — букет',             'White Rose Bouquet',          'Елегантен букет от 11 бели рози, идеален за всяко тържество.',          'Elegant bouquet of 11 white roses, perfect for any celebration.',       'white-rose-bouquet',          27.99, 'bouquet',      40],
+  ['Смесен пролетен букет',         'Mixed Spring Bouquet',        'Цветен букет от сезонни пролетни цветя.',                               'Colourful bouquet of seasonal spring flowers.',                         'mixed-spring-bouquet',        34.99, 'bouquet',      30],
+  ['Лилав лале букет',              'Purple Tulip Bouquet',        'Букет от 15 лилави лалета, свежо и елегантно.',                         'Bouquet of 15 purple tulips, fresh and elegant.',                       'purple-tulip-bouquet',        24.99, 'bouquet',      35],
+  ['Слънчогледов букет',            'Sunflower Bouquet',           'Ярък букет от 7 слънчогледа, носещ радост.',                            'Bright bouquet of 7 sunflowers bringing joy.',                          'sunflower-bouquet',           22.99, 'bouquet',      45],
+  ['Хризантема букет',              'Chrysanthemum Bouquet',       'Пищен букет от смесени хризантеми.',                                   'Lush bouquet of mixed chrysanthemums.',                                 'chrysanthemum-bouquet',       19.99, 'bouquet',      55],
+  ['Рози и герберов букет',         'Rose and Gerbera Bouquet',    'Красиво съчетание от рози и герберки.',                                 'Beautiful combination of roses and gerberas.',                          'rose-gerbera-bouquet',        32.99, 'bouquet',      25],
+  ['Романтичен букет',              'Romantic Bouquet',            'Луксозен букет от алена роза, лилиум и гербера.',                       'Luxurious bouquet of scarlet rose, lily and gerbera.',                  'romantic-bouquet',            44.99, 'bouquet',      20],
+  ['Нарцис букет',                  'Daffodil Bouquet',            'Свеж пролетен букет от 20 нарциса.',                                    'Fresh spring bouquet of 20 daffodils.',                                 'daffodil-bouquet',            18.99, 'bouquet',      60],
+  ['Зюмбюл букет',                  'Hyacinth Bouquet',            'Ароматен букет от цветни зюмбюли.',                                     'Fragrant bouquet of colourful hyacinths.',                              'hyacinth-bouquet',            21.99, 'bouquet',      40],
+  // potted plants
+  ['Монстера в саксия',             'Monstera in Pot',             'Монстера делициоза в декоративна саксия — топхит за дома.',             'Monstera deliciosa in a decorative pot — a home bestseller.',           'monstera-pot',                49.99, 'potted_plant', 20],
+  ['Фикус лирата в саксия',         'Fiddle-Leaf Fig in Pot',      'Впечатляващ фикус лирата за модерен интериор.',                         'Impressive fiddle-leaf fig for modern interiors.',                      'fiddle-leaf-fig-pot',         59.99, 'potted_plant', 15],
+  ['Спатифилум в саксия',           'Peace Lily in Pot',           'Спатифилум — елегантно растение за пречистване на въздуха.',            'Peace lily — elegant air-purifying plant.',                             'peace-lily-pot',              24.99, 'potted_plant', 30],
+  ['Замиокулкас в саксия',          'ZZ Plant in Pot',             'Нискомаслено и красиво растение за всяка стая.',                        'Low-maintenance and beautiful plant for any room.',                     'zz-plant-pot',                29.99, 'potted_plant', 25],
+  ['Антуриум в саксия',             'Anthurium in Pot',            'Антуриум с ярки лакирани цветове — перфектен подарък.',                 'Anthurium with bright lacquered blooms — a perfect gift.',              'anthurium-pot',               34.99, 'potted_plant', 20],
+  ['Потос в кашпа',                 'Pothos in Hanging Pot',       'Ефектен потос в окачена кашпа за свеж зелен акцент.',                   'Eye-catching pothos in a hanging pot for a fresh green accent.',        'pothos-hanging-pot',          19.99, 'potted_plant', 35],
+  ['Здравец в саксия',              'Geranium in Pot',             'Цъфтящ здравец, идеален за балкон или перваз.',                         'Blooming geranium, ideal for balcony or windowsill.',                   'geranium-pot',                14.99, 'potted_plant', 50],
+  ['Циклама в саксия',              'Cyclamen in Pot',             'Нежна циклама в пастелни нюанси.',                                      'Delicate cyclamen in pastel shades.',                                   'cyclamen-pot',                17.99, 'potted_plant', 40],
+  // succulents
+  ['Ехеверия сукулент',             'Echeveria Succulent',         'Миниатюрна розетка ехеверия в теракотена саксия.',                      'Miniature echeveria rosette in a terracotta pot.',                      'echeveria-succulent',         12.99, 'succulent',    60],
+  ['Смесен сукулент сет',           'Mixed Succulent Set',         'Комплект от 3 различни сукулента в мини саксии.',                       'Set of 3 different succulents in mini pots.',                           'mixed-succulent-set',         21.99, 'succulent',    40],
+  ['Кактус Опунция',                'Bunny Ears Cactus',           'Сладурска опунция с форма на зайчи уши.',                               'Cute opuntia shaped like bunny ears.',                                  'bunny-ears-cactus',            9.99, 'succulent',    55],
+  ['Нефритено дърво',               'Jade Plant',                  'Класическо нефритено дърво — символ на богатство.',                     'Classic jade plant — a symbol of prosperity.',                          'jade-plant',                  16.99, 'succulent',    45],
+  ['Алое вера',                     'Aloe Vera Plant',             'Алое вера в саксия — лечебно и декоративно.',                           'Aloe vera in a pot — medicinal and decorative.',                        'aloe-vera-plant',             14.99, 'succulent',    50],
+  // tropical
+  ['Монстера адансони тропик',      'Monstera Adansonii Tropical', 'Деликатна монстера адансони с ажурни листа.',                           'Delicate monstera adansonii with lacy leaves.',                         'monstera-adansonii-tropical', 39.99, 'tropical',     18],
+  ['Стрелиция Птица на рая',        'Bird of Paradise',            'Екзотична стрелиция — атрактивно тропическо растение.',                 'Exotic strelitzia — an eye-catching tropical plant.',                   'bird-of-paradise',            69.99, 'tropical',     10],
+  ['Арека палма',                   'Areca Palm',                  'Изящна арека палма за средиземноморска атмосфера.',                     'Graceful areca palm for a Mediterranean atmosphere.',                   'areca-palm',                  54.99, 'tropical',     12],
+  ['Аглаонема тропик',              'Aglaonema Tropical',          'Пъстра аглаонема с декоративни листа.',                                 'Variegated aglaonema with decorative leaves.',                          'aglaonema-tropical',          27.99, 'tropical',     22],
+  // seasonal
+  ['Пролетна украса — лале',        'Spring Tulip Decoration',     'Лале в саксия за пролетна украса.',                                     'Tulip in a pot for spring decoration.',                                 'spring-tulip-deco',           13.99, 'seasonal',     70],
+  ['Коледна звезда',                'Christmas Poinsettia',        'Традиционна коледна звезда (пуансетия) в червено.',                     'Traditional red Christmas poinsettia.',                                 'christmas-poinsettia',        15.99, 'seasonal',     80],
+  ['Великденски зюмбюл',            'Easter Hyacinth',             'Ароматен зюмбюл в пастелна саксия за Великден.',                        'Fragrant hyacinth in a pastel pot for Easter.',                         'easter-hyacinth',             16.99, 'seasonal',     60],
 ];
 
 // ── main ──────────────────────────────────────────────────────────────────────
@@ -243,6 +249,7 @@ async function main() {
       nativeRegionEn: nativeEn,
       nativeRegionBg: nativeBg,
       careGuide: careGuide(difficulty),
+      imageUrl: SPECIES_IMAGES[scientificName] ?? null,
       isVerified: true,
     }))
   ).returning();
@@ -300,6 +307,7 @@ async function main() {
       price:    price.toFixed(2),
       category,
       stock,
+      imageUrl: PRODUCT_IMAGES[slug] ?? null,
       isActive: true,
     }))
   ).returning();
