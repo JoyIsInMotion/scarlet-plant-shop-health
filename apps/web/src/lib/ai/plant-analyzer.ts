@@ -1,6 +1,6 @@
-import { GoogleGenerativeAI } from '@google/generative-ai';
+import Groq from 'groq-sdk';
 
-const genAI = new GoogleGenerativeAI(process.env.GOOGLE_AI_API_KEY!);
+const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 
 export interface AIIssue {
   name: string;
@@ -49,24 +49,36 @@ Return ONLY valid JSON matching this exact schema with no markdown fencing or ex
 If no health issues are detected, return an empty issues array.
 If you cannot clearly see a plant, set confidence to "low" and health_score to null.`;
 
+export const MODEL_NAME = 'meta-llama/llama-4-scout-17b-16e-instruct';
+
 export async function analyzePlantImage(
   imageBuffer: Buffer,
   mimeType: 'image/jpeg' | 'image/png' | 'image/webp'
 ): Promise<PlantAnalysisResult> {
-  const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' });
-
-  const result = await model.generateContent([
-    {
-      inlineData: {
-        mimeType,
-        data: imageBuffer.toString('base64'),
+  const response = await groq.chat.completions.create({
+    model: MODEL_NAME,
+    messages: [
+      {
+        role: 'user',
+        content: [
+          {
+            type: 'image_url',
+            image_url: {
+              url: `data:${mimeType};base64,${imageBuffer.toString('base64')}`,
+            },
+          },
+          {
+            type: 'text',
+            text: PLANT_ANALYSIS_PROMPT,
+          },
+        ],
       },
-    },
-    { text: PLANT_ANALYSIS_PROMPT },
-  ]);
+    ],
+    temperature: 0.1,
+    max_tokens: 1024,
+  });
 
-  const text = result.response.text().trim();
-  // Strip potential markdown code fences Gemini sometimes adds
+  const text = response.choices[0].message.content?.trim() ?? '';
   const json = text.replace(/^```(?:json)?\n?/, '').replace(/\n?```$/, '').trim();
 
   try {

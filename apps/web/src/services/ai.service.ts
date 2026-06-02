@@ -1,7 +1,7 @@
 import { eq, ilike } from 'drizzle-orm';
 import { db } from '@/lib/db';
 import { plants, aiAnalyses, plantSpecies } from '@/lib/db/schema';
-import { analyzePlantImage } from '@/lib/ai/plant-analyzer';
+import { analyzePlantImage, MODEL_NAME } from '@/lib/ai/plant-analyzer';
 import { checkAIRateLimit } from '@/lib/ai/rate-limit';
 import { uploadToR2 } from '@/lib/r2/client';
 import { MAX_FILE_SIZE_BYTES, ALLOWED_IMAGE_TYPES } from '@scarlet/shared';
@@ -38,7 +38,17 @@ export async function analyzeSavedPlant(plantId: string, userId: string, role: s
   const allowedMimes = ['image/jpeg', 'image/png', 'image/webp'] as const;
   const mimeType = allowedMimes.find((m) => rawType.startsWith(m)) ?? 'image/jpeg';
 
-  const analysis = await analyzePlantImage(imgBuffer, mimeType);
+  let analysis: Awaited<ReturnType<typeof analyzePlantImage>>;
+  try {
+    analysis = await analyzePlantImage(imgBuffer, mimeType);
+  } catch (e) {
+    console.error('AI analysis error:', e);
+    const msg = e instanceof Error ? e.message.toLowerCase() : '';
+    if (msg.includes('quota') || msg.includes('resource_exhausted') || msg.includes('rate limit') || msg.includes('rate_limit')) {
+      throw new ServiceError('AI service quota exceeded. Please try again later.', 503);
+    }
+    throw new ServiceError('AI analysis failed. Please try again.', 500);
+  }
 
   // Match existing species or create unverified catalog entry for high-confidence hits
   let matchedSpeciesId: string | null = null;
@@ -85,7 +95,7 @@ export async function analyzeSavedPlant(plantId: string, userId: string, role: s
       identifiedCareDifficulty: analysis.species.care_difficulty,
       matchedSpeciesId,
       confidence: analysis.confidence,
-      modelUsed: 'gemini-2.0-flash',
+      modelUsed: MODEL_NAME,
     })
     .returning();
 
@@ -114,9 +124,26 @@ export async function quickScan(userId: string, role: string, file: File) {
   const ext = file.type.split('/')[1];
   const key = `scans/${userId}/${randomUUID()}.${ext}`;
   const buffer = Buffer.from(await file.arrayBuffer());
-  const imageUrl = await uploadToR2(key, buffer, file.type);
 
-  const analysis = await analyzePlantImage(buffer, file.type as 'image/jpeg');
+  let imageUrl: string;
+  try {
+    imageUrl = await uploadToR2(key, buffer, file.type);
+  } catch (e) {
+    console.error('R2 upload error:', e);
+    throw new ServiceError('Failed to upload image. Check storage configuration.', 500);
+  }
+
+  let analysis: Awaited<ReturnType<typeof analyzePlantImage>>;
+  try {
+    analysis = await analyzePlantImage(buffer, file.type as 'image/jpeg');
+  } catch (e) {
+    console.error('AI analysis error:', e);
+    const msg = e instanceof Error ? e.message.toLowerCase() : '';
+    if (msg.includes('quota') || msg.includes('resource_exhausted') || msg.includes('rate limit') || msg.includes('rate_limit')) {
+      throw new ServiceError('AI service quota exceeded. Please try again later.', 503);
+    }
+    throw new ServiceError('AI analysis failed. Please try again.', 500);
+  }
 
   // Only match; quick scans don't create new catalog entries
   let matchedSpeciesId: string | null = null;
@@ -147,7 +174,7 @@ export async function quickScan(userId: string, role: string, file: File) {
       identifiedCareDifficulty: analysis.species.care_difficulty,
       matchedSpeciesId,
       confidence: analysis.confidence,
-      modelUsed: 'gemini-2.0-flash',
+      modelUsed: MODEL_NAME,
     })
     .returning();
 
