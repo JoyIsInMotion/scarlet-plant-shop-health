@@ -2,7 +2,7 @@
 import { useTranslations } from 'next-intl';
 import {
   Flower2, ShoppingBag, Leaf, ScanLine, ShieldCheck,
-  LogOut, Menu, X, ChevronDown,
+  LogOut, Menu, X, ChevronDown, Users, Receipt,
 } from 'lucide-react';
 import { useState } from 'react';
 import { useAuth } from '@/providers/auth-provider';
@@ -31,6 +31,7 @@ export function Navbar() {
   const authLinks = user
     ? [
         { href: '/plants', label: t('nav.myPlants'), icon: Leaf },
+        { href: '/orders', label: t('orders.myOrders'), icon: Receipt },
         { href: '/scan', label: t('nav.scan'), icon: ScanLine },
         ...(user.role === 'admin' ? [{ href: '/admin', label: t('nav.admin'), icon: ShieldCheck }] : []),
       ]
@@ -88,6 +89,7 @@ export function Navbar() {
             </div>
 
             <Link href="/catalog" className={navLinkClass}>{t('nav.catalog')}</Link>
+            <Link href="/community" className={navLinkClass}>{t('nav.community')}</Link>
             <Link href="/about" className={navLinkClass}>{t('nav.about')}</Link>
 
             {authLinks.length > 0 && (
@@ -107,7 +109,7 @@ export function Navbar() {
             <LanguageSwitcher className="hidden sm:flex" />
 
             {/* Cart */}
-            <Link href="/shop" className="relative text-muted transition-colors hover:text-scarlet">
+            <Link href="/cart" className="relative text-muted transition-colors hover:text-scarlet">
               <ShoppingBag className="h-5 w-5" />
               {count > 0 && (
                 <span className="absolute -right-1.5 -top-1.5 flex h-4 min-w-4 items-center justify-center rounded-full bg-scarlet px-0.5 text-[9px] font-bold text-white">
@@ -189,6 +191,10 @@ export function Navbar() {
           <div className="mb-3 space-y-0.5">
             <Link href="/catalog" onClick={() => setMobileOpen(false)} className="block rounded-xl px-3 py-2 text-sm text-muted transition-colors hover:bg-cream hover:text-foreground">
               {t('nav.catalog')}
+            </Link>
+            <Link href="/community" onClick={() => setMobileOpen(false)} className="flex items-center gap-2 rounded-xl px-3 py-2 text-sm text-muted transition-colors hover:bg-cream hover:text-foreground">
+              <Users className="h-4 w-4" />
+              {t('nav.community')}
             </Link>
             <Link href="/about" onClick={() => setMobileOpen(false)} className="block rounded-xl px-3 py-2 text-sm text-muted transition-colors hover:bg-cream hover:text-foreground">
               {t('nav.about')}

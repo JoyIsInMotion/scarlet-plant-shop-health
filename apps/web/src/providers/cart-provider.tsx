@@ -2,8 +2,32 @@
 import * as React from 'react';
 import { CartContext, CartItem } from '@/hooks/use-cart';
 
+const STORAGE_KEY = 'scarlet_cart';
+
+function readStorage(): CartItem[] {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    return raw ? (JSON.parse(raw) as CartItem[]) : [];
+  } catch {
+    return [];
+  }
+}
+
 export function CartProvider({ children }: { children: React.ReactNode }) {
   const [items, setItems] = React.useState<CartItem[]>([]);
+  // State (not ref) so the write effect only sees true on the re-render
+  // where items already holds the loaded values, preventing storage wipe.
+  const [hydrated, setHydrated] = React.useState(false);
+
+  React.useEffect(() => {
+    setItems(readStorage());
+    setHydrated(true);
+  }, []);
+
+  React.useEffect(() => {
+    if (!hydrated) return;
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
+  }, [items, hydrated]);
 
   const add = React.useCallback((item: Omit<CartItem, 'quantity'>) => {
     setItems((prev) => {

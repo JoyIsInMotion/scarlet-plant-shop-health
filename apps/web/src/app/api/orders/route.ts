@@ -9,11 +9,19 @@ async function getOrders(req: NextRequest) {
   if (!auth) return err('Unauthorized', 401);
 
   const sp = req.nextUrl.searchParams;
+  const opts = {
+    status: sp.get('status') ?? undefined,
+    from: sp.get('from') ? new Date(sp.get('from')!) : undefined,
+    to: sp.get('to') ? new Date(sp.get('to')!) : undefined,
+    search: sp.get('search') ?? undefined,
+  };
+
   return ok(
     await ordersService.listOrders(
       auth.sub,
       Math.min(parseInt(sp.get('limit') ?? '20', 10), 100),
-      parseInt(sp.get('offset') ?? '0', 10)
+      parseInt(sp.get('offset') ?? '0', 10),
+      opts
     )
   );
 }

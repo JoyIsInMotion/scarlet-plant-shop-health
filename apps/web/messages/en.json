@@ -33,6 +33,7 @@
     "shop": "Shop",
     "myPlants": "My Plants",
     "catalog": "Catalog",
+    "community": "Community",
     "scan": "Scan",
     "dashboard": "Dashboard",
     "profile": "Profile",
@@ -217,7 +218,12 @@
     "relatedProducts": "Related products",
     "orderPlaced": "Order placed successfully!",
     "shippingAddress": "Shipping address",
-    "orderNotes": "Order notes"
+    "orderNotes": "Order notes",
+    "collectFromStore": "Collect from store",
+    "collectFromStoreDesc": "Your order will be ready for pickup at our store",
+    "fulfillmentMethod": "Fulfillment method",
+    "loginToCheckout": "Log in to place order",
+    "continueShopping": "Continue shopping"
   },
   "orders": {
     "myOrders": "My Orders",
@@ -232,7 +238,20 @@
     },
     "orderedOn": "Ordered on",
     "items": "Items",
-    "noOrders": "You haven't placed any orders"
+    "noOrders": "You haven't placed any orders",
+    "noOrdersFiltered": "No orders match your filters",
+    "searchPlaceholder": "Search by product name or order ID...",
+    "allStatuses": "All statuses",
+    "filterFrom": "From",
+    "filterTo": "To",
+    "clearFilters": "Clear filters"
+  },
+  "community": {
+    "title": "Community",
+    "subtitle": "Browse plants from other members",
+    "searchPlaceholder": "Search plants...",
+    "likedBy": "Liked by",
+    "grownBy": "Grown by"
   },
   "admin": {
     "title": "Admin Panel",

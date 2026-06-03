@@ -33,6 +33,7 @@
     "shop": "Магазин",
     "myPlants": "Моите растения",
     "catalog": "Каталог",
+    "community": "Общност",
     "scan": "Сканирай",
     "dashboard": "Табло",
     "profile": "Профил",
@@ -175,7 +176,7 @@
       "humidity": "Влажност",
       "fertilizer": "Тор",
       "soil": "Почва",
-      "toxicity": "Домашни"
+      "toxicity": "Домашни любимци"
     },
     "statusMessage": {
       "excellent": "Растението ти процъфтява!",
@@ -217,7 +218,12 @@
     "relatedProducts": "Подобни продукти",
     "orderPlaced": "Поръчката е направена успешно!",
     "shippingAddress": "Адрес за доставка",
-    "orderNotes": "Бележки към поръчката"
+    "orderNotes": "Бележки към поръчката",
+    "collectFromStore": "Вземи от магазина",
+    "collectFromStoreDesc": "Поръчката ви ще бъде готова за вземане от магазина",
+    "fulfillmentMethod": "Начин на получаване",
+    "loginToCheckout": "Влез за поръчка",
+    "continueShopping": "Продължи пазаруването"
   },
   "orders": {
     "myOrders": "Моите поръчки",
@@ -232,7 +238,20 @@
     },
     "orderedOn": "Поръчано на",
     "items": "Артикули",
-    "noOrders": "Нямате направени поръчки"
+    "noOrders": "Нямате направени поръчки",
+    "noOrdersFiltered": "Няма поръчки, отговарящи на филтрите",
+    "searchPlaceholder": "Търсете по продукт или номер на поръчка...",
+    "allStatuses": "Всички статуси",
+    "filterFrom": "От",
+    "filterTo": "До",
+    "clearFilters": "Изчисти филтрите"
+  },
+  "community": {
+    "title": "Общност",
+    "subtitle": "Разгледайте растенията на другите потребители",
+    "searchPlaceholder": "Търсете растения...",
+    "likedBy": "Харесано от",
+    "grownBy": "Отглеждано от"
   },
   "admin": {
     "title": "Администрация",

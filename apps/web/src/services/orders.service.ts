@@ -1,22 +1,85 @@
-import { eq, and, desc, inArray, count } from 'drizzle-orm';
+import { eq, and, desc, inArray, count, gte, lte, ilike, or, sql } from 'drizzle-orm';
 import { db } from '@/lib/db';
 import { orders, orderItems, products } from '@/lib/db/schema';
 import { orderSchema } from '@scarlet/shared';
 import { ServiceError } from './service-error';
 
-export async function listOrders(userId: string, limit: number, offset: number) {
+type OrderStatus = 'pending' | 'confirmed' | 'processing' | 'shipped' | 'delivered' | 'cancelled';
+
+export interface ListOrdersOpts {
+  status?: string;
+  from?: Date;
+  to?: Date;
+  search?: string;
+}
+
+export async function listOrders(userId: string, limit: number, offset: number, opts: ListOrdersOpts = {}) {
+  const conditions = [eq(orders.userId, userId)];
+
+  if (opts.status) {
+    conditions.push(eq(orders.status, opts.status as OrderStatus));
+  }
+  if (opts.from) {
+    conditions.push(gte(orders.createdAt, opts.from));
+  }
+  if (opts.to) {
+    const end = new Date(opts.to);
+    end.setHours(23, 59, 59, 999);
+    conditions.push(lte(orders.createdAt, end));
+  }
+  if (opts.search) {
+    const term = `%${opts.search}%`;
+    const idTerm = `${opts.search.toLowerCase()}%`;
+    // UUID columns can't use ilike directly — cast to text first
+    const idCondition = sql`${orders.id}::text ilike ${idTerm}`;
+    const matching = await db
+      .selectDistinct({ orderId: orderItems.orderId })
+      .from(orderItems)
+      .leftJoin(products, eq(products.id, orderItems.productId))
+      .where(or(ilike(products.nameBg, term), ilike(products.nameEn, term)));
+    const matchIds = matching.map((r) => r.orderId).filter(Boolean);
+    conditions.push(
+      matchIds.length > 0
+        ? or(idCondition, inArray(orders.id, matchIds))!
+        : idCondition
+    );
+  }
+
+  const where = and(...conditions);
+
   const [userOrders, [{ total }]] = await Promise.all([
-    db
-      .select()
-      .from(orders)
-      .where(eq(orders.userId, userId))
-      .orderBy(desc(orders.createdAt))
-      .limit(limit)
-      .offset(offset),
-    db.select({ total: count() }).from(orders).where(eq(orders.userId, userId)),
+    db.select().from(orders).where(where).orderBy(desc(orders.createdAt)).limit(limit).offset(offset),
+    db.select({ total: count() }).from(orders).where(where),
   ]);
 
-  return { items: userOrders, total: Number(total), limit, offset };
+  if (userOrders.length === 0) return { items: [], total: 0, limit, offset };
+
+  const orderIds = userOrders.map((o) => o.id);
+  const itemRows = await db
+    .select({
+      orderId: orderItems.orderId,
+      quantity: orderItems.quantity,
+      unitPrice: orderItems.unitPrice,
+      nameBg: products.nameBg,
+      nameEn: products.nameEn,
+      imageUrl: products.imageUrl,
+    })
+    .from(orderItems)
+    .leftJoin(products, eq(products.id, orderItems.productId))
+    .where(inArray(orderItems.orderId, orderIds));
+
+  const byOrder = new Map<string, typeof itemRows>();
+  for (const row of itemRows) {
+    if (!byOrder.has(row.orderId)) byOrder.set(row.orderId, []);
+    byOrder.get(row.orderId)!.push(row);
+  }
+
+  return {
+    items: userOrders.map((o) => ({ ...o, items: byOrder.get(o.id) ?? [] })),
+    total: Number(total),
+    limit,
+    offset,
+  };
 }
 
 export async function createOrder(userId: string, data: unknown) {
