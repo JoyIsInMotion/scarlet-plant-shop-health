@@ -29,7 +29,7 @@ export function HealthSummaryPanel({ healthScore, analysis }: HealthSummaryPanel
 
   const condition = analysis?.overallCondition ?? deriveCondition(healthScore);
   const issues = (analysis?.issues ?? []) as Array<{ name: string; severity: string; description: string }>;
-  const recommendations = (analysis?.careRecommendations ?? []) as string[];
+  const recommendations = (analysis?.careRecommendations ?? []) as unknown as Array<{ en: string; bg: string } | string>;
 
   const statusBg =
     healthScore >= 80 ? 'bg-green-50 text-green-800' :
@@ -95,7 +95,7 @@ export function HealthSummaryPanel({ healthScore, analysis }: HealthSummaryPanel
                 <span className="flex-shrink-0 w-5 h-5 rounded-full bg-red-100 text-red-700 text-xs font-semibold flex items-center justify-center mt-0.5">
                   {i + 1}
                 </span>
-                {rec}
+                {typeof rec === 'string' ? rec : rec.en}
               </li>
             ))}
           </ol>

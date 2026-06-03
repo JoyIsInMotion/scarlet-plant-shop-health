@@ -1,10 +1,11 @@
-import { eq, and, desc, lt, gte, lte, count } from 'drizzle-orm';
+import { eq, and, desc, lt, count } from 'drizzle-orm';
 import { db } from '@/lib/db';
-import { plants, plantSpecies, plantStats, aiAnalyses } from '@/lib/db/schema';
-import { plantSchema, plantStatSchema, MAX_FILE_SIZE_BYTES, ALLOWED_IMAGE_TYPES } from '@scarlet/shared';
+import { plants, plantSpecies, aiAnalyses } from '@/lib/db/schema';
+import { plantSchema, MAX_FILE_SIZE_BYTES, ALLOWED_IMAGE_TYPES } from '@scarlet/shared';
 import { uploadToR2 } from '@/lib/r2/client';
 import { randomUUID } from 'crypto';
 import { ServiceError } from './service-error';
+import { createScheduleFromSpecies } from './care.service';
 
 const plantSelectShape = {
   id: plants.id,
@@ -96,6 +97,11 @@ export async function createPlant(userId: string, data: unknown) {
     })
     .returning();
 
+  // Auto-generate care schedule when a species is known
+  if (plant.speciesId) {
+    await createScheduleFromSpecies(plant.id, plant.speciesId);
+  }
+
   return plant;
 }
 
@@ -164,62 +170,17 @@ export async function getAnalyses(plantId: string, userId: string, limit: number
 
   if (!plant) throw new ServiceError('Not found', 404);
 
-  const analyses = await db
-    .select()
-    .from(aiAnalyses)
-    .where(eq(aiAnalyses.plantId, plantId))
-    .orderBy(desc(aiAnalyses.analyzedAt))
-    .limit(limit)
-    .offset(offset);
+  const [analyses, [{ total }]] = await Promise.all([
+    db
+      .select()
+      .from(aiAnalyses)
+      .where(eq(aiAnalyses.plantId, plantId))
+      .orderBy(desc(aiAnalyses.analyzedAt))
+      .limit(limit)
+      .offset(offset),
+    db.select({ total: count() }).from(aiAnalyses).where(eq(aiAnalyses.plantId, plantId)),
+  ]);
 
-  return { analyses };
+  return { analyses, total: Number(total) };
 }
 
-export async function getPlantStats(
-  plantId: string,
-  userId: string,
-  role: string,
-  query: { limit: number; offset: number; metric?: string; from?: Date; to?: Date }
-) {
-  const [plant] = await db.select({ userId: plants.userId }).from(plants).where(eq(plants.id, plantId)).limit(1);
-  if (!plant) throw new ServiceError('Plant not found', 404);
-  if (plant.userId !== userId && role !== 'admin') throw new ServiceError('Forbidden', 403);
-
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const conditions: any[] = [eq(plantStats.plantId, plantId)];
-  if (query.metric) conditions.push(eq(plantStats.metricType, query.metric as 'water'));
-  if (query.from) conditions.push(gte(plantStats.recordedAt, query.from));
-  if (query.to) conditions.push(lte(plantStats.recordedAt, query.to));
-
-  const items = await db
-    .select()
-    .from(plantStats)
-    .where(and(...conditions))
-    .orderBy(desc(plantStats.recordedAt))
-    .limit(query.limit)
-    .offset(query.offset);
-
-  return { stats: items, limit: query.limit, offset: query.offset };
-}
-
-export async function createPlantStat(plantId: string, userId: string, data: unknown) {
-  const [plant] = await db.select({ userId: plants.userId }).from(plants).where(eq(plants.id, plantId)).limit(1);
-  if (!plant) throw new ServiceError('Plant not found', 404);
-  if (plant.userId !== userId) throw new ServiceError('Forbidden', 403);
-
-  const parsed = plantStatSchema.safeParse(data);
-  if (!parsed.success) throw new ServiceError(parsed.error.errors[0].message, 400);
-
-  const [stat] = await db
-    .insert(plantStats)
-    .values({
-      plantId,
-      metricType: parsed.data.metricType,
-      value: parsed.data.value,
-      unit: parsed.data.unit ?? null,
-      notes: parsed.data.notes ?? null,
-    })
-    .returning();
-
-  return stat;
-}

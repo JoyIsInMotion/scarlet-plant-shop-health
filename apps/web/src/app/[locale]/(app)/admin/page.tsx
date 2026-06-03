@@ -2,7 +2,10 @@ import { getTranslations } from 'next-intl/server';
 import { cookies } from 'next/headers';
 import { Users, Leaf, ShoppingBag, ScanLine, TrendingUp } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
+import { Pagination } from '@/components/ui/pagination';
 import type { Metadata } from 'next';
+
+const PAGE_SIZE = 20;
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('admin');
@@ -20,33 +23,39 @@ async function getAdminStats(token: string) {
   return data;
 }
 
-async function getUsers(token: string) {
+async function getUsers(token: string, page: number) {
   const base = process.env.NEXT_PUBLIC_APP_URL ?? 'http://localhost:3000';
-  const res = await fetch(`${base}/api/users?limit=20`, {
+  const res = await fetch(`${base}/api/users?limit=${PAGE_SIZE}&page=${page}`, {
     headers: { Authorization: `Bearer ${token}` },
     cache: 'no-store',
   });
-  if (!res.ok) return [];
+  if (!res.ok) return { users: [], total: 0 };
   const { data } = await res.json();
-  return data?.users ?? [];
+  return { users: data?.users ?? [], total: data?.total ?? 0 };
 }
 
-export default async function AdminPage() {
+export default async function AdminPage({
+  searchParams,
+}: {
+  searchParams: Promise<Record<string, string>>;
+}) {
   const t = await getTranslations();
+  const sp = await searchParams;
+  const page = Math.max(1, parseInt(sp.page ?? '1', 10));
   const cookieStore = await cookies();
   const token = cookieStore.get('access_token')?.value ?? '';
 
-  const [stats, users] = await Promise.all([
+  const [stats, { users, total }] = await Promise.all([
     getAdminStats(token),
-    getUsers(token),
+    getUsers(token, page),
   ]);
 
   const statCards = [
-    { label: t('admin.totalUsers'), value: stats?.totalUsers ?? 0, icon: Users, color: 'text-blue-600 bg-blue-50' },
-    { label: t('admin.totalPlants'), value: stats?.totalPlants ?? 0, icon: Leaf, color: 'text-green-600 bg-green-50' },
-    { label: t('admin.totalOrders'), value: stats?.totalOrders ?? 0, icon: ShoppingBag, color: 'text-purple-600 bg-purple-50' },
-    { label: t('admin.aiScansToday'), value: stats?.aiScansToday ?? 0, icon: ScanLine, color: 'text-orange-600 bg-orange-50' },
-    { label: t('admin.revenue'), value: `${(stats?.revenue ?? 0).toFixed(2)} лв.`, icon: TrendingUp, color: 'text-red-600 bg-red-50' },
+    { label: t('admin.totalUsers'),  value: stats?.totalUsers ?? 0,                           icon: Users,       color: 'text-blue-600 bg-blue-50' },
+    { label: t('admin.totalPlants'), value: stats?.totalPlants ?? 0,                          icon: Leaf,        color: 'text-green-600 bg-green-50' },
+    { label: t('admin.totalOrders'), value: stats?.totalOrders ?? 0,                          icon: ShoppingBag, color: 'text-purple-600 bg-purple-50' },
+    { label: t('admin.aiScansToday'), value: stats?.aiScansToday ?? 0,                        icon: ScanLine,    color: 'text-orange-600 bg-orange-50' },
+    { label: t('admin.revenue'),     value: `${(stats?.revenue ?? 0).toFixed(2)} лв.`,        icon: TrendingUp,  color: 'text-red-600 bg-red-50' },
   ];
 
   return (
@@ -71,8 +80,9 @@ export default async function AdminPage() {
       {/* Users table */}
       <Card>
         <CardContent className="p-0">
-          <div className="px-6 py-4 border-b border-gray-100">
+          <div className="px-6 py-4 border-b border-gray-100 flex items-center justify-between">
             <h2 className="font-semibold text-gray-900">{t('admin.users')}</h2>
+            <span className="text-sm text-gray-500">{total} total</span>
           </div>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
@@ -107,6 +117,14 @@ export default async function AdminPage() {
                 ))}
               </tbody>
             </table>
+          </div>
+          <div className="px-6 py-4 border-t border-gray-100">
+            <Pagination
+              page={page}
+              total={total}
+              limit={PAGE_SIZE}
+              getHref={(p) => `?page=${p}`}
+            />
           </div>
         </CardContent>
       </Card>

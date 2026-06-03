@@ -1,19 +1,22 @@
-import { eq, and, desc, inArray } from 'drizzle-orm';
+import { eq, and, desc, inArray, count } from 'drizzle-orm';
 import { db } from '@/lib/db';
 import { orders, orderItems, products } from '@/lib/db/schema';
 import { orderSchema } from '@scarlet/shared';
 import { ServiceError } from './service-error';
 
 export async function listOrders(userId: string, limit: number, offset: number) {
-  const userOrders = await db
-    .select()
-    .from(orders)
-    .where(eq(orders.userId, userId))
-    .orderBy(desc(orders.createdAt))
-    .limit(limit)
-    .offset(offset);
+  const [userOrders, [{ total }]] = await Promise.all([
+    db
+      .select()
+      .from(orders)
+      .where(eq(orders.userId, userId))
+      .orderBy(desc(orders.createdAt))
+      .limit(limit)
+      .offset(offset),
+    db.select({ total: count() }).from(orders).where(eq(orders.userId, userId)),
+  ]);
 
-  return { items: userOrders, limit, offset };
+  return { items: userOrders, total: Number(total), limit, offset };
 }
 
 export async function createOrder(userId: string, data: unknown) {

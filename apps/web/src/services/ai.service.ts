@@ -77,8 +77,8 @@ export async function analyzeSavedPlant(plantId: string, userId: string, role: s
     }
   }
 
-  const [savedAnalysis] = await db
-    .insert(aiAnalyses)
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const [savedAnalysis] = await (db.insert(aiAnalyses) as any)
     .values({
       plantId,
       userId,
@@ -156,8 +156,8 @@ export async function quickScan(userId: string, role: string, file: File) {
     if (match) matchedSpeciesId = match.id;
   }
 
-  const [savedAnalysis] = await db
-    .insert(aiAnalyses)
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const [savedAnalysis] = await (db.insert(aiAnalyses) as any)
     .values({
       plantId: null,
       userId,

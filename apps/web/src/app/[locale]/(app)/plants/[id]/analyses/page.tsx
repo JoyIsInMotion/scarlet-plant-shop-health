@@ -6,10 +6,13 @@ import { Link } from '@/i18n/navigation';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Pagination } from '@/components/ui/pagination';
 import { HealthScoreRing } from '@/components/plants/health-score-ring';
 import { AnalysisTrendChart } from '@/components/plants/analysis-trend-chart';
 import type { Metadata } from 'next';
 import type { AIAnalysis, Plant } from '@scarlet/shared';
+
+const PAGE_SIZE = 10;
 
 async function getPlant(id: string, token: string): Promise<Plant | null> {
   const base = process.env.NEXT_PUBLIC_APP_URL ?? 'http://localhost:3000';
@@ -22,15 +25,16 @@ async function getPlant(id: string, token: string): Promise<Plant | null> {
   return data ?? null;
 }
 
-async function fetchAnalyses(id: string, token: string): Promise<AIAnalysis[]> {
+async function fetchAnalyses(id: string, token: string, page: number): Promise<{ analyses: AIAnalysis[]; total: number }> {
   const base = process.env.NEXT_PUBLIC_APP_URL ?? 'http://localhost:3000';
-  const res = await fetch(`${base}/api/plants/${id}/analyses?limit=50`, {
+  const offset = (page - 1) * PAGE_SIZE;
+  const res = await fetch(`${base}/api/plants/${id}/analyses?limit=${PAGE_SIZE}&offset=${offset}`, {
     headers: { Authorization: `Bearer ${token}` },
     cache: 'no-store',
   });
-  if (!res.ok) return [];
+  if (!res.ok) return { analyses: [], total: 0 };
   const { data } = await res.json();
-  return data?.analyses ?? [];
+  return { analyses: data?.analyses ?? [], total: data?.total ?? 0 };
 }
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -46,18 +50,23 @@ const SEVERITY_DOT: Record<string, string> = {
 
 export default async function AnalysesPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ id: string }>;
+  searchParams: Promise<Record<string, string>>;
 }) {
   const { id } = await params;
+  const sp = await searchParams;
+  const page = Math.max(1, parseInt(sp.page ?? '1', 10));
+
   const t = await getTranslations();
   const locale = await getLocale();
   const cookieStore = await cookies();
   const token = cookieStore.get('access_token')?.value ?? '';
 
-  const [plant, analyses] = await Promise.all([
+  const [plant, { analyses, total }] = await Promise.all([
     getPlant(id, token),
-    fetchAnalyses(id, token),
+    fetchAnalyses(id, token, page),
   ]);
 
   if (!plant) notFound();
@@ -87,12 +96,12 @@ export default async function AnalysesPage({
             {speciesName ? ` · ${speciesName}` : ''}
           </p>
         </div>
-        <Badge variant="secondary" className="flex-shrink-0 rounded-full">
-          {analyses.length} {t('analyses.scans')}
+        <Badge variant="outline" className="flex-shrink-0 rounded-full">
+          {total} {t('analyses.scans')}
         </Badge>
       </div>
 
-      {analyses.length === 0 ? (
+      {total === 0 ? (
         <Card className="border-dashed border-gray-200 bg-gray-50 shadow-none">
           <CardContent className="py-16 flex flex-col items-center gap-3 text-center">
             <BrainCircuit className="h-10 w-10 text-gray-300" />
@@ -105,8 +114,8 @@ export default async function AnalysesPage({
         </Card>
       ) : (
         <div className="space-y-6">
-          {/* Health score trend chart */}
-          {scoredCount >= 2 && (
+          {/* Trend chart — only on page 1 with 2+ scored analyses */}
+          {page === 1 && scoredCount >= 2 && (
             <Card className="border-gray-200 shadow-sm">
               <CardHeader className="pb-2">
                 <CardTitle className="text-base">{t('analyses.healthTrend')}</CardTitle>
@@ -133,17 +142,15 @@ export default async function AnalysesPage({
               return (
                 <Card key={analysis.id} className="border-gray-200 shadow-sm overflow-hidden">
                   <CardContent className="p-4 space-y-3">
-                    {/* Top row: date + confidence */}
                     <div className="flex items-center justify-between gap-2">
                       <p className="text-xs text-gray-500">{date}</p>
                       {analysis.confidence && (
-                        <Badge variant="secondary" className="text-xs rounded-full">
+                        <Badge variant="outline" className="text-xs rounded-full">
                           {t(`ai.confidence.${analysis.confidence}`)}
                         </Badge>
                       )}
                     </div>
 
-                    {/* Score + condition */}
                     <div className="flex items-center gap-3">
                       {analysis.healthScore != null && (
                         <HealthScoreRing score={analysis.healthScore} size={52} />
@@ -163,7 +170,6 @@ export default async function AnalysesPage({
                       </div>
                     </div>
 
-                    {/* Issues */}
                     {issues.length > 0 && (
                       <div className="flex flex-wrap gap-1">
                         {issues.map((issue, i) => (
@@ -171,16 +177,13 @@ export default async function AnalysesPage({
                             key={i}
                             className="inline-flex items-center gap-1 text-xs bg-gray-100 text-gray-700 px-2 py-0.5 rounded-full"
                           >
-                            <span
-                              className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${SEVERITY_DOT[issue.severity] ?? 'bg-gray-400'}`}
-                            />
-                            {issue.name}
+                            <span className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${SEVERITY_DOT[issue.severity] ?? 'bg-gray-400'}`} />
+                            {typeof issue.name === 'string' ? issue.name : (issue.name[locale as 'en' | 'bg'] ?? issue.name.en)}
                           </span>
                         ))}
                       </div>
                     )}
 
-                    {/* Recommendations count */}
                     {recs.length > 0 && issues.length === 0 && (
                       <p className="text-xs text-green-600">
                         {recs.length} {t('ai.careRecommendations').toLowerCase()}
@@ -191,6 +194,14 @@ export default async function AnalysesPage({
               );
             })}
           </div>
+
+          <Pagination
+            page={page}
+            total={total}
+            limit={PAGE_SIZE}
+            getHref={(p) => `?page=${p}`}
+            className="mt-2"
+          />
         </div>
       )}
     </div>

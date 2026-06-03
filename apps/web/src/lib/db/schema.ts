@@ -27,14 +27,6 @@ export const orderStatusEnum = pgEnum('order_status', [
   'cancelled',
 ]);
 
-export const metricTypeEnum = pgEnum('metric_type', [
-  'water',
-  'light',
-  'humidity',
-  'temperature',
-  'fertilizer',
-]);
-
 export const productCategoryEnum = pgEnum('product_category', [
   'bouquet',
   'potted_plant',
@@ -59,6 +51,16 @@ export const aiConditionEnum = pgEnum('ai_condition', [
 ]);
 
 export const aiConfidenceEnum = pgEnum('ai_confidence', ['low', 'medium', 'high']);
+
+export const careTypeEnum = pgEnum('care_type', [
+  'watered',
+  'fertilized',
+  'repotted',
+  'misted',
+  'pruned',
+  'rotated',
+  'observation',
+]);
 
 // ─── users ────────────────────────────────────────────────────────────────────
 
@@ -118,6 +120,11 @@ export const plantSpecies = pgTable(
     >(),
     imageUrl: text('image_url'),
     isVerified: boolean('is_verified').default(false).notNull(),
+    // Structured care intervals — used to auto-generate plant_care_schedules
+    wateringIntervalDays: integer('watering_interval_days'),
+    fertilizingIntervalDays: integer('fertilizing_interval_days'),
+    repottingIntervalMonths: integer('repotting_interval_months'),
+    mistingNeeded: boolean('misting_needed').default(false).notNull(),
     createdAt: timestamp('created_at').defaultNow().notNull(),
     updatedAt: timestamp('updated_at').defaultNow().notNull(),
   },
@@ -155,28 +162,56 @@ export const plants = pgTable(
     index('plants_species_idx').on(t.speciesId),
     index('plants_health_idx').on(t.healthScore),
     index('plants_archived_idx').on(t.isArchived),
+    // Composite: covers the common list query (userId + isArchived filter + ORDER BY createdAt)
+    index('plants_user_archived_created_idx').on(t.userId, t.isArchived, t.createdAt),
   ]
 );
 
-// ─── plant_stats ──────────────────────────────────────────────────────────────
+// ─── plant_care_schedules ─────────────────────────────────────────────────────
 
-export const plantStats = pgTable(
-  'plant_stats',
+export const plantCareSchedules = pgTable(
+  'plant_care_schedules',
+  {
+    id: uuid('id').defaultRandom().primaryKey(),
+    plantId: uuid('plant_id')
+      .notNull()
+      .unique()
+      .references(() => plants.id, { onDelete: 'cascade' }),
+    wateringIntervalDays: integer('watering_interval_days'),
+    wateringNextDue: timestamp('watering_next_due'),
+    fertilizingIntervalDays: integer('fertilizing_interval_days'),
+    fertilizingNextDue: timestamp('fertilizing_next_due'),
+    repottingIntervalMonths: integer('repotting_interval_months'),
+    repottingNextDue: timestamp('repotting_next_due'),
+    mistingNeeded: boolean('misting_needed').default(false).notNull(),
+    mistingNextDue: timestamp('misting_next_due'),
+    isCustomized: boolean('is_customized').default(false).notNull(),
+    notes: text('notes'),
+    createdAt: timestamp('created_at').defaultNow().notNull(),
+    updatedAt: timestamp('updated_at').defaultNow().notNull(),
+  }
+);
+
+// ─── plant_care_logs ──────────────────────────────────────────────────────────
+
+export const plantCareLogs = pgTable(
+  'plant_care_logs',
   {
     id: uuid('id').defaultRandom().primaryKey(),
     plantId: uuid('plant_id')
       .notNull()
       .references(() => plants.id, { onDelete: 'cascade' }),
-    metricType: metricTypeEnum('metric_type').notNull(),
-    value: real('value').notNull(),
-    unit: varchar('unit', { length: 20 }),
+    userId: uuid('user_id')
+      .notNull()
+      .references(() => users.id, { onDelete: 'cascade' }),
+    careType: careTypeEnum('care_type').notNull(),
+    photoUrl: text('photo_url'),
     notes: text('notes'),
-    recordedAt: timestamp('recorded_at').defaultNow().notNull(),
+    loggedAt: timestamp('logged_at').defaultNow().notNull(),
   },
   (t) => [
-    index('plant_stats_plant_idx').on(t.plantId),
-    index('plant_stats_metric_idx').on(t.metricType),
-    index('plant_stats_recorded_at_idx').on(t.recordedAt),
+    index('care_logs_plant_logged_idx').on(t.plantId, t.loggedAt),
+    index('care_logs_plant_type_idx').on(t.plantId, t.careType),
   ]
 );
 
@@ -226,6 +261,8 @@ export const aiAnalyses = pgTable(
     index('ai_analyses_plant_idx').on(t.plantId),
     index('ai_analyses_user_idx').on(t.userId),
     index('ai_analyses_analyzed_at_idx').on(t.analyzedAt),
+    // Composite: covers per-plant analyses list query (plantId filter + ORDER BY analyzedAt)
+    index('ai_analyses_plant_analyzed_idx').on(t.plantId, t.analyzedAt),
   ]
 );
 
@@ -252,6 +289,8 @@ export const products = pgTable(
     index('products_category_idx').on(t.category),
     index('products_slug_idx').on(t.slug),
     index('products_active_idx').on(t.isActive),
+    // Composite: covers filtered shop queries (isActive + category filter + ORDER BY createdAt)
+    index('products_active_category_created_idx').on(t.isActive, t.category, t.createdAt),
   ]
 );
 
@@ -274,6 +313,8 @@ export const orders = pgTable(
   (t) => [
     index('orders_user_idx').on(t.userId),
     index('orders_status_idx').on(t.status),
+    // Composite: covers user order history (userId filter + ORDER BY createdAt)
+    index('orders_user_created_idx').on(t.userId, t.createdAt),
   ]
 );
 
@@ -305,6 +346,7 @@ export const usersRelations = relations(users, ({ many }) => ({
   orders: many(orders),
   refreshTokens: many(refreshTokens),
   aiAnalyses: many(aiAnalyses),
+  careLogs: many(plantCareLogs),
 }));
 
 export const refreshTokensRelations = relations(refreshTokens, ({ one }) => ({
@@ -322,15 +364,20 @@ export const plantsRelations = relations(plants, ({ one, many }) => ({
     fields: [plants.speciesId],
     references: [plantSpecies.id],
   }),
-  stats: many(plantStats),
+  careLogs: many(plantCareLogs),
   aiAnalyses: many(aiAnalyses),
 }));
 
-export const plantStatsRelations = relations(plantStats, ({ one }) => ({
+export const plantCareSchedulesRelations = relations(plantCareSchedules, ({ one }) => ({
   plant: one(plants, {
-    fields: [plantStats.plantId],
+    fields: [plantCareSchedules.plantId],
     references: [plants.id],
   }),
+}));
+
+export const plantCareLogsRelations = relations(plantCareLogs, ({ one }) => ({
+  plant: one(plants, { fields: [plantCareLogs.plantId], references: [plants.id] }),
+  user: one(users, { fields: [plantCareLogs.userId], references: [users.id] }),
 }));
 
 export const aiAnalysesRelations = relations(aiAnalyses, ({ one }) => ({

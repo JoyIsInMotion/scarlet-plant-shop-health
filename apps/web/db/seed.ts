@@ -6,7 +6,38 @@ import { drizzle } from 'drizzle-orm/neon-http';
 import * as schema from '../src/lib/db/schema';
 import bcrypt from 'bcryptjs';
 import { faker } from '@faker-js/faker';
-import { SPECIES_IMAGES, PRODUCT_IMAGES } from './images';
+
+type SpeciesRow = {
+  scientificName: string;
+  commonNameEn: string | null;
+  imageUrl: string | null;
+  careDifficulty: 'easy' | 'moderate' | 'difficult';
+  wateringIntervalDays: number;
+  fertilizingIntervalDays: number;
+  repottingIntervalMonths: number;
+  mistingNeeded: boolean;
+};
+
+// Declare BUILTIN_SPECIES first so the catch block can reference it
+const BUILTIN_SPECIES: SpeciesRow[] = [
+  { scientificName: 'Sansevieria trifasciata', commonNameEn: 'Snake Plant',        imageUrl: null, careDifficulty: 'easy',      wateringIntervalDays: 14, fertilizingIntervalDays: 30, repottingIntervalMonths: 24, mistingNeeded: false },
+  { scientificName: 'Epipremnum aureum',       commonNameEn: 'Golden Pothos',      imageUrl: null, careDifficulty: 'easy',      wateringIntervalDays: 14, fertilizingIntervalDays: 30, repottingIntervalMonths: 24, mistingNeeded: false },
+  { scientificName: 'Monstera deliciosa',      commonNameEn: 'Swiss Cheese Plant', imageUrl: null, careDifficulty: 'moderate',  wateringIntervalDays: 7,  fertilizingIntervalDays: 14, repottingIntervalMonths: 18, mistingNeeded: false },
+  { scientificName: 'Ficus lyrata',            commonNameEn: 'Fiddle-Leaf Fig',    imageUrl: null, careDifficulty: 'moderate',  wateringIntervalDays: 7,  fertilizingIntervalDays: 14, repottingIntervalMonths: 18, mistingNeeded: false },
+  { scientificName: 'Phalaenopsis amabilis',   commonNameEn: 'Moth Orchid',        imageUrl: null, careDifficulty: 'difficult', wateringIntervalDays: 4,  fertilizingIntervalDays: 7,  repottingIntervalMonths: 12, mistingNeeded: true  },
+];
+
+// Try to import real species data, fall back to built-in
+let SPECIES_DATA: SpeciesRow[];
+
+try {
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  SPECIES_DATA = require('./species-data').SPECIES_DATA;
+  console.log(`📦 Loaded ${SPECIES_DATA.length} species from species-data.ts`);
+} catch {
+  SPECIES_DATA = BUILTIN_SPECIES;
+  console.log('📦 species-data.ts not found — using built-in species');
+}
 
 faker.seed(42);
 
@@ -52,173 +83,198 @@ function careGuide(d: 'easy' | 'moderate' | 'difficult') {
   return g[d];
 }
 
-const DESC = {
-  easy:     { en: 'A hardy, low-maintenance plant perfect for beginners. Tolerates neglect and adapts well to indoor conditions.', bg: 'Издръжливо, лесно за поддържане растение, идеално за начинаещи. Понася небрежност и се адаптира добре към вътрешни условия.' },
-  moderate: { en: 'A beautiful plant that rewards consistent care. Ideal for enthusiasts ready to invest some attention.', bg: 'Красиво растение, което се отблагодарява на редовна грижа. Идеално за любители, готови да отделят малко внимание.' },
-  difficult:{ en: 'A striking specimen for experienced plant keepers. Requires specific conditions but offers spectacular results.', bg: 'Впечатляващ екземпляр за опитни любители на растения. Изисква специфични условия, но предлага зашеметяващи резултати.' },
+const CARE_INTERVALS = {
+  easy:      { wateringIntervalDays: 14, fertilizingIntervalDays: 30, repottingIntervalMonths: 24, mistingNeeded: false },
+  moderate:  { wateringIntervalDays: 7,  fertilizingIntervalDays: 14, repottingIntervalMonths: 18, mistingNeeded: false },
+  difficult: { wateringIntervalDays: 4,  fertilizingIntervalDays: 7,  repottingIntervalMonths: 12, mistingNeeded: true  },
 };
 
-// ── species data ─────────────────────────────────────────────────────────────
+// ── product generation ───────────────────────────────────────────────────────
 
-type S = [string, string, string, string, 'easy'|'moderate'|'difficult', string, string];
+const FLOWER_TYPES = ['Rose', 'Tulip', 'Lily', 'Sunflower', 'Gerbera', 'Carnation', 'Orchid', 'Peony', 'Iris', 'Lavender', 'Dahlia', 'Chrysanthemum'];
+const FLOWER_BG    = ['Роза', 'Лале', 'Лилия', 'Слънчоглед', 'Гербера', 'Карамфил', 'Орхидея', 'Божур', 'Перуника', 'Лавандула', 'Далия', 'Хризантема'];
+const COLORS_EN    = ['Red', 'Pink', 'White', 'Yellow', 'Purple', 'Orange', 'Mixed'];
+const COLORS_BG    = ['Червен', 'Розов', 'Бял', 'Жълт', 'Лилав', 'Оранжев', 'Смесен'];
+const STEMS        = [7, 11, 15, 21, 31, 51];
+const BOUQUET_VARIANTS_EN = ['Classic', 'Premium', 'Luxury', 'Wrapped', 'With Greenery'];
+const BOUQUET_VARIANTS_BG = ['Класик', 'Премиум', 'Луксозен', 'Увит', 'С Зеленина'];
 
-const SPECIES: S[] = [
-  // EASY (35)
-  ['Sansevieria trifasciata',   'Snake Plant',              'Сансевиерия',                    'Asparagaceae',   'easy',     'West Africa',                        'Западна Африка'],
-  ['Epipremnum aureum',         'Golden Pothos',            'Потос',                          'Araceae',        'easy',     'Southeastern Asia',                  'Югоизточна Азия'],
-  ['Chlorophytum comosum',      'Spider Plant',             'Паякова трева',                  'Asparagaceae',   'easy',     'South Africa',                       'Южна Африка'],
-  ['Zamioculcas zamiifolia',    'ZZ Plant',                 'Замиокулкас',                    'Araceae',        'easy',     'East Africa',                        'Източна Африка'],
-  ['Aloe vera',                 'Aloe Vera',                'Алое вера',                      'Asphodelaceae',  'easy',     'Arabian Peninsula',                  'Арабски полуостров'],
-  ['Dracaena marginata',        'Dragon Tree',              'Дракон дърво',                   'Asparagaceae',   'easy',     'Madagascar',                         'Мадагаскар'],
-  ['Crassula ovata',            'Jade Plant',               'Нефритено дърво',                'Crassulaceae',   'easy',     'South Africa',                       'Южна Африка'],
-  ['Sedum morganianum',         "Burro's Tail",             'Магарешка опашка',               'Crassulaceae',   'easy',     'Mexico',                             'Мексико'],
-  ['Echeveria elegans',         'Mexican Snowball',         'Мексиканска снежна топка',       'Crassulaceae',   'easy',     'Mexico',                             'Мексико'],
-  ['Haworthia fasciata',        'Zebra Haworthia',          'Зебра хауортия',                 'Asphodelaceae',  'easy',     'South Africa',                       'Южна Африка'],
-  ['Schlumbergera truncata',    'Christmas Cactus',         'Коледен кактус',                 'Cactaceae',      'easy',     'Brazil',                             'Бразилия'],
-  ['Tradescantia zebrina',      'Wandering Dude',           'Традесканция',                   'Commelinaceae',  'easy',     'Mexico',                             'Мексико'],
-  ['Ficus benjamina',           'Weeping Fig',              'Фикус',                          'Moraceae',       'easy',     'South and Southeast Asia',           'Южна и Югоизточна Азия'],
-  ['Dracaena fragrans',         'Corn Plant',               'Царевично растение',             'Asparagaceae',   'easy',     'Tropical Africa',                    'Тропическа Африка'],
-  ['Aglaonema commutatum',      'Chinese Evergreen',        'Аглаонема',                      'Araceae',        'easy',     'Philippines',                        'Филипини'],
-  ['Spathiphyllum wallisii',    'Peace Lily',               'Спатифилум',                     'Araceae',        'easy',     'Tropical Americas',                  'Тропическа Америка'],
-  ['Aspidistra elatior',        'Cast Iron Plant',          'Аспидистра',                     'Asparagaceae',   'easy',     'China and Japan',                    'Китай и Япония'],
-  ['Sansevieria cylindrica',    'Cylindrical Snake Plant',  'Цилиндрична сансевиерия',        'Asparagaceae',   'easy',     'Angola',                             'Ангола'],
-  ['Rhapis excelsa',            'Lady Palm',                'Дамска палма',                   'Arecaceae',      'easy',     'South China',                        'Южен Китай'],
-  ['Chamaedorea elegans',       'Parlor Palm',              'Салонна палма',                  'Arecaceae',      'easy',     'Mexico and Guatemala',               'Мексико и Гватемала'],
-  ['Pachira aquatica',          'Money Tree',               'Парично дърво',                  'Malvaceae',      'easy',     'Central and South America',          'Централна и Южна Америка'],
-  ['Beaucarnea recurvata',      'Ponytail Palm',            'Конска опашка',                  'Asparagaceae',   'easy',     'Mexico',                             'Мексико'],
-  ['Kalanchoe blossfeldiana',   'Flaming Katy',             'Каланхое',                       'Crassulaceae',   'easy',     'Madagascar',                         'Мадагаскар'],
-  ['Portulacaria afra',         'Elephant Bush',            'Слонски храст',                  'Didiereaceae',   'easy',     'South Africa',                       'Южна Африка'],
-  ['Opuntia microdasys',        'Bunny Ears Cactus',        'Зайчи уши кактус',               'Cactaceae',      'easy',     'Mexico',                             'Мексико'],
-  ['Mammillaria elongata',      'Ladyfinger Cactus',        'Кактус дамски пръст',            'Cactaceae',      'easy',     'Mexico',                             'Мексико'],
-  ['Cereus peruvianus',         'Peruvian Apple Cactus',    'Перуански кактус',               'Cactaceae',      'easy',     'South America',                      'Южна Америка'],
-  ['Peperomia obtusifolia',     'Baby Rubber Plant',        'Бебешко гумено растение',        'Piperaceae',     'easy',     'Florida, Mexico, Caribbean',         'Флорида, Мексико, Карибите'],
-  ['Peperomia argyreia',        'Watermelon Peperomia',     'Диня пеперомия',                 'Piperaceae',     'easy',     'South America',                      'Южна Америка'],
-  ['Fatsia japonica',           'Japanese Aralia',          'Японска аралия',                 'Araliaceae',     'easy',     'Japan and South Korea',              'Япония и Южна Корея'],
-  ['Pelargonium x hortorum',    'Garden Geranium',          'Здравец',                        'Geraniaceae',    'easy',     'South Africa',                       'Южна Африка'],
-  ['Tagetes erecta',            'African Marigold',         'Невен',                          'Asteraceae',     'easy',     'Mexico',                             'Мексико'],
-  ['Zinnia elegans',            'Zinnia',                   'Цинния',                         'Asteraceae',     'easy',     'Mexico',                             'Мексико'],
-  ['Calendula officinalis',     'Pot Marigold',             'Лечебен невен',                  'Asteraceae',     'easy',     'Mediterranean',                      'Средиземноморие'],
-  ['Impatiens walleriana',      'Busy Lizzie',              'Сенчесто цвете',                 'Balsaminaceae',  'easy',     'East Africa',                        'Източна Африка'],
-
-  // MODERATE (44)
-  ['Monstera deliciosa',        'Swiss Cheese Plant',       'Монстера',                       'Araceae',        'moderate', 'Southern Mexico and Panama',         'Южно Мексико и Панама'],
-  ['Monstera adansonii',        "Adanson's Monstera",       'Малка монстера',                 'Araceae',        'moderate', 'Central and South America',          'Централна и Южна Америка'],
-  ['Ficus lyrata',              'Fiddle-Leaf Fig',          'Цигулколистна смокиня',          'Moraceae',       'moderate', 'Western Africa',                     'Западна Африка'],
-  ['Philodendron hederaceum',   'Heartleaf Philodendron',   'Сърцелистен филодендрон',        'Araceae',        'moderate', 'Caribbean',                          'Карибите'],
-  ['Calathea orbifolia',        'Orbifolia Calathea',       'Кръглолистна калатея',           'Marantaceae',    'moderate', 'Bolivia',                            'Боливия'],
-  ['Calathea zebrina',          'Zebra Calathea',           'Зебра калатея',                  'Marantaceae',    'moderate', 'Brazil',                             'Бразилия'],
-  ['Maranta leuconeura',        'Prayer Plant',             'Молитвено растение',             'Marantaceae',    'moderate', 'Brazil',                             'Бразилия'],
-  ['Strelitzia reginae',        'Bird of Paradise',         'Птица на рая',                   'Strelitziaceae', 'moderate', 'South Africa',                       'Южна Африка'],
-  ['Alocasia amazonica',        'African Mask Plant',       'Африканска маска',               'Araceae',        'moderate', 'Southeast Asia (cultivar)',           'Югоизточна Азия (хибрид)'],
-  ['Anthurium andraeanum',      'Flamingo Flower',          'Антуриум',                       'Araceae',        'moderate', 'Colombia and Ecuador',               'Колумбия и Еквадор'],
-  ['Hoya carnosa',              'Wax Plant',                'Восъчно растение',               'Apocynaceae',    'moderate', 'East Asia',                          'Източна Азия'],
-  ['Pilea peperomioides',       'Chinese Money Plant',      'Китайско парично растение',      'Urticaceae',     'moderate', 'Southern China',                     'Южен Китай'],
-  ['Oxalis triangularis',       'Purple Shamrock',          'Лилева детелина',                'Oxalidaceae',    'moderate', 'South America',                      'Южна Америка'],
-  ['Begonia rex',               'Rex Begonia',              'Рекс бегония',                   'Begoniaceae',    'moderate', 'Northeastern India',                 'Североизточна Индия'],
-  ['Begonia maculata',          'Polka Dot Begonia',        'Пъстра бегония',                 'Begoniaceae',    'moderate', 'Brazil',                             'Бразилия'],
-  ['Scindapsus pictus',         'Satin Pothos',             'Сатенен потос',                  'Araceae',        'moderate', 'Southeast Asia',                     'Югоизточна Азия'],
-  ['Syngonium podophyllum',     'Arrowhead Vine',           'Стрелоглав',                     'Araceae',        'moderate', 'Mexico to Brazil',                   'Мексико до Бразилия'],
-  ['Fittonia albivenis',        'Nerve Plant',              'Нервно растение',                'Acanthaceae',    'moderate', 'Peru',                               'Перу'],
-  ['Peperomia caperata',        'Ripple Peperomia',         'Набраздена пеперомия',           'Piperaceae',     'moderate', 'Brazil',                             'Бразилия'],
-  ['Dypsis lutescens',          'Areca Palm',               'Арека палма',                    'Arecaceae',      'moderate', 'Madagascar',                         'Мадагаскар'],
-  ['Howea forsteriana',         'Kentia Palm',              'Кентия палма',                   'Arecaceae',      'moderate', 'Lord Howe Island, Australia',        'Остров Лорд Хау, Австралия'],
-  ['Ficus elastica',            'Rubber Plant',             'Гумено растение',                'Moraceae',       'moderate', 'South and Southeast Asia',           'Южна и Югоизточна Азия'],
-  ['Calathea roseopicta',       'Rose Painted Calathea',    'Розова калатея',                 'Marantaceae',    'moderate', 'Brazil',                             'Бразилия'],
-  ['Guzmania lingulata',        'Scarlet Star Bromeliad',   'Гузмания',                       'Bromeliaceae',   'moderate', 'Central and South America',          'Централна и Южна Америка'],
-  ['Tillandsia ionantha',       'Sky Plant',                'Небесна тиландзия',              'Bromeliaceae',   'moderate', 'Mexico and Central America',         'Мексико и Централна Америка'],
-  ['Tillandsia xerographica',   'King of Air Plants',       'Цар на въздушните растения',     'Bromeliaceae',   'moderate', 'Mexico, Guatemala, El Salvador',     'Мексико, Гватемала, Ел Салвадор'],
-  ['Aechmea fasciata',          'Urn Plant',                'Урна растение',                  'Bromeliaceae',   'moderate', 'Brazil',                             'Бразилия'],
-  ['Cyclamen persicum',         'Persian Cyclamen',         'Циклама',                        'Primulaceae',    'moderate', 'Eastern Mediterranean',              'Източно Средиземноморие'],
-  ['Primula vulgaris',          'Primrose',                 'Иглика',                         'Primulaceae',    'moderate', 'Western and Southern Europe',        'Западна и Южна Европа'],
-  ['Rosa chinensis',            'China Rose',               'Китайска роза',                  'Rosaceae',       'moderate', 'China',                              'Китай'],
-  ['Dahlia pinnata',            'Dahlia',                   'Далия',                          'Asteraceae',     'moderate', 'Mexico',                             'Мексико'],
-  ['Chrysanthemum morifolium',  "Florist's Chrysanthemum",  'Хризантема',                     'Asteraceae',     'moderate', 'China',                              'Китай'],
-  ['Gerbera jamesonii',         'Barberton Daisy',          'Гербера',                        'Asteraceae',     'moderate', 'South Africa',                       'Южна Африка'],
-  ['Tulipa gesneriana',         'Garden Tulip',             'Лале',                           'Liliaceae',      'moderate', 'Turkey and Central Asia',            'Турция и Централна Азия'],
-  ['Lilium longiflorum',        'Easter Lily',              'Великденска лилия',              'Liliaceae',      'moderate', 'Japan',                              'Япония'],
-  ['Narcissus pseudonarcissus', 'Daffodil',                 'Нарцис',                         'Amaryllidaceae', 'moderate', 'Western Europe',                     'Западна Европа'],
-  ['Hyacinthus orientalis',     'Common Hyacinth',          'Зюмбюл',                         'Asparagaceae',   'moderate', 'Eastern Mediterranean',              'Източно Средиземноморие'],
-  ['Iris germanica',            'Bearded Iris',             'Перуника',                       'Iridaceae',      'moderate', 'Southern Europe',                    'Южна Европа'],
-  ['Helianthus annuus',         'Sunflower',                'Слънчоглед',                     'Asteraceae',     'moderate', 'North America',                      'Северна Америка'],
-  ['Lavandula angustifolia',    'Lavender',                 'Лавандула',                      'Lamiaceae',      'moderate', 'Mediterranean',                      'Средиземноморие'],
-  ['Rosa damascena',            'Damask Rose',              'Дамаска роза',                   'Rosaceae',       'moderate', 'Middle East',                        'Близкия изток'],
-  ['Aloe arborescens',          'Tree Aloe',                'Дървовидно алое',                'Asphodelaceae',  'moderate', 'South Africa',                       'Южна Африка'],
-  ['Vriesea splendens',         'Flaming Sword',            'Пламтящ меч',                    'Bromeliaceae',   'moderate', 'Venezuela, Trinidad',                'Венецуела, Тринидад'],
-  ['Tradescantia fluminensis',  'Spiderwort',               'Бяла традесканция',              'Commelinaceae',  'moderate', 'Brazil and Argentina',               'Бразилия и Аржентина'],
-
-  // DIFFICULT (21)
-  ['Phalaenopsis amabilis',     'Moth Orchid',              'Пеперудова орхидея',             'Orchidaceae',    'difficult','Southeast Asia and Australia',       'Югоизточна Азия и Австралия'],
-  ['Dendrobium nobile',         'Noble Dendrobium',         'Дендробиум',                     'Orchidaceae',    'difficult','Himalayas to Southeast Asia',        'Хималаи до Югоизточна Азия'],
-  ['Cattleya labiata',          'Corsage Orchid',           'Катлея',                         'Orchidaceae',    'difficult','Brazil',                             'Бразилия'],
-  ['Cymbidium aloifolium',      'Boat Orchid',              'Цимбидиум',                      'Orchidaceae',    'difficult','India and Southeast Asia',           'Индия и Югоизточна Азия'],
-  ['Calathea warscewiczii',     'Jungle Velvet Calathea',   'Кадифена калатея',               'Marantaceae',    'difficult','Costa Rica and Nicaragua',           'Коста Рика и Никарагуа'],
-  ['Calathea ornata',           'Pinstripe Calathea',       'Пинстрайп калатея',              'Marantaceae',    'difficult','Colombia and Venezuela',             'Колумбия и Венецуела'],
-  ['Alocasia zebrina',          'Zebra Elephant Ear',       'Зебра алоказия',                 'Araceae',        'difficult','Philippines',                        'Филипини'],
-  ['Anthurium clarinervium',    'Velvet Cardboard Anthurium','Кадифен антуриум',              'Araceae',        'difficult','Mexico',                             'Мексико'],
-  ['Caladium bicolor',          'Angel Wings',              'Ангелски крила',                 'Araceae',        'difficult','South America',                      'Южна Америка'],
-  ['Monstera obliqua',          'Monstera Obliqua',         'Монстера обликва',               'Araceae',        'difficult','Central and South America',          'Централна и Южна Америка'],
-  ['Philodendron gloriosum',    'Gloriosum Philodendron',   'Великолепен филодендрон',        'Araceae',        'difficult','Colombia',                           'Колумбия'],
-  ['Stromanthe sanguinea',      'Tricolor Stromanthe',      'Триколор строманте',             'Marantaceae',    'difficult','Brazil',                             'Бразилия'],
-  ['Dionaea muscipula',         'Venus Flytrap',            'Венерина мухоловка',             'Droseraceae',    'difficult','North and South Carolina, USA',      'Северна и Южна Каролина, САЩ'],
-  ['Nepenthes ventricosa',      'Pitcher Plant',            'Канчица',                        'Nepenthaceae',   'difficult','Philippines',                        'Филипини'],
-  ['Vanda coerulea',            'Blue Vanda Orchid',        'Синя ванда',                     'Orchidaceae',    'difficult','India, Myanmar, Thailand',           'Индия, Мианмар, Тайланд'],
-  ['Paphiopedilum insigne',     "Lady's Slipper Orchid",    'Обувка орхидея',                 'Orchidaceae',    'difficult','Nepal and India',                    'Непал и Индия'],
-  ['Miltoniopsis vexillaria',   'Pansy Orchid',             'Теменужена орхидея',             'Orchidaceae',    'difficult','Colombia and Ecuador',               'Колумбия и Еквадор'],
-  ['Medinilla magnifica',       'Rose Grape',               'Розово грозде',                  'Melastomataceae','difficult','Philippines',                        'Филипини'],
-  ['Heliconia psittacorum',     'Parrot Flower',            'Папагалско цвете',               'Heliconiaceae',  'difficult','South America and Caribbean',        'Южна Америка и Карибите'],
-  ['Vanilla planifolia',        'Vanilla Orchid',           'Ванилия',                        'Orchidaceae',    'difficult','Mexico',                             'Мексико'],
-  ['Adenium obesum',            'Desert Rose',              'Пустинна роза',                  'Apocynaceae',    'difficult','Africa and Arabian Peninsula',       'Африка и Арабски полуостров'],
+const POTTED_SPECIES_EN = [
+  'Monstera', 'Peace Lily', 'ZZ Plant', 'Pothos', 'Snake Plant', 'Rubber Plant',
+  'Fiddle-Leaf Fig', 'Chinese Evergreen', 'Dragon Tree', 'Parlor Palm',
+  'Spider Plant', 'Philodendron', 'Anthurium', 'Calathea', 'Bird of Paradise',
+  'Areca Palm', 'Corn Plant', 'Cast Iron Plant', 'Money Tree', 'Ponytail Palm',
 ];
-
-// ── products data ─────────────────────────────────────────────────────────────
-
-type P = [string, string, string, string, string, number, typeof schema.productCategoryEnum.enumValues[number], number];
-//        nameBg  nameEn  descBg  descEn  slug    price  category                                                 stock
-
-const PRODUCTS: P[] = [
-  // bouquets
-  ['Червена роза — букет',          'Red Rose Bouquet',            'Класически букет от 11 ярко червени рози, символ на любовта.',         'Classic bouquet of 11 bright red roses, a symbol of love.',             'red-rose-bouquet',            29.99, 'bouquet',      50],
-  ['Бяла роза — букет',             'White Rose Bouquet',          'Елегантен букет от 11 бели рози, идеален за всяко тържество.',          'Elegant bouquet of 11 white roses, perfect for any celebration.',       'white-rose-bouquet',          27.99, 'bouquet',      40],
-  ['Смесен пролетен букет',         'Mixed Spring Bouquet',        'Цветен букет от сезонни пролетни цветя.',                               'Colourful bouquet of seasonal spring flowers.',                         'mixed-spring-bouquet',        34.99, 'bouquet',      30],
-  ['Лилав лале букет',              'Purple Tulip Bouquet',        'Букет от 15 лилави лалета, свежо и елегантно.',                         'Bouquet of 15 purple tulips, fresh and elegant.',                       'purple-tulip-bouquet',        24.99, 'bouquet',      35],
-  ['Слънчогледов букет',            'Sunflower Bouquet',           'Ярък букет от 7 слънчогледа, носещ радост.',                            'Bright bouquet of 7 sunflowers bringing joy.',                          'sunflower-bouquet',           22.99, 'bouquet',      45],
-  ['Хризантема букет',              'Chrysanthemum Bouquet',       'Пищен букет от смесени хризантеми.',                                   'Lush bouquet of mixed chrysanthemums.',                                 'chrysanthemum-bouquet',       19.99, 'bouquet',      55],
-  ['Рози и герберов букет',         'Rose and Gerbera Bouquet',    'Красиво съчетание от рози и герберки.',                                 'Beautiful combination of roses and gerberas.',                          'rose-gerbera-bouquet',        32.99, 'bouquet',      25],
-  ['Романтичен букет',              'Romantic Bouquet',            'Луксозен букет от алена роза, лилиум и гербера.',                       'Luxurious bouquet of scarlet rose, lily and gerbera.',                  'romantic-bouquet',            44.99, 'bouquet',      20],
-  ['Нарцис букет',                  'Daffodil Bouquet',            'Свеж пролетен букет от 20 нарциса.',                                    'Fresh spring bouquet of 20 daffodils.',                                 'daffodil-bouquet',            18.99, 'bouquet',      60],
-  ['Зюмбюл букет',                  'Hyacinth Bouquet',            'Ароматен букет от цветни зюмбюли.',                                     'Fragrant bouquet of colourful hyacinths.',                              'hyacinth-bouquet',            21.99, 'bouquet',      40],
-  // potted plants
-  ['Монстера в саксия',             'Monstera in Pot',             'Монстера делициоза в декоративна саксия — топхит за дома.',             'Monstera deliciosa in a decorative pot — a home bestseller.',           'monstera-pot',                49.99, 'potted_plant', 20],
-  ['Фикус лирата в саксия',         'Fiddle-Leaf Fig in Pot',      'Впечатляващ фикус лирата за модерен интериор.',                         'Impressive fiddle-leaf fig for modern interiors.',                      'fiddle-leaf-fig-pot',         59.99, 'potted_plant', 15],
-  ['Спатифилум в саксия',           'Peace Lily in Pot',           'Спатифилум — елегантно растение за пречистване на въздуха.',            'Peace lily — elegant air-purifying plant.',                             'peace-lily-pot',              24.99, 'potted_plant', 30],
-  ['Замиокулкас в саксия',          'ZZ Plant in Pot',             'Нискомаслено и красиво растение за всяка стая.',                        'Low-maintenance and beautiful plant for any room.',                     'zz-plant-pot',                29.99, 'potted_plant', 25],
-  ['Антуриум в саксия',             'Anthurium in Pot',            'Антуриум с ярки лакирани цветове — перфектен подарък.',                 'Anthurium with bright lacquered blooms — a perfect gift.',              'anthurium-pot',               34.99, 'potted_plant', 20],
-  ['Потос в кашпа',                 'Pothos in Hanging Pot',       'Ефектен потос в окачена кашпа за свеж зелен акцент.',                   'Eye-catching pothos in a hanging pot for a fresh green accent.',        'pothos-hanging-pot',          19.99, 'potted_plant', 35],
-  ['Здравец в саксия',              'Geranium in Pot',             'Цъфтящ здравец, идеален за балкон или перваз.',                         'Blooming geranium, ideal for balcony or windowsill.',                   'geranium-pot',                14.99, 'potted_plant', 50],
-  ['Циклама в саксия',              'Cyclamen in Pot',             'Нежна циклама в пастелни нюанси.',                                      'Delicate cyclamen in pastel shades.',                                   'cyclamen-pot',                17.99, 'potted_plant', 40],
-  // succulents
-  ['Ехеверия сукулент',             'Echeveria Succulent',         'Миниатюрна розетка ехеверия в теракотена саксия.',                      'Miniature echeveria rosette in a terracotta pot.',                      'echeveria-succulent',         12.99, 'succulent',    60],
-  ['Смесен сукулент сет',           'Mixed Succulent Set',         'Комплект от 3 различни сукулента в мини саксии.',                       'Set of 3 different succulents in mini pots.',                           'mixed-succulent-set',         21.99, 'succulent',    40],
-  ['Кактус Опунция',                'Bunny Ears Cactus',           'Сладурска опунция с форма на зайчи уши.',                               'Cute opuntia shaped like bunny ears.',                                  'bunny-ears-cactus',            9.99, 'succulent',    55],
-  ['Нефритено дърво',               'Jade Plant',                  'Класическо нефритено дърво — символ на богатство.',                     'Classic jade plant — a symbol of prosperity.',                          'jade-plant',                  16.99, 'succulent',    45],
-  ['Алое вера',                     'Aloe Vera Plant',             'Алое вера в саксия — лечебно и декоративно.',                           'Aloe vera in a pot — medicinal and decorative.',                        'aloe-vera-plant',             14.99, 'succulent',    50],
-  // tropical
-  ['Монстера адансони тропик',      'Monstera Adansonii Tropical', 'Деликатна монстера адансони с ажурни листа.',                           'Delicate monstera adansonii with lacy leaves.',                         'monstera-adansonii-tropical', 39.99, 'tropical',     18],
-  ['Стрелиция Птица на рая',        'Bird of Paradise',            'Екзотична стрелиция — атрактивно тропическо растение.',                 'Exotic strelitzia — an eye-catching tropical plant.',                   'bird-of-paradise',            69.99, 'tropical',     10],
-  ['Арека палма',                   'Areca Palm',                  'Изящна арека палма за средиземноморска атмосфера.',                     'Graceful areca palm for a Mediterranean atmosphere.',                   'areca-palm',                  54.99, 'tropical',     12],
-  ['Аглаонема тропик',              'Aglaonema Tropical',          'Пъстра аглаонема с декоративни листа.',                                 'Variegated aglaonema with decorative leaves.',                          'aglaonema-tropical',          27.99, 'tropical',     22],
-  // seasonal
-  ['Пролетна украса — лале',        'Spring Tulip Decoration',     'Лале в саксия за пролетна украса.',                                     'Tulip in a pot for spring decoration.',                                 'spring-tulip-deco',           13.99, 'seasonal',     70],
-  ['Коледна звезда',                'Christmas Poinsettia',        'Традиционна коледна звезда (пуансетия) в червено.',                     'Traditional red Christmas poinsettia.',                                 'christmas-poinsettia',        15.99, 'seasonal',     80],
-  ['Великденски зюмбюл',            'Easter Hyacinth',             'Ароматен зюмбюл в пастелна саксия за Великден.',                        'Fragrant hyacinth in a pastel pot for Easter.',                         'easter-hyacinth',             16.99, 'seasonal',     60],
+const POTTED_SPECIES_BG = [
+  'Монстера', 'Спатифилум', 'Замиокулкас', 'Потос', 'Сансевиерия', 'Гумено растение',
+  'Фикус Лирата', 'Аглаонема', 'Дракон Дърво', 'Салонна Палма',
+  'Паякова Трева', 'Филодендрон', 'Антуриум', 'Калатея', 'Птица на Рая',
+  'Арека Палма', 'Царевично Растение', 'Аспидистра', 'Парично Дърво', 'Конска Опашка',
 ];
+const POT_SIZES_EN = ['Mini', 'Small', 'Medium', 'Large'];
+const POT_SIZES_BG = ['Мини', 'Малък', 'Среден', 'Голям'];
+const POT_TYPES_EN = ['Ceramic', 'Terracotta', 'Wicker'];
+const POT_TYPES_BG = ['Керамичен', 'Теракота', 'Плетен'];
+
+const SUCCULENT_SPECIES_EN = [
+  'Echeveria', 'Jade Plant', 'Aloe Vera', 'Haworthia', "Burro's Tail", 'Crassula',
+  'Sedum', 'Gasteria', 'Agave', 'Sempervivum', 'Kalanchoe', 'Lithops',
+  'Aeonium', 'Dudleya', 'Graptoveria',
+];
+const SUCCULENT_SPECIES_BG = [
+  'Ехеверия', 'Нефритено дърво', 'Алое вера', 'Хауортия', 'Магарешка опашка', 'Красула',
+  'Седум', 'Гастерия', 'Агаве', 'Семпервивум', 'Каланхое', 'Литопс',
+  'Аеониум', 'Дудлея', 'Грапотоверия',
+];
+const CONTAINER_STYLES_EN = ['Terracotta Pot', 'Glass Bowl', 'Wooden Box'];
+const CONTAINER_STYLES_BG = ['Теракотена Саксия', 'Стъклена Купа', 'Дървена Кутия'];
+const SUCCULENT_SIZES_EN = ['Mini', 'Small', 'Medium', 'Large', 'XL'];
+const SUCCULENT_SIZES_BG = ['Мини', 'Малък', 'Среден', 'Голям', 'XL'];
+
+const TROPICAL_SPECIES_EN = ['Monstera Adansonii', 'Bird of Paradise', 'Areca Palm', 'Aglaonema', 'Alocasia', 'Heliconia', 'Croton', 'Bromeliaceae', 'Cordyline', 'Schefflera'];
+const TROPICAL_SPECIES_BG = ['Монстера Адансони', 'Птица на рая', 'Арека Палма', 'Аглаонема', 'Алоказия', 'Хеликония', 'Кротон', 'Бромелия', 'Кордилина', 'Шефлера'];
+const TROPICAL_VARIANTS_EN = ['Standard', 'Premium', 'XL', 'Statement Piece'];
+const TROPICAL_VARIANTS_BG = ['Стандарт', 'Премиум', 'XL', 'Акцент'];
+
+const HOLIDAYS_EN = ['Christmas', 'Easter', 'Spring', "Valentine's Day", "Mother's Day"];
+const HOLIDAYS_BG = ['Коледа', 'Великден', 'Пролет', 'Свети Валентин', 'Ден на майката'];
+const SEASONAL_ITEMS_EN = ['Poinsettia', 'Hyacinth', 'Tulip', 'Wreath', 'Arrangement', 'Centerpiece', 'Gift Basket', 'Candle Set', 'Pot', 'Bouquet'];
+const SEASONAL_ITEMS_BG  = ['Коледна звезда', 'Зюмбюл', 'Лале', 'Венец', 'Аранжировка', 'Централен детайл', 'Подаръчна кошница', 'Свещи', 'Саксия', 'Букет'];
+
+const ACCESSORY_TYPES_EN = ['Plant Pot', 'Soil Mix', 'Liquid Fertilizer', 'Watering Can', 'Plant Label', 'Pebble Tray', 'Spray Bottle', 'Pruning Shears', 'Hanging Planter', 'Pot Saucer'];
+const ACCESSORY_TYPES_BG = ['Саксия', 'Почвена смес', 'Течен тор', 'Лейка', 'Табелка за растение', 'Тавичка с камъчета', 'Спрей бутилка', 'Ножица за подрязване', 'Окачваща кашпа', 'Чиния за саксия'];
+const ACCESSORY_SIZES_EN = ['Small', 'Medium', 'Large', 'Set of 3', 'Professional'];
+const ACCESSORY_SIZES_BG = ['Малък', 'Среден', 'Голям', 'Комплект от 3', 'Професионален'];
+
+function pad(n: number, len = 4) {
+  return String(n).padStart(len, '0');
+}
+
+function generateProducts(): Array<{
+  nameBg: string; nameEn: string;
+  descriptionBg: string; descriptionEn: string;
+  slug: string; price: string; category: typeof schema.productCategoryEnum.enumValues[number]; stock: number;
+}> {
+  const products = [];
+  let idx = 0;
+
+  // Bouquets — 2,000
+  for (let i = 0; i < 2000; i++) {
+    const fi = i % FLOWER_TYPES.length;
+    const ci = Math.floor(i / FLOWER_TYPES.length) % COLORS_EN.length;
+    const si = Math.floor(i / (FLOWER_TYPES.length * COLORS_EN.length)) % STEMS.length;
+    const vi = Math.floor(i / (FLOWER_TYPES.length * COLORS_EN.length * STEMS.length)) % BOUQUET_VARIANTS_EN.length;
+    const stems = STEMS[si];
+    const nameEn = `${COLORS_EN[ci]} ${FLOWER_TYPES[fi]} Bouquet – ${stems} Stems (${BOUQUET_VARIANTS_EN[vi]})`;
+    const nameBg = `${COLORS_BG[ci]} букет ${FLOWER_BG[fi]} – ${stems} стъбла (${BOUQUET_VARIANTS_BG[vi]})`;
+    products.push({
+      nameBg, nameEn,
+      descriptionEn: `Beautiful ${COLORS_EN[ci].toLowerCase()} ${FLOWER_TYPES[fi].toLowerCase()} bouquet with ${stems} stems, ${BOUQUET_VARIANTS_EN[vi].toLowerCase()} finish.`,
+      descriptionBg: `Красив ${COLORS_BG[ci].toLowerCase()} букет от ${FLOWER_BG[fi].toLowerCase()} с ${stems} стъбла, ${BOUQUET_VARIANTS_BG[vi].toLowerCase()} изпълнение.`,
+      slug: `bouquet-${pad(++idx)}`,
+      price: faker.number.float({ min: 12.99, max: 89.99, fractionDigits: 2 }).toFixed(2),
+      category: 'bouquet' as const,
+      stock: faker.number.int({ min: 0, max: 80 }),
+    });
+  }
+
+  // Potted plants — 1,500
+  for (let i = 0; i < 1500; i++) {
+    const si = i % POTTED_SPECIES_EN.length;
+    const szi = Math.floor(i / POTTED_SPECIES_EN.length) % POT_SIZES_EN.length;
+    const ti = Math.floor(i / (POTTED_SPECIES_EN.length * POT_SIZES_EN.length)) % POT_TYPES_EN.length;
+    const nameEn = `${POTTED_SPECIES_EN[si]} – ${POT_SIZES_EN[szi]} ${POT_TYPES_EN[ti]} Pot`;
+    const nameBg = `${POTTED_SPECIES_BG[si]} – ${POT_SIZES_BG[szi]} ${POT_TYPES_BG[ti]} Саксия`;
+    products.push({
+      nameBg, nameEn,
+      descriptionEn: `${POTTED_SPECIES_EN[si]} in a ${POT_SIZES_EN[szi].toLowerCase()} ${POT_TYPES_EN[ti].toLowerCase()} pot. Perfect for home or office.`,
+      descriptionBg: `${POTTED_SPECIES_BG[si]} в ${POT_SIZES_BG[szi].toLowerCase()} ${POT_TYPES_BG[ti].toLowerCase()} саксия. Идеален за дома или офиса.`,
+      slug: `potted-${pad(++idx)}`,
+      price: faker.number.float({ min: 9.99, max: 99.99, fractionDigits: 2 }).toFixed(2),
+      category: 'potted_plant' as const,
+      stock: faker.number.int({ min: 0, max: 50 }),
+    });
+  }
+
+  // Succulents — 800
+  for (let i = 0; i < 800; i++) {
+    const si = i % SUCCULENT_SPECIES_EN.length;
+    const szi = Math.floor(i / SUCCULENT_SPECIES_EN.length) % SUCCULENT_SIZES_EN.length;
+    const ci = Math.floor(i / (SUCCULENT_SPECIES_EN.length * SUCCULENT_SIZES_EN.length)) % CONTAINER_STYLES_EN.length;
+    const nameEn = `${SUCCULENT_SPECIES_EN[si]} Succulent – ${SUCCULENT_SIZES_EN[szi]} ${CONTAINER_STYLES_EN[ci]}`;
+    const nameBg = `${SUCCULENT_SPECIES_BG[si]} Сукулент – ${SUCCULENT_SIZES_BG[szi]} ${CONTAINER_STYLES_BG[ci]}`;
+    products.push({
+      nameBg, nameEn,
+      descriptionEn: `${SUCCULENT_SPECIES_EN[si]} in a ${SUCCULENT_SIZES_EN[szi].toLowerCase()} ${CONTAINER_STYLES_EN[ci].toLowerCase()}. Low maintenance and beautiful.`,
+      descriptionBg: `${SUCCULENT_SPECIES_BG[si]} в ${SUCCULENT_SIZES_BG[szi].toLowerCase()} ${CONTAINER_STYLES_BG[ci].toLowerCase()}. Лесно за поддържане и красиво.`,
+      slug: `succulent-${pad(++idx)}`,
+      price: faker.number.float({ min: 8.99, max: 49.99, fractionDigits: 2 }).toFixed(2),
+      category: 'succulent' as const,
+      stock: faker.number.int({ min: 0, max: 80 }),
+    });
+  }
+
+  // Tropicals — 600
+  for (let i = 0; i < 600; i++) {
+    const si = i % TROPICAL_SPECIES_EN.length;
+    const vi = Math.floor(i / TROPICAL_SPECIES_EN.length) % TROPICAL_VARIANTS_EN.length;
+    const nameEn = `${TROPICAL_SPECIES_EN[si]} – ${TROPICAL_VARIANTS_EN[vi]}`;
+    const nameBg = `${TROPICAL_SPECIES_BG[si]} – ${TROPICAL_VARIANTS_BG[vi]}`;
+    products.push({
+      nameBg, nameEn,
+      descriptionEn: `Exotic ${TROPICAL_SPECIES_EN[si].toLowerCase()}, ${TROPICAL_VARIANTS_EN[vi].toLowerCase()} size. Brings a tropical feel to any space.`,
+      descriptionBg: `Екзотичен ${TROPICAL_SPECIES_BG[si].toLowerCase()}, ${TROPICAL_VARIANTS_BG[vi].toLowerCase()} размер. Внася тропическа атмосфера.`,
+      slug: `tropical-${pad(++idx)}`,
+      price: faker.number.float({ min: 19.99, max: 149.99, fractionDigits: 2 }).toFixed(2),
+      category: 'tropical' as const,
+      stock: faker.number.int({ min: 0, max: 30 }),
+    });
+  }
+
+  // Seasonal — 400
+  for (let i = 0; i < 400; i++) {
+    const hi = i % HOLIDAYS_EN.length;
+    const ii = Math.floor(i / HOLIDAYS_EN.length) % SEASONAL_ITEMS_EN.length;
+    const nameEn = `${HOLIDAYS_EN[hi]} ${SEASONAL_ITEMS_EN[ii]}`;
+    const nameBg = `${HOLIDAYS_BG[hi]} ${SEASONAL_ITEMS_BG[ii]}`;
+    products.push({
+      nameBg, nameEn,
+      descriptionEn: `Festive ${HOLIDAYS_EN[hi]} ${SEASONAL_ITEMS_EN[ii].toLowerCase()} arrangement. A perfect seasonal gift.`,
+      descriptionBg: `Празнична ${HOLIDAYS_BG[hi]} ${SEASONAL_ITEMS_BG[ii].toLowerCase()} аранжировка. Перфектен сезонен подарък.`,
+      slug: `seasonal-${pad(++idx)}`,
+      price: faker.number.float({ min: 9.99, max: 59.99, fractionDigits: 2 }).toFixed(2),
+      category: 'seasonal' as const,
+      stock: faker.number.int({ min: 0, max: 100 }),
+    });
+  }
+
+  // Accessories — 200
+  for (let i = 0; i < 200; i++) {
+    const ti = i % ACCESSORY_TYPES_EN.length;
+    const si = Math.floor(i / ACCESSORY_TYPES_EN.length) % ACCESSORY_SIZES_EN.length;
+    const nameEn = `${ACCESSORY_TYPES_EN[ti]} – ${ACCESSORY_SIZES_EN[si]}`;
+    const nameBg = `${ACCESSORY_TYPES_BG[ti]} – ${ACCESSORY_SIZES_BG[si]}`;
+    products.push({
+      nameBg, nameEn,
+      descriptionEn: `${ACCESSORY_SIZES_EN[si]} ${ACCESSORY_TYPES_EN[ti].toLowerCase()} for your plants. Practical and stylish.`,
+      descriptionBg: `${ACCESSORY_SIZES_BG[si]} ${ACCESSORY_TYPES_BG[ti].toLowerCase()} за вашите растения. Практично и стилно.`,
+      slug: `accessory-${pad(++idx)}`,
+      price: faker.number.float({ min: 4.99, max: 39.99, fractionDigits: 2 }).toFixed(2),
+      category: 'accessories' as const,
+      stock: faker.number.int({ min: 5, max: 200 }),
+    });
+  }
+
+  return products;
+}
 
 // ── main ──────────────────────────────────────────────────────────────────────
 
 async function main() {
   console.log('🌱 Clearing existing data...');
   await db.delete(schema.aiAnalyses);
-  await db.delete(schema.plantStats);
+  await db.delete(schema.plantCareLogs);
+  await db.delete(schema.plantCareSchedules);
   await db.delete(schema.orderItems);
   await db.delete(schema.orders);
   await db.delete(schema.plants);
@@ -227,108 +283,137 @@ async function main() {
   await db.delete(schema.products);
   await db.delete(schema.users);
 
-  // ── Users ────────────────────────────────────────────────────────────────
-  console.log('👤 Seeding users...');
+  // ── Users (100) ───────────────────────────────────────────────────────────
+  console.log('👤 Seeding 100 users...');
   const SALT = 10;
-  const insertedUsers = await db.insert(schema.users).values([
-    { name: 'Admin',    email: 'admin@scarlet.com',  passwordHash: await bcrypt.hash('admin123', SALT), role: 'admin', preferredLocale: 'bg' },
-    { name: 'Demo',     email: 'demo@scarlet.com',   passwordHash: await bcrypt.hash('demo123',  SALT), role: 'user',  preferredLocale: 'bg' },
-    { name: 'Мария',    email: 'maria@scarlet.com',  passwordHash: await bcrypt.hash('pass123',  SALT), role: 'user',  preferredLocale: 'bg' },
-    { name: 'Иван',     email: 'ivan@scarlet.com',   passwordHash: await bcrypt.hash('pass123',  SALT), role: 'user',  preferredLocale: 'bg' },
+  const bulkHash = await bcrypt.hash('user1234', SALT);
+
+  const namedUsers = await db.insert(schema.users).values([
+    { name: 'Admin',    email: 'admin@scarlet.com', passwordHash: await bcrypt.hash('admin123', SALT), role: 'admin', preferredLocale: 'bg' },
+    { name: 'Demo',     email: 'demo@scarlet.com',  passwordHash: await bcrypt.hash('demo123',  SALT), role: 'user',  preferredLocale: 'bg' },
+    { name: 'Мария',    email: 'maria@scarlet.com', passwordHash: await bcrypt.hash('pass123',  SALT), role: 'user',  preferredLocale: 'bg' },
+    { name: 'Иван',     email: 'ivan@scarlet.com',  passwordHash: await bcrypt.hash('pass123',  SALT), role: 'user',  preferredLocale: 'bg' },
   ]).returning();
-  const [admin, demo, maria, ivan] = insertedUsers;
 
-  // ── Plant species ─────────────────────────────────────────────────────────
-  console.log('🌿 Seeding plant species (100)...');
-  const insertedSpecies = await db.insert(schema.plantSpecies).values(
-    SPECIES.map(([scientificName, commonNameEn, commonNameBg, family, difficulty, nativeEn, nativeBg]) => ({
-      scientificName, commonNameEn, commonNameBg, family,
-      careDifficulty: difficulty,
-      descriptionEn: DESC[difficulty].en,
-      descriptionBg: DESC[difficulty].bg,
-      nativeRegionEn: nativeEn,
-      nativeRegionBg: nativeBg,
-      careGuide: careGuide(difficulty),
-      imageUrl: SPECIES_IMAGES[scientificName] ?? null,
-      isVerified: true,
-    }))
-  ).returning();
+  const bulkUserRows = Array.from({ length: 96 }, (_, i) => ({
+    name: faker.person.fullName(),
+    email: faker.internet.email({ provider: `scarlet${i + 5}.com` }),
+    passwordHash: bulkHash,
+    role: 'user' as const,
+    preferredLocale: 'bg' as const,
+  }));
+  const bulkUsers = await db.insert(schema.users).values(bulkUserRows).returning();
+  const allUsers = [...namedUsers, ...bulkUsers];
+  console.log(`   → ${allUsers.length} users`);
 
-  // ── Plants ────────────────────────────────────────────────────────────────
-  console.log('🪴 Seeding 200 plants...');
-  const userPool = [demo, demo, demo, maria, maria, ivan, admin]; // demo weighted higher
-  const plantRows = Array.from({ length: 200 }, (_, i) => {
-    const user   = userPool[i % userPool.length];
+  // ── Plant species (up to 200) ──────────────────────────────────────────────
+  console.log('🌿 Seeding plant species...');
+  const speciesRows = SPECIES_DATA.slice(0, 200).map(s => ({
+    scientificName: s.scientificName,
+    commonNameEn: s.commonNameEn,
+    commonNameBg: null,
+    family: null,
+    nativeRegionEn: null,
+    nativeRegionBg: null,
+    careDifficulty: s.careDifficulty,
+    descriptionEn: `A ${s.careDifficulty} care plant. ${s.commonNameEn ?? s.scientificName} is a popular choice for indoor gardens.`,
+    descriptionBg: null,
+    careGuide: careGuide(s.careDifficulty),
+    imageUrl: s.imageUrl,
+    isVerified: true,
+    wateringIntervalDays: s.wateringIntervalDays,
+    fertilizingIntervalDays: s.fertilizingIntervalDays,
+    repottingIntervalMonths: s.repottingIntervalMonths,
+    mistingNeeded: s.mistingNeeded,
+  }));
+  const insertedSpecies = await db.insert(schema.plantSpecies).values(speciesRows).returning();
+  console.log(`   → ${insertedSpecies.length} species`);
+
+  // ── Plants (500 across first 10 users) ────────────────────────────────────
+  console.log('🪴 Seeding 500 plants across first 10 users...');
+  const plantOwners = allUsers.slice(0, 10);
+  const plantRows = Array.from({ length: 500 }, (_, i) => {
+    const user    = plantOwners[i % plantOwners.length];
     const species = insertedSpecies[i % insertedSpecies.length];
-    const score  = parseFloat((faker.number.float({ min: 40, max: 100, fractionDigits: 1 })).toFixed(1));
     return {
       userId:           user.id,
       speciesId:        species.id,
-      customName:       `${species.commonNameEn} #${i + 1}`,
-      healthScore:      score,
-      lastWatered:      faker.date.recent({ days: 14 }),
-      isArchived:       i > 180,
-      speciesConfirmed: i < 150,
+      customName:       `${species.commonNameEn ?? species.scientificName} #${i + 1}`,
+      healthScore:      parseFloat(faker.number.float({ min: 40, max: 100, fractionDigits: 1 }).toFixed(1)),
+      lastWatered:      faker.date.recent({ days: 20 }),
+      isArchived:       i > 480,
+      speciesConfirmed: i < 400,
     };
   });
   const insertedPlants = await db.insert(schema.plants).values(plantRows).returning();
+  console.log(`   → ${insertedPlants.length} plants`);
 
-  // ── Plant stats (bulk — 20 000+ rows) ────────────────────────────────────
-  console.log('📊 Seeding plant stats (~20 000 rows)...');
-  const metricTypes = schema.metricTypeEnum.enumValues;
-  const metricConfig: Record<string, { min: number; max: number; unit: string }> = {
-    water:       { min: 10,  max: 500,  unit: 'ml' },
-    light:       { min: 100, max: 5000, unit: 'lux' },
-    humidity:    { min: 30,  max: 90,   unit: '%' },
-    temperature: { min: 12,  max: 35,   unit: '°C' },
-    fertilizer:  { min: 0,   max: 5,    unit: 'g' },
-  };
-  const statsRows = insertedPlants.flatMap(plant =>
-    Array.from({ length: 100 }, () => {
-      const metric = faker.helpers.arrayElement(metricTypes);
-      const cfg    = metricConfig[metric];
-      return {
-        plantId:    plant.id,
-        metricType: metric,
-        value:      parseFloat(faker.number.float({ min: cfg.min, max: cfg.max, fractionDigits: 1 }).toFixed(1)),
-        unit:       cfg.unit,
-        recordedAt: faker.date.between({ from: new Date('2024-01-01'), to: new Date() }),
-      };
-    })
-  );
-  await chunkInsert(schema.plantStats, statsRows, 500);
-  console.log(`   → ${statsRows.length} plant_stats rows inserted`);
+  // ── Plant care schedules (500 — one per plant) ────────────────────────────
+  console.log('📅 Seeding care schedules...');
+  const scheduleRows = insertedPlants.map((plant, i) => {
+    const species = insertedSpecies[i % insertedSpecies.length];
+    const lastWatered = plantRows[i].lastWatered as Date;
+    const wDays  = species.wateringIntervalDays ?? 7;
+    const fDays  = species.fertilizingIntervalDays ?? 14;
+    const rMonth = species.repottingIntervalMonths ?? 18;
+    const mist   = species.mistingNeeded ?? false;
+    return {
+      plantId:                 plant.id,
+      wateringIntervalDays:    wDays,
+      wateringNextDue:         new Date(lastWatered.getTime() + wDays * 24 * 60 * 60 * 1000),
+      fertilizingIntervalDays: fDays,
+      fertilizingNextDue:      faker.date.soon({ days: fDays }),
+      repottingIntervalMonths: rMonth,
+      repottingNextDue:        faker.date.future({ years: rMonth / 12 }),
+      mistingNeeded:           mist,
+      mistingNextDue:          mist ? faker.date.soon({ days: 2 }) : null,
+      isCustomized:            false,
+    };
+  });
+  await chunkInsert(schema.plantCareSchedules, scheduleRows, 500);
+  console.log(`   → ${scheduleRows.length} schedules`);
 
-  // ── Products ──────────────────────────────────────────────────────────────
-  console.log('🌸 Seeding products...');
-  const insertedProducts = await db.insert(schema.products).values(
-    PRODUCTS.map(([nameBg, nameEn, descriptionBg, descriptionEn, slug, price, category, stock]) => ({
-      nameBg, nameEn, descriptionBg, descriptionEn, slug,
-      price:    price.toFixed(2),
-      category,
-      stock,
-      imageUrl: PRODUCT_IMAGES[slug] ?? null,
-      isActive: true,
-    }))
-  ).returning();
+  // ── Plant care logs (1,000 — 2 per plant) ────────────────────────────────
+  console.log('📋 Seeding 1,000 care logs...');
+  const careTypes = schema.careTypeEnum.enumValues;
+  const careWeights = ['watered', 'watered', 'watered', 'fertilized', 'fertilized', 'observation', 'observation', 'misted', 'pruned', 'rotated'] as const;
+  const careLogRows = insertedPlants.flatMap((plant, i) => {
+    const user = plantOwners[i % plantOwners.length];
+    return Array.from({ length: 2 }, (_, j) => ({
+      plantId:  plant.id,
+      userId:   user.id,
+      careType: careWeights[faker.number.int({ min: 0, max: careWeights.length - 1 })],
+      photoUrl: null,
+      notes:    j === 0 ? faker.helpers.maybe(() => faker.lorem.sentence(), { probability: 0.3 }) ?? null : null,
+      loggedAt: faker.date.recent({ days: 180 }),
+    }));
+  });
+  await chunkInsert(schema.plantCareLogs, careLogRows, 500);
+  console.log(`   → ${careLogRows.length} care logs`);
 
-  // ── Orders + order items (bulk — ~10 000 rows combined) ───────────────────
-  console.log('🛒 Seeding 2 000 orders + ~5 000 order items...');
+  // ── Products (5,500) ─────────────────────────────────────────────────────
+  console.log('🌸 Seeding 5,500 products...');
+  const productData = generateProducts();
+  await chunkInsert(schema.products, productData.map(p => ({ ...p, isActive: true })), 500);
+  const insertedProducts = await db.select({ id: schema.products.id, price: schema.products.price }).from(schema.products);
+  console.log(`   → ${insertedProducts.length} products`);
+
+  // ── Orders (1,000) + order_items ─────────────────────────────────────────
+  console.log('🛒 Seeding 1,000 orders + ~1,200 order items...');
   const statuses = schema.orderStatusEnum.enumValues;
-  const orderUserPool = [demo, demo, maria, ivan, admin];
-  const ORDERS_COUNT = 2000;
+  const ORDERS_COUNT = 1000;
 
   for (let batch = 0; batch < ORDERS_COUNT; batch += 200) {
     const batchSize = Math.min(200, ORDERS_COUNT - batch);
     const batchOrders = Array.from({ length: batchSize }, () => {
-      const user  = faker.helpers.arrayElement(orderUserPool);
-      const items = faker.number.int({ min: 1, max: 5 });
-      let total   = 0;
+      const user  = faker.helpers.arrayElement(plantOwners);
+      const items = faker.number.int({ min: 1, max: 2 });
+      let total = 0;
       const lineItems = Array.from({ length: items }, () => {
-        const product  = faker.helpers.arrayElement(insertedProducts);
-        const qty      = faker.number.int({ min: 1, max: 4 });
-        const price    = parseFloat(product.price as string);
-        total         += price * qty;
+        const product = faker.helpers.arrayElement(insertedProducts);
+        const qty     = faker.number.int({ min: 1, max: 3 });
+        const price   = parseFloat(product.price as string);
+        total        += price * qty;
         return { product, qty, price };
       });
       return { user, total: parseFloat(total.toFixed(2)), lineItems };
@@ -355,15 +440,20 @@ async function main() {
   }
 
   // ── Summary ───────────────────────────────────────────────────────────────
+  const total =
+    allUsers.length + insertedSpecies.length + insertedPlants.length +
+    scheduleRows.length + careLogRows.length + productData.length +
+    ORDERS_COUNT + Math.round(ORDERS_COUNT * 1.2); // approx order_items
+
   console.log('\n✅ Seed complete!');
-  console.log(`   users          : ${insertedUsers.length}`);
-  console.log(`   plant_species  : ${insertedSpecies.length}`);
-  console.log(`   plants         : ${insertedPlants.length}`);
-  console.log(`   plant_stats    : ${statsRows.length}`);
-  console.log(`   products       : ${insertedProducts.length}`);
-  console.log(`   orders         : 2000`);
-  console.log(`   TOTAL ≈ ${statsRows.length + 2000 + insertedPlants.length + insertedProducts.length + insertedSpecies.length + insertedUsers.length} rows`);
-  process.exit(0);
+  console.log(`   users              : ${allUsers.length}`);
+  console.log(`   plant_species      : ${insertedSpecies.length}`);
+  console.log(`   plants             : ${insertedPlants.length}`);
+  console.log(`   plant_care_schedules: ${scheduleRows.length}`);
+  console.log(`   plant_care_logs    : ${careLogRows.length}`);
+  console.log(`   products           : ${productData.length}`);
+  console.log(`   orders             : ${ORDERS_COUNT}`);
+  console.log(`   TOTAL (approx)     : ${total}`);
 }
 
 main().catch(err => {

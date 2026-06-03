@@ -1,8 +1,11 @@
 import { getLocale, getTranslations } from 'next-intl/server';
 import { CheckCircle2, Flower2, SlidersHorizontal } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
+import { Pagination } from '@/components/ui/pagination';
 import { listSpecies } from '@/services/catalog.service';
 import type { Metadata } from 'next';
+
+const PAGE_SIZE = 24;
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('catalog');
@@ -17,9 +20,11 @@ export default async function CatalogPage({
   const t = await getTranslations();
   const locale = await getLocale();
   const sp = await searchParams;
+  const page = Math.max(1, parseInt(sp.page ?? '1', 10));
+  const offset = (page - 1) * PAGE_SIZE;
   const { species, total } = await listSpecies({
-    limit: 24,
-    offset: parseInt(sp.offset ?? '0', 10),
+    limit: PAGE_SIZE,
+    offset,
     search: sp.search || undefined,
     difficulty: sp.careDifficulty || undefined,
     verifiedOnly: false,
@@ -98,54 +103,70 @@ export default async function CatalogPage({
           <p className="text-sm">{t('common.noResults')}</p>
         </div>
       ) : (
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {species.map((s: {
-            id: string;
-            commonNameBg: string | null;
-            commonNameEn: string | null;
-            scientificName: string;
-            careDifficulty: string | null;
-            isVerified: boolean;
-            imageUrl: string | null;
-          }) => (
-            <Link key={s.id} href={`/catalog/${s.id}`}>
-              <div className="group flex flex-col overflow-hidden rounded-2xl border border-border-light bg-surface transition-all duration-200 hover:border-border hover:shadow-lg hover:shadow-scarlet/5">
-                {/* Image */}
-                <div className="relative aspect-square overflow-hidden bg-cream">
-                  {s.imageUrl ? (
-                    <img
-                      src={s.imageUrl}
-                      alt={getLocalName(s)}
-                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                  ) : (
-                    <div className="flex h-full items-center justify-center">
-                      <Flower2 className="h-10 w-10 text-border" />
-                    </div>
-                  )}
-                  {s.isVerified && (
-                    <span className="absolute right-2 top-2 flex h-6 w-6 items-center justify-center rounded-full bg-surface shadow-sm">
-                      <CheckCircle2 className="h-4 w-4 text-botanical" />
-                    </span>
-                  )}
-                </div>
+        <>
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            {species.map((s: {
+              id: string;
+              commonNameBg: string | null;
+              commonNameEn: string | null;
+              scientificName: string;
+              careDifficulty: string | null;
+              isVerified: boolean;
+              imageUrl: string | null;
+            }) => (
+              <Link key={s.id} href={`/catalog/${s.id}`}>
+                <div className="group flex flex-col overflow-hidden rounded-2xl border border-border-light bg-surface transition-all duration-200 hover:border-border hover:shadow-lg hover:shadow-scarlet/5">
+                  {/* Image */}
+                  <div className="relative aspect-square overflow-hidden bg-cream">
+                    {s.imageUrl ? (
+                      <img
+                        src={s.imageUrl}
+                        alt={getLocalName(s)}
+                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                    ) : (
+                      <div className="flex h-full items-center justify-center">
+                        <Flower2 className="h-10 w-10 text-border" />
+                      </div>
+                    )}
+                    {s.isVerified && (
+                      <span className="absolute right-2 top-2 flex h-6 w-6 items-center justify-center rounded-full bg-surface shadow-sm">
+                        <CheckCircle2 className="h-4 w-4 text-botanical" />
+                      </span>
+                    )}
+                  </div>
 
-                {/* Info */}
-                <div className="p-3.5">
-                  <p className="truncate font-semibold text-sm text-foreground">{getLocalName(s)}</p>
-                  <p className="mt-0.5 truncate text-xs italic text-muted-light">{s.scientificName}</p>
-                  {s.careDifficulty && (
-                    <span
-                      className={`mt-2.5 inline-flex items-center rounded-full px-2.5 py-0.5 text-[10px] font-semibold ${difficultyStyle[s.careDifficulty] ?? 'bg-subtle text-muted'}`}
-                    >
-                      {t(`catalog.${s.careDifficulty as 'easy' | 'moderate' | 'difficult'}`)}
-                    </span>
-                  )}
+                  {/* Info */}
+                  <div className="p-3.5">
+                    <p className="truncate font-semibold text-sm text-foreground">{getLocalName(s)}</p>
+                    <p className="mt-0.5 truncate text-xs italic text-muted-light">{s.scientificName}</p>
+                    {s.careDifficulty && (
+                      <span
+                        className={`mt-2.5 inline-flex items-center rounded-full px-2.5 py-0.5 text-[10px] font-semibold ${difficultyStyle[s.careDifficulty] ?? 'bg-subtle text-muted'}`}
+                      >
+                        {t(`catalog.${s.careDifficulty as 'easy' | 'moderate' | 'difficult'}`)}
+                      </span>
+                    )}
+                  </div>
                 </div>
-              </div>
-            </Link>
-          ))}
-        </div>
+              </Link>
+            ))}
+          </div>
+
+          <Pagination
+            page={page}
+            total={total}
+            limit={PAGE_SIZE}
+            getHref={(p) => {
+              const params = new URLSearchParams();
+              if (sp.search) params.set('search', sp.search);
+              if (sp.careDifficulty) params.set('careDifficulty', sp.careDifficulty);
+              params.set('page', String(p));
+              return `?${params.toString()}`;
+            }}
+            className="mt-8"
+          />
+        </>
       )}
     </div>
   );
