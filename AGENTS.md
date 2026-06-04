@@ -30,7 +30,7 @@ Scarlet is a full-stack boutique flower shop application with an embedded plant 
 
 ### AI Plant Analysis
 - Route: `POST /api/plants/:id/ai-analysis` (analyzes saved plant) or `POST /api/ai/quick-scan` (ad-hoc photo)
-- Provider: Google Gemini 2.0 Flash (free tier) via `@google/generative-ai`
+- Provider: Groq `llama-4-scout` via the Groq API (env `GROQ_API_KEY`)
 - Returns: species identification (common name, scientific name, family, native region, care difficulty) + health assessment (score 0-100, issues with severity, care recommendations)
 - Rate limit: 5 analyses per user per 24 hours (DB-enforced)
 - Implementation: `apps/web/src/lib/ai/plant-analyzer.ts`
@@ -45,7 +45,7 @@ Scarlet is a full-stack boutique flower shop application with an embedded plant 
 | ORM | Drizzle ORM |
 | Auth | Custom JWT (jsonwebtoken + bcryptjs) |
 | Storage | Cloudflare R2 via @aws-sdk/client-s3 |
-| AI | Google Gemini 2.0 Flash (@google/generative-ai) |
+| AI | Groq llama-4-scout (Groq API) |
 | i18n (web) | next-intl (BG default, EN secondary) |
 | Mobile | React Native + Expo (Expo Router) |
 | i18n (mobile) | i18next + react-i18next |
@@ -73,7 +73,7 @@ Scarlet is a full-stack boutique flower shop application with an embedded plant 
 
 ### i18n
 - Bulgarian (`bg`) is the default language
-- Translation keys live in `apps/web/src/messages/bg.json` and `apps/web/src/messages/en.json`
+- Translation keys live in `apps/web/messages/bg.json` and `apps/web/messages/en.json`
 - Mobile keys mirror web keys in `apps/mobile/src/i18n/bg.json` and `apps/mobile/src/i18n/en.json`
 - Use namespace prefixes: `nav.*`, `auth.*`, `plants.*`, `catalog.*`, `shop.*`, `admin.*`, `ai.*`, `common.*`
 
@@ -98,19 +98,20 @@ cd scarlet
 npm install
 
 # 2. Configure environment
-cp .env.example apps/web/.env.local
-# Fill in DATABASE_URL, JWT secrets, R2 credentials, GOOGLE_AI_API_KEY
+# Create apps/web/.env.local and fill in:
+#   DATABASE_URL, JWT_ACCESS_SECRET, JWT_REFRESH_SECRET, GROQ_API_KEY,
+#   and R2_* credentials (R2_ACCOUNT_ID, R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY,
+#   R2_BUCKET_NAME, R2_PUBLIC_URL)
 
 # 3. Run database migrations
-npm run db:generate
 npm run db:migrate
 
 # 4. Seed the database
 npm run db:seed
 
 # 5. Start web app
-npm run dev
+npm run dev:web
 
 # 6. Start mobile app (separate terminal)
-npm run mobile
+npm run dev:mobile
 ```
