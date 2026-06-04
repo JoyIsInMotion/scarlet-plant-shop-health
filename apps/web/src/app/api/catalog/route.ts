@@ -12,6 +12,7 @@ export async function GET(req: NextRequest) {
       offset: parseInt(sp.get('offset') ?? '0', 10),
       search: sp.get('search') || undefined,
       difficulty: sp.get('difficulty') || sp.get('careDifficulty') || undefined,
+      category: sp.get('category') || undefined,
       verifiedOnly: sp.get('verified') === 'true',
     })
   );

@@ -8,6 +8,7 @@ export async function listSpecies(query: {
   offset: number;
   search?: string;
   difficulty?: string;
+  category?: string;
   verifiedOnly: boolean;
 }) {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -25,6 +26,9 @@ export async function listSpecies(query: {
   if (query.difficulty) {
     conditions.push(eq(plantSpecies.careDifficulty, query.difficulty as 'easy'));
   }
+  if (query.category) {
+    conditions.push(eq(plantSpecies.category, query.category));
+  }
   if (query.verifiedOnly) {
     conditions.push(eq(plantSpecies.isVerified, true));
   }
@@ -39,6 +43,7 @@ export async function listSpecies(query: {
       scientificName: plantSpecies.scientificName,
       family: plantSpecies.family,
       careDifficulty: plantSpecies.careDifficulty,
+      category: plantSpecies.category,
       imageUrl: plantSpecies.imageUrl,
       isVerified: plantSpecies.isVerified,
     })
@@ -116,7 +121,12 @@ export async function updateSpecies(
     descriptionBg?: string;
     descriptionEn?: string;
     careGuide?: Record<string, { bg: string; en: string }>;
+    imageUrl?: string | null;
     isVerified?: boolean;
+    wateringIntervalDays?: number | null;
+    fertilizingIntervalDays?: number | null;
+    repottingIntervalMonths?: number | null;
+    mistingNeeded?: boolean;
   }
 ) {
   const [existing] = await db
@@ -140,7 +150,12 @@ export async function updateSpecies(
       descriptionBg: data.descriptionBg,
       descriptionEn: data.descriptionEn,
       careGuide: data.careGuide,
+      imageUrl: data.imageUrl,
       isVerified: data.isVerified,
+      wateringIntervalDays: data.wateringIntervalDays,
+      fertilizingIntervalDays: data.fertilizingIntervalDays,
+      repottingIntervalMonths: data.repottingIntervalMonths,
+      mistingNeeded: data.mistingNeeded,
       updatedAt: new Date(),
     })
     .where(eq(plantSpecies.id, id))

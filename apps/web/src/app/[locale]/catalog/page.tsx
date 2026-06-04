@@ -3,6 +3,7 @@ import { CheckCircle2, Flower2, SlidersHorizontal } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
 import { Pagination } from '@/components/ui/pagination';
 import { listSpecies } from '@/services/catalog.service';
+import { PLANT_CATEGORIES } from '@/lib/plants/categories';
 import type { Metadata } from 'next';
 
 const PAGE_SIZE = 24;
@@ -27,6 +28,7 @@ export default async function CatalogPage({
     offset,
     search: sp.search || undefined,
     difficulty: sp.careDifficulty || undefined,
+    category: sp.category || undefined,
     verifiedOnly: false,
   });
 
@@ -36,6 +38,12 @@ export default async function CatalogPage({
     { value: 'moderate', label: t('catalog.moderate') },
     { value: 'difficult', label: t('catalog.difficult') },
   ];
+
+  const categoryLabel = (value: string) => {
+    const c = PLANT_CATEGORIES.find((x) => x.value === value);
+    if (!c) return value;
+    return `${c.icon} ${locale === 'en' ? c.en : c.bg}`;
+  };
 
   const difficultyStyle: Record<string, string> = {
     easy: 'bg-botanical-light text-botanical-dark',
@@ -79,6 +87,18 @@ export default async function CatalogPage({
             className="h-9 min-w-[160px] flex-1 rounded-xl border border-border bg-surface px-3 text-sm text-foreground placeholder:text-muted-light focus:outline-none focus:ring-2 focus:ring-scarlet/30 sm:flex-none"
           />
           <select
+            name="category"
+            defaultValue={sp.category ?? ''}
+            className="h-9 rounded-xl border border-border bg-surface px-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-scarlet/30"
+          >
+            <option value="">{t('catalog.allCategories')}</option>
+            {PLANT_CATEGORIES.map((c) => (
+              <option key={c.value} value={c.value}>
+                {c.icon} {locale === 'en' ? c.en : c.bg}
+              </option>
+            ))}
+          </select>
+          <select
             name="careDifficulty"
             defaultValue={sp.careDifficulty ?? ''}
             className="h-9 rounded-xl border border-border bg-surface px-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-scarlet/30"
@@ -111,6 +131,7 @@ export default async function CatalogPage({
               commonNameEn: string | null;
               scientificName: string;
               careDifficulty: string | null;
+              category: string | null;
               isVerified: boolean;
               imageUrl: string | null;
             }) => (
@@ -140,13 +161,20 @@ export default async function CatalogPage({
                   <div className="p-3.5">
                     <p className="truncate font-semibold text-sm text-foreground">{getLocalName(s)}</p>
                     <p className="mt-0.5 truncate text-xs italic text-muted-light">{s.scientificName}</p>
-                    {s.careDifficulty && (
-                      <span
-                        className={`mt-2.5 inline-flex items-center rounded-full px-2.5 py-0.5 text-[10px] font-semibold ${difficultyStyle[s.careDifficulty] ?? 'bg-subtle text-muted'}`}
-                      >
-                        {t(`catalog.${s.careDifficulty as 'easy' | 'moderate' | 'difficult'}`)}
-                      </span>
-                    )}
+                    <div className="mt-2.5 flex flex-wrap items-center gap-1.5">
+                      {s.category && (
+                        <span className="inline-flex items-center rounded-full bg-subtle px-2.5 py-0.5 text-[10px] font-semibold text-muted">
+                          {categoryLabel(s.category)}
+                        </span>
+                      )}
+                      {s.careDifficulty && (
+                        <span
+                          className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-[10px] font-semibold ${difficultyStyle[s.careDifficulty] ?? 'bg-subtle text-muted'}`}
+                        >
+                          {t(`catalog.${s.careDifficulty as 'easy' | 'moderate' | 'difficult'}`)}
+                        </span>
+                      )}
+                    </div>
                   </div>
                 </div>
               </Link>
@@ -161,6 +189,7 @@ export default async function CatalogPage({
               const params = new URLSearchParams();
               if (sp.search) params.set('search', sp.search);
               if (sp.careDifficulty) params.set('careDifficulty', sp.careDifficulty);
+              if (sp.category) params.set('category', sp.category);
               params.set('page', String(p));
               return `?${params.toString()}`;
             }}

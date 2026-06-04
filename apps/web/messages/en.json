@@ -109,6 +109,8 @@
     "search": "Search plants...",
     "filterByDifficulty": "Filter by difficulty",
     "allDifficulties": "All levels",
+    "filterByCategory": "Filter by category",
+    "allCategories": "All categories",
     "easy": "Easy",
     "moderate": "Moderate",
     "difficult": "Difficult",
