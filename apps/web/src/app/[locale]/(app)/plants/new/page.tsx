@@ -101,7 +101,7 @@ export default function NewPlantPage() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           customName: data.customName,
-          lastWatered: data.lastWatered || null,
+          lastWatered: data.lastWatered ? new Date(data.lastWatered).toISOString() : null,
           speciesId:   speciesConfirmed ? speciesId : null,
         }),
       });

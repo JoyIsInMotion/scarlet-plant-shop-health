@@ -30,7 +30,7 @@ const CARE_ICONS: CareBasicItem[] = [
     labelEn: 'Light',
     labelBg: 'Светлина',
     tooltipEn: 'How much light the plant needs',
-    tooltipBg: 'Количеството светлина, което растението нужда'
+    tooltipBg: 'Количеството светлина, кое растението изисква'
   },
   {
     key: 'watering',
@@ -43,10 +43,10 @@ const CARE_ICONS: CareBasicItem[] = [
   {
     key: 'temperature',
     icon: <Thermometer className="h-4 w-4" />,
-    labelEn: 'Temp',
-    labelBg: 'Темп',
+    labelEn: 'Temperature',
+    labelBg: 'Температура',
     tooltipEn: 'Ideal temperature range',
-    tooltipBg: 'Идеален температурен диапазон'
+    tooltipBg: 'Идеалнa температурa '
   },
   {
     key: 'humidity',
@@ -62,7 +62,7 @@ const CARE_ICONS: CareBasicItem[] = [
     labelEn: 'Fertilizer',
     labelBg: 'Тор',
     tooltipEn: 'Feeding schedule for growth',
-    tooltipBg: 'График на тор за растеж'
+    tooltipBg: 'График на тoрeне за растеж'
   },
   {
     key: 'soil',
@@ -76,7 +76,7 @@ const CARE_ICONS: CareBasicItem[] = [
     key: 'toxicity',
     icon: <AlertTriangle className="h-4 w-4" />,
     labelEn: 'Pets',
-    labelBg: 'Домашни',
+    labelBg: 'Домашни любимци',
     tooltipEn: 'Safety for pets',
     tooltipBg: 'Безопасност за домашни животни'
   },

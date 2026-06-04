@@ -90,7 +90,6 @@ export function Navbar() {
 
             <Link href="/catalog" className={navLinkClass}>{t('nav.catalog')}</Link>
             <Link href="/community" className={navLinkClass}>{t('nav.community')}</Link>
-            <Link href="/about" className={navLinkClass}>{t('nav.about')}</Link>
 
             {authLinks.length > 0 && (
               <>
@@ -195,9 +194,6 @@ export function Navbar() {
             <Link href="/community" onClick={() => setMobileOpen(false)} className="flex items-center gap-2 rounded-xl px-3 py-2 text-sm text-muted transition-colors hover:bg-cream hover:text-foreground">
               <Users className="h-4 w-4" />
               {t('nav.community')}
-            </Link>
-            <Link href="/about" onClick={() => setMobileOpen(false)} className="block rounded-xl px-3 py-2 text-sm text-muted transition-colors hover:bg-cream hover:text-foreground">
-              {t('nav.about')}
             </Link>
           </div>
 
