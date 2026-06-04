@@ -11,6 +11,7 @@ import {
   real,
   jsonb,
   index,
+  uniqueIndex,
 } from 'drizzle-orm/pg-core';
 import { relations } from 'drizzle-orm';
 
@@ -113,6 +114,7 @@ export const plantSpecies = pgTable(
     nativeRegionBg: text('native_region_bg'),
     nativeRegionEn: text('native_region_en'),
     careDifficulty: careDifficultyEnum('care_difficulty'),
+    category: varchar('category', { length: 30 }),
     descriptionBg: text('description_bg'),
     descriptionEn: text('description_en'),
     careGuide: jsonb('care_guide').$type<
@@ -125,6 +127,7 @@ export const plantSpecies = pgTable(
     fertilizingIntervalDays: integer('fertilizing_interval_days'),
     repottingIntervalMonths: integer('repotting_interval_months'),
     mistingNeeded: boolean('misting_needed').default(false).notNull(),
+    isToxicToPets: boolean('is_toxic_to_pets'),
     createdAt: timestamp('created_at').defaultNow().notNull(),
     updatedAt: timestamp('updated_at').defaultNow().notNull(),
   },
@@ -133,6 +136,7 @@ export const plantSpecies = pgTable(
     index('plant_species_common_bg_idx').on(t.commonNameBg),
     index('plant_species_common_en_idx').on(t.commonNameEn),
     index('plant_species_verified_idx').on(t.isVerified),
+    index('plant_species_category_idx').on(t.category),
   ]
 );
 
@@ -153,6 +157,8 @@ export const plants = pgTable(
     lastWatered: timestamp('last_watered'),
     imageUrl: text('image_url'),
     isArchived: boolean('is_archived').default(false).notNull(),
+    isPublic: boolean('is_public').default(false).notNull(),
+    likesCount: integer('likes_count').default(0).notNull(),
     speciesConfirmed: boolean('species_confirmed').default(false).notNull(),
     createdAt: timestamp('created_at').defaultNow().notNull(),
     updatedAt: timestamp('updated_at').defaultNow().notNull(),
@@ -162,8 +168,30 @@ export const plants = pgTable(
     index('plants_species_idx').on(t.speciesId),
     index('plants_health_idx').on(t.healthScore),
     index('plants_archived_idx').on(t.isArchived),
+    index('plants_public_idx').on(t.isPublic),
     // Composite: covers the common list query (userId + isArchived filter + ORDER BY createdAt)
     index('plants_user_archived_created_idx').on(t.userId, t.isArchived, t.createdAt),
+  ]
+);
+
+// ─── plant_likes ──────────────────────────────────────────────────────────────
+
+export const plantLikes = pgTable(
+  'plant_likes',
+  {
+    id: uuid('id').defaultRandom().primaryKey(),
+    userId: uuid('user_id')
+      .notNull()
+      .references(() => users.id, { onDelete: 'cascade' }),
+    plantId: uuid('plant_id')
+      .notNull()
+      .references(() => plants.id, { onDelete: 'cascade' }),
+    createdAt: timestamp('created_at').defaultNow().notNull(),
+  },
+  (t) => [
+    index('plant_likes_user_idx').on(t.userId),
+    index('plant_likes_plant_idx').on(t.plantId),
+    uniqueIndex('plant_likes_user_plant_idx').on(t.userId, t.plantId),
   ]
 );
 
@@ -347,6 +375,7 @@ export const usersRelations = relations(users, ({ many }) => ({
   refreshTokens: many(refreshTokens),
   aiAnalyses: many(aiAnalyses),
   careLogs: many(plantCareLogs),
+  plantLikes: many(plantLikes),
 }));
 
 export const refreshTokensRelations = relations(refreshTokens, ({ one }) => ({
@@ -366,6 +395,12 @@ export const plantsRelations = relations(plants, ({ one, many }) => ({
   }),
   careLogs: many(plantCareLogs),
   aiAnalyses: many(aiAnalyses),
+  likes: many(plantLikes),
+}));
+
+export const plantLikesRelations = relations(plantLikes, ({ one }) => ({
+  user: one(users, { fields: [plantLikes.userId], references: [users.id] }),
+  plant: one(plants, { fields: [plantLikes.plantId], references: [plants.id] }),
 }));
 
 export const plantCareSchedulesRelations = relations(plantCareSchedules, ({ one }) => ({
