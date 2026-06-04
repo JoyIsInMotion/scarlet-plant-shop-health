@@ -271,7 +271,18 @@
     "unverifySpecies": "Отмени проверката",
     "manageUsers": "Управление на потребители",
     "manageProducts": "Управление на продукти",
-    "manageCatalog": "Управление на каталог"
+    "manageCatalog": "Управление на каталог",
+    "manageOrders": "Управление на поръчки",
+    "order": "Поръчка",
+    "customer": "Клиент",
+    "items": "Артикули",
+    "status": "Статус",
+    "actions": "Действия",
+    "complete": "Завърши",
+    "markComplete": "Маркирай като доставена",
+    "changeStatus": "Промени статуса",
+    "deleteOrderConfirm": "Да изтрия ли тази поръчка? Действието е необратимо.",
+    "orderDeleted": "Поръчката е изтрита"
   },
   "profile": {
     "title": "Профил",

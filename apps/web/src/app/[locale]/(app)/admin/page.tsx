@@ -1,8 +1,9 @@
 import { getTranslations } from 'next-intl/server';
 import { cookies } from 'next/headers';
-import { Users, Leaf, ShoppingBag, ScanLine, TrendingUp } from 'lucide-react';
+import { Users, Leaf, ShoppingBag, ScanLine, TrendingUp, ArrowRight } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Pagination } from '@/components/ui/pagination';
+import { Link } from '@/i18n/navigation';
 import type { Metadata } from 'next';
 
 const PAGE_SIZE = 20;
@@ -55,7 +56,7 @@ export default async function AdminPage({
     { label: t('admin.totalPlants'), value: stats?.totalPlants ?? 0,                          icon: Leaf,        color: 'text-green-600 bg-green-50' },
     { label: t('admin.totalOrders'), value: stats?.totalOrders ?? 0,                          icon: ShoppingBag, color: 'text-purple-600 bg-purple-50' },
     { label: t('admin.aiScansToday'), value: stats?.aiScansToday ?? 0,                        icon: ScanLine,    color: 'text-orange-600 bg-orange-50' },
-    { label: t('admin.revenue'),     value: `${(stats?.revenue ?? 0).toFixed(2)} лв.`,        icon: TrendingUp,  color: 'text-red-600 bg-red-50' },
+    { label: t('admin.revenue'),     value: `${Number(stats?.revenue ?? 0).toFixed(2)} лв.`,  icon: TrendingUp,  color: 'text-red-600 bg-red-50' },
   ];
 
   return (
@@ -75,6 +76,25 @@ export default async function AdminPage({
             </CardContent>
           </Card>
         ))}
+      </div>
+
+      {/* Management links */}
+      <div className="mb-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
+        <Link
+          href="/admin/orders"
+          className="group flex items-center justify-between rounded-2xl border border-border bg-surface p-5 transition-colors hover:border-scarlet/40 hover:bg-cream"
+        >
+          <div className="flex items-center gap-3">
+            <div className="inline-flex rounded-lg bg-purple-50 p-2 text-purple-600">
+              <ShoppingBag className="h-5 w-5" />
+            </div>
+            <div>
+              <p className="font-semibold text-gray-900">{t('admin.manageOrders')}</p>
+              <p className="text-xs text-gray-500">{stats?.totalOrders ?? 0} {t('admin.totalOrders').toLowerCase()}</p>
+            </div>
+          </div>
+          <ArrowRight className="h-4 w-4 text-muted transition-transform group-hover:translate-x-0.5" />
+        </Link>
       </div>
 
       {/* Users table */}

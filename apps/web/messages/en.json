@@ -271,7 +271,18 @@
     "unverifySpecies": "Unverify species",
     "manageUsers": "Manage users",
     "manageProducts": "Manage products",
-    "manageCatalog": "Manage catalog"
+    "manageCatalog": "Manage catalog",
+    "manageOrders": "Manage orders",
+    "order": "Order",
+    "customer": "Customer",
+    "items": "Items",
+    "status": "Status",
+    "actions": "Actions",
+    "complete": "Complete",
+    "markComplete": "Mark as delivered",
+    "changeStatus": "Change status",
+    "deleteOrderConfirm": "Delete this order? This cannot be undone.",
+    "orderDeleted": "Order deleted"
   },
   "profile": {
     "title": "Profile",
