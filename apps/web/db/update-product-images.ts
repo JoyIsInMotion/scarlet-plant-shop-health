@@ -15,12 +15,7 @@ import { drizzle } from 'drizzle-orm/neon-http';
 import { eq } from 'drizzle-orm';
 import * as schema from '../src/lib/db/schema';
 
-const PEXELS_KEY = process.env.PEXELS_API_KEY;
-if (!PEXELS_KEY) {
-  console.error('❌  PEXELS_API_KEY is not set in .env.local');
-  console.error('   Get a free key at https://www.pexels.com/api/');
-  process.exit(1);
-}
+export const PEXELS_KEY = process.env.PEXELS_API_KEY;
 
 const sql = neon(process.env.DATABASE_URL!);
 const db  = drizzle(sql, { schema });
@@ -34,7 +29,8 @@ interface PexelsPhoto {
   src: { medium: string; large: string };
 }
 
-async function fetchPexelsPhotos(query: string, count = 8): Promise<string[]> {
+export async function fetchPexelsPhotos(query: string, count = 8): Promise<string[]> {
+  if (!PEXELS_KEY) return [];
   const url = new URL('https://api.pexels.com/v1/search');
   url.searchParams.set('query', query);
   url.searchParams.set('per_page', String(Math.min(count, 15)));
@@ -62,7 +58,7 @@ async function fetchPexelsPhotos(query: string, count = 8): Promise<string[]> {
 // Each category lists [search term, how many photos to pull].
 // Products cycle through the collected photos for that category.
 
-const CATEGORY_QUERIES: Record<string, Array<[string, number]>> = {
+export const CATEGORY_QUERIES: Record<string, Array<[string, number]>> = {
 
   bouquet: [
     ['red rose bouquet',       8],
@@ -157,6 +153,11 @@ async function updateBatch(rows: Array<{ id: string; imageUrl: string }>) {
 // ── main ──────────────────────────────────────────────────────────────────────
 
 async function main() {
+  if (!PEXELS_KEY) {
+    console.error('❌  PEXELS_API_KEY is not set in .env.local');
+    console.error('   Get a free key at https://www.pexels.com/api/');
+    process.exit(1);
+  }
   console.log('🌸 Fetching real product photos from Pexels…\n');
 
   let totalUpdated = 0;
@@ -195,7 +196,9 @@ async function main() {
   console.log(`\n✅ Done — ${totalUpdated} products updated with real product photos.`);
 }
 
-main().catch(err => {
-  console.error('❌', err.message);
-  process.exit(1);
-});
+if (require.main === module) {
+  main().catch(err => {
+    console.error('❌', err.message);
+    process.exit(1);
+  });
+}

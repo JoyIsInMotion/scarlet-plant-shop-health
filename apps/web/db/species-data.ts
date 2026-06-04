@@ -5,2003 +5,20385 @@ import type { SpeciesData } from './fetch-species';
 
 export const SPECIES_DATA: SpeciesData[] = [
   {
-    "scientificName": "Achillea millefolium",
-    "commonNameEn": "common yarrow",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/4902/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
+    "scientificName": "Monstera deliciosa",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Monstera_deliciosa2.jpg/960px-Monstera_deliciosa2.jpg",
+    "commonNameEn": "Monstera",
+    "commonNameBg": "Монстера",
+    "family": "Araceae",
+    "nativeRegionEn": "Tropical regions of Central and South America",
+    "nativeRegionBg": "Тропическите райони на Централна и Южна Америка",
+    "descriptionEn": "Monstera is a popular houseplant with large, fenestrated leaves. It climbs upwards and can grow quite large with proper care. It purifies the air and adds beauty to any room.",
+    "descriptionBg": "Monstera deliciosa е вид цъфтящо растение, естествено срещано в тропическите гори на Южно Мексико. Монстерата е въведена от хората в много тропически зони и се е превърнала в леко инвазивен вид на Хаваите, Сейшелите, остров Възнесение и Дружествените острови. Изключително много се отглежда в зони с умерен климат като стайно растение.",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 7,
     "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": true,
+    "isToxicToPets": true,
+    "careGuide": {
+      "light": {
+        "en": "Place in bright, indirect light. Direct sunlight can cause leaf scorch.",
+        "bg": "Поставете на ярка, непряка светлина. Директната слънчева светлина може да причини изгаряне на листата."
+      },
+      "watering": {
+        "en": "Water moderately every 7-10 days, allowing soil to dry between waterings.",
+        "bg": "Поливайте умерено на 7–10 дни и оставяйте почвата да изсъхне между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers high humidity. Mist leaves regularly or place a humidifier nearby.",
+        "bg": "Обича влажен въздух — пръскайте листата или поставете купичка с вода наблизо."
+      },
+      "temperature": {
+        "en": "Keep at 18-24 °C, away from drafts and extreme temperature fluctuations.",
+        "bg": "Дръжте при 18–24 °C, далеч от течения и резки промени в температурата."
+      },
+      "fertilizer": {
+        "en": "Fertilize with a balanced, liquid fertilizer once a month during the growing season.",
+        "bg": "Торете с течен тор веднъж месечно по време на растеж."
+      },
+      "toxicity": {
+        "en": "Toxic to cats and dogs - keep out of reach of pets.",
+        "bg": "Токсично за котки и кучета — пазете от домашни любимци."
+      }
+    }
   },
   {
-    "scientificName": "Taraxacum officinale",
-    "commonNameEn": "common dandelion",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/23575133/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
+    "scientificName": "Monstera adansonii",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Monstera_adansonii_79319231.jpg/960px-Monstera_adansonii_79319231.jpg",
+    "commonNameEn": "Swiss Cheese Vine",
+    "commonNameBg": "Монстера",
+    "family": "Araceae",
+    "nativeRegionEn": "Tropical regions of Central and South America",
+    "nativeRegionBg": "Тропическите региони на Централна и Южна Америка",
+    "descriptionEn": "The Swiss Cheese Vine is a popular houseplant with large, perforated leaves. It climbs upwards and can grow quite large with proper care. It purifies the air and adds beauty to any room.",
+    "descriptionBg": "Монстерата е популярно стайно растение с едри листа с разрези. Катери се нагоре и при добра грижа може да порасне голямо. Пречиства въздуха и украсява всяко помещение.",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 7,
     "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": true,
+    "isToxicToPets": true,
+    "careGuide": {
+      "light": {
+        "en": "Provide bright, indirect light. Direct sunlight can cause leaf scorch.",
+        "bg": "Осигурете ярка, непряка светлина. Директната слънчева светлина може да причини изгаряне на листата."
+      },
+      "watering": {
+        "en": "Water moderately every 7-10 days, allowing the soil to dry out between waterings.",
+        "bg": "Поливайте умерено на 7–10 дни и оставяйте почвата да изсъхне между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers high humidity. Mist the leaves regularly or place a humidifier nearby.",
+        "bg": "Обича влажен въздух — пръскайте листата или поставете купичка с вода наблизо."
+      },
+      "temperature": {
+        "en": "Keep at 18-24 °C, away from drafts and extreme temperature fluctuations.",
+        "bg": "Дръжте при 18–24 °C, далеч от течения и резки промени в температурата."
+      },
+      "fertilizer": {
+        "en": "Fertilize with a balanced, liquid fertilizer once a month during the growing season.",
+        "bg": "Торете с течен тор веднъж месечно по време на растеж."
+      },
+      "toxicity": {
+        "en": "Toxic to cats and dogs - keep out of reach of pets.",
+        "bg": "Токсично за котки и кучета — пазете от домашни любимци."
+      }
+    }
   },
   {
-    "scientificName": "Trifolium repens",
-    "commonNameEn": "white clover",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/64586855/medium.jpeg",
+    "scientificName": "Epipremnum aureum",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Money_Plant_%28Epipremnum_aureum%29_4.jpg/960px-Money_Plant_%28Epipremnum_aureum%29_4.jpg",
+    "commonNameEn": "Golden Pothos",
+    "commonNameBg": "дяволски бръшлян",
+    "family": "Araceae",
+    "nativeRegionEn": "Moist tropical forests of Southeast Asia",
+    "nativeRegionBg": "Влажни тропически гори на Югоизточна Азия",
+    "descriptionEn": "Golden Pothos is a popular, easy-to-grow houseplant with heart-shaped leaves. It thrives in a variety of lighting conditions and can grow quite long with proper care. It's great for air purification and decoration.",
+    "descriptionBg": "Дяволският бръшлян (Epipremnum aureum) е вид цъфтящо растение от семейството на арумите (Araceae), родом от остров Mo'orea от Дружествените острови на Френска Полинезия. Видът е популярно стайно растение в умерените райони, но също така се натурализира в тропически и субтропични гори по целия свят, включително Северна Австралия, Югоизточна Азия, Южна Азия, Тихоокеанските острови и Западна Индия. Като инвазивен вид, растението нанася тежки екологични щети в някои случаи.",
     "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
+    "wateringIntervalDays": 7,
     "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": true,
+    "isToxicToPets": true,
+    "careGuide": {
+      "light": {
+        "en": "Can thrive in low to bright indirect light",
+        "bg": "Може да расте при ниска до ярка непряка светлина"
+      },
+      "watering": {
+        "en": "Water moderately, allowing soil to dry between waterings",
+        "bg": "Поливайте умерено, като оставяте почвата да изсъхне между поливанията"
+      },
+      "humidity": {
+        "en": "Prefers 50-70% air humidity, mist leaves regularly",
+        "bg": "Обича влажност на въздуха 50-70%, пръскайте листата редовно"
+      },
+      "temperature": {
+        "en": "Keep at 65-75°F (18-24°C), away from drafts",
+        "bg": "Дръжте при 18–24 °C, далеч от течения и резки промени в температурата"
+      },
+      "fertilizer": {
+        "en": "Fertilize with a balanced fertilizer once a month during growth",
+        "bg": "Торете с балансиран тор веднъж месечно по време на растеж"
+      },
+      "toxicity": {
+        "en": "Toxic to cats and dogs if ingested",
+        "bg": "Токсично за котки и кучета при поглъщане"
+      }
+    }
   },
   {
-    "scientificName": "Trifolium pratense",
-    "commonNameEn": "Red Clover",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/10029907/medium.jpg",
+    "scientificName": "Scindapsus pictus",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Scindapsus_pictus_01.jpg/960px-Scindapsus_pictus_01.jpg",
+    "commonNameEn": "Satin Pothos",
+    "commonNameBg": "Скиндапсус",
+    "family": "Araceae",
+    "nativeRegionEn": "Tropical Asia",
+    "nativeRegionBg": "Тропическа Азия",
+    "descriptionEn": "Satin Pothos is a popular houseplant with heart-shaped leaves featuring silvery-gray variegation. It's easy to care for and can grow quite long, making it perfect for hanging baskets or trained to climb. It purifies the air and adds a touch of elegance to any room.",
+    "descriptionBg": "Сатин Потос е популярно стайно растение с сърцевидни листа и сребристо-сива пъстра шарка. Лесно се грижи и може да порасне дълго, което го прави идеален за висящи кошници или да се катери нагоре. Пречиства въздуха и добавя нотка елегантност към всяко помещение.",
     "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
+    "wateringIntervalDays": 7,
     "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": true,
+    "isToxicToPets": true,
+    "careGuide": {
+      "light": {
+        "en": "Prefers bright, indirect light but can tolerate low light conditions.",
+        "bg": "Предпочита ярка, непряка светлина, но може да понася и слаба светлина."
+      },
+      "watering": {
+        "en": "Water moderately every 7-10 days, allowing the soil to dry slightly between waterings.",
+        "bg": "Поливайте умерено на 7–10 дни и оставяйте почвата да изсъхне леко между поливанията."
+      },
+      "humidity": {
+        "en": "Thrives in humid environments; mist leaves regularly or place a humidifier nearby.",
+        "bg": "Обича влажен въздух — пръскайте листата редовно или поставете овлажнител наблизо."
+      },
+      "temperature": {
+        "en": "Keep in a room with a consistent temperature between 18-24 °C, away from drafts.",
+        "bg": "Дръжте при 18–24 °C, далеч от течения и резки промени в температурата."
+      },
+      "fertilizer": {
+        "en": "Fertilize with a balanced, water-soluble fertilizer once a month during the growing season.",
+        "bg": "Торете с балансиран, водно-разтворим тор веднъж месечно по време на растеж."
+      },
+      "toxicity": {
+        "en": "Toxic to cats and dogs if ingested; keep out of reach of pets.",
+        "bg": "Токсично за котки и кучета при поглъщане — пазете от домашни любимци."
+      }
+    }
   },
   {
-    "scientificName": "Alliaria petiolata",
-    "commonNameEn": "garlic mustard",
-    "imageUrl": "https://static.inaturalist.org/photos/189247854/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
+    "scientificName": "Rhaphidophora tetrasperma",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/db/Rhaphidophora_tetrasperma.jpg",
+    "commonNameEn": "Mini Monstera",
+    "commonNameBg": "Рхафидофора",
+    "family": "Araceae",
+    "nativeRegionEn": "Tropical regions of Southeast Asia",
+    "nativeRegionBg": "Тропическите региони на Югоизточна Азия",
+    "descriptionEn": "Mini Monstera is a compact, climbing houseplant with beautiful, perforated leaves. It thrives with proper care and can grow quite large. It's great for air purification and decoration.",
+    "descriptionBg": "Мини Монстерата е компактно, катерещо се стайно растение с красиви листа с разрези. При добра грижа може да порасне голямо и да пречиства въздуха.",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 7,
     "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": true,
+    "isToxicToPets": true,
+    "careGuide": {
+      "light": {
+        "en": "Place in bright, indirect light. Direct sunlight can cause leaf scorch.",
+        "bg": "Поставете на ярка, непряка светлина. Директната слънчева светлина може да причини изгаряне на листата."
+      },
+      "watering": {
+        "en": "Water moderately every 7-10 days, allowing soil to dry between waterings.",
+        "bg": "Поливайте умерено на 7–10 дни и оставяйте почвата да изсъхне между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers high humidity. Mist leaves regularly or place a humidifier nearby.",
+        "bg": "Обича влажен въздух — пръскайте листата редовно или поставете овлажнител наблизо."
+      },
+      "temperature": {
+        "en": "Keep at 18-24 °C, away from drafts and extreme temperature fluctuations.",
+        "bg": "Дръжте при 18–24 °C, далеч от течения и резки промени в температурата."
+      },
+      "fertilizer": {
+        "en": "Fertilize with a balanced, liquid fertilizer once a month during the growing season.",
+        "bg": "Торете с балансиран, течен тор веднъж месечно по време на растеж."
+      },
+      "toxicity": {
+        "en": "Toxic to cats and dogs if ingested. Keep out of reach of pets.",
+        "bg": "Токсично за котки и кучета — пазете от домашни любимци."
+      }
+    }
   },
   {
-    "scientificName": "Glechoma hederacea",
-    "commonNameEn": "ground-ivy",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/280941528/medium.jpg",
+    "scientificName": "Spathiphyllum wallisii",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Peace_lily_-_1_-_cropped.jpg/960px-Peace_lily_-_1_-_cropped.jpg",
+    "commonNameEn": "Peace Lily",
+    "commonNameBg": "Спатифиллум",
+    "family": "Araceae",
+    "nativeRegionEn": "Tropical regions of Central and South America",
+    "nativeRegionBg": "Тропическите региони на Централна и Южна Америка",
+    "descriptionEn": "The Peace Lily is a popular indoor plant known for its elegant white blooms and ability to purify the air. It's relatively low-maintenance and can thrive in low-light conditions. With proper care, it can bloom in the spring and summer months.",
+    "descriptionBg": "Мирната лилия е популярно стайно растение с красиви бели цветове и способност да пречиства въздуха. То е сравнително лесно за грижа и може да вирее при ниска светлина. При добра грижа може да цъфти през пролетта и лятото.",
     "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
+    "wateringIntervalDays": 7,
     "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": true,
+    "isToxicToPets": true,
+    "careGuide": {
+      "light": {
+        "en": "Prefers bright, indirect light but can tolerate low light conditions.",
+        "bg": "Предпочита ярка, непряка светлина, но може да понася и ниска светлина."
+      },
+      "watering": {
+        "en": "Water moderately, allowing the soil to dry slightly between waterings.",
+        "bg": "Поливайте умерено, като оставяте почвата да изсъхне леко между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers a humid environment; mist leaves regularly or place a humidifier nearby.",
+        "bg": "Обича влажен въздух — пръскайте листата редовно или поставете овлажнител наблизо."
+      },
+      "temperature": {
+        "en": "Keep in a room with a consistent temperature between 18-24 °C.",
+        "bg": "Дръжте при 18–24 °C, далеч от течения и резки промени в температурата."
+      },
+      "fertilizer": {
+        "en": "Fertilize with a balanced, water-soluble fertilizer once a month during the growing season.",
+        "bg": "Торете с балансиран, течен тор веднъж месечно по време на растеж."
+      },
+      "toxicity": {
+        "en": "Toxic to cats and dogs if ingested; keep out of reach of pets.",
+        "bg": "Токсично за котки и кучета — пазете от домашни любимци."
+      }
+    }
   },
   {
-    "scientificName": "Daucus carota",
-    "commonNameEn": "wild carrot",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/7663971/medium.jpeg",
+    "scientificName": "Chlorophytum comosum",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Hierbabuena_0611_Revised.jpg/960px-Hierbabuena_0611_Revised.jpg",
+    "commonNameEn": "Spider Plant",
+    "commonNameBg": "Хлорофитум",
+    "family": "Asparagaceae",
+    "nativeRegionEn": "Southern Africa",
+    "nativeRegionBg": "Южна Африка",
+    "descriptionEn": "Spider Plant is an easy-to-grow, popular houseplant with long stems and leaves that cascade down. It's great for hanging baskets or pots and helps purify the air.",
+    "descriptionBg": "Паутиненото растение е лесно стайно растение с дълги стъбла и листа, които висят надолу. Подходящо е за висящи кошници или саксии и помага за пречистване на въздуха.",
     "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
+    "wateringIntervalDays": 7,
     "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": true,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Place in bright, indirect light but not direct sunlight.",
+        "bg": "Поставете на ярка, непряка светлина, но не на пряко слънце."
+      },
+      "watering": {
+        "en": "Water moderately every 7-10 days, allowing soil to dry between waterings.",
+        "bg": "Поливайте умерено на 7–10 дни и оставяйте почвата да изсъхне между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers humid air; mist leaves or place a water bowl nearby.",
+        "bg": "Обича влажен въздух — пръскайте листата или поставете купичка с вода наблизо."
+      },
+      "temperature": {
+        "en": "Keep at 18-24 °C, away from drafts and extreme temperature changes.",
+        "bg": "Дръжте при 18–24 °C, далеч от течения и резки промени в температурата."
+      },
+      "fertilizer": {
+        "en": "Fertilize with a balanced liquid fertilizer once a month during growth.",
+        "bg": "Торете с течен балансиран тор веднъж месечно по време на растеж."
+      },
+      "toxicity": {
+        "en": "Non-toxic to cats and dogs.",
+        "bg": "Безвредно за котки и кучета."
+      }
+    }
   },
   {
-    "scientificName": "Plantago lanceolata",
-    "commonNameEn": "ribwort plantain",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/384758481/medium.jpg",
+    "scientificName": "Chlorophytum orchidastrum",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/94147146/medium.jpeg",
+    "commonNameEn": "Fire Flash Spider Plant",
+    "commonNameBg": "Хлорофитум",
+    "family": "Asparagaceae",
+    "nativeRegionEn": "Tropical regions of southern Africa",
+    "nativeRegionBg": "Тропическите региони на южна Африка",
+    "descriptionEn": "The Fire Flash Spider Plant is a vibrant, easy-to-grow houseplant known for its striking orange and green leaves. It thrives in indoor conditions and can be a beautiful addition to any room. It's also great for air purification.",
+    "descriptionBg": "Огненото паяче растение е популярно стайно растение с ефектни оранжеви и зелени листа. Лесно се отглежда и може да пречиства въздуха, което го прави чудесен избор за дома.",
     "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
+    "wateringIntervalDays": 7,
     "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": true,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Prefers bright, indirect light but can tolerate low light conditions.",
+        "bg": "Предпочита ярка, непряка светлина, но може да понася и слаба светлина."
+      },
+      "watering": {
+        "en": "Water moderately every 7-10 days, allowing the soil to dry out between waterings.",
+        "bg": "Поливайте умерено на 7–10 дни и оставяйте почвата да изсъхне между поливанията."
+      },
+      "humidity": {
+        "en": "Appreciates humid air; mist the leaves regularly or place a humidifier nearby.",
+        "bg": "Обича влажен въздух — пръскайте листата редовно или поставете овлажнител наблизо."
+      },
+      "temperature": {
+        "en": "Keep in a room with a consistent temperature between 18-24 °C.",
+        "bg": "Дръжте при 18–24 °C, далеч от течения и резки промени в температурата."
+      },
+      "fertilizer": {
+        "en": "Fertilize with a balanced, water-soluble fertilizer once a month during the growing season.",
+        "bg": "Торете с балансиран течен тор веднъж месечно по време на растеж."
+      },
+      "toxicity": {
+        "en": "Non-toxic to cats and dogs.",
+        "bg": "Безвредно за котки и кучета."
+      }
+    }
   },
   {
-    "scientificName": "Ficaria verna",
-    "commonNameEn": "lesser celandine",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/7034063/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
+    "scientificName": "Ficus elastica",
+    "imageUrl": "https://static.inaturalist.org/photos/56915457/medium.jpeg",
+    "commonNameEn": "Rubber Plant",
+    "commonNameBg": "еластичен фикус",
+    "family": "Moraceae",
+    "nativeRegionEn": "Eastern India to Indonesia",
+    "nativeRegionBg": "Източна Индия до Индонезия",
+    "descriptionEn": "The Rubber Plant is a popular indoor plant known for its large, dark green, glossy leaves. It can grow quite tall with proper care and is great for air purification. It's relatively low-maintenance and adds a touch of tropical elegance to any room.",
+    "descriptionBg": "Каучуковото растение е популярно стайно растение с едри, тъмнозелени, лъскави листа. Може да порасне високо при добра грижа и е чудесно за пречистване на въздуха. Сравнително е лесно за отглеждане и добавя нотка тропическа елегантност към всяко помещение.",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 7,
     "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": true,
+    "isToxicToPets": true,
+    "careGuide": {
+      "light": {
+        "en": "Bright, indirect light is ideal. Direct sunlight can cause leaf scorch.",
+        "bg": "Предпочита ярка, непряка светлина. Директната слънчева светлина може да причини изгаряне на листата."
+      },
+      "watering": {
+        "en": "Water moderately, allowing soil to dry between waterings. Overwatering can lead to root rot.",
+        "bg": "Поливайте умерено, като оставяте почвата да изсъхне между поливанията. Прекомерното поливане може да доведе до гниене на корените."
+      },
+      "humidity": {
+        "en": "Prefers high humidity but adapts to average indoor humidity. Mist leaves regularly.",
+        "bg": "Предпочита висока влажност на въздуха, но се адаптира към средната влажност в дома. Пръскайте листата редовно."
+      },
+      "temperature": {
+        "en": "Keep at 18–24 °C, away from drafts and extreme temperature changes.",
+        "bg": "Дръжте при 18–24 °C, далеч от течения и резки промени в температурата."
+      },
+      "fertilizer": {
+        "en": "Fertilize with a balanced, liquid fertilizer once a month during growing season.",
+        "bg": "Торете с балансиран, течен тор веднъж месечно по време на растеж."
+      },
+      "toxicity": {
+        "en": "Toxic to cats and dogs if ingested. Keep out of reach of pets.",
+        "bg": "Токсично за котки и кучета при поглъщане. Пазете от домашни любимци."
+      }
+    }
   },
   {
-    "scientificName": "Prunella vulgaris",
-    "commonNameEn": "common selfheal",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/89626619/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
+    "scientificName": "Ficus lyrata",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/542743857/medium.jpg",
+    "commonNameEn": "Fiddle-Leaf Fig",
+    "commonNameBg": "фикус лира",
+    "family": "Moraceae",
+    "nativeRegionEn": "Tropical rainforests of West and Central Africa",
+    "nativeRegionBg": "Тропическите дъждовни гори на Западна и Централна Африка",
+    "descriptionEn": "The Fiddle-Leaf Fig is a popular indoor plant known for its large, violin-shaped leaves. It can grow quite tall with proper care and adds a touch of elegance to any room. It's relatively low-maintenance and can thrive in a variety of conditions.",
+    "descriptionBg": "Фикусът с цигулкови листа е популярно стайно растение с големи, листа във формата на цигулка. При добра грижа може да порасне високо и да внесе нотка на елегантност във всяка стая. Сравнително е лесно за отглеждане и може да вирее при различни условия.",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 7,
     "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": true,
+    "isToxicToPets": true,
+    "careGuide": {
+      "light": {
+        "en": "Bright, indirect light is ideal. Direct sunlight can cause leaf scorch.",
+        "bg": "Предпочита ярка, непряка светлина. Директната слънчева светлина може да причини изгаряне на листата."
+      },
+      "watering": {
+        "en": "Water moderately, allowing the soil to dry slightly between waterings.",
+        "bg": "Поливайте умерено, като оставяте почвата да изсъхне леко между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers a humid environment. Mist leaves regularly or place a humidifier nearby.",
+        "bg": "Обича влажен въздух — пръскайте листата редовно или поставете овлажнител наблизо."
+      },
+      "temperature": {
+        "en": "Keep in a room with a consistent temperature between 18–24 °C.",
+        "bg": "Дръжте при постоянна температура между 18–24 °C, далеч от течения и резки промени в температурата."
+      },
+      "fertilizer": {
+        "en": "Fertilize with a balanced, water-soluble fertilizer once a month during the growing season.",
+        "bg": "Торете с балансиран, течен тор веднъж месечно по време на растеж."
+      },
+      "toxicity": {
+        "en": "Toxic to cats and dogs if ingested. Keep out of reach of pets.",
+        "bg": "Токсично за котки и кучета при поглъщане — пазете от домашни любимци."
+      }
+    }
   },
   {
-    "scientificName": "Acer negundo",
-    "commonNameEn": "box elder",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/229714369/medium.jpg",
+    "scientificName": "Ficus benjamina",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/68686046/medium.jpeg",
+    "commonNameEn": "Weeping Fig",
+    "commonNameBg": "фикус бенджамин",
+    "family": "Moraceae",
+    "nativeRegionEn": "Tropical Asia and Australia",
+    "nativeRegionBg": "Тропическа Азия и Австралия",
+    "descriptionEn": "The Weeping Fig is a popular indoor plant with slender branches and small, shiny leaves. It can grow quite large with good care and is known to purify the air. It's a versatile plant for home or office.",
+    "descriptionBg": "Плачещата Фига е популярно стайно растение с тънки клони и малки, лъскави листа. При добра грижа може да порасне голямо и да пречиства въздуха. Подходящо е за всяка стая или офис.",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": true,
+    "isToxicToPets": true,
+    "careGuide": {
+      "light": {
+        "en": "Prefers bright, indirect light but can tolerate low light conditions.",
+        "bg": "Предпочита ярка, непряка светлина, но може да понася и ниска осветеност."
+      },
+      "watering": {
+        "en": "Water moderately every 7-10 days, allowing soil to dry between waterings.",
+        "bg": "Поливайте умерено на 7–10 дни и оставяйте почвата да изсъхне между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers high humidity, mist leaves regularly or place a humidifier nearby.",
+        "bg": "Обича влажен въздух — пръскайте листата или поставете купичка с вода наблизо."
+      },
+      "temperature": {
+        "en": "Keep at 18-24 °C, away from drafts and extreme temperature fluctuations.",
+        "bg": "Дръжте при 18–24 °C, далеч от течения и резки промени в температурата."
+      },
+      "fertilizer": {
+        "en": "Fertilize with a balanced, liquid fertilizer once a month during growing season.",
+        "bg": "Торете с течен, балансиран тор веднъж месечно по време на растеж."
+      },
+      "toxicity": {
+        "en": "Toxic to cats and dogs if ingested - keep out of reach of pets.",
+        "bg": "Токсично за котки и кучета — пазете от домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Ficus pumila",
+    "imageUrl": "https://static.inaturalist.org/photos/59250812/medium.jpg",
+    "commonNameEn": "Creeping Fig",
+    "commonNameBg": "фикус джудже",
+    "family": "Moraceae",
+    "nativeRegionEn": "Eastern and Southern China, Southeast Asia",
+    "nativeRegionBg": "Източна и Южна Китай, Югоизточна Азия",
+    "descriptionEn": "Creeping Fig is a popular, easy-to-grow houseplant with small, heart-shaped leaves. It can be trained to climb or left to trail. With proper care, it can thrive indoors.",
+    "descriptionBg": "Пълзящият смокиня е популярно стайно растение с малки сърцевидни листа. Може да се обучава да се катери или да виси свободно. С добра грижа може да процъфтява в домашни условия.",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": true,
+    "isToxicToPets": true,
+    "careGuide": {
+      "light": {
+        "en": "Prefers bright, indirect light but can tolerate low light conditions.",
+        "bg": "Предпочита ярка, непряка светлина, но може да понася и слаба светлина."
+      },
+      "watering": {
+        "en": "Water moderately, allowing the soil to dry slightly between waterings.",
+        "bg": "Поливайте умерено, като оставяте почвата да изсъхне леко между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers high humidity, mist leaves regularly or place on a tray with pebbles and water.",
+        "bg": "Обича влажен въздух — пръскайте листата редовно или поставете на тава с камъчета и вода."
+      },
+      "temperature": {
+        "en": "Keep at 15–24 °C, away from drafts and extreme temperatures.",
+        "bg": "Дръжте при 15–24 °C, далеч от течения и резки промени в температурата."
+      },
+      "fertilizer": {
+        "en": "Fertilize with a balanced, water-soluble fertilizer once a month during the growing season.",
+        "bg": "Торете с балансиран, водно-разтворим тор веднъж месечно по време на растеж."
+      },
+      "toxicity": {
+        "en": "Toxic to cats and dogs if ingested, keep out of reach.",
+        "bg": "Токсично за котки и кучета при поглъщане — пазете от домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Sansevieria trifasciata",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/488135905/medium.jpeg",
+    "commonNameEn": "Snake Plant",
+    "commonNameBg": "Сансевиериа",
+    "family": "Asparagaceae",
+    "nativeRegionEn": "Tropical West Africa",
+    "nativeRegionBg": "Тропическа Западна Африка",
+    "descriptionEn": "The Snake Plant is a popular, low-maintenance indoor plant with striking, upright leaves. It's great for air purification and can thrive in low-light conditions. Perfect for busy people or those new to gardening.",
+    "descriptionBg": "Зминото растение е популярно и лесно стайно растение с изправени, впечатляващи листа. Подходящо е за пречистване на въздуха и може да вирее на ниска светлина. Идеално за заети хора или тези, които тепърва започват да градинят.",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 10,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 6,
+    "mistingNeeded": false,
+    "isToxicToPets": true,
+    "careGuide": {
+      "light": {
+        "en": "Can thrive in low to bright indirect light.",
+        "bg": "Може да вирее на ниска до ярка непряка светлина."
+      },
+      "watering": {
+        "en": "Water sparingly, allowing soil to dry between waterings.",
+        "bg": "Поливайте умерено, като оставяте почвата да изсъхне между поливанията."
+      },
+      "humidity": {
+        "en": "Average humidity is fine; no need to mist.",
+        "bg": "Средната влажност на въздуха е достатъчна; няма нужда от овлажняване."
+      },
+      "temperature": {
+        "en": "Keep in temperatures between 18-24 °C.",
+        "bg": "Дръжте при 18–24 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize with a balanced fertilizer once a month during growing season.",
+        "bg": "Торете с балансиран тор веднъж месечно по време на растеж."
+      },
+      "toxicity": {
+        "en": "Toxic to cats and dogs if ingested; keep out of reach.",
+        "bg": "Токсично за котки и кучета при поглъщане; пазете от домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Sansevieria cylindrica",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/70512537/medium.jpeg",
+    "commonNameEn": "Cylindrical Snake Plant",
+    "commonNameBg": "Сансевиериа",
+    "family": "Asparagaceae",
+    "nativeRegionEn": "West Africa",
+    "nativeRegionBg": "Западна Африка",
+    "descriptionEn": "The Cylindrical Snake Plant is a popular, low-maintenance houseplant known for its cylindrical, upright leaves. It thrives in indoor conditions and can tolerate neglect. Perfect for adding a touch of greenery to any room.",
+    "descriptionBg": "Цилиндричната змийска растение е популярно, лесно стайно растение с цилиндрични, изправени листа. То вирее добре в домашни условия и може да понася пренебрежение. Идеално за добавяне на малко зеленина във всяка стая.",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 10,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": false,
+    "isToxicToPets": true,
+    "careGuide": {
+      "light": {
+        "en": "Place in bright, indirect light but can tolerate low light conditions.",
+        "bg": "Поставете на ярка, непряка светлина, но може да понася и ниска светлина."
+      },
+      "watering": {
+        "en": "Water moderately every 10 days, allowing soil to dry between waterings.",
+        "bg": "Поливайте умерено на 10 дни, като оставяте почвата да изсъхне между поливанията."
+      },
+      "humidity": {
+        "en": "Average humidity is fine; no need for misting.",
+        "bg": "Средната влажност на въздуха е достатъчна; няма нужда от пръскаене."
+      },
+      "temperature": {
+        "en": "Keep at 18–24 °C, away from drafts and extreme temperature changes.",
+        "bg": "Дръжте при 18–24 °C, далеч от течения и резки промени в температурата."
+      },
+      "fertilizer": {
+        "en": "Fertilize with a balanced, liquid fertilizer once a month during growth.",
+        "bg": "Торете с балансиран, течен тор веднъж месечно по време на растеж."
+      },
+      "toxicity": {
+        "en": "Toxic to cats and dogs; keep out of reach of pets.",
+        "bg": "Токсично за котки и кучета — пазете от домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Dracaena marginata",
+    "imageUrl": null,
+    "commonNameEn": "Dragon Tree",
+    "commonNameBg": "Мадагаскарско драконово дърво",
+    "family": "Asparagaceae",
+    "nativeRegionEn": "Tropical East Africa",
+    "nativeRegionBg": "Тропическа Източна Африка",
+    "descriptionEn": "The Dragon Tree is a popular indoor plant known for its slender leaves with red edges. It's relatively low-maintenance and can grow quite tall with proper care. It's great for air purification and adds a touch of elegance to any room.",
+    "descriptionBg": "Драконовото дърво е популярно стайно растение с тесни листа с червени ръбове. То е сравнително лесно за грижа и може да порасне високо при добра грижа. Пречиства въздуха и добавя елегантност към всяко помещение.",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 10,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": true,
+    "isToxicToPets": true,
+    "careGuide": {
+      "light": {
+        "en": "Prefers bright, indirect light but can tolerate low light conditions.",
+        "bg": "Предпочита ярка, непряка светлина, но може да понася и слаба светлина."
+      },
+      "watering": {
+        "en": "Water moderately, allowing soil to dry between waterings.",
+        "bg": "Поливайте умерено, като оставяте почвата да изсъхне между поливанията."
+      },
+      "humidity": {
+        "en": "Appreciates humid air; mist leaves regularly or place a humidifier nearby.",
+        "bg": "Обича влажен въздух — пръскайте листата редовно или поставете овлажнител наблизо."
+      },
+      "temperature": {
+        "en": "Keep at 65-75°F (18-24°C), away from drafts and extreme temperatures.",
+        "bg": "Дръжте при 18–24 °C, далеч от течения и резки промени в температурата."
+      },
+      "fertilizer": {
+        "en": "Fertilize with a balanced, water-soluble fertilizer once a month during the growing season.",
+        "bg": "Торете с балансиран, водно-разтворим тор веднъж месечно по време на растеж."
+      },
+      "toxicity": {
+        "en": "Toxic to cats and dogs if ingested; keep out of reach.",
+        "bg": "Токсично за котки и кучета при поглъщане — пазете от домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Dracaena fragrans",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/69907178/medium.jpg",
+    "commonNameEn": "Corn Plant",
+    "commonNameBg": "ароматна драцена",
+    "family": "Asparagaceae",
+    "nativeRegionEn": "Tropical Africa",
+    "nativeRegionBg": "Тропическа Африка",
+    "descriptionEn": "The Corn Plant is a popular houseplant known for its attractive, corn-like foliage. It is easy to care for and can grow quite tall with proper care. It helps purify the air and adds a touch of elegance to any room.",
+    "descriptionBg": "Царевичният растение е популярно стайно растение с красиви, царевични листа. Лесно се грижи и може да порасне високо при добра грижа. Пречиства въздуха и украсява всяко помещение.",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 10,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": true,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Prefers bright, indirect light but can tolerate low light conditions.",
+        "bg": "Предпочита ярка, непряка светлина, но може да понася и ниска светлина."
+      },
+      "watering": {
+        "en": "Water moderately every 10 days, allowing the soil to dry out between waterings.",
+        "bg": "Поливайте умерено на 10 дни и оставяйте почвата да изсъхне между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers a humid environment; mist the leaves regularly or place a humidifier nearby.",
+        "bg": "Обича влажен въздух — пръскайте листата редовно или поставете овлажнител наблизо."
+      },
+      "temperature": {
+        "en": "Keep at 65-75°F (18-24°C), away from drafts and extreme temperatures.",
+        "bg": "Дръжте при 18–24 °C, далеч от течения и резки промени в температурата."
+      },
+      "fertilizer": {
+        "en": "Fertilize with a balanced, water-soluble fertilizer once a month during the growing season.",
+        "bg": "Торете с балансиран, течен тор веднъж месечно по време на растеж."
+      },
+      "toxicity": {
+        "en": "Non-toxic to cats and dogs.",
+        "bg": "Безвредно за котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Dracaena sanderiana",
+    "imageUrl": "https://static.inaturalist.org/photos/106303846/medium.jpg",
+    "commonNameEn": "Lucky Bamboo",
+    "commonNameBg": "Дракена",
+    "family": "Asparagaceae",
+    "nativeRegionEn": "Tropical Asia",
+    "nativeRegionBg": "Тропическа Азия",
+    "descriptionEn": "Lucky Bamboo is a popular, low-maintenance indoor plant with slender stems and lush green leaves. It's known for its ability to grow well in water and can thrive in a variety of lighting conditions. A great choice for home or office.",
+    "descriptionBg": "Щастливият бамбук е популярно, лесно стайно растение с тънки стъбла и свежи зелени листа. Расте добре във вода и може да вирее при различни условия на осветление. Подходящ за дом или офис.",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 6,
+    "mistingNeeded": true,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Place in bright, indirect light but can tolerate low light conditions.",
+        "bg": "Поставете на ярка, непряка светлина, но може да понася и ниска осветеност."
+      },
+      "watering": {
+        "en": "Water moderately, allowing the soil to dry slightly between waterings.",
+        "bg": "Поливайте умерено, като оставяте почвата да изсъхне леко между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers humid air, mist the leaves regularly or place a humidifier nearby.",
+        "bg": "Обича влажен въздух — пръскайте листата редовно или поставете овлажнител наблизо."
+      },
+      "temperature": {
+        "en": "Keep at 65-75°F (18-24°C), away from drafts and extreme temperatures.",
+        "bg": "Дръжте при 18–24 °C, далеч от течения и резки промени в температурата."
+      },
+      "fertilizer": {
+        "en": "Fertilize with a balanced, water-soluble fertilizer once a month during the growing season.",
+        "bg": "Торете с балансиран, водно-разтворим тор веднъж месечно по време на растеж."
+      },
+      "toxicity": {
+        "en": "Non-toxic to cats and dogs.",
+        "bg": "Безвреден за котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Zamioculcas zamiifolia",
+    "imageUrl": "https://static.inaturalist.org/photos/172462450/medium.jpeg",
+    "commonNameEn": "ZZ Plant",
+    "commonNameBg": "Замиокулкас",
+    "family": "Araceae",
+    "nativeRegionEn": "East Africa",
+    "nativeRegionBg": "Източна Африка",
+    "descriptionEn": "The ZZ Plant is a low-maintenance, stylish indoor plant with glossy leaves. It's known for its ability to survive in low-light conditions and infrequent watering. Perfect for busy people or those new to indoor gardening.",
+    "descriptionBg": "ZZ Plant е лесно стайно растение с лъскави листа. То е известно с това, че оцелява на ниска светлина и рядко поливане. Идеално за хора с малко време или за начинаещи в стайното градинарство.",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 14,
+    "fertilizingIntervalDays": 60,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": false,
+    "isToxicToPets": true,
+    "careGuide": {
+      "light": {
+        "en": "Thrives in low to medium light. Direct sunlight can cause leaf scorch.",
+        "bg": "Растението се справя добре на ниска до средна светлина. Директната слънчева светлина може да причини изгаряне на листата."
+      },
+      "watering": {
+        "en": "Water sparingly, allowing soil to dry completely between waterings.",
+        "bg": "Поливайте пестеливо, като оставяте почвата да изсъхне напълно между поливанията."
+      },
+      "humidity": {
+        "en": "Average humidity is fine; no need for misting.",
+        "bg": "Средната влажност на въздуха е достатъчна; няма нужда от овлажняване на листата."
+      },
+      "temperature": {
+        "en": "Keep in a room with a consistent temperature between 18–24 °C.",
+        "bg": "Дръжте в помещение с постоянна температура между 18–24 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize with a balanced, water-soluble fertilizer once a month during the growing season.",
+        "bg": "Торете с балансиран, водно-разтворим тор веднъж месечно по време на растеж."
+      },
+      "toxicity": {
+        "en": "Toxic to cats and dogs if ingested; keep out of reach.",
+        "bg": "Токсично за котки и кучета при поглъщане; пазете от домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Philodendron hederaceum",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/335616661/medium.jpg",
+    "commonNameEn": "Heartleaf Philodendron",
+    "commonNameBg": "Филодендрон",
+    "family": "Araceae",
+    "nativeRegionEn": "Tropical regions of Central and South America",
+    "nativeRegionBg": "Тропическите региони на Централна и Южна Америка",
+    "descriptionEn": "The Heartleaf Philodendron is a popular, easy-to-grow houseplant with heart-shaped leaves. It thrives in a variety of lighting conditions and can be trained to climb. It's great for air purification and adds a touch of greenery to any room.",
+    "descriptionBg": "Сърцевидният филодендрон е популярно стайно растение с сърцевидни листа. Расте добре на различни светлинни условия и може да се научи да се катери. Пречиства въздуха и украсява всяко помещение.",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": true,
+    "isToxicToPets": true,
+    "careGuide": {
+      "light": {
+        "en": "Place in bright, indirect light but can tolerate low light conditions.",
+        "bg": "Поставете на ярка, непряка светлина, но може да понася и ниска светлина."
+      },
+      "watering": {
+        "en": "Water moderately every 7-10 days, allowing soil to dry slightly between waterings.",
+        "bg": "Поливайте умерено на 7–10 дни и оставяйте почвата да изсъхне леко между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers a humid environment; mist leaves regularly or place a humidifier nearby.",
+        "bg": "Обича влажен въздух — пръскайте листата редовно или поставете овлажнител наблизо."
+      },
+      "temperature": {
+        "en": "Keep at 65-75°F (18-24°C), away from drafts and extreme temperatures.",
+        "bg": "Дръжте при 18–24 °C, далеч от течения и резки промени в температурата."
+      },
+      "fertilizer": {
+        "en": "Fertilize with a balanced, water-soluble fertilizer once a month during the growing season.",
+        "bg": "Торете с балансиран течен тор веднъж месечно по време на растеж."
+      },
+      "toxicity": {
+        "en": "Toxic to cats and dogs if ingested; keep out of reach of pets.",
+        "bg": "Токсично за котки и кучета — пазете от домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Philodendron bipinnatifidum",
+    "imageUrl": null,
+    "commonNameEn": "Tree Philodendron",
+    "commonNameBg": "Филодендрон",
+    "family": "Araceae",
+    "nativeRegionEn": "South America, tropical regions",
+    "nativeRegionBg": "Южна Америка, тропически региони",
+    "descriptionEn": "The Tree Philodendron is a popular indoor plant with large, deeply lobed leaves. It can grow quite tall with proper care and is great for air purification. It's relatively easy to care for and adds a tropical touch to any room.",
+    "descriptionBg": "Дървесен филодендрон е популярно стайно растение с едри листа с разрези. Може да порасне високо при добра грижа и е чудесно за пречистване на въздуха. Лесно стайно растение за отглеждане.",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": true,
+    "isToxicToPets": true,
+    "careGuide": {
+      "light": {
+        "en": "Bright, indirect light is ideal. Direct sunlight can cause leaf scorch.",
+        "bg": "Предпочита ярка, непряка светлина. Директната слънчева светлина може да причини изгаряне на листата."
+      },
+      "watering": {
+        "en": "Water moderately, allowing soil to dry slightly between waterings.",
+        "bg": "Поливайте умерено, като оставяте почвата да изсъхне леко между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers high humidity, but adapts to average indoor humidity. Mist leaves regularly.",
+        "bg": "Обича висока влажност на въздуха, но се адаптира към средната стайна влажност. Пръскайте листата редовно."
+      },
+      "temperature": {
+        "en": "Keep at 65-75°F (18-24°C), away from drafts and extreme temperatures.",
+        "bg": "Дръжте при 18–24 °C, далеч от течения и резки промени в температурата."
+      },
+      "fertilizer": {
+        "en": "Fertilize with a balanced, water-soluble fertilizer once a month during the growing season.",
+        "bg": "Торете с балансиран течен тор веднъж месечно по време на растеж."
+      },
+      "toxicity": {
+        "en": "Toxic to cats and dogs if ingested. Keep out of reach of pets.",
+        "bg": "Токсично за котки и кучета при поглъщане — пазете от домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Philodendron erubescens",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/110478670/medium.jpg",
+    "commonNameEn": "Pink Princess Philodendron",
+    "commonNameBg": "червеникав филодендрон",
+    "family": "Araceae",
+    "nativeRegionEn": "Central and South America",
+    "nativeRegionBg": "Централна и Южна Америка",
+    "descriptionEn": "The Pink Princess Philodendron is a popular houseplant known for its beautiful pink variegation on its leaves. It is a climbing plant that can grow quite large with proper care. It helps purify the air and adds a touch of elegance to any room.",
+    "descriptionBg": "Pink Princess Philodendron е популярно стайно растение с красиви розови петна по листата. Катери се нагоре и при добра грижа може да порасне голямо. Пречиства въздуха и украсява всяко помещение.",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": true,
+    "isToxicToPets": true,
+    "careGuide": {
+      "light": {
+        "en": "Bright, indirect light is ideal. Direct sunlight can cause leaf scorch.",
+        "bg": "Нуждае се от ярка, непряка светлина. Директната слънчева светлина може да причини изгаряне на листата."
+      },
+      "watering": {
+        "en": "Water moderately every 7-10 days, allowing the soil to dry slightly between waterings.",
+        "bg": "Поливайте умерено на 7–10 дни и оставяйте почвата да изсъхне леко между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers high humidity, but can adapt to average home conditions. Mist leaves regularly or place a humidifier nearby.",
+        "bg": "Обича влажен въздух — пръскайте листата редовно или поставете овлажнител наблизо."
+      },
+      "temperature": {
+        "en": "Keep in a room with a consistent temperature between 18-24 °C, away from drafts and extreme temperature fluctuations.",
+        "bg": "Дръжте при 18–24 °C, далеч от течения и резки промени в температурата."
+      },
+      "fertilizer": {
+        "en": "Fertilize with a balanced, water-soluble fertilizer once a month during the growing season.",
+        "bg": "Торете с балансиран течен тор веднъж месечно по време на растеж."
+      },
+      "toxicity": {
+        "en": "Toxic to cats and dogs if ingested. Keep out of reach of pets.",
+        "bg": "Токсично за котки и кучета — пазете от домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Philodendron gloriosum",
+    "imageUrl": "https://static.inaturalist.org/photos/69447462/medium.jpeg",
+    "commonNameEn": "Velvet Philodendron",
+    "commonNameBg": "Филодендрон",
+    "family": "Araceae",
+    "nativeRegionEn": "Andean region of South America",
+    "nativeRegionBg": "Андите в Южна Америка",
+    "descriptionEn": "The Velvet Philodendron is a popular houseplant known for its heart-shaped, velvety leaves. It is a climbing plant that can grow quite large with proper care. It helps purify the air and adds beauty to any room.",
+    "descriptionBg": "Велветският филодендрон е популярно стайно растение с сърцевидни, велурени листа. Катери се нагоре и при добра грижа може да порасне голямо. Пречиства въздуха и украсява всяко помещение.",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": true,
+    "isToxicToPets": true,
+    "careGuide": {
+      "light": {
+        "en": "Prefers bright, indirect light but can tolerate low light conditions.",
+        "bg": "Предпочита ярка, непряка светлина, но може да понася и ниска светлина."
+      },
+      "watering": {
+        "en": "Water moderately every 7-10 days, allowing the soil to dry out between waterings.",
+        "bg": "Поливайте умерено на 7–10 дни и оставяйте почвата да изсъхне между поливанията."
+      },
+      "humidity": {
+        "en": "Thrives in humid air; mist leaves regularly or place a humidifier nearby.",
+        "bg": "Обича влажен въздух — пръскайте листата или поставете купичка с вода наблизо."
+      },
+      "temperature": {
+        "en": "Keep at 18-24 °C, away from drafts and extreme temperature fluctuations.",
+        "bg": "Дръжте при 18–24 °C, далеч от течения и резки промени в температурата."
+      },
+      "fertilizer": {
+        "en": "Fertilize with a balanced, liquid fertilizer once a month during the growing season.",
+        "bg": "Торете с течен тор веднъж месечно по време на растеж."
+      },
+      "toxicity": {
+        "en": "Toxic to cats and dogs; keep out of reach of pets.",
+        "bg": "Токсично за котки и кучета — пазете от домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Calathea orbifolia",
+    "imageUrl": null,
+    "commonNameEn": "Orbifolia Calathea",
+    "commonNameBg": "Калатеа",
+    "family": "Marantaceae",
+    "nativeRegionEn": "South America",
+    "nativeRegionBg": "Южна Америка",
+    "descriptionEn": "Calathea orbifolia is a beautiful houseplant with large, rounded leaves. It prefers bright, indirect light and can grow quite large with proper care. This plant is great for air purification and decoration.",
+    "descriptionBg": "Калантея орбифолия е красиво стайно растение с едри, кръгли листа. Предпочита ярка, непряка светлина и може да порасне голямо при добра грижа. Пречиства въздуха и украсява всяко помещение.",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": true,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Bright, indirect light is ideal. Direct sunlight can cause leaf scorch.",
+        "bg": "Ярка, непряка светлина е идеална. Директната слънчева светлина може да причини изгаряне на листата."
+      },
+      "watering": {
+        "en": "Water moderately every 7-10 days, allowing soil to dry slightly between waterings.",
+        "bg": "Поливайте умерено на 7–10 дни и оставяйте почвата да изсъхне леко между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers high humidity. Mist leaves regularly or place a humidifier nearby.",
+        "bg": "Обича влажен въздух — пръскайте листата редовно или поставете овлажнител наблизо."
+      },
+      "temperature": {
+        "en": "Keep at 18-24 °C, away from drafts and extreme temperature fluctuations.",
+        "bg": "Дръжте при 18–24 °C, далеч от течения и резки промени в температурата."
+      },
+      "fertilizer": {
+        "en": "Fertilize with a balanced, water-soluble fertilizer once a month during the growing season.",
+        "bg": "Торете с балансиран, водно-разтворим тор веднъж месечно по време на растеж."
+      },
+      "toxicity": {
+        "en": "Non-toxic to cats and dogs.",
+        "bg": "Безвредно за котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Calathea makoyana",
+    "imageUrl": null,
+    "commonNameEn": "Peacock Plant",
+    "commonNameBg": "Калатеа",
+    "family": "Marantaceae",
+    "nativeRegionEn": "South America, tropical regions",
+    "nativeRegionBg": "Южна Америка, тропически региони",
+    "descriptionEn": "The Peacock Plant is a beautiful, popular houseplant known for its stunning, colorful leaves. It thrives in bright, indirect light and adds a touch of elegance to any room. With proper care, it can grow well indoors.",
+    "descriptionBg": "Паучатото растение е красиво, популярно стайно растение с ефектни, цветни листа. То вирее добре на ярка, непряка светлина и добавя нотка елегантност към всяко помещение. При добра грижа може да расте добре вкъщи.",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": true,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Place in bright, indirect light but avoid direct sunlight.",
+        "bg": "Поставяйте на ярка, непряка светлина, но избягвайте прякото слънце."
+      },
+      "watering": {
+        "en": "Water moderately every 7-10 days, allowing the soil to dry slightly between waterings.",
+        "bg": "Поливайте умерено на 7–10 дни и оставяйте почвата да изсъхне леко между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers high humidity; mist leaves regularly or place a humidifier nearby.",
+        "bg": "Обича влажен въздух — пръскайте листата редовно или поставете овлажнител наблизо."
+      },
+      "temperature": {
+        "en": "Keep at 18-24 °C, away from drafts and extreme temperature changes.",
+        "bg": "Дръжте при 18–24 °C, далеч от течения и резки промени в температурата."
+      },
+      "fertilizer": {
+        "en": "Fertilize with a balanced, liquid fertilizer once a month during the growing season.",
+        "bg": "Торете с балансиран, течен тор веднъж месечно по време на растеж."
+      },
+      "toxicity": {
+        "en": "Non-toxic to cats and dogs.",
+        "bg": "Безвредно за котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Calathea lancifolia",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/CalatheaLancifolia.jpg/960px-CalatheaLancifolia.jpg",
+    "commonNameEn": "Rattlesnake Plant",
+    "commonNameBg": "Калатеа",
+    "family": "Marantaceae",
+    "nativeRegionEn": "Tropical regions of Central and South America",
+    "nativeRegionBg": "Тропическите райони на Централна и Южна Америка",
+    "descriptionEn": "The Rattlesnake Plant is a popular houseplant known for its striking, elongated leaves with wavy edges. It thrives in bright, indirect light and adds a touch of tropical beauty to any room. With proper care, it can grow quite large.",
+    "descriptionBg": "Растението Ратълснейк е популярно стайно растение с красиви, дълги листа с вълнисти ръбове. То вирее добре на ярка, непряка светлина и добавя нотка тропическа красота към всяко помещение. При добра грижа може да порасне доста голямо.",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": true,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Bright, indirect light is ideal. Direct sunlight can cause leaf scorch.",
+        "bg": "Предпочита ярка, непряка светлина. Директната слънчева светлина може да причини изгаряне на листата."
+      },
+      "watering": {
+        "en": "Water moderately, allowing the soil to dry slightly between waterings.",
+        "bg": "Поливайте умерено, като оставяте почвата да изсъхне леко между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers high humidity, but adapts to average indoor conditions. Mist leaves regularly.",
+        "bg": "Обича висока влажност на въздуха, но се адаптира към средните стайни условия. Пръскайте листата редовно."
+      },
+      "temperature": {
+        "en": "Keep at 18–24 °C, away from drafts and extreme temperature fluctuations.",
+        "bg": "Дръжте при 18–24 °C, далеч от течения и резки промени в температурата."
+      },
+      "fertilizer": {
+        "en": "Fertilize with a balanced, water-soluble fertilizer once a month during the growing season.",
+        "bg": "Торете с балансиран, водно-разтворим тор веднъж месечно по време на растеж."
+      },
+      "toxicity": {
+        "en": "Non-toxic to cats and dogs.",
+        "bg": "Безвредно за котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Calathea zebrina",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/CalatheaZebrina.jpg/960px-CalatheaZebrina.jpg",
+    "commonNameEn": "Zebra Calathea",
+    "commonNameBg": "Калатеа",
+    "family": "Marantaceae",
+    "nativeRegionEn": "Tropical America",
+    "nativeRegionBg": "Тропическа Америка",
+    "descriptionEn": "The Zebra Calathea is a popular houseplant known for its striking striped leaves. It prefers bright, indirect light and can grow quite large with proper care. This plant helps purify the air and adds a touch of elegance to any room.",
+    "descriptionBg": "Зебра Калатея е популярно стайно растение с красиви ивичести листа. Предпочита ярка, непряка светлина и може да порасне голямо при добра грижа. Пречиства въздуха и украсява всяко помещение.",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": true,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Bright, indirect light is ideal. Direct sunlight can cause leaf scorch.",
+        "bg": "Предпочита ярка, непряка светлина. Директната слънчева светлина може да причини изгаряне на листата."
+      },
+      "watering": {
+        "en": "Water moderately every 7-10 days, allowing the soil to dry slightly between waterings.",
+        "bg": "Поливайте умерено на 7–10 дни и оставяйте почвата да изсъхне леко между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers high humidity. Mist the leaves regularly or place a humidifier nearby.",
+        "bg": "Обича влажен въздух — пръскайте листата редовно или поставете овлажнител наблизо."
+      },
+      "temperature": {
+        "en": "Keep in a room with a consistent temperature between 18-24 °C, away from drafts.",
+        "bg": "Дръжте при 18–24 °C, далеч от течения и резки промени в температурата."
+      },
+      "fertilizer": {
+        "en": "Fertilize with a balanced, water-soluble fertilizer once a month during the growing season.",
+        "bg": "Торете с балансиран течен тор веднъж месечно по време на растеж."
+      },
+      "toxicity": {
+        "en": "Non-toxic to cats and dogs.",
+        "bg": "Безвредно за котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Calathea roseopicta",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Calathea_roseopicta_a1.jpg/960px-Calathea_roseopicta_a1.jpg",
+    "commonNameEn": "Rose-Painted Calathea",
+    "commonNameBg": "Калатеа",
+    "family": "Marantaceae",
+    "nativeRegionEn": "Tropical regions of South America",
+    "nativeRegionBg": "Тропическите райони на Южна Америка",
+    "descriptionEn": "The Rose-Painted Calathea is a beautiful houseplant known for its striking foliage with rose-colored designs. It prefers high humidity and well-draining soil. A great choice for adding color and texture to indoor spaces.",
+    "descriptionBg": "Calathea roseopicta (синоним Goeppertia roseopicta) е вид растение от семейство Marantaceae, родом от северозападна Бразилия.",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": true,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Place in bright, indirect light but avoid direct sunlight.",
+        "bg": "Поставяйте на ярка, непряка светлина, но избягвайте прякото слънце."
+      },
+      "watering": {
+        "en": "Water moderately every 7-10 days, allowing the soil to dry slightly between waterings.",
+        "bg": "Поливайте умерено на 7–10 дни и оставяйте почвата да изсъхне леко между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers high humidity - mist leaves regularly or place a humidifier nearby.",
+        "bg": "Обича висока влажност на въздуха — пръскайте листата редовно или поставете овлажнител наблизо."
+      },
+      "temperature": {
+        "en": "Keep at 18-24 °C, away from drafts and extreme temperature fluctuations.",
+        "bg": "Дръжте при 18–24 °C, далеч от течения и резки промени в температурата."
+      },
+      "fertilizer": {
+        "en": "Fertilize with a balanced, water-soluble fertilizer once a month during the growing season.",
+        "bg": "Торете с балансиран, водно-разтворим тор веднъж месечно по време на растеж."
+      },
+      "toxicity": {
+        "en": "Non-toxic to cats and dogs.",
+        "bg": "Безвредно за котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Maranta leuconeura",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Maranta_leuconeura3.jpg",
+    "commonNameEn": "Prayer Plant",
+    "commonNameBg": "Маранта",
+    "family": "Marantaceae",
+    "nativeRegionEn": "Tropical regions of Central and South America",
+    "nativeRegionBg": "Тропическите райони на Централна и Южна Америка",
+    "descriptionEn": "The Prayer Plant is a beautiful, low-maintenance houseplant with striking foliage. Its leaves fold up at night, resembling praying hands. It's perfect for indoor spaces with bright, indirect light.",
+    "descriptionBg": "Молитвената растение е красиво, лесно стайно растение с ефектни листа. Листата му се сгъват нагоре през нощта, като ръце в молитва. Подходящо е за стаи с ярка, непряка светлина.",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": true,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Bright, indirect light. Direct sunlight can cause leaf scorch.",
+        "bg": "Ярка, непряка светлина. Директната слънчева светлина може да причини изгаряне на листата."
+      },
+      "watering": {
+        "en": "Water moderately, allowing soil to dry slightly between waterings.",
+        "bg": "Поливайте умерено, като оставяте почвата да изсъхне леко между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers high humidity. Mist leaves regularly or place on a tray with pebbles and water.",
+        "bg": "Обича влажен въздух — пръскайте листата редовно или поставете купичка с вода наблизо."
+      },
+      "temperature": {
+        "en": "Keep at 65-75°F (18-24°C), away from drafts and extreme temperatures.",
+        "bg": "Дръжте при 18–24 °C, далеч от течения и резки промени в температурата."
+      },
+      "fertilizer": {
+        "en": "Fertilize with a balanced, water-soluble fertilizer once a month during the growing season.",
+        "bg": "Торете с балансиран, течен тор веднъж месечно по време на растеж."
+      },
+      "toxicity": {
+        "en": "Non-toxic to cats and dogs.",
+        "bg": "Безвредно за котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Ctenanthe setosa",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/340131095/medium.jpg",
+    "commonNameEn": "Gray Star Ctenanthe",
+    "commonNameBg": "Ктенанте",
+    "family": "Marantaceae",
+    "nativeRegionEn": "Brazil",
+    "nativeRegionBg": "Бразилия",
+    "descriptionEn": "The Gray Star Ctenanthe is a beautiful, low-maintenance houseplant with striking gray and green leaves. It grows relatively small and is perfect for indoor spaces or shaded balconies. With proper care, it can thrive and add a touch of tropical beauty to your home.",
+    "descriptionBg": "Сивото звездно ктенанте е красиво, лесно стайно растение с ефектни сиви и зелени листа. Расте сравнително малко и е подходящо за вътрешни пространства или сенчести балкони. С добра грижа може да процъфтява и да внесе нотка тропическа красота в дома ви.",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": true,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Place in bright, indirect light but avoid direct sunlight which can cause leaf scorch.",
+        "bg": "Поставяйте на ярка, непряка светлина, но избягвайте прякото слънце, което може да причини изгаряне на листата."
+      },
+      "watering": {
+        "en": "Water moderately every 7-10 days, allowing the soil to dry slightly between waterings.",
+        "bg": "Поливайте умерено на 7–10 дни и оставяйте почвата да изсъхне леко между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers high humidity, mist the leaves regularly or place a humidifier nearby.",
+        "bg": "Обича влажен въздух — пръскайте листата редовно или поставете овлажнител наблизо."
+      },
+      "temperature": {
+        "en": "Keep in a room with a consistent temperature between 18-24 °C, away from drafts.",
+        "bg": "Дръжте при 18–24 °C, далеч от течения и резки промени в температурата."
+      },
+      "fertilizer": {
+        "en": "Fertilize with a balanced, water-soluble fertilizer once a month during the growing season.",
+        "bg": "Торете с балансиран, водно-разтворим тор веднъж месечно по време на растеж."
+      },
+      "toxicity": {
+        "en": "Non-toxic to cats and dogs.",
+        "bg": "Безвредно за котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Stromanthe sanguinea",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/1476375/medium.jpeg",
+    "commonNameEn": "Tricolor Stromanthe",
+    "commonNameBg": "Строманте",
+    "family": "Marantaceae",
+    "nativeRegionEn": "Tropical regions of South America",
+    "nativeRegionBg": "Тропическите райони на Южна Америка",
+    "descriptionEn": "The Tricolor Stromanthe is a beautiful houseplant known for its vibrant, variegated leaves. It thrives in bright, indirect light and adds a pop of color to any room. With proper care, it can grow quite large.",
+    "descriptionBg": "Трикольорната строманте е красиво стайно растение с пъстри, трицветни листа. То обича ярка, непряка светлина и може да порасне голямо при добра грижа. Свеже и оцветява всяко помещение.",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": true,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Bright, indirect light is ideal. Direct sunlight can cause leaf scorch.",
+        "bg": "Обича ярка, непряка светлина. Директната слънчева светлина може да изгори листата."
+      },
+      "watering": {
+        "en": "Water moderately, allowing the soil to dry slightly between waterings.",
+        "bg": "Поливайте умерено, като оставяте почвата да изсъхне леко между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers high humidity. Mist the leaves regularly or place a humidifier nearby.",
+        "bg": "Обича влажен въздух — пръскайте листата редовно или поставете овлажнител наблизо."
+      },
+      "temperature": {
+        "en": "Keep at 18-24 °C, away from drafts and extreme temperature fluctuations.",
+        "bg": "Дръжте при 18–24 °C, далеч от течения и резки промени в температурата."
+      },
+      "fertilizer": {
+        "en": "Fertilize with a balanced, water-soluble fertilizer once a month during the growing season.",
+        "bg": "Торете с балансиран, течен тор веднъж месечно по време на растеж."
+      },
+      "toxicity": {
+        "en": "Non-toxic to cats and dogs.",
+        "bg": "Безвредно за котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Anthurium andraeanum",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/336703418/medium.jpeg",
+    "commonNameEn": "Flamingo Flower",
+    "commonNameBg": "Антуриум",
+    "family": "Araceae",
+    "nativeRegionEn": "Tropical regions of Colombia and Ecuador",
+    "nativeRegionBg": "Тропическите региони на Колумбия и Еквадор",
+    "descriptionEn": "The Flamingo Flower is a popular houseplant known for its long-lasting, waxy, heart-shaped flowers and glossy dark green leaves. It's relatively easy to care for and can add a pop of color to any room. With proper care, it can bloom throughout the year.",
+    "descriptionBg": "Фламинго цветът е популярно стайно растение с дълготрайни, восъчни, сърцевидни цветове и лъскави тъмнозелени листа. Лесно е за грижа и може да добави цвят във всяка стая. При добра грижа може да цъфти през цялата година.",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": true,
+    "isToxicToPets": true,
+    "careGuide": {
+      "light": {
+        "en": "Place in bright, indirect light but not direct sunlight.",
+        "bg": "Поставете на ярка, непряка светлина, но не на пряко слънце."
+      },
+      "watering": {
+        "en": "Water moderately every 7-10 days, allowing the soil to dry slightly between waterings.",
+        "bg": "Поливайте умерено на 7–10 дни и оставяйте почвата да изсъхне леко между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers high humidity, but can adapt to average home conditions. Mist leaves regularly or place a humidifier nearby.",
+        "bg": "Обича висока влажност на въздуха, но може да се адаптира към средните домашни условия. Пръскайте листата редовно или поставете овлажнител наблизо."
+      },
+      "temperature": {
+        "en": "Keep at 18-24 °C, away from drafts and extreme temperature fluctuations.",
+        "bg": "Дръжте при 18–24 °C, далеч от течения и резки промени в температурата."
+      },
+      "fertilizer": {
+        "en": "Fertilize with a balanced, water-soluble fertilizer once a month during the growing season.",
+        "bg": "Торете с балансиран, водноразтворим тор веднъж месечно по време на растеж."
+      },
+      "toxicity": {
+        "en": "Toxic to cats and dogs if ingested - keep out of reach of pets.",
+        "bg": "Токсично за котки и кучета при поглъщане - пазете от домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Anthurium clarinervium",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/173605683/medium.jpg",
+    "commonNameEn": "Velvet Cardboard Anthurium",
+    "commonNameBg": "Антуриум",
+    "family": "Araceae",
+    "nativeRegionEn": "Mexico",
+    "nativeRegionBg": "Мексико",
+    "descriptionEn": "The Velvet Cardboard Anthurium is a stunning houseplant known for its heart-shaped, velvety leaves with prominent veins. It thrives in bright, indirect light and can grow quite large with proper care. This plant is a great air purifier and adds a touch of tropical beauty to any room.",
+    "descriptionBg": "Велвет Кардборд Антуриумът е красиво стайно растение с сърцевидни, велурени листа и изпъкнали жилки. Расте добре на ярка, непряка светлина и може да порасне голямо при добра грижа. Пречиства въздуха и украсява всяко помещение.",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": true,
+    "isToxicToPets": true,
+    "careGuide": {
+      "light": {
+        "en": "Bright, indirect light is ideal. Direct sunlight can cause leaf scorch.",
+        "bg": "Нуждае се от ярка, непряка светлина. Директната слънчева светлина може да причини изгаряне на листата."
+      },
+      "watering": {
+        "en": "Water moderately, allowing the soil to dry slightly between waterings.",
+        "bg": "Поливайте умерено, като оставяте почвата да изсъхне леко между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers high humidity, but can adapt to average home conditions. Mist leaves regularly.",
+        "bg": "Обича висока влажност на въздуха, но може да се адаптира към средни домашни условия. Пръскайте листата редовно."
+      },
+      "temperature": {
+        "en": "Keep in a room with a consistent temperature between 18-24 °C.",
+        "bg": "Дръжте при постоянна температура между 18-24 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize with a balanced, water-soluble fertilizer once a month during the growing season.",
+        "bg": "Торете с балансиран, водно-разтворим тор веднъж месечно по време на растеж."
+      },
+      "toxicity": {
+        "en": "Toxic to cats and dogs if ingested. Keep out of reach of pets.",
+        "bg": "Токсично за котки и кучета при поглъщане. Пазете от домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Anthurium crystallinum",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/11654921/medium.jpeg",
+    "commonNameEn": "Crystal Anthurium",
+    "commonNameBg": "Антуриум",
+    "family": "Araceae",
+    "nativeRegionEn": "Central and South America",
+    "nativeRegionBg": "Централна и Южна Америка",
+    "descriptionEn": "Crystal Anthurium is a stunning houseplant known for its large, velvety leaves with prominent veins. It thrives in bright, indirect light and adds a touch of tropical elegance to any room. With proper care, it can grow quite large.",
+    "descriptionBg": "Кристалният антуриум е красиво стайно растение с едри, велурени листа и изпъкнали жилки. То обича ярка, непряка светлина и внася нотка тропическа елегантност във всяка стая. При добра грижа може да порасне голямо.",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": true,
+    "isToxicToPets": true,
+    "careGuide": {
+      "light": {
+        "en": "Bright, indirect light is ideal. Direct sunlight can cause leaf scorch.",
+        "bg": "Нуждае се от ярка, непряка светлина. Директната слънчева светлина може да изгори листата."
+      },
+      "watering": {
+        "en": "Water moderately every 7-10 days, allowing the soil to dry slightly between waterings.",
+        "bg": "Поливайте умерено на 7–10 дни и оставяйте почвата да изсъхне леко между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers high humidity. Mist the leaves regularly or place a humidifier nearby.",
+        "bg": "Обича влажен въздух — пръскайте листата редовно или поставете овлажнител наблизо."
+      },
+      "temperature": {
+        "en": "Keep in a room with a consistent temperature between 18-24 °C.",
+        "bg": "Дръжте при 18–24 °C, далеч от течения и резки промени в температурата."
+      },
+      "fertilizer": {
+        "en": "Fertilize with a balanced, water-soluble fertilizer once a month during the growing season.",
+        "bg": "Торете с балансиран, водно-разтворим тор веднъж месечно по време на растеж."
+      },
+      "toxicity": {
+        "en": "Toxic to cats and dogs if ingested. Keep out of reach of pets.",
+        "bg": "Токсично за котки и кучета при поглъщане — пазете от домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Saintpaulia ionantha",
+    "imageUrl": null,
+    "commonNameEn": "African Violet",
+    "commonNameBg": "Саинтпаулиа",
+    "family": "Gesneriaceae",
+    "nativeRegionEn": "Tanzania and Kenya",
+    "nativeRegionBg": "Танзания и Кения",
+    "descriptionEn": "African Violet is a popular, small, and delicate houseplant with beautiful purple flowers. It has fuzzy, rounded leaves and grows well in pots. Perfect for indoor spaces with bright, indirect light.",
+    "descriptionBg": "Африканската теменужка е популярно, малко и деликатно стайно растение с красиви лилави цветове. Има пушисти, заоблени листа и расте добре в саксии. Идеално за вътрешни пространства с ярка, непряка светлина.",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 6,
+    "mistingNeeded": true,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Provide bright, indirect light. Direct sunlight can cause leaf scorch.",
+        "bg": "Осигурете ярка, непряка светлина. Директната слънчева светлина може да причини изгаряне на листата."
+      },
+      "watering": {
+        "en": "Water moderately, allowing the soil to dry slightly between waterings.",
+        "bg": "Поливайте умерено, като оставяте почвата да изсъхне леко между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers high humidity. Mist leaves regularly or place on a tray with pebbles and water.",
+        "bg": "Предпочита висока влажност на въздуха. Пръскайте листата редовно или поставете на тава с камъчета и вода."
+      },
+      "temperature": {
+        "en": "Keep at 18–24 °C, away from drafts and extreme temperatures.",
+        "bg": "Дръжте при 18–24 °C, далеч от течения и резки промени в температурата."
+      },
+      "fertilizer": {
+        "en": "Fertilize with a balanced, water-soluble fertilizer once a month during the growing season.",
+        "bg": "Торете с балансиран, водно-разтворим тор веднъж месечно по време на растеж."
+      },
+      "toxicity": {
+        "en": "Non-toxic to cats and dogs.",
+        "bg": "Не е токсично за котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Begonia rex",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/29233977/medium.jpg",
+    "commonNameEn": "Rex Begonia",
+    "commonNameBg": "Бегониа",
+    "family": "Begoniaceae",
+    "nativeRegionEn": "Tropical Asia",
+    "nativeRegionBg": "Тропическа Азия",
+    "descriptionEn": "Rex Begonia is a popular houseplant known for its large, colorful leaves with silver or red markings. It's relatively easy to care for and can thrive in indoor conditions with proper care. Rex Begonia adds a decorative touch to any room.",
+    "descriptionBg": "Рекс Бегонията е популярно стайно растение с едри, цветни листа със сребрини или червени шарки. Лесно се грижи и може да процъфтява на закрито при добра грижа. Добавя декоративен щрих към всяко помещение.",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": true,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Provide bright, indirect light. Direct sunlight can cause leaf scorch.",
+        "bg": "Осигурете ярка, непряка светлина. Директната слънчева светлина може да причини изгаряне на листата."
+      },
+      "watering": {
+        "en": "Water moderately every 7-10 days, allowing the soil to dry slightly between waterings.",
+        "bg": "Поливайте умерено на 7–10 дни и оставяйте почвата да изсъхне леко между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers high humidity, but can adapt to average indoor humidity. Mist leaves regularly.",
+        "bg": "Обича висока влажност на въздуха, но може да се адаптира към средната влажност на закрито. Пръскайте листата редовно."
+      },
+      "temperature": {
+        "en": "Keep at 18-24 °C, away from drafts and extreme temperature fluctuations.",
+        "bg": "Дръжте при 18–24 °C, далеч от течения и резки промени в температурата."
+      },
+      "fertilizer": {
+        "en": "Fertilize with a balanced, water-soluble fertilizer once a month during the growing season.",
+        "bg": "Торете с балансиран, водно-разтворим тор веднъж месечно по време на растеж."
+      },
+      "toxicity": {
+        "en": "Non-toxic to cats and dogs.",
+        "bg": "Безвредно за котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Begonia maculata",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/176033720/medium.jpeg",
+    "commonNameEn": "Polka Dot Begonia",
+    "commonNameBg": "Бегониа",
+    "family": "Begoniaceae",
+    "nativeRegionEn": "Tropical regions of Brazil",
+    "nativeRegionBg": "Тропическите райони на Бразилия",
+    "descriptionEn": "Polka Dot Begonia is a popular houseplant known for its beautiful leaves with white spots. It's relatively easy to care for and can thrive in indoor conditions. With proper care, it can grow quite large.",
+    "descriptionBg": "Полка Дот Бегонията е популярно стайно растение с красиви листа с бели петна. Лесно се грижи и може да процъфтява в домашни условия. При добра грижа може да порасне голямо.",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": true,
+    "isToxicToPets": true,
+    "careGuide": {
+      "light": {
+        "en": "Provide bright, indirect light. Direct sunlight can cause leaf scorch.",
+        "bg": "Осигурете ярка, непряка светлина. Директната слънчева светлина може да причини изгаряне на листата."
+      },
+      "watering": {
+        "en": "Water moderately every 7-10 days, allowing the soil to dry slightly between waterings.",
+        "bg": "Поливайте умерено на 7–10 дни и оставяйте почвата да изсъхне леко между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers high humidity, but can adapt to average indoor humidity. Mist leaves regularly.",
+        "bg": "Обича висока влажност на въздуха, но може да се адаптира към средната влажност в дома. Пръскайте листата редовно."
+      },
+      "temperature": {
+        "en": "Keep at 18-24 °C, away from drafts and extreme temperature fluctuations.",
+        "bg": "Дръжте при 18–24 °C, далеч от течения и резки промени в температурата."
+      },
+      "fertilizer": {
+        "en": "Fertilize with a balanced, water-soluble fertilizer once a month during the growing season.",
+        "bg": "Торете с балансиран, водно-разтворим тор веднъж месечно по време на растеж."
+      },
+      "toxicity": {
+        "en": "Toxic to cats and dogs if ingested. Keep out of reach of pets.",
+        "bg": "Токсично за котки и кучета при поглъщане. Пазете от домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Begonia semperflorens",
+    "imageUrl": "https://static.inaturalist.org/photos/246807657/medium.jpeg",
+    "commonNameEn": "Wax Begonia",
+    "commonNameBg": "Бегониа",
+    "family": "Begoniaceae",
+    "nativeRegionEn": "Tropical regions of Central and South America",
+    "nativeRegionBg": "Тропическите региони на Централна и Южна Америка",
+    "descriptionEn": "Wax Begonia is a popular, easy-to-grow houseplant with waxy leaves and small white flowers. It's perfect for indoor pots or outdoor containers in warm climates. With proper care, it can bloom year-round.",
+    "descriptionBg": "Восъчната бегония е популярно и лесно стайно растение с восъчни листа и малки бели цветчета. Подходяща е за стайни саксии или външни контейнери в топъл климат. При добра грижа може да цъфти през цялата година.",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": true,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Bright, indirect light is ideal. Direct sunlight can cause leaf scorch.",
+        "bg": "Предпочита ярка, непряка светлина. Директната слънчева светлина може да причини изгаряне на листата."
+      },
+      "watering": {
+        "en": "Water moderately, allowing soil to dry slightly between waterings.",
+        "bg": "Поливайте умерено, като оставяте почвата да изсъхне леко между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers high humidity, but adapts to average indoor humidity. Mist leaves regularly.",
+        "bg": "Обича висока влажност на въздуха, но се адаптира към средната стайна влажност. Пръскайте листата редовно."
+      },
+      "temperature": {
+        "en": "Keep at 18-24°C, away from drafts and extreme temperature fluctuations.",
+        "bg": "Дръжте при 18–24 °C, далеч от течения и резки промени в температурата."
+      },
+      "fertilizer": {
+        "en": "Fertilize with a balanced, water-soluble fertilizer once a month during the growing season.",
+        "bg": "Торете с балансиран, водно-разтворим тор веднъж месечно по време на растеж."
+      },
+      "toxicity": {
+        "en": "Non-toxic to cats and dogs.",
+        "bg": "Безвредна за котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Begonia boliviensis",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/454917574/medium.jpeg",
+    "commonNameEn": "Bolivian Begonia",
+    "commonNameBg": "Бегониа",
+    "family": "Begoniaceae",
+    "nativeRegionEn": "South America, Bolivia",
+    "nativeRegionBg": "Южна Америка, Боливия",
+    "descriptionEn": "Bolivian Begonia is a beautiful, flowering houseplant with bright orange-red flowers. It has trailing stems and can be grown in hanging baskets or pots. With proper care, it blooms from spring to fall.",
+    "descriptionBg": "Боливийската бегония е красиво, цъфтящо стайно растение с ярко оранжево-червени цветове. Има увиснали стъбла и може да се отглежда в окачени кошници или саксии. При добра грижа цъфти от пролетта до есента.",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": true,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Provide bright, indirect light. Direct sunlight can cause leaf scorch.",
+        "bg": "Осигурете ярка, непряка светлина. Директната слънчева светлина може да причини изгаряне на листата."
+      },
+      "watering": {
+        "en": "Water moderately every 7-10 days, allowing the soil to dry slightly between waterings.",
+        "bg": "Поливайте умерено на 7–10 дни и оставяйте почвата да изсъхне леко между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers high humidity. Mist leaves regularly or place a humidifier nearby.",
+        "bg": "Обича висока влажност на въздуха. Пръскайте листата редовно или поставете овлажнител наблизо."
+      },
+      "temperature": {
+        "en": "Keep at 18-24 °C, away from drafts and extreme temperature fluctuations.",
+        "bg": "Дръжте при 18–24 °C, далеч от течения и резки промени в температурата."
+      },
+      "fertilizer": {
+        "en": "Fertilize with a balanced, water-soluble fertilizer once a month during the growing season.",
+        "bg": "Торете с балансиран, водно-разтворим тор веднъж месечно по време на растеж."
+      },
+      "toxicity": {
+        "en": "Non-toxic to cats and dogs.",
+        "bg": "Безвредно за котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Cyclamen persicum",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/173634733/medium.jpeg",
+    "commonNameEn": "Florist Cyclamen",
+    "commonNameBg": "персийска циклама",
+    "family": "Primulaceae",
+    "nativeRegionEn": "Mediterranean region, Middle East, and North Africa",
+    "nativeRegionBg": "Средиземноморският регион, Близък изток и Северна Африка",
+    "descriptionEn": "Florist Cyclamen is a popular, delicate, and beautiful houseplant with heart-shaped leaves and showy, pink, white, or purple flowers. It thrives in cooler temperatures and well-draining soil. With proper care, it can bloom for months.",
+    "descriptionBg": "Цикламенът е популярно, нежно и красиво стайно растение с сърцевидни листа и ефектни, розови, бели или лилави цветове. Растението се развива добре при по-ниски температури и добре дренирана почва. При добра грижа може да цъфти с месеци.",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": true,
+    "isToxicToPets": true,
+    "careGuide": {
+      "light": {
+        "en": "Place in bright, indirect light but not direct sunlight.",
+        "bg": "Поставете на ярка, непряка светлина, но не на пряко слънце."
+      },
+      "watering": {
+        "en": "Water moderately every 7-10 days, allowing the soil to dry slightly between waterings.",
+        "bg": "Поливайте умерено на 7–10 дни и оставяйте почвата да изсъхне леко между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers humid air - mist leaves regularly or place a bowl of water nearby.",
+        "bg": "Обича влажен въздух — пръскайте листата редовно или поставете купичка с вода наблизо."
+      },
+      "temperature": {
+        "en": "Keep at 15-20 °C, away from drafts and extreme temperatures.",
+        "bg": "Дръжте при 15–20 °C, далеч от течения и резки промени в температурата."
+      },
+      "fertilizer": {
+        "en": "Fertilize with a balanced, water-soluble fertilizer once a month during growth.",
+        "bg": "Торете с балансиран, водно-разтворим тор веднъж месечно по време на растеж."
+      },
+      "toxicity": {
+        "en": "Toxic to cats and dogs - keep out of reach of pets.",
+        "bg": "Токсично за котки и кучета — пазете от домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Tradescantia zebrina",
+    "imageUrl": "https://static.inaturalist.org/photos/100258841/medium.jpeg",
+    "commonNameEn": "Wandering Jew",
+    "commonNameBg": "Традескантиа",
+    "family": "Commelinaceae",
+    "nativeRegionEn": "Central and South America",
+    "nativeRegionBg": "Централна и Южна Америка",
+    "descriptionEn": "Wandering Jew is an easy-to-grow, trailing houseplant with beautiful, variegated leaves. It thrives in a variety of lighting conditions and can be trained to climb or left to cascade. Perfect for hanging baskets or containers.",
+    "descriptionBg": "Пълзящата красота е лесно стайно растение с красиви, пъстри листа. Расте добре при различни условия на осветление и може да се обучава да се катери или да виси свободно. Идеално за висящи кошници или контейнери.",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": true,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Place in bright, indirect light but can tolerate low light conditions.",
+        "bg": "Поставете на ярка, непряка светлина, но може да понася и ниска осветеност."
+      },
+      "watering": {
+        "en": "Water moderately, allowing soil to dry slightly between waterings.",
+        "bg": "Поливайте умерено, като оставяте почвата да изсъхне леко между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers high humidity but adapts to average indoor humidity. Mist leaves regularly.",
+        "bg": "Обича висока влажност на въздуха, но се адаптира към средната влажност вкъщи. Пръскайте листата редовно."
+      },
+      "temperature": {
+        "en": "Keep in temperatures between 18–24 °C, away from drafts.",
+        "bg": "Дръжте при 18–24 °C, далеч от течения и резки промени в температурата."
+      },
+      "fertilizer": {
+        "en": "Fertilize with a balanced, liquid fertilizer once a month during growing season.",
+        "bg": "Торете с балансиран, течен тор веднъж месечно по време на растеж."
+      },
+      "toxicity": {
+        "en": "Non-toxic to cats and dogs.",
+        "bg": "Безвредно за котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Tradescantia spathacea",
+    "imageUrl": "https://static.inaturalist.org/photos/100258319/medium.jpg",
+    "commonNameEn": "Moses in the Cradle",
+    "commonNameBg": "Традескантиа",
+    "family": "Commelinaceae",
+    "nativeRegionEn": "Central and South America",
+    "nativeRegionBg": "Централна и Южна Америка",
+    "descriptionEn": "Moses in the Cradle is a popular, easy-to-grow houseplant with striking, variegated leaves. It thrives in indoor conditions and can be grown on balconies in shaded areas. The plant produces small white flowers.",
+    "descriptionBg": "Мозес в люлката е популярно и лесно стайно растение с ефектни, пъстри листа. Растението вирее добре в стайни условия и може да се отглежда на балкони на сянка. Произвежда малки бели цветчета.",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": true,
+    "isToxicToPets": true,
+    "careGuide": {
+      "light": {
+        "en": "Prefers bright, indirect light but can tolerate low light conditions.",
+        "bg": "Предпочита ярка, непряка светлина, но може да понася и ниска осветеност."
+      },
+      "watering": {
+        "en": "Water moderately every 7-10 days, allowing the soil to dry slightly between waterings.",
+        "bg": "Поливайте умерено на 7–10 дни и оставяйте почвата да изсъхне леко между поливанията."
+      },
+      "humidity": {
+        "en": "Appreciates high humidity, mist the leaves regularly or place a humidifier nearby.",
+        "bg": "Обича влажен въздух — пръскайте листата редовно или поставете овлажнител наблизо."
+      },
+      "temperature": {
+        "en": "Keep at 18-24 °C, away from drafts and extreme temperature fluctuations.",
+        "bg": "Дръжте при 18–24 °C, далеч от течения и резки промени в температурата."
+      },
+      "fertilizer": {
+        "en": "Fertilize with a balanced, liquid fertilizer once a month during the growing season.",
+        "bg": "Торете с балансиран, течен тор веднъж месечно по време на растеж."
+      },
+      "toxicity": {
+        "en": "Toxic to cats and dogs if ingested - keep out of reach of pets.",
+        "bg": "Токсично за котки и кучета при поглъщане — пазете от домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Tradescantia pallida",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Tradescantia_pallida_kz03.jpg/960px-Tradescantia_pallida_kz03.jpg",
+    "commonNameEn": "Purple Heart Plant",
+    "commonNameBg": "Традескантиа",
+    "family": "Commelinaceae",
+    "nativeRegionEn": "Mexico and Central America",
+    "nativeRegionBg": "Мексико и Централна Америка",
+    "descriptionEn": "The Purple Heart Plant is an easy-to-grow, trailing houseplant with beautiful, deep purple leaves. It's perfect for hanging baskets or containers and can thrive indoors or on a balcony. With proper care, it can grow rapidly and produce small pink flowers.",
+    "descriptionBg": "Пурпурното сърце е лесно стайно растение с красиви, дълбоко лилави листа. Подходящо е за висящи кошници или контейнери и може да процъфтява вътре в къщата или на балкон. С добра грижа може бързо да расте и да дава малки розови цветчета.",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": true,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Provide bright, indirect light for optimal growth and color.",
+        "bg": "Осигурете ярка, непряка светлина за оптимален растеж и цвят."
+      },
+      "watering": {
+        "en": "Water moderately every 7-10 days, allowing the soil to dry slightly between waterings.",
+        "bg": "Поливайте умерено на 7–10 дни и оставяйте почвата да изсъхне леко между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers high humidity, but can adapt to average indoor humidity. Mist leaves regularly.",
+        "bg": "Обича висока влажност на въздуха, но може да се адаптира към средната влажност вкъщи. Пръскайте листата редовно."
+      },
+      "temperature": {
+        "en": "Keep in a room with a consistent temperature between 18-24 °C.",
+        "bg": "Дръжте при 18–24 °C, далеч от течения и резки промени в температурата."
+      },
+      "fertilizer": {
+        "en": "Fertilize with a balanced, water-soluble fertilizer once a month during the growing season.",
+        "bg": "Торете с балансиран, водно-разтворим тор веднъж месечно по време на растеж."
+      },
+      "toxicity": {
+        "en": "Non-toxic to cats and dogs.",
+        "bg": "Безвредно за котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Alocasia amazonica",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Alocasia_x_amazonica_a1.jpg/960px-Alocasia_x_amazonica_a1.jpg",
+    "commonNameEn": "Elephant Ear Alocasia",
+    "commonNameBg": "Алокасиа",
+    "family": "Araceae",
+    "nativeRegionEn": "Tropical Asia and Australia",
+    "nativeRegionBg": "Тропическа Азия и Австралия",
+    "descriptionEn": "Alocasia amazonica is a stunning houseplant with large, dark green leaves featuring prominent veins. It thrives in bright, indirect light and adds a tropical touch to any room. With proper care, it can grow quite large.",
+    "descriptionBg": "Алохазията е красиво стайно растение с едри, тъмнозелени листа и изпъкнали жилки. Тя обича ярка, непряка светлина и прави впечатление в стаята. При добра грижа може да порасне доста голяма.",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": true,
+    "isToxicToPets": true,
+    "careGuide": {
+      "light": {
+        "en": "Bright, indirect light is ideal. Direct sunlight can cause leaf scorch.",
+        "bg": "Нуждае се от ярка, непряка светлина. Директната слънчева светлина може да изгори листата."
+      },
+      "watering": {
+        "en": "Water moderately, allowing the top inch of soil to dry between waterings.",
+        "bg": "Поливайте умерено, като оставяте горния сантиметър от почвата да изсъхне между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers high humidity. Mist leaves regularly or place a humidifier nearby.",
+        "bg": "Обича висока влажност на въздуха. Пръскайте листата редовно или поставете овлажнител наблизо."
+      },
+      "temperature": {
+        "en": "Keep at 18–24 °C, away from drafts and extreme temperature fluctuations.",
+        "bg": "Дръжте при 18–24 °C, далеч от течения и резки промени в температурата."
+      },
+      "fertilizer": {
+        "en": "Fertilize with a balanced, water-soluble fertilizer once a month during the growing season.",
+        "bg": "Торете с балансиран, водно-разтворим тор веднъж месечно по време на растеж."
+      },
+      "toxicity": {
+        "en": "Toxic to cats and dogs if ingested. Keep out of reach of pets.",
+        "bg": "Токсично за котки и кучета при поглъщане. Пазете от домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Alocasia macrorrhizos",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Alocasia_macrorrhizos1.jpg/960px-Alocasia_macrorrhizos1.jpg",
+    "commonNameEn": "Giant Taro",
+    "commonNameBg": "Алокасиа",
+    "family": "Araceae",
+    "nativeRegionEn": "Tropical Asia and Australia",
+    "nativeRegionBg": "Тропическа Азия и Австралия",
+    "descriptionEn": "Giant Taro is a large, impressive plant with huge leaves. It can grow quite big and needs space. With proper care, it can thrive indoors or outdoors.",
+    "descriptionBg": "Гигантският таро е голямо и впечатляващо растение с огромни листа. Има нужда от пространство и може да порасне много голямо. С добра грижа може да вирее успешно вкъщи или на открито.",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": true,
+    "isToxicToPets": true,
+    "careGuide": {
+      "light": {
+        "en": "Bright, indirect light is best. Direct sunlight can cause leaf scorch.",
+        "bg": "Предпочита ярка, непряка светлина. Директната слънчева светлина може да причини изгаряне на листата."
+      },
+      "watering": {
+        "en": "Water moderately, allowing soil to dry slightly between waterings.",
+        "bg": "Поливайте умерено, като оставяте почвата да изсъхне леко между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers high humidity. Mist leaves regularly or place a humidifier nearby.",
+        "bg": "Обича висока влажност на въздуха. Пръскайте листата редовно или поставете овлажнител наблизо."
+      },
+      "temperature": {
+        "en": "Keep at 18-24°C, away from drafts and extreme temperature fluctuations.",
+        "bg": "Дръжте при 18–24 °C, далеч от течения и резки промени в температурата."
+      },
+      "fertilizer": {
+        "en": "Fertilize with a balanced, liquid fertilizer once a month during the growing season.",
+        "bg": "Торете с балансиран, течен тор веднъж месечно по време на растеж."
+      },
+      "toxicity": {
+        "en": "Toxic to cats and dogs if ingested. Keep out of reach of pets.",
+        "bg": "Токсично за котки и кучета при поглъщане. Пазете от домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Alocasia zebrina",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Alocasia_zebrina_4zz.jpg/960px-Alocasia_zebrina_4zz.jpg",
+    "commonNameEn": "Zebra Alocasia",
+    "commonNameBg": "Алокасиа",
+    "family": "Araceae",
+    "nativeRegionEn": "Southeast Asia",
+    "nativeRegionBg": "Югоизточна Азия",
+    "descriptionEn": "Zebra Alocasia is a striking houseplant known for its zebra-like striped stems and large, arrow-shaped leaves. It thrives in bright, indirect light and adds a tropical touch to any room. With proper care, it can grow quite large.",
+    "descriptionBg": "Зебра Алоказията е ефектна стайна растение с ивичести стъбла и големи, стреловидни листа. Тя вирее добре на ярка, непряка светлина и добавя тропически щрих към всяко помещение. При добра грижа може да порасне доста голяма.",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": true,
+    "isToxicToPets": true,
+    "careGuide": {
+      "light": {
+        "en": "Place in bright, indirect light. Direct sunlight can cause leaf scorch.",
+        "bg": "Поставете на ярка, непряка светлина. Директната слънчева светлина може да причини изгаряне на листата."
+      },
+      "watering": {
+        "en": "Water moderately every 7-10 days, allowing soil to dry slightly between waterings.",
+        "bg": "Поливайте умерено на 7–10 дни и оставяйте почвата да изсъхне леко между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers high humidity. Mist leaves regularly or place a humidifier nearby.",
+        "bg": "Обича висока влажност на въздуха. Пръскайте листата редовно или поставете овлажнител наблизо."
+      },
+      "temperature": {
+        "en": "Keep at 18-24 °C, away from drafts and extreme temperature fluctuations.",
+        "bg": "Дръжте при 18–24 °C, далеч от течения и резки промени в температурата."
+      },
+      "fertilizer": {
+        "en": "Fertilize with a balanced, water-soluble fertilizer once a month during the growing season.",
+        "bg": "Торете с балансиран, водно-разтворим тор веднъж месечно по време на растеж."
+      },
+      "toxicity": {
+        "en": "Toxic to cats and dogs if ingested. Keep out of reach of pets.",
+        "bg": "Токсично за котки и кучета при поглъщане. Пазете от домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Syngonium podophyllum",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Zingiber_malaysianum.jpg/960px-Zingiber_malaysianum.jpg",
+    "commonNameEn": "Arrowhead Plant",
+    "commonNameBg": "Сингониум",
+    "family": "Araceae",
+    "nativeRegionEn": "Tropical regions of Central and South America",
+    "nativeRegionBg": "Тропическите региони на Централна и Южна Америка",
+    "descriptionEn": "The Arrowhead Plant is a popular houseplant known for its arrow-shaped leaves. It is a versatile, easy-to-grow plant that can thrive in a variety of lighting conditions. With proper care, it can grow quite large.",
+    "descriptionBg": "Стреловидното растение е популярно стайно растение с листа във формата на стрела. То е лесно стайно растение, което може да вирее при различни условия на осветление. При добра грижа може да порасне голямо.",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": true,
+    "isToxicToPets": true,
+    "careGuide": {
+      "light": {
+        "en": "Place in bright, indirect light but can tolerate low light conditions.",
+        "bg": "Поставяйте на ярка, непряка светлина, но може да понася и ниска осветеност."
+      },
+      "watering": {
+        "en": "Water moderately, allowing soil to dry slightly between waterings.",
+        "bg": "Поливайте умерено, като оставяте почвата да изсъхне леко между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers high humidity, mist leaves regularly or place on a tray with pebbles and water.",
+        "bg": "Обича висока влажност на въздуха — пръскайте листата редовно или поставете купичка с вода наблизо."
+      },
+      "temperature": {
+        "en": "Keep at 18-24°C, away from drafts and extreme temperatures.",
+        "bg": "Дръжте при 18–24 °C, далеч от течения и резки промени в температурата."
+      },
+      "fertilizer": {
+        "en": "Fertilize with a balanced, liquid fertilizer once a month during the growing season.",
+        "bg": "Торете с балансиран, течен тор веднъж месечно по време на растеж."
+      },
+      "toxicity": {
+        "en": "Toxic to cats and dogs if ingested - keep out of reach of pets.",
+        "bg": "Токсично за котки и кучета при поглъщане — пазете от домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Colocasia esculenta",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/20295281/medium.jpeg",
+    "commonNameEn": "Taro",
+    "commonNameBg": "таро",
+    "family": "Araceae",
+    "nativeRegionEn": "Southeast Asia and the Indian subcontinent",
+    "nativeRegionBg": "Югоизточна Азия и Индийският субконтинент",
+    "descriptionEn": "Taro is a tropical plant with large, beautiful leaves. It can grow well indoors and outdoors in warm climates. The plant requires careful watering and high humidity.",
+    "descriptionBg": "Таро е тропическо растение с големи, красиви листа. Расте добре вкъщи и навън в топли климат. Нуждае се от внимателно поливане и висока влажност на въздуха.",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": true,
+    "isToxicToPets": true,
+    "careGuide": {
+      "light": {
+        "en": "Provide bright, indirect light. Direct sunlight can cause leaf scorch.",
+        "bg": "Осигурете ярка, непряка светлина. Директната слънчева светлина може да причини изгаряне на листата."
+      },
+      "watering": {
+        "en": "Water thoroughly, allowing the top 1-2 inches of soil to dry between waterings.",
+        "bg": "Поливайте обилно, като оставяте горния 1-2 инча от почвата да изсъхне между поливанията."
+      },
+      "humidity": {
+        "en": "Maintain high humidity. Mist the leaves regularly or place the pot on a tray with pebbles and water.",
+        "bg": "Поддържайте висока влажност на въздуха. Пръскайте листата редовно или поставете саксията на тава с камъчета и вода."
+      },
+      "temperature": {
+        "en": "Keep the temperature between 65°F to 85°F (18°C to 30°C). Avoid cold drafts.",
+        "bg": "Дръжте температурата между 18 °C и 30 °C. Избягвайте студени течения."
+      },
+      "fertilizer": {
+        "en": "Fertilize with a balanced, water-soluble fertilizer once a month during the growing season.",
+        "bg": "Торете с балансиран, водно-разтворим тор веднъж месечно по време на растеж."
+      },
+      "toxicity": {
+        "en": "Taro is toxic to cats and dogs. Keep out of reach of pets.",
+        "bg": "Таро е токсично за котки и кучета. Пазете от домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Caladium bicolor",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/29047197/medium.jpeg",
+    "commonNameEn": "Caladium",
+    "commonNameBg": "Каладиум",
+    "family": "Araceae",
+    "nativeRegionEn": "South America, Central America",
+    "nativeRegionBg": "Южна Америка, Централна Америка",
+    "descriptionEn": "Caladium is a popular houseplant known for its vibrant, colorful leaves. It's relatively easy to care for and can thrive in indoor conditions with proper care. It adds a tropical touch to any room.",
+    "descriptionBg": "Каладиумът е популярно стайно растение с ярки, цветни листа. Лесно се грижи и може да процъфтява на закрито при добра грижа. Добавя тропически щрих към всяко помещение.",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": true,
+    "isToxicToPets": true,
+    "careGuide": {
+      "light": {
+        "en": "Prefers bright, indirect light but can tolerate low light conditions.",
+        "bg": "Предпочита ярка, непряка светлина, но може да понася и ниска светлина."
+      },
+      "watering": {
+        "en": "Water moderately, allowing the soil to dry slightly between waterings.",
+        "bg": "Поливайте умерено, като оставяте почвата да изсъхне леко между поливанията."
+      },
+      "humidity": {
+        "en": "Thrives in humid environments; mist leaves regularly or use a humidifier.",
+        "bg": "Обича влажен въздух — пръскайте листата редовно или използвайте овлажнител."
+      },
+      "temperature": {
+        "en": "Keep at 65°F - 75°F (18°C - 24°C), away from drafts.",
+        "bg": "Дръжте при 18–24 °C, далеч от течения и резки промени в температурата."
+      },
+      "fertilizer": {
+        "en": "Fertilize with a balanced, water-soluble fertilizer once a month during growing season.",
+        "bg": "Торете с балансиран, водно-разтворим тор веднъж месечно по време на растеж."
+      },
+      "toxicity": {
+        "en": "Toxic to cats and dogs if ingested; keep out of reach.",
+        "bg": "Токсично за котки и кучета при поглъщане — пазете от домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Dieffenbachia seguine",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/325214430/medium.jpg",
+    "commonNameEn": "Dumb Cane",
+    "commonNameBg": "петниста дифенбахия",
+    "family": "Araceae",
+    "nativeRegionEn": "Tropical regions of South America",
+    "nativeRegionBg": "Тропическите региони на Южна Америка",
+    "descriptionEn": "Dieffenbachia seguine is a popular houseplant known for its striking, variegated leaves. It thrives in well-lit spaces and can grow quite tall with proper care. It's also great for air purification.",
+    "descriptionBg": "Дифенбахия е популярно стайно растение с красиви, пъстри листа. То вирее добре на светло и може да порасне високо при добра грижа. Пречиства въздуха и е чудесна украса за всяка стая.",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": true,
+    "isToxicToPets": true,
+    "careGuide": {
+      "light": {
+        "en": "Prefers bright, indirect light but can tolerate low light conditions.",
+        "bg": "Предпочита ярка, непряка светлина, но може да понася и ниска осветеност."
+      },
+      "watering": {
+        "en": "Water moderately, allowing the soil to dry slightly between waterings.",
+        "bg": "Поливайте умерено, като оставяте почвата да изсъхне леко между поливанията."
+      },
+      "humidity": {
+        "en": "Appreciates high humidity; mist leaves regularly or place a humidifier nearby.",
+        "bg": "Обича влажен въздух — пръскайте листата редовно или поставете овлажнител наблизо."
+      },
+      "temperature": {
+        "en": "Keep in a room with a consistent temperature between 18–24 °C.",
+        "bg": "Дръжте при 18–24 °C, далеч от течения и резки промени в температурата."
+      },
+      "fertilizer": {
+        "en": "Fertilize with a balanced, liquid fertilizer once a month during the growing season.",
+        "bg": "Торете с балансиран, течен тор веднъж месечно по време на растеж."
+      },
+      "toxicity": {
+        "en": "Toxic to cats and dogs; keep out of reach of pets.",
+        "bg": "Токсично за котки и кучета — пазете от домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Peperomia obtusifolia",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/455196616/medium.jpeg",
+    "commonNameEn": "Baby Rubber Plant",
+    "commonNameBg": "Пеперомиа",
+    "family": "Piperaceae",
+    "nativeRegionEn": "Central and South America",
+    "nativeRegionBg": "Централна и Южна Америка",
+    "descriptionEn": "The Baby Rubber Plant is a popular, easy-to-grow indoor plant with beautiful, rounded leaves. It's a great choice for home growers, as it's low-maintenance and can thrive in a variety of conditions. With proper care, it can grow quite large.",
+    "descriptionBg": "Бебешката гумена planta е популярно, лесно стайно растение с красиви, закръглени листа. Това е чудесен избор за домашни градинари, тъй като изисква малко грижи и може да процъфтява в различни условия. При добра грижа може да порасне доста голямо.",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": true,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Bright, indirect light is ideal. Direct sunlight can cause leaf scorch.",
+        "bg": "Идеална е ярка, непряка светлина. Директната слънчева светлина може да причини изгаряне на листата."
+      },
+      "watering": {
+        "en": "Water moderately, allowing the soil to dry slightly between waterings.",
+        "bg": "Поливайте умерено, като оставяте почвата да изсъхне леко между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers high humidity, but can adapt to average indoor humidity. Mist leaves regularly.",
+        "bg": "Предпочита висока влажност на въздуха, но може да се адаптира към средната влажност в дома. Пръскайте листата редовно."
+      },
+      "temperature": {
+        "en": "Keep at 18-24°C, away from drafts and extreme temperature fluctuations.",
+        "bg": "Дръжте при 18–24 °C, далеч от течения и резки промени в температурата."
+      },
+      "fertilizer": {
+        "en": "Fertilize with a balanced, water-soluble fertilizer once a month during the growing season.",
+        "bg": "Торете с балансиран, водно-разтворим тор веднъж месечно по време на растеж."
+      },
+      "toxicity": {
+        "en": "Non-toxic to cats and dogs.",
+        "bg": "Не е токсично за котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Peperomia caperata",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/7318759/medium.jpg",
+    "commonNameEn": "Ripple Peperomia",
+    "commonNameBg": "Пеперомиа",
+    "family": "Piperaceae",
+    "nativeRegionEn": "South America, primarily Brazil",
+    "nativeRegionBg": "Южна Америка, предимно Бразилия",
+    "descriptionEn": "Ripple Peperomia is a popular, easy-to-grow houseplant known for its beautiful, heart-shaped leaves with rippled texture. It thrives in indoor conditions and can be a great addition to any room. It's relatively small and doesn't require much maintenance.",
+    "descriptionBg": "Рипъл Пеперомията е популярно, лесно стайно растение с красиви, сърцевидни листа с набръчкана текстура. Растението се справя добре в домашни условия и може да бъде чудесно допълнение към всяка стая. То е сравнително малко и не изисква много поддръжка.",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": true,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Prefers bright, indirect light but can tolerate low light conditions.",
+        "bg": "Предпочита ярка, непряка светлина, но може да понася и ниска осветеност."
+      },
+      "watering": {
+        "en": "Water moderately every 7-10 days, allowing the soil to dry out slightly between waterings.",
+        "bg": "Поливайте умерено на 7–10 дни и оставяйте почвата да изсъхне леко между поливанията."
+      },
+      "humidity": {
+        "en": "Appreciates high humidity but can adapt to average home humidity levels. Mist leaves regularly.",
+        "bg": "Обича висока влажност на въздуха, но може да се адаптира към средните нива в дома. Пръскайте листата редовно."
+      },
+      "temperature": {
+        "en": "Keep at 18-24 °C, away from drafts and extreme temperature fluctuations.",
+        "bg": "Дръжте при 18–24 °C, далеч от течения и резки промени в температурата."
+      },
+      "fertilizer": {
+        "en": "Fertilize with a balanced, liquid fertilizer once a month during the growing season.",
+        "bg": "Торете с балансиран, течен тор веднъж месечно по време на растеж."
+      },
+      "toxicity": {
+        "en": "Non-toxic to cats and dogs.",
+        "bg": "Не е токсично за котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Peperomia argyreia",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/1475976/medium.jpg",
+    "commonNameEn": "Watermelon Peperomia",
+    "commonNameBg": "Пеперомиа",
+    "family": "Piperaceae",
+    "nativeRegionEn": "South America",
+    "nativeRegionBg": "Южна Америка",
+    "descriptionEn": "Watermelon Peperomia is a popular, small, and easy-to-grow houseplant with beautiful leaves resembling watermelon skin. It thrives in indoor conditions and requires minimal care. Perfect for small pots and decorative containers.",
+    "descriptionBg": "Водомеланената пеперомия е популярно, малко и лесно стайно растение с красиви листа, приличащи на кожа от диня. Растението се справя добре в домашни условия и изисква минимална грижа. Подходящо е за малки саксии и декоративни контейнери.",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": true,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Prefers bright, indirect light. Direct sunlight can cause leaf scorch.",
+        "bg": "Предпочита ярка, непряка светлина. Директната слънчева светлина може да причини изгаряне на листата."
+      },
+      "watering": {
+        "en": "Water moderately every 7-10 days, allowing the soil to dry slightly between waterings.",
+        "bg": "Поливайте умерено на 7–10 дни и оставяйте почвата да изсъхне леко между поливанията."
+      },
+      "humidity": {
+        "en": "Appreciates high humidity, but can adapt to average indoor humidity. Mist leaves regularly.",
+        "bg": "Обича висока влажност на въздуха, но може да се адаптира към средната влажност в дома. Пръскайте листата редовно."
+      },
+      "temperature": {
+        "en": "Keep at 18-24 °C, away from drafts and extreme temperature fluctuations.",
+        "bg": "Дръжте при 18–24 °C, далеч от течения и резки промени в температурата."
+      },
+      "fertilizer": {
+        "en": "Fertilize with a balanced, water-soluble fertilizer once a month during the growing season.",
+        "bg": "Торете с балансиран, водно-разтворим тор веднъж месечно по време на растеж."
+      },
+      "toxicity": {
+        "en": "Non-toxic to cats and dogs.",
+        "bg": "Не е токсично за котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Peperomia rotundifolia",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Peperomia_rotundifolia_var._rotundifolia.jpg/960px-Peperomia_rotundifolia_var._rotundifolia.jpg",
+    "commonNameEn": "Trailing Jade Peperomia",
+    "commonNameBg": "Пеперомиа",
+    "family": "Piperaceae",
+    "nativeRegionEn": "South America, Caribbean",
+    "nativeRegionBg": "Южна Америка, Карибски острови",
+    "descriptionEn": "Trailing Jade Peperomia is a popular, low-maintenance houseplant with small, round leaves on trailing stems. It thrives in indoor conditions and can be trained to climb or left to cascade. Perfect for hanging baskets or small pots.",
+    "descriptionBg": "Травяната Пеперомия е популярно стайно растение с малки, кръгли листа на увивни стъбла. Растението се справя добре в домашни условия и може да бъде обучено да се изкачва или да виси свободно. Подходящо за висящи кошници или малки саксии.",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": true,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Prefers bright, indirect light but can tolerate low light conditions.",
+        "bg": "Предпочита ярка, непряка светлина, но може да понася и ниска осветеност."
+      },
+      "watering": {
+        "en": "Water moderately every 7-10 days, allowing soil to dry slightly between waterings.",
+        "bg": "Поливайте умерено на 7–10 дни и оставяйте почвата да изсъхне леко между поливанията."
+      },
+      "humidity": {
+        "en": "Appreciates high humidity but can adapt to average indoor humidity. Mist leaves occasionally.",
+        "bg": "Обича влажен въздух — пръскайте листата от време на време или поставете купичка с вода наблизо."
+      },
+      "temperature": {
+        "en": "Keep at 18-24 °C, away from drafts and extreme temperature fluctuations.",
+        "bg": "Дръжте при 18–24 °C, далеч от течения и резки промени в температурата."
+      },
+      "fertilizer": {
+        "en": "Fertilize with a balanced, water-soluble fertilizer once a month during the growing season.",
+        "bg": "Торете с балансиран, течен тор веднъж месечно по време на растеж."
+      },
+      "toxicity": {
+        "en": "Non-toxic to cats and dogs.",
+        "bg": "Безопасно за котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Peperomia scandens",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Peperomia_serpens_%28Piperaceae%29_%2829347100894%29.jpg/960px-Peperomia_serpens_%28Piperaceae%29_%2829347100894%29.jpg",
+    "commonNameEn": "Cupid Peperomia",
+    "commonNameBg": "Пеперомиа",
+    "family": "Piperaceae",
+    "nativeRegionEn": "Central and South America",
+    "nativeRegionBg": "Централна и Южна Америка",
+    "descriptionEn": "Cupid Peperomia is a popular, easy-to-grow houseplant with heart-shaped leaves. It has a trailing habit and can thrive in a variety of lighting conditions. Perfect for hanging baskets or small pots.",
+    "descriptionBg": "Купид Пеперомия е популярно, лесно стайно растение с сърцевидни листа. Има увиснал вид и може да процъфтява при различни условия на осветление. Идеално за висящи кошници или малки саксии.",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": true,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Place in bright, indirect light. Direct sunlight can cause leaf scorch.",
+        "bg": "Поставете на ярка, непряка светлина. Директната слънчева светлина може да причини изгаряне на листата."
+      },
+      "watering": {
+        "en": "Water moderately, allowing soil to dry slightly between waterings.",
+        "bg": "Поливайте умерено, като оставяте почвата да изсъхне леко между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers high humidity, but can adapt to average home conditions. Mist leaves regularly.",
+        "bg": "Предпочита висока влажност на въздуха, но може да се адаптира към средни домашни условия. Пръскайте листата редовно."
+      },
+      "temperature": {
+        "en": "Keep at 18-24 °C, away from drafts and extreme temperature fluctuations.",
+        "bg": "Дръжте при 18–24 °C, далеч от течения и резки промени в температурата."
+      },
+      "fertilizer": {
+        "en": "Fertilize with a balanced, water-soluble fertilizer once a month during the growing season.",
+        "bg": "Торете с балансиран, водно-разтворим тор веднъж месечно по време на растеж."
+      },
+      "toxicity": {
+        "en": "Non-toxic to pets, making it a great choice for pet owners.",
+        "bg": "Не е токсично за домашни любимци, което го прави отличен избор за собствениците на домашни животни."
+      }
+    }
+  },
+  {
+    "scientificName": "Pilea peperomioides",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Pilea_peperomioides_Chinese_money_plant.jpg/960px-Pilea_peperomioides_Chinese_money_plant.jpg",
+    "commonNameEn": "Chinese Money Plant",
+    "commonNameBg": "Китайска паричка",
+    "family": "Urticaceae",
+    "nativeRegionEn": "South China, Southeast Asia",
+    "nativeRegionBg": "Южен Китай, Югоизточна Азия",
+    "descriptionEn": "The Chinese Money Plant is a popular, easy-to-grow houseplant with round, pancake-like leaves. It's a great addition to any room and can thrive in a variety of lighting conditions. With proper care, it can grow quite large.",
+    "descriptionBg": "Китайска паричка (Pilea peperomioides) е вид цъфтящо растение от семейство Копривови (Urticaceae). По произход е от провинциите Юнан и Съчуан в южната част на Китай. Има множество синоними – (китайска) паричка, палачинка, НЛО, пилея-пеперомия, мисионерско растение и др.",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": true,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Place in bright, indirect light. Direct sunlight can cause leaf scorch.",
+        "bg": "Поставете на ярка, непряка светлина. Директната слънчева светлина може да причини изгаряне на листата."
+      },
+      "watering": {
+        "en": "Water moderately, allowing soil to dry between waterings.",
+        "bg": "Поливайте умерено, като оставяте почвата да изсъхне между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers high humidity, but can adapt to average home conditions. Mist leaves regularly.",
+        "bg": "Предпочита висока влажност на въздуха, но може да се адаптира към средните домашни условия. Пръскайте листата редовно."
+      },
+      "temperature": {
+        "en": "Keep at 18-24°C, away from drafts and extreme temperature fluctuations.",
+        "bg": "Дръжте при 18–24 °C, далеч от течения и резки промени в температурата."
+      },
+      "fertilizer": {
+        "en": "Fertilize with a balanced, water-soluble fertilizer once a month during the growing season.",
+        "bg": "Торете с балансиран, водно-разтворим тор веднъж месечно по време на растеж."
+      },
+      "toxicity": {
+        "en": "Non-toxic to pets.",
+        "bg": "Безвредно за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Pilea cadierei",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/PileaCadierei.jpg/960px-PileaCadierei.jpg",
+    "commonNameEn": "Aluminum Plant",
+    "commonNameBg": "Сребърна пилея",
+    "family": "Urticaceae",
+    "nativeRegionEn": "Tropical regions of China and Vietnam",
+    "nativeRegionBg": "Тропическите райони на Китай и Виетнам",
+    "descriptionEn": "The Aluminum Plant is a popular houseplant known for its striking, metallic-colored leaves. It's relatively small and easy to care for, making it perfect for indoor spaces. With proper care, it can thrive and add a touch of elegance to any room.",
+    "descriptionBg": "Сребърна пилея (Pilea cadierei), известна още като алуминиева пилея или динена пилея, е вид цъфтящо растение от рода пилея и семейство Копривови (Urticaceae). По произход е от Китай (провинции Гуейджоу и Юнан) и Виетнам. Специфичният епитет cadierei се отнася до ботаника от 20 век R.P. Cadière.",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": true,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Prefers bright, indirect light but can tolerate low light conditions.",
+        "bg": "Предпочита ярка, непряка светлина, но може да понася и слаба светлина."
+      },
+      "watering": {
+        "en": "Water moderately, allowing the soil to dry slightly between waterings.",
+        "bg": "Поливайте умерено, като оставяте почвата да изсъхне леко между поливанията."
+      },
+      "humidity": {
+        "en": "Appreciates high humidity, so mist the leaves regularly or place the pot on a tray with pebbles and water.",
+        "bg": "Обича влажен въздух — пръскайте листата редовно или поставете саксията на тава с камъчета и вода."
+      },
+      "temperature": {
+        "en": "Keep in a room with a consistent temperature between 18–24 °C.",
+        "bg": "Дръжте при 18–24 °C, далеч от течения и резки промени в температурата."
+      },
+      "fertilizer": {
+        "en": "Fertilize with a balanced, water-soluble fertilizer once a month during the growing season.",
+        "bg": "Торете с балансиран, водно-разтворим тор веднъж месечно по време на растеж."
+      },
+      "toxicity": {
+        "en": "Non-toxic to cats and dogs.",
+        "bg": "Безвредно за котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Schefflera arboricola",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Schefflera_arboricola%2C_vrugte%2C_a%2C_Pretoria.jpg/960px-Schefflera_arboricola%2C_vrugte%2C_a%2C_Pretoria.jpg",
+    "commonNameEn": "Dwarf Umbrella Tree",
+    "commonNameBg": "Схеффлера",
+    "family": "Araliaceae",
+    "nativeRegionEn": "Tropical regions of Asia and Australia",
+    "nativeRegionBg": "Тропическите региони на Азия и Австралия",
+    "descriptionEn": "The Dwarf Umbrella Tree is a compact, low-maintenance houseplant with beautiful, umbrella-like leaves. It grows slowly and can thrive in a variety of lighting conditions. Perfect for indoor spaces or shaded balconies.",
+    "descriptionBg": "Дървото чадър джудже е компактно, лесно стайно растение с красиви, чадъроподобни листа. Расте бавно и може да вирее при различни условия на осветление. Идеално за вътрешни пространства или сенчести балкони.",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": true,
+    "isToxicToPets": true,
+    "careGuide": {
+      "light": {
+        "en": "Prefers bright, indirect light but can tolerate low light conditions.",
+        "bg": "Предпочита ярка, непряка светлина, но може да понася и ниска осветеност."
+      },
+      "watering": {
+        "en": "Water moderately, allowing the soil to dry slightly between waterings.",
+        "bg": "Поливайте умерено, като оставяте почвата да изсъхне леко между поливанията."
+      },
+      "humidity": {
+        "en": "Appreciates high humidity, mist leaves regularly or place on a tray with pebbles and water.",
+        "bg": "Обича влажен въздух — пръскайте листата редовно или поставете на тава с камъчета и вода."
+      },
+      "temperature": {
+        "en": "Keep in a room with a consistent temperature between 18-24°C.",
+        "bg": "Дръжте в стая с постоянна температура между 18-24 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize with a balanced, water-soluble fertilizer once a month during the growing season.",
+        "bg": "Торете с балансиран, водноразтворим тор веднъж месечно по време на растеж."
+      },
+      "toxicity": {
+        "en": "Toxic to cats and dogs if ingested - keep out of reach of pets.",
+        "bg": "Токсично за котки и кучета при поглъщане — пазете от домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Schefflera actinophylla",
+    "imageUrl": null,
+    "commonNameEn": "Umbrella Tree",
+    "commonNameBg": "Схеффлера",
+    "family": "Araliaceae",
+    "nativeRegionEn": "tropical regions of Australia and New Guinea",
+    "nativeRegionBg": "тропическите региони на Австралия и Нова Гвинея",
+    "descriptionEn": "The Umbrella Tree is a popular indoor plant with large, umbrella-like leaves. It is relatively easy to care for and can grow quite tall with proper care. It adds a touch of tropical beauty to any room.",
+    "descriptionBg": "Умбрелата е популярно стайно растение с големи, чадъровидни листа. Лесно се грижи и може да порасне високо при добра грижа. Внася нотка от тропическата природа във всяка стая.",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": true,
+    "isToxicToPets": true,
+    "careGuide": {
+      "light": {
+        "en": "Prefers bright, indirect light but can tolerate low light conditions.",
+        "bg": "Предпочита ярка, непряка светлина, но може да понася и ниска светлина."
+      },
+      "watering": {
+        "en": "Water moderately, allowing the soil to dry slightly between waterings.",
+        "bg": "Поливайте умерено, като оставяте почвата да изсъхне леко между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers a humid environment; mist leaves regularly or place a humidifier nearby.",
+        "bg": "Обича влажен въздух — пръскайте листата редовно или поставете овлажнител наблизо."
+      },
+      "temperature": {
+        "en": "Keep in a room with a consistent temperature between 18–24 °C.",
+        "bg": "Дръжте при 18–24 °C, далеч от течения и резки промени в температурата."
+      },
+      "fertilizer": {
+        "en": "Fertilize with a balanced, water-soluble fertilizer once a month during the growing season.",
+        "bg": "Торете с балансиран, водно-разтворим тор веднъж месечно по време на растеж."
+      },
+      "toxicity": {
+        "en": "Toxic to cats and dogs if ingested; keep out of reach of pets.",
+        "bg": "Токсично за котки и кучета при поглъщане — пазете от домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Pachira aquatica",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Flickr_-_archer10_%28Dennis%29_-_Guatemala-1376.jpg/960px-Flickr_-_archer10_%28Dennis%29_-_Guatemala-1376.jpg",
+    "commonNameEn": "Money Tree",
+    "commonNameBg": "Пахира",
+    "descriptionEn": "Pachira aquatica is a species of tropical wetland tree in the mallow family Malvaceae, native to Central and South America where it grows in swamps. It is known by its common names Malabar chestnut, French peanut, Guiana chestnut, provision tree, Saba nut, Monguba (Brazil), Pumpo (Guatemala) and Jelinjoche (Costa Rica) and is commercially sold under the names money tree and money plant. This tree is sometimes sold with a braided trunk and is commonly grown as a houseplant, although more commonly what is sold as a \"Pachira aquatica\" houseplant is in fact a similar species, Pachira glabra.",
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Tropical America",
+    "nativeRegionBg": "Тропическа Америка",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 18,
+    "mistingNeeded": true,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Bright indirect light; avoid direct midday sun.",
+        "bg": "Ярка непряка светлина; избягвайте пряко пладнешко слънце."
+      },
+      "watering": {
+        "en": "Water when top 2–3 cm of soil dry out, every 7–10 days.",
+        "bg": "Поливайте когато горните 2–3 см почва изсъхнат, на 7–10 дни."
+      },
+      "humidity": {
+        "en": "Prefers 50–70% humidity; mist leaves or use a humidifier.",
+        "bg": "Обича 50–70% влажност; пръскайте листата или ползвайте овлажнител."
+      },
+      "temperature": {
+        "en": "Keep at 18–27 °C; protect from cold drafts.",
+        "bg": "Дръжте при 18–27 °C; пазете от студени течения."
+      },
+      "fertilizer": {
+        "en": "Fertilize with liquid fertilizer every 3 weeks during growth.",
+        "bg": "Торете с течен тор на 3 седмици по време на растеж."
+      },
+      "toxicity": {
+        "en": "Check species — many aroids are toxic to pets.",
+        "bg": "Проверете вида — много ароиди са токсични за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Codiaeum variegatum",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Colpfl05.jpg/960px-Colpfl05.jpg",
+    "commonNameEn": "Croton",
+    "commonNameBg": "планински кротон",
+    "descriptionEn": "Codiaeum variegatum, commonly known as croton or variegated croton amongst many other names, is a species of plant in the Euphorbiaceae family. Initially described by Carl Linnaeus in 1753, its native range is from Java east to Fiji, and from the Philippines south to Queensland, Australia. It is widely cultivated and has been introduced to many other countries.",
+    "descriptionBg": "Планинският кротон, известен още като огнен кротон (Codiaeum variegatum), е светлолюбив и топлолюбив вечнозелен храст с полувдървен ствол.",
+    "family": null,
+    "nativeRegionEn": "Tropical America",
+    "nativeRegionBg": "Тропическа Америка",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 18,
+    "mistingNeeded": true,
+    "isToxicToPets": true,
+    "careGuide": {
+      "light": {
+        "en": "Bright indirect light; avoid direct midday sun.",
+        "bg": "Ярка непряка светлина; избягвайте пряко пладнешко слънце."
+      },
+      "watering": {
+        "en": "Water when top 2–3 cm of soil dry out, every 7–10 days.",
+        "bg": "Поливайте когато горните 2–3 см почва изсъхнат, на 7–10 дни."
+      },
+      "humidity": {
+        "en": "Prefers 50–70% humidity; mist leaves or use a humidifier.",
+        "bg": "Обича 50–70% влажност; пръскайте листата или ползвайте овлажнител."
+      },
+      "temperature": {
+        "en": "Keep at 18–27 °C; protect from cold drafts.",
+        "bg": "Дръжте при 18–27 °C; пазете от студени течения."
+      },
+      "fertilizer": {
+        "en": "Fertilize with liquid fertilizer every 3 weeks during growth.",
+        "bg": "Торете с течен тор на 3 седмици по време на растеж."
+      },
+      "toxicity": {
+        "en": "Toxic to cats and dogs — keep out of reach.",
+        "bg": "Токсично за котки и кучета — пазете от домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Fittonia albivenis",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Colpfl25.jpg/960px-Colpfl25.jpg",
+    "commonNameEn": "Nerve Plant",
+    "commonNameBg": "Фиттониа",
+    "descriptionEn": "Fittonia albivenis is a species of flowering plant in the family Acanthaceae, native to the rainforests of Colombia, Peru, Bolivia, Ecuador and northern Brazil. An evergreen perennial, it is notable for its dark green foliage with strongly contrasting white or red veins. It is commonly called nerve plant or mosaic plant.",
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Tropical rainforests",
+    "nativeRegionBg": "Тропически дъждовни гори",
+    "careDifficulty": "difficult",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": true,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Bright indirect or filtered light; no direct sun.",
+        "bg": "Ярка непряка или филтрирана светлина; без пряко слънце."
+      },
+      "watering": {
+        "en": "Keep soil evenly moist; water every 5–7 days.",
+        "bg": "Поддържайте почвата равномерно влажна; поливайте на 5–7 дни."
+      },
+      "humidity": {
+        "en": "Needs high humidity 60–80%; use humidifier or pebble tray.",
+        "bg": "Изисква висока влажност 60–80%; ползвайте овлажнител или тавичка с камъчета."
+      },
+      "temperature": {
+        "en": "Maintain 18–26 °C consistently; very sensitive to cold.",
+        "bg": "Поддържайте постоянно 18–26 °C; много чувствително към студ."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 2 weeks during spring and summer.",
+        "bg": "Торете на 2 седмици през пролетта и лятото."
+      },
+      "toxicity": {
+        "en": "Non-toxic to pets.",
+        "bg": "Безвредно за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Oxalis triangularis",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/15/Oxalis_triangularis6.jpg",
+    "commonNameEn": "Purple Shamrock",
+    "commonNameBg": "Оксалис",
+    "descriptionEn": "Oxalis triangularis, commonly called false shamrock, is a species of perennial plant in the family Oxalidaceae. It is native to several countries in southern South America. This woodsorrel is typically grown as a houseplant but can be grown outside in USDA climate zones 8a–11, preferably in light shade.",
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Tropical regions",
+    "nativeRegionBg": "Тропически региони",
     "careDifficulty": "easy",
     "wateringIntervalDays": 14,
     "fertilizingIntervalDays": 30,
     "repottingIntervalMonths": 24,
-    "mistingNeeded": false
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Tolerates low to bright indirect light.",
+        "bg": "Понася слаба до ярка непряка светлина."
+      },
+      "watering": {
+        "en": "Water every 10–14 days; let soil dry out between waterings.",
+        "bg": "Поливайте на 10–14 дни; оставете почвата да изсъхне между поливанията."
+      },
+      "humidity": {
+        "en": "Adapts to normal household humidity (30–50%).",
+        "bg": "Адаптира се към нормалната домашна влажност (30–50%)."
+      },
+      "temperature": {
+        "en": "Keep at 15–30 °C; tolerates fluctuations, avoid frost.",
+        "bg": "Дръжте при 15–30 °C; понася колебания, избягвайте замръзване."
+      },
+      "fertilizer": {
+        "en": "Fertilize once a month during spring and summer.",
+        "bg": "Торете веднъж месечно през пролетта и лятото."
+      },
+      "toxicity": {
+        "en": "Check species — toxicity varies.",
+        "bg": "Проверете вида — токсичността варира."
+      }
+    }
+  },
+  {
+    "scientificName": "Oxalis acetosella",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Oxalis_acetosella_LC0190.jpg/960px-Oxalis_acetosella_LC0190.jpg",
+    "commonNameEn": "Wood Sorrel",
+    "commonNameBg": "Обикновено киселиче",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Tropical regions",
+    "nativeRegionBg": "Тропически региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 14,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Tolerates low to bright indirect light.",
+        "bg": "Понася слаба до ярка непряка светлина."
+      },
+      "watering": {
+        "en": "Water every 10–14 days; let soil dry out between waterings.",
+        "bg": "Поливайте на 10–14 дни; оставете почвата да изсъхне между поливанията."
+      },
+      "humidity": {
+        "en": "Adapts to normal household humidity (30–50%).",
+        "bg": "Адаптира се към нормалната домашна влажност (30–50%)."
+      },
+      "temperature": {
+        "en": "Keep at 15–30 °C; tolerates fluctuations, avoid frost.",
+        "bg": "Дръжте при 15–30 °C; понася колебания, избягвайте замръзване."
+      },
+      "fertilizer": {
+        "en": "Fertilize once a month during spring and summer.",
+        "bg": "Торете веднъж месечно през пролетта и лятото."
+      },
+      "toxicity": {
+        "en": "Check species — toxicity varies.",
+        "bg": "Проверете вида — токсичността варира."
+      }
+    }
+  },
+  {
+    "scientificName": "Hoya carnosa",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/165589748/medium.jpeg",
+    "commonNameEn": "Wax Plant",
+    "commonNameBg": "Хоиа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Tropical America",
+    "nativeRegionBg": "Тропическа Америка",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 18,
+    "mistingNeeded": true,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Bright indirect light; avoid direct midday sun.",
+        "bg": "Ярка непряка светлина; избягвайте пряко пладнешко слънце."
+      },
+      "watering": {
+        "en": "Water when top 2–3 cm of soil dry out, every 7–10 days.",
+        "bg": "Поливайте когато горните 2–3 см почва изсъхнат, на 7–10 дни."
+      },
+      "humidity": {
+        "en": "Prefers 50–70% humidity; mist leaves or use a humidifier.",
+        "bg": "Обича 50–70% влажност; пръскайте листата или ползвайте овлажнител."
+      },
+      "temperature": {
+        "en": "Keep at 18–27 °C; protect from cold drafts.",
+        "bg": "Дръжте при 18–27 °C; пазете от студени течения."
+      },
+      "fertilizer": {
+        "en": "Fertilize with liquid fertilizer every 3 weeks during growth.",
+        "bg": "Торете с течен тор на 3 седмици по време на растеж."
+      },
+      "toxicity": {
+        "en": "Non-toxic to pets; safe around cats and dogs.",
+        "bg": "Нетоксично за домашни любимци; безопасно около котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Hoya pubicalyx",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/700400/medium.JPG",
+    "commonNameEn": "Silver Pink Vine",
+    "commonNameBg": "Хоиа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Tropical America",
+    "nativeRegionBg": "Тропическа Америка",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 18,
+    "mistingNeeded": true,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Bright indirect light; avoid direct midday sun.",
+        "bg": "Ярка непряка светлина; избягвайте пряко пладнешко слънце."
+      },
+      "watering": {
+        "en": "Water when top 2–3 cm of soil dry out, every 7–10 days.",
+        "bg": "Поливайте когато горните 2–3 см почва изсъхнат, на 7–10 дни."
+      },
+      "humidity": {
+        "en": "Prefers 50–70% humidity; mist leaves or use a humidifier.",
+        "bg": "Обича 50–70% влажност; пръскайте листата или ползвайте овлажнител."
+      },
+      "temperature": {
+        "en": "Keep at 18–27 °C; protect from cold drafts.",
+        "bg": "Дръжте при 18–27 °C; пазете от студени течения."
+      },
+      "fertilizer": {
+        "en": "Fertilize with liquid fertilizer every 3 weeks during growth.",
+        "bg": "Торете с течен тор на 3 седмици по време на растеж."
+      },
+      "toxicity": {
+        "en": "Non-toxic to pets; safe around cats and dogs.",
+        "bg": "Нетоксично за домашни любимци; безопасно около котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Hoya kerrii",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/1469234/medium.jpg",
+    "commonNameEn": "Sweetheart Hoya",
+    "commonNameBg": "Хоиа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Tropical America",
+    "nativeRegionBg": "Тропическа Америка",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 18,
+    "mistingNeeded": true,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Bright indirect light; avoid direct midday sun.",
+        "bg": "Ярка непряка светлина; избягвайте пряко пладнешко слънце."
+      },
+      "watering": {
+        "en": "Water when top 2–3 cm of soil dry out, every 7–10 days.",
+        "bg": "Поливайте когато горните 2–3 см почва изсъхнат, на 7–10 дни."
+      },
+      "humidity": {
+        "en": "Prefers 50–70% humidity; mist leaves or use a humidifier.",
+        "bg": "Обича 50–70% влажност; пръскайте листата или ползвайте овлажнител."
+      },
+      "temperature": {
+        "en": "Keep at 18–27 °C; protect from cold drafts.",
+        "bg": "Дръжте при 18–27 °C; пазете от студени течения."
+      },
+      "fertilizer": {
+        "en": "Fertilize with liquid fertilizer every 3 weeks during growth.",
+        "bg": "Торете с течен тор на 3 седмици по време на растеж."
+      },
+      "toxicity": {
+        "en": "Non-toxic to pets; safe around cats and dogs.",
+        "bg": "Нетоксично за домашни любимци; безопасно около котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Hoya bella",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/32470070/medium.jpg",
+    "commonNameEn": "Miniature Wax Plant",
+    "commonNameBg": "Хоиа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Tropical America",
+    "nativeRegionBg": "Тропическа Америка",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 18,
+    "mistingNeeded": true,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Bright indirect light; avoid direct midday sun.",
+        "bg": "Ярка непряка светлина; избягвайте пряко пладнешко слънце."
+      },
+      "watering": {
+        "en": "Water when top 2–3 cm of soil dry out, every 7–10 days.",
+        "bg": "Поливайте когато горните 2–3 см почва изсъхнат, на 7–10 дни."
+      },
+      "humidity": {
+        "en": "Prefers 50–70% humidity; mist leaves or use a humidifier.",
+        "bg": "Обича 50–70% влажност; пръскайте листата или ползвайте овлажнител."
+      },
+      "temperature": {
+        "en": "Keep at 18–27 °C; protect from cold drafts.",
+        "bg": "Дръжте при 18–27 °C; пазете от студени течения."
+      },
+      "fertilizer": {
+        "en": "Fertilize with liquid fertilizer every 3 weeks during growth.",
+        "bg": "Торете с течен тор на 3 седмици по време на растеж."
+      },
+      "toxicity": {
+        "en": "Non-toxic to pets; safe around cats and dogs.",
+        "bg": "Нетоксично за домашни любимци; безопасно около котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Ceropegia woodii",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/1353883/medium.jpg",
+    "commonNameEn": "String of Hearts",
+    "commonNameBg": "Керопегиа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Tropical America",
+    "nativeRegionBg": "Тропическа Америка",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 18,
+    "mistingNeeded": true,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Bright indirect light; avoid direct midday sun.",
+        "bg": "Ярка непряка светлина; избягвайте пряко пладнешко слънце."
+      },
+      "watering": {
+        "en": "Water when top 2–3 cm of soil dry out, every 7–10 days.",
+        "bg": "Поливайте когато горните 2–3 см почва изсъхнат, на 7–10 дни."
+      },
+      "humidity": {
+        "en": "Prefers 50–70% humidity; mist leaves or use a humidifier.",
+        "bg": "Обича 50–70% влажност; пръскайте листата или ползвайте овлажнител."
+      },
+      "temperature": {
+        "en": "Keep at 18–27 °C; protect from cold drafts.",
+        "bg": "Дръжте при 18–27 °C; пазете от студени течения."
+      },
+      "fertilizer": {
+        "en": "Fertilize with liquid fertilizer every 3 weeks during growth.",
+        "bg": "Торете с течен тор на 3 седмици по време на растеж."
+      },
+      "toxicity": {
+        "en": "Non-toxic to pets; safe around cats and dogs.",
+        "bg": "Нетоксично за домашни любимци; безопасно около котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Senecio rowleyanus",
+    "imageUrl": null,
+    "commonNameEn": "String of Pearls",
+    "commonNameBg": "Сенекио",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Tropical America",
+    "nativeRegionBg": "Тропическа Америка",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 18,
+    "mistingNeeded": true,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Bright indirect light; avoid direct midday sun.",
+        "bg": "Ярка непряка светлина; избягвайте пряко пладнешко слънце."
+      },
+      "watering": {
+        "en": "Water when top 2–3 cm of soil dry out, every 7–10 days.",
+        "bg": "Поливайте когато горните 2–3 см почва изсъхнат, на 7–10 дни."
+      },
+      "humidity": {
+        "en": "Prefers 50–70% humidity; mist leaves or use a humidifier.",
+        "bg": "Обича 50–70% влажност; пръскайте листата или ползвайте овлажнител."
+      },
+      "temperature": {
+        "en": "Keep at 18–27 °C; protect from cold drafts.",
+        "bg": "Дръжте при 18–27 °C; пазете от студени течения."
+      },
+      "fertilizer": {
+        "en": "Fertilize with liquid fertilizer every 3 weeks during growth.",
+        "bg": "Торете с течен тор на 3 седмици по време на растеж."
+      },
+      "toxicity": {
+        "en": "Check species — many aroids are toxic to pets.",
+        "bg": "Проверете вида — много ароиди са токсични за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Senecio radicans",
+    "imageUrl": null,
+    "commonNameEn": "String of Bananas",
+    "commonNameBg": "Сенекио",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Tropical America",
+    "nativeRegionBg": "Тропическа Америка",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 18,
+    "mistingNeeded": true,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Bright indirect light; avoid direct midday sun.",
+        "bg": "Ярка непряка светлина; избягвайте пряко пладнешко слънце."
+      },
+      "watering": {
+        "en": "Water when top 2–3 cm of soil dry out, every 7–10 days.",
+        "bg": "Поливайте когато горните 2–3 см почва изсъхнат, на 7–10 дни."
+      },
+      "humidity": {
+        "en": "Prefers 50–70% humidity; mist leaves or use a humidifier.",
+        "bg": "Обича 50–70% влажност; пръскайте листата или ползвайте овлажнител."
+      },
+      "temperature": {
+        "en": "Keep at 18–27 °C; protect from cold drafts.",
+        "bg": "Дръжте при 18–27 °C; пазете от студени течения."
+      },
+      "fertilizer": {
+        "en": "Fertilize with liquid fertilizer every 3 weeks during growth.",
+        "bg": "Торете с течен тор на 3 седмици по време на растеж."
+      },
+      "toxicity": {
+        "en": "Check species — many aroids are toxic to pets.",
+        "bg": "Проверете вида — много ароиди са токсични за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Fatsia japonica",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/110993233/medium.jpg",
+    "commonNameEn": "Japanese Aralia",
+    "commonNameBg": "японска фатсия",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Tropical regions",
+    "nativeRegionBg": "Тропически региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 14,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Tolerates low to bright indirect light.",
+        "bg": "Понася слаба до ярка непряка светлина."
+      },
+      "watering": {
+        "en": "Water every 10–14 days; let soil dry out between waterings.",
+        "bg": "Поливайте на 10–14 дни; оставете почвата да изсъхне между поливанията."
+      },
+      "humidity": {
+        "en": "Adapts to normal household humidity (30–50%).",
+        "bg": "Адаптира се към нормалната домашна влажност (30–50%)."
+      },
+      "temperature": {
+        "en": "Keep at 15–30 °C; tolerates fluctuations, avoid frost.",
+        "bg": "Дръжте при 15–30 °C; понася колебания, избягвайте замръзване."
+      },
+      "fertilizer": {
+        "en": "Fertilize once a month during spring and summer.",
+        "bg": "Торете веднъж месечно през пролетта и лятото."
+      },
+      "toxicity": {
+        "en": "Check species — toxicity varies.",
+        "bg": "Проверете вида — токсичността варира."
+      }
+    }
   },
   {
     "scientificName": "Hedera helix",
-    "commonNameEn": "common ivy",
     "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/38428455/medium.jpeg",
+    "commonNameEn": "English Ivy",
+    "commonNameBg": "Бръшлян",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Tropical regions",
+    "nativeRegionBg": "Тропически региони",
     "careDifficulty": "easy",
     "wateringIntervalDays": 14,
     "fertilizingIntervalDays": 30,
     "repottingIntervalMonths": 24,
-    "mistingNeeded": false
+    "mistingNeeded": false,
+    "isToxicToPets": true,
+    "careGuide": {
+      "light": {
+        "en": "Tolerates low to bright indirect light.",
+        "bg": "Понася слаба до ярка непряка светлина."
+      },
+      "watering": {
+        "en": "Water every 10–14 days; let soil dry out between waterings.",
+        "bg": "Поливайте на 10–14 дни; оставете почвата да изсъхне между поливанията."
+      },
+      "humidity": {
+        "en": "Adapts to normal household humidity (30–50%).",
+        "bg": "Адаптира се към нормалната домашна влажност (30–50%)."
+      },
+      "temperature": {
+        "en": "Keep at 15–30 °C; tolerates fluctuations, avoid frost.",
+        "bg": "Дръжте при 15–30 °C; понася колебания, избягвайте замръзване."
+      },
+      "fertilizer": {
+        "en": "Fertilize once a month during spring and summer.",
+        "bg": "Торете веднъж месечно през пролетта и лятото."
+      },
+      "toxicity": {
+        "en": "Toxic to cats and dogs — keep out of reach.",
+        "bg": "Токсично за котки и кучета — пазете от домашни любимци."
+      }
+    }
   },
   {
-    "scientificName": "Verbascum thapsus",
-    "commonNameEn": "great mullein",
-    "imageUrl": "https://static.inaturalist.org/photos/44885369/medium.jpg",
+    "scientificName": "Hedera canariensis",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/107810864/medium.jpg",
+    "commonNameEn": "Canary Island Ivy",
+    "commonNameBg": "Хедера",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Tropical regions",
+    "nativeRegionBg": "Тропически региони",
     "careDifficulty": "easy",
     "wateringIntervalDays": 14,
     "fertilizingIntervalDays": 30,
     "repottingIntervalMonths": 24,
-    "mistingNeeded": false
+    "mistingNeeded": false,
+    "isToxicToPets": true,
+    "careGuide": {
+      "light": {
+        "en": "Tolerates low to bright indirect light.",
+        "bg": "Понася слаба до ярка непряка светлина."
+      },
+      "watering": {
+        "en": "Water every 10–14 days; let soil dry out between waterings.",
+        "bg": "Поливайте на 10–14 дни; оставете почвата да изсъхне между поливанията."
+      },
+      "humidity": {
+        "en": "Adapts to normal household humidity (30–50%).",
+        "bg": "Адаптира се към нормалната домашна влажност (30–50%)."
+      },
+      "temperature": {
+        "en": "Keep at 15–30 °C; tolerates fluctuations, avoid frost.",
+        "bg": "Дръжте при 15–30 °C; понася колебания, избягвайте замръзване."
+      },
+      "fertilizer": {
+        "en": "Fertilize once a month during spring and summer.",
+        "bg": "Торете веднъж месечно през пролетта и лятото."
+      },
+      "toxicity": {
+        "en": "Toxic to cats and dogs — keep out of reach.",
+        "bg": "Токсично за котки и кучета — пазете от домашни любимци."
+      }
+    }
   },
   {
-    "scientificName": "Cirsium vulgare",
-    "commonNameEn": "Bull Thistle",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/306770747/medium.jpeg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Asclepias syriaca",
-    "commonNameEn": "common milkweed",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/99923276/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Phytolacca americana",
-    "commonNameEn": "American pokeweed",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/164206478/medium.jpeg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Lamium purpureum",
-    "commonNameEn": "red deadnettle",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/355909561/medium.jpeg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Cichorium intybus",
-    "commonNameEn": "chicory",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/283894255/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Cirsium arvense",
-    "commonNameEn": "creeping thistle",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/333452083/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Toxicodendron radicans",
-    "commonNameEn": "eastern poison ivy",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/2237896/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Bellis perennis",
-    "commonNameEn": "Lawn daisy",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/515847774/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Acer rubrum",
-    "commonNameEn": "red maple",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/371065093/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Parthenocissus quinquefolia",
-    "commonNameEn": "Virginia creeper",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/428768/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Pteridium aquilinum",
-    "commonNameEn": "common bracken",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/64559686/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Urtica dioica",
-    "commonNameEn": "great stinging nettle",
-    "imageUrl": "https://static.inaturalist.org/photos/600736605/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Chamaenerion angustifolium",
-    "commonNameEn": "fireweed",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/589344702/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Geranium robertianum",
-    "commonNameEn": "Herb Robert",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/85572773/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Lotus corniculatus",
-    "commonNameEn": "bird's-foot trefoil",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/10133360/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Artemisia vulgaris",
-    "commonNameEn": "common mugwort",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/46355424/medium.jpeg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Acer platanoides",
-    "commonNameEn": "Norway maple",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/87307303/medium.jpeg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Leucanthemum vulgare",
-    "commonNameEn": "oxeye daisy",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/18272675/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Galium aparine",
-    "commonNameEn": "catchweed bedstraw",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/79984095/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Pinus strobus",
-    "commonNameEn": "eastern white pine",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/638440764/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Tussilago farfara",
-    "commonNameEn": "colt's-foot",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/597146847/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Phragmites australis",
-    "commonNameEn": "common reed",
-    "imageUrl": "https://static.inaturalist.org/photos/32409466/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Chelidonium majus",
-    "commonNameEn": "Greater celandine",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/202516664/medium.jpeg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Prunus serotina",
-    "commonNameEn": "black cherry",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/14006/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Robinia pseudoacacia",
-    "commonNameEn": "black locust",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/37431398/medium.jpeg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Lythrum salicaria",
-    "commonNameEn": "purple loosestrife",
-    "imageUrl": "https://static.inaturalist.org/photos/63744014/medium.jpeg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Rosa multiflora",
-    "commonNameEn": "multiflora rose",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/252786276/medium.jpg",
+    "scientificName": "Hibiscus rosa-sinensis",
+    "imageUrl": "https://static.inaturalist.org/photos/25533484/medium.jpg",
+    "commonNameEn": "Chinese Hibiscus",
+    "commonNameBg": "Хибискус",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Tropical America",
+    "nativeRegionBg": "Тропическа Америка",
     "careDifficulty": "moderate",
     "wateringIntervalDays": 7,
-    "fertilizingIntervalDays": 14,
+    "fertilizingIntervalDays": 21,
     "repottingIntervalMonths": 18,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Impatiens capensis",
-    "commonNameEn": "common jewelweed",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/419410578/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Veronica persica",
-    "commonNameEn": "bird's-eye speedwell",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/472978578/medium.jpeg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Erodium cicutarium",
-    "commonNameEn": "Redstem Stork's-bill",
-    "imageUrl": "https://static.inaturalist.org/photos/181611272/medium.jpeg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Convolvulus arvensis",
-    "commonNameEn": "field bindweed",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/209325684/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Plantago major",
-    "commonNameEn": "greater plantain",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/349979346/medium.jpeg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Fagus grandifolia",
-    "commonNameEn": "American beech",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/9216901/medium.jpeg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Erigeron canadensis",
-    "commonNameEn": "horseweed",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/220777535/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Hypericum perforatum",
-    "commonNameEn": "Common St. John's Wort",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/283622526/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Juniperus virginiana",
-    "commonNameEn": "eastern redcedar",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/165898544/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Podophyllum peltatum",
-    "commonNameEn": "mayapple",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/35674124/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Solanum dulcamara",
-    "commonNameEn": "bittersweet nightshade",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/70860715/medium.jpeg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Quercus rubra",
-    "commonNameEn": "northern red oak",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/51154566/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Pinus sylvestris",
-    "commonNameEn": "Scots pine",
-    "imageUrl": "https://static.inaturalist.org/photos/60121428/medium.jpeg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Ailanthus altissima",
-    "commonNameEn": "tree-of-heaven",
-    "imageUrl": "https://static.inaturalist.org/photos/21400202/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Silene latifolia",
-    "commonNameEn": "white campion",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/301833921/medium.jpeg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Liquidambar styraciflua",
-    "commonNameEn": "American sweetgum",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/239888168/medium.jpeg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Ranunculus repens",
-    "commonNameEn": "Creeping buttercup",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/38652836/medium.jpeg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Tanacetum vulgare",
-    "commonNameEn": "tansy",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/45581182/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Cercis canadensis",
-    "commonNameEn": "eastern redbud",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/146752176/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Lonicera japonica",
-    "commonNameEn": "Japanese honeysuckle",
-    "imageUrl": "https://static.inaturalist.org/photos/13558833/medium.jpeg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Maianthemum racemosum",
-    "commonNameEn": "Solomon's plume",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/111809822/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Arisaema triphyllum",
-    "commonNameEn": "Jack-in-the-Pulpit",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/8204233/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Sonchus oleraceus",
-    "commonNameEn": "Common Sow-thistle",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/131297526/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Ageratina altissima",
-    "commonNameEn": "white snakeroot",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/162191139/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Larrea tridentata",
-    "commonNameEn": "Creosote Bush",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/163141503/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Polystichum acrostichoides",
-    "commonNameEn": "Christmas fern",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/657065592/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Dactylis glomerata",
-    "commonNameEn": "orchard grass",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/103010705/medium.jpeg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Sambucus racemosa",
-    "commonNameEn": "red-berried elder",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/23366234/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Onoclea sensibilis",
-    "commonNameEn": "sensitive fern",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/200080819/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Sanguinaria canadensis",
-    "commonNameEn": "bloodroot",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/1862384/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Veronica chamaedrys",
-    "commonNameEn": "Germander Speedwell",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/291786073/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Equisetum arvense",
-    "commonNameEn": "field horsetail",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/72597295/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Quercus robur",
-    "commonNameEn": "English oak",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/110607739/medium.jpeg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Monotropa uniflora",
-    "commonNameEn": "Ghost Pipe",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/4319833/medium.jpeg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Stellaria media",
-    "commonNameEn": "common chickweed",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/183922286/medium.jpeg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Eschscholzia californica",
-    "commonNameEn": "California poppy",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/67227218/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Crataegus monogyna",
-    "commonNameEn": "common hawthorn",
-    "imageUrl": "https://static.inaturalist.org/photos/73530064/medium.jpeg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Ajuga reptans",
-    "commonNameEn": "carpet bugle",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/28863996/medium.jpeg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Echium vulgare",
-    "commonNameEn": "viper's-bugloss",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/130825766/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Liriodendron tulipifera",
-    "commonNameEn": "American tuliptree",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/867903/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Linaria vulgaris",
-    "commonNameEn": "common toadflax",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/542354433/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Fragaria vesca",
-    "commonNameEn": "woodland strawberry",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/134106423/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Digitalis purpurea",
-    "commonNameEn": "purple foxglove",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/179728943/medium.jpeg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Vicia sativa",
-    "commonNameEn": "Common Vetch",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/281444164/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Capsella bursa-pastoris",
-    "commonNameEn": "shepherd's-purse",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/23130/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Rumex crispus",
-    "commonNameEn": "curled dock",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/447224091/medium.jpeg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Rudbeckia hirta",
-    "commonNameEn": "black-eyed Susan",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/7861779/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Lantana camara",
-    "commonNameEn": "common lantana",
-    "imageUrl": "https://static.inaturalist.org/photos/369564698/medium.jpeg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Vinca minor",
-    "commonNameEn": "lesser periwinkle",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/374485244/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Claytonia virginica",
-    "commonNameEn": "Virginia Springbeauty",
-    "imageUrl": "https://static.inaturalist.org/photos/183910009/medium.jpeg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Rumex obtusifolius",
-    "commonNameEn": "broad-leaved dock",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/5084024/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Sorbus aucuparia",
-    "commonNameEn": "European mountain ash",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/10450/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Anthriscus sylvestris",
-    "commonNameEn": "Cow Parsley",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/369593743/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Platanus occidentalis",
-    "commonNameEn": "American sycamore",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/204738082/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Caltha palustris",
-    "commonNameEn": "marsh marigold",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/324010734/medium.jpeg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Prunus virginiana",
-    "commonNameEn": "chokecherry",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/146282563/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Vicia cracca",
-    "commonNameEn": "tufted vetch",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/133717606/medium.jpeg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Bidens alba",
-    "commonNameEn": "White beggarticks",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/86500140/medium.jpeg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Viburnum opulus",
-    "commonNameEn": "guelder-rose",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/600790807/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Erigeron annuus",
-    "commonNameEn": "annual fleabane",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/101791693/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Reynoutria japonica",
-    "commonNameEn": "Japanese knotweed",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/74418856/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Hesperis matronalis",
-    "commonNameEn": "dame's rocket",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/202467231/medium.jpeg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Lonicera maackii",
-    "commonNameEn": "Amur honeysuckle",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/277949422/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Medicago lupulina",
-    "commonNameEn": "Black Medick",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/340295701/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Anemonoides nemorosa",
-    "commonNameEn": "wood anemone",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/732011/medium.jpg",
+    "mistingNeeded": true,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Bright indirect light; avoid direct midday sun.",
+        "bg": "Ярка непряка светлина; избягвайте пряко пладнешко слънце."
+      },
+      "watering": {
+        "en": "Water when top 2–3 cm of soil dry out, every 7–10 days.",
+        "bg": "Поливайте когато горните 2–3 см почва изсъхнат, на 7–10 дни."
+      },
+      "humidity": {
+        "en": "Prefers 50–70% humidity; mist leaves or use a humidifier.",
+        "bg": "Обича 50–70% влажност; пръскайте листата или ползвайте овлажнител."
+      },
+      "temperature": {
+        "en": "Keep at 18–27 °C; protect from cold drafts.",
+        "bg": "Дръжте при 18–27 °C; пазете от студени течения."
+      },
+      "fertilizer": {
+        "en": "Fertilize with liquid fertilizer every 3 weeks during growth.",
+        "bg": "Торете с течен тор на 3 седмици по време на растеж."
+      },
+      "toxicity": {
+        "en": "Check species — many aroids are toxic to pets.",
+        "bg": "Проверете вида — много ароиди са токсични за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Gardenia jasminoides",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/430635084/medium.jpeg",
+    "commonNameEn": "Gardenia",
+    "commonNameBg": "жасминова гардения",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Tropical America",
+    "nativeRegionBg": "Тропическа Америка",
     "careDifficulty": "moderate",
     "wateringIntervalDays": 7,
-    "fertilizingIntervalDays": 14,
+    "fertilizingIntervalDays": 21,
     "repottingIntervalMonths": 18,
-    "mistingNeeded": false
+    "mistingNeeded": true,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Bright indirect light; avoid direct midday sun.",
+        "bg": "Ярка непряка светлина; избягвайте пряко пладнешко слънце."
+      },
+      "watering": {
+        "en": "Water when top 2–3 cm of soil dry out, every 7–10 days.",
+        "bg": "Поливайте когато горните 2–3 см почва изсъхнат, на 7–10 дни."
+      },
+      "humidity": {
+        "en": "Prefers 50–70% humidity; mist leaves or use a humidifier.",
+        "bg": "Обича 50–70% влажност; пръскайте листата или ползвайте овлажнител."
+      },
+      "temperature": {
+        "en": "Keep at 18–27 °C; protect from cold drafts.",
+        "bg": "Дръжте при 18–27 °C; пазете от студени течения."
+      },
+      "fertilizer": {
+        "en": "Fertilize with liquid fertilizer every 3 weeks during growth.",
+        "bg": "Торете с течен тор на 3 седмици по време на растеж."
+      },
+      "toxicity": {
+        "en": "Check species — many aroids are toxic to pets.",
+        "bg": "Проверете вида — много ароиди са токсични за домашни любимци."
+      }
+    }
   },
   {
-    "scientificName": "Aegopodium podagraria",
-    "commonNameEn": "Goutweed",
-    "imageUrl": "https://static.inaturalist.org/photos/229844810/medium.jpeg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Sambucus nigra",
-    "commonNameEn": "European black elderberry",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/39872800/medium.jpeg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Potentilla indica",
-    "commonNameEn": "mock strawberry",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/8835174/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Picea abies",
-    "commonNameEn": "Norway spruce",
-    "imageUrl": "https://static.inaturalist.org/photos/21333741/medium.jpeg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Carnegiea gigantea",
-    "commonNameEn": "saguaro",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/77029090/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Cornus sericea",
-    "commonNameEn": "red osier dogwood",
-    "imageUrl": "https://static.inaturalist.org/photos/16633753/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Pseudotsuga menziesii",
-    "commonNameEn": "Douglas-fir",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/140217013/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Lysimachia arvensis",
-    "commonNameEn": "scarlet pimpernel",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/223278664/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Melilotus albus",
-    "commonNameEn": "White Sweetclover",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/16273/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Acer pseudoplatanus",
-    "commonNameEn": "sycamore maple",
-    "imageUrl": "https://static.inaturalist.org/photos/72573830/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Acer saccharum",
-    "commonNameEn": "sugar maple",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/230661769/medium.jpeg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Rhus typhina",
-    "commonNameEn": "staghorn sumac",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/41368056/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Fagus sylvatica",
-    "commonNameEn": "European beech",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/608828197/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Erythronium americanum",
-    "commonNameEn": "yellow trout lily",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/495479600/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Corylus avellana",
-    "commonNameEn": "common hazel",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/249644515/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Jacobaea vulgaris",
-    "commonNameEn": "ragwort",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/48560335/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Juniperus communis",
-    "commonNameEn": "common juniper",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/61660329/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Securigera varia",
-    "commonNameEn": "purple crownvetch",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/34301/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Iris pseudacorus",
-    "commonNameEn": "Yellow Iris",
-    "imageUrl": "https://static.inaturalist.org/photos/132791736/medium.jpeg",
+    "scientificName": "Plumeria rubra",
+    "imageUrl": "https://static.inaturalist.org/photos/70240531/medium.jpg",
+    "commonNameEn": "Frangipani",
+    "commonNameBg": "червена плумерия",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Tropical America",
+    "nativeRegionBg": "Тропическа Америка",
     "careDifficulty": "moderate",
     "wateringIntervalDays": 7,
-    "fertilizingIntervalDays": 14,
+    "fertilizingIntervalDays": 21,
     "repottingIntervalMonths": 18,
-    "mistingNeeded": false
+    "mistingNeeded": true,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Bright indirect light; avoid direct midday sun.",
+        "bg": "Ярка непряка светлина; избягвайте пряко пладнешко слънце."
+      },
+      "watering": {
+        "en": "Water when top 2–3 cm of soil dry out, every 7–10 days.",
+        "bg": "Поливайте когато горните 2–3 см почва изсъхнат, на 7–10 дни."
+      },
+      "humidity": {
+        "en": "Prefers 50–70% humidity; mist leaves or use a humidifier.",
+        "bg": "Обича 50–70% влажност; пръскайте листата или ползвайте овлажнител."
+      },
+      "temperature": {
+        "en": "Keep at 18–27 °C; protect from cold drafts.",
+        "bg": "Дръжте при 18–27 °C; пазете от студени течения."
+      },
+      "fertilizer": {
+        "en": "Fertilize with liquid fertilizer every 3 weeks during growth.",
+        "bg": "Торете с течен тор на 3 седмици по време на растеж."
+      },
+      "toxicity": {
+        "en": "Check species — many aroids are toxic to pets.",
+        "bg": "Проверете вида — много ароиди са токсични за домашни любимци."
+      }
+    }
   },
   {
-    "scientificName": "Sonchus asper",
-    "commonNameEn": "prickly sowthistle",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/254422387/medium.jpg",
+    "scientificName": "Aspidistra elatior",
+    "imageUrl": "https://static.inaturalist.org/photos/374084255/medium.jpg",
+    "commonNameEn": "Cast Iron Plant",
+    "commonNameBg": "Високо семейно щастие",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Tropical regions",
+    "nativeRegionBg": "Тропически региони",
     "careDifficulty": "easy",
     "wateringIntervalDays": 14,
     "fertilizingIntervalDays": 30,
     "repottingIntervalMonths": 24,
-    "mistingNeeded": false
+    "mistingNeeded": false,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Tolerates low to bright indirect light.",
+        "bg": "Понася слаба до ярка непряка светлина."
+      },
+      "watering": {
+        "en": "Water every 10–14 days; let soil dry out between waterings.",
+        "bg": "Поливайте на 10–14 дни; оставете почвата да изсъхне между поливанията."
+      },
+      "humidity": {
+        "en": "Adapts to normal household humidity (30–50%).",
+        "bg": "Адаптира се към нормалната домашна влажност (30–50%)."
+      },
+      "temperature": {
+        "en": "Keep at 15–30 °C; tolerates fluctuations, avoid frost.",
+        "bg": "Дръжте при 15–30 °C; понася колебания, избягвайте замръзване."
+      },
+      "fertilizer": {
+        "en": "Fertilize once a month during spring and summer.",
+        "bg": "Торете веднъж месечно през пролетта и лятото."
+      },
+      "toxicity": {
+        "en": "Non-toxic to pets; safe around cats and dogs.",
+        "bg": "Нетоксично за домашни любимци; безопасно около котки и кучета."
+      }
+    }
   },
   {
-    "scientificName": "Barbarea vulgaris",
-    "commonNameEn": "bitter wintercress",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/369943612/medium.jpg",
+    "scientificName": "Clivia miniata",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/335128592/medium.jpeg",
+    "commonNameEn": "Natal Lily",
+    "commonNameBg": "Кливиа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Tropical regions",
+    "nativeRegionBg": "Тропически региони",
     "careDifficulty": "easy",
     "wateringIntervalDays": 14,
     "fertilizingIntervalDays": 30,
     "repottingIntervalMonths": 24,
-    "mistingNeeded": false
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Tolerates low to bright indirect light.",
+        "bg": "Понася слаба до ярка непряка светлина."
+      },
+      "watering": {
+        "en": "Water every 10–14 days; let soil dry out between waterings.",
+        "bg": "Поливайте на 10–14 дни; оставете почвата да изсъхне между поливанията."
+      },
+      "humidity": {
+        "en": "Adapts to normal household humidity (30–50%).",
+        "bg": "Адаптира се към нормалната домашна влажност (30–50%)."
+      },
+      "temperature": {
+        "en": "Keep at 15–30 °C; tolerates fluctuations, avoid frost.",
+        "bg": "Дръжте при 15–30 °C; понася колебания, избягвайте замръзване."
+      },
+      "fertilizer": {
+        "en": "Fertilize once a month during spring and summer.",
+        "bg": "Торете веднъж месечно през пролетта и лятото."
+      },
+      "toxicity": {
+        "en": "Check species — toxicity varies.",
+        "bg": "Проверете вида — токсичността варира."
+      }
+    }
   },
   {
-    "scientificName": "Geranium maculatum",
-    "commonNameEn": "wild geranium",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/3489641/medium.JPG",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Lamium amplexicaule",
-    "commonNameEn": "henbit deadnettle",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/552968312/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Tsuga canadensis",
-    "commonNameEn": "eastern hemlock",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/400071107/medium.jpeg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Ambrosia artemisiifolia",
-    "commonNameEn": "common ragweed",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/382193593/medium.jpeg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Ranunculus acris",
-    "commonNameEn": "meadow buttercup",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/134844788/medium.jpeg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Quercus alba",
-    "commonNameEn": "white oak",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/7298947/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Helianthus annuus",
-    "commonNameEn": "Common Sunflower",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/323768723/medium.jpg",
+    "scientificName": "Zantedeschia aethiopica",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/10183/medium.jpg",
+    "commonNameEn": "Calla Lily",
+    "commonNameBg": "калия",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Tropical America",
+    "nativeRegionBg": "Тропическа Америка",
     "careDifficulty": "moderate",
     "wateringIntervalDays": 7,
-    "fertilizingIntervalDays": 14,
+    "fertilizingIntervalDays": 21,
     "repottingIntervalMonths": 18,
-    "mistingNeeded": false
+    "mistingNeeded": true,
+    "isToxicToPets": true,
+    "careGuide": {
+      "light": {
+        "en": "Bright indirect light; avoid direct midday sun.",
+        "bg": "Ярка непряка светлина; избягвайте пряко пладнешко слънце."
+      },
+      "watering": {
+        "en": "Water when top 2–3 cm of soil dry out, every 7–10 days.",
+        "bg": "Поливайте когато горните 2–3 см почва изсъхнат, на 7–10 дни."
+      },
+      "humidity": {
+        "en": "Prefers 50–70% humidity; mist leaves or use a humidifier.",
+        "bg": "Обича 50–70% влажност; пръскайте листата или ползвайте овлажнител."
+      },
+      "temperature": {
+        "en": "Keep at 18–27 °C; protect from cold drafts.",
+        "bg": "Дръжте при 18–27 °C; пазете от студени течения."
+      },
+      "fertilizer": {
+        "en": "Fertilize with liquid fertilizer every 3 weeks during growth.",
+        "bg": "Торете с течен тор на 3 седмици по време на растеж."
+      },
+      "toxicity": {
+        "en": "Toxic to cats and dogs — keep out of reach.",
+        "bg": "Токсично за котки и кучета — пазете от домашни любимци."
+      }
+    }
   },
   {
-    "scientificName": "Juglans nigra",
-    "commonNameEn": "eastern black walnut",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/38351837/medium.jpg",
+    "scientificName": "Hippeastrum hybridum",
+    "imageUrl": "https://static.inaturalist.org/photos/112789549/medium.jpg",
+    "commonNameEn": "Amaryllis",
+    "commonNameBg": "Хиппеаструм",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Tropical America",
+    "nativeRegionBg": "Тропическа Америка",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 18,
+    "mistingNeeded": true,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Bright indirect light; avoid direct midday sun.",
+        "bg": "Ярка непряка светлина; избягвайте пряко пладнешко слънце."
+      },
+      "watering": {
+        "en": "Water when top 2–3 cm of soil dry out, every 7–10 days.",
+        "bg": "Поливайте когато горните 2–3 см почва изсъхнат, на 7–10 дни."
+      },
+      "humidity": {
+        "en": "Prefers 50–70% humidity; mist leaves or use a humidifier.",
+        "bg": "Обича 50–70% влажност; пръскайте листата или ползвайте овлажнител."
+      },
+      "temperature": {
+        "en": "Keep at 18–27 °C; protect from cold drafts.",
+        "bg": "Дръжте при 18–27 °C; пазете от студени течения."
+      },
+      "fertilizer": {
+        "en": "Fertilize with liquid fertilizer every 3 weeks during growth.",
+        "bg": "Торете с течен тор на 3 седмици по време на растеж."
+      },
+      "toxicity": {
+        "en": "Check species — many aroids are toxic to pets.",
+        "bg": "Проверете вида — много ароиди са токсични за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Strelitzia reginae",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/375256909/medium.jpg",
+    "commonNameEn": "Bird of Paradise",
+    "commonNameBg": "Стрелитзиа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Tropical America",
+    "nativeRegionBg": "Тропическа Америка",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 18,
+    "mistingNeeded": true,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Bright indirect light; avoid direct midday sun.",
+        "bg": "Ярка непряка светлина; избягвайте пряко пладнешко слънце."
+      },
+      "watering": {
+        "en": "Water when top 2–3 cm of soil dry out, every 7–10 days.",
+        "bg": "Поливайте когато горните 2–3 см почва изсъхнат, на 7–10 дни."
+      },
+      "humidity": {
+        "en": "Prefers 50–70% humidity; mist leaves or use a humidifier.",
+        "bg": "Обича 50–70% влажност; пръскайте листата или ползвайте овлажнител."
+      },
+      "temperature": {
+        "en": "Keep at 18–27 °C; protect from cold drafts.",
+        "bg": "Дръжте при 18–27 °C; пазете от студени течения."
+      },
+      "fertilizer": {
+        "en": "Fertilize with liquid fertilizer every 3 weeks during growth.",
+        "bg": "Торете с течен тор на 3 седмици по време на растеж."
+      },
+      "toxicity": {
+        "en": "Check species — many aroids are toxic to pets.",
+        "bg": "Проверете вида — много ароиди са токсични за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Strelitzia nicolai",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/295952594/medium.jpeg",
+    "commonNameEn": "White Bird of Paradise",
+    "commonNameBg": "Стрелитзиа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Tropical America",
+    "nativeRegionBg": "Тропическа Америка",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 18,
+    "mistingNeeded": true,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Bright indirect light; avoid direct midday sun.",
+        "bg": "Ярка непряка светлина; избягвайте пряко пладнешко слънце."
+      },
+      "watering": {
+        "en": "Water when top 2–3 cm of soil dry out, every 7–10 days.",
+        "bg": "Поливайте когато горните 2–3 см почва изсъхнат, на 7–10 дни."
+      },
+      "humidity": {
+        "en": "Prefers 50–70% humidity; mist leaves or use a humidifier.",
+        "bg": "Обича 50–70% влажност; пръскайте листата или ползвайте овлажнител."
+      },
+      "temperature": {
+        "en": "Keep at 18–27 °C; protect from cold drafts.",
+        "bg": "Дръжте при 18–27 °C; пазете от студени течения."
+      },
+      "fertilizer": {
+        "en": "Fertilize with liquid fertilizer every 3 weeks during growth.",
+        "bg": "Торете с течен тор на 3 седмици по време на растеж."
+      },
+      "toxicity": {
+        "en": "Check species — many aroids are toxic to pets.",
+        "bg": "Проверете вида — много ароиди са токсични за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Yucca elephantipes",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/63924844/medium.jpeg",
+    "commonNameEn": "Spineless Yucca",
+    "commonNameBg": "Иукка",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Tropical regions",
+    "nativeRegionBg": "Тропически региони",
     "careDifficulty": "easy",
     "wateringIntervalDays": 14,
     "fertilizingIntervalDays": 30,
     "repottingIntervalMonths": 24,
-    "mistingNeeded": false
+    "mistingNeeded": false,
+    "isToxicToPets": true,
+    "careGuide": {
+      "light": {
+        "en": "Tolerates low to bright indirect light.",
+        "bg": "Понася слаба до ярка непряка светлина."
+      },
+      "watering": {
+        "en": "Water every 10–14 days; let soil dry out between waterings.",
+        "bg": "Поливайте на 10–14 дни; оставете почвата да изсъхне между поливанията."
+      },
+      "humidity": {
+        "en": "Adapts to normal household humidity (30–50%).",
+        "bg": "Адаптира се към нормалната домашна влажност (30–50%)."
+      },
+      "temperature": {
+        "en": "Keep at 15–30 °C; tolerates fluctuations, avoid frost.",
+        "bg": "Дръжте при 15–30 °C; понася колебания, избягвайте замръзване."
+      },
+      "fertilizer": {
+        "en": "Fertilize once a month during spring and summer.",
+        "bg": "Торете веднъж месечно през пролетта и лятото."
+      },
+      "toxicity": {
+        "en": "Toxic to cats and dogs — keep out of reach.",
+        "bg": "Токсично за котки и кучета — пазете от домашни любимци."
+      }
+    }
   },
   {
-    "scientificName": "Ilex aquifolium",
-    "commonNameEn": "European holly",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/117929954/medium.jpg",
+    "scientificName": "Agave americana",
+    "imageUrl": "https://static.inaturalist.org/photos/333174371/medium.jpg",
+    "commonNameEn": "Century Plant",
+    "commonNameBg": "американско агаве",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Arid and semi-arid regions worldwide",
+    "nativeRegionBg": "Сухи и полусухи региони по целия свят",
     "careDifficulty": "easy",
     "wateringIntervalDays": 14,
     "fertilizingIntervalDays": 30,
     "repottingIntervalMonths": 24,
-    "mistingNeeded": false
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to bright indirect light; at least 4–6 hours daily.",
+        "bg": "Пълно слънце до ярка непряка светлина; поне 4–6 часа дневно."
+      },
+      "watering": {
+        "en": "Water every 10–14 days; let soil dry completely between waterings.",
+        "bg": "Поливайте на 10–14 дни; оставете почвата да изсъхне напълно между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers low humidity (20–40%); good air circulation essential.",
+        "bg": "Предпочита ниска влажност (20–40%); добра циркулация на въздуха е важна."
+      },
+      "temperature": {
+        "en": "Ideal 15–30 °C; most tolerate brief dips to 5 °C.",
+        "bg": "Идеална 15–30 °C; повечето понасят кратко захлаждане до 5 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize once a month in spring and summer with diluted cactus fertilizer.",
+        "bg": "Торете веднъж месечно през пролетта и лятото с разреден кактусов тор."
+      },
+      "toxicity": {
+        "en": "Most succulents are non-toxic; check individual species.",
+        "bg": "Повечето сукуленти са безвредни; проверете конкретния вид."
+      }
+    }
   },
   {
-    "scientificName": "Ricinus communis",
-    "commonNameEn": "castor bean",
-    "imageUrl": "https://static.inaturalist.org/photos/61079958/medium.jpeg",
+    "scientificName": "Agave attenuata",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/340805283/medium.jpeg",
+    "commonNameEn": "Soft Agave",
+    "commonNameBg": "Драконово дърво агаве",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Arid and semi-arid regions worldwide",
+    "nativeRegionBg": "Сухи и полусухи региони по целия свят",
     "careDifficulty": "easy",
     "wateringIntervalDays": 14,
     "fertilizingIntervalDays": 30,
     "repottingIntervalMonths": 24,
-    "mistingNeeded": false
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to bright indirect light; at least 4–6 hours daily.",
+        "bg": "Пълно слънце до ярка непряка светлина; поне 4–6 часа дневно."
+      },
+      "watering": {
+        "en": "Water every 10–14 days; let soil dry completely between waterings.",
+        "bg": "Поливайте на 10–14 дни; оставете почвата да изсъхне напълно между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers low humidity (20–40%); good air circulation essential.",
+        "bg": "Предпочита ниска влажност (20–40%); добра циркулация на въздуха е важна."
+      },
+      "temperature": {
+        "en": "Ideal 15–30 °C; most tolerate brief dips to 5 °C.",
+        "bg": "Идеална 15–30 °C; повечето понасят кратко захлаждане до 5 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize once a month in spring and summer with diluted cactus fertilizer.",
+        "bg": "Торете веднъж месечно през пролетта и лятото с разреден кактусов тор."
+      },
+      "toxicity": {
+        "en": "Most succulents are non-toxic; check individual species.",
+        "bg": "Повечето сукуленти са безвредни; проверете конкретния вид."
+      }
+    }
   },
   {
-    "scientificName": "Symplocarpus foetidus",
-    "commonNameEn": "Eastern Skunk Cabbage",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/1840324/medium.jpg",
+    "scientificName": "Medinilla magnifica",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/391326306/medium.jpg",
+    "commonNameEn": "Rose Grape",
+    "commonNameBg": "Мединилла",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Tropical America",
+    "nativeRegionBg": "Тропическа Америка",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 18,
+    "mistingNeeded": true,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Bright indirect light; avoid direct midday sun.",
+        "bg": "Ярка непряка светлина; избягвайте пряко пладнешко слънце."
+      },
+      "watering": {
+        "en": "Water when top 2–3 cm of soil dry out, every 7–10 days.",
+        "bg": "Поливайте когато горните 2–3 см почва изсъхнат, на 7–10 дни."
+      },
+      "humidity": {
+        "en": "Prefers 50–70% humidity; mist leaves or use a humidifier.",
+        "bg": "Обича 50–70% влажност; пръскайте листата или ползвайте овлажнител."
+      },
+      "temperature": {
+        "en": "Keep at 18–27 °C; protect from cold drafts.",
+        "bg": "Дръжте при 18–27 °C; пазете от студени течения."
+      },
+      "fertilizer": {
+        "en": "Fertilize with liquid fertilizer every 3 weeks during growth.",
+        "bg": "Торете с течен тор на 3 седмици по време на растеж."
+      },
+      "toxicity": {
+        "en": "Check species — many aroids are toxic to pets.",
+        "bg": "Проверете вида — много ароиди са токсични за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Columnea gloriosa",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/112592912/medium.jpeg",
+    "commonNameEn": "Goldfish Plant",
+    "commonNameBg": "Колумнеа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Tropical America",
+    "nativeRegionBg": "Тропическа Америка",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 18,
+    "mistingNeeded": true,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Bright indirect light; avoid direct midday sun.",
+        "bg": "Ярка непряка светлина; избягвайте пряко пладнешко слънце."
+      },
+      "watering": {
+        "en": "Water when top 2–3 cm of soil dry out, every 7–10 days.",
+        "bg": "Поливайте когато горните 2–3 см почва изсъхнат, на 7–10 дни."
+      },
+      "humidity": {
+        "en": "Prefers 50–70% humidity; mist leaves or use a humidifier.",
+        "bg": "Обича 50–70% влажност; пръскайте листата или ползвайте овлажнител."
+      },
+      "temperature": {
+        "en": "Keep at 18–27 °C; protect from cold drafts.",
+        "bg": "Дръжте при 18–27 °C; пазете от студени течения."
+      },
+      "fertilizer": {
+        "en": "Fertilize with liquid fertilizer every 3 weeks during growth.",
+        "bg": "Торете с течен тор на 3 седмици по време на растеж."
+      },
+      "toxicity": {
+        "en": "Check species — many aroids are toxic to pets.",
+        "bg": "Проверете вида — много ароиди са токсични за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Aeschynanthus radicans",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/59219751/medium.jpg",
+    "commonNameEn": "Lipstick Plant",
+    "commonNameBg": "Есхинантус",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Tropical America",
+    "nativeRegionBg": "Тропическа Америка",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 18,
+    "mistingNeeded": true,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Bright indirect light; avoid direct midday sun.",
+        "bg": "Ярка непряка светлина; избягвайте пряко пладнешко слънце."
+      },
+      "watering": {
+        "en": "Water when top 2–3 cm of soil dry out, every 7–10 days.",
+        "bg": "Поливайте когато горните 2–3 см почва изсъхнат, на 7–10 дни."
+      },
+      "humidity": {
+        "en": "Prefers 50–70% humidity; mist leaves or use a humidifier.",
+        "bg": "Обича 50–70% влажност; пръскайте листата или ползвайте овлажнител."
+      },
+      "temperature": {
+        "en": "Keep at 18–27 °C; protect from cold drafts.",
+        "bg": "Дръжте при 18–27 °C; пазете от студени течения."
+      },
+      "fertilizer": {
+        "en": "Fertilize with liquid fertilizer every 3 weeks during growth.",
+        "bg": "Торете с течен тор на 3 седмици по време на растеж."
+      },
+      "toxicity": {
+        "en": "Check species — many aroids are toxic to pets.",
+        "bg": "Проверете вида — много ароиди са токсични за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Streptocarpus saxorum",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/252233935/medium.jpg",
+    "commonNameEn": "Cape Primrose",
+    "commonNameBg": "Стрептокарпус",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Tropical America",
+    "nativeRegionBg": "Тропическа Америка",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 18,
+    "mistingNeeded": true,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Bright indirect light; avoid direct midday sun.",
+        "bg": "Ярка непряка светлина; избягвайте пряко пладнешко слънце."
+      },
+      "watering": {
+        "en": "Water when top 2–3 cm of soil dry out, every 7–10 days.",
+        "bg": "Поливайте когато горните 2–3 см почва изсъхнат, на 7–10 дни."
+      },
+      "humidity": {
+        "en": "Prefers 50–70% humidity; mist leaves or use a humidifier.",
+        "bg": "Обича 50–70% влажност; пръскайте листата или ползвайте овлажнител."
+      },
+      "temperature": {
+        "en": "Keep at 18–27 °C; protect from cold drafts.",
+        "bg": "Дръжте при 18–27 °C; пазете от студени течения."
+      },
+      "fertilizer": {
+        "en": "Fertilize with liquid fertilizer every 3 weeks during growth.",
+        "bg": "Торете с течен тор на 3 седмици по време на растеж."
+      },
+      "toxicity": {
+        "en": "Check species — many aroids are toxic to pets.",
+        "bg": "Проверете вида — много ароиди са токсични за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Soleirolia soleirolii",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/327854855/medium.jpeg",
+    "commonNameEn": "Mind-Your-Own-Business",
+    "commonNameBg": "Солеиролиа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Tropical regions",
+    "nativeRegionBg": "Тропически региони",
     "careDifficulty": "easy",
     "wateringIntervalDays": 14,
     "fertilizingIntervalDays": 30,
     "repottingIntervalMonths": 24,
-    "mistingNeeded": false
+    "mistingNeeded": false,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Tolerates low to bright indirect light.",
+        "bg": "Понася слаба до ярка непряка светлина."
+      },
+      "watering": {
+        "en": "Water every 10–14 days; let soil dry out between waterings.",
+        "bg": "Поливайте на 10–14 дни; оставете почвата да изсъхне между поливанията."
+      },
+      "humidity": {
+        "en": "Adapts to normal household humidity (30–50%).",
+        "bg": "Адаптира се към нормалната домашна влажност (30–50%)."
+      },
+      "temperature": {
+        "en": "Keep at 15–30 °C; tolerates fluctuations, avoid frost.",
+        "bg": "Дръжте при 15–30 °C; понася колебания, избягвайте замръзване."
+      },
+      "fertilizer": {
+        "en": "Fertilize once a month during spring and summer.",
+        "bg": "Торете веднъж месечно през пролетта и лятото."
+      },
+      "toxicity": {
+        "en": "Non-toxic to pets; safe around cats and dogs.",
+        "bg": "Нетоксично за домашни любимци; безопасно около котки и кучета."
+      }
+    }
   },
   {
-    "scientificName": "Chenopodium album",
-    "commonNameEn": "Common Lambsquarters",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/234299048/medium.jpeg",
+    "scientificName": "Nematanthus gregarius",
+    "imageUrl": "https://static.inaturalist.org/photos/170653054/medium.jpg",
+    "commonNameEn": "Clog Plant",
+    "commonNameBg": "Нематантус",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Tropical regions",
+    "nativeRegionBg": "Тропически региони",
     "careDifficulty": "easy",
     "wateringIntervalDays": 14,
     "fertilizingIntervalDays": 30,
     "repottingIntervalMonths": 24,
-    "mistingNeeded": false
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Tolerates low to bright indirect light.",
+        "bg": "Понася слаба до ярка непряка светлина."
+      },
+      "watering": {
+        "en": "Water every 10–14 days; let soil dry out between waterings.",
+        "bg": "Поливайте на 10–14 дни; оставете почвата да изсъхне между поливанията."
+      },
+      "humidity": {
+        "en": "Adapts to normal household humidity (30–50%).",
+        "bg": "Адаптира се към нормалната домашна влажност (30–50%)."
+      },
+      "temperature": {
+        "en": "Keep at 15–30 °C; tolerates fluctuations, avoid frost.",
+        "bg": "Дръжте при 15–30 °C; понася колебания, избягвайте замръзване."
+      },
+      "fertilizer": {
+        "en": "Fertilize once a month during spring and summer.",
+        "bg": "Торете веднъж месечно през пролетта и лятото."
+      },
+      "toxicity": {
+        "en": "Check species — toxicity varies.",
+        "bg": "Проверете вида — токсичността варира."
+      }
+    }
   },
   {
-    "scientificName": "Lactuca serriola",
-    "commonNameEn": "prickly lettuce",
+    "scientificName": "Chamaedorea elegans",
+    "imageUrl": "https://static.inaturalist.org/photos/4936356/medium.jpg",
+    "commonNameEn": "Parlor Palm",
+    "commonNameBg": "изящна хамедорея",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Arecaceae",
+    "nativeRegionEn": "Tropical and subtropical regions",
+    "nativeRegionBg": "Тропически и субтропични региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 10,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": false,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Bright indirect to full sun depending on species.",
+        "bg": "Ярка непряка до пълно слънце в зависимост от вида."
+      },
+      "watering": {
+        "en": "Water every 10–14 days; allow top 3 cm to dry out.",
+        "bg": "Поливайте на 10–14 дни; оставете горните 3 см да изсъхнат."
+      },
+      "humidity": {
+        "en": "Tolerates average humidity; benefits from occasional misting.",
+        "bg": "Понася средна влажност; пръскането от време на време е от полза."
+      },
+      "temperature": {
+        "en": "Keep above 13 °C; most prefer 18–27 °C.",
+        "bg": "Дръжте над 13 °C; повечето предпочитат 18–27 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize monthly during spring and summer with palm fertilizer.",
+        "bg": "Торете месечно през пролетта и лятото с тор за палми."
+      },
+      "toxicity": {
+        "en": "Non-toxic to pets; safe around cats and dogs.",
+        "bg": "Нетоксично за домашни любимци; безопасно около котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Chamaedorea seifrizii",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/170863411/medium.jpg",
+    "commonNameEn": "Bamboo Palm",
+    "commonNameBg": "Хамедореа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Arecaceae",
+    "nativeRegionEn": "Tropical and subtropical regions",
+    "nativeRegionBg": "Тропически и субтропични региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 10,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": false,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Bright indirect to full sun depending on species.",
+        "bg": "Ярка непряка до пълно слънце в зависимост от вида."
+      },
+      "watering": {
+        "en": "Water every 10–14 days; allow top 3 cm to dry out.",
+        "bg": "Поливайте на 10–14 дни; оставете горните 3 см да изсъхнат."
+      },
+      "humidity": {
+        "en": "Tolerates average humidity; benefits from occasional misting.",
+        "bg": "Понася средна влажност; пръскането от време на време е от полза."
+      },
+      "temperature": {
+        "en": "Keep above 13 °C; most prefer 18–27 °C.",
+        "bg": "Дръжте над 13 °C; повечето предпочитат 18–27 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize monthly during spring and summer with palm fertilizer.",
+        "bg": "Торете месечно през пролетта и лятото с тор за палми."
+      },
+      "toxicity": {
+        "en": "Non-toxic to pets; safe around cats and dogs.",
+        "bg": "Нетоксично за домашни любимци; безопасно около котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Dypsis lutescens",
+    "imageUrl": null,
+    "commonNameEn": "Areca Palm",
+    "commonNameBg": "жълт дипсис",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Arecaceae",
+    "nativeRegionEn": "Tropical and subtropical regions",
+    "nativeRegionBg": "Тропически и субтропични региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 10,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": false,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Bright indirect to full sun depending on species.",
+        "bg": "Ярка непряка до пълно слънце в зависимост от вида."
+      },
+      "watering": {
+        "en": "Water every 10–14 days; allow top 3 cm to dry out.",
+        "bg": "Поливайте на 10–14 дни; оставете горните 3 см да изсъхнат."
+      },
+      "humidity": {
+        "en": "Tolerates average humidity; benefits from occasional misting.",
+        "bg": "Понася средна влажност; пръскането от време на време е от полза."
+      },
+      "temperature": {
+        "en": "Keep above 13 °C; most prefer 18–27 °C.",
+        "bg": "Дръжте над 13 °C; повечето предпочитат 18–27 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize monthly during spring and summer with palm fertilizer.",
+        "bg": "Торете месечно през пролетта и лятото с тор за палми."
+      },
+      "toxicity": {
+        "en": "Non-toxic to pets; safe around cats and dogs.",
+        "bg": "Нетоксично за домашни любимци; безопасно около котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Phoenix roebelenii",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/168762970/medium.jpeg",
+    "commonNameEn": "Pygmy Date Palm",
+    "commonNameBg": "Феникс",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Arecaceae",
+    "nativeRegionEn": "Tropical and subtropical regions",
+    "nativeRegionBg": "Тропически и субтропични региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 10,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Bright indirect to full sun depending on species.",
+        "bg": "Ярка непряка до пълно слънце в зависимост от вида."
+      },
+      "watering": {
+        "en": "Water every 10–14 days; allow top 3 cm to dry out.",
+        "bg": "Поливайте на 10–14 дни; оставете горните 3 см да изсъхнат."
+      },
+      "humidity": {
+        "en": "Tolerates average humidity; benefits from occasional misting.",
+        "bg": "Понася средна влажност; пръскането от време на време е от полза."
+      },
+      "temperature": {
+        "en": "Keep above 13 °C; most prefer 18–27 °C.",
+        "bg": "Дръжте над 13 °C; повечето предпочитат 18–27 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize monthly during spring and summer with palm fertilizer.",
+        "bg": "Торете месечно през пролетта и лятото с тор за палми."
+      },
+      "toxicity": {
+        "en": "Most palms are non-toxic to pets.",
+        "bg": "Повечето палми са безвредни за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Livistona chinensis",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/121324857/medium.jpg",
+    "commonNameEn": "Chinese Fan Palm",
+    "commonNameBg": "Ливистона",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Arecaceae",
+    "nativeRegionEn": "Tropical and subtropical regions",
+    "nativeRegionBg": "Тропически и субтропични региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 10,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Bright indirect to full sun depending on species.",
+        "bg": "Ярка непряка до пълно слънце в зависимост от вида."
+      },
+      "watering": {
+        "en": "Water every 10–14 days; allow top 3 cm to dry out.",
+        "bg": "Поливайте на 10–14 дни; оставете горните 3 см да изсъхнат."
+      },
+      "humidity": {
+        "en": "Tolerates average humidity; benefits from occasional misting.",
+        "bg": "Понася средна влажност; пръскането от време на време е от полза."
+      },
+      "temperature": {
+        "en": "Keep above 13 °C; most prefer 18–27 °C.",
+        "bg": "Дръжте над 13 °C; повечето предпочитат 18–27 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize monthly during spring and summer with palm fertilizer.",
+        "bg": "Торете месечно през пролетта и лятото с тор за палми."
+      },
+      "toxicity": {
+        "en": "Most palms are non-toxic to pets.",
+        "bg": "Повечето палми са безвредни за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Rhapis excelsa",
+    "imageUrl": "https://static.inaturalist.org/photos/11413070/medium.jpg",
+    "commonNameEn": "Lady Palm",
+    "commonNameBg": "Рхапис",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Tropical regions",
+    "nativeRegionBg": "Тропически региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 14,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Tolerates low to bright indirect light.",
+        "bg": "Понася слаба до ярка непряка светлина."
+      },
+      "watering": {
+        "en": "Water every 10–14 days; let soil dry out between waterings.",
+        "bg": "Поливайте на 10–14 дни; оставете почвата да изсъхне между поливанията."
+      },
+      "humidity": {
+        "en": "Adapts to normal household humidity (30–50%).",
+        "bg": "Адаптира се към нормалната домашна влажност (30–50%)."
+      },
+      "temperature": {
+        "en": "Keep at 15–30 °C; tolerates fluctuations, avoid frost.",
+        "bg": "Дръжте при 15–30 °C; понася колебания, избягвайте замръзване."
+      },
+      "fertilizer": {
+        "en": "Fertilize once a month during spring and summer.",
+        "bg": "Торете веднъж месечно през пролетта и лятото."
+      },
+      "toxicity": {
+        "en": "Check species — toxicity varies.",
+        "bg": "Проверете вида — токсичността варира."
+      }
+    }
+  },
+  {
+    "scientificName": "Beaucarnea recurvata",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/111799836/medium.jpeg",
+    "commonNameEn": "Ponytail Palm",
+    "commonNameBg": "Беаукарнеа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Arecaceae",
+    "nativeRegionEn": "Tropical and subtropical regions",
+    "nativeRegionBg": "Тропически и субтропични региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 10,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": false,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Bright indirect to full sun depending on species.",
+        "bg": "Ярка непряка до пълно слънце в зависимост от вида."
+      },
+      "watering": {
+        "en": "Water every 10–14 days; allow top 3 cm to dry out.",
+        "bg": "Поливайте на 10–14 дни; оставете горните 3 см да изсъхнат."
+      },
+      "humidity": {
+        "en": "Tolerates average humidity; benefits from occasional misting.",
+        "bg": "Понася средна влажност; пръскането от време на време е от полза."
+      },
+      "temperature": {
+        "en": "Keep above 13 °C; most prefer 18–27 °C.",
+        "bg": "Дръжте над 13 °C; повечето предпочитат 18–27 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize monthly during spring and summer with palm fertilizer.",
+        "bg": "Торете месечно през пролетта и лятото с тор за палми."
+      },
+      "toxicity": {
+        "en": "Non-toxic to pets; safe around cats and dogs.",
+        "bg": "Нетоксично за домашни любимци; безопасно около котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Cycas revoluta",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/347845271/medium.jpg",
+    "commonNameEn": "Sago Palm",
+    "commonNameBg": "Кикас",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Tropical America",
+    "nativeRegionBg": "Тропическа Америка",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 18,
+    "mistingNeeded": true,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Bright indirect light; avoid direct midday sun.",
+        "bg": "Ярка непряка светлина; избягвайте пряко пладнешко слънце."
+      },
+      "watering": {
+        "en": "Water when top 2–3 cm of soil dry out, every 7–10 days.",
+        "bg": "Поливайте когато горните 2–3 см почва изсъхнат, на 7–10 дни."
+      },
+      "humidity": {
+        "en": "Prefers 50–70% humidity; mist leaves or use a humidifier.",
+        "bg": "Обича 50–70% влажност; пръскайте листата или ползвайте овлажнител."
+      },
+      "temperature": {
+        "en": "Keep at 18–27 °C; protect from cold drafts.",
+        "bg": "Дръжте при 18–27 °C; пазете от студени течения."
+      },
+      "fertilizer": {
+        "en": "Fertilize with liquid fertilizer every 3 weeks during growth.",
+        "bg": "Торете с течен тор на 3 седмици по време на растеж."
+      },
+      "toxicity": {
+        "en": "Check species — many aroids are toxic to pets.",
+        "bg": "Проверете вида — много ароиди са токсични за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Trachycarpus fortunei",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/TrachycarpusFortunei.jpg/960px-TrachycarpusFortunei.jpg",
+    "commonNameEn": "Windmill Palm",
+    "commonNameBg": "китайска конопена палма",
+    "descriptionEn": "Trachycarpus fortunei, also known as the Chusan palm, Chinese windmill palm, hemp palm, or simply windmill palm, is a species of hardy evergreen palm tree in the family Arecaceae, native to parts of China, Japan, Myanmar and India.",
+    "descriptionBg": "Китайската конопена палма (Trachycarpus fortunei) – от гръцки: Trachys означава твърд, karpos – плод. Популярна е също като китайска конопена палма заради влакнестото стъбло, което образува.",
+    "family": "Arecaceae",
+    "nativeRegionEn": "Tropical and subtropical regions",
+    "nativeRegionBg": "Тропически и субтропични региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 10,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Bright indirect to full sun depending on species.",
+        "bg": "Ярка непряка до пълно слънце в зависимост от вида."
+      },
+      "watering": {
+        "en": "Water every 10–14 days; allow top 3 cm to dry out.",
+        "bg": "Поливайте на 10–14 дни; оставете горните 3 см да изсъхнат."
+      },
+      "humidity": {
+        "en": "Tolerates average humidity; benefits from occasional misting.",
+        "bg": "Понася средна влажност; пръскането от време на време е от полза."
+      },
+      "temperature": {
+        "en": "Keep above 13 °C; most prefer 18–27 °C.",
+        "bg": "Дръжте над 13 °C; повечето предпочитат 18–27 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize monthly during spring and summer with palm fertilizer.",
+        "bg": "Торете месечно през пролетта и лятото с тор за палми."
+      },
+      "toxicity": {
+        "en": "Most palms are non-toxic to pets.",
+        "bg": "Повечето палми са безвредни за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Washingtonia filifera",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Washingtonia_filifera.jpg/960px-Washingtonia_filifera.jpg",
+    "commonNameEn": "Desert Fan Palm",
+    "commonNameBg": "Васхингтониа",
+    "descriptionEn": "Washingtonia filifera, commonly known as the California fan palm, cotton palm or desert fan palm, is a flowering plant in the family Arecaceae, native to the far southwestern United States and northwestern Mexico. It typically grows 15–20 m (49–66 ft) tall and 3–6 m (10–20 ft) wide, with a sturdy, columnar trunk and waxy, fan-shaped (palmate) leaves. As a monocot, it is evergreen and exhibits a tree-like growth habit.",
+    "descriptionBg": null,
+    "family": "Arecaceae",
+    "nativeRegionEn": "Tropical and subtropical regions",
+    "nativeRegionBg": "Тропически и субтропични региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 10,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Bright indirect to full sun depending on species.",
+        "bg": "Ярка непряка до пълно слънце в зависимост от вида."
+      },
+      "watering": {
+        "en": "Water every 10–14 days; allow top 3 cm to dry out.",
+        "bg": "Поливайте на 10–14 дни; оставете горните 3 см да изсъхнат."
+      },
+      "humidity": {
+        "en": "Tolerates average humidity; benefits from occasional misting.",
+        "bg": "Понася средна влажност; пръскането от време на време е от полза."
+      },
+      "temperature": {
+        "en": "Keep above 13 °C; most prefer 18–27 °C.",
+        "bg": "Дръжте над 13 °C; повечето предпочитат 18–27 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize monthly during spring and summer with palm fertilizer.",
+        "bg": "Торете месечно през пролетта и лятото с тор за палми."
+      },
+      "toxicity": {
+        "en": "Most palms are non-toxic to pets.",
+        "bg": "Повечето палми са безвредни за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Nephrolepis exaltata",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/30/Boston_Fern_%282873392811%29.png",
+    "commonNameEn": "Boston Fern",
+    "commonNameBg": "Нефролепис",
+    "descriptionEn": "Nephrolepis exaltata, known as the sword fern or Boston fern, is a species of fern in the family Nephrolepidaceae. It is native to the Americas. This evergreen plant can reach as high as 40–90 centimetres (16–35 in), and in extreme cases up to 1.5 metres (4 ft 11 in).",
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Worldwide in moist, shaded habitats",
+    "nativeRegionBg": "По целия свят в влажни, засенчени местообитания",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 5,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 18,
+    "mistingNeeded": true,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Low to medium indirect light; avoid direct sun.",
+        "bg": "Слаба до средна непряка светлина; избягвайте пряко слънце."
+      },
+      "watering": {
+        "en": "Keep soil consistently moist; water every 4–6 days.",
+        "bg": "Поддържайте почвата постоянно влажна; поливайте на 4–6 дни."
+      },
+      "humidity": {
+        "en": "Needs high humidity 60–80%; mist daily or use humidifier.",
+        "bg": "Нужна е висока влажност 60–80%; пръскайте ежедневно или ползвайте овлажнител."
+      },
+      "temperature": {
+        "en": "Keep at 16–24 °C; avoid cold drafts.",
+        "bg": "Дръжте при 16–24 °C; избягвайте студени течения."
+      },
+      "fertilizer": {
+        "en": "Fertilize monthly at half strength during growing season.",
+        "bg": "Торете месечно с половин доза по време на растеж."
+      },
+      "toxicity": {
+        "en": "Most ferns are non-toxic to pets.",
+        "bg": "Повечето папрати са безвредни за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Nephrolepis cordifolia",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Starr_070221-4863_Nephrolepis_cordifolia.jpg/960px-Starr_070221-4863_Nephrolepis_cordifolia.jpg",
+    "commonNameEn": "Ladder Fern",
+    "commonNameBg": "Нефролепис",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Worldwide in moist, shaded habitats",
+    "nativeRegionBg": "По целия свят в влажни, засенчени местообитания",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 5,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 18,
+    "mistingNeeded": true,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Low to medium indirect light; avoid direct sun.",
+        "bg": "Слаба до средна непряка светлина; избягвайте пряко слънце."
+      },
+      "watering": {
+        "en": "Keep soil consistently moist; water every 4–6 days.",
+        "bg": "Поддържайте почвата постоянно влажна; поливайте на 4–6 дни."
+      },
+      "humidity": {
+        "en": "Needs high humidity 60–80%; mist daily or use humidifier.",
+        "bg": "Нужна е висока влажност 60–80%; пръскайте ежедневно или ползвайте овлажнител."
+      },
+      "temperature": {
+        "en": "Keep at 16–24 °C; avoid cold drafts.",
+        "bg": "Дръжте при 16–24 °C; избягвайте студени течения."
+      },
+      "fertilizer": {
+        "en": "Fertilize monthly at half strength during growing season.",
+        "bg": "Торете месечно с половин доза по време на растеж."
+      },
+      "toxicity": {
+        "en": "Most ferns are non-toxic to pets.",
+        "bg": "Повечето папрати са безвредни за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Asplenium nidus",
+    "imageUrl": "https://static.inaturalist.org/photos/230834449/medium.jpeg",
+    "commonNameEn": "Bird's Nest Fern",
+    "commonNameBg": "Асплениум",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Worldwide in moist, shaded habitats",
+    "nativeRegionBg": "По целия свят в влажни, засенчени местообитания",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 5,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 18,
+    "mistingNeeded": true,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Low to medium indirect light; avoid direct sun.",
+        "bg": "Слаба до средна непряка светлина; избягвайте пряко слънце."
+      },
+      "watering": {
+        "en": "Keep soil consistently moist; water every 4–6 days.",
+        "bg": "Поддържайте почвата постоянно влажна; поливайте на 4–6 дни."
+      },
+      "humidity": {
+        "en": "Needs high humidity 60–80%; mist daily or use humidifier.",
+        "bg": "Нужна е висока влажност 60–80%; пръскайте ежедневно или ползвайте овлажнител."
+      },
+      "temperature": {
+        "en": "Keep at 16–24 °C; avoid cold drafts.",
+        "bg": "Дръжте при 16–24 °C; избягвайте студени течения."
+      },
+      "fertilizer": {
+        "en": "Fertilize monthly at half strength during growing season.",
+        "bg": "Торете месечно с половин доза по време на растеж."
+      },
+      "toxicity": {
+        "en": "Most ferns are non-toxic to pets.",
+        "bg": "Повечето папрати са безвредни за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Platycerium bifurcatum",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/322960815/medium.jpeg",
+    "commonNameEn": "Staghorn Fern",
+    "commonNameBg": "Платикериум",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Worldwide in moist, shaded habitats",
+    "nativeRegionBg": "По целия свят в влажни, засенчени местообитания",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 5,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 18,
+    "mistingNeeded": true,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Low to medium indirect light; avoid direct sun.",
+        "bg": "Слаба до средна непряка светлина; избягвайте пряко слънце."
+      },
+      "watering": {
+        "en": "Keep soil consistently moist; water every 4–6 days.",
+        "bg": "Поддържайте почвата постоянно влажна; поливайте на 4–6 дни."
+      },
+      "humidity": {
+        "en": "Needs high humidity 60–80%; mist daily or use humidifier.",
+        "bg": "Нужна е висока влажност 60–80%; пръскайте ежедневно или ползвайте овлажнител."
+      },
+      "temperature": {
+        "en": "Keep at 16–24 °C; avoid cold drafts.",
+        "bg": "Дръжте при 16–24 °C; избягвайте студени течения."
+      },
+      "fertilizer": {
+        "en": "Fertilize monthly at half strength during growing season.",
+        "bg": "Торете месечно с половин доза по време на растеж."
+      },
+      "toxicity": {
+        "en": "Most ferns are non-toxic to pets.",
+        "bg": "Повечето папрати са безвредни за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Adiantum raddianum",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/4106073/medium.JPG",
+    "commonNameEn": "Maidenhair Fern",
+    "commonNameBg": "Адиантум",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Worldwide in moist, shaded habitats",
+    "nativeRegionBg": "По целия свят в влажни, засенчени местообитания",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 5,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 18,
+    "mistingNeeded": true,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Low to medium indirect light; avoid direct sun.",
+        "bg": "Слаба до средна непряка светлина; избягвайте пряко слънце."
+      },
+      "watering": {
+        "en": "Keep soil consistently moist; water every 4–6 days.",
+        "bg": "Поддържайте почвата постоянно влажна; поливайте на 4–6 дни."
+      },
+      "humidity": {
+        "en": "Needs high humidity 60–80%; mist daily or use humidifier.",
+        "bg": "Нужна е висока влажност 60–80%; пръскайте ежедневно или ползвайте овлажнител."
+      },
+      "temperature": {
+        "en": "Keep at 16–24 °C; avoid cold drafts.",
+        "bg": "Дръжте при 16–24 °C; избягвайте студени течения."
+      },
+      "fertilizer": {
+        "en": "Fertilize monthly at half strength during growing season.",
+        "bg": "Торете месечно с половин доза по време на растеж."
+      },
+      "toxicity": {
+        "en": "Most ferns are non-toxic to pets.",
+        "bg": "Повечето папрати са безвредни за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Asparagus setaceus",
+    "imageUrl": "https://static.inaturalist.org/photos/339029317/medium.jpg",
+    "commonNameEn": "Asparagus Fern",
+    "commonNameBg": "Аспарагус",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Worldwide in moist, shaded habitats",
+    "nativeRegionBg": "По целия свят в влажни, засенчени местообитания",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 5,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 18,
+    "mistingNeeded": true,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Low to medium indirect light; avoid direct sun.",
+        "bg": "Слаба до средна непряка светлина; избягвайте пряко слънце."
+      },
+      "watering": {
+        "en": "Keep soil consistently moist; water every 4–6 days.",
+        "bg": "Поддържайте почвата постоянно влажна; поливайте на 4–6 дни."
+      },
+      "humidity": {
+        "en": "Needs high humidity 60–80%; mist daily or use humidifier.",
+        "bg": "Нужна е висока влажност 60–80%; пръскайте ежедневно или ползвайте овлажнител."
+      },
+      "temperature": {
+        "en": "Keep at 16–24 °C; avoid cold drafts.",
+        "bg": "Дръжте при 16–24 °C; избягвайте студени течения."
+      },
+      "fertilizer": {
+        "en": "Fertilize monthly at half strength during growing season.",
+        "bg": "Торете месечно с половин доза по време на растеж."
+      },
+      "toxicity": {
+        "en": "Most ferns are non-toxic to pets.",
+        "bg": "Повечето папрати са безвредни за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Asparagus densiflorus",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/15087224/medium.jpg",
+    "commonNameEn": "Foxtail Fern",
+    "commonNameBg": "Аспарагус",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Worldwide in moist, shaded habitats",
+    "nativeRegionBg": "По целия свят в влажни, засенчени местообитания",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 5,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 18,
+    "mistingNeeded": true,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Low to medium indirect light; avoid direct sun.",
+        "bg": "Слаба до средна непряка светлина; избягвайте пряко слънце."
+      },
+      "watering": {
+        "en": "Keep soil consistently moist; water every 4–6 days.",
+        "bg": "Поддържайте почвата постоянно влажна; поливайте на 4–6 дни."
+      },
+      "humidity": {
+        "en": "Needs high humidity 60–80%; mist daily or use humidifier.",
+        "bg": "Нужна е висока влажност 60–80%; пръскайте ежедневно или ползвайте овлажнител."
+      },
+      "temperature": {
+        "en": "Keep at 16–24 °C; avoid cold drafts.",
+        "bg": "Дръжте при 16–24 °C; избягвайте студени течения."
+      },
+      "fertilizer": {
+        "en": "Fertilize monthly at half strength during growing season.",
+        "bg": "Торете месечно с половин доза по време на растеж."
+      },
+      "toxicity": {
+        "en": "Most ferns are non-toxic to pets.",
+        "bg": "Повечето папрати са безвредни за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Pteris cretica",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/5842596/medium.jpeg",
+    "commonNameEn": "Cretan Brake Fern",
+    "commonNameBg": "Птерис",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Worldwide in moist, shaded habitats",
+    "nativeRegionBg": "По целия свят в влажни, засенчени местообитания",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 5,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 18,
+    "mistingNeeded": true,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Low to medium indirect light; avoid direct sun.",
+        "bg": "Слаба до средна непряка светлина; избягвайте пряко слънце."
+      },
+      "watering": {
+        "en": "Keep soil consistently moist; water every 4–6 days.",
+        "bg": "Поддържайте почвата постоянно влажна; поливайте на 4–6 дни."
+      },
+      "humidity": {
+        "en": "Needs high humidity 60–80%; mist daily or use humidifier.",
+        "bg": "Нужна е висока влажност 60–80%; пръскайте ежедневно или ползвайте овлажнител."
+      },
+      "temperature": {
+        "en": "Keep at 16–24 °C; avoid cold drafts.",
+        "bg": "Дръжте при 16–24 °C; избягвайте студени течения."
+      },
+      "fertilizer": {
+        "en": "Fertilize monthly at half strength during growing season.",
+        "bg": "Торете месечно с половин доза по време на растеж."
+      },
+      "toxicity": {
+        "en": "Most ferns are non-toxic to pets.",
+        "bg": "Повечето папрати са безвредни за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Dryopteris filix-mas",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/114518292/medium.jpg",
+    "commonNameEn": "Male Fern",
+    "commonNameBg": "Мъжка папрат",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Worldwide in moist, shaded habitats",
+    "nativeRegionBg": "По целия свят в влажни, засенчени местообитания",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 5,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 18,
+    "mistingNeeded": true,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Low to medium indirect light; avoid direct sun.",
+        "bg": "Слаба до средна непряка светлина; избягвайте пряко слънце."
+      },
+      "watering": {
+        "en": "Keep soil consistently moist; water every 4–6 days.",
+        "bg": "Поддържайте почвата постоянно влажна; поливайте на 4–6 дни."
+      },
+      "humidity": {
+        "en": "Needs high humidity 60–80%; mist daily or use humidifier.",
+        "bg": "Нужна е висока влажност 60–80%; пръскайте ежедневно или ползвайте овлажнител."
+      },
+      "temperature": {
+        "en": "Keep at 16–24 °C; avoid cold drafts.",
+        "bg": "Дръжте при 16–24 °C; избягвайте студени течения."
+      },
+      "fertilizer": {
+        "en": "Fertilize monthly at half strength during growing season.",
+        "bg": "Торете месечно с половин доза по време на растеж."
+      },
+      "toxicity": {
+        "en": "Most ferns are non-toxic to pets.",
+        "bg": "Повечето папрати са безвредни за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Athyrium filix-femina",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/91587454/medium.jpeg",
+    "commonNameEn": "Lady Fern",
+    "commonNameBg": "Женска папрат",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Worldwide in moist, shaded habitats",
+    "nativeRegionBg": "По целия свят в влажни, засенчени местообитания",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 5,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 18,
+    "mistingNeeded": true,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Low to medium indirect light; avoid direct sun.",
+        "bg": "Слаба до средна непряка светлина; избягвайте пряко слънце."
+      },
+      "watering": {
+        "en": "Keep soil consistently moist; water every 4–6 days.",
+        "bg": "Поддържайте почвата постоянно влажна; поливайте на 4–6 дни."
+      },
+      "humidity": {
+        "en": "Needs high humidity 60–80%; mist daily or use humidifier.",
+        "bg": "Нужна е висока влажност 60–80%; пръскайте ежедневно или ползвайте овлажнител."
+      },
+      "temperature": {
+        "en": "Keep at 16–24 °C; avoid cold drafts.",
+        "bg": "Дръжте при 16–24 °C; избягвайте студени течения."
+      },
+      "fertilizer": {
+        "en": "Fertilize monthly at half strength during growing season.",
+        "bg": "Торете месечно с половин доза по време на растеж."
+      },
+      "toxicity": {
+        "en": "Most ferns are non-toxic to pets.",
+        "bg": "Повечето папрати са безвредни за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Davallia canariensis",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/179402353/medium.jpeg",
+    "commonNameEn": "Rabbit Foot Fern",
+    "commonNameBg": "Даваллиа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Worldwide in moist, shaded habitats",
+    "nativeRegionBg": "По целия свят в влажни, засенчени местообитания",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 5,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 18,
+    "mistingNeeded": true,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Low to medium indirect light; avoid direct sun.",
+        "bg": "Слаба до средна непряка светлина; избягвайте пряко слънце."
+      },
+      "watering": {
+        "en": "Keep soil consistently moist; water every 4–6 days.",
+        "bg": "Поддържайте почвата постоянно влажна; поливайте на 4–6 дни."
+      },
+      "humidity": {
+        "en": "Needs high humidity 60–80%; mist daily or use humidifier.",
+        "bg": "Нужна е висока влажност 60–80%; пръскайте ежедневно или ползвайте овлажнител."
+      },
+      "temperature": {
+        "en": "Keep at 16–24 °C; avoid cold drafts.",
+        "bg": "Дръжте при 16–24 °C; избягвайте студени течения."
+      },
+      "fertilizer": {
+        "en": "Fertilize monthly at half strength during growing season.",
+        "bg": "Торете месечно с половин доза по време на растеж."
+      },
+      "toxicity": {
+        "en": "Most ferns are non-toxic to pets.",
+        "bg": "Повечето папрати са безвредни за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Matteuccia struthiopteris",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/394351700/medium.jpeg",
+    "commonNameEn": "Ostrich Fern",
+    "commonNameBg": "Маттеуккиа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Worldwide in moist, shaded habitats",
+    "nativeRegionBg": "По целия свят в влажни, засенчени местообитания",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 5,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 18,
+    "mistingNeeded": true,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Low to medium indirect light; avoid direct sun.",
+        "bg": "Слаба до средна непряка светлина; избягвайте пряко слънце."
+      },
+      "watering": {
+        "en": "Keep soil consistently moist; water every 4–6 days.",
+        "bg": "Поддържайте почвата постоянно влажна; поливайте на 4–6 дни."
+      },
+      "humidity": {
+        "en": "Needs high humidity 60–80%; mist daily or use humidifier.",
+        "bg": "Нужна е висока влажност 60–80%; пръскайте ежедневно или ползвайте овлажнител."
+      },
+      "temperature": {
+        "en": "Keep at 16–24 °C; avoid cold drafts.",
+        "bg": "Дръжте при 16–24 °C; избягвайте студени течения."
+      },
+      "fertilizer": {
+        "en": "Fertilize monthly at half strength during growing season.",
+        "bg": "Торете месечно с половин доза по време на растеж."
+      },
+      "toxicity": {
+        "en": "Most ferns are non-toxic to pets.",
+        "bg": "Повечето папрати са безвредни за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Selaginella uncinata",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/129229954/medium.jpeg",
+    "commonNameEn": "Rainbow Moss",
+    "commonNameBg": "Селагинелла",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Worldwide in moist, shaded habitats",
+    "nativeRegionBg": "По целия свят в влажни, засенчени местообитания",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 5,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 18,
+    "mistingNeeded": true,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Low to medium indirect light; avoid direct sun.",
+        "bg": "Слаба до средна непряка светлина; избягвайте пряко слънце."
+      },
+      "watering": {
+        "en": "Keep soil consistently moist; water every 4–6 days.",
+        "bg": "Поддържайте почвата постоянно влажна; поливайте на 4–6 дни."
+      },
+      "humidity": {
+        "en": "Needs high humidity 60–80%; mist daily or use humidifier.",
+        "bg": "Нужна е висока влажност 60–80%; пръскайте ежедневно или ползвайте овлажнител."
+      },
+      "temperature": {
+        "en": "Keep at 16–24 °C; avoid cold drafts.",
+        "bg": "Дръжте при 16–24 °C; избягвайте студени течения."
+      },
+      "fertilizer": {
+        "en": "Fertilize monthly at half strength during growing season.",
+        "bg": "Торете месечно с половин доза по време на растеж."
+      },
+      "toxicity": {
+        "en": "Most ferns are non-toxic to pets.",
+        "bg": "Повечето папрати са безвредни за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Polypodium vulgare",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/19678/medium.jpg",
+    "commonNameEn": "Common Polypody",
+    "commonNameBg": "сладка папрат",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Worldwide in moist, shaded habitats",
+    "nativeRegionBg": "По целия свят в влажни, засенчени местообитания",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 5,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 18,
+    "mistingNeeded": true,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Low to medium indirect light; avoid direct sun.",
+        "bg": "Слаба до средна непряка светлина; избягвайте пряко слънце."
+      },
+      "watering": {
+        "en": "Keep soil consistently moist; water every 4–6 days.",
+        "bg": "Поддържайте почвата постоянно влажна; поливайте на 4–6 дни."
+      },
+      "humidity": {
+        "en": "Needs high humidity 60–80%; mist daily or use humidifier.",
+        "bg": "Нужна е висока влажност 60–80%; пръскайте ежедневно или ползвайте овлажнител."
+      },
+      "temperature": {
+        "en": "Keep at 16–24 °C; avoid cold drafts.",
+        "bg": "Дръжте при 16–24 °C; избягвайте студени течения."
+      },
+      "fertilizer": {
+        "en": "Fertilize monthly at half strength during growing season.",
+        "bg": "Торете месечно с половин доза по време на растеж."
+      },
+      "toxicity": {
+        "en": "Most ferns are non-toxic to pets.",
+        "bg": "Повечето папрати са безвредни за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Microsorum punctatum",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/87419912/medium.jpeg",
+    "commonNameEn": "Fishtail Fern",
+    "commonNameBg": "Микросорум",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Worldwide in moist, shaded habitats",
+    "nativeRegionBg": "По целия свят в влажни, засенчени местообитания",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 5,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 18,
+    "mistingNeeded": true,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Low to medium indirect light; avoid direct sun.",
+        "bg": "Слаба до средна непряка светлина; избягвайте пряко слънце."
+      },
+      "watering": {
+        "en": "Keep soil consistently moist; water every 4–6 days.",
+        "bg": "Поддържайте почвата постоянно влажна; поливайте на 4–6 дни."
+      },
+      "humidity": {
+        "en": "Needs high humidity 60–80%; mist daily or use humidifier.",
+        "bg": "Нужна е висока влажност 60–80%; пръскайте ежедневно или ползвайте овлажнител."
+      },
+      "temperature": {
+        "en": "Keep at 16–24 °C; avoid cold drafts.",
+        "bg": "Дръжте при 16–24 °C; избягвайте студени течения."
+      },
+      "fertilizer": {
+        "en": "Fertilize monthly at half strength during growing season.",
+        "bg": "Торете месечно с половин доза по време на растеж."
+      },
+      "toxicity": {
+        "en": "Most ferns are non-toxic to pets.",
+        "bg": "Повечето папрати са безвредни за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Guzmania lingulata",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/14296265/medium.jpg",
+    "commonNameEn": "Scarlet Star Bromeliad",
+    "commonNameBg": "Гузманиа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Bromeliaceae",
+    "nativeRegionEn": "Tropical and subtropical Americas",
+    "nativeRegionBg": "Тропическа и субтропична Америка",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 10,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": false,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Bright indirect light; tolerates lower light levels.",
+        "bg": "Ярка непряка светлина; понася по-слабо осветление."
+      },
+      "watering": {
+        "en": "Keep the central cup filled with water; water soil every 10–14 days.",
+        "bg": "Поддържайте централната чаша пълна с вода; поливайте почвата на 10–14 дни."
+      },
+      "humidity": {
+        "en": "Tolerates average humidity; prefers 40–60%.",
+        "bg": "Понася средна влажност; предпочита 40–60%."
+      },
+      "temperature": {
+        "en": "Keep at 16–27 °C; avoid temperatures below 10 °C.",
+        "bg": "Дръжте при 16–27 °C; избягвайте температури под 10 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize monthly at quarter strength into the cup.",
+        "bg": "Торете месечно с четвърт доза директно в чашата."
+      },
+      "toxicity": {
+        "en": "Non-toxic to pets; safe around cats and dogs.",
+        "bg": "Нетоксично за домашни любимци; безопасно около котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Vriesea splendens",
+    "imageUrl": null,
+    "commonNameEn": "Flaming Sword Bromeliad",
+    "commonNameBg": "Вриесеа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Bromeliaceae",
+    "nativeRegionEn": "Tropical and subtropical Americas",
+    "nativeRegionBg": "Тропическа и субтропична Америка",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 10,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": false,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Bright indirect light; tolerates lower light levels.",
+        "bg": "Ярка непряка светлина; понася по-слабо осветление."
+      },
+      "watering": {
+        "en": "Keep the central cup filled with water; water soil every 10–14 days.",
+        "bg": "Поддържайте централната чаша пълна с вода; поливайте почвата на 10–14 дни."
+      },
+      "humidity": {
+        "en": "Tolerates average humidity; prefers 40–60%.",
+        "bg": "Понася средна влажност; предпочита 40–60%."
+      },
+      "temperature": {
+        "en": "Keep at 16–27 °C; avoid temperatures below 10 °C.",
+        "bg": "Дръжте при 16–27 °C; избягвайте температури под 10 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize monthly at quarter strength into the cup.",
+        "bg": "Торете месечно с четвърт доза директно в чашата."
+      },
+      "toxicity": {
+        "en": "Non-toxic to pets; safe around cats and dogs.",
+        "bg": "Нетоксично за домашни любимци; безопасно около котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Aechmea fasciata",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/156663195/medium.jpeg",
+    "commonNameEn": "Silver Vase Bromeliad",
+    "commonNameBg": "Ехмеа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Bromeliaceae",
+    "nativeRegionEn": "Tropical and subtropical Americas",
+    "nativeRegionBg": "Тропическа и субтропична Америка",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 10,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": false,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Bright indirect light; tolerates lower light levels.",
+        "bg": "Ярка непряка светлина; понася по-слабо осветление."
+      },
+      "watering": {
+        "en": "Keep the central cup filled with water; water soil every 10–14 days.",
+        "bg": "Поддържайте централната чаша пълна с вода; поливайте почвата на 10–14 дни."
+      },
+      "humidity": {
+        "en": "Tolerates average humidity; prefers 40–60%.",
+        "bg": "Понася средна влажност; предпочита 40–60%."
+      },
+      "temperature": {
+        "en": "Keep at 16–27 °C; avoid temperatures below 10 °C.",
+        "bg": "Дръжте при 16–27 °C; избягвайте температури под 10 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize monthly at quarter strength into the cup.",
+        "bg": "Торете месечно с четвърт доза директно в чашата."
+      },
+      "toxicity": {
+        "en": "Non-toxic to pets; safe around cats and dogs.",
+        "bg": "Нетоксично за домашни любимци; безопасно около котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Neoregelia carolinae",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/170381545/medium.jpg",
+    "commonNameEn": "Blushing Bromeliad",
+    "commonNameBg": "Неорегелиа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Bromeliaceae",
+    "nativeRegionEn": "Tropical and subtropical Americas",
+    "nativeRegionBg": "Тропическа и субтропична Америка",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 10,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": false,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Bright indirect light; tolerates lower light levels.",
+        "bg": "Ярка непряка светлина; понася по-слабо осветление."
+      },
+      "watering": {
+        "en": "Keep the central cup filled with water; water soil every 10–14 days.",
+        "bg": "Поддържайте централната чаша пълна с вода; поливайте почвата на 10–14 дни."
+      },
+      "humidity": {
+        "en": "Tolerates average humidity; prefers 40–60%.",
+        "bg": "Понася средна влажност; предпочита 40–60%."
+      },
+      "temperature": {
+        "en": "Keep at 16–27 °C; avoid temperatures below 10 °C.",
+        "bg": "Дръжте при 16–27 °C; избягвайте температури под 10 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize monthly at quarter strength into the cup.",
+        "bg": "Торете месечно с четвърт доза директно в чашата."
+      },
+      "toxicity": {
+        "en": "Non-toxic to pets; safe around cats and dogs.",
+        "bg": "Нетоксично за домашни любимци; безопасно около котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Cryptanthus bivittatus",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/2357921/medium.jpg",
+    "commonNameEn": "Earth Star Bromeliad",
+    "commonNameBg": "Криптантус",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Bromeliaceae",
+    "nativeRegionEn": "Tropical and subtropical Americas",
+    "nativeRegionBg": "Тропическа и субтропична Америка",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 10,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": false,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Bright indirect light; tolerates lower light levels.",
+        "bg": "Ярка непряка светлина; понася по-слабо осветление."
+      },
+      "watering": {
+        "en": "Keep the central cup filled with water; water soil every 10–14 days.",
+        "bg": "Поддържайте централната чаша пълна с вода; поливайте почвата на 10–14 дни."
+      },
+      "humidity": {
+        "en": "Tolerates average humidity; prefers 40–60%.",
+        "bg": "Понася средна влажност; предпочита 40–60%."
+      },
+      "temperature": {
+        "en": "Keep at 16–27 °C; avoid temperatures below 10 °C.",
+        "bg": "Дръжте при 16–27 °C; избягвайте температури под 10 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize monthly at quarter strength into the cup.",
+        "bg": "Торете месечно с четвърт доза директно в чашата."
+      },
+      "toxicity": {
+        "en": "Non-toxic to pets; safe around cats and dogs.",
+        "bg": "Нетоксично за домашни любимци; безопасно около котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Tillandsia usneoides",
+    "imageUrl": "https://static.inaturalist.org/photos/22694434/medium.jpeg",
+    "commonNameEn": "Spanish Moss",
+    "commonNameBg": "Тилландсиа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Bromeliaceae",
+    "nativeRegionEn": "Tropical and subtropical Americas",
+    "nativeRegionBg": "Тропическа и субтропична Америка",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 10,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": false,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Bright indirect light; tolerates lower light levels.",
+        "bg": "Ярка непряка светлина; понася по-слабо осветление."
+      },
+      "watering": {
+        "en": "Keep the central cup filled with water; water soil every 10–14 days.",
+        "bg": "Поддържайте централната чаша пълна с вода; поливайте почвата на 10–14 дни."
+      },
+      "humidity": {
+        "en": "Tolerates average humidity; prefers 40–60%.",
+        "bg": "Понася средна влажност; предпочита 40–60%."
+      },
+      "temperature": {
+        "en": "Keep at 16–27 °C; avoid temperatures below 10 °C.",
+        "bg": "Дръжте при 16–27 °C; избягвайте температури под 10 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize monthly at quarter strength into the cup.",
+        "bg": "Торете месечно с четвърт доза директно в чашата."
+      },
+      "toxicity": {
+        "en": "Non-toxic to pets; safe around cats and dogs.",
+        "bg": "Нетоксично за домашни любимци; безопасно около котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Tillandsia ionantha",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/62107975/medium.jpg",
+    "commonNameEn": "Air Plant Ionantha",
+    "commonNameBg": "Тилландсиа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Bromeliaceae",
+    "nativeRegionEn": "Tropical and subtropical Americas",
+    "nativeRegionBg": "Тропическа и субтропична Америка",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 10,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": false,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Bright indirect light; tolerates lower light levels.",
+        "bg": "Ярка непряка светлина; понася по-слабо осветление."
+      },
+      "watering": {
+        "en": "Keep the central cup filled with water; water soil every 10–14 days.",
+        "bg": "Поддържайте централната чаша пълна с вода; поливайте почвата на 10–14 дни."
+      },
+      "humidity": {
+        "en": "Tolerates average humidity; prefers 40–60%.",
+        "bg": "Понася средна влажност; предпочита 40–60%."
+      },
+      "temperature": {
+        "en": "Keep at 16–27 °C; avoid temperatures below 10 °C.",
+        "bg": "Дръжте при 16–27 °C; избягвайте температури под 10 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize monthly at quarter strength into the cup.",
+        "bg": "Торете месечно с четвърт доза директно в чашата."
+      },
+      "toxicity": {
+        "en": "Non-toxic to pets; safe around cats and dogs.",
+        "bg": "Нетоксично за домашни любимци; безопасно около котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Tillandsia xerographica",
+    "imageUrl": "https://static.inaturalist.org/photos/69748606/medium.jpeg",
+    "commonNameEn": "King of Air Plants",
+    "commonNameBg": "Тилансия ксерографика",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Bromeliaceae",
+    "nativeRegionEn": "Tropical and subtropical Americas",
+    "nativeRegionBg": "Тропическа и субтропична Америка",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 10,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": false,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Bright indirect light; tolerates lower light levels.",
+        "bg": "Ярка непряка светлина; понася по-слабо осветление."
+      },
+      "watering": {
+        "en": "Keep the central cup filled with water; water soil every 10–14 days.",
+        "bg": "Поддържайте централната чаша пълна с вода; поливайте почвата на 10–14 дни."
+      },
+      "humidity": {
+        "en": "Tolerates average humidity; prefers 40–60%.",
+        "bg": "Понася средна влажност; предпочита 40–60%."
+      },
+      "temperature": {
+        "en": "Keep at 16–27 °C; avoid temperatures below 10 °C.",
+        "bg": "Дръжте при 16–27 °C; избягвайте температури под 10 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize monthly at quarter strength into the cup.",
+        "bg": "Торете месечно с четвърт доза директно в чашата."
+      },
+      "toxicity": {
+        "en": "Non-toxic to pets; safe around cats and dogs.",
+        "bg": "Нетоксично за домашни любимци; безопасно около котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Ananas comosus",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/179291263/medium.jpeg",
+    "commonNameEn": "Ornamental Pineapple",
+    "commonNameBg": "обикновен ананас",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Bromeliaceae",
+    "nativeRegionEn": "Tropical and subtropical Americas",
+    "nativeRegionBg": "Тропическа и субтропична Америка",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 10,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Bright indirect light; tolerates lower light levels.",
+        "bg": "Ярка непряка светлина; понася по-слабо осветление."
+      },
+      "watering": {
+        "en": "Keep the central cup filled with water; water soil every 10–14 days.",
+        "bg": "Поддържайте централната чаша пълна с вода; поливайте почвата на 10–14 дни."
+      },
+      "humidity": {
+        "en": "Tolerates average humidity; prefers 40–60%.",
+        "bg": "Понася средна влажност; предпочита 40–60%."
+      },
+      "temperature": {
+        "en": "Keep at 16–27 °C; avoid temperatures below 10 °C.",
+        "bg": "Дръжте при 16–27 °C; избягвайте температури под 10 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize monthly at quarter strength into the cup.",
+        "bg": "Торете месечно с четвърт доза директно в чашата."
+      },
+      "toxicity": {
+        "en": "Non-toxic to cats and dogs.",
+        "bg": "Безвредно за котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Billbergia nutans",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/49181133/medium.jpeg",
+    "commonNameEn": "Queen's Tears Bromeliad",
+    "commonNameBg": "Биллбергиа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Bromeliaceae",
+    "nativeRegionEn": "Tropical and subtropical Americas",
+    "nativeRegionBg": "Тропическа и субтропична Америка",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 10,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": false,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Bright indirect light; tolerates lower light levels.",
+        "bg": "Ярка непряка светлина; понася по-слабо осветление."
+      },
+      "watering": {
+        "en": "Keep the central cup filled with water; water soil every 10–14 days.",
+        "bg": "Поддържайте централната чаша пълна с вода; поливайте почвата на 10–14 дни."
+      },
+      "humidity": {
+        "en": "Tolerates average humidity; prefers 40–60%.",
+        "bg": "Понася средна влажност; предпочита 40–60%."
+      },
+      "temperature": {
+        "en": "Keep at 16–27 °C; avoid temperatures below 10 °C.",
+        "bg": "Дръжте при 16–27 °C; избягвайте температури под 10 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize monthly at quarter strength into the cup.",
+        "bg": "Торете месечно с четвърт доза директно в чашата."
+      },
+      "toxicity": {
+        "en": "Non-toxic to pets; safe around cats and dogs.",
+        "bg": "Нетоксично за домашни любимци; безопасно около котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Phalaenopsis amabilis",
+    "imageUrl": "https://static.inaturalist.org/photos/69630016/medium.jpeg",
+    "commonNameEn": "Moth Orchid",
+    "commonNameBg": "Фаленопсис",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Orchidaceae",
+    "nativeRegionEn": "Tropical and subtropical regions worldwide",
+    "nativeRegionBg": "Тропически и субтропични региони по целия свят",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 10,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": true,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Bright indirect light; east- or west-facing window is ideal.",
+        "bg": "Ярка непряка светлина; прозорец на изток или запад е идеален."
+      },
+      "watering": {
+        "en": "Water thoroughly every 7–10 days; let bark dry between waterings.",
+        "bg": "Поливайте обилно на 7–10 дни; оставете кората да изсъхне между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers 50–70% humidity; mist aerial roots lightly.",
+        "bg": "Предпочита 50–70% влажност; леко пръскайте въздушните корени."
+      },
+      "temperature": {
+        "en": "Day 18–25 °C; night 13–18 °C to encourage blooming.",
+        "bg": "Ден 18–25 °C; нощ 13–18 °C за насърчаване на цъфтежа."
+      },
+      "fertilizer": {
+        "en": "Use orchid fertilizer at half strength every 2 weeks.",
+        "bg": "Торете с половин доза орхидеен тор на 2 седмици по време на растеж."
+      },
+      "toxicity": {
+        "en": "Non-toxic to pets; safe around cats and dogs.",
+        "bg": "Нетоксично за домашни любимци; безопасно около котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Dendrobium nobile",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/16177623/medium.jpg",
+    "commonNameEn": "Noble Dendrobium Orchid",
+    "commonNameBg": "благороден дендробиум",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Orchidaceae",
+    "nativeRegionEn": "Tropical and subtropical regions worldwide",
+    "nativeRegionBg": "Тропически и субтропични региони по целия свят",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 10,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": true,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Bright indirect light; east- or west-facing window is ideal.",
+        "bg": "Ярка непряка светлина; прозорец на изток или запад е идеален."
+      },
+      "watering": {
+        "en": "Water thoroughly every 7–10 days; let bark dry between waterings.",
+        "bg": "Поливайте обилно на 7–10 дни; оставете кората да изсъхне между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers 50–70% humidity; mist aerial roots lightly.",
+        "bg": "Предпочита 50–70% влажност; леко пръскайте въздушните корени."
+      },
+      "temperature": {
+        "en": "Day 18–25 °C; night 13–18 °C to encourage blooming.",
+        "bg": "Ден 18–25 °C; нощ 13–18 °C за насърчаване на цъфтежа."
+      },
+      "fertilizer": {
+        "en": "Use orchid fertilizer at half strength every 2 weeks.",
+        "bg": "Торете с половин доза орхидеен тор на 2 седмици по време на растеж."
+      },
+      "toxicity": {
+        "en": "Non-toxic to cats and dogs.",
+        "bg": "Безвреден за котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Cattleya labiata",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/127799924/medium.jpg",
+    "commonNameEn": "Corsage Orchid",
+    "commonNameBg": "Каттлеиа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Orchidaceae",
+    "nativeRegionEn": "Tropical and subtropical regions worldwide",
+    "nativeRegionBg": "Тропически и субтропични региони по целия свят",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 10,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": true,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Bright indirect light; east- or west-facing window is ideal.",
+        "bg": "Ярка непряка светлина; прозорец на изток или запад е идеален."
+      },
+      "watering": {
+        "en": "Water thoroughly every 7–10 days; let bark dry between waterings.",
+        "bg": "Поливайте обилно на 7–10 дни; оставете кората да изсъхне между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers 50–70% humidity; mist aerial roots lightly.",
+        "bg": "Предпочита 50–70% влажност; леко пръскайте въздушните корени."
+      },
+      "temperature": {
+        "en": "Day 18–25 °C; night 13–18 °C to encourage blooming.",
+        "bg": "Ден 18–25 °C; нощ 13–18 °C за насърчаване на цъфтежа."
+      },
+      "fertilizer": {
+        "en": "Use orchid fertilizer at half strength every 2 weeks.",
+        "bg": "Торете с половин доза орхидеен тор на 2 седмици по време на растеж."
+      },
+      "toxicity": {
+        "en": "Non-toxic to cats and dogs.",
+        "bg": "Безвреден за котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Cymbidium tracyanum",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/444483074/medium.jpeg",
+    "commonNameEn": "Cymbidium Orchid",
+    "commonNameBg": "Кимбидиум",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Orchidaceae",
+    "nativeRegionEn": "Tropical and subtropical regions worldwide",
+    "nativeRegionBg": "Тропически и субтропични региони по целия свят",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 10,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": true,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Bright indirect light; east- or west-facing window is ideal.",
+        "bg": "Ярка непряка светлина; прозорец на изток или запад е идеален."
+      },
+      "watering": {
+        "en": "Water thoroughly every 7–10 days; let bark dry between waterings.",
+        "bg": "Поливайте обилно на 7–10 дни; оставете кората да изсъхне между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers 50–70% humidity; mist aerial roots lightly.",
+        "bg": "Предпочита 50–70% влажност; леко пръскайте въздушните корени."
+      },
+      "temperature": {
+        "en": "Day 18–25 °C; night 13–18 °C to encourage blooming.",
+        "bg": "Ден 18–25 °C; нощ 13–18 °C за насърчаване на цъфтежа."
+      },
+      "fertilizer": {
+        "en": "Use orchid fertilizer at half strength every 2 weeks.",
+        "bg": "Торете с половин доза орхидеен тор на 2 седмици по време на растеж."
+      },
+      "toxicity": {
+        "en": "Non-toxic to cats and dogs.",
+        "bg": "Безвреден за котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Oncidium sphacelatum",
+    "imageUrl": "https://static.inaturalist.org/photos/190404129/medium.jpeg",
+    "commonNameEn": "Dancing Lady Orchid",
+    "commonNameBg": "Онкидиум",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Orchidaceae",
+    "nativeRegionEn": "Tropical and subtropical regions worldwide",
+    "nativeRegionBg": "Тропически и субтропични региони по целия свят",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 10,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": true,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Bright indirect light; east- or west-facing window is ideal.",
+        "bg": "Ярка непряка светлина; прозорец на изток или запад е идеален."
+      },
+      "watering": {
+        "en": "Water thoroughly every 7–10 days; let bark dry between waterings.",
+        "bg": "Поливайте обилно на 7–10 дни; оставете кората да изсъхне между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers 50–70% humidity; mist aerial roots lightly.",
+        "bg": "Предпочита 50–70% влажност; леко пръскайте въздушните корени."
+      },
+      "temperature": {
+        "en": "Day 18–25 °C; night 13–18 °C to encourage blooming.",
+        "bg": "Ден 18–25 °C; нощ 13–18 °C за насърчаване на цъфтежа."
+      },
+      "fertilizer": {
+        "en": "Use orchid fertilizer at half strength every 2 weeks.",
+        "bg": "Торете с половин доза орхидеен тор на 2 седмици по време на растеж."
+      },
+      "toxicity": {
+        "en": "Non-toxic to cats and dogs.",
+        "bg": "Безвреден за котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Paphiopedilum insigne",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/58981172/medium.jpeg",
+    "commonNameEn": "Lady's Slipper Orchid",
+    "commonNameBg": "Пафиопедилум",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Orchidaceae",
+    "nativeRegionEn": "Tropical and subtropical regions worldwide",
+    "nativeRegionBg": "Тропически и субтропични региони по целия свят",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 10,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": true,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Bright indirect light; east- or west-facing window is ideal.",
+        "bg": "Ярка непряка светлина; прозорец на изток или запад е идеален."
+      },
+      "watering": {
+        "en": "Water thoroughly every 7–10 days; let bark dry between waterings.",
+        "bg": "Поливайте обилно на 7–10 дни; оставете кората да изсъхне между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers 50–70% humidity; mist aerial roots lightly.",
+        "bg": "Предпочита 50–70% влажност; леко пръскайте въздушните корени."
+      },
+      "temperature": {
+        "en": "Day 18–25 °C; night 13–18 °C to encourage blooming.",
+        "bg": "Ден 18–25 °C; нощ 13–18 °C за насърчаване на цъфтежа."
+      },
+      "fertilizer": {
+        "en": "Use orchid fertilizer at half strength every 2 weeks.",
+        "bg": "Торете с половин доза орхидеен тор на 2 седмици по време на растеж."
+      },
+      "toxicity": {
+        "en": "Non-toxic to cats and dogs.",
+        "bg": "Безвреден за котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Ludisia discolor",
+    "imageUrl": "https://static.inaturalist.org/photos/481149825/medium.jpg",
+    "commonNameEn": "Jewel Orchid",
+    "commonNameBg": "двуцветна лудисия",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Orchidaceae",
+    "nativeRegionEn": "Tropical and subtropical regions worldwide",
+    "nativeRegionBg": "Тропически и субтропични региони по целия свят",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 10,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": true,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Bright indirect light; east- or west-facing window is ideal.",
+        "bg": "Ярка непряка светлина; прозорец на изток или запад е идеален."
+      },
+      "watering": {
+        "en": "Water thoroughly every 7–10 days; let bark dry between waterings.",
+        "bg": "Поливайте обилно на 7–10 дни; оставете кората да изсъхне между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers 50–70% humidity; mist aerial roots lightly.",
+        "bg": "Предпочита 50–70% влажност; леко пръскайте въздушните корени."
+      },
+      "temperature": {
+        "en": "Day 18–25 °C; night 13–18 °C to encourage blooming.",
+        "bg": "Ден 18–25 °C; нощ 13–18 °C за насърчаване на цъфтежа."
+      },
+      "fertilizer": {
+        "en": "Use orchid fertilizer at half strength every 2 weeks.",
+        "bg": "Торете с половин доза орхидеен тор на 2 седмици по време на растеж."
+      },
+      "toxicity": {
+        "en": "Non-toxic to cats and dogs.",
+        "bg": "Безвреден за котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Zygopetalum mackaii",
+    "imageUrl": null,
+    "commonNameEn": "Zygopetalum Orchid",
+    "commonNameBg": "Зигопеталум",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Orchidaceae",
+    "nativeRegionEn": "Tropical and subtropical regions worldwide",
+    "nativeRegionBg": "Тропически и субтропични региони по целия свят",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 10,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": true,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Bright indirect light; east- or west-facing window is ideal.",
+        "bg": "Ярка непряка светлина; прозорец на изток или запад е идеален."
+      },
+      "watering": {
+        "en": "Water thoroughly every 7–10 days; let bark dry between waterings.",
+        "bg": "Поливайте обилно на 7–10 дни; оставете кората да изсъхне между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers 50–70% humidity; mist aerial roots lightly.",
+        "bg": "Предпочита 50–70% влажност; леко пръскайте въздушните корени."
+      },
+      "temperature": {
+        "en": "Day 18–25 °C; night 13–18 °C to encourage blooming.",
+        "bg": "Ден 18–25 °C; нощ 13–18 °C за насърчаване на цъфтежа."
+      },
+      "fertilizer": {
+        "en": "Use orchid fertilizer at half strength every 2 weeks.",
+        "bg": "Торете с половин доза орхидеен тор на 2 седмици по време на растеж."
+      },
+      "toxicity": {
+        "en": "Non-toxic to cats and dogs.",
+        "bg": "Безвреден за котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Coelogyne cristata",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/6211280/medium.jpg",
+    "commonNameEn": "White Coelogyne Orchid",
+    "commonNameBg": "Келогине",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Orchidaceae",
+    "nativeRegionEn": "Tropical and subtropical regions worldwide",
+    "nativeRegionBg": "Тропически и субтропични региони по целия свят",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 10,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": true,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Bright indirect light; east- or west-facing window is ideal.",
+        "bg": "Ярка непряка светлина; прозорец на изток или запад е идеален."
+      },
+      "watering": {
+        "en": "Water thoroughly every 7–10 days; let bark dry between waterings.",
+        "bg": "Поливайте обилно на 7–10 дни; оставете кората да изсъхне между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers 50–70% humidity; mist aerial roots lightly.",
+        "bg": "Предпочита 50–70% влажност; леко пръскайте въздушните корени."
+      },
+      "temperature": {
+        "en": "Day 18–25 °C; night 13–18 °C to encourage blooming.",
+        "bg": "Ден 18–25 °C; нощ 13–18 °C за насърчаване на цъфтежа."
+      },
+      "fertilizer": {
+        "en": "Use orchid fertilizer at half strength every 2 weeks.",
+        "bg": "Торете с половин доза орхидеен тор на 2 седмици по време на растеж."
+      },
+      "toxicity": {
+        "en": "Non-toxic to cats and dogs.",
+        "bg": "Безвреден за котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Vanilla planifolia",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/130156340/medium.jpeg",
+    "commonNameEn": "Vanilla Orchid",
+    "commonNameBg": "плосколистна ванилия",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Orchidaceae",
+    "nativeRegionEn": "Tropical and subtropical regions worldwide",
+    "nativeRegionBg": "Тропически и субтропични региони по целия свят",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 10,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": true,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Bright indirect light; east- or west-facing window is ideal.",
+        "bg": "Ярка непряка светлина; прозорец на изток или запад е идеален."
+      },
+      "watering": {
+        "en": "Water thoroughly every 7–10 days; let bark dry between waterings.",
+        "bg": "Поливайте обилно на 7–10 дни; оставете кората да изсъхне между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers 50–70% humidity; mist aerial roots lightly.",
+        "bg": "Предпочита 50–70% влажност; леко пръскайте въздушните корени."
+      },
+      "temperature": {
+        "en": "Day 18–25 °C; night 13–18 °C to encourage blooming.",
+        "bg": "Ден 18–25 °C; нощ 13–18 °C за насърчаване на цъфтежа."
+      },
+      "fertilizer": {
+        "en": "Use orchid fertilizer at half strength every 2 weeks.",
+        "bg": "Торете с половин доза орхидеен тор на 2 седмици по време на растеж."
+      },
+      "toxicity": {
+        "en": "Non-toxic to cats and dogs.",
+        "bg": "Безвреден за котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Brassia caudata",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/265721689/medium.jpeg",
+    "commonNameEn": "Spider Orchid",
+    "commonNameBg": "Брассиа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Orchidaceae",
+    "nativeRegionEn": "Tropical and subtropical regions worldwide",
+    "nativeRegionBg": "Тропически и субтропични региони по целия свят",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 10,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": true,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Bright indirect light; east- or west-facing window is ideal.",
+        "bg": "Ярка непряка светлина; прозорец на изток или запад е идеален."
+      },
+      "watering": {
+        "en": "Water thoroughly every 7–10 days; let bark dry between waterings.",
+        "bg": "Поливайте обилно на 7–10 дни; оставете кората да изсъхне между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers 50–70% humidity; mist aerial roots lightly.",
+        "bg": "Предпочита 50–70% влажност; леко пръскайте въздушните корени."
+      },
+      "temperature": {
+        "en": "Day 18–25 °C; night 13–18 °C to encourage blooming.",
+        "bg": "Ден 18–25 °C; нощ 13–18 °C за насърчаване на цъфтежа."
+      },
+      "fertilizer": {
+        "en": "Use orchid fertilizer at half strength every 2 weeks.",
+        "bg": "Торете с половин доза орхидеен тор на 2 седмици по време на растеж."
+      },
+      "toxicity": {
+        "en": "Non-toxic to cats and dogs.",
+        "bg": "Безвреден за котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Miltoniopsis vexillaria",
+    "imageUrl": "https://static.inaturalist.org/photos/65159875/medium.jpeg",
+    "commonNameEn": "Pansy Orchid",
+    "commonNameBg": "Милтониопсис",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Orchidaceae",
+    "nativeRegionEn": "Tropical and subtropical regions worldwide",
+    "nativeRegionBg": "Тропически и субтропични региони по целия свят",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 10,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": true,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Bright indirect light; east- or west-facing window is ideal.",
+        "bg": "Ярка непряка светлина; прозорец на изток или запад е идеален."
+      },
+      "watering": {
+        "en": "Water thoroughly every 7–10 days; let bark dry between waterings.",
+        "bg": "Поливайте обилно на 7–10 дни; оставете кората да изсъхне между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers 50–70% humidity; mist aerial roots lightly.",
+        "bg": "Предпочита 50–70% влажност; леко пръскайте въздушните корени."
+      },
+      "temperature": {
+        "en": "Day 18–25 °C; night 13–18 °C to encourage blooming.",
+        "bg": "Ден 18–25 °C; нощ 13–18 °C за насърчаване на цъфтежа."
+      },
+      "fertilizer": {
+        "en": "Use orchid fertilizer at half strength every 2 weeks.",
+        "bg": "Торете с половин доза орхидеен тор на 2 седмици по време на растеж."
+      },
+      "toxicity": {
+        "en": "Non-toxic to cats and dogs.",
+        "bg": "Безвреден за котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Epidendrum secundum",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/296865804/medium.jpeg",
+    "commonNameEn": "Reed Orchid",
+    "commonNameBg": "Епидендрум",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Orchidaceae",
+    "nativeRegionEn": "Tropical and subtropical regions worldwide",
+    "nativeRegionBg": "Тропически и субтропични региони по целия свят",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 10,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": true,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Bright indirect light; east- or west-facing window is ideal.",
+        "bg": "Ярка непряка светлина; прозорец на изток или запад е идеален."
+      },
+      "watering": {
+        "en": "Water thoroughly every 7–10 days; let bark dry between waterings.",
+        "bg": "Поливайте обилно на 7–10 дни; оставете кората да изсъхне между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers 50–70% humidity; mist aerial roots lightly.",
+        "bg": "Предпочита 50–70% влажност; леко пръскайте въздушните корени."
+      },
+      "temperature": {
+        "en": "Day 18–25 °C; night 13–18 °C to encourage blooming.",
+        "bg": "Ден 18–25 °C; нощ 13–18 °C за насърчаване на цъфтежа."
+      },
+      "fertilizer": {
+        "en": "Use orchid fertilizer at half strength every 2 weeks.",
+        "bg": "Торете с половин доза орхидеен тор на 2 седмици по време на растеж."
+      },
+      "toxicity": {
+        "en": "Non-toxic to cats and dogs.",
+        "bg": "Безвреден за котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Lycaste aromatica",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/2008162/medium.JPG",
+    "commonNameEn": "Cinnamon Orchid",
+    "commonNameBg": "Ликасте",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Orchidaceae",
+    "nativeRegionEn": "Tropical and subtropical regions worldwide",
+    "nativeRegionBg": "Тропически и субтропични региони по целия свят",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 10,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": true,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Bright indirect light; east- or west-facing window is ideal.",
+        "bg": "Ярка непряка светлина; прозорец на изток или запад е идеален."
+      },
+      "watering": {
+        "en": "Water thoroughly every 7–10 days; let bark dry between waterings.",
+        "bg": "Поливайте обилно на 7–10 дни; оставете кората да изсъхне между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers 50–70% humidity; mist aerial roots lightly.",
+        "bg": "Предпочита 50–70% влажност; леко пръскайте въздушните корени."
+      },
+      "temperature": {
+        "en": "Day 18–25 °C; night 13–18 °C to encourage blooming.",
+        "bg": "Ден 18–25 °C; нощ 13–18 °C за насърчаване на цъфтежа."
+      },
+      "fertilizer": {
+        "en": "Use orchid fertilizer at half strength every 2 weeks.",
+        "bg": "Торете с половин доза орхидеен тор на 2 седмици по време на растеж."
+      },
+      "toxicity": {
+        "en": "Non-toxic to cats and dogs.",
+        "bg": "Безвреден за котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Maxillaria tenuifolia",
+    "imageUrl": "https://static.inaturalist.org/photos/285919410/medium.jpeg",
+    "commonNameEn": "Coconut Orchid",
+    "commonNameBg": "Максиллариа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Orchidaceae",
+    "nativeRegionEn": "Tropical and subtropical regions worldwide",
+    "nativeRegionBg": "Тропически и субтропични региони по целия свят",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 10,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": true,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Bright indirect light; east- or west-facing window is ideal.",
+        "bg": "Ярка непряка светлина; прозорец на изток или запад е идеален."
+      },
+      "watering": {
+        "en": "Water thoroughly every 7–10 days; let bark dry between waterings.",
+        "bg": "Поливайте обилно на 7–10 дни; оставете кората да изсъхне между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers 50–70% humidity; mist aerial roots lightly.",
+        "bg": "Предпочита 50–70% влажност; леко пръскайте въздушните корени."
+      },
+      "temperature": {
+        "en": "Day 18–25 °C; night 13–18 °C to encourage blooming.",
+        "bg": "Ден 18–25 °C; нощ 13–18 °C за насърчаване на цъфтежа."
+      },
+      "fertilizer": {
+        "en": "Use orchid fertilizer at half strength every 2 weeks.",
+        "bg": "Торете с половин доза орхидеен тор на 2 седмици по време на растеж."
+      },
+      "toxicity": {
+        "en": "Non-toxic to cats and dogs.",
+        "bg": "Безвреден за котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Haworthia fasciata",
+    "imageUrl": null,
+    "commonNameEn": "Zebra Haworthia",
+    "commonNameBg": "Хавортиа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Arid and semi-arid regions worldwide",
+    "nativeRegionBg": "Сухи и полусухи региони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 14,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": false,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to bright indirect light; at least 4–6 hours daily.",
+        "bg": "Пълно слънце до ярка непряка светлина; поне 4–6 часа дневно."
+      },
+      "watering": {
+        "en": "Water every 10–14 days; let soil dry completely between waterings.",
+        "bg": "Поливайте на 10–14 дни; оставете почвата да изсъхне напълно между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers low humidity (20–40%); good air circulation essential.",
+        "bg": "Предпочита ниска влажност (20–40%); добра циркулация на въздуха е важна."
+      },
+      "temperature": {
+        "en": "Ideal 15–30 °C; most tolerate brief dips to 5 °C.",
+        "bg": "Идеална 15–30 °C; повечето понасят кратко захлаждане до 5 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize once a month in spring and summer with diluted cactus fertilizer.",
+        "bg": "Торете веднъж месечно през пролетта и лятото с разреден кактусов тор."
+      },
+      "toxicity": {
+        "en": "Non-toxic to pets; safe around cats and dogs.",
+        "bg": "Нетоксично за домашни любимци; безопасно около котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Haworthia attenuata",
+    "imageUrl": null,
+    "commonNameEn": "Attenuata Haworthia",
+    "commonNameBg": "Хавортиа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Arid and semi-arid regions worldwide",
+    "nativeRegionBg": "Сухи и полусухи региони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 14,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": false,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to bright indirect light; at least 4–6 hours daily.",
+        "bg": "Пълно слънце до ярка непряка светлина; поне 4–6 часа дневно."
+      },
+      "watering": {
+        "en": "Water every 10–14 days; let soil dry completely between waterings.",
+        "bg": "Поливайте на 10–14 дни; оставете почвата да изсъхне напълно между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers low humidity (20–40%); good air circulation essential.",
+        "bg": "Предпочита ниска влажност (20–40%); добра циркулация на въздуха е важна."
+      },
+      "temperature": {
+        "en": "Ideal 15–30 °C; most tolerate brief dips to 5 °C.",
+        "bg": "Идеална 15–30 °C; повечето понасят кратко захлаждане до 5 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize once a month in spring and summer with diluted cactus fertilizer.",
+        "bg": "Торете веднъж месечно през пролетта и лятото с разреден кактусов тор."
+      },
+      "toxicity": {
+        "en": "Non-toxic to pets; safe around cats and dogs.",
+        "bg": "Нетоксично за домашни любимци; безопасно около котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Haworthia cooperi",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/93576922/medium.jpeg",
+    "commonNameEn": "Cooper's Haworthia",
+    "commonNameBg": "Хавортиа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Arid and semi-arid regions worldwide",
+    "nativeRegionBg": "Сухи и полусухи региони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 14,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": false,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to bright indirect light; at least 4–6 hours daily.",
+        "bg": "Пълно слънце до ярка непряка светлина; поне 4–6 часа дневно."
+      },
+      "watering": {
+        "en": "Water every 10–14 days; let soil dry completely between waterings.",
+        "bg": "Поливайте на 10–14 дни; оставете почвата да изсъхне напълно между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers low humidity (20–40%); good air circulation essential.",
+        "bg": "Предпочита ниска влажност (20–40%); добра циркулация на въздуха е важна."
+      },
+      "temperature": {
+        "en": "Ideal 15–30 °C; most tolerate brief dips to 5 °C.",
+        "bg": "Идеална 15–30 °C; повечето понасят кратко захлаждане до 5 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize once a month in spring and summer with diluted cactus fertilizer.",
+        "bg": "Торете веднъж месечно през пролетта и лятото с разреден кактусов тор."
+      },
+      "toxicity": {
+        "en": "Non-toxic to pets; safe around cats and dogs.",
+        "bg": "Нетоксично за домашни любимци; безопасно около котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Haworthia limifolia",
+    "imageUrl": null,
+    "commonNameEn": "Fairy Washboard",
+    "commonNameBg": "Хавортиа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Arid and semi-arid regions worldwide",
+    "nativeRegionBg": "Сухи и полусухи региони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 14,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": false,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to bright indirect light; at least 4–6 hours daily.",
+        "bg": "Пълно слънце до ярка непряка светлина; поне 4–6 часа дневно."
+      },
+      "watering": {
+        "en": "Water every 10–14 days; let soil dry completely between waterings.",
+        "bg": "Поливайте на 10–14 дни; оставете почвата да изсъхне напълно между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers low humidity (20–40%); good air circulation essential.",
+        "bg": "Предпочита ниска влажност (20–40%); добра циркулация на въздуха е важна."
+      },
+      "temperature": {
+        "en": "Ideal 15–30 °C; most tolerate brief dips to 5 °C.",
+        "bg": "Идеална 15–30 °C; повечето понасят кратко захлаждане до 5 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize once a month in spring and summer with diluted cactus fertilizer.",
+        "bg": "Торете веднъж месечно през пролетта и лятото с разреден кактусов тор."
+      },
+      "toxicity": {
+        "en": "Non-toxic to pets; safe around cats and dogs.",
+        "bg": "Нетоксично за домашни любимци; безопасно около котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Gasteria bicolor",
+    "imageUrl": "https://static.inaturalist.org/photos/70651845/medium.jpeg",
+    "commonNameEn": "Ox Tongue Plant",
+    "commonNameBg": "Гастериа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Arid and semi-arid regions worldwide",
+    "nativeRegionBg": "Сухи и полусухи региони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 14,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to bright indirect light; at least 4–6 hours daily.",
+        "bg": "Пълно слънце до ярка непряка светлина; поне 4–6 часа дневно."
+      },
+      "watering": {
+        "en": "Water every 10–14 days; let soil dry completely between waterings.",
+        "bg": "Поливайте на 10–14 дни; оставете почвата да изсъхне напълно между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers low humidity (20–40%); good air circulation essential.",
+        "bg": "Предпочита ниска влажност (20–40%); добра циркулация на въздуха е важна."
+      },
+      "temperature": {
+        "en": "Ideal 15–30 °C; most tolerate brief dips to 5 °C.",
+        "bg": "Идеална 15–30 °C; повечето понасят кратко захлаждане до 5 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize once a month in spring and summer with diluted cactus fertilizer.",
+        "bg": "Торете веднъж месечно през пролетта и лятото с разреден кактусов тор."
+      },
+      "toxicity": {
+        "en": "Most succulents are non-toxic; check individual species.",
+        "bg": "Повечето сукуленти са безвредни; проверете конкретния вид."
+      }
+    }
+  },
+  {
+    "scientificName": "Gasteria carinata",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/168229465/medium.jpeg",
+    "commonNameEn": "Gasteria",
+    "commonNameBg": "Гастериа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Arid and semi-arid regions worldwide",
+    "nativeRegionBg": "Сухи и полусухи региони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 14,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to bright indirect light; at least 4–6 hours daily.",
+        "bg": "Пълно слънце до ярка непряка светлина; поне 4–6 часа дневно."
+      },
+      "watering": {
+        "en": "Water every 10–14 days; let soil dry completely between waterings.",
+        "bg": "Поливайте на 10–14 дни; оставете почвата да изсъхне напълно между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers low humidity (20–40%); good air circulation essential.",
+        "bg": "Предпочита ниска влажност (20–40%); добра циркулация на въздуха е важна."
+      },
+      "temperature": {
+        "en": "Ideal 15–30 °C; most tolerate brief dips to 5 °C.",
+        "bg": "Идеална 15–30 °C; повечето понасят кратко захлаждане до 5 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize once a month in spring and summer with diluted cactus fertilizer.",
+        "bg": "Торете веднъж месечно през пролетта и лятото с разреден кактусов тор."
+      },
+      "toxicity": {
+        "en": "Most succulents are non-toxic; check individual species.",
+        "bg": "Повечето сукуленти са безвредни; проверете конкретния вид."
+      }
+    }
+  },
+  {
+    "scientificName": "Aloe vera",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/340224811/medium.jpg",
+    "commonNameEn": "Aloe Vera",
+    "commonNameBg": "Алое вера",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Arid and semi-arid regions worldwide",
+    "nativeRegionBg": "Сухи и полусухи региони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 14,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": false,
+    "isToxicToPets": true,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to bright indirect light; at least 4–6 hours daily.",
+        "bg": "Пълно слънце до ярка непряка светлина; поне 4–6 часа дневно."
+      },
+      "watering": {
+        "en": "Water every 10–14 days; let soil dry completely between waterings.",
+        "bg": "Поливайте на 10–14 дни; оставете почвата да изсъхне напълно между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers low humidity (20–40%); good air circulation essential.",
+        "bg": "Предпочита ниска влажност (20–40%); добра циркулация на въздуха е важна."
+      },
+      "temperature": {
+        "en": "Ideal 15–30 °C; most tolerate brief dips to 5 °C.",
+        "bg": "Идеална 15–30 °C; повечето понасят кратко захлаждане до 5 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize once a month in spring and summer with diluted cactus fertilizer.",
+        "bg": "Торете веднъж месечно през пролетта и лятото с разреден кактусов тор."
+      },
+      "toxicity": {
+        "en": "Toxic to cats and dogs — keep out of reach.",
+        "bg": "Токсично за котки и кучета — пазете от домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Aloe arborescens",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/221831309/medium.jpeg",
+    "commonNameEn": "Torch Aloe",
+    "commonNameBg": "дървовидно алое",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Arid and semi-arid regions worldwide",
+    "nativeRegionBg": "Сухи и полусухи региони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 14,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": false,
+    "isToxicToPets": true,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to bright indirect light; at least 4–6 hours daily.",
+        "bg": "Пълно слънце до ярка непряка светлина; поне 4–6 часа дневно."
+      },
+      "watering": {
+        "en": "Water every 10–14 days; let soil dry completely between waterings.",
+        "bg": "Поливайте на 10–14 дни; оставете почвата да изсъхне напълно между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers low humidity (20–40%); good air circulation essential.",
+        "bg": "Предпочита ниска влажност (20–40%); добра циркулация на въздуха е важна."
+      },
+      "temperature": {
+        "en": "Ideal 15–30 °C; most tolerate brief dips to 5 °C.",
+        "bg": "Идеална 15–30 °C; повечето понасят кратко захлаждане до 5 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize once a month in spring and summer with diluted cactus fertilizer.",
+        "bg": "Торете веднъж месечно през пролетта и лятото с разреден кактусов тор."
+      },
+      "toxicity": {
+        "en": "Toxic to cats and dogs — keep out of reach.",
+        "bg": "Токсично за котки и кучета — пазете от домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Aloe ferox",
+    "imageUrl": "https://static.inaturalist.org/photos/372083060/medium.jpeg",
+    "commonNameEn": "Cape Aloe",
+    "commonNameBg": "Але",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Arid and semi-arid regions worldwide",
+    "nativeRegionBg": "Сухи и полусухи региони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 14,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": false,
+    "isToxicToPets": true,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to bright indirect light; at least 4–6 hours daily.",
+        "bg": "Пълно слънце до ярка непряка светлина; поне 4–6 часа дневно."
+      },
+      "watering": {
+        "en": "Water every 10–14 days; let soil dry completely between waterings.",
+        "bg": "Поливайте на 10–14 дни; оставете почвата да изсъхне напълно между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers low humidity (20–40%); good air circulation essential.",
+        "bg": "Предпочита ниска влажност (20–40%); добра циркулация на въздуха е важна."
+      },
+      "temperature": {
+        "en": "Ideal 15–30 °C; most tolerate brief dips to 5 °C.",
+        "bg": "Идеална 15–30 °C; повечето понасят кратко захлаждане до 5 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize once a month in spring and summer with diluted cactus fertilizer.",
+        "bg": "Торете веднъж месечно през пролетта и лятото с разреден кактусов тор."
+      },
+      "toxicity": {
+        "en": "Toxic to cats and dogs — keep out of reach.",
+        "bg": "Токсично за котки и кучета — пазете от домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Aloe striata",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/16076666/medium.jpg",
+    "commonNameEn": "Coral Aloe",
+    "commonNameBg": "Але",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Arid and semi-arid regions worldwide",
+    "nativeRegionBg": "Сухи и полусухи региони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 14,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": false,
+    "isToxicToPets": true,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to bright indirect light; at least 4–6 hours daily.",
+        "bg": "Пълно слънце до ярка непряка светлина; поне 4–6 часа дневно."
+      },
+      "watering": {
+        "en": "Water every 10–14 days; let soil dry completely between waterings.",
+        "bg": "Поливайте на 10–14 дни; оставете почвата да изсъхне напълно между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers low humidity (20–40%); good air circulation essential.",
+        "bg": "Предпочита ниска влажност (20–40%); добра циркулация на въздуха е важна."
+      },
+      "temperature": {
+        "en": "Ideal 15–30 °C; most tolerate brief dips to 5 °C.",
+        "bg": "Идеална 15–30 °C; повечето понасят кратко захлаждане до 5 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize once a month in spring and summer with diluted cactus fertilizer.",
+        "bg": "Торете веднъж месечно през пролетта и лятото с разреден кактусов тор."
+      },
+      "toxicity": {
+        "en": "Toxic to cats and dogs — keep out of reach.",
+        "bg": "Токсично за котки и кучета — пазете от домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Echeveria elegans",
+    "imageUrl": "https://static.inaturalist.org/photos/14385495/medium.jpeg",
+    "commonNameEn": "Mexican Snowball Echeveria",
+    "commonNameBg": "елегантна ешеверия",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Arid and semi-arid regions worldwide",
+    "nativeRegionBg": "Сухи и полусухи региони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 14,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": false,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to bright indirect light; at least 4–6 hours daily.",
+        "bg": "Пълно слънце до ярка непряка светлина; поне 4–6 часа дневно."
+      },
+      "watering": {
+        "en": "Water every 10–14 days; let soil dry completely between waterings.",
+        "bg": "Поливайте на 10–14 дни; оставете почвата да изсъхне напълно между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers low humidity (20–40%); good air circulation essential.",
+        "bg": "Предпочита ниска влажност (20–40%); добра циркулация на въздуха е важна."
+      },
+      "temperature": {
+        "en": "Ideal 15–30 °C; most tolerate brief dips to 5 °C.",
+        "bg": "Идеална 15–30 °C; повечето понасят кратко захлаждане до 5 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize once a month in spring and summer with diluted cactus fertilizer.",
+        "bg": "Торете веднъж месечно през пролетта и лятото с разреден кактусов тор."
+      },
+      "toxicity": {
+        "en": "Non-toxic to pets; safe around cats and dogs.",
+        "bg": "Нетоксично за домашни любимци; безопасно около котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Echeveria agavoides",
+    "imageUrl": "https://static.inaturalist.org/photos/140331974/medium.jpeg",
+    "commonNameEn": "Molded Wax Echeveria",
+    "commonNameBg": "Ехевериа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Arid and semi-arid regions worldwide",
+    "nativeRegionBg": "Сухи и полусухи региони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 14,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": false,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to bright indirect light; at least 4–6 hours daily.",
+        "bg": "Пълно слънце до ярка непряка светлина; поне 4–6 часа дневно."
+      },
+      "watering": {
+        "en": "Water every 10–14 days; let soil dry completely between waterings.",
+        "bg": "Поливайте на 10–14 дни; оставете почвата да изсъхне напълно между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers low humidity (20–40%); good air circulation essential.",
+        "bg": "Предпочита ниска влажност (20–40%); добра циркулация на въздуха е важна."
+      },
+      "temperature": {
+        "en": "Ideal 15–30 °C; most tolerate brief dips to 5 °C.",
+        "bg": "Идеална 15–30 °C; повечето понасят кратко захлаждане до 5 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize once a month in spring and summer with diluted cactus fertilizer.",
+        "bg": "Торете веднъж месечно през пролетта и лятото с разреден кактусов тор."
+      },
+      "toxicity": {
+        "en": "Non-toxic to pets; safe around cats and dogs.",
+        "bg": "Нетоксично за домашни любимци; безопасно около котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Echeveria pulvinata",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/3052771/medium.jpg",
+    "commonNameEn": "Chenille Echeveria",
+    "commonNameBg": "Ехевериа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Arid and semi-arid regions worldwide",
+    "nativeRegionBg": "Сухи и полусухи региони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 14,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": false,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to bright indirect light; at least 4–6 hours daily.",
+        "bg": "Пълно слънце до ярка непряка светлина; поне 4–6 часа дневно."
+      },
+      "watering": {
+        "en": "Water every 10–14 days; let soil dry completely between waterings.",
+        "bg": "Поливайте на 10–14 дни; оставете почвата да изсъхне напълно между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers low humidity (20–40%); good air circulation essential.",
+        "bg": "Предпочита ниска влажност (20–40%); добра циркулация на въздуха е важна."
+      },
+      "temperature": {
+        "en": "Ideal 15–30 °C; most tolerate brief dips to 5 °C.",
+        "bg": "Идеална 15–30 °C; повечето понасят кратко захлаждане до 5 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize once a month in spring and summer with diluted cactus fertilizer.",
+        "bg": "Торете веднъж месечно през пролетта и лятото с разреден кактусов тор."
+      },
+      "toxicity": {
+        "en": "Non-toxic to pets; safe around cats and dogs.",
+        "bg": "Нетоксично за домашни любимци; безопасно около котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Echeveria subsessilis",
+    "imageUrl": "https://static.inaturalist.org/photos/242063006/medium.jpeg",
+    "commonNameEn": "Morning Beauty Echeveria",
+    "commonNameBg": "Ехевериа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Arid and semi-arid regions worldwide",
+    "nativeRegionBg": "Сухи и полусухи региони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 14,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": false,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to bright indirect light; at least 4–6 hours daily.",
+        "bg": "Пълно слънце до ярка непряка светлина; поне 4–6 часа дневно."
+      },
+      "watering": {
+        "en": "Water every 10–14 days; let soil dry completely between waterings.",
+        "bg": "Поливайте на 10–14 дни; оставете почвата да изсъхне напълно между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers low humidity (20–40%); good air circulation essential.",
+        "bg": "Предпочита ниска влажност (20–40%); добра циркулация на въздуха е важна."
+      },
+      "temperature": {
+        "en": "Ideal 15–30 °C; most tolerate brief dips to 5 °C.",
+        "bg": "Идеална 15–30 °C; повечето понасят кратко захлаждане до 5 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize once a month in spring and summer with diluted cactus fertilizer.",
+        "bg": "Торете веднъж месечно през пролетта и лятото с разреден кактусов тор."
+      },
+      "toxicity": {
+        "en": "Non-toxic to pets; safe around cats and dogs.",
+        "bg": "Нетоксично за домашни любимци; безопасно около котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Echeveria imbricata",
+    "imageUrl": null,
+    "commonNameEn": "Blue Rose Echeveria",
+    "commonNameBg": "Ехевериа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Arid and semi-arid regions worldwide",
+    "nativeRegionBg": "Сухи и полусухи региони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 14,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": false,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to bright indirect light; at least 4–6 hours daily.",
+        "bg": "Пълно слънце до ярка непряка светлина; поне 4–6 часа дневно."
+      },
+      "watering": {
+        "en": "Water every 10–14 days; let soil dry completely between waterings.",
+        "bg": "Поливайте на 10–14 дни; оставете почвата да изсъхне напълно между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers low humidity (20–40%); good air circulation essential.",
+        "bg": "Предпочита ниска влажност (20–40%); добра циркулация на въздуха е важна."
+      },
+      "temperature": {
+        "en": "Ideal 15–30 °C; most tolerate brief dips to 5 °C.",
+        "bg": "Идеална 15–30 °C; повечето понасят кратко захлаждане до 5 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize once a month in spring and summer with diluted cactus fertilizer.",
+        "bg": "Торете веднъж месечно през пролетта и лятото с разреден кактусов тор."
+      },
+      "toxicity": {
+        "en": "Non-toxic to pets; safe around cats and dogs.",
+        "bg": "Нетоксично за домашни любимци; безопасно около котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Sedum morganianum",
+    "imageUrl": "https://static.inaturalist.org/photos/35170913/medium.jpeg",
+    "commonNameEn": "Burro's Tail Sedum",
+    "commonNameBg": "Седум",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Arid and semi-arid regions worldwide",
+    "nativeRegionBg": "Сухи и полусухи региони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 14,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": false,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to bright indirect light; at least 4–6 hours daily.",
+        "bg": "Пълно слънце до ярка непряка светлина; поне 4–6 часа дневно."
+      },
+      "watering": {
+        "en": "Water every 10–14 days; let soil dry completely between waterings.",
+        "bg": "Поливайте на 10–14 дни; оставете почвата да изсъхне напълно между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers low humidity (20–40%); good air circulation essential.",
+        "bg": "Предпочита ниска влажност (20–40%); добра циркулация на въздуха е важна."
+      },
+      "temperature": {
+        "en": "Ideal 15–30 °C; most tolerate brief dips to 5 °C.",
+        "bg": "Идеална 15–30 °C; повечето понасят кратко захлаждане до 5 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize once a month in spring and summer with diluted cactus fertilizer.",
+        "bg": "Торете веднъж месечно през пролетта и лятото с разреден кактусов тор."
+      },
+      "toxicity": {
+        "en": "Non-toxic to pets; safe around cats and dogs.",
+        "bg": "Нетоксично за домашни любимци; безопасно около котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Sedum rubrotinctum",
+    "imageUrl": null,
+    "commonNameEn": "Jelly Bean Plant",
+    "commonNameBg": "Седум",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Arid and semi-arid regions worldwide",
+    "nativeRegionBg": "Сухи и полусухи региони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 14,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": false,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to bright indirect light; at least 4–6 hours daily.",
+        "bg": "Пълно слънце до ярка непряка светлина; поне 4–6 часа дневно."
+      },
+      "watering": {
+        "en": "Water every 10–14 days; let soil dry completely between waterings.",
+        "bg": "Поливайте на 10–14 дни; оставете почвата да изсъхне напълно между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers low humidity (20–40%); good air circulation essential.",
+        "bg": "Предпочита ниска влажност (20–40%); добра циркулация на въздуха е важна."
+      },
+      "temperature": {
+        "en": "Ideal 15–30 °C; most tolerate brief dips to 5 °C.",
+        "bg": "Идеална 15–30 °C; повечето понасят кратко захлаждане до 5 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize once a month in spring and summer with diluted cactus fertilizer.",
+        "bg": "Торете веднъж месечно през пролетта и лятото с разреден кактусов тор."
+      },
+      "toxicity": {
+        "en": "Non-toxic to pets; safe around cats and dogs.",
+        "bg": "Нетоксично за домашни любимци; безопасно около котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Sedum acre",
+    "imageUrl": "https://static.inaturalist.org/photos/80435797/medium.jpeg",
+    "commonNameEn": "Golden Moss Stonecrop",
+    "commonNameBg": "лютива тлъстига",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Arid and semi-arid regions worldwide",
+    "nativeRegionBg": "Сухи и полусухи региони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 14,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": false,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to bright indirect light; at least 4–6 hours daily.",
+        "bg": "Пълно слънце до ярка непряка светлина; поне 4–6 часа дневно."
+      },
+      "watering": {
+        "en": "Water every 10–14 days; let soil dry completely between waterings.",
+        "bg": "Поливайте на 10–14 дни; оставете почвата да изсъхне напълно между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers low humidity (20–40%); good air circulation essential.",
+        "bg": "Предпочита ниска влажност (20–40%); добра циркулация на въздуха е важна."
+      },
+      "temperature": {
+        "en": "Ideal 15–30 °C; most tolerate brief dips to 5 °C.",
+        "bg": "Идеална 15–30 °C; повечето понасят кратко захлаждане до 5 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize once a month in spring and summer with diluted cactus fertilizer.",
+        "bg": "Торете веднъж месечно през пролетта и лятото с разреден кактусов тор."
+      },
+      "toxicity": {
+        "en": "Non-toxic to pets; safe around cats and dogs.",
+        "bg": "Нетоксично за домашни любимци; безопасно около котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Sedum spectabile",
+    "imageUrl": null,
+    "commonNameEn": "Showy Stonecrop",
+    "commonNameBg": "Седум",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Arid and semi-arid regions worldwide",
+    "nativeRegionBg": "Сухи и полусухи региони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 14,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": false,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to bright indirect light; at least 4–6 hours daily.",
+        "bg": "Пълно слънце до ярка непряка светлина; поне 4–6 часа дневно."
+      },
+      "watering": {
+        "en": "Water every 10–14 days; let soil dry completely between waterings.",
+        "bg": "Поливайте на 10–14 дни; оставете почвата да изсъхне напълно между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers low humidity (20–40%); good air circulation essential.",
+        "bg": "Предпочита ниска влажност (20–40%); добра циркулация на въздуха е важна."
+      },
+      "temperature": {
+        "en": "Ideal 15–30 °C; most tolerate brief dips to 5 °C.",
+        "bg": "Идеална 15–30 °C; повечето понасят кратко захлаждане до 5 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize once a month in spring and summer with diluted cactus fertilizer.",
+        "bg": "Торете веднъж месечно през пролетта и лятото с разреден кактусов тор."
+      },
+      "toxicity": {
+        "en": "Non-toxic to pets; safe around cats and dogs.",
+        "bg": "Нетоксично за домашни любимци; безопасно около котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Sempervivum tectorum",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/85631937/medium.jpg",
+    "commonNameEn": "Hen and Chicks",
+    "commonNameBg": "покривен дебелец",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Arid and semi-arid regions worldwide",
+    "nativeRegionBg": "Сухи и полусухи региони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 14,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": false,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to bright indirect light; at least 4–6 hours daily.",
+        "bg": "Пълно слънце до ярка непряка светлина; поне 4–6 часа дневно."
+      },
+      "watering": {
+        "en": "Water every 10–14 days; let soil dry completely between waterings.",
+        "bg": "Поливайте на 10–14 дни; оставете почвата да изсъхне напълно между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers low humidity (20–40%); good air circulation essential.",
+        "bg": "Предпочита ниска влажност (20–40%); добра циркулация на въздуха е важна."
+      },
+      "temperature": {
+        "en": "Ideal 15–30 °C; most tolerate brief dips to 5 °C.",
+        "bg": "Идеална 15–30 °C; повечето понасят кратко захлаждане до 5 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize once a month in spring and summer with diluted cactus fertilizer.",
+        "bg": "Торете веднъж месечно през пролетта и лятото с разреден кактусов тор."
+      },
+      "toxicity": {
+        "en": "Non-toxic to pets; safe around cats and dogs.",
+        "bg": "Нетоксично за домашни любимци; безопасно около котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Sempervivum calcareum",
+    "imageUrl": "https://static.inaturalist.org/photos/35181116/medium.jpg",
+    "commonNameEn": "Limestone Houseleek",
+    "commonNameBg": "Семпервивум",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Arid and semi-arid regions worldwide",
+    "nativeRegionBg": "Сухи и полусухи региони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 14,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": false,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to bright indirect light; at least 4–6 hours daily.",
+        "bg": "Пълно слънце до ярка непряка светлина; поне 4–6 часа дневно."
+      },
+      "watering": {
+        "en": "Water every 10–14 days; let soil dry completely between waterings.",
+        "bg": "Поливайте на 10–14 дни; оставете почвата да изсъхне напълно между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers low humidity (20–40%); good air circulation essential.",
+        "bg": "Предпочита ниска влажност (20–40%); добра циркулация на въздуха е важна."
+      },
+      "temperature": {
+        "en": "Ideal 15–30 °C; most tolerate brief dips to 5 °C.",
+        "bg": "Идеална 15–30 °C; повечето понасят кратко захлаждане до 5 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize once a month in spring and summer with diluted cactus fertilizer.",
+        "bg": "Торете веднъж месечно през пролетта и лятото с разреден кактусов тор."
+      },
+      "toxicity": {
+        "en": "Non-toxic to pets; safe around cats and dogs.",
+        "bg": "Нетоксично за домашни любимци; безопасно около котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Sempervivum arachnoideum",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/175030774/medium.jpeg",
+    "commonNameEn": "Cobweb Houseleek",
+    "commonNameBg": "Семпервивум",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Arid and semi-arid regions worldwide",
+    "nativeRegionBg": "Сухи и полусухи региони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 14,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": false,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to bright indirect light; at least 4–6 hours daily.",
+        "bg": "Пълно слънце до ярка непряка светлина; поне 4–6 часа дневно."
+      },
+      "watering": {
+        "en": "Water every 10–14 days; let soil dry completely between waterings.",
+        "bg": "Поливайте на 10–14 дни; оставете почвата да изсъхне напълно между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers low humidity (20–40%); good air circulation essential.",
+        "bg": "Предпочита ниска влажност (20–40%); добра циркулация на въздуха е важна."
+      },
+      "temperature": {
+        "en": "Ideal 15–30 °C; most tolerate brief dips to 5 °C.",
+        "bg": "Идеална 15–30 °C; повечето понасят кратко захлаждане до 5 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize once a month in spring and summer with diluted cactus fertilizer.",
+        "bg": "Торете веднъж месечно през пролетта и лятото с разреден кактусов тор."
+      },
+      "toxicity": {
+        "en": "Non-toxic to pets; safe around cats and dogs.",
+        "bg": "Нетоксично за домашни любимци; безопасно около котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Graptopetalum paraguayense",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/118138316/medium.jpg",
+    "commonNameEn": "Ghost Plant",
+    "commonNameBg": "Граптопеталум",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Arid and semi-arid regions worldwide",
+    "nativeRegionBg": "Сухи и полусухи региони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 14,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": false,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to bright indirect light; at least 4–6 hours daily.",
+        "bg": "Пълно слънце до ярка непряка светлина; поне 4–6 часа дневно."
+      },
+      "watering": {
+        "en": "Water every 10–14 days; let soil dry completely between waterings.",
+        "bg": "Поливайте на 10–14 дни; оставете почвата да изсъхне напълно между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers low humidity (20–40%); good air circulation essential.",
+        "bg": "Предпочита ниска влажност (20–40%); добра циркулация на въздуха е важна."
+      },
+      "temperature": {
+        "en": "Ideal 15–30 °C; most tolerate brief dips to 5 °C.",
+        "bg": "Идеална 15–30 °C; повечето понасят кратко захлаждане до 5 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize once a month in spring and summer with diluted cactus fertilizer.",
+        "bg": "Торете веднъж месечно през пролетта и лятото с разреден кактусов тор."
+      },
+      "toxicity": {
+        "en": "Non-toxic to pets; safe around cats and dogs.",
+        "bg": "Нетоксично за домашни любимци; безопасно около котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Aeonium arboreum",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/60179112/medium.jpg",
+    "commonNameEn": "Tree Aeonium",
+    "commonNameBg": "Еониум",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Arid and semi-arid regions worldwide",
+    "nativeRegionBg": "Сухи и полусухи региони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 14,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to bright indirect light; at least 4–6 hours daily.",
+        "bg": "Пълно слънце до ярка непряка светлина; поне 4–6 часа дневно."
+      },
+      "watering": {
+        "en": "Water every 10–14 days; let soil dry completely between waterings.",
+        "bg": "Поливайте на 10–14 дни; оставете почвата да изсъхне напълно между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers low humidity (20–40%); good air circulation essential.",
+        "bg": "Предпочита ниска влажност (20–40%); добра циркулация на въздуха е важна."
+      },
+      "temperature": {
+        "en": "Ideal 15–30 °C; most tolerate brief dips to 5 °C.",
+        "bg": "Идеална 15–30 °C; повечето понасят кратко захлаждане до 5 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize once a month in spring and summer with diluted cactus fertilizer.",
+        "bg": "Торете веднъж месечно през пролетта и лятото с разреден кактусов тор."
+      },
+      "toxicity": {
+        "en": "Most succulents are non-toxic; check individual species.",
+        "bg": "Повечето сукуленти са безвредни; проверете конкретния вид."
+      }
+    }
+  },
+  {
+    "scientificName": "Aeonium haworthii",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/3958320/medium.JPG",
+    "commonNameEn": "Pinwheel Aeonium",
+    "commonNameBg": "Еониум",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Arid and semi-arid regions worldwide",
+    "nativeRegionBg": "Сухи и полусухи региони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 14,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to bright indirect light; at least 4–6 hours daily.",
+        "bg": "Пълно слънце до ярка непряка светлина; поне 4–6 часа дневно."
+      },
+      "watering": {
+        "en": "Water every 10–14 days; let soil dry completely between waterings.",
+        "bg": "Поливайте на 10–14 дни; оставете почвата да изсъхне напълно между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers low humidity (20–40%); good air circulation essential.",
+        "bg": "Предпочита ниска влажност (20–40%); добра циркулация на въздуха е важна."
+      },
+      "temperature": {
+        "en": "Ideal 15–30 °C; most tolerate brief dips to 5 °C.",
+        "bg": "Идеална 15–30 °C; повечето понасят кратко захлаждане до 5 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize once a month in spring and summer with diluted cactus fertilizer.",
+        "bg": "Торете веднъж месечно през пролетта и лятото с разреден кактусов тор."
+      },
+      "toxicity": {
+        "en": "Most succulents are non-toxic; check individual species.",
+        "bg": "Повечето сукуленти са безвредни; проверете конкретния вид."
+      }
+    }
+  },
+  {
+    "scientificName": "Portulacaria afra",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/15505436/medium.jpg",
+    "commonNameEn": "Elephant Bush",
+    "commonNameBg": "Портулакариа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Arid and semi-arid regions worldwide",
+    "nativeRegionBg": "Сухи и полусухи региони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 14,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to bright indirect light; at least 4–6 hours daily.",
+        "bg": "Пълно слънце до ярка непряка светлина; поне 4–6 часа дневно."
+      },
+      "watering": {
+        "en": "Water every 10–14 days; let soil dry completely between waterings.",
+        "bg": "Поливайте на 10–14 дни; оставете почвата да изсъхне напълно между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers low humidity (20–40%); good air circulation essential.",
+        "bg": "Предпочита ниска влажност (20–40%); добра циркулация на въздуха е важна."
+      },
+      "temperature": {
+        "en": "Ideal 15–30 °C; most tolerate brief dips to 5 °C.",
+        "bg": "Идеална 15–30 °C; повечето понасят кратко захлаждане до 5 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize once a month in spring and summer with diluted cactus fertilizer.",
+        "bg": "Торете веднъж месечно през пролетта и лятото с разреден кактусов тор."
+      },
+      "toxicity": {
+        "en": "Most succulents are non-toxic; check individual species.",
+        "bg": "Повечето сукуленти са безвредни; проверете конкретния вид."
+      }
+    }
+  },
+  {
+    "scientificName": "Crassula ovata",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/39359845/medium.jpeg",
+    "commonNameEn": "Jade Plant",
+    "commonNameBg": "Крассула",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Arid and semi-arid regions worldwide",
+    "nativeRegionBg": "Сухи и полусухи региони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 14,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to bright indirect light; at least 4–6 hours daily.",
+        "bg": "Пълно слънце до ярка непряка светлина; поне 4–6 часа дневно."
+      },
+      "watering": {
+        "en": "Water every 10–14 days; let soil dry completely between waterings.",
+        "bg": "Поливайте на 10–14 дни; оставете почвата да изсъхне напълно между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers low humidity (20–40%); good air circulation essential.",
+        "bg": "Предпочита ниска влажност (20–40%); добра циркулация на въздуха е важна."
+      },
+      "temperature": {
+        "en": "Ideal 15–30 °C; most tolerate brief dips to 5 °C.",
+        "bg": "Идеална 15–30 °C; повечето понасят кратко захлаждане до 5 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize once a month in spring and summer with diluted cactus fertilizer.",
+        "bg": "Торете веднъж месечно през пролетта и лятото с разреден кактусов тор."
+      },
+      "toxicity": {
+        "en": "Most succulents are non-toxic; check individual species.",
+        "bg": "Повечето сукуленти са безвредни; проверете конкретния вид."
+      }
+    }
+  },
+  {
+    "scientificName": "Crassula perforata",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/15819431/medium.jpg",
+    "commonNameEn": "String of Buttons",
+    "commonNameBg": "Крассула",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Arid and semi-arid regions worldwide",
+    "nativeRegionBg": "Сухи и полусухи региони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 14,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to bright indirect light; at least 4–6 hours daily.",
+        "bg": "Пълно слънце до ярка непряка светлина; поне 4–6 часа дневно."
+      },
+      "watering": {
+        "en": "Water every 10–14 days; let soil dry completely between waterings.",
+        "bg": "Поливайте на 10–14 дни; оставете почвата да изсъхне напълно между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers low humidity (20–40%); good air circulation essential.",
+        "bg": "Предпочита ниска влажност (20–40%); добра циркулация на въздуха е важна."
+      },
+      "temperature": {
+        "en": "Ideal 15–30 °C; most tolerate brief dips to 5 °C.",
+        "bg": "Идеална 15–30 °C; повечето понасят кратко захлаждане до 5 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize once a month in spring and summer with diluted cactus fertilizer.",
+        "bg": "Торете веднъж месечно през пролетта и лятото с разреден кактусов тор."
+      },
+      "toxicity": {
+        "en": "Most succulents are non-toxic; check individual species.",
+        "bg": "Повечето сукуленти са безвредни; проверете конкретния вид."
+      }
+    }
+  },
+  {
+    "scientificName": "Crassula muscosa",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/154717643/medium.jpeg",
+    "commonNameEn": "Watch Chain Crassula",
+    "commonNameBg": "Крассула",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Arid and semi-arid regions worldwide",
+    "nativeRegionBg": "Сухи и полусухи региони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 14,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to bright indirect light; at least 4–6 hours daily.",
+        "bg": "Пълно слънце до ярка непряка светлина; поне 4–6 часа дневно."
+      },
+      "watering": {
+        "en": "Water every 10–14 days; let soil dry completely between waterings.",
+        "bg": "Поливайте на 10–14 дни; оставете почвата да изсъхне напълно между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers low humidity (20–40%); good air circulation essential.",
+        "bg": "Предпочита ниска влажност (20–40%); добра циркулация на въздуха е важна."
+      },
+      "temperature": {
+        "en": "Ideal 15–30 °C; most tolerate brief dips to 5 °C.",
+        "bg": "Идеална 15–30 °C; повечето понасят кратко захлаждане до 5 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize once a month in spring and summer with diluted cactus fertilizer.",
+        "bg": "Торете веднъж месечно през пролетта и лятото с разреден кактусов тор."
+      },
+      "toxicity": {
+        "en": "Most succulents are non-toxic; check individual species.",
+        "bg": "Повечето сукуленти са безвредни; проверете конкретния вид."
+      }
+    }
+  },
+  {
+    "scientificName": "Crassula tetragona",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/19228835/medium.jpg",
+    "commonNameEn": "Miniature Pine Tree Crassula",
+    "commonNameBg": "Крассула",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Arid and semi-arid regions worldwide",
+    "nativeRegionBg": "Сухи и полусухи региони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 14,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to bright indirect light; at least 4–6 hours daily.",
+        "bg": "Пълно слънце до ярка непряка светлина; поне 4–6 часа дневно."
+      },
+      "watering": {
+        "en": "Water every 10–14 days; let soil dry completely between waterings.",
+        "bg": "Поливайте на 10–14 дни; оставете почвата да изсъхне напълно между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers low humidity (20–40%); good air circulation essential.",
+        "bg": "Предпочита ниска влажност (20–40%); добра циркулация на въздуха е важна."
+      },
+      "temperature": {
+        "en": "Ideal 15–30 °C; most tolerate brief dips to 5 °C.",
+        "bg": "Идеална 15–30 °C; повечето понасят кратко захлаждане до 5 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize once a month in spring and summer with diluted cactus fertilizer.",
+        "bg": "Торете веднъж месечно през пролетта и лятото с разреден кактусов тор."
+      },
+      "toxicity": {
+        "en": "Most succulents are non-toxic; check individual species.",
+        "bg": "Повечето сукуленти са безвредни; проверете конкретния вид."
+      }
+    }
+  },
+  {
+    "scientificName": "Kalanchoe blossfeldiana",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/60054754/medium.jpeg",
+    "commonNameEn": "Flaming Katy",
+    "commonNameBg": "Каланхе",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Arid and semi-arid regions worldwide",
+    "nativeRegionBg": "Сухи и полусухи региони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 14,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to bright indirect light; at least 4–6 hours daily.",
+        "bg": "Пълно слънце до ярка непряка светлина; поне 4–6 часа дневно."
+      },
+      "watering": {
+        "en": "Water every 10–14 days; let soil dry completely between waterings.",
+        "bg": "Поливайте на 10–14 дни; оставете почвата да изсъхне напълно между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers low humidity (20–40%); good air circulation essential.",
+        "bg": "Предпочита ниска влажност (20–40%); добра циркулация на въздуха е важна."
+      },
+      "temperature": {
+        "en": "Ideal 15–30 °C; most tolerate brief dips to 5 °C.",
+        "bg": "Идеална 15–30 °C; повечето понасят кратко захлаждане до 5 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize once a month in spring and summer with diluted cactus fertilizer.",
+        "bg": "Торете веднъж месечно през пролетта и лятото с разреден кактусов тор."
+      },
+      "toxicity": {
+        "en": "Most succulents are non-toxic; check individual species.",
+        "bg": "Повечето сукуленти са безвредни; проверете конкретния вид."
+      }
+    }
+  },
+  {
+    "scientificName": "Kalanchoe tomentosa",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/110757052/medium.jpeg",
+    "commonNameEn": "Panda Plant",
+    "commonNameBg": "Каланхе",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Arid and semi-arid regions worldwide",
+    "nativeRegionBg": "Сухи и полусухи региони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 14,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to bright indirect light; at least 4–6 hours daily.",
+        "bg": "Пълно слънце до ярка непряка светлина; поне 4–6 часа дневно."
+      },
+      "watering": {
+        "en": "Water every 10–14 days; let soil dry completely between waterings.",
+        "bg": "Поливайте на 10–14 дни; оставете почвата да изсъхне напълно между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers low humidity (20–40%); good air circulation essential.",
+        "bg": "Предпочита ниска влажност (20–40%); добра циркулация на въздуха е важна."
+      },
+      "temperature": {
+        "en": "Ideal 15–30 °C; most tolerate brief dips to 5 °C.",
+        "bg": "Идеална 15–30 °C; повечето понасят кратко захлаждане до 5 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize once a month in spring and summer with diluted cactus fertilizer.",
+        "bg": "Торете веднъж месечно през пролетта и лятото с разреден кактусов тор."
+      },
+      "toxicity": {
+        "en": "Most succulents are non-toxic; check individual species.",
+        "bg": "Повечето сукуленти са безвредни; проверете конкретния вид."
+      }
+    }
+  },
+  {
+    "scientificName": "Kalanchoe daigremontiana",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/159760909/medium.jpeg",
+    "commonNameEn": "Mother of Thousands",
+    "commonNameBg": "Каланхе",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Arid and semi-arid regions worldwide",
+    "nativeRegionBg": "Сухи и полусухи региони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 14,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to bright indirect light; at least 4–6 hours daily.",
+        "bg": "Пълно слънце до ярка непряка светлина; поне 4–6 часа дневно."
+      },
+      "watering": {
+        "en": "Water every 10–14 days; let soil dry completely between waterings.",
+        "bg": "Поливайте на 10–14 дни; оставете почвата да изсъхне напълно между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers low humidity (20–40%); good air circulation essential.",
+        "bg": "Предпочита ниска влажност (20–40%); добра циркулация на въздуха е важна."
+      },
+      "temperature": {
+        "en": "Ideal 15–30 °C; most tolerate brief dips to 5 °C.",
+        "bg": "Идеална 15–30 °C; повечето понасят кратко захлаждане до 5 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize once a month in spring and summer with diluted cactus fertilizer.",
+        "bg": "Торете веднъж месечно през пролетта и лятото с разреден кактусов тор."
+      },
+      "toxicity": {
+        "en": "Most succulents are non-toxic; check individual species.",
+        "bg": "Повечето сукуленти са безвредни; проверете конкретния вид."
+      }
+    }
+  },
+  {
+    "scientificName": "Kalanchoe thyrsiflora",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/330230898/medium.jpg",
+    "commonNameEn": "Flapjack Kalanchoe",
+    "commonNameBg": "Каланхе",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Arid and semi-arid regions worldwide",
+    "nativeRegionBg": "Сухи и полусухи региони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 14,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to bright indirect light; at least 4–6 hours daily.",
+        "bg": "Пълно слънце до ярка непряка светлина; поне 4–6 часа дневно."
+      },
+      "watering": {
+        "en": "Water every 10–14 days; let soil dry completely between waterings.",
+        "bg": "Поливайте на 10–14 дни; оставете почвата да изсъхне напълно между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers low humidity (20–40%); good air circulation essential.",
+        "bg": "Предпочита ниска влажност (20–40%); добра циркулация на въздуха е важна."
+      },
+      "temperature": {
+        "en": "Ideal 15–30 °C; most tolerate brief dips to 5 °C.",
+        "bg": "Идеална 15–30 °C; повечето понасят кратко захлаждане до 5 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize once a month in spring and summer with diluted cactus fertilizer.",
+        "bg": "Торете веднъж месечно през пролетта и лятото с разреден кактусов тор."
+      },
+      "toxicity": {
+        "en": "Most succulents are non-toxic; check individual species.",
+        "bg": "Повечето сукуленти са безвредни; проверете конкретния вид."
+      }
+    }
+  },
+  {
+    "scientificName": "Lithops fulviceps",
+    "imageUrl": null,
+    "commonNameEn": "Living Stones",
+    "commonNameBg": "Литопс",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Arid and semi-arid regions worldwide",
+    "nativeRegionBg": "Сухи и полусухи региони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 14,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to bright indirect light; at least 4–6 hours daily.",
+        "bg": "Пълно слънце до ярка непряка светлина; поне 4–6 часа дневно."
+      },
+      "watering": {
+        "en": "Water every 10–14 days; let soil dry completely between waterings.",
+        "bg": "Поливайте на 10–14 дни; оставете почвата да изсъхне напълно между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers low humidity (20–40%); good air circulation essential.",
+        "bg": "Предпочита ниска влажност (20–40%); добра циркулация на въздуха е важна."
+      },
+      "temperature": {
+        "en": "Ideal 15–30 °C; most tolerate brief dips to 5 °C.",
+        "bg": "Идеална 15–30 °C; повечето понасят кратко захлаждане до 5 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize once a month in spring and summer with diluted cactus fertilizer.",
+        "bg": "Торете веднъж месечно през пролетта и лятото с разреден кактусов тор."
+      },
+      "toxicity": {
+        "en": "Most succulents are non-toxic; check individual species.",
+        "bg": "Повечето сукуленти са безвредни; проверете конкретния вид."
+      }
+    }
+  },
+  {
+    "scientificName": "Conophytum bilobum",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/385224332/medium.jpg",
+    "commonNameEn": "Cone Plant",
+    "commonNameBg": "Конофитум",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Arid and semi-arid regions worldwide",
+    "nativeRegionBg": "Сухи и полусухи региони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 14,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to bright indirect light; at least 4–6 hours daily.",
+        "bg": "Пълно слънце до ярка непряка светлина; поне 4–6 часа дневно."
+      },
+      "watering": {
+        "en": "Water every 10–14 days; let soil dry completely between waterings.",
+        "bg": "Поливайте на 10–14 дни; оставете почвата да изсъхне напълно между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers low humidity (20–40%); good air circulation essential.",
+        "bg": "Предпочита ниска влажност (20–40%); добра циркулация на въздуха е важна."
+      },
+      "temperature": {
+        "en": "Ideal 15–30 °C; most tolerate brief dips to 5 °C.",
+        "bg": "Идеална 15–30 °C; повечето понасят кратко захлаждане до 5 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize once a month in spring and summer with diluted cactus fertilizer.",
+        "bg": "Торете веднъж месечно през пролетта и лятото с разреден кактусов тор."
+      },
+      "toxicity": {
+        "en": "Most succulents are non-toxic; check individual species.",
+        "bg": "Повечето сукуленти са безвредни; проверете конкретния вид."
+      }
+    }
+  },
+  {
+    "scientificName": "Stapelia gigantea",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/6237876/medium.jpg",
+    "commonNameEn": "Zulu Giant",
+    "commonNameBg": "Стапелиа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Arid and semi-arid regions worldwide",
+    "nativeRegionBg": "Сухи и полусухи региони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 14,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to bright indirect light; at least 4–6 hours daily.",
+        "bg": "Пълно слънце до ярка непряка светлина; поне 4–6 часа дневно."
+      },
+      "watering": {
+        "en": "Water every 10–14 days; let soil dry completely between waterings.",
+        "bg": "Поливайте на 10–14 дни; оставете почвата да изсъхне напълно между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers low humidity (20–40%); good air circulation essential.",
+        "bg": "Предпочита ниска влажност (20–40%); добра циркулация на въздуха е важна."
+      },
+      "temperature": {
+        "en": "Ideal 15–30 °C; most tolerate brief dips to 5 °C.",
+        "bg": "Идеална 15–30 °C; повечето понасят кратко захлаждане до 5 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize once a month in spring and summer with diluted cactus fertilizer.",
+        "bg": "Торете веднъж месечно през пролетта и лятото с разреден кактусов тор."
+      },
+      "toxicity": {
+        "en": "Most succulents are non-toxic; check individual species.",
+        "bg": "Повечето сукуленти са безвредни; проверете конкретния вид."
+      }
+    }
+  },
+  {
+    "scientificName": "Adenium obesum",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/369479493/medium.jpeg",
+    "commonNameEn": "Desert Rose",
+    "commonNameBg": "пустинна роза",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Apocynaceae",
+    "nativeRegionEn": "Africa and Arabian Peninsula",
+    "nativeRegionBg": "Африка и Арабският полуостров",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 14,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": false,
+    "isToxicToPets": true,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; minimum 6 hours of direct sunlight daily.",
+        "bg": "Пълно слънце; минимум 6 часа пряка слънчева светлина дневно."
+      },
+      "watering": {
+        "en": "Water every 10–14 days; let soil dry out completely.",
+        "bg": "Поливайте на 10–14 дни; оставете почвата да изсъхне напълно."
+      },
+      "humidity": {
+        "en": "Prefers dry conditions; avoid wetting the foliage.",
+        "bg": "Предпочита сухи условия; избягвайте намокряне на листата."
+      },
+      "temperature": {
+        "en": "Keep above 10 °C; ideal 20–35 °C.",
+        "bg": "Дръжте над 10 °C; идеална 20–35 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 2 weeks during spring and summer.",
+        "bg": "Торете на 2 седмици през пролетта и лятото."
+      },
+      "toxicity": {
+        "en": "Toxic to cats and dogs — keep out of reach.",
+        "bg": "Токсично за котки и кучета — пазете от домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Euphorbia milii",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/293971347/medium.jpeg",
+    "commonNameEn": "Crown of Thorns",
+    "commonNameBg": "христов венец",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Arid and semi-arid regions worldwide",
+    "nativeRegionBg": "Сухи и полусухи региони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 14,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": false,
+    "isToxicToPets": true,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to bright indirect light; at least 4–6 hours daily.",
+        "bg": "Пълно слънце до ярка непряка светлина; поне 4–6 часа дневно."
+      },
+      "watering": {
+        "en": "Water every 10–14 days; let soil dry completely between waterings.",
+        "bg": "Поливайте на 10–14 дни; оставете почвата да изсъхне напълно между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers low humidity (20–40%); good air circulation essential.",
+        "bg": "Предпочита ниска влажност (20–40%); добра циркулация на въздуха е важна."
+      },
+      "temperature": {
+        "en": "Ideal 15–30 °C; most tolerate brief dips to 5 °C.",
+        "bg": "Идеална 15–30 °C; повечето понасят кратко захлаждане до 5 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize once a month in spring and summer with diluted cactus fertilizer.",
+        "bg": "Торете веднъж месечно през пролетта и лятото с разреден кактусов тор."
+      },
+      "toxicity": {
+        "en": "Toxic to cats and dogs — keep out of reach.",
+        "bg": "Токсично за котки и кучета — пазете от домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Euphorbia trigona",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/124102325/medium.jpeg",
+    "commonNameEn": "African Milk Tree",
+    "commonNameBg": "триъгълна млечка",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Arid and semi-arid regions worldwide",
+    "nativeRegionBg": "Сухи и полусухи региони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 14,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": false,
+    "isToxicToPets": true,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to bright indirect light; at least 4–6 hours daily.",
+        "bg": "Пълно слънце до ярка непряка светлина; поне 4–6 часа дневно."
+      },
+      "watering": {
+        "en": "Water every 10–14 days; let soil dry completely between waterings.",
+        "bg": "Поливайте на 10–14 дни; оставете почвата да изсъхне напълно между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers low humidity (20–40%); good air circulation essential.",
+        "bg": "Предпочита ниска влажност (20–40%); добра циркулация на въздуха е важна."
+      },
+      "temperature": {
+        "en": "Ideal 15–30 °C; most tolerate brief dips to 5 °C.",
+        "bg": "Идеална 15–30 °C; повечето понасят кратко захлаждане до 5 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize once a month in spring and summer with diluted cactus fertilizer.",
+        "bg": "Торете веднъж месечно през пролетта и лятото с разреден кактусов тор."
+      },
+      "toxicity": {
+        "en": "Toxic to cats and dogs — keep out of reach.",
+        "bg": "Токсично за котки и кучета — пазете от домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Euphorbia tirucalli",
+    "imageUrl": "https://static.inaturalist.org/photos/325352497/medium.jpeg",
+    "commonNameEn": "Pencil Cactus",
+    "commonNameBg": "Еуфорбиа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Arid and semi-arid regions worldwide",
+    "nativeRegionBg": "Сухи и полусухи региони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 14,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": false,
+    "isToxicToPets": true,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to bright indirect light; at least 4–6 hours daily.",
+        "bg": "Пълно слънце до ярка непряка светлина; поне 4–6 часа дневно."
+      },
+      "watering": {
+        "en": "Water every 10–14 days; let soil dry completely between waterings.",
+        "bg": "Поливайте на 10–14 дни; оставете почвата да изсъхне напълно между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers low humidity (20–40%); good air circulation essential.",
+        "bg": "Предпочита ниска влажност (20–40%); добра циркулация на въздуха е важна."
+      },
+      "temperature": {
+        "en": "Ideal 15–30 °C; most tolerate brief dips to 5 °C.",
+        "bg": "Идеална 15–30 °C; повечето понасят кратко захлаждане до 5 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize once a month in spring and summer with diluted cactus fertilizer.",
+        "bg": "Торете веднъж месечно през пролетта и лятото с разреден кактусов тор."
+      },
+      "toxicity": {
+        "en": "Toxic to cats and dogs — keep out of reach.",
+        "bg": "Токсично за котки и кучета — пазете от домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Dudleya brittonii",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/275160762/medium.jpeg",
+    "commonNameEn": "Giant Chalk Dudleya",
+    "commonNameBg": "Дудлеиа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Arid and semi-arid regions worldwide",
+    "nativeRegionBg": "Сухи и полусухи региони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 14,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to bright indirect light; at least 4–6 hours daily.",
+        "bg": "Пълно слънце до ярка непряка светлина; поне 4–6 часа дневно."
+      },
+      "watering": {
+        "en": "Water every 10–14 days; let soil dry completely between waterings.",
+        "bg": "Поливайте на 10–14 дни; оставете почвата да изсъхне напълно между поливанията."
+      },
+      "humidity": {
+        "en": "Prefers low humidity (20–40%); good air circulation essential.",
+        "bg": "Предпочита ниска влажност (20–40%); добра циркулация на въздуха е важна."
+      },
+      "temperature": {
+        "en": "Ideal 15–30 °C; most tolerate brief dips to 5 °C.",
+        "bg": "Идеална 15–30 °C; повечето понасят кратко захлаждане до 5 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize once a month in spring and summer with diluted cactus fertilizer.",
+        "bg": "Торете веднъж месечно през пролетта и лятото с разреден кактусов тор."
+      },
+      "toxicity": {
+        "en": "Most succulents are non-toxic; check individual species.",
+        "bg": "Повечето сукуленти са безвредни; проверете конкретния вид."
+      }
+    }
+  },
+  {
+    "scientificName": "Opuntia microdasys",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/11888385/medium.jpg",
+    "commonNameEn": "Bunny Ear Cactus",
+    "commonNameBg": "Опунтиа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Cactaceae",
+    "nativeRegionEn": "Americas, primarily arid and semi-arid regions",
+    "nativeRegionBg": "Америка, предимно сухи и полусухи региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 21,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; place in the sunniest spot available.",
+        "bg": "Пълно слънце; поставете на най-слънчевото място."
+      },
+      "watering": {
+        "en": "Water every 2–3 weeks in summer; almost no water in winter.",
+        "bg": "Поливайте на 2–3 седмици през лятото; почти без вода през зимата."
+      },
+      "humidity": {
+        "en": "Prefers very low humidity; excellent drainage essential.",
+        "bg": "Предпочита много ниска влажност; отличен дренаж е задължителен."
+      },
+      "temperature": {
+        "en": "Ideal 18–35 °C in summer; cool 5–15 °C in winter encourages flowering.",
+        "bg": "Идеална 18–35 °C през лятото; хладно 5–15 °C през зимата насърчава цъфтежа."
+      },
+      "fertilizer": {
+        "en": "Fertilize monthly in spring and summer with cactus fertilizer.",
+        "bg": "Торете месечно през пролетта и лятото с кактусов тор."
+      },
+      "toxicity": {
+        "en": "Generally non-toxic; spines pose a physical hazard.",
+        "bg": "Обикновено нетоксичен; бодлите са физическа опасност."
+      }
+    }
+  },
+  {
+    "scientificName": "Opuntia ficus-indica",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/471957144/medium.jpg",
+    "commonNameEn": "Prickly Pear Cactus",
+    "commonNameBg": "Опунтиа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Cactaceae",
+    "nativeRegionEn": "Americas, primarily arid and semi-arid regions",
+    "nativeRegionBg": "Америка, предимно сухи и полусухи региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 21,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; place in the sunniest spot available.",
+        "bg": "Пълно слънце; поставете на най-слънчевото място."
+      },
+      "watering": {
+        "en": "Water every 2–3 weeks in summer; almost no water in winter.",
+        "bg": "Поливайте на 2–3 седмици през лятото; почти без вода през зимата."
+      },
+      "humidity": {
+        "en": "Prefers very low humidity; excellent drainage essential.",
+        "bg": "Предпочита много ниска влажност; отличен дренаж е задължителен."
+      },
+      "temperature": {
+        "en": "Ideal 18–35 °C in summer; cool 5–15 °C in winter encourages flowering.",
+        "bg": "Идеална 18–35 °C през лятото; хладно 5–15 °C през зимата насърчава цъфтежа."
+      },
+      "fertilizer": {
+        "en": "Fertilize monthly in spring and summer with cactus fertilizer.",
+        "bg": "Торете месечно през пролетта и лятото с кактусов тор."
+      },
+      "toxicity": {
+        "en": "Generally non-toxic; spines pose a physical hazard.",
+        "bg": "Обикновено нетоксичен; бодлите са физическа опасност."
+      }
+    }
+  },
+  {
+    "scientificName": "Cereus hexagonus",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/8695720/medium.jpg",
+    "commonNameEn": "Column Cactus",
+    "commonNameBg": "Кереус",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Cactaceae",
+    "nativeRegionEn": "Americas, primarily arid and semi-arid regions",
+    "nativeRegionBg": "Америка, предимно сухи и полусухи региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 21,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; place in the sunniest spot available.",
+        "bg": "Пълно слънце; поставете на най-слънчевото място."
+      },
+      "watering": {
+        "en": "Water every 2–3 weeks in summer; almost no water in winter.",
+        "bg": "Поливайте на 2–3 седмици през лятото; почти без вода през зимата."
+      },
+      "humidity": {
+        "en": "Prefers very low humidity; excellent drainage essential.",
+        "bg": "Предпочита много ниска влажност; отличен дренаж е задължителен."
+      },
+      "temperature": {
+        "en": "Ideal 18–35 °C in summer; cool 5–15 °C in winter encourages flowering.",
+        "bg": "Идеална 18–35 °C през лятото; хладно 5–15 °C през зимата насърчава цъфтежа."
+      },
+      "fertilizer": {
+        "en": "Fertilize monthly in spring and summer with cactus fertilizer.",
+        "bg": "Торете месечно през пролетта и лятото с кактусов тор."
+      },
+      "toxicity": {
+        "en": "Generally non-toxic; spines pose a physical hazard.",
+        "bg": "Обикновено нетоксичен; бодлите са физическа опасност."
+      }
+    }
+  },
+  {
+    "scientificName": "Cereus peruvianus",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/47343249/medium.jpeg",
+    "commonNameEn": "Peruvian Apple Cactus",
+    "commonNameBg": "Кереус",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Cactaceae",
+    "nativeRegionEn": "Americas, primarily arid and semi-arid regions",
+    "nativeRegionBg": "Америка, предимно сухи и полусухи региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 21,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; place in the sunniest spot available.",
+        "bg": "Пълно слънце; поставете на най-слънчевото място."
+      },
+      "watering": {
+        "en": "Water every 2–3 weeks in summer; almost no water in winter.",
+        "bg": "Поливайте на 2–3 седмици през лятото; почти без вода през зимата."
+      },
+      "humidity": {
+        "en": "Prefers very low humidity; excellent drainage essential.",
+        "bg": "Предпочита много ниска влажност; отличен дренаж е задължителен."
+      },
+      "temperature": {
+        "en": "Ideal 18–35 °C in summer; cool 5–15 °C in winter encourages flowering.",
+        "bg": "Идеална 18–35 °C през лятото; хладно 5–15 °C през зимата насърчава цъфтежа."
+      },
+      "fertilizer": {
+        "en": "Fertilize monthly in spring and summer with cactus fertilizer.",
+        "bg": "Торете месечно през пролетта и лятото с кактусов тор."
+      },
+      "toxicity": {
+        "en": "Generally non-toxic; spines pose a physical hazard.",
+        "bg": "Обикновено нетоксичен; бодлите са физическа опасност."
+      }
+    }
+  },
+  {
+    "scientificName": "Echinopsis tubiflora",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/102333203/medium.jpg",
+    "commonNameEn": "Torch Cactus",
+    "commonNameBg": "Ехинопсис",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Cactaceae",
+    "nativeRegionEn": "Americas, primarily arid and semi-arid regions",
+    "nativeRegionBg": "Америка, предимно сухи и полусухи региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 21,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; place in the sunniest spot available.",
+        "bg": "Пълно слънце; поставете на най-слънчевото място."
+      },
+      "watering": {
+        "en": "Water every 2–3 weeks in summer; almost no water in winter.",
+        "bg": "Поливайте на 2–3 седмици през лятото; почти без вода през зимата."
+      },
+      "humidity": {
+        "en": "Prefers very low humidity; excellent drainage essential.",
+        "bg": "Предпочита много ниска влажност; отличен дренаж е задължителен."
+      },
+      "temperature": {
+        "en": "Ideal 18–35 °C in summer; cool 5–15 °C in winter encourages flowering.",
+        "bg": "Идеална 18–35 °C през лятото; хладно 5–15 °C през зимата насърчава цъфтежа."
+      },
+      "fertilizer": {
+        "en": "Fertilize monthly in spring and summer with cactus fertilizer.",
+        "bg": "Торете месечно през пролетта и лятото с кактусов тор."
+      },
+      "toxicity": {
+        "en": "Generally non-toxic; spines pose a physical hazard.",
+        "bg": "Обикновено нетоксичен; бодлите са физическа опасност."
+      }
+    }
+  },
+  {
+    "scientificName": "Echinopsis subdenudata",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/10781049/medium.jpg",
+    "commonNameEn": "Domino Cactus",
+    "commonNameBg": "Ехинопсис",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Cactaceae",
+    "nativeRegionEn": "Americas, primarily arid and semi-arid regions",
+    "nativeRegionBg": "Америка, предимно сухи и полусухи региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 21,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; place in the sunniest spot available.",
+        "bg": "Пълно слънце; поставете на най-слънчевото място."
+      },
+      "watering": {
+        "en": "Water every 2–3 weeks in summer; almost no water in winter.",
+        "bg": "Поливайте на 2–3 седмици през лятото; почти без вода през зимата."
+      },
+      "humidity": {
+        "en": "Prefers very low humidity; excellent drainage essential.",
+        "bg": "Предпочита много ниска влажност; отличен дренаж е задължителен."
+      },
+      "temperature": {
+        "en": "Ideal 18–35 °C in summer; cool 5–15 °C in winter encourages flowering.",
+        "bg": "Идеална 18–35 °C през лятото; хладно 5–15 °C през зимата насърчава цъфтежа."
+      },
+      "fertilizer": {
+        "en": "Fertilize monthly in spring and summer with cactus fertilizer.",
+        "bg": "Торете месечно през пролетта и лятото с кактусов тор."
+      },
+      "toxicity": {
+        "en": "Generally non-toxic; spines pose a physical hazard.",
+        "bg": "Обикновено нетоксичен; бодлите са физическа опасност."
+      }
+    }
+  },
+  {
+    "scientificName": "Gymnocalycium mihanovichii",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/65364188/medium.jpeg",
+    "commonNameEn": "Moon Cactus",
+    "commonNameBg": "Гимнокаликиум",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Cactaceae",
+    "nativeRegionEn": "Americas, primarily arid and semi-arid regions",
+    "nativeRegionBg": "Америка, предимно сухи и полусухи региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 21,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; place in the sunniest spot available.",
+        "bg": "Пълно слънце; поставете на най-слънчевото място."
+      },
+      "watering": {
+        "en": "Water every 2–3 weeks in summer; almost no water in winter.",
+        "bg": "Поливайте на 2–3 седмици през лятото; почти без вода през зимата."
+      },
+      "humidity": {
+        "en": "Prefers very low humidity; excellent drainage essential.",
+        "bg": "Предпочита много ниска влажност; отличен дренаж е задължителен."
+      },
+      "temperature": {
+        "en": "Ideal 18–35 °C in summer; cool 5–15 °C in winter encourages flowering.",
+        "bg": "Идеална 18–35 °C през лятото; хладно 5–15 °C през зимата насърчава цъфтежа."
+      },
+      "fertilizer": {
+        "en": "Fertilize monthly in spring and summer with cactus fertilizer.",
+        "bg": "Торете месечно през пролетта и лятото с кактусов тор."
+      },
+      "toxicity": {
+        "en": "Generally non-toxic; spines pose a physical hazard.",
+        "bg": "Обикновено нетоксичен; бодлите са физическа опасност."
+      }
+    }
+  },
+  {
+    "scientificName": "Mammillaria gracilis",
+    "imageUrl": null,
+    "commonNameEn": "Thimble Cactus",
+    "commonNameBg": "Маммиллариа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Cactaceae",
+    "nativeRegionEn": "Americas, primarily arid and semi-arid regions",
+    "nativeRegionBg": "Америка, предимно сухи и полусухи региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 21,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; place in the sunniest spot available.",
+        "bg": "Пълно слънце; поставете на най-слънчевото място."
+      },
+      "watering": {
+        "en": "Water every 2–3 weeks in summer; almost no water in winter.",
+        "bg": "Поливайте на 2–3 седмици през лятото; почти без вода през зимата."
+      },
+      "humidity": {
+        "en": "Prefers very low humidity; excellent drainage essential.",
+        "bg": "Предпочита много ниска влажност; отличен дренаж е задължителен."
+      },
+      "temperature": {
+        "en": "Ideal 18–35 °C in summer; cool 5–15 °C in winter encourages flowering.",
+        "bg": "Идеална 18–35 °C през лятото; хладно 5–15 °C през зимата насърчава цъфтежа."
+      },
+      "fertilizer": {
+        "en": "Fertilize monthly in spring and summer with cactus fertilizer.",
+        "bg": "Торете месечно през пролетта и лятото с кактусов тор."
+      },
+      "toxicity": {
+        "en": "Generally non-toxic; spines pose a physical hazard.",
+        "bg": "Обикновено нетоксичен; бодлите са физическа опасност."
+      }
+    }
+  },
+  {
+    "scientificName": "Mammillaria hahniana",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/12303061/medium.jpg",
+    "commonNameEn": "Old Lady Cactus",
+    "commonNameBg": "Маммиллариа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Cactaceae",
+    "nativeRegionEn": "Americas, primarily arid and semi-arid regions",
+    "nativeRegionBg": "Америка, предимно сухи и полусухи региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 21,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; place in the sunniest spot available.",
+        "bg": "Пълно слънце; поставете на най-слънчевото място."
+      },
+      "watering": {
+        "en": "Water every 2–3 weeks in summer; almost no water in winter.",
+        "bg": "Поливайте на 2–3 седмици през лятото; почти без вода през зимата."
+      },
+      "humidity": {
+        "en": "Prefers very low humidity; excellent drainage essential.",
+        "bg": "Предпочита много ниска влажност; отличен дренаж е задължителен."
+      },
+      "temperature": {
+        "en": "Ideal 18–35 °C in summer; cool 5–15 °C in winter encourages flowering.",
+        "bg": "Идеална 18–35 °C през лятото; хладно 5–15 °C през зимата насърчава цъфтежа."
+      },
+      "fertilizer": {
+        "en": "Fertilize monthly in spring and summer with cactus fertilizer.",
+        "bg": "Торете месечно през пролетта и лятото с кактусов тор."
+      },
+      "toxicity": {
+        "en": "Generally non-toxic; spines pose a physical hazard.",
+        "bg": "Обикновено нетоксичен; бодлите са физическа опасност."
+      }
+    }
+  },
+  {
+    "scientificName": "Mammillaria bocasana",
+    "imageUrl": "https://static.inaturalist.org/photos/3499849/medium.JPG",
+    "commonNameEn": "Powder Puff Cactus",
+    "commonNameBg": "Маммиллариа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Cactaceae",
+    "nativeRegionEn": "Americas, primarily arid and semi-arid regions",
+    "nativeRegionBg": "Америка, предимно сухи и полусухи региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 21,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; place in the sunniest spot available.",
+        "bg": "Пълно слънце; поставете на най-слънчевото място."
+      },
+      "watering": {
+        "en": "Water every 2–3 weeks in summer; almost no water in winter.",
+        "bg": "Поливайте на 2–3 седмици през лятото; почти без вода през зимата."
+      },
+      "humidity": {
+        "en": "Prefers very low humidity; excellent drainage essential.",
+        "bg": "Предпочита много ниска влажност; отличен дренаж е задължителен."
+      },
+      "temperature": {
+        "en": "Ideal 18–35 °C in summer; cool 5–15 °C in winter encourages flowering.",
+        "bg": "Идеална 18–35 °C през лятото; хладно 5–15 °C през зимата насърчава цъфтежа."
+      },
+      "fertilizer": {
+        "en": "Fertilize monthly in spring and summer with cactus fertilizer.",
+        "bg": "Торете месечно през пролетта и лятото с кактусов тор."
+      },
+      "toxicity": {
+        "en": "Generally non-toxic; spines pose a physical hazard.",
+        "bg": "Обикновено нетоксичен; бодлите са физическа опасност."
+      }
+    }
+  },
+  {
+    "scientificName": "Echinocactus grusonii",
+    "imageUrl": null,
+    "commonNameEn": "Golden Barrel Cactus",
+    "commonNameBg": "Ехинокактус",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Cactaceae",
+    "nativeRegionEn": "Americas, primarily arid and semi-arid regions",
+    "nativeRegionBg": "Америка, предимно сухи и полусухи региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 21,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; place in the sunniest spot available.",
+        "bg": "Пълно слънце; поставете на най-слънчевото място."
+      },
+      "watering": {
+        "en": "Water every 2–3 weeks in summer; almost no water in winter.",
+        "bg": "Поливайте на 2–3 седмици през лятото; почти без вода през зимата."
+      },
+      "humidity": {
+        "en": "Prefers very low humidity; excellent drainage essential.",
+        "bg": "Предпочита много ниска влажност; отличен дренаж е задължителен."
+      },
+      "temperature": {
+        "en": "Ideal 18–35 °C in summer; cool 5–15 °C in winter encourages flowering.",
+        "bg": "Идеална 18–35 °C през лятото; хладно 5–15 °C през зимата насърчава цъфтежа."
+      },
+      "fertilizer": {
+        "en": "Fertilize monthly in spring and summer with cactus fertilizer.",
+        "bg": "Торете месечно през пролетта и лятото с кактусов тор."
+      },
+      "toxicity": {
+        "en": "Generally non-toxic; spines pose a physical hazard.",
+        "bg": "Обикновено нетоксичен; бодлите са физическа опасност."
+      }
+    }
+  },
+  {
+    "scientificName": "Ferocactus wislizeni",
+    "imageUrl": "https://static.inaturalist.org/photos/1131627/medium.jpg",
+    "commonNameEn": "Fishhook Barrel Cactus",
+    "commonNameBg": "Ферокактус",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Cactaceae",
+    "nativeRegionEn": "Americas, primarily arid and semi-arid regions",
+    "nativeRegionBg": "Америка, предимно сухи и полусухи региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 21,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; place in the sunniest spot available.",
+        "bg": "Пълно слънце; поставете на най-слънчевото място."
+      },
+      "watering": {
+        "en": "Water every 2–3 weeks in summer; almost no water in winter.",
+        "bg": "Поливайте на 2–3 седмици през лятото; почти без вода през зимата."
+      },
+      "humidity": {
+        "en": "Prefers very low humidity; excellent drainage essential.",
+        "bg": "Предпочита много ниска влажност; отличен дренаж е задължителен."
+      },
+      "temperature": {
+        "en": "Ideal 18–35 °C in summer; cool 5–15 °C in winter encourages flowering.",
+        "bg": "Идеална 18–35 °C през лятото; хладно 5–15 °C през зимата насърчава цъфтежа."
+      },
+      "fertilizer": {
+        "en": "Fertilize monthly in spring and summer with cactus fertilizer.",
+        "bg": "Торете месечно през пролетта и лятото с кактусов тор."
+      },
+      "toxicity": {
+        "en": "Generally non-toxic; spines pose a physical hazard.",
+        "bg": "Обикновено нетоксичен; бодлите са физическа опасност."
+      }
+    }
+  },
+  {
+    "scientificName": "Rhipsalis baccifera",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/329117839/medium.jpeg",
+    "commonNameEn": "Mistletoe Cactus",
+    "commonNameBg": "Рхипсалис",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Cactaceae",
+    "nativeRegionEn": "Americas, primarily arid and semi-arid regions",
+    "nativeRegionBg": "Америка, предимно сухи и полусухи региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 21,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; place in the sunniest spot available.",
+        "bg": "Пълно слънце; поставете на най-слънчевото място."
+      },
+      "watering": {
+        "en": "Water every 2–3 weeks in summer; almost no water in winter.",
+        "bg": "Поливайте на 2–3 седмици през лятото; почти без вода през зимата."
+      },
+      "humidity": {
+        "en": "Prefers very low humidity; excellent drainage essential.",
+        "bg": "Предпочита много ниска влажност; отличен дренаж е задължителен."
+      },
+      "temperature": {
+        "en": "Ideal 18–35 °C in summer; cool 5–15 °C in winter encourages flowering.",
+        "bg": "Идеална 18–35 °C през лятото; хладно 5–15 °C през зимата насърчава цъфтежа."
+      },
+      "fertilizer": {
+        "en": "Fertilize monthly in spring and summer with cactus fertilizer.",
+        "bg": "Торете месечно през пролетта и лятото с кактусов тор."
+      },
+      "toxicity": {
+        "en": "Generally non-toxic; spines pose a physical hazard.",
+        "bg": "Обикновено нетоксичен; бодлите са физическа опасност."
+      }
+    }
+  },
+  {
+    "scientificName": "Schlumbergera truncata",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/257014573/medium.jpg",
+    "commonNameEn": "Christmas Cactus",
+    "commonNameBg": "Схлумбергера",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Cactaceae",
+    "nativeRegionEn": "Americas, primarily arid and semi-arid regions",
+    "nativeRegionBg": "Америка, предимно сухи и полусухи региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 21,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; place in the sunniest spot available.",
+        "bg": "Пълно слънце; поставете на най-слънчевото място."
+      },
+      "watering": {
+        "en": "Water every 2–3 weeks in summer; almost no water in winter.",
+        "bg": "Поливайте на 2–3 седмици през лятото; почти без вода през зимата."
+      },
+      "humidity": {
+        "en": "Prefers very low humidity; excellent drainage essential.",
+        "bg": "Предпочита много ниска влажност; отличен дренаж е задължителен."
+      },
+      "temperature": {
+        "en": "Ideal 18–35 °C in summer; cool 5–15 °C in winter encourages flowering.",
+        "bg": "Идеална 18–35 °C през лятото; хладно 5–15 °C през зимата насърчава цъфтежа."
+      },
+      "fertilizer": {
+        "en": "Fertilize monthly in spring and summer with cactus fertilizer.",
+        "bg": "Торете месечно през пролетта и лятото с кактусов тор."
+      },
+      "toxicity": {
+        "en": "Non-toxic to pets; safe around cats and dogs.",
+        "bg": "Нетоксично за домашни любимци; безопасно около котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Epiphyllum oxypetalum",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Epiphyllum_oxypetalum_flower.JPG/960px-Epiphyllum_oxypetalum_flower.JPG",
+    "commonNameEn": "Queen of the Night Cactus",
+    "commonNameBg": "Епифиллум",
+    "descriptionEn": "Epiphyllum oxypetalum, the Dutchman's pipe cactus, princess of the night or queen of the night, is a species of cactus with a native range from Mexico to Nicaragua. It blooms nocturnally, and its flowers wilt before dawn. Though it is sometimes referred to as a night-blooming cereus, it is not closely related to any of the species in the tribe Cereeae that are more commonly known by that name.",
+    "descriptionBg": null,
+    "family": "Cactaceae",
+    "nativeRegionEn": "Americas, primarily arid and semi-arid regions",
+    "nativeRegionBg": "Америка, предимно сухи и полусухи региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 21,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; place in the sunniest spot available.",
+        "bg": "Пълно слънце; поставете на най-слънчевото място."
+      },
+      "watering": {
+        "en": "Water every 2–3 weeks in summer; almost no water in winter.",
+        "bg": "Поливайте на 2–3 седмици през лятото; почти без вода през зимата."
+      },
+      "humidity": {
+        "en": "Prefers very low humidity; excellent drainage essential.",
+        "bg": "Предпочита много ниска влажност; отличен дренаж е задължителен."
+      },
+      "temperature": {
+        "en": "Ideal 18–35 °C in summer; cool 5–15 °C in winter encourages flowering.",
+        "bg": "Идеална 18–35 °C през лятото; хладно 5–15 °C през зимата насърчава цъфтежа."
+      },
+      "fertilizer": {
+        "en": "Fertilize monthly in spring and summer with cactus fertilizer.",
+        "bg": "Торете месечно през пролетта и лятото с кактусов тор."
+      },
+      "toxicity": {
+        "en": "Generally non-toxic; spines pose a physical hazard.",
+        "bg": "Обикновено нетоксичен; бодлите са физическа опасност."
+      }
+    }
+  },
+  {
+    "scientificName": "Selenicereus undatus",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/51196862/medium.jpeg",
+    "commonNameEn": "Dragon Fruit Cactus",
+    "commonNameBg": "Селеникереус",
+    "descriptionEn": "Selenicereus undatus, the white-fleshed pitahaya, is a species of the genus Selenicereus (formerly Hylocereus) in the family Cactaceae and is the most cultivated species in the genus. It is used both as an ornamental vine and as a fruit crop, the pitahaya or dragon fruit. Like all true cacti, the genus originates in the Americas.",
+    "descriptionBg": null,
+    "family": "Cactaceae",
+    "nativeRegionEn": "Americas, primarily arid and semi-arid regions",
+    "nativeRegionBg": "Америка, предимно сухи и полусухи региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 21,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; place in the sunniest spot available.",
+        "bg": "Пълно слънце; поставете на най-слънчевото място."
+      },
+      "watering": {
+        "en": "Water every 2–3 weeks in summer; almost no water in winter.",
+        "bg": "Поливайте на 2–3 седмици през лятото; почти без вода през зимата."
+      },
+      "humidity": {
+        "en": "Prefers very low humidity; excellent drainage essential.",
+        "bg": "Предпочита много ниска влажност; отличен дренаж е задължителен."
+      },
+      "temperature": {
+        "en": "Ideal 18–35 °C in summer; cool 5–15 °C in winter encourages flowering.",
+        "bg": "Идеална 18–35 °C през лятото; хладно 5–15 °C през зимата насърчава цъфтежа."
+      },
+      "fertilizer": {
+        "en": "Fertilize monthly in spring and summer with cactus fertilizer.",
+        "bg": "Торете месечно през пролетта и лятото с кактусов тор."
+      },
+      "toxicity": {
+        "en": "Generally non-toxic; spines pose a physical hazard.",
+        "bg": "Обикновено нетоксичен; бодлите са физическа опасност."
+      }
+    }
+  },
+  {
+    "scientificName": "Astrophytum asterias",
+    "imageUrl": "https://static.inaturalist.org/photos/19456567/medium.jpg",
+    "commonNameEn": "Sand Dollar Cactus",
+    "commonNameBg": "звездовиден астрофитум",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Cactaceae",
+    "nativeRegionEn": "Americas, primarily arid and semi-arid regions",
+    "nativeRegionBg": "Америка, предимно сухи и полусухи региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 21,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; place in the sunniest spot available.",
+        "bg": "Пълно слънце; поставете на най-слънчевото място."
+      },
+      "watering": {
+        "en": "Water every 2–3 weeks in summer; almost no water in winter.",
+        "bg": "Поливайте на 2–3 седмици през лятото; почти без вода през зимата."
+      },
+      "humidity": {
+        "en": "Prefers very low humidity; excellent drainage essential.",
+        "bg": "Предпочита много ниска влажност; отличен дренаж е задължителен."
+      },
+      "temperature": {
+        "en": "Ideal 18–35 °C in summer; cool 5–15 °C in winter encourages flowering.",
+        "bg": "Идеална 18–35 °C през лятото; хладно 5–15 °C през зимата насърчава цъфтежа."
+      },
+      "fertilizer": {
+        "en": "Fertilize monthly in spring and summer with cactus fertilizer.",
+        "bg": "Торете месечно през пролетта и лятото с кактусов тор."
+      },
+      "toxicity": {
+        "en": "Generally non-toxic; spines pose a physical hazard.",
+        "bg": "Обикновено нетоксичен; бодлите са физическа опасност."
+      }
+    }
+  },
+  {
+    "scientificName": "Astrophytum ornatum",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Astrophytum_ornatum5.jpg/960px-Astrophytum_ornatum5.jpg",
+    "commonNameEn": "Monk's Hood Cactus",
+    "commonNameBg": "Астрофитум",
+    "descriptionEn": "Astrophytum ornatum, the bishop's cap or monk's hood cactus, is a flowering plant of the family Cactaceae, endemic to the Central Plateau of Mexico. It is the largest and tallest species of Astrophytum.",
+    "descriptionBg": null,
+    "family": "Cactaceae",
+    "nativeRegionEn": "Americas, primarily arid and semi-arid regions",
+    "nativeRegionBg": "Америка, предимно сухи и полусухи региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 21,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; place in the sunniest spot available.",
+        "bg": "Пълно слънце; поставете на най-слънчевото място."
+      },
+      "watering": {
+        "en": "Water every 2–3 weeks in summer; almost no water in winter.",
+        "bg": "Поливайте на 2–3 седмици през лятото; почти без вода през зимата."
+      },
+      "humidity": {
+        "en": "Prefers very low humidity; excellent drainage essential.",
+        "bg": "Предпочита много ниска влажност; отличен дренаж е задължителен."
+      },
+      "temperature": {
+        "en": "Ideal 18–35 °C in summer; cool 5–15 °C in winter encourages flowering.",
+        "bg": "Идеална 18–35 °C през лятото; хладно 5–15 °C през зимата насърчава цъфтежа."
+      },
+      "fertilizer": {
+        "en": "Fertilize monthly in spring and summer with cactus fertilizer.",
+        "bg": "Торете месечно през пролетта и лятото с кактусов тор."
+      },
+      "toxicity": {
+        "en": "Generally non-toxic; spines pose a physical hazard.",
+        "bg": "Обикновено нетоксичен; бодлите са физическа опасност."
+      }
+    }
+  },
+  {
+    "scientificName": "Cephalocereus senilis",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Cephalocereus_senilis.jpg/960px-Cephalocereus_senilis.jpg",
+    "commonNameEn": "Old Man Cactus",
+    "commonNameBg": "Кефалокереус",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Cactaceae",
+    "nativeRegionEn": "Americas, primarily arid and semi-arid regions",
+    "nativeRegionBg": "Америка, предимно сухи и полусухи региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 21,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; place in the sunniest spot available.",
+        "bg": "Пълно слънце; поставете на най-слънчевото място."
+      },
+      "watering": {
+        "en": "Water every 2–3 weeks in summer; almost no water in winter.",
+        "bg": "Поливайте на 2–3 седмици през лятото; почти без вода през зимата."
+      },
+      "humidity": {
+        "en": "Prefers very low humidity; excellent drainage essential.",
+        "bg": "Предпочита много ниска влажност; отличен дренаж е задължителен."
+      },
+      "temperature": {
+        "en": "Ideal 18–35 °C in summer; cool 5–15 °C in winter encourages flowering.",
+        "bg": "Идеална 18–35 °C през лятото; хладно 5–15 °C през зимата насърчава цъфтежа."
+      },
+      "fertilizer": {
+        "en": "Fertilize monthly in spring and summer with cactus fertilizer.",
+        "bg": "Торете месечно през пролетта и лятото с кактусов тор."
+      },
+      "toxicity": {
+        "en": "Generally non-toxic; spines pose a physical hazard.",
+        "bg": "Обикновено нетоксичен; бодлите са физическа опасност."
+      }
+    }
+  },
+  {
+    "scientificName": "Cleistocactus straussii",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Cleistocactus_strausii_Woolly_Torch%2C_Huntington_Desert_Garden.jpg/960px-Cleistocactus_strausii_Woolly_Torch%2C_Huntington_Desert_Garden.jpg",
+    "commonNameEn": "Silver Torch Cactus",
+    "commonNameBg": "Клеистокактус",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Cactaceae",
+    "nativeRegionEn": "Americas, primarily arid and semi-arid regions",
+    "nativeRegionBg": "Америка, предимно сухи и полусухи региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 21,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; place in the sunniest spot available.",
+        "bg": "Пълно слънце; поставете на най-слънчевото място."
+      },
+      "watering": {
+        "en": "Water every 2–3 weeks in summer; almost no water in winter.",
+        "bg": "Поливайте на 2–3 седмици през лятото; почти без вода през зимата."
+      },
+      "humidity": {
+        "en": "Prefers very low humidity; excellent drainage essential.",
+        "bg": "Предпочита много ниска влажност; отличен дренаж е задължителен."
+      },
+      "temperature": {
+        "en": "Ideal 18–35 °C in summer; cool 5–15 °C in winter encourages flowering.",
+        "bg": "Идеална 18–35 °C през лятото; хладно 5–15 °C през зимата насърчава цъфтежа."
+      },
+      "fertilizer": {
+        "en": "Fertilize monthly in spring and summer with cactus fertilizer.",
+        "bg": "Торете месечно през пролетта и лятото с кактусов тор."
+      },
+      "toxicity": {
+        "en": "Generally non-toxic; spines pose a physical hazard.",
+        "bg": "Обикновено нетоксичен; бодлите са физическа опасност."
+      }
+    }
+  },
+  {
+    "scientificName": "Parodia magnifica",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Eriocactus_magnificus_JPG.jpg/960px-Eriocactus_magnificus_JPG.jpg",
+    "commonNameEn": "Balloon Cactus",
+    "commonNameBg": "великолепна пародия",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Cactaceae",
+    "nativeRegionEn": "Americas, primarily arid and semi-arid regions",
+    "nativeRegionBg": "Америка, предимно сухи и полусухи региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 21,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; place in the sunniest spot available.",
+        "bg": "Пълно слънце; поставете на най-слънчевото място."
+      },
+      "watering": {
+        "en": "Water every 2–3 weeks in summer; almost no water in winter.",
+        "bg": "Поливайте на 2–3 седмици през лятото; почти без вода през зимата."
+      },
+      "humidity": {
+        "en": "Prefers very low humidity; excellent drainage essential.",
+        "bg": "Предпочита много ниска влажност; отличен дренаж е задължителен."
+      },
+      "temperature": {
+        "en": "Ideal 18–35 °C in summer; cool 5–15 °C in winter encourages flowering.",
+        "bg": "Идеална 18–35 °C през лятото; хладно 5–15 °C през зимата насърчава цъфтежа."
+      },
+      "fertilizer": {
+        "en": "Fertilize monthly in spring and summer with cactus fertilizer.",
+        "bg": "Торете месечно през пролетта и лятото с кактусов тор."
+      },
+      "toxicity": {
+        "en": "Generally non-toxic; spines pose a physical hazard.",
+        "bg": "Обикновено нетоксичен; бодлите са физическа опасност."
+      }
+    }
+  },
+  {
+    "scientificName": "Rebutia minuscula",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d2/Rebutia_minuscula1.jpg",
+    "commonNameEn": "Red Crown Cactus",
+    "commonNameBg": "Ребутиа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Cactaceae",
+    "nativeRegionEn": "Americas, primarily arid and semi-arid regions",
+    "nativeRegionBg": "Америка, предимно сухи и полусухи региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 21,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; place in the sunniest spot available.",
+        "bg": "Пълно слънце; поставете на най-слънчевото място."
+      },
+      "watering": {
+        "en": "Water every 2–3 weeks in summer; almost no water in winter.",
+        "bg": "Поливайте на 2–3 седмици през лятото; почти без вода през зимата."
+      },
+      "humidity": {
+        "en": "Prefers very low humidity; excellent drainage essential.",
+        "bg": "Предпочита много ниска влажност; отличен дренаж е задължителен."
+      },
+      "temperature": {
+        "en": "Ideal 18–35 °C in summer; cool 5–15 °C in winter encourages flowering.",
+        "bg": "Идеална 18–35 °C през лятото; хладно 5–15 °C през зимата насърчава цъфтежа."
+      },
+      "fertilizer": {
+        "en": "Fertilize monthly in spring and summer with cactus fertilizer.",
+        "bg": "Торете месечно през пролетта и лятото с кактусов тор."
+      },
+      "toxicity": {
+        "en": "Generally non-toxic; spines pose a physical hazard.",
+        "bg": "Обикновено нетоксичен; бодлите са физическа опасност."
+      }
+    }
+  },
+  {
+    "scientificName": "Trichocereus pachanoi",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Starr_070320-5799_Echinopsis_pachanoi.jpg/960px-Starr_070320-5799_Echinopsis_pachanoi.jpg",
+    "commonNameEn": "San Pedro Cactus",
+    "commonNameBg": "Трихокереус",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Cactaceae",
+    "nativeRegionEn": "Americas, primarily arid and semi-arid regions",
+    "nativeRegionBg": "Америка, предимно сухи и полусухи региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 21,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; place in the sunniest spot available.",
+        "bg": "Пълно слънце; поставете на най-слънчевото място."
+      },
+      "watering": {
+        "en": "Water every 2–3 weeks in summer; almost no water in winter.",
+        "bg": "Поливайте на 2–3 седмици през лятото; почти без вода през зимата."
+      },
+      "humidity": {
+        "en": "Prefers very low humidity; excellent drainage essential.",
+        "bg": "Предпочита много ниска влажност; отличен дренаж е задължителен."
+      },
+      "temperature": {
+        "en": "Ideal 18–35 °C in summer; cool 5–15 °C in winter encourages flowering.",
+        "bg": "Идеална 18–35 °C през лятото; хладно 5–15 °C през зимата насърчава цъфтежа."
+      },
+      "fertilizer": {
+        "en": "Fertilize monthly in spring and summer with cactus fertilizer.",
+        "bg": "Торете месечно през пролетта и лятото с кактусов тор."
+      },
+      "toxicity": {
+        "en": "Generally non-toxic; spines pose a physical hazard.",
+        "bg": "Обикновено нетоксичен; бодлите са физическа опасност."
+      }
+    }
+  },
+  {
+    "scientificName": "Pilosocereus pachycladus",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/66803533/medium.jpg",
+    "commonNameEn": "Blue Torch Cactus",
+    "commonNameBg": "Пилосокереус",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Cactaceae",
+    "nativeRegionEn": "Americas, primarily arid and semi-arid regions",
+    "nativeRegionBg": "Америка, предимно сухи и полусухи региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 21,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; place in the sunniest spot available.",
+        "bg": "Пълно слънце; поставете на най-слънчевото място."
+      },
+      "watering": {
+        "en": "Water every 2–3 weeks in summer; almost no water in winter.",
+        "bg": "Поливайте на 2–3 седмици през лятото; почти без вода през зимата."
+      },
+      "humidity": {
+        "en": "Prefers very low humidity; excellent drainage essential.",
+        "bg": "Предпочита много ниска влажност; отличен дренаж е задължителен."
+      },
+      "temperature": {
+        "en": "Ideal 18–35 °C in summer; cool 5–15 °C in winter encourages flowering.",
+        "bg": "Идеална 18–35 °C през лятото; хладно 5–15 °C през зимата насърчава цъфтежа."
+      },
+      "fertilizer": {
+        "en": "Fertilize monthly in spring and summer with cactus fertilizer.",
+        "bg": "Торете месечно през пролетта и лятото с кактусов тор."
+      },
+      "toxicity": {
+        "en": "Generally non-toxic; spines pose a physical hazard.",
+        "bg": "Обикновено нетоксичен; бодлите са физическа опасност."
+      }
+    }
+  },
+  {
+    "scientificName": "Notocactus ottonis",
+    "imageUrl": null,
+    "commonNameEn": "Indian Head Cactus",
+    "commonNameBg": "Нотокактус",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Cactaceae",
+    "nativeRegionEn": "Americas, primarily arid and semi-arid regions",
+    "nativeRegionBg": "Америка, предимно сухи и полусухи региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 21,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; place in the sunniest spot available.",
+        "bg": "Пълно слънце; поставете на най-слънчевото място."
+      },
+      "watering": {
+        "en": "Water every 2–3 weeks in summer; almost no water in winter.",
+        "bg": "Поливайте на 2–3 седмици през лятото; почти без вода през зимата."
+      },
+      "humidity": {
+        "en": "Prefers very low humidity; excellent drainage essential.",
+        "bg": "Предпочита много ниска влажност; отличен дренаж е задължителен."
+      },
+      "temperature": {
+        "en": "Ideal 18–35 °C in summer; cool 5–15 °C in winter encourages flowering.",
+        "bg": "Идеална 18–35 °C през лятото; хладно 5–15 °C през зимата насърчава цъфтежа."
+      },
+      "fertilizer": {
+        "en": "Fertilize monthly in spring and summer with cactus fertilizer.",
+        "bg": "Торете месечно през пролетта и лятото с кактусов тор."
+      },
+      "toxicity": {
+        "en": "Generally non-toxic; spines pose a physical hazard.",
+        "bg": "Обикновено нетоксичен; бодлите са физическа опасност."
+      }
+    }
+  },
+  {
+    "scientificName": "Ocimum basilicum",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/154769884/medium.jpg",
+    "commonNameEn": "Sweet Basil",
+    "commonNameBg": "обикновен босилек",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Mediterranean and temperate regions",
+    "nativeRegionBg": "Средиземноморие и умерени региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 5,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": false,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; at least 6 hours of direct sunlight daily.",
+        "bg": "Пълно слънце; поне 6 часа пряка слънчева светлина дневно."
+      },
+      "watering": {
+        "en": "Water every 4–6 days; let top soil dry slightly between waterings.",
+        "bg": "Поливайте на 4–6 дни; оставете горния слой почва леко да изсъхне."
+      },
+      "humidity": {
+        "en": "Average humidity; ensure good air circulation.",
+        "bg": "Средна влажност; осигурете добра циркулация на въздуха."
+      },
+      "temperature": {
+        "en": "Most herbs prefer 15–25 °C; protect from frost.",
+        "bg": "Повечето билки предпочитат 15–25 °C; пазете от замръзване."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 3 weeks with balanced fertilizer during growth.",
+        "bg": "Торете на 3 седмици с балансиран тор по време на растеж."
+      },
+      "toxicity": {
+        "en": "Non-toxic to pets; safe around cats and dogs.",
+        "bg": "Нетоксично за домашни любимци; безопасно около котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Ocimum tenuiflorum",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/129609853/medium.jpeg",
+    "commonNameEn": "Holy Basil",
+    "commonNameBg": "Свещен босилек",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Mediterranean and temperate regions",
+    "nativeRegionBg": "Средиземноморие и умерени региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 5,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": false,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; at least 6 hours of direct sunlight daily.",
+        "bg": "Пълно слънце; поне 6 часа пряка слънчева светлина дневно."
+      },
+      "watering": {
+        "en": "Water every 4–6 days; let top soil dry slightly between waterings.",
+        "bg": "Поливайте на 4–6 дни; оставете горния слой почва леко да изсъхне."
+      },
+      "humidity": {
+        "en": "Average humidity; ensure good air circulation.",
+        "bg": "Средна влажност; осигурете добра циркулация на въздуха."
+      },
+      "temperature": {
+        "en": "Most herbs prefer 15–25 °C; protect from frost.",
+        "bg": "Повечето билки предпочитат 15–25 °C; пазете от замръзване."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 3 weeks with balanced fertilizer during growth.",
+        "bg": "Торете на 3 седмици с балансиран тор по време на растеж."
+      },
+      "toxicity": {
+        "en": "Non-toxic to pets; safe around cats and dogs.",
+        "bg": "Нетоксично за домашни любимци; безопасно около котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Mentha spicata",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/1186004/medium.jpg",
+    "commonNameEn": "Spearmint",
+    "commonNameBg": "Обикновена мента",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Mediterranean and temperate regions",
+    "nativeRegionBg": "Средиземноморие и умерени региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 5,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": false,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; at least 6 hours of direct sunlight daily.",
+        "bg": "Пълно слънце; поне 6 часа пряка слънчева светлина дневно."
+      },
+      "watering": {
+        "en": "Water every 4–6 days; let top soil dry slightly between waterings.",
+        "bg": "Поливайте на 4–6 дни; оставете горния слой почва леко да изсъхне."
+      },
+      "humidity": {
+        "en": "Average humidity; ensure good air circulation.",
+        "bg": "Средна влажност; осигурете добра циркулация на въздуха."
+      },
+      "temperature": {
+        "en": "Most herbs prefer 15–25 °C; protect from frost.",
+        "bg": "Повечето билки предпочитат 15–25 °C; пазете от замръзване."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 3 weeks with balanced fertilizer during growth.",
+        "bg": "Торете на 3 седмици с балансиран тор по време на растеж."
+      },
+      "toxicity": {
+        "en": "Non-toxic to pets; safe around cats and dogs.",
+        "bg": "Нетоксично за домашни любимци; безопасно около котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Mentha piperita",
+    "imageUrl": null,
+    "commonNameEn": "Peppermint",
+    "commonNameBg": "Мента",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Mediterranean and temperate regions",
+    "nativeRegionBg": "Средиземноморие и умерени региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 5,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": false,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; at least 6 hours of direct sunlight daily.",
+        "bg": "Пълно слънце; поне 6 часа пряка слънчева светлина дневно."
+      },
+      "watering": {
+        "en": "Water every 4–6 days; let top soil dry slightly between waterings.",
+        "bg": "Поливайте на 4–6 дни; оставете горния слой почва леко да изсъхне."
+      },
+      "humidity": {
+        "en": "Average humidity; ensure good air circulation.",
+        "bg": "Средна влажност; осигурете добра циркулация на въздуха."
+      },
+      "temperature": {
+        "en": "Most herbs prefer 15–25 °C; protect from frost.",
+        "bg": "Повечето билки предпочитат 15–25 °C; пазете от замръзване."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 3 weeks with balanced fertilizer during growth.",
+        "bg": "Торете на 3 седмици с балансиран тор по време на растеж."
+      },
+      "toxicity": {
+        "en": "Non-toxic to pets; safe around cats and dogs.",
+        "bg": "Нетоксично за домашни любимци; безопасно около котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Mentha aquatica",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/58267279/medium.jpg",
+    "commonNameEn": "Water Mint",
+    "commonNameBg": "Водна мента",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Mediterranean and temperate regions",
+    "nativeRegionBg": "Средиземноморие и умерени региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 5,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": false,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; at least 6 hours of direct sunlight daily.",
+        "bg": "Пълно слънце; поне 6 часа пряка слънчева светлина дневно."
+      },
+      "watering": {
+        "en": "Water every 4–6 days; let top soil dry slightly between waterings.",
+        "bg": "Поливайте на 4–6 дни; оставете горния слой почва леко да изсъхне."
+      },
+      "humidity": {
+        "en": "Average humidity; ensure good air circulation.",
+        "bg": "Средна влажност; осигурете добра циркулация на въздуха."
+      },
+      "temperature": {
+        "en": "Most herbs prefer 15–25 °C; protect from frost.",
+        "bg": "Повечето билки предпочитат 15–25 °C; пазете от замръзване."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 3 weeks with balanced fertilizer during growth.",
+        "bg": "Торете на 3 седмици с балансиран тор по време на растеж."
+      },
+      "toxicity": {
+        "en": "Non-toxic to pets; safe around cats and dogs.",
+        "bg": "Нетоксично за домашни любимци; безопасно около котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Thymus vulgaris",
+    "imageUrl": "https://static.inaturalist.org/photos/28120667/medium.jpg",
+    "commonNameEn": "Common Thyme",
+    "commonNameBg": "обикновена мащерка",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Mediterranean and temperate regions",
+    "nativeRegionBg": "Средиземноморие и умерени региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 5,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; at least 6 hours of direct sunlight daily.",
+        "bg": "Пълно слънце; поне 6 часа пряка слънчева светлина дневно."
+      },
+      "watering": {
+        "en": "Water every 4–6 days; let top soil dry slightly between waterings.",
+        "bg": "Поливайте на 4–6 дни; оставете горния слой почва леко да изсъхне."
+      },
+      "humidity": {
+        "en": "Average humidity; ensure good air circulation.",
+        "bg": "Средна влажност; осигурете добра циркулация на въздуха."
+      },
+      "temperature": {
+        "en": "Most herbs prefer 15–25 °C; protect from frost.",
+        "bg": "Повечето билки предпочитат 15–25 °C; пазете от замръзване."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 3 weeks with balanced fertilizer during growth.",
+        "bg": "Торете на 3 седмици с балансиран тор по време на растеж."
+      },
+      "toxicity": {
+        "en": "Culinary herbs are safe for humans; some may affect pets.",
+        "bg": "Кулинарните билки са безвредни за хора; някои може да засегнат домашни животни."
+      }
+    }
+  },
+  {
+    "scientificName": "Thymus serpyllum",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/147682040/medium.jpg",
+    "commonNameEn": "Wild Thyme",
+    "commonNameBg": "дива мащерка",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Mediterranean and temperate regions",
+    "nativeRegionBg": "Средиземноморие и умерени региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 5,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; at least 6 hours of direct sunlight daily.",
+        "bg": "Пълно слънце; поне 6 часа пряка слънчева светлина дневно."
+      },
+      "watering": {
+        "en": "Water every 4–6 days; let top soil dry slightly between waterings.",
+        "bg": "Поливайте на 4–6 дни; оставете горния слой почва леко да изсъхне."
+      },
+      "humidity": {
+        "en": "Average humidity; ensure good air circulation.",
+        "bg": "Средна влажност; осигурете добра циркулация на въздуха."
+      },
+      "temperature": {
+        "en": "Most herbs prefer 15–25 °C; protect from frost.",
+        "bg": "Повечето билки предпочитат 15–25 °C; пазете от замръзване."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 3 weeks with balanced fertilizer during growth.",
+        "bg": "Торете на 3 седмици с балансиран тор по време на растеж."
+      },
+      "toxicity": {
+        "en": "Culinary herbs are safe for humans; some may affect pets.",
+        "bg": "Кулинарните билки са безвредни за хора; някои може да засегнат домашни животни."
+      }
+    }
+  },
+  {
+    "scientificName": "Salvia rosmarinus",
+    "imageUrl": "https://static.inaturalist.org/photos/87326219/medium.jpg",
+    "commonNameEn": "Rosemary",
+    "commonNameBg": "Обикновен розмарин",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Mediterranean and temperate regions",
+    "nativeRegionBg": "Средиземноморие и умерени региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 5,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; at least 6 hours of direct sunlight daily.",
+        "bg": "Пълно слънце; поне 6 часа пряка слънчева светлина дневно."
+      },
+      "watering": {
+        "en": "Water every 4–6 days; let top soil dry slightly between waterings.",
+        "bg": "Поливайте на 4–6 дни; оставете горния слой почва леко да изсъхне."
+      },
+      "humidity": {
+        "en": "Average humidity; ensure good air circulation.",
+        "bg": "Средна влажност; осигурете добра циркулация на въздуха."
+      },
+      "temperature": {
+        "en": "Most herbs prefer 15–25 °C; protect from frost.",
+        "bg": "Повечето билки предпочитат 15–25 °C; пазете от замръзване."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 3 weeks with balanced fertilizer during growth.",
+        "bg": "Торете на 3 седмици с балансиран тор по време на растеж."
+      },
+      "toxicity": {
+        "en": "Culinary herbs are safe for humans; some may affect pets.",
+        "bg": "Кулинарните билки са безвредни за хора; някои може да засегнат домашни животни."
+      }
+    }
+  },
+  {
+    "scientificName": "Origanum vulgare",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/145466748/medium.jpeg",
+    "commonNameEn": "Oregano",
+    "commonNameBg": "Обикновен риган",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Mediterranean and temperate regions",
+    "nativeRegionBg": "Средиземноморие и умерени региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 5,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; at least 6 hours of direct sunlight daily.",
+        "bg": "Пълно слънце; поне 6 часа пряка слънчева светлина дневно."
+      },
+      "watering": {
+        "en": "Water every 4–6 days; let top soil dry slightly between waterings.",
+        "bg": "Поливайте на 4–6 дни; оставете горния слой почва леко да изсъхне."
+      },
+      "humidity": {
+        "en": "Average humidity; ensure good air circulation.",
+        "bg": "Средна влажност; осигурете добра циркулация на въздуха."
+      },
+      "temperature": {
+        "en": "Most herbs prefer 15–25 °C; protect from frost.",
+        "bg": "Повечето билки предпочитат 15–25 °C; пазете от замръзване."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 3 weeks with balanced fertilizer during growth.",
+        "bg": "Торете на 3 седмици с балансиран тор по време на растеж."
+      },
+      "toxicity": {
+        "en": "Culinary herbs are safe for humans; some may affect pets.",
+        "bg": "Кулинарните билки са безвредни за хора; някои може да засегнат домашни животни."
+      }
+    }
+  },
+  {
+    "scientificName": "Salvia officinalis",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/289195364/medium.jpg",
+    "commonNameEn": "Common Sage",
+    "commonNameBg": "градински чай",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Mediterranean and temperate regions",
+    "nativeRegionBg": "Средиземноморие и умерени региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 5,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; at least 6 hours of direct sunlight daily.",
+        "bg": "Пълно слънце; поне 6 часа пряка слънчева светлина дневно."
+      },
+      "watering": {
+        "en": "Water every 4–6 days; let top soil dry slightly between waterings.",
+        "bg": "Поливайте на 4–6 дни; оставете горния слой почва леко да изсъхне."
+      },
+      "humidity": {
+        "en": "Average humidity; ensure good air circulation.",
+        "bg": "Средна влажност; осигурете добра циркулация на въздуха."
+      },
+      "temperature": {
+        "en": "Most herbs prefer 15–25 °C; protect from frost.",
+        "bg": "Повечето билки предпочитат 15–25 °C; пазете от замръзване."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 3 weeks with balanced fertilizer during growth.",
+        "bg": "Торете на 3 седмици с балансиран тор по време на растеж."
+      },
+      "toxicity": {
+        "en": "Culinary herbs are safe for humans; some may affect pets.",
+        "bg": "Кулинарните билки са безвредни за хора; някои може да засегнат домашни животни."
+      }
+    }
+  },
+  {
+    "scientificName": "Coriandrum sativum",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/30423712/medium.jpeg",
+    "commonNameEn": "Cilantro",
+    "commonNameBg": "кориандър",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Mediterranean and temperate regions",
+    "nativeRegionBg": "Средиземноморие и умерени региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 5,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; at least 6 hours of direct sunlight daily.",
+        "bg": "Пълно слънце; поне 6 часа пряка слънчева светлина дневно."
+      },
+      "watering": {
+        "en": "Water every 4–6 days; let top soil dry slightly between waterings.",
+        "bg": "Поливайте на 4–6 дни; оставете горния слой почва леко да изсъхне."
+      },
+      "humidity": {
+        "en": "Average humidity; ensure good air circulation.",
+        "bg": "Средна влажност; осигурете добра циркулация на въздуха."
+      },
+      "temperature": {
+        "en": "Most herbs prefer 15–25 °C; protect from frost.",
+        "bg": "Повечето билки предпочитат 15–25 °C; пазете от замръзване."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 3 weeks with balanced fertilizer during growth.",
+        "bg": "Торете на 3 седмици с балансиран тор по време на растеж."
+      },
+      "toxicity": {
+        "en": "Culinary herbs are safe for humans; some may affect pets.",
+        "bg": "Кулинарните билки са безвредни за хора; някои може да засегнат домашни животни."
+      }
+    }
+  },
+  {
+    "scientificName": "Allium schoenoprasum",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/90411579/medium.jpg",
+    "commonNameEn": "Chives",
+    "commonNameBg": "Сибирски лук",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Mediterranean and temperate regions",
+    "nativeRegionBg": "Средиземноморие и умерени региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 5,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; at least 6 hours of direct sunlight daily.",
+        "bg": "Пълно слънце; поне 6 часа пряка слънчева светлина дневно."
+      },
+      "watering": {
+        "en": "Water every 4–6 days; let top soil dry slightly between waterings.",
+        "bg": "Поливайте на 4–6 дни; оставете горния слой почва леко да изсъхне."
+      },
+      "humidity": {
+        "en": "Average humidity; ensure good air circulation.",
+        "bg": "Средна влажност; осигурете добра циркулация на въздуха."
+      },
+      "temperature": {
+        "en": "Most herbs prefer 15–25 °C; protect from frost.",
+        "bg": "Повечето билки предпочитат 15–25 °C; пазете от замръзване."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 3 weeks with balanced fertilizer during growth.",
+        "bg": "Торете на 3 седмици с балансиран тор по време на растеж."
+      },
+      "toxicity": {
+        "en": "Culinary herbs are safe for humans; some may affect pets.",
+        "bg": "Кулинарните билки са безвредни за хора; някои може да засегнат домашни животни."
+      }
+    }
+  },
+  {
+    "scientificName": "Petroselinum crispum",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/395413717/medium.jpg",
+    "commonNameEn": "Parsley",
+    "commonNameBg": "обикновен магданоз",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Mediterranean and temperate regions",
+    "nativeRegionBg": "Средиземноморие и умерени региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 5,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; at least 6 hours of direct sunlight daily.",
+        "bg": "Пълно слънце; поне 6 часа пряка слънчева светлина дневно."
+      },
+      "watering": {
+        "en": "Water every 4–6 days; let top soil dry slightly between waterings.",
+        "bg": "Поливайте на 4–6 дни; оставете горния слой почва леко да изсъхне."
+      },
+      "humidity": {
+        "en": "Average humidity; ensure good air circulation.",
+        "bg": "Средна влажност; осигурете добра циркулация на въздуха."
+      },
+      "temperature": {
+        "en": "Most herbs prefer 15–25 °C; protect from frost.",
+        "bg": "Повечето билки предпочитат 15–25 °C; пазете от замръзване."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 3 weeks with balanced fertilizer during growth.",
+        "bg": "Торете на 3 седмици с балансиран тор по време на растеж."
+      },
+      "toxicity": {
+        "en": "Culinary herbs are safe for humans; some may affect pets.",
+        "bg": "Кулинарните билки са безвредни за хора; някои може да засегнат домашни животни."
+      }
+    }
+  },
+  {
+    "scientificName": "Anethum graveolens",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/400755541/medium.jpeg",
+    "commonNameEn": "Dill",
+    "commonNameBg": "копър",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Mediterranean and temperate regions",
+    "nativeRegionBg": "Средиземноморие и умерени региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 5,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; at least 6 hours of direct sunlight daily.",
+        "bg": "Пълно слънце; поне 6 часа пряка слънчева светлина дневно."
+      },
+      "watering": {
+        "en": "Water every 4–6 days; let top soil dry slightly between waterings.",
+        "bg": "Поливайте на 4–6 дни; оставете горния слой почва леко да изсъхне."
+      },
+      "humidity": {
+        "en": "Average humidity; ensure good air circulation.",
+        "bg": "Средна влажност; осигурете добра циркулация на въздуха."
+      },
+      "temperature": {
+        "en": "Most herbs prefer 15–25 °C; protect from frost.",
+        "bg": "Повечето билки предпочитат 15–25 °C; пазете от замръзване."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 3 weeks with balanced fertilizer during growth.",
+        "bg": "Торете на 3 седмици с балансиран тор по време на растеж."
+      },
+      "toxicity": {
+        "en": "Culinary herbs are safe for humans; some may affect pets.",
+        "bg": "Кулинарните билки са безвредни за хора; някои може да засегнат домашни животни."
+      }
+    }
+  },
+  {
+    "scientificName": "Foeniculum vulgare",
+    "imageUrl": "https://static.inaturalist.org/photos/50868492/medium.jpg",
+    "commonNameEn": "Fennel",
+    "commonNameBg": "резене",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Mediterranean and temperate regions",
+    "nativeRegionBg": "Средиземноморие и умерени региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 5,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; at least 6 hours of direct sunlight daily.",
+        "bg": "Пълно слънце; поне 6 часа пряка слънчева светлина дневно."
+      },
+      "watering": {
+        "en": "Water every 4–6 days; let top soil dry slightly between waterings.",
+        "bg": "Поливайте на 4–6 дни; оставете горния слой почва леко да изсъхне."
+      },
+      "humidity": {
+        "en": "Average humidity; ensure good air circulation.",
+        "bg": "Средна влажност; осигурете добра циркулация на въздуха."
+      },
+      "temperature": {
+        "en": "Most herbs prefer 15–25 °C; protect from frost.",
+        "bg": "Повечето билки предпочитат 15–25 °C; пазете от замръзване."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 3 weeks with balanced fertilizer during growth.",
+        "bg": "Торете на 3 седмици с балансиран тор по време на растеж."
+      },
+      "toxicity": {
+        "en": "Culinary herbs are safe for humans; some may affect pets.",
+        "bg": "Кулинарните билки са безвредни за хора; някои може да засегнат домашни животни."
+      }
+    }
+  },
+  {
+    "scientificName": "Artemisia dracunculus",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/84568291/medium.jpg",
+    "commonNameEn": "Tarragon",
+    "commonNameBg": "тарос",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Mediterranean and temperate regions",
+    "nativeRegionBg": "Средиземноморие и умерени региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 5,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; at least 6 hours of direct sunlight daily.",
+        "bg": "Пълно слънце; поне 6 часа пряка слънчева светлина дневно."
+      },
+      "watering": {
+        "en": "Water every 4–6 days; let top soil dry slightly between waterings.",
+        "bg": "Поливайте на 4–6 дни; оставете горния слой почва леко да изсъхне."
+      },
+      "humidity": {
+        "en": "Average humidity; ensure good air circulation.",
+        "bg": "Средна влажност; осигурете добра циркулация на въздуха."
+      },
+      "temperature": {
+        "en": "Most herbs prefer 15–25 °C; protect from frost.",
+        "bg": "Повечето билки предпочитат 15–25 °C; пазете от замръзване."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 3 weeks with balanced fertilizer during growth.",
+        "bg": "Торете на 3 седмици с балансиран тор по време на растеж."
+      },
+      "toxicity": {
+        "en": "Culinary herbs are safe for humans; some may affect pets.",
+        "bg": "Кулинарните билки са безвредни за хора; някои може да засегнат домашни животни."
+      }
+    }
+  },
+  {
+    "scientificName": "Melissa officinalis",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/612537976/medium.jpg",
+    "commonNameEn": "Lemon Balm",
+    "commonNameBg": "Маточина",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Mediterranean and temperate regions",
+    "nativeRegionBg": "Средиземноморие и умерени региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 5,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; at least 6 hours of direct sunlight daily.",
+        "bg": "Пълно слънце; поне 6 часа пряка слънчева светлина дневно."
+      },
+      "watering": {
+        "en": "Water every 4–6 days; let top soil dry slightly between waterings.",
+        "bg": "Поливайте на 4–6 дни; оставете горния слой почва леко да изсъхне."
+      },
+      "humidity": {
+        "en": "Average humidity; ensure good air circulation.",
+        "bg": "Средна влажност; осигурете добра циркулация на въздуха."
+      },
+      "temperature": {
+        "en": "Most herbs prefer 15–25 °C; protect from frost.",
+        "bg": "Повечето билки предпочитат 15–25 °C; пазете от замръзване."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 3 weeks with balanced fertilizer during growth.",
+        "bg": "Торете на 3 седмици с балансиран тор по време на растеж."
+      },
+      "toxicity": {
+        "en": "Culinary herbs are safe for humans; some may affect pets.",
+        "bg": "Кулинарните билки са безвредни за хора; някои може да засегнат домашни животни."
+      }
+    }
+  },
+  {
+    "scientificName": "Lavandula angustifolia",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/157057/medium.jpg",
+    "commonNameEn": "English Lavender",
+    "commonNameBg": "Лавандула",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Mediterranean and temperate regions",
+    "nativeRegionBg": "Средиземноморие и умерени региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 5,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": false,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; at least 6 hours of direct sunlight daily.",
+        "bg": "Пълно слънце; поне 6 часа пряка слънчева светлина дневно."
+      },
+      "watering": {
+        "en": "Water every 4–6 days; let top soil dry slightly between waterings.",
+        "bg": "Поливайте на 4–6 дни; оставете горния слой почва леко да изсъхне."
+      },
+      "humidity": {
+        "en": "Average humidity; ensure good air circulation.",
+        "bg": "Средна влажност; осигурете добра циркулация на въздуха."
+      },
+      "temperature": {
+        "en": "Most herbs prefer 15–25 °C; protect from frost.",
+        "bg": "Повечето билки предпочитат 15–25 °C; пазете от замръзване."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 3 weeks with balanced fertilizer during growth.",
+        "bg": "Торете на 3 седмици с балансиран тор по време на растеж."
+      },
+      "toxicity": {
+        "en": "Non-toxic to pets; safe around cats and dogs.",
+        "bg": "Нетоксично за домашни любимци; безопасно около котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Lavandula stoechas",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/660488975/medium.jpg",
+    "commonNameEn": "French Lavender",
+    "commonNameBg": "Лавандула",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Mediterranean and temperate regions",
+    "nativeRegionBg": "Средиземноморие и умерени региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 5,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": false,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; at least 6 hours of direct sunlight daily.",
+        "bg": "Пълно слънце; поне 6 часа пряка слънчева светлина дневно."
+      },
+      "watering": {
+        "en": "Water every 4–6 days; let top soil dry slightly between waterings.",
+        "bg": "Поливайте на 4–6 дни; оставете горния слой почва леко да изсъхне."
+      },
+      "humidity": {
+        "en": "Average humidity; ensure good air circulation.",
+        "bg": "Средна влажност; осигурете добра циркулация на въздуха."
+      },
+      "temperature": {
+        "en": "Most herbs prefer 15–25 °C; protect from frost.",
+        "bg": "Повечето билки предпочитат 15–25 °C; пазете от замръзване."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 3 weeks with balanced fertilizer during growth.",
+        "bg": "Торете на 3 седмици с балансиран тор по време на растеж."
+      },
+      "toxicity": {
+        "en": "Non-toxic to pets; safe around cats and dogs.",
+        "bg": "Нетоксично за домашни любимци; безопасно около котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Laurus nobilis",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/150103946/medium.jpg",
+    "commonNameEn": "Bay Laurel",
+    "commonNameBg": "лавър",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Mediterranean and temperate regions",
+    "nativeRegionBg": "Средиземноморие и умерени региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 5,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; at least 6 hours of direct sunlight daily.",
+        "bg": "Пълно слънце; поне 6 часа пряка слънчева светлина дневно."
+      },
+      "watering": {
+        "en": "Water every 4–6 days; let top soil dry slightly between waterings.",
+        "bg": "Поливайте на 4–6 дни; оставете горния слой почва леко да изсъхне."
+      },
+      "humidity": {
+        "en": "Average humidity; ensure good air circulation.",
+        "bg": "Средна влажност; осигурете добра циркулация на въздуха."
+      },
+      "temperature": {
+        "en": "Most herbs prefer 15–25 °C; protect from frost.",
+        "bg": "Повечето билки предпочитат 15–25 °C; пазете от замръзване."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 3 weeks with balanced fertilizer during growth.",
+        "bg": "Торете на 3 седмици с балансиран тор по време на растеж."
+      },
+      "toxicity": {
+        "en": "Culinary herbs are safe for humans; some may affect pets.",
+        "bg": "Кулинарните билки са безвредни за хора; някои може да засегнат домашни животни."
+      }
+    }
+  },
+  {
+    "scientificName": "Pelargonium graveolens",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/240032312/medium.jpg",
+    "commonNameEn": "Rose-scented Geranium",
+    "commonNameBg": "дъхаво мушкато",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Mediterranean and temperate regions",
+    "nativeRegionBg": "Средиземноморие и умерени региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 5,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; at least 6 hours of direct sunlight daily.",
+        "bg": "Пълно слънце; поне 6 часа пряка слънчева светлина дневно."
+      },
+      "watering": {
+        "en": "Water every 4–6 days; let top soil dry slightly between waterings.",
+        "bg": "Поливайте на 4–6 дни; оставете горния слой почва леко да изсъхне."
+      },
+      "humidity": {
+        "en": "Average humidity; ensure good air circulation.",
+        "bg": "Средна влажност; осигурете добра циркулация на въздуха."
+      },
+      "temperature": {
+        "en": "Most herbs prefer 15–25 °C; protect from frost.",
+        "bg": "Повечето билки предпочитат 15–25 °C; пазете от замръзване."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 3 weeks with balanced fertilizer during growth.",
+        "bg": "Торете на 3 седмици с балансиран тор по време на растеж."
+      },
+      "toxicity": {
+        "en": "Culinary herbs are safe for humans; some may affect pets.",
+        "bg": "Кулинарните билки са безвредни за хора; някои може да засегнат домашни животни."
+      }
+    }
+  },
+  {
+    "scientificName": "Aloysia citrodora",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/2332506/medium.jpg",
+    "commonNameEn": "Lemon Verbena",
+    "commonNameBg": "лимонова върбинка",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Mediterranean and temperate regions",
+    "nativeRegionBg": "Средиземноморие и умерени региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 5,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; at least 6 hours of direct sunlight daily.",
+        "bg": "Пълно слънце; поне 6 часа пряка слънчева светлина дневно."
+      },
+      "watering": {
+        "en": "Water every 4–6 days; let top soil dry slightly between waterings.",
+        "bg": "Поливайте на 4–6 дни; оставете горния слой почва леко да изсъхне."
+      },
+      "humidity": {
+        "en": "Average humidity; ensure good air circulation.",
+        "bg": "Средна влажност; осигурете добра циркулация на въздуха."
+      },
+      "temperature": {
+        "en": "Most herbs prefer 15–25 °C; protect from frost.",
+        "bg": "Повечето билки предпочитат 15–25 °C; пазете от замръзване."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 3 weeks with balanced fertilizer during growth.",
+        "bg": "Торете на 3 седмици с балансиран тор по време на растеж."
+      },
+      "toxicity": {
+        "en": "Culinary herbs are safe for humans; some may affect pets.",
+        "bg": "Кулинарните билки са безвредни за хора; някои може да засегнат домашни животни."
+      }
+    }
+  },
+  {
+    "scientificName": "Hyssopus officinalis",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/237272406/medium.jpeg",
+    "commonNameEn": "Hyssop",
+    "commonNameBg": "лечебен исоп",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Mediterranean and temperate regions",
+    "nativeRegionBg": "Средиземноморие и умерени региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 5,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; at least 6 hours of direct sunlight daily.",
+        "bg": "Пълно слънце; поне 6 часа пряка слънчева светлина дневно."
+      },
+      "watering": {
+        "en": "Water every 4–6 days; let top soil dry slightly between waterings.",
+        "bg": "Поливайте на 4–6 дни; оставете горния слой почва леко да изсъхне."
+      },
+      "humidity": {
+        "en": "Average humidity; ensure good air circulation.",
+        "bg": "Средна влажност; осигурете добра циркулация на въздуха."
+      },
+      "temperature": {
+        "en": "Most herbs prefer 15–25 °C; protect from frost.",
+        "bg": "Повечето билки предпочитат 15–25 °C; пазете от замръзване."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 3 weeks with balanced fertilizer during growth.",
+        "bg": "Торете на 3 седмици с балансиран тор по време на растеж."
+      },
+      "toxicity": {
+        "en": "Culinary herbs are safe for humans; some may affect pets.",
+        "bg": "Кулинарните билки са безвредни за хора; някои може да засегнат домашни животни."
+      }
+    }
+  },
+  {
+    "scientificName": "Borago officinalis",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/60861953/medium.jpg",
+    "commonNameEn": "Borage",
+    "commonNameBg": "пореч",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Mediterranean and temperate regions",
+    "nativeRegionBg": "Средиземноморие и умерени региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 5,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; at least 6 hours of direct sunlight daily.",
+        "bg": "Пълно слънце; поне 6 часа пряка слънчева светлина дневно."
+      },
+      "watering": {
+        "en": "Water every 4–6 days; let top soil dry slightly between waterings.",
+        "bg": "Поливайте на 4–6 дни; оставете горния слой почва леко да изсъхне."
+      },
+      "humidity": {
+        "en": "Average humidity; ensure good air circulation.",
+        "bg": "Средна влажност; осигурете добра циркулация на въздуха."
+      },
+      "temperature": {
+        "en": "Most herbs prefer 15–25 °C; protect from frost.",
+        "bg": "Повечето билки предпочитат 15–25 °C; пазете от замръзване."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 3 weeks with balanced fertilizer during growth.",
+        "bg": "Торете на 3 седмици с балансиран тор по време на растеж."
+      },
+      "toxicity": {
+        "en": "Culinary herbs are safe for humans; some may affect pets.",
+        "bg": "Кулинарните билки са безвредни за хора; някои може да засегнат домашни животни."
+      }
+    }
+  },
+  {
+    "scientificName": "Satureja hortensis",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/11345886/medium.jpeg",
+    "commonNameEn": "Summer Savory",
+    "commonNameBg": "градинска чубрица",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Mediterranean and temperate regions",
+    "nativeRegionBg": "Средиземноморие и умерени региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 5,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; at least 6 hours of direct sunlight daily.",
+        "bg": "Пълно слънце; поне 6 часа пряка слънчева светлина дневно."
+      },
+      "watering": {
+        "en": "Water every 4–6 days; let top soil dry slightly between waterings.",
+        "bg": "Поливайте на 4–6 дни; оставете горния слой почва леко да изсъхне."
+      },
+      "humidity": {
+        "en": "Average humidity; ensure good air circulation.",
+        "bg": "Средна влажност; осигурете добра циркулация на въздуха."
+      },
+      "temperature": {
+        "en": "Most herbs prefer 15–25 °C; protect from frost.",
+        "bg": "Повечето билки предпочитат 15–25 °C; пазете от замръзване."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 3 weeks with balanced fertilizer during growth.",
+        "bg": "Торете на 3 седмици с балансиран тор по време на растеж."
+      },
+      "toxicity": {
+        "en": "Culinary herbs are safe for humans; some may affect pets.",
+        "bg": "Кулинарните билки са безвредни за хора; някои може да засегнат домашни животни."
+      }
+    }
+  },
+  {
+    "scientificName": "Cymbopogon citratus",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/61513592/medium.jpg",
+    "commonNameEn": "Lemongrass",
+    "commonNameBg": "лимонова трева",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Mediterranean and temperate regions",
+    "nativeRegionBg": "Средиземноморие и умерени региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 5,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; at least 6 hours of direct sunlight daily.",
+        "bg": "Пълно слънце; поне 6 часа пряка слънчева светлина дневно."
+      },
+      "watering": {
+        "en": "Water every 4–6 days; let top soil dry slightly between waterings.",
+        "bg": "Поливайте на 4–6 дни; оставете горния слой почва леко да изсъхне."
+      },
+      "humidity": {
+        "en": "Average humidity; ensure good air circulation.",
+        "bg": "Средна влажност; осигурете добра циркулация на въздуха."
+      },
+      "temperature": {
+        "en": "Most herbs prefer 15–25 °C; protect from frost.",
+        "bg": "Повечето билки предпочитат 15–25 °C; пазете от замръзване."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 3 weeks with balanced fertilizer during growth.",
+        "bg": "Торете на 3 седмици с балансиран тор по време на растеж."
+      },
+      "toxicity": {
+        "en": "Culinary herbs are safe for humans; some may affect pets.",
+        "bg": "Кулинарните билки са безвредни за хора; някои може да засегнат домашни животни."
+      }
+    }
+  },
+  {
+    "scientificName": "Zingiber officinale",
+    "imageUrl": "https://static.inaturalist.org/photos/247973845/medium.jpeg",
+    "commonNameEn": "Ginger",
+    "commonNameBg": "обикновен джинджифил",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Mediterranean and temperate regions",
+    "nativeRegionBg": "Средиземноморие и умерени региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 5,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; at least 6 hours of direct sunlight daily.",
+        "bg": "Пълно слънце; поне 6 часа пряка слънчева светлина дневно."
+      },
+      "watering": {
+        "en": "Water every 4–6 days; let top soil dry slightly between waterings.",
+        "bg": "Поливайте на 4–6 дни; оставете горния слой почва леко да изсъхне."
+      },
+      "humidity": {
+        "en": "Average humidity; ensure good air circulation.",
+        "bg": "Средна влажност; осигурете добра циркулация на въздуха."
+      },
+      "temperature": {
+        "en": "Most herbs prefer 15–25 °C; protect from frost.",
+        "bg": "Повечето билки предпочитат 15–25 °C; пазете от замръзване."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 3 weeks with balanced fertilizer during growth.",
+        "bg": "Торете на 3 седмици с балансиран тор по време на растеж."
+      },
+      "toxicity": {
+        "en": "Culinary herbs are safe for humans; some may affect pets.",
+        "bg": "Кулинарните билки са безвредни за хора; някои може да засегнат домашни животни."
+      }
+    }
+  },
+  {
+    "scientificName": "Stevia rebaudiana",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/361134/medium.jpg",
+    "commonNameEn": "Stevia",
+    "commonNameBg": "Стевиа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Mediterranean and temperate regions",
+    "nativeRegionBg": "Средиземноморие и умерени региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 5,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; at least 6 hours of direct sunlight daily.",
+        "bg": "Пълно слънце; поне 6 часа пряка слънчева светлина дневно."
+      },
+      "watering": {
+        "en": "Water every 4–6 days; let top soil dry slightly between waterings.",
+        "bg": "Поливайте на 4–6 дни; оставете горния слой почва леко да изсъхне."
+      },
+      "humidity": {
+        "en": "Average humidity; ensure good air circulation.",
+        "bg": "Средна влажност; осигурете добра циркулация на въздуха."
+      },
+      "temperature": {
+        "en": "Most herbs prefer 15–25 °C; protect from frost.",
+        "bg": "Повечето билки предпочитат 15–25 °C; пазете от замръзване."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 3 weeks with balanced fertilizer during growth.",
+        "bg": "Торете на 3 седмици с балансиран тор по време на растеж."
+      },
+      "toxicity": {
+        "en": "Culinary herbs are safe for humans; some may affect pets.",
+        "bg": "Кулинарните билки са безвредни за хора; някои може да засегнат домашни животни."
+      }
+    }
+  },
+  {
+    "scientificName": "Solanum lycopersicum",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/115407615/medium.jpg",
+    "commonNameEn": "Tomato",
+    "commonNameBg": "домат",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Tropical and temperate regions",
+    "nativeRegionBg": "Тропически и умерени региони",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 4,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 6,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; minimum 6–8 hours of direct sunlight daily.",
+        "bg": "Пълно слънце; минимум 6–8 часа пряка слънчева светлина дневно."
+      },
+      "watering": {
+        "en": "Keep soil consistently moist; water every 3–5 days.",
+        "bg": "Поддържайте почвата постоянно влажна; поливайте на 3–5 дни."
+      },
+      "humidity": {
+        "en": "Average humidity; ensure good ventilation to prevent disease.",
+        "bg": "Средна влажност; осигурете добра вентилация за предотвратяване на болести."
+      },
+      "temperature": {
+        "en": "Most vegetables prefer 18–27 °C during growing season.",
+        "bg": "Повечето зеленчуци предпочитат 18–27 °C по време на растежа."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 2 weeks with tomato or vegetable fertilizer.",
+        "bg": "Торете на 2 седмици с тор за домати или зеленчуци."
+      },
+      "toxicity": {
+        "en": "Edible and safe for humans; fruit and leaves safe for most pets.",
+        "bg": "Годни за консумация и безопасни за хора; плодове и листа са безвредни за повечето домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Capsicum annuum",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/81790849/medium.jpeg",
+    "commonNameEn": "Sweet Pepper",
+    "commonNameBg": "пипер",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Tropical and temperate regions",
+    "nativeRegionBg": "Тропически и умерени региони",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 4,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 6,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; minimum 6–8 hours of direct sunlight daily.",
+        "bg": "Пълно слънце; минимум 6–8 часа пряка слънчева светлина дневно."
+      },
+      "watering": {
+        "en": "Keep soil consistently moist; water every 3–5 days.",
+        "bg": "Поддържайте почвата постоянно влажна; поливайте на 3–5 дни."
+      },
+      "humidity": {
+        "en": "Average humidity; ensure good ventilation to prevent disease.",
+        "bg": "Средна влажност; осигурете добра вентилация за предотвратяване на болести."
+      },
+      "temperature": {
+        "en": "Most vegetables prefer 18–27 °C during growing season.",
+        "bg": "Повечето зеленчуци предпочитат 18–27 °C по време на растежа."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 2 weeks with tomato or vegetable fertilizer.",
+        "bg": "Торете на 2 седмици с тор за домати или зеленчуци."
+      },
+      "toxicity": {
+        "en": "Edible and safe for humans; fruit and leaves safe for most pets.",
+        "bg": "Годни за консумация и безопасни за хора; плодове и листа са безвредни за повечето домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Capsicum frutescens",
+    "imageUrl": "https://static.inaturalist.org/photos/18301410/medium.jpeg",
+    "commonNameEn": "Hot Pepper",
+    "commonNameBg": "Капсикум",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Tropical and temperate regions",
+    "nativeRegionBg": "Тропически и умерени региони",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 4,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 6,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; minimum 6–8 hours of direct sunlight daily.",
+        "bg": "Пълно слънце; минимум 6–8 часа пряка слънчева светлина дневно."
+      },
+      "watering": {
+        "en": "Keep soil consistently moist; water every 3–5 days.",
+        "bg": "Поддържайте почвата постоянно влажна; поливайте на 3–5 дни."
+      },
+      "humidity": {
+        "en": "Average humidity; ensure good ventilation to prevent disease.",
+        "bg": "Средна влажност; осигурете добра вентилация за предотвратяване на болести."
+      },
+      "temperature": {
+        "en": "Most vegetables prefer 18–27 °C during growing season.",
+        "bg": "Повечето зеленчуци предпочитат 18–27 °C по време на растежа."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 2 weeks with tomato or vegetable fertilizer.",
+        "bg": "Торете на 2 седмици с тор за домати или зеленчуци."
+      },
+      "toxicity": {
+        "en": "Edible and safe for humans; fruit and leaves safe for most pets.",
+        "bg": "Годни за консумация и безопасни за хора; плодове и листа са безвредни за повечето домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Cucumis sativus",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/346972380/medium.jpg",
+    "commonNameEn": "Cucumber",
+    "commonNameBg": "Кукумис",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Tropical and temperate regions",
+    "nativeRegionBg": "Тропически и умерени региони",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 4,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 6,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; minimum 6–8 hours of direct sunlight daily.",
+        "bg": "Пълно слънце; минимум 6–8 часа пряка слънчева светлина дневно."
+      },
+      "watering": {
+        "en": "Keep soil consistently moist; water every 3–5 days.",
+        "bg": "Поддържайте почвата постоянно влажна; поливайте на 3–5 дни."
+      },
+      "humidity": {
+        "en": "Average humidity; ensure good ventilation to prevent disease.",
+        "bg": "Средна влажност; осигурете добра вентилация за предотвратяване на болести."
+      },
+      "temperature": {
+        "en": "Most vegetables prefer 18–27 °C during growing season.",
+        "bg": "Повечето зеленчуци предпочитат 18–27 °C по време на растежа."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 2 weeks with tomato or vegetable fertilizer.",
+        "bg": "Торете на 2 седмици с тор за домати или зеленчуци."
+      },
+      "toxicity": {
+        "en": "Edible and safe for humans; fruit and leaves safe for most pets.",
+        "bg": "Годни за консумация и безопасни за хора; плодове и листа са безвредни за повечето домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Cucurbita pepo",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/101476279/medium.png",
+    "commonNameEn": "Zucchini",
+    "commonNameBg": "Твърдокора тиква",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Tropical and temperate regions",
+    "nativeRegionBg": "Тропически и умерени региони",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 4,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 6,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; minimum 6–8 hours of direct sunlight daily.",
+        "bg": "Пълно слънце; минимум 6–8 часа пряка слънчева светлина дневно."
+      },
+      "watering": {
+        "en": "Keep soil consistently moist; water every 3–5 days.",
+        "bg": "Поддържайте почвата постоянно влажна; поливайте на 3–5 дни."
+      },
+      "humidity": {
+        "en": "Average humidity; ensure good ventilation to prevent disease.",
+        "bg": "Средна влажност; осигурете добра вентилация за предотвратяване на болести."
+      },
+      "temperature": {
+        "en": "Most vegetables prefer 18–27 °C during growing season.",
+        "bg": "Повечето зеленчуци предпочитат 18–27 °C по време на растежа."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 2 weeks with tomato or vegetable fertilizer.",
+        "bg": "Торете на 2 седмици с тор за домати или зеленчуци."
+      },
+      "toxicity": {
+        "en": "Edible and safe for humans; fruit and leaves safe for most pets.",
+        "bg": "Годни за консумация и безопасни за хора; плодове и листа са безвредни за повечето домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Phaseolus vulgaris",
+    "imageUrl": "https://static.inaturalist.org/photos/74035162/medium.jpeg",
+    "commonNameEn": "Green Bean",
+    "commonNameBg": "обикновен боб",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Tropical and temperate regions",
+    "nativeRegionBg": "Тропически и умерени региони",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 4,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 6,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; minimum 6–8 hours of direct sunlight daily.",
+        "bg": "Пълно слънце; минимум 6–8 часа пряка слънчева светлина дневно."
+      },
+      "watering": {
+        "en": "Keep soil consistently moist; water every 3–5 days.",
+        "bg": "Поддържайте почвата постоянно влажна; поливайте на 3–5 дни."
+      },
+      "humidity": {
+        "en": "Average humidity; ensure good ventilation to prevent disease.",
+        "bg": "Средна влажност; осигурете добра вентилация за предотвратяване на болести."
+      },
+      "temperature": {
+        "en": "Most vegetables prefer 18–27 °C during growing season.",
+        "bg": "Повечето зеленчуци предпочитат 18–27 °C по време на растежа."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 2 weeks with tomato or vegetable fertilizer.",
+        "bg": "Торете на 2 седмици с тор за домати или зеленчуци."
+      },
+      "toxicity": {
+        "en": "Edible and safe for humans; fruit and leaves safe for most pets.",
+        "bg": "Годни за консумация и безопасни за хора; плодове и листа са безвредни за повечето домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Lactuca sativa",
     "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/5228/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
+    "commonNameEn": "Lettuce",
+    "commonNameBg": "обикновена маруля",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Tropical and temperate regions",
+    "nativeRegionBg": "Тропически и умерени региони",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 4,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 6,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; minimum 6–8 hours of direct sunlight daily.",
+        "bg": "Пълно слънце; минимум 6–8 часа пряка слънчева светлина дневно."
+      },
+      "watering": {
+        "en": "Keep soil consistently moist; water every 3–5 days.",
+        "bg": "Поддържайте почвата постоянно влажна; поливайте на 3–5 дни."
+      },
+      "humidity": {
+        "en": "Average humidity; ensure good ventilation to prevent disease.",
+        "bg": "Средна влажност; осигурете добра вентилация за предотвратяване на болести."
+      },
+      "temperature": {
+        "en": "Most vegetables prefer 18–27 °C during growing season.",
+        "bg": "Повечето зеленчуци предпочитат 18–27 °C по време на растежа."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 2 weeks with tomato or vegetable fertilizer.",
+        "bg": "Торете на 2 седмици с тор за домати или зеленчуци."
+      },
+      "toxicity": {
+        "en": "Edible and safe for humans; fruit and leaves safe for most pets.",
+        "bg": "Годни за консумация и безопасни за хора; плодове и листа са безвредни за повечето домашни любимци."
+      }
+    }
   },
   {
-    "scientificName": "Raphanus raphanistrum",
-    "commonNameEn": "Wild radish",
-    "imageUrl": "https://static.inaturalist.org/photos/103385471/medium.jpg",
+    "scientificName": "Spinacia oleracea",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/41981/medium.jpg",
+    "commonNameEn": "Spinach",
+    "commonNameBg": "Спинакиа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Tropical and temperate regions",
+    "nativeRegionBg": "Тропически и умерени региони",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 4,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 6,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; minimum 6–8 hours of direct sunlight daily.",
+        "bg": "Пълно слънце; минимум 6–8 часа пряка слънчева светлина дневно."
+      },
+      "watering": {
+        "en": "Keep soil consistently moist; water every 3–5 days.",
+        "bg": "Поддържайте почвата постоянно влажна; поливайте на 3–5 дни."
+      },
+      "humidity": {
+        "en": "Average humidity; ensure good ventilation to prevent disease.",
+        "bg": "Средна влажност; осигурете добра вентилация за предотвратяване на болести."
+      },
+      "temperature": {
+        "en": "Most vegetables prefer 18–27 °C during growing season.",
+        "bg": "Повечето зеленчуци предпочитат 18–27 °C по време на растежа."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 2 weeks with tomato or vegetable fertilizer.",
+        "bg": "Торете на 2 седмици с тор за домати или зеленчуци."
+      },
+      "toxicity": {
+        "en": "Edible and safe for humans; fruit and leaves safe for most pets.",
+        "bg": "Годни за консумация и безопасни за хора; плодове и листа са безвредни за повечето домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Fragaria ananassa",
+    "imageUrl": null,
+    "commonNameEn": "Garden Strawberry",
+    "commonNameBg": "Фрагариа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Tropical and temperate regions",
+    "nativeRegionBg": "Тропически и умерени региони",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 4,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 6,
+    "mistingNeeded": false,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; minimum 6–8 hours of direct sunlight daily.",
+        "bg": "Пълно слънце; минимум 6–8 часа пряка слънчева светлина дневно."
+      },
+      "watering": {
+        "en": "Keep soil consistently moist; water every 3–5 days.",
+        "bg": "Поддържайте почвата постоянно влажна; поливайте на 3–5 дни."
+      },
+      "humidity": {
+        "en": "Average humidity; ensure good ventilation to prevent disease.",
+        "bg": "Средна влажност; осигурете добра вентилация за предотвратяване на болести."
+      },
+      "temperature": {
+        "en": "Most vegetables prefer 18–27 °C during growing season.",
+        "bg": "Повечето зеленчуци предпочитат 18–27 °C по време на растежа."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 2 weeks with tomato or vegetable fertilizer.",
+        "bg": "Торете на 2 седмици с тор за домати или зеленчуци."
+      },
+      "toxicity": {
+        "en": "Non-toxic to pets; safe around cats and dogs.",
+        "bg": "Нетоксично за домашни любимци; безопасно около котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Solanum melongena",
+    "imageUrl": "https://static.inaturalist.org/photos/66635115/medium.jpg",
+    "commonNameEn": "Eggplant",
+    "commonNameBg": "Соланум",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Tropical and temperate regions",
+    "nativeRegionBg": "Тропически и умерени региони",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 4,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 6,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; minimum 6–8 hours of direct sunlight daily.",
+        "bg": "Пълно слънце; минимум 6–8 часа пряка слънчева светлина дневно."
+      },
+      "watering": {
+        "en": "Keep soil consistently moist; water every 3–5 days.",
+        "bg": "Поддържайте почвата постоянно влажна; поливайте на 3–5 дни."
+      },
+      "humidity": {
+        "en": "Average humidity; ensure good ventilation to prevent disease.",
+        "bg": "Средна влажност; осигурете добра вентилация за предотвратяване на болести."
+      },
+      "temperature": {
+        "en": "Most vegetables prefer 18–27 °C during growing season.",
+        "bg": "Повечето зеленчуци предпочитат 18–27 °C по време на растежа."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 2 weeks with tomato or vegetable fertilizer.",
+        "bg": "Торете на 2 седмици с тор за домати или зеленчуци."
+      },
+      "toxicity": {
+        "en": "Edible and safe for humans; fruit and leaves safe for most pets.",
+        "bg": "Годни за консумация и безопасни за хора; плодове и листа са безвредни за повечето домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Beta vulgaris",
+    "imageUrl": "https://static.inaturalist.org/photos/131362143/medium.jpeg",
+    "commonNameEn": "Beet",
+    "commonNameBg": "червено цвекло",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Tropical and temperate regions",
+    "nativeRegionBg": "Тропически и умерени региони",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 4,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 6,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; minimum 6–8 hours of direct sunlight daily.",
+        "bg": "Пълно слънце; минимум 6–8 часа пряка слънчева светлина дневно."
+      },
+      "watering": {
+        "en": "Keep soil consistently moist; water every 3–5 days.",
+        "bg": "Поддържайте почвата постоянно влажна; поливайте на 3–5 дни."
+      },
+      "humidity": {
+        "en": "Average humidity; ensure good ventilation to prevent disease.",
+        "bg": "Средна влажност; осигурете добра вентилация за предотвратяване на болести."
+      },
+      "temperature": {
+        "en": "Most vegetables prefer 18–27 °C during growing season.",
+        "bg": "Повечето зеленчуци предпочитат 18–27 °C по време на растежа."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 2 weeks with tomato or vegetable fertilizer.",
+        "bg": "Торете на 2 седмици с тор за домати или зеленчуци."
+      },
+      "toxicity": {
+        "en": "Edible and safe for humans; fruit and leaves safe for most pets.",
+        "bg": "Годни за консумация и безопасни за хора; плодове и листа са безвредни за повечето домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Raphanus sativus",
+    "imageUrl": null,
+    "commonNameEn": "Radish",
+    "commonNameBg": "Рафанус",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Tropical and temperate regions",
+    "nativeRegionBg": "Тропически и умерени региони",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 4,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 6,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; minimum 6–8 hours of direct sunlight daily.",
+        "bg": "Пълно слънце; минимум 6–8 часа пряка слънчева светлина дневно."
+      },
+      "watering": {
+        "en": "Keep soil consistently moist; water every 3–5 days.",
+        "bg": "Поддържайте почвата постоянно влажна; поливайте на 3–5 дни."
+      },
+      "humidity": {
+        "en": "Average humidity; ensure good ventilation to prevent disease.",
+        "bg": "Средна влажност; осигурете добра вентилация за предотвратяване на болести."
+      },
+      "temperature": {
+        "en": "Most vegetables prefer 18–27 °C during growing season.",
+        "bg": "Повечето зеленчуци предпочитат 18–27 °C по време на растежа."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 2 weeks with tomato or vegetable fertilizer.",
+        "bg": "Торете на 2 седмици с тор за домати или зеленчуци."
+      },
+      "toxicity": {
+        "en": "Edible and safe for humans; fruit and leaves safe for most pets.",
+        "bg": "Годни за консумация и безопасни за хора; плодове и листа са безвредни за повечето домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Allium cepa",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/136608703/medium.jpg",
+    "commonNameEn": "Onion",
+    "commonNameBg": "кромид лук",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Mediterranean and temperate regions",
+    "nativeRegionBg": "Средиземноморие и умерени региони",
     "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
+    "wateringIntervalDays": 5,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; at least 6 hours of direct sunlight daily.",
+        "bg": "Пълно слънце; поне 6 часа пряка слънчева светлина дневно."
+      },
+      "watering": {
+        "en": "Water every 4–6 days; let top soil dry slightly between waterings.",
+        "bg": "Поливайте на 4–6 дни; оставете горния слой почва леко да изсъхне."
+      },
+      "humidity": {
+        "en": "Average humidity; ensure good air circulation.",
+        "bg": "Средна влажност; осигурете добра циркулация на въздуха."
+      },
+      "temperature": {
+        "en": "Most herbs prefer 15–25 °C; protect from frost.",
+        "bg": "Повечето билки предпочитат 15–25 °C; пазете от замръзване."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 3 weeks with balanced fertilizer during growth.",
+        "bg": "Торете на 3 седмици с балансиран тор по време на растеж."
+      },
+      "toxicity": {
+        "en": "Culinary herbs are safe for humans; some may affect pets.",
+        "bg": "Кулинарните билки са безвредни за хора; някои може да засегнат домашни животни."
+      }
+    }
+  },
+  {
+    "scientificName": "Allium sativum",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/543709104/medium.jpg",
+    "commonNameEn": "Garlic",
+    "commonNameBg": "чесън",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Mediterranean and temperate regions",
+    "nativeRegionBg": "Средиземноморие и умерени региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 5,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; at least 6 hours of direct sunlight daily.",
+        "bg": "Пълно слънце; поне 6 часа пряка слънчева светлина дневно."
+      },
+      "watering": {
+        "en": "Water every 4–6 days; let top soil dry slightly between waterings.",
+        "bg": "Поливайте на 4–6 дни; оставете горния слой почва леко да изсъхне."
+      },
+      "humidity": {
+        "en": "Average humidity; ensure good air circulation.",
+        "bg": "Средна влажност; осигурете добра циркулация на въздуха."
+      },
+      "temperature": {
+        "en": "Most herbs prefer 15–25 °C; protect from frost.",
+        "bg": "Повечето билки предпочитат 15–25 °C; пазете от замръзване."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 3 weeks with balanced fertilizer during growth.",
+        "bg": "Торете на 3 седмици с балансиран тор по време на растеж."
+      },
+      "toxicity": {
+        "en": "Culinary herbs are safe for humans; some may affect pets.",
+        "bg": "Кулинарните билки са безвредни за хора; някои може да засегнат домашни животни."
+      }
+    }
+  },
+  {
+    "scientificName": "Vitis vinifera",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/197483971/medium.jpeg",
+    "commonNameEn": "Grapevine",
+    "commonNameBg": "европейска винена лоза",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Tropical and temperate regions",
+    "nativeRegionBg": "Тропически и умерени региони",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 4,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 6,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; minimum 6–8 hours of direct sunlight daily.",
+        "bg": "Пълно слънце; минимум 6–8 часа пряка слънчева светлина дневно."
+      },
+      "watering": {
+        "en": "Keep soil consistently moist; water every 3–5 days.",
+        "bg": "Поддържайте почвата постоянно влажна; поливайте на 3–5 дни."
+      },
+      "humidity": {
+        "en": "Average humidity; ensure good ventilation to prevent disease.",
+        "bg": "Средна влажност; осигурете добра вентилация за предотвратяване на болести."
+      },
+      "temperature": {
+        "en": "Most vegetables prefer 18–27 °C during growing season.",
+        "bg": "Повечето зеленчуци предпочитат 18–27 °C по време на растежа."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 2 weeks with tomato or vegetable fertilizer.",
+        "bg": "Торете на 2 седмици с тор за домати или зеленчуци."
+      },
+      "toxicity": {
+        "en": "Edible and safe for humans; fruit and leaves safe for most pets.",
+        "bg": "Годни за консумация и безопасни за хора; плодове и листа са безвредни за повечето домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Ribes nigrum",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/130495402/medium.jpg",
+    "commonNameEn": "Black Currant",
+    "commonNameBg": "касис",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Tropical and temperate regions",
+    "nativeRegionBg": "Тропически и умерени региони",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 4,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 6,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; minimum 6–8 hours of direct sunlight daily.",
+        "bg": "Пълно слънце; минимум 6–8 часа пряка слънчева светлина дневно."
+      },
+      "watering": {
+        "en": "Keep soil consistently moist; water every 3–5 days.",
+        "bg": "Поддържайте почвата постоянно влажна; поливайте на 3–5 дни."
+      },
+      "humidity": {
+        "en": "Average humidity; ensure good ventilation to prevent disease.",
+        "bg": "Средна влажност; осигурете добра вентилация за предотвратяване на болести."
+      },
+      "temperature": {
+        "en": "Most vegetables prefer 18–27 °C during growing season.",
+        "bg": "Повечето зеленчуци предпочитат 18–27 °C по време на растежа."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 2 weeks with tomato or vegetable fertilizer.",
+        "bg": "Торете на 2 седмици с тор за домати или зеленчуци."
+      },
+      "toxicity": {
+        "en": "Edible and safe for humans; fruit and leaves safe for most pets.",
+        "bg": "Годни за консумация и безопасни за хора; плодове и листа са безвредни за повечето домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Ribes rubrum",
+    "imageUrl": "https://static.inaturalist.org/photos/39067323/medium.jpg",
+    "commonNameEn": "Red Currant",
+    "commonNameBg": "червен касис",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Tropical and temperate regions",
+    "nativeRegionBg": "Тропически и умерени региони",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 4,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 6,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; minimum 6–8 hours of direct sunlight daily.",
+        "bg": "Пълно слънце; минимум 6–8 часа пряка слънчева светлина дневно."
+      },
+      "watering": {
+        "en": "Keep soil consistently moist; water every 3–5 days.",
+        "bg": "Поддържайте почвата постоянно влажна; поливайте на 3–5 дни."
+      },
+      "humidity": {
+        "en": "Average humidity; ensure good ventilation to prevent disease.",
+        "bg": "Средна влажност; осигурете добра вентилация за предотвратяване на болести."
+      },
+      "temperature": {
+        "en": "Most vegetables prefer 18–27 °C during growing season.",
+        "bg": "Повечето зеленчуци предпочитат 18–27 °C по време на растежа."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 2 weeks with tomato or vegetable fertilizer.",
+        "bg": "Торете на 2 седмици с тор за домати или зеленчуци."
+      },
+      "toxicity": {
+        "en": "Edible and safe for humans; fruit and leaves safe for most pets.",
+        "bg": "Годни за консумация и безопасни за хора; плодове и листа са безвредни за повечето домашни любимци."
+      }
+    }
   },
   {
     "scientificName": "Rubus idaeus",
-    "commonNameEn": "red raspberry",
     "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/358785151/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
+    "commonNameEn": "Raspberry",
+    "commonNameBg": "малина",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Tropical and temperate regions",
+    "nativeRegionBg": "Тропически и умерени региони",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 4,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 6,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; minimum 6–8 hours of direct sunlight daily.",
+        "bg": "Пълно слънце; минимум 6–8 часа пряка слънчева светлина дневно."
+      },
+      "watering": {
+        "en": "Keep soil consistently moist; water every 3–5 days.",
+        "bg": "Поддържайте почвата постоянно влажна; поливайте на 3–5 дни."
+      },
+      "humidity": {
+        "en": "Average humidity; ensure good ventilation to prevent disease.",
+        "bg": "Средна влажност; осигурете добра вентилация за предотвратяване на болести."
+      },
+      "temperature": {
+        "en": "Most vegetables prefer 18–27 °C during growing season.",
+        "bg": "Повечето зеленчуци предпочитат 18–27 °C по време на растежа."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 2 weeks with tomato or vegetable fertilizer.",
+        "bg": "Торете на 2 седмици с тор за домати или зеленчуци."
+      },
+      "toxicity": {
+        "en": "Edible and safe for humans; fruit and leaves safe for most pets.",
+        "bg": "Годни за консумация и безопасни за хора; плодове и листа са безвредни за повечето домашни любимци."
+      }
+    }
   },
   {
-    "scientificName": "Hypochaeris radicata",
-    "commonNameEn": "Common Cat's-ear",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/264826790/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
+    "scientificName": "Malus domestica",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/268437/medium.jpg",
+    "commonNameEn": "Apple Tree",
+    "commonNameBg": "домашна ябълка",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Tropical and temperate regions",
+    "nativeRegionBg": "Тропически и умерени региони",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 4,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 6,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; minimum 6–8 hours of direct sunlight daily.",
+        "bg": "Пълно слънце; минимум 6–8 часа пряка слънчева светлина дневно."
+      },
+      "watering": {
+        "en": "Keep soil consistently moist; water every 3–5 days.",
+        "bg": "Поддържайте почвата постоянно влажна; поливайте на 3–5 дни."
+      },
+      "humidity": {
+        "en": "Average humidity; ensure good ventilation to prevent disease.",
+        "bg": "Средна влажност; осигурете добра вентилация за предотвратяване на болести."
+      },
+      "temperature": {
+        "en": "Most vegetables prefer 18–27 °C during growing season.",
+        "bg": "Повечето зеленчуци предпочитат 18–27 °C по време на растежа."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 2 weeks with tomato or vegetable fertilizer.",
+        "bg": "Торете на 2 седмици с тор за домати или зеленчуци."
+      },
+      "toxicity": {
+        "en": "Edible and safe for humans; fruit and leaves safe for most pets.",
+        "bg": "Годни за консумация и безопасни за хора; плодове и листа са безвредни за повечето домашни любимци."
+      }
+    }
   },
   {
-    "scientificName": "Nerium oleander",
-    "commonNameEn": "oleander",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/392455529/medium.jpeg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
+    "scientificName": "Ficus carica",
+    "imageUrl": "https://static.inaturalist.org/photos/97971657/medium.jpeg",
+    "commonNameEn": "Fig Tree",
+    "commonNameBg": "смокиня",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Tropical America",
+    "nativeRegionBg": "Тропическа Америка",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 18,
+    "mistingNeeded": true,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Bright indirect light; avoid direct midday sun.",
+        "bg": "Ярка непряка светлина; избягвайте пряко пладнешко слънце."
+      },
+      "watering": {
+        "en": "Water when top 2–3 cm of soil dry out, every 7–10 days.",
+        "bg": "Поливайте когато горните 2–3 см почва изсъхнат, на 7–10 дни."
+      },
+      "humidity": {
+        "en": "Prefers 50–70% humidity; mist leaves or use a humidifier.",
+        "bg": "Обича 50–70% влажност; пръскайте листата или ползвайте овлажнител."
+      },
+      "temperature": {
+        "en": "Keep at 18–27 °C; protect from cold drafts.",
+        "bg": "Дръжте при 18–27 °C; пазете от студени течения."
+      },
+      "fertilizer": {
+        "en": "Fertilize with liquid fertilizer every 3 weeks during growth.",
+        "bg": "Торете с течен тор на 3 седмици по време на растеж."
+      },
+      "toxicity": {
+        "en": "Check species — many aroids are toxic to pets.",
+        "bg": "Проверете вида — много ароиди са токсични за домашни любимци."
+      }
+    }
   },
   {
-    "scientificName": "Mitchella repens",
-    "commonNameEn": "partridgeberry",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/40064/medium.jpg",
+    "scientificName": "Tagetes patula",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/150976716/medium.jpg",
+    "commonNameEn": "French Marigold",
+    "commonNameBg": "Тагетес",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Various worldwide regions",
+    "nativeRegionBg": "Различни региони по целия свят",
     "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
+    "wateringIntervalDays": 3,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 6,
+    "mistingNeeded": false,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most prefer 6+ hours of sun.",
+        "bg": "Пълно слънце до частична сянка; повечето предпочитат 6+ часа слънце."
+      },
+      "watering": {
+        "en": "Water regularly every 2–4 days; do not let soil dry completely.",
+        "bg": "Поливайте редовно на 2–4 дни; не оставяйте почвата да изсъхне напълно."
+      },
+      "humidity": {
+        "en": "Adapts to normal outdoor humidity.",
+        "bg": "Адаптира се към нормалната влажност на открито."
+      },
+      "temperature": {
+        "en": "Plant after frost; most grow well at 15–28 °C.",
+        "bg": "Засаждайте след замръзването; повечето растат добре при 15–28 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 2 weeks with flowering plant fertilizer.",
+        "bg": "Торете на 2 седмици с тор за цъфтящи растения."
+      },
+      "toxicity": {
+        "en": "Non-toxic to pets; safe around cats and dogs.",
+        "bg": "Нетоксично за домашни любимци; безопасно около котки и кучета."
+      }
+    }
   },
   {
-    "scientificName": "Senecio vulgaris",
-    "commonNameEn": "common groundsel",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/354387481/medium.jpeg",
+    "scientificName": "Tagetes erecta",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/446036067/medium.jpeg",
+    "commonNameEn": "African Marigold",
+    "commonNameBg": "Тагетес",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Various worldwide regions",
+    "nativeRegionBg": "Различни региони по целия свят",
     "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
+    "wateringIntervalDays": 3,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 6,
+    "mistingNeeded": false,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most prefer 6+ hours of sun.",
+        "bg": "Пълно слънце до частична сянка; повечето предпочитат 6+ часа слънце."
+      },
+      "watering": {
+        "en": "Water regularly every 2–4 days; do not let soil dry completely.",
+        "bg": "Поливайте редовно на 2–4 дни; не оставяйте почвата да изсъхне напълно."
+      },
+      "humidity": {
+        "en": "Adapts to normal outdoor humidity.",
+        "bg": "Адаптира се към нормалната влажност на открито."
+      },
+      "temperature": {
+        "en": "Plant after frost; most grow well at 15–28 °C.",
+        "bg": "Засаждайте след замръзването; повечето растат добре при 15–28 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 2 weeks with flowering plant fertilizer.",
+        "bg": "Торете на 2 седмици с тор за цъфтящи растения."
+      },
+      "toxicity": {
+        "en": "Non-toxic to pets; safe around cats and dogs.",
+        "bg": "Нетоксично за домашни любимци; безопасно около котки и кучета."
+      }
+    }
   },
   {
-    "scientificName": "Maianthemum canadense",
-    "commonNameEn": "Canada mayflower",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/24815/medium.jpg",
+    "scientificName": "Petunia hybrida",
+    "imageUrl": null,
+    "commonNameEn": "Garden Petunia",
+    "commonNameBg": "Петуниа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Various worldwide regions",
+    "nativeRegionBg": "Различни региони по целия свят",
     "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
+    "wateringIntervalDays": 3,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 6,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most prefer 6+ hours of sun.",
+        "bg": "Пълно слънце до частична сянка; повечето предпочитат 6+ часа слънце."
+      },
+      "watering": {
+        "en": "Water regularly every 2–4 days; do not let soil dry completely.",
+        "bg": "Поливайте редовно на 2–4 дни; не оставяйте почвата да изсъхне напълно."
+      },
+      "humidity": {
+        "en": "Adapts to normal outdoor humidity.",
+        "bg": "Адаптира се към нормалната влажност на открито."
+      },
+      "temperature": {
+        "en": "Plant after frost; most grow well at 15–28 °C.",
+        "bg": "Засаждайте след замръзването; повечето растат добре при 15–28 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 2 weeks with flowering plant fertilizer.",
+        "bg": "Торете на 2 седмици с тор за цъфтящи растения."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; keep pets from eating flowering plants.",
+        "bg": "Токсичността варира; пазете домашни любимци от яденето на цъфтящи растения."
+      }
+    }
   },
   {
-    "scientificName": "Dipsacus fullonum",
-    "commonNameEn": "wild teasel",
-    "imageUrl": "https://static.inaturalist.org/photos/4385824/medium.jpg",
+    "scientificName": "Impatiens walleriana",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/72834061/medium.jpeg",
+    "commonNameEn": "Busy Lizzie",
+    "commonNameBg": "Импатиенс",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Various worldwide regions",
+    "nativeRegionBg": "Различни региони по целия свят",
     "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
+    "wateringIntervalDays": 3,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 6,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most prefer 6+ hours of sun.",
+        "bg": "Пълно слънце до частична сянка; повечето предпочитат 6+ часа слънце."
+      },
+      "watering": {
+        "en": "Water regularly every 2–4 days; do not let soil dry completely.",
+        "bg": "Поливайте редовно на 2–4 дни; не оставяйте почвата да изсъхне напълно."
+      },
+      "humidity": {
+        "en": "Adapts to normal outdoor humidity.",
+        "bg": "Адаптира се към нормалната влажност на открито."
+      },
+      "temperature": {
+        "en": "Plant after frost; most grow well at 15–28 °C.",
+        "bg": "Засаждайте след замръзването; повечето растат добре при 15–28 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 2 weeks with flowering plant fertilizer.",
+        "bg": "Торете на 2 седмици с тор за цъфтящи растения."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; keep pets from eating flowering plants.",
+        "bg": "Токсичността варира; пазете домашни любимци от яденето на цъфтящи растения."
+      }
+    }
   },
   {
-    "scientificName": "Rhamnus cathartica",
-    "commonNameEn": "common buckthorn",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/341888418/medium.jpg",
+    "scientificName": "Viola tricolor",
+    "imageUrl": "https://static.inaturalist.org/photos/374479105/medium.jpeg",
+    "commonNameEn": "Pansy",
+    "commonNameBg": "трицветна теменуга",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Various worldwide regions",
+    "nativeRegionBg": "Различни региони по целия свят",
     "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
+    "wateringIntervalDays": 3,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 6,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most prefer 6+ hours of sun.",
+        "bg": "Пълно слънце до частична сянка; повечето предпочитат 6+ часа слънце."
+      },
+      "watering": {
+        "en": "Water regularly every 2–4 days; do not let soil dry completely.",
+        "bg": "Поливайте редовно на 2–4 дни; не оставяйте почвата да изсъхне напълно."
+      },
+      "humidity": {
+        "en": "Adapts to normal outdoor humidity.",
+        "bg": "Адаптира се към нормалната влажност на открито."
+      },
+      "temperature": {
+        "en": "Plant after frost; most grow well at 15–28 °C.",
+        "bg": "Засаждайте след замръзването; повечето растат добре при 15–28 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 2 weeks with flowering plant fertilizer.",
+        "bg": "Торете на 2 седмици с тор за цъфтящи растения."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; keep pets from eating flowering plants.",
+        "bg": "Токсичността варира; пазете домашни любимци от яденето на цъфтящи растения."
+      }
+    }
   },
   {
-    "scientificName": "Monarda fistulosa",
-    "commonNameEn": "wild bergamot",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/301795454/medium.jpg",
+    "scientificName": "Viola cornuta",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/729598/medium.jpg",
+    "commonNameEn": "Horned Violet",
+    "commonNameBg": "Виола",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Various worldwide regions",
+    "nativeRegionBg": "Различни региони по целия свят",
     "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
+    "wateringIntervalDays": 3,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 6,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most prefer 6+ hours of sun.",
+        "bg": "Пълно слънце до частична сянка; повечето предпочитат 6+ часа слънце."
+      },
+      "watering": {
+        "en": "Water regularly every 2–4 days; do not let soil dry completely.",
+        "bg": "Поливайте редовно на 2–4 дни; не оставяйте почвата да изсъхне напълно."
+      },
+      "humidity": {
+        "en": "Adapts to normal outdoor humidity.",
+        "bg": "Адаптира се към нормалната влажност на открито."
+      },
+      "temperature": {
+        "en": "Plant after frost; most grow well at 15–28 °C.",
+        "bg": "Засаждайте след замръзването; повечето растат добре при 15–28 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 2 weeks with flowering plant fertilizer.",
+        "bg": "Торете на 2 седмици с тор за цъфтящи растения."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; keep pets from eating flowering plants.",
+        "bg": "Токсичността варира; пазете домашни любимци от яденето на цъфтящи растения."
+      }
+    }
   },
   {
-    "scientificName": "Lamium galeobdolon",
-    "commonNameEn": "yellow archangel",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/383000890/medium.jpg",
+    "scientificName": "Zinnia elegans",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/24339002/medium.jpeg",
+    "commonNameEn": "Common Zinnia",
+    "commonNameBg": "Зинниа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Various worldwide regions",
+    "nativeRegionBg": "Различни региони по целия свят",
     "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
+    "wateringIntervalDays": 3,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 6,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most prefer 6+ hours of sun.",
+        "bg": "Пълно слънце до частична сянка; повечето предпочитат 6+ часа слънце."
+      },
+      "watering": {
+        "en": "Water regularly every 2–4 days; do not let soil dry completely.",
+        "bg": "Поливайте редовно на 2–4 дни; не оставяйте почвата да изсъхне напълно."
+      },
+      "humidity": {
+        "en": "Adapts to normal outdoor humidity.",
+        "bg": "Адаптира се към нормалната влажност на открито."
+      },
+      "temperature": {
+        "en": "Plant after frost; most grow well at 15–28 °C.",
+        "bg": "Засаждайте след замръзването; повечето растат добре при 15–28 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 2 weeks with flowering plant fertilizer.",
+        "bg": "Торете на 2 седмици с тор за цъфтящи растения."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; keep pets from eating flowering plants.",
+        "bg": "Токсичността варира; пазете домашни любимци от яденето на цъфтящи растения."
+      }
+    }
   },
   {
-    "scientificName": "Morus alba",
-    "commonNameEn": "white mulberry",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/56582166/medium.jpeg",
+    "scientificName": "Lobelia erinus",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/78984590/medium.jpeg",
+    "commonNameEn": "Trailing Lobelia",
+    "commonNameBg": "Лобелиа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Various worldwide regions",
+    "nativeRegionBg": "Различни региони по целия свят",
     "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
+    "wateringIntervalDays": 3,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 6,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most prefer 6+ hours of sun.",
+        "bg": "Пълно слънце до частична сянка; повечето предпочитат 6+ часа слънце."
+      },
+      "watering": {
+        "en": "Water regularly every 2–4 days; do not let soil dry completely.",
+        "bg": "Поливайте редовно на 2–4 дни; не оставяйте почвата да изсъхне напълно."
+      },
+      "humidity": {
+        "en": "Adapts to normal outdoor humidity.",
+        "bg": "Адаптира се към нормалната влажност на открито."
+      },
+      "temperature": {
+        "en": "Plant after frost; most grow well at 15–28 °C.",
+        "bg": "Засаждайте след замръзването; повечето растат добре при 15–28 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 2 weeks with flowering plant fertilizer.",
+        "bg": "Торете на 2 седмици с тор за цъфтящи растения."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; keep pets from eating flowering plants.",
+        "bg": "Токсичността варира; пазете домашни любимци от яденето на цъфтящи растения."
+      }
+    }
   },
   {
-    "scientificName": "Sambucus canadensis",
-    "commonNameEn": "American black elderberry",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/104695913/medium.jpg",
+    "scientificName": "Lobularia maritima",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/473805234/medium.jpg",
+    "commonNameEn": "Sweet Alyssum",
+    "commonNameBg": "Лобулариа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Various worldwide regions",
+    "nativeRegionBg": "Различни региони по целия свят",
     "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
+    "wateringIntervalDays": 3,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 6,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most prefer 6+ hours of sun.",
+        "bg": "Пълно слънце до частична сянка; повечето предпочитат 6+ часа слънце."
+      },
+      "watering": {
+        "en": "Water regularly every 2–4 days; do not let soil dry completely.",
+        "bg": "Поливайте редовно на 2–4 дни; не оставяйте почвата да изсъхне напълно."
+      },
+      "humidity": {
+        "en": "Adapts to normal outdoor humidity.",
+        "bg": "Адаптира се към нормалната влажност на открито."
+      },
+      "temperature": {
+        "en": "Plant after frost; most grow well at 15–28 °C.",
+        "bg": "Засаждайте след замръзването; повечето растат добре при 15–28 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 2 weeks with flowering plant fertilizer.",
+        "bg": "Торете на 2 седмици с тор за цъфтящи растения."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; keep pets from eating flowering plants.",
+        "bg": "Токсичността варира; пазете домашни любимци от яденето на цъфтящи растения."
+      }
+    }
   },
   {
-    "scientificName": "Vinca major",
-    "commonNameEn": "greater periwinkle",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/187076568/medium.jpeg",
+    "scientificName": "Cosmos bipinnatus",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/456061565/medium.jpg",
+    "commonNameEn": "Cosmos",
+    "commonNameBg": "градински космос",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Various worldwide regions",
+    "nativeRegionBg": "Различни региони по целия свят",
     "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
+    "wateringIntervalDays": 3,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 6,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most prefer 6+ hours of sun.",
+        "bg": "Пълно слънце до частична сянка; повечето предпочитат 6+ часа слънце."
+      },
+      "watering": {
+        "en": "Water regularly every 2–4 days; do not let soil dry completely.",
+        "bg": "Поливайте редовно на 2–4 дни; не оставяйте почвата да изсъхне напълно."
+      },
+      "humidity": {
+        "en": "Adapts to normal outdoor humidity.",
+        "bg": "Адаптира се към нормалната влажност на открито."
+      },
+      "temperature": {
+        "en": "Plant after frost; most grow well at 15–28 °C.",
+        "bg": "Засаждайте след замръзването; повечето растат добре при 15–28 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 2 weeks with flowering plant fertilizer.",
+        "bg": "Торете на 2 седмици с тор за цъфтящи растения."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; keep pets from eating flowering plants.",
+        "bg": "Токсичността варира; пазете домашни любимци от яденето на цъфтящи растения."
+      }
+    }
   },
   {
-    "scientificName": "Ulmus americana",
-    "commonNameEn": "American elm",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/8798295/medium.jpeg",
+    "scientificName": "Calendula officinalis",
+    "imageUrl": "https://static.inaturalist.org/photos/181570145/medium.jpg",
+    "commonNameEn": "Pot Marigold",
+    "commonNameBg": "Невен",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Various worldwide regions",
+    "nativeRegionBg": "Различни региони по целия свят",
     "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
+    "wateringIntervalDays": 3,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 6,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most prefer 6+ hours of sun.",
+        "bg": "Пълно слънце до частична сянка; повечето предпочитат 6+ часа слънце."
+      },
+      "watering": {
+        "en": "Water regularly every 2–4 days; do not let soil dry completely.",
+        "bg": "Поливайте редовно на 2–4 дни; не оставяйте почвата да изсъхне напълно."
+      },
+      "humidity": {
+        "en": "Adapts to normal outdoor humidity.",
+        "bg": "Адаптира се към нормалната влажност на открито."
+      },
+      "temperature": {
+        "en": "Plant after frost; most grow well at 15–28 °C.",
+        "bg": "Засаждайте след замръзването; повечето растат добре при 15–28 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 2 weeks with flowering plant fertilizer.",
+        "bg": "Торете на 2 седмици с тор за цъфтящи растения."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; keep pets from eating flowering plants.",
+        "bg": "Токсичността варира; пазете домашни любимци от яденето на цъфтящи растения."
+      }
+    }
   },
   {
-    "scientificName": "Oxalis corniculata",
-    "commonNameEn": "Creeping Woodsorrel",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/279196/medium.jpg",
+    "scientificName": "Helianthus annuus",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/323768723/medium.jpg",
+    "commonNameEn": "Sunflower",
+    "commonNameBg": "слънчоглед",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Various worldwide regions",
+    "nativeRegionBg": "Различни региони по целия свят",
     "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
+    "wateringIntervalDays": 3,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 6,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most prefer 6+ hours of sun.",
+        "bg": "Пълно слънце до частична сянка; повечето предпочитат 6+ часа слънце."
+      },
+      "watering": {
+        "en": "Water regularly every 2–4 days; do not let soil dry completely.",
+        "bg": "Поливайте редовно на 2–4 дни; не оставяйте почвата да изсъхне напълно."
+      },
+      "humidity": {
+        "en": "Adapts to normal outdoor humidity.",
+        "bg": "Адаптира се към нормалната влажност на открито."
+      },
+      "temperature": {
+        "en": "Plant after frost; most grow well at 15–28 °C.",
+        "bg": "Засаждайте след замръзването; повечето растат добре при 15–28 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 2 weeks with flowering plant fertilizer.",
+        "bg": "Торете на 2 седмици с тор за цъфтящи растения."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; keep pets from eating flowering plants.",
+        "bg": "Токсичността варира; пазете домашни любимци от яденето на цъфтящи растения."
+      }
+    }
   },
   {
-    "scientificName": "Polystichum munitum",
-    "commonNameEn": "western sword fern",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/412744739/medium.jpeg",
+    "scientificName": "Antirrhinum majus",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/202870263/medium.jpeg",
+    "commonNameEn": "Snapdragon",
+    "commonNameBg": "Антиррхинум",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Various worldwide regions",
+    "nativeRegionBg": "Различни региони по целия свят",
     "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
+    "wateringIntervalDays": 3,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 6,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most prefer 6+ hours of sun.",
+        "bg": "Пълно слънце до частична сянка; повечето предпочитат 6+ часа слънце."
+      },
+      "watering": {
+        "en": "Water regularly every 2–4 days; do not let soil dry completely.",
+        "bg": "Поливайте редовно на 2–4 дни; не оставяйте почвата да изсъхне напълно."
+      },
+      "humidity": {
+        "en": "Adapts to normal outdoor humidity.",
+        "bg": "Адаптира се към нормалната влажност на открито."
+      },
+      "temperature": {
+        "en": "Plant after frost; most grow well at 15–28 °C.",
+        "bg": "Засаждайте след замръзването; повечето растат добре при 15–28 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 2 weeks with flowering plant fertilizer.",
+        "bg": "Торете на 2 седмици с тор за цъфтящи растения."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; keep pets from eating flowering plants.",
+        "bg": "Токсичността варира; пазете домашни любимци от яденето на цъфтящи растения."
+      }
+    }
   },
   {
-    "scientificName": "Geum urbanum",
-    "commonNameEn": "Wood Avens",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/3643565/medium.JPG",
+    "scientificName": "Matthiola incana",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/182733600/medium.jpeg",
+    "commonNameEn": "Stock",
+    "commonNameBg": "Маттиола",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Various worldwide regions",
+    "nativeRegionBg": "Различни региони по целия свят",
     "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
+    "wateringIntervalDays": 3,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 6,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most prefer 6+ hours of sun.",
+        "bg": "Пълно слънце до частична сянка; повечето предпочитат 6+ часа слънце."
+      },
+      "watering": {
+        "en": "Water regularly every 2–4 days; do not let soil dry completely.",
+        "bg": "Поливайте редовно на 2–4 дни; не оставяйте почвата да изсъхне напълно."
+      },
+      "humidity": {
+        "en": "Adapts to normal outdoor humidity.",
+        "bg": "Адаптира се към нормалната влажност на открито."
+      },
+      "temperature": {
+        "en": "Plant after frost; most grow well at 15–28 °C.",
+        "bg": "Засаждайте след замръзването; повечето растат добре при 15–28 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 2 weeks with flowering plant fertilizer.",
+        "bg": "Торете на 2 седмици с тор за цъфтящи растения."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; keep pets from eating flowering plants.",
+        "bg": "Токсичността варира; пазете домашни любимци от яденето на цъфтящи растения."
+      }
+    }
   },
   {
-    "scientificName": "Populus tremuloides",
-    "commonNameEn": "quaking aspen",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/26648317/medium.jpeg",
+    "scientificName": "Nicotiana alata",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/253304552/medium.jpg",
+    "commonNameEn": "Flowering Tobacco",
+    "commonNameBg": "Никотиана",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Various worldwide regions",
+    "nativeRegionBg": "Различни региони по целия свят",
     "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
+    "wateringIntervalDays": 3,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 6,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most prefer 6+ hours of sun.",
+        "bg": "Пълно слънце до частична сянка; повечето предпочитат 6+ часа слънце."
+      },
+      "watering": {
+        "en": "Water regularly every 2–4 days; do not let soil dry completely.",
+        "bg": "Поливайте редовно на 2–4 дни; не оставяйте почвата да изсъхне напълно."
+      },
+      "humidity": {
+        "en": "Adapts to normal outdoor humidity.",
+        "bg": "Адаптира се към нормалната влажност на открито."
+      },
+      "temperature": {
+        "en": "Plant after frost; most grow well at 15–28 °C.",
+        "bg": "Засаждайте след замръзването; повечето растат добре при 15–28 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 2 weeks with flowering plant fertilizer.",
+        "bg": "Торете на 2 седмици с тор за цъфтящи растения."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; keep pets from eating flowering plants.",
+        "bg": "Токсичността варира; пазете домашни любимци от яденето на цъфтящи растения."
+      }
+    }
   },
   {
-    "scientificName": "Gleditsia triacanthos",
-    "commonNameEn": "honey locust",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/193347238/medium.jpeg",
+    "scientificName": "Portulaca grandiflora",
+    "imageUrl": "https://static.inaturalist.org/photos/7495052/medium.jpg",
+    "commonNameEn": "Moss Rose",
+    "commonNameBg": "калдъръмче",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Various worldwide regions",
+    "nativeRegionBg": "Различни региони по целия свят",
     "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Convallaria majalis",
-    "commonNameEn": "European lily of the valley",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/129833718/medium.jpeg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Betula pendula",
-    "commonNameEn": "silver birch",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/36257611/medium.jpeg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Typha latifolia",
-    "commonNameEn": "broadleaf cattail",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/4280840/medium.jpeg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Cytisus scoparius",
-    "commonNameEn": "Scotch Broom",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/39060163/medium.jpeg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Ilex opaca",
-    "commonNameEn": "American holly",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/149554033/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Symphoricarpos albus",
-    "commonNameEn": "Common Snowberry",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/293373777/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Silene dioica",
-    "commonNameEn": "red campion",
-    "imageUrl": "https://static.inaturalist.org/photos/130304765/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Cardamine hirsuta",
-    "commonNameEn": "hairy bittercress",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/181993101/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Sassafras albidum",
-    "commonNameEn": "sassafras",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/89683054/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Elaeagnus umbellata",
-    "commonNameEn": "autumn olive",
-    "imageUrl": "https://static.inaturalist.org/photos/98619666/medium.jpeg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Epipactis helleborine",
-    "commonNameEn": "Broad-leaved helleborine",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/305684103/medium.jpeg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Erigeron philadelphicus",
-    "commonNameEn": "Philadelphia fleabane",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/13932511/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
+    "wateringIntervalDays": 3,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 6,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most prefer 6+ hours of sun.",
+        "bg": "Пълно слънце до частична сянка; повечето предпочитат 6+ часа слънце."
+      },
+      "watering": {
+        "en": "Water regularly every 2–4 days; do not let soil dry completely.",
+        "bg": "Поливайте редовно на 2–4 дни; не оставяйте почвата да изсъхне напълно."
+      },
+      "humidity": {
+        "en": "Adapts to normal outdoor humidity.",
+        "bg": "Адаптира се към нормалната влажност на открито."
+      },
+      "temperature": {
+        "en": "Plant after frost; most grow well at 15–28 °C.",
+        "bg": "Засаждайте след замръзването; повечето растат добре при 15–28 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 2 weeks with flowering plant fertilizer.",
+        "bg": "Торете на 2 седмици с тор за цъфтящи растения."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; keep pets from eating flowering plants.",
+        "bg": "Токсичността варира; пазете домашни любимци от яденето на цъфтящи растения."
+      }
+    }
   },
   {
     "scientificName": "Catharanthus roseus",
-    "commonNameEn": "Madagascar Periwinkle",
     "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/54935295/medium.jpeg",
+    "commonNameEn": "Vinca",
+    "commonNameBg": "розов катарантус",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Various worldwide regions",
+    "nativeRegionBg": "Различни региони по целия свят",
     "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Aesculus hippocastanum",
-    "commonNameEn": "horse-chestnut",
-    "imageUrl": "https://static.inaturalist.org/photos/288506278/medium.jpeg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Callicarpa americana",
-    "commonNameEn": "American beautyberry",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/225612223/medium.jpeg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Eriogonum fasciculatum",
-    "commonNameEn": "California Buckwheat",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/250218073/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Oenothera biennis",
-    "commonNameEn": "common evening-primrose",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/149646914/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Asclepias tuberosa",
-    "commonNameEn": "butterfly milkweed",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/206558098/medium.jpeg",
-    "careDifficulty": "moderate",
-    "wateringIntervalDays": 7,
+    "wateringIntervalDays": 3,
     "fertilizingIntervalDays": 14,
-    "repottingIntervalMonths": 18,
-    "mistingNeeded": false
+    "repottingIntervalMonths": 6,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most prefer 6+ hours of sun.",
+        "bg": "Пълно слънце до частична сянка; повечето предпочитат 6+ часа слънце."
+      },
+      "watering": {
+        "en": "Water regularly every 2–4 days; do not let soil dry completely.",
+        "bg": "Поливайте редовно на 2–4 дни; не оставяйте почвата да изсъхне напълно."
+      },
+      "humidity": {
+        "en": "Adapts to normal outdoor humidity.",
+        "bg": "Адаптира се към нормалната влажност на открито."
+      },
+      "temperature": {
+        "en": "Plant after frost; most grow well at 15–28 °C.",
+        "bg": "Засаждайте след замръзването; повечето растат добре при 15–28 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 2 weeks with flowering plant fertilizer.",
+        "bg": "Торете на 2 седмици с тор за цъфтящи растения."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; keep pets from eating flowering plants.",
+        "bg": "Токсичността варира; пазете домашни любимци от яденето на цъфтящи растения."
+      }
+    }
   },
   {
-    "scientificName": "Cornus florida",
-    "commonNameEn": "flowering dogwood",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/15371883/medium.jpeg",
+    "scientificName": "Dianthus barbatus",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/108907569/medium.jpg",
+    "commonNameEn": "Sweet William",
+    "commonNameBg": "брадат карамфил",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Various worldwide regions",
+    "nativeRegionBg": "Различни региони по целия свят",
     "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
+    "wateringIntervalDays": 3,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 6,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most prefer 6+ hours of sun.",
+        "bg": "Пълно слънце до частична сянка; повечето предпочитат 6+ часа слънце."
+      },
+      "watering": {
+        "en": "Water regularly every 2–4 days; do not let soil dry completely.",
+        "bg": "Поливайте редовно на 2–4 дни; не оставяйте почвата да изсъхне напълно."
+      },
+      "humidity": {
+        "en": "Adapts to normal outdoor humidity.",
+        "bg": "Адаптира се към нормалната влажност на открито."
+      },
+      "temperature": {
+        "en": "Plant after frost; most grow well at 15–28 °C.",
+        "bg": "Засаждайте след замръзването; повечето растат добре при 15–28 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 2 weeks with flowering plant fertilizer.",
+        "bg": "Торете на 2 седмици с тор за цъфтящи растения."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; keep pets from eating flowering plants.",
+        "bg": "Токсичността варира; пазете домашни любимци от яденето на цъфтящи растения."
+      }
+    }
   },
   {
-    "scientificName": "Gaillardia pulchella",
-    "commonNameEn": "firewheel",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/75102458/medium.jpg",
+    "scientificName": "Celosia cristata",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/113870698/medium.jpeg",
+    "commonNameEn": "Cockscomb",
+    "commonNameBg": "Келосиа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Various worldwide regions",
+    "nativeRegionBg": "Различни региони по целия свят",
     "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
+    "wateringIntervalDays": 3,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 6,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most prefer 6+ hours of sun.",
+        "bg": "Пълно слънце до частична сянка; повечето предпочитат 6+ часа слънце."
+      },
+      "watering": {
+        "en": "Water regularly every 2–4 days; do not let soil dry completely.",
+        "bg": "Поливайте редовно на 2–4 дни; не оставяйте почвата да изсъхне напълно."
+      },
+      "humidity": {
+        "en": "Adapts to normal outdoor humidity.",
+        "bg": "Адаптира се към нормалната влажност на открито."
+      },
+      "temperature": {
+        "en": "Plant after frost; most grow well at 15–28 °C.",
+        "bg": "Засаждайте след замръзването; повечето растат добре при 15–28 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 2 weeks with flowering plant fertilizer.",
+        "bg": "Торете на 2 седмици с тор за цъфтящи растения."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; keep pets from eating flowering plants.",
+        "bg": "Токсичността варира; пазете домашни любимци от яденето на цъфтящи растения."
+      }
+    }
   },
   {
-    "scientificName": "Rabelera holostea",
-    "commonNameEn": "greater stitchwort",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/731378/medium.jpg",
+    "scientificName": "Cleome hassleriana",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/271146597/medium.jpg",
+    "commonNameEn": "Spider Flower",
+    "commonNameBg": "Клеоме",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Various worldwide regions",
+    "nativeRegionBg": "Различни региони по целия свят",
     "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
+    "wateringIntervalDays": 3,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 6,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most prefer 6+ hours of sun.",
+        "bg": "Пълно слънце до частична сянка; повечето предпочитат 6+ часа слънце."
+      },
+      "watering": {
+        "en": "Water regularly every 2–4 days; do not let soil dry completely.",
+        "bg": "Поливайте редовно на 2–4 дни; не оставяйте почвата да изсъхне напълно."
+      },
+      "humidity": {
+        "en": "Adapts to normal outdoor humidity.",
+        "bg": "Адаптира се към нормалната влажност на открито."
+      },
+      "temperature": {
+        "en": "Plant after frost; most grow well at 15–28 °C.",
+        "bg": "Засаждайте след замръзването; повечето растат добре при 15–28 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 2 weeks with flowering plant fertilizer.",
+        "bg": "Торете на 2 седмици с тор за цъфтящи растения."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; keep pets from eating flowering plants.",
+        "bg": "Токсичността варира; пазете домашни любимци от яденето на цъфтящи растения."
+      }
+    }
   },
   {
-    "scientificName": "Cephalanthus occidentalis",
-    "commonNameEn": "buttonbush",
-    "imageUrl": "https://static.inaturalist.org/photos/85835738/medium.jpeg",
+    "scientificName": "Nigella damascena",
+    "imageUrl": "https://static.inaturalist.org/photos/199310420/medium.jpg",
+    "commonNameEn": "Love-in-a-Mist",
+    "commonNameBg": "Дамаска челебитка",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Various worldwide regions",
+    "nativeRegionBg": "Различни региони по целия свят",
     "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Celastrus orbiculatus",
-    "commonNameEn": "Asian bittersweet",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/59337841/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Campsis radicans",
-    "commonNameEn": "American trumpet vine",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/7300976/medium.jpeg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Pyrus calleryana",
-    "commonNameEn": "Callery pear",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/269351075/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Portulaca oleracea",
-    "commonNameEn": "Common Purslane",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/157729445/medium.jpeg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Silene vulgaris",
-    "commonNameEn": "bladder campion",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/149687809/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Trillium grandiflorum",
-    "commonNameEn": "large white trillium",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/80252/medium.jpg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
-  },
-  {
-    "scientificName": "Berberis thunbergii",
-    "commonNameEn": "Japanese barberry",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/37811889/medium.jpeg",
-    "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
+    "wateringIntervalDays": 3,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 6,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most prefer 6+ hours of sun.",
+        "bg": "Пълно слънце до частична сянка; повечето предпочитат 6+ часа слънце."
+      },
+      "watering": {
+        "en": "Water regularly every 2–4 days; do not let soil dry completely.",
+        "bg": "Поливайте редовно на 2–4 дни; не оставяйте почвата да изсъхне напълно."
+      },
+      "humidity": {
+        "en": "Adapts to normal outdoor humidity.",
+        "bg": "Адаптира се към нормалната влажност на открито."
+      },
+      "temperature": {
+        "en": "Plant after frost; most grow well at 15–28 °C.",
+        "bg": "Засаждайте след замръзването; повечето растат добре при 15–28 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 2 weeks with flowering plant fertilizer.",
+        "bg": "Торете на 2 седмици с тор за цъфтящи растения."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; keep pets from eating flowering plants.",
+        "bg": "Токсичността варира; пазете домашни любимци от яденето на цъфтящи растения."
+      }
+    }
   },
   {
     "scientificName": "Papaver rhoeas",
-    "commonNameEn": "common poppy",
     "imageUrl": "https://static.inaturalist.org/photos/234132991/medium.jpg",
+    "commonNameEn": "Corn Poppy",
+    "commonNameBg": "полски мак",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Various worldwide regions",
+    "nativeRegionBg": "Различни региони по целия свят",
     "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
+    "wateringIntervalDays": 3,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 6,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most prefer 6+ hours of sun.",
+        "bg": "Пълно слънце до частична сянка; повечето предпочитат 6+ часа слънце."
+      },
+      "watering": {
+        "en": "Water regularly every 2–4 days; do not let soil dry completely.",
+        "bg": "Поливайте редовно на 2–4 дни; не оставяйте почвата да изсъхне напълно."
+      },
+      "humidity": {
+        "en": "Adapts to normal outdoor humidity.",
+        "bg": "Адаптира се към нормалната влажност на открито."
+      },
+      "temperature": {
+        "en": "Plant after frost; most grow well at 15–28 °C.",
+        "bg": "Засаждайте след замръзването; повечето растат добре при 15–28 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 2 weeks with flowering plant fertilizer.",
+        "bg": "Торете на 2 седмици с тор за цъфтящи растения."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; keep pets from eating flowering plants.",
+        "bg": "Токсичността варира; пазете домашни любимци от яденето на цъфтящи растения."
+      }
+    }
   },
   {
-    "scientificName": "Chimaphila maculata",
-    "commonNameEn": "striped wintergreen",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/98554952/medium.jpg",
+    "scientificName": "Scabiosa atropurpurea",
+    "imageUrl": null,
+    "commonNameEn": "Pincushion Flower",
+    "commonNameBg": "Скабиоса",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Various worldwide regions",
+    "nativeRegionBg": "Различни региони по целия свят",
     "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
+    "wateringIntervalDays": 3,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 6,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most prefer 6+ hours of sun.",
+        "bg": "Пълно слънце до частична сянка; повечето предпочитат 6+ часа слънце."
+      },
+      "watering": {
+        "en": "Water regularly every 2–4 days; do not let soil dry completely.",
+        "bg": "Поливайте редовно на 2–4 дни; не оставяйте почвата да изсъхне напълно."
+      },
+      "humidity": {
+        "en": "Adapts to normal outdoor humidity.",
+        "bg": "Адаптира се към нормалната влажност на открито."
+      },
+      "temperature": {
+        "en": "Plant after frost; most grow well at 15–28 °C.",
+        "bg": "Засаждайте след замръзването; повечето растат добре при 15–28 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 2 weeks with flowering plant fertilizer.",
+        "bg": "Торете на 2 седмици с тор за цъфтящи растения."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; keep pets from eating flowering plants.",
+        "bg": "Токсичността варира; пазете домашни любимци от яденето на цъфтящи растения."
+      }
+    }
   },
   {
-    "scientificName": "Berberis aquifolium",
-    "commonNameEn": "Oregon grape",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/16702958/medium.jpg",
+    "scientificName": "Tropaeolum majus",
+    "imageUrl": "https://static.inaturalist.org/photos/30477591/medium.jpeg",
+    "commonNameEn": "Nasturtium",
+    "commonNameBg": "Тропеолум",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Various worldwide regions",
+    "nativeRegionBg": "Различни региони по целия свят",
     "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
+    "wateringIntervalDays": 3,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 6,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most prefer 6+ hours of sun.",
+        "bg": "Пълно слънце до частична сянка; повечето предпочитат 6+ часа слънце."
+      },
+      "watering": {
+        "en": "Water regularly every 2–4 days; do not let soil dry completely.",
+        "bg": "Поливайте редовно на 2–4 дни; не оставяйте почвата да изсъхне напълно."
+      },
+      "humidity": {
+        "en": "Adapts to normal outdoor humidity.",
+        "bg": "Адаптира се към нормалната влажност на открито."
+      },
+      "temperature": {
+        "en": "Plant after frost; most grow well at 15–28 °C.",
+        "bg": "Засаждайте след замръзването; повечето растат добре при 15–28 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 2 weeks with flowering plant fertilizer.",
+        "bg": "Торете на 2 седмици с тор за цъфтящи растения."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; keep pets from eating flowering plants.",
+        "bg": "Токсичността варира; пазете домашни любимци от яденето на цъфтящи растения."
+      }
+    }
+  },
+  {
+    "scientificName": "Eschscholzia californica",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/67227218/medium.jpg",
+    "commonNameEn": "California Poppy",
+    "commonNameBg": "Есхсхолзиа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Various worldwide regions",
+    "nativeRegionBg": "Различни региони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 3,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 6,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most prefer 6+ hours of sun.",
+        "bg": "Пълно слънце до частична сянка; повечето предпочитат 6+ часа слънце."
+      },
+      "watering": {
+        "en": "Water regularly every 2–4 days; do not let soil dry completely.",
+        "bg": "Поливайте редовно на 2–4 дни; не оставяйте почвата да изсъхне напълно."
+      },
+      "humidity": {
+        "en": "Adapts to normal outdoor humidity.",
+        "bg": "Адаптира се към нормалната влажност на открито."
+      },
+      "temperature": {
+        "en": "Plant after frost; most grow well at 15–28 °C.",
+        "bg": "Засаждайте след замръзването; повечето растат добре при 15–28 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 2 weeks with flowering plant fertilizer.",
+        "bg": "Торете на 2 седмици с тор за цъфтящи растения."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; keep pets from eating flowering plants.",
+        "bg": "Токсичността варира; пазете домашни любимци от яденето на цъфтящи растения."
+      }
+    }
+  },
+  {
+    "scientificName": "Centaurea cyanus",
+    "imageUrl": "https://static.inaturalist.org/photos/120728857/medium.jpeg",
+    "commonNameEn": "Cornflower",
+    "commonNameBg": "синя метличина",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Various worldwide regions",
+    "nativeRegionBg": "Различни региони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 3,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 6,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most prefer 6+ hours of sun.",
+        "bg": "Пълно слънце до частична сянка; повечето предпочитат 6+ часа слънце."
+      },
+      "watering": {
+        "en": "Water regularly every 2–4 days; do not let soil dry completely.",
+        "bg": "Поливайте редовно на 2–4 дни; не оставяйте почвата да изсъхне напълно."
+      },
+      "humidity": {
+        "en": "Adapts to normal outdoor humidity.",
+        "bg": "Адаптира се към нормалната влажност на открито."
+      },
+      "temperature": {
+        "en": "Plant after frost; most grow well at 15–28 °C.",
+        "bg": "Засаждайте след замръзването; повечето растат добре при 15–28 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 2 weeks with flowering plant fertilizer.",
+        "bg": "Торете на 2 седмици с тор за цъфтящи растения."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; keep pets from eating flowering plants.",
+        "bg": "Токсичността варира; пазете домашни любимци от яденето на цъфтящи растения."
+      }
+    }
+  },
+  {
+    "scientificName": "Lathyrus odoratus",
+    "imageUrl": "https://static.inaturalist.org/photos/43533310/medium.jpeg",
+    "commonNameEn": "Sweet Pea",
+    "commonNameBg": "сладък грах",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Various worldwide regions",
+    "nativeRegionBg": "Различни региони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 3,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 6,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most prefer 6+ hours of sun.",
+        "bg": "Пълно слънце до частична сянка; повечето предпочитат 6+ часа слънце."
+      },
+      "watering": {
+        "en": "Water regularly every 2–4 days; do not let soil dry completely.",
+        "bg": "Поливайте редовно на 2–4 дни; не оставяйте почвата да изсъхне напълно."
+      },
+      "humidity": {
+        "en": "Adapts to normal outdoor humidity.",
+        "bg": "Адаптира се към нормалната влажност на открито."
+      },
+      "temperature": {
+        "en": "Plant after frost; most grow well at 15–28 °C.",
+        "bg": "Засаждайте след замръзването; повечето растат добре при 15–28 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 2 weeks with flowering plant fertilizer.",
+        "bg": "Торете на 2 седмици с тор за цъфтящи растения."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; keep pets from eating flowering plants.",
+        "bg": "Токсичността варира; пазете домашни любимци от яденето на цъфтящи растения."
+      }
+    }
+  },
+  {
+    "scientificName": "Phlox drummondii",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/508693/medium.jpg",
+    "commonNameEn": "Annual Phlox",
+    "commonNameBg": "Флокс",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Various worldwide regions",
+    "nativeRegionBg": "Различни региони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 3,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 6,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most prefer 6+ hours of sun.",
+        "bg": "Пълно слънце до частична сянка; повечето предпочитат 6+ часа слънце."
+      },
+      "watering": {
+        "en": "Water regularly every 2–4 days; do not let soil dry completely.",
+        "bg": "Поливайте редовно на 2–4 дни; не оставяйте почвата да изсъхне напълно."
+      },
+      "humidity": {
+        "en": "Adapts to normal outdoor humidity.",
+        "bg": "Адаптира се към нормалната влажност на открито."
+      },
+      "temperature": {
+        "en": "Plant after frost; most grow well at 15–28 °C.",
+        "bg": "Засаждайте след замръзването; повечето растат добре при 15–28 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 2 weeks with flowering plant fertilizer.",
+        "bg": "Торете на 2 седмици с тор за цъфтящи растения."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; keep pets from eating flowering plants.",
+        "bg": "Токсичността варира; пазете домашни любимци от яденето на цъфтящи растения."
+      }
+    }
+  },
+  {
+    "scientificName": "Gazania rigens",
+    "imageUrl": "https://static.inaturalist.org/photos/130938566/medium.jpeg",
+    "commonNameEn": "Treasure Flower",
+    "commonNameBg": "Газаниа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Various worldwide regions",
+    "nativeRegionBg": "Различни региони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 3,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 6,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most prefer 6+ hours of sun.",
+        "bg": "Пълно слънце до частична сянка; повечето предпочитат 6+ часа слънце."
+      },
+      "watering": {
+        "en": "Water regularly every 2–4 days; do not let soil dry completely.",
+        "bg": "Поливайте редовно на 2–4 дни; не оставяйте почвата да изсъхне напълно."
+      },
+      "humidity": {
+        "en": "Adapts to normal outdoor humidity.",
+        "bg": "Адаптира се към нормалната влажност на открито."
+      },
+      "temperature": {
+        "en": "Plant after frost; most grow well at 15–28 °C.",
+        "bg": "Засаждайте след замръзването; повечето растат добре при 15–28 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 2 weeks with flowering plant fertilizer.",
+        "bg": "Торете на 2 седмици с тор за цъфтящи растения."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; keep pets from eating flowering plants.",
+        "bg": "Токсичността варира; пазете домашни любимци от яденето на цъфтящи растения."
+      }
+    }
+  },
+  {
+    "scientificName": "Salvia splendens",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/54804513/medium.jpeg",
+    "commonNameEn": "Scarlet Sage",
+    "commonNameBg": "обикновено пламъче",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Mediterranean and temperate regions",
+    "nativeRegionBg": "Средиземноморие и умерени региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 5,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; at least 6 hours of direct sunlight daily.",
+        "bg": "Пълно слънце; поне 6 часа пряка слънчева светлина дневно."
+      },
+      "watering": {
+        "en": "Water every 4–6 days; let top soil dry slightly between waterings.",
+        "bg": "Поливайте на 4–6 дни; оставете горния слой почва леко да изсъхне."
+      },
+      "humidity": {
+        "en": "Average humidity; ensure good air circulation.",
+        "bg": "Средна влажност; осигурете добра циркулация на въздуха."
+      },
+      "temperature": {
+        "en": "Most herbs prefer 15–25 °C; protect from frost.",
+        "bg": "Повечето билки предпочитат 15–25 °C; пазете от замръзване."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 3 weeks with balanced fertilizer during growth.",
+        "bg": "Торете на 3 седмици с балансиран тор по време на растеж."
+      },
+      "toxicity": {
+        "en": "Culinary herbs are safe for humans; some may affect pets.",
+        "bg": "Кулинарните билки са безвредни за хора; някои може да засегнат домашни животни."
+      }
+    }
+  },
+  {
+    "scientificName": "Pelargonium hortorum",
+    "imageUrl": null,
+    "commonNameEn": "Zonal Geranium",
+    "commonNameBg": "Пеларгониум",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Mediterranean and temperate regions",
+    "nativeRegionBg": "Средиземноморие и умерени региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 5,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; at least 6 hours of direct sunlight daily.",
+        "bg": "Пълно слънце; поне 6 часа пряка слънчева светлина дневно."
+      },
+      "watering": {
+        "en": "Water every 4–6 days; let top soil dry slightly between waterings.",
+        "bg": "Поливайте на 4–6 дни; оставете горния слой почва леко да изсъхне."
+      },
+      "humidity": {
+        "en": "Average humidity; ensure good air circulation.",
+        "bg": "Средна влажност; осигурете добра циркулация на въздуха."
+      },
+      "temperature": {
+        "en": "Most herbs prefer 15–25 °C; protect from frost.",
+        "bg": "Повечето билки предпочитат 15–25 °C; пазете от замръзване."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 3 weeks with balanced fertilizer during growth.",
+        "bg": "Торете на 3 седмици с балансиран тор по време на растеж."
+      },
+      "toxicity": {
+        "en": "Culinary herbs are safe for humans; some may affect pets.",
+        "bg": "Кулинарните билки са безвредни за хора; някои може да засегнат домашни животни."
+      }
+    }
+  },
+  {
+    "scientificName": "Pelargonium peltatum",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/23162928/medium.jpg",
+    "commonNameEn": "Ivy Geranium",
+    "commonNameBg": "Пеларгониум",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Mediterranean and temperate regions",
+    "nativeRegionBg": "Средиземноморие и умерени региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 5,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; at least 6 hours of direct sunlight daily.",
+        "bg": "Пълно слънце; поне 6 часа пряка слънчева светлина дневно."
+      },
+      "watering": {
+        "en": "Water every 4–6 days; let top soil dry slightly between waterings.",
+        "bg": "Поливайте на 4–6 дни; оставете горния слой почва леко да изсъхне."
+      },
+      "humidity": {
+        "en": "Average humidity; ensure good air circulation.",
+        "bg": "Средна влажност; осигурете добра циркулация на въздуха."
+      },
+      "temperature": {
+        "en": "Most herbs prefer 15–25 °C; protect from frost.",
+        "bg": "Повечето билки предпочитат 15–25 °C; пазете от замръзване."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 3 weeks with balanced fertilizer during growth.",
+        "bg": "Торете на 3 седмици с балансиран тор по време на растеж."
+      },
+      "toxicity": {
+        "en": "Culinary herbs are safe for humans; some may affect pets.",
+        "bg": "Кулинарните билки са безвредни за хора; някои може да засегнат домашни животни."
+      }
+    }
+  },
+  {
+    "scientificName": "Hosta plantaginea",
+    "imageUrl": "https://static.inaturalist.org/photos/90219079/medium.jpg",
+    "commonNameEn": "Fragrant Hosta",
+    "commonNameBg": "Хоста",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of the northern hemisphere",
+    "nativeRegionBg": "Умерени зони на северното полукълбо",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
     "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade depending on species.",
+        "bg": "Пълно слънце до частична сянка в зависимост от вида."
+      },
+      "watering": {
+        "en": "Water every 5–10 days; tolerates brief dry spells when established.",
+        "bg": "Поливайте на 5–10 дни; понася кратко засушаване след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to outdoor humidity; drought-tolerant when established.",
+        "bg": "Адаптира се към влажността на открито; устойчиво на суша след установяване."
+      },
+      "temperature": {
+        "en": "Hardy; most survive winter cold down to -10 °C or lower.",
+        "bg": "Издръжливо; повечето оцеляват при зимен студ до -10 °C или по-ниско."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring when new growth appears.",
+        "bg": "Торете веднъж напролет при поява на нов растеж."
+      },
+      "toxicity": {
+        "en": "Toxicity varies by species; check before planting near pets.",
+        "bg": "Токсичността варира по вид; проверете преди засаждане близо до домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Hosta sieboldiana",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/84744870/medium.jpg",
+    "commonNameEn": "Siebold's Hosta",
+    "commonNameBg": "Хоста",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of the northern hemisphere",
+    "nativeRegionBg": "Умерени зони на северното полукълбо",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade depending on species.",
+        "bg": "Пълно слънце до частична сянка в зависимост от вида."
+      },
+      "watering": {
+        "en": "Water every 5–10 days; tolerates brief dry spells when established.",
+        "bg": "Поливайте на 5–10 дни; понася кратко засушаване след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to outdoor humidity; drought-tolerant when established.",
+        "bg": "Адаптира се към влажността на открито; устойчиво на суша след установяване."
+      },
+      "temperature": {
+        "en": "Hardy; most survive winter cold down to -10 °C or lower.",
+        "bg": "Издръжливо; повечето оцеляват при зимен студ до -10 °C или по-ниско."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring when new growth appears.",
+        "bg": "Торете веднъж напролет при поява на нов растеж."
+      },
+      "toxicity": {
+        "en": "Toxicity varies by species; check before planting near pets.",
+        "bg": "Токсичността варира по вид; проверете преди засаждане близо до домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Hemerocallis fulva",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/82351245/medium.jpg",
+    "commonNameEn": "Orange Daylily",
+    "commonNameBg": "оранжева лилия",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of the northern hemisphere",
+    "nativeRegionBg": "Умерени зони на северното полукълбо",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade depending on species.",
+        "bg": "Пълно слънце до частична сянка в зависимост от вида."
+      },
+      "watering": {
+        "en": "Water every 5–10 days; tolerates brief dry spells when established.",
+        "bg": "Поливайте на 5–10 дни; понася кратко засушаване след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to outdoor humidity; drought-tolerant when established.",
+        "bg": "Адаптира се към влажността на открито; устойчиво на суша след установяване."
+      },
+      "temperature": {
+        "en": "Hardy; most survive winter cold down to -10 °C or lower.",
+        "bg": "Издръжливо; повечето оцеляват при зимен студ до -10 °C или по-ниско."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring when new growth appears.",
+        "bg": "Торете веднъж напролет при поява на нов растеж."
+      },
+      "toxicity": {
+        "en": "Toxicity varies by species; check before planting near pets.",
+        "bg": "Токсичността варира по вид; проверете преди засаждане близо до домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Echinacea purpurea",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/433818/medium.jpg",
+    "commonNameEn": "Purple Coneflower",
+    "commonNameBg": "пурпурна ехинацея",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of the northern hemisphere",
+    "nativeRegionBg": "Умерени зони на северното полукълбо",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade depending on species.",
+        "bg": "Пълно слънце до частична сянка в зависимост от вида."
+      },
+      "watering": {
+        "en": "Water every 5–10 days; tolerates brief dry spells when established.",
+        "bg": "Поливайте на 5–10 дни; понася кратко засушаване след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to outdoor humidity; drought-tolerant when established.",
+        "bg": "Адаптира се към влажността на открито; устойчиво на суша след установяване."
+      },
+      "temperature": {
+        "en": "Hardy; most survive winter cold down to -10 °C or lower.",
+        "bg": "Издръжливо; повечето оцеляват при зимен студ до -10 °C или по-ниско."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring when new growth appears.",
+        "bg": "Торете веднъж напролет при поява на нов растеж."
+      },
+      "toxicity": {
+        "en": "Non-toxic to pets; safe around cats and dogs.",
+        "bg": "Нетоксично за домашни любимци; безопасно около котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Rudbeckia hirta",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/7861779/medium.jpg",
+    "commonNameEn": "Black-Eyed Susan",
+    "commonNameBg": "космата рудбекия",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of the northern hemisphere",
+    "nativeRegionBg": "Умерени зони на северното полукълбо",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade depending on species.",
+        "bg": "Пълно слънце до частична сянка в зависимост от вида."
+      },
+      "watering": {
+        "en": "Water every 5–10 days; tolerates brief dry spells when established.",
+        "bg": "Поливайте на 5–10 дни; понася кратко засушаване след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to outdoor humidity; drought-tolerant when established.",
+        "bg": "Адаптира се към влажността на открито; устойчиво на суша след установяване."
+      },
+      "temperature": {
+        "en": "Hardy; most survive winter cold down to -10 °C or lower.",
+        "bg": "Издръжливо; повечето оцеляват при зимен студ до -10 °C или по-ниско."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring when new growth appears.",
+        "bg": "Торете веднъж напролет при поява на нов растеж."
+      },
+      "toxicity": {
+        "en": "Non-toxic to pets; safe around cats and dogs.",
+        "bg": "Нетоксично за домашни любимци; безопасно около котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Rudbeckia fulgida",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/1471130/medium.jpg",
+    "commonNameEn": "Orange Coneflower",
+    "commonNameBg": "Рудбекиа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of the northern hemisphere",
+    "nativeRegionBg": "Умерени зони на северното полукълбо",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade depending on species.",
+        "bg": "Пълно слънце до частична сянка в зависимост от вида."
+      },
+      "watering": {
+        "en": "Water every 5–10 days; tolerates brief dry spells when established.",
+        "bg": "Поливайте на 5–10 дни; понася кратко засушаване след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to outdoor humidity; drought-tolerant when established.",
+        "bg": "Адаптира се към влажността на открито; устойчиво на суша след установяване."
+      },
+      "temperature": {
+        "en": "Hardy; most survive winter cold down to -10 °C or lower.",
+        "bg": "Издръжливо; повечето оцеляват при зимен студ до -10 °C или по-ниско."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring when new growth appears.",
+        "bg": "Торете веднъж напролет при поява на нов растеж."
+      },
+      "toxicity": {
+        "en": "Non-toxic to pets; safe around cats and dogs.",
+        "bg": "Нетоксично за домашни любимци; безопасно около котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Achillea millefolium",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/4902/medium.jpg",
+    "commonNameEn": "Common Yarrow",
+    "commonNameBg": "Бял равнец",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of the northern hemisphere",
+    "nativeRegionBg": "Умерени зони на северното полукълбо",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade depending on species.",
+        "bg": "Пълно слънце до частична сянка в зависимост от вида."
+      },
+      "watering": {
+        "en": "Water every 5–10 days; tolerates brief dry spells when established.",
+        "bg": "Поливайте на 5–10 дни; понася кратко засушаване след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to outdoor humidity; drought-tolerant when established.",
+        "bg": "Адаптира се към влажността на открито; устойчиво на суша след установяване."
+      },
+      "temperature": {
+        "en": "Hardy; most survive winter cold down to -10 °C or lower.",
+        "bg": "Издръжливо; повечето оцеляват при зимен студ до -10 °C или по-ниско."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring when new growth appears.",
+        "bg": "Торете веднъж напролет при поява на нов растеж."
+      },
+      "toxicity": {
+        "en": "Toxicity varies by species; check before planting near pets.",
+        "bg": "Токсичността варира по вид; проверете преди засаждане близо до домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Salvia nemorosa",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/200741444/medium.jpg",
+    "commonNameEn": "Woodland Sage",
+    "commonNameBg": "горски конски босилек",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Mediterranean and temperate regions",
+    "nativeRegionBg": "Средиземноморие и умерени региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 5,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; at least 6 hours of direct sunlight daily.",
+        "bg": "Пълно слънце; поне 6 часа пряка слънчева светлина дневно."
+      },
+      "watering": {
+        "en": "Water every 4–6 days; let top soil dry slightly between waterings.",
+        "bg": "Поливайте на 4–6 дни; оставете горния слой почва леко да изсъхне."
+      },
+      "humidity": {
+        "en": "Average humidity; ensure good air circulation.",
+        "bg": "Средна влажност; осигурете добра циркулация на въздуха."
+      },
+      "temperature": {
+        "en": "Most herbs prefer 15–25 °C; protect from frost.",
+        "bg": "Повечето билки предпочитат 15–25 °C; пазете от замръзване."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 3 weeks with balanced fertilizer during growth.",
+        "bg": "Торете на 3 седмици с балансиран тор по време на растеж."
+      },
+      "toxicity": {
+        "en": "Culinary herbs are safe for humans; some may affect pets.",
+        "bg": "Кулинарните билки са безвредни за хора; някои може да засегнат домашни животни."
+      }
+    }
+  },
+  {
+    "scientificName": "Nepeta racemosa",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/131906502/medium.jpg",
+    "commonNameEn": "Catmint",
+    "commonNameBg": "Непета",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of the northern hemisphere",
+    "nativeRegionBg": "Умерени зони на северното полукълбо",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade depending on species.",
+        "bg": "Пълно слънце до частична сянка в зависимост от вида."
+      },
+      "watering": {
+        "en": "Water every 5–10 days; tolerates brief dry spells when established.",
+        "bg": "Поливайте на 5–10 дни; понася кратко засушаване след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to outdoor humidity; drought-tolerant when established.",
+        "bg": "Адаптира се към влажността на открито; устойчиво на суша след установяване."
+      },
+      "temperature": {
+        "en": "Hardy; most survive winter cold down to -10 °C or lower.",
+        "bg": "Издръжливо; повечето оцеляват при зимен студ до -10 °C или по-ниско."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring when new growth appears.",
+        "bg": "Торете веднъж напролет при поява на нов растеж."
+      },
+      "toxicity": {
+        "en": "Toxicity varies by species; check before planting near pets.",
+        "bg": "Токсичността варира по вид; проверете преди засаждане близо до домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Phlox paniculata",
+    "imageUrl": "https://static.inaturalist.org/photos/4940063/medium.jpg",
+    "commonNameEn": "Summer Phlox",
+    "commonNameBg": "Флокс",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Various worldwide regions",
+    "nativeRegionBg": "Различни региони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 3,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 6,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most prefer 6+ hours of sun.",
+        "bg": "Пълно слънце до частична сянка; повечето предпочитат 6+ часа слънце."
+      },
+      "watering": {
+        "en": "Water regularly every 2–4 days; do not let soil dry completely.",
+        "bg": "Поливайте редовно на 2–4 дни; не оставяйте почвата да изсъхне напълно."
+      },
+      "humidity": {
+        "en": "Adapts to normal outdoor humidity.",
+        "bg": "Адаптира се към нормалната влажност на открито."
+      },
+      "temperature": {
+        "en": "Plant after frost; most grow well at 15–28 °C.",
+        "bg": "Засаждайте след замръзването; повечето растат добре при 15–28 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 2 weeks with flowering plant fertilizer.",
+        "bg": "Торете на 2 седмици с тор за цъфтящи растения."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; keep pets from eating flowering plants.",
+        "bg": "Токсичността варира; пазете домашни любимци от яденето на цъфтящи растения."
+      }
+    }
+  },
+  {
+    "scientificName": "Astilbe arendsii",
+    "imageUrl": null,
+    "commonNameEn": "Astilbe",
+    "commonNameBg": "Астилбе",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of the northern hemisphere",
+    "nativeRegionBg": "Умерени зони на северното полукълбо",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade depending on species.",
+        "bg": "Пълно слънце до частична сянка в зависимост от вида."
+      },
+      "watering": {
+        "en": "Water every 5–10 days; tolerates brief dry spells when established.",
+        "bg": "Поливайте на 5–10 дни; понася кратко засушаване след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to outdoor humidity; drought-tolerant when established.",
+        "bg": "Адаптира се към влажността на открито; устойчиво на суша след установяване."
+      },
+      "temperature": {
+        "en": "Hardy; most survive winter cold down to -10 °C or lower.",
+        "bg": "Издръжливо; повечето оцеляват при зимен студ до -10 °C или по-ниско."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring when new growth appears.",
+        "bg": "Торете веднъж напролет при поява на нов растеж."
+      },
+      "toxicity": {
+        "en": "Toxicity varies by species; check before planting near pets.",
+        "bg": "Токсичността варира по вид; проверете преди засаждане близо до домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Aquilegia vulgaris",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/82182940/medium.jpg",
+    "commonNameEn": "Columbine",
+    "commonNameBg": "обикновена кандилка",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of the northern hemisphere",
+    "nativeRegionBg": "Умерени зони на северното полукълбо",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade depending on species.",
+        "bg": "Пълно слънце до частична сянка в зависимост от вида."
+      },
+      "watering": {
+        "en": "Water every 5–10 days; tolerates brief dry spells when established.",
+        "bg": "Поливайте на 5–10 дни; понася кратко засушаване след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to outdoor humidity; drought-tolerant when established.",
+        "bg": "Адаптира се към влажността на открито; устойчиво на суша след установяване."
+      },
+      "temperature": {
+        "en": "Hardy; most survive winter cold down to -10 °C or lower.",
+        "bg": "Издръжливо; повечето оцеляват при зимен студ до -10 °C или по-ниско."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring when new growth appears.",
+        "bg": "Торете веднъж напролет при поява на нов растеж."
+      },
+      "toxicity": {
+        "en": "Toxicity varies by species; check before planting near pets.",
+        "bg": "Токсичността варира по вид; проверете преди засаждане близо до домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Delphinium elatum",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/45762201/medium.jpeg",
+    "commonNameEn": "Candle Larkspur",
+    "commonNameBg": "висока ралица",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of the northern hemisphere",
+    "nativeRegionBg": "Умерени зони на северното полукълбо",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": true,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade depending on species.",
+        "bg": "Пълно слънце до частична сянка в зависимост от вида."
+      },
+      "watering": {
+        "en": "Water every 5–10 days; tolerates brief dry spells when established.",
+        "bg": "Поливайте на 5–10 дни; понася кратко засушаване след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to outdoor humidity; drought-tolerant when established.",
+        "bg": "Адаптира се към влажността на открито; устойчиво на суша след установяване."
+      },
+      "temperature": {
+        "en": "Hardy; most survive winter cold down to -10 °C or lower.",
+        "bg": "Издръжливо; повечето оцеляват при зимен студ до -10 °C или по-ниско."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring when new growth appears.",
+        "bg": "Торете веднъж напролет при поява на нов растеж."
+      },
+      "toxicity": {
+        "en": "Toxic to cats and dogs — keep out of reach.",
+        "bg": "Токсично за котки и кучета — пазете от домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Leucanthemum vulgare",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Leucanthemum_vulgare_%27Filigran%27_Flower_2200px.jpg/960px-Leucanthemum_vulgare_%27Filigran%27_Flower_2200px.jpg",
+    "commonNameEn": "Ox-Eye Daisy",
+    "commonNameBg": "маргаритка",
+    "descriptionEn": "Leucanthemum vulgare, commonly known as the ox-eye daisy, oxeye daisy, dog daisy, marguerite (French: Marguerite commune, \"common marguerite\") and other common names, is a widespread flowering plant native to Europe and the temperate regions of Asia, and an introduced plant to North America, Australia and New Zealand.",
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of the northern hemisphere",
+    "nativeRegionBg": "Умерени зони на северното полукълбо",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade depending on species.",
+        "bg": "Пълно слънце до частична сянка в зависимост от вида."
+      },
+      "watering": {
+        "en": "Water every 5–10 days; tolerates brief dry spells when established.",
+        "bg": "Поливайте на 5–10 дни; понася кратко засушаване след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to outdoor humidity; drought-tolerant when established.",
+        "bg": "Адаптира се към влажността на открито; устойчиво на суша след установяване."
+      },
+      "temperature": {
+        "en": "Hardy; most survive winter cold down to -10 °C or lower.",
+        "bg": "Издръжливо; повечето оцеляват при зимен студ до -10 °C или по-ниско."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring when new growth appears.",
+        "bg": "Торете веднъж напролет при поява на нов растеж."
+      },
+      "toxicity": {
+        "en": "Toxicity varies by species; check before planting near pets.",
+        "bg": "Токсичността варира по вид; проверете преди засаждане близо до домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Gypsophila paniculata",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Gypsophila_paniculata_sl17.jpg/960px-Gypsophila_paniculata_sl17.jpg",
+    "commonNameEn": "Baby's Breath",
+    "commonNameBg": "метличеста мишорка",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of the northern hemisphere",
+    "nativeRegionBg": "Умерени зони на северното полукълбо",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade depending on species.",
+        "bg": "Пълно слънце до частична сянка в зависимост от вида."
+      },
+      "watering": {
+        "en": "Water every 5–10 days; tolerates brief dry spells when established.",
+        "bg": "Поливайте на 5–10 дни; понася кратко засушаване след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to outdoor humidity; drought-tolerant when established.",
+        "bg": "Адаптира се към влажността на открито; устойчиво на суша след установяване."
+      },
+      "temperature": {
+        "en": "Hardy; most survive winter cold down to -10 °C or lower.",
+        "bg": "Издръжливо; повечето оцеляват при зимен студ до -10 °C или по-ниско."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring when new growth appears.",
+        "bg": "Торете веднъж напролет при поява на нов растеж."
+      },
+      "toxicity": {
+        "en": "Toxicity varies by species; check before planting near pets.",
+        "bg": "Токсичността варира по вид; проверете преди засаждане близо до домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Geranium sanguineum",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/2012-07-03_Bloody_Crane%27s-bill%2C_Hauxley%2C_Northumberland_1.jpg/960px-2012-07-03_Bloody_Crane%27s-bill%2C_Hauxley%2C_Northumberland_1.jpg",
+    "commonNameEn": "Bloody Cranesbill",
+    "commonNameBg": "кървавочервен здравец",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of the northern hemisphere",
+    "nativeRegionBg": "Умерени зони на северното полукълбо",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade depending on species.",
+        "bg": "Пълно слънце до частична сянка в зависимост от вида."
+      },
+      "watering": {
+        "en": "Water every 5–10 days; tolerates brief dry spells when established.",
+        "bg": "Поливайте на 5–10 дни; понася кратко засушаване след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to outdoor humidity; drought-tolerant when established.",
+        "bg": "Адаптира се към влажността на открито; устойчиво на суша след установяване."
+      },
+      "temperature": {
+        "en": "Hardy; most survive winter cold down to -10 °C or lower.",
+        "bg": "Издръжливо; повечето оцеляват при зимен студ до -10 °C или по-ниско."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring when new growth appears.",
+        "bg": "Торете веднъж напролет при поява на нов растеж."
+      },
+      "toxicity": {
+        "en": "Toxicity varies by species; check before planting near pets.",
+        "bg": "Токсичността варира по вид; проверете преди засаждане близо до домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Coreopsis grandiflora",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Alois_Lunzer04.jpg",
+    "commonNameEn": "Large-Flowered Tickseed",
+    "commonNameBg": "Кореопсис",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of the northern hemisphere",
+    "nativeRegionBg": "Умерени зони на северното полукълбо",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade depending on species.",
+        "bg": "Пълно слънце до частична сянка в зависимост от вида."
+      },
+      "watering": {
+        "en": "Water every 5–10 days; tolerates brief dry spells when established.",
+        "bg": "Поливайте на 5–10 дни; понася кратко засушаване след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to outdoor humidity; drought-tolerant when established.",
+        "bg": "Адаптира се към влажността на открито; устойчиво на суша след установяване."
+      },
+      "temperature": {
+        "en": "Hardy; most survive winter cold down to -10 °C or lower.",
+        "bg": "Издръжливо; повечето оцеляват при зимен студ до -10 °C или по-ниско."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring when new growth appears.",
+        "bg": "Торете веднъж напролет при поява на нов растеж."
+      },
+      "toxicity": {
+        "en": "Toxicity varies by species; check before planting near pets.",
+        "bg": "Токсичността варира по вид; проверете преди засаждане близо до домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Gaillardia aristata",
+    "imageUrl": "https://static.inaturalist.org/photos/45640107/medium.jpg",
+    "commonNameEn": "Blanket Flower",
+    "commonNameBg": "Гаиллардиа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of the northern hemisphere",
+    "nativeRegionBg": "Умерени зони на северното полукълбо",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade depending on species.",
+        "bg": "Пълно слънце до частична сянка в зависимост от вида."
+      },
+      "watering": {
+        "en": "Water every 5–10 days; tolerates brief dry spells when established.",
+        "bg": "Поливайте на 5–10 дни; понася кратко засушаване след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to outdoor humidity; drought-tolerant when established.",
+        "bg": "Адаптира се към влажността на открито; устойчиво на суша след установяване."
+      },
+      "temperature": {
+        "en": "Hardy; most survive winter cold down to -10 °C or lower.",
+        "bg": "Издръжливо; повечето оцеляват при зимен студ до -10 °C или по-ниско."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring when new growth appears.",
+        "bg": "Торете веднъж напролет при поява на нов растеж."
+      },
+      "toxicity": {
+        "en": "Toxicity varies by species; check before planting near pets.",
+        "bg": "Токсичността варира по вид; проверете преди засаждане близо до домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Liatris spicata",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Liatris_spicata_003.JPG/960px-Liatris_spicata_003.JPG",
+    "commonNameEn": "Blazing Star",
+    "commonNameBg": "Лиатрис",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of the northern hemisphere",
+    "nativeRegionBg": "Умерени зони на северното полукълбо",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade depending on species.",
+        "bg": "Пълно слънце до частична сянка в зависимост от вида."
+      },
+      "watering": {
+        "en": "Water every 5–10 days; tolerates brief dry spells when established.",
+        "bg": "Поливайте на 5–10 дни; понася кратко засушаване след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to outdoor humidity; drought-tolerant when established.",
+        "bg": "Адаптира се към влажността на открито; устойчиво на суша след установяване."
+      },
+      "temperature": {
+        "en": "Hardy; most survive winter cold down to -10 °C or lower.",
+        "bg": "Издръжливо; повечето оцеляват при зимен студ до -10 °C или по-ниско."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring when new growth appears.",
+        "bg": "Торете веднъж напролет при поява на нов растеж."
+      },
+      "toxicity": {
+        "en": "Toxicity varies by species; check before planting near pets.",
+        "bg": "Токсичността варира по вид; проверете преди засаждане близо до домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Monarda didyma",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Monarda_didyma_inflorescence_and_upper_cauline_leaves.jpg/960px-Monarda_didyma_inflorescence_and_upper_cauline_leaves.jpg",
+    "commonNameEn": "Bee Balm",
+    "commonNameBg": "червен бергамот",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of the northern hemisphere",
+    "nativeRegionBg": "Умерени зони на северното полукълбо",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade depending on species.",
+        "bg": "Пълно слънце до частична сянка в зависимост от вида."
+      },
+      "watering": {
+        "en": "Water every 5–10 days; tolerates brief dry spells when established.",
+        "bg": "Поливайте на 5–10 дни; понася кратко засушаване след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to outdoor humidity; drought-tolerant when established.",
+        "bg": "Адаптира се към влажността на открито; устойчиво на суша след установяване."
+      },
+      "temperature": {
+        "en": "Hardy; most survive winter cold down to -10 °C or lower.",
+        "bg": "Издръжливо; повечето оцеляват при зимен студ до -10 °C или по-ниско."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring when new growth appears.",
+        "bg": "Торете веднъж напролет при поява на нов растеж."
+      },
+      "toxicity": {
+        "en": "Toxicity varies by species; check before planting near pets.",
+        "bg": "Токсичността варира по вид; проверете преди засаждане близо до домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Campanula persicifolia",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/136715790/medium.jpeg",
+    "commonNameEn": "Peach-Leaved Bellflower",
+    "commonNameBg": "прасковолистна камбанка",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of the northern hemisphere",
+    "nativeRegionBg": "Умерени зони на северното полукълбо",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade depending on species.",
+        "bg": "Пълно слънце до частична сянка в зависимост от вида."
+      },
+      "watering": {
+        "en": "Water every 5–10 days; tolerates brief dry spells when established.",
+        "bg": "Поливайте на 5–10 дни; понася кратко засушаване след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to outdoor humidity; drought-tolerant when established.",
+        "bg": "Адаптира се към влажността на открито; устойчиво на суша след установяване."
+      },
+      "temperature": {
+        "en": "Hardy; most survive winter cold down to -10 °C or lower.",
+        "bg": "Издръжливо; повечето оцеляват при зимен студ до -10 °C или по-ниско."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring when new growth appears.",
+        "bg": "Торете веднъж напролет при поява на нов растеж."
+      },
+      "toxicity": {
+        "en": "Toxicity varies by species; check before planting near pets.",
+        "bg": "Токсичността варира по вид; проверете преди засаждане близо до домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Dianthus plumarius",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Dianthus_plumarius_kz02.jpg/960px-Dianthus_plumarius_kz02.jpg",
+    "commonNameEn": "Garden Pink",
+    "commonNameBg": "Диантус",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Various worldwide regions",
+    "nativeRegionBg": "Различни региони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 3,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 6,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most prefer 6+ hours of sun.",
+        "bg": "Пълно слънце до частична сянка; повечето предпочитат 6+ часа слънце."
+      },
+      "watering": {
+        "en": "Water regularly every 2–4 days; do not let soil dry completely.",
+        "bg": "Поливайте редовно на 2–4 дни; не оставяйте почвата да изсъхне напълно."
+      },
+      "humidity": {
+        "en": "Adapts to normal outdoor humidity.",
+        "bg": "Адаптира се към нормалната влажност на открито."
+      },
+      "temperature": {
+        "en": "Plant after frost; most grow well at 15–28 °C.",
+        "bg": "Засаждайте след замръзването; повечето растат добре при 15–28 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 2 weeks with flowering plant fertilizer.",
+        "bg": "Торете на 2 седмици с тор за цъфтящи растения."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; keep pets from eating flowering plants.",
+        "bg": "Токсичността варира; пазете домашни любимци от яденето на цъфтящи растения."
+      }
+    }
+  },
+  {
+    "scientificName": "Primula vulgaris",
+    "imageUrl": "https://static.inaturalist.org/photos/114356129/medium.jpg",
+    "commonNameEn": "Common Primrose",
+    "commonNameBg": "Безстъблена иглика",
+    "descriptionEn": null,
+    "descriptionBg": "Обикновената иглика (Primula vulgaris), също безстъблена иглика, е вид цъфтящо растение от семейство Игликови (Primulaceae), местен за Западна и Южна Европа, Северозападна Африка и части от Югозападна Азия. Пояснението „обикновена“ се използва за разграничаване от други представители на същото семейство.",
+    "family": null,
+    "nativeRegionEn": "Temperate regions of the northern hemisphere",
+    "nativeRegionBg": "Умерени зони на северното полукълбо",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade depending on species.",
+        "bg": "Пълно слънце до частична сянка в зависимост от вида."
+      },
+      "watering": {
+        "en": "Water every 5–10 days; tolerates brief dry spells when established.",
+        "bg": "Поливайте на 5–10 дни; понася кратко засушаване след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to outdoor humidity; drought-tolerant when established.",
+        "bg": "Адаптира се към влажността на открито; устойчиво на суша след установяване."
+      },
+      "temperature": {
+        "en": "Hardy; most survive winter cold down to -10 °C or lower.",
+        "bg": "Издръжливо; повечето оцеляват при зимен студ до -10 °C или по-ниско."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring when new growth appears.",
+        "bg": "Торете веднъж напролет при поява на нов растеж."
+      },
+      "toxicity": {
+        "en": "Toxicity varies by species; check before planting near pets.",
+        "bg": "Токсичността варира по вид; проверете преди засаждане близо до домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Bergenia cordifolia",
+    "imageUrl": null,
+    "commonNameEn": "Heartleaf Bergenia",
+    "commonNameBg": "Бергениа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of the northern hemisphere",
+    "nativeRegionBg": "Умерени зони на северното полукълбо",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade depending on species.",
+        "bg": "Пълно слънце до частична сянка в зависимост от вида."
+      },
+      "watering": {
+        "en": "Water every 5–10 days; tolerates brief dry spells when established.",
+        "bg": "Поливайте на 5–10 дни; понася кратко засушаване след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to outdoor humidity; drought-tolerant when established.",
+        "bg": "Адаптира се към влажността на открито; устойчиво на суша след установяване."
+      },
+      "temperature": {
+        "en": "Hardy; most survive winter cold down to -10 °C or lower.",
+        "bg": "Издръжливо; повечето оцеляват при зимен студ до -10 °C или по-ниско."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring when new growth appears.",
+        "bg": "Торете веднъж напролет при поява на нов растеж."
+      },
+      "toxicity": {
+        "en": "Toxicity varies by species; check before planting near pets.",
+        "bg": "Токсичността варира по вид; проверете преди засаждане близо до домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Helleborus niger",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/610531198/medium.jpg",
+    "commonNameEn": "Christmas Rose",
+    "commonNameBg": "черен кукуряк",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of the northern hemisphere",
+    "nativeRegionBg": "Умерени зони на северното полукълбо",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": true,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade depending on species.",
+        "bg": "Пълно слънце до частична сянка в зависимост от вида."
+      },
+      "watering": {
+        "en": "Water every 5–10 days; tolerates brief dry spells when established.",
+        "bg": "Поливайте на 5–10 дни; понася кратко засушаване след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to outdoor humidity; drought-tolerant when established.",
+        "bg": "Адаптира се към влажността на открито; устойчиво на суша след установяване."
+      },
+      "temperature": {
+        "en": "Hardy; most survive winter cold down to -10 °C or lower.",
+        "bg": "Издръжливо; повечето оцеляват при зимен студ до -10 °C или по-ниско."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring when new growth appears.",
+        "bg": "Торете веднъж напролет при поява на нов растеж."
+      },
+      "toxicity": {
+        "en": "Toxic to cats and dogs — keep out of reach.",
+        "bg": "Токсично за котки и кучета — пазете от домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Alcea rosea",
+    "imageUrl": "https://static.inaturalist.org/photos/161030578/medium.jpg",
+    "commonNameEn": "Common Hollyhock",
+    "commonNameBg": "градинска ружа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of the northern hemisphere",
+    "nativeRegionBg": "Умерени зони на северното полукълбо",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade depending on species.",
+        "bg": "Пълно слънце до частична сянка в зависимост от вида."
+      },
+      "watering": {
+        "en": "Water every 5–10 days; tolerates brief dry spells when established.",
+        "bg": "Поливайте на 5–10 дни; понася кратко засушаване след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to outdoor humidity; drought-tolerant when established.",
+        "bg": "Адаптира се към влажността на открито; устойчиво на суша след установяване."
+      },
+      "temperature": {
+        "en": "Hardy; most survive winter cold down to -10 °C or lower.",
+        "bg": "Издръжливо; повечето оцеляват при зимен студ до -10 °C или по-ниско."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring when new growth appears.",
+        "bg": "Торете веднъж напролет при поява на нов растеж."
+      },
+      "toxicity": {
+        "en": "Toxicity varies by species; check before planting near pets.",
+        "bg": "Токсичността варира по вид; проверете преди засаждане близо до домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Aster novi-belgii",
+    "imageUrl": null,
+    "commonNameEn": "Michaelmas Daisy",
+    "commonNameBg": "Астер",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of the northern hemisphere",
+    "nativeRegionBg": "Умерени зони на северното полукълбо",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade depending on species.",
+        "bg": "Пълно слънце до частична сянка в зависимост от вида."
+      },
+      "watering": {
+        "en": "Water every 5–10 days; tolerates brief dry spells when established.",
+        "bg": "Поливайте на 5–10 дни; понася кратко засушаване след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to outdoor humidity; drought-tolerant when established.",
+        "bg": "Адаптира се към влажността на открито; устойчиво на суша след установяване."
+      },
+      "temperature": {
+        "en": "Hardy; most survive winter cold down to -10 °C or lower.",
+        "bg": "Издръжливо; повечето оцеляват при зимен студ до -10 °C или по-ниско."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring when new growth appears.",
+        "bg": "Торете веднъж напролет при поява на нов растеж."
+      },
+      "toxicity": {
+        "en": "Toxicity varies by species; check before planting near pets.",
+        "bg": "Токсичността варира по вид; проверете преди засаждане близо до домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Verbena bonariensis",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/283884295/medium.jpg",
+    "commonNameEn": "Tall Verbena",
+    "commonNameBg": "Вербена",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of the northern hemisphere",
+    "nativeRegionBg": "Умерени зони на северното полукълбо",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade depending on species.",
+        "bg": "Пълно слънце до частична сянка в зависимост от вида."
+      },
+      "watering": {
+        "en": "Water every 5–10 days; tolerates brief dry spells when established.",
+        "bg": "Поливайте на 5–10 дни; понася кратко засушаване след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to outdoor humidity; drought-tolerant when established.",
+        "bg": "Адаптира се към влажността на открито; устойчиво на суша след установяване."
+      },
+      "temperature": {
+        "en": "Hardy; most survive winter cold down to -10 °C or lower.",
+        "bg": "Издръжливо; повечето оцеляват при зимен студ до -10 °C или по-ниско."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring when new growth appears.",
+        "bg": "Торете веднъж напролет при поява на нов растеж."
+      },
+      "toxicity": {
+        "en": "Toxicity varies by species; check before planting near pets.",
+        "bg": "Токсичността варира по вид; проверете преди засаждане близо до домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Paeonia lactiflora",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/113190686/medium.jpg",
+    "commonNameEn": "Chinese Peony",
+    "commonNameBg": "китайски божур",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of the northern hemisphere",
+    "nativeRegionBg": "Умерени зони на северното полукълбо",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade depending on species.",
+        "bg": "Пълно слънце до частична сянка в зависимост от вида."
+      },
+      "watering": {
+        "en": "Water every 5–10 days; tolerates brief dry spells when established.",
+        "bg": "Поливайте на 5–10 дни; понася кратко засушаване след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to outdoor humidity; drought-tolerant when established.",
+        "bg": "Адаптира се към влажността на открито; устойчиво на суша след установяване."
+      },
+      "temperature": {
+        "en": "Hardy; most survive winter cold down to -10 °C or lower.",
+        "bg": "Издръжливо; повечето оцеляват при зимен студ до -10 °C или по-ниско."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring when new growth appears.",
+        "bg": "Торете веднъж напролет при поява на нов растеж."
+      },
+      "toxicity": {
+        "en": "Non-toxic to pets; safe around cats and dogs.",
+        "bg": "Нетоксично за домашни любимци; безопасно около котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Paeonia officinalis",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/887114/medium.jpg",
+    "commonNameEn": "Common Peony",
+    "commonNameBg": "Пеониа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of the northern hemisphere",
+    "nativeRegionBg": "Умерени зони на северното полукълбо",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade depending on species.",
+        "bg": "Пълно слънце до частична сянка в зависимост от вида."
+      },
+      "watering": {
+        "en": "Water every 5–10 days; tolerates brief dry spells when established.",
+        "bg": "Поливайте на 5–10 дни; понася кратко засушаване след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to outdoor humidity; drought-tolerant when established.",
+        "bg": "Адаптира се към влажността на открито; устойчиво на суша след установяване."
+      },
+      "temperature": {
+        "en": "Hardy; most survive winter cold down to -10 °C or lower.",
+        "bg": "Издръжливо; повечето оцеляват при зимен студ до -10 °C или по-ниско."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring when new growth appears.",
+        "bg": "Торете веднъж напролет при поява на нов растеж."
+      },
+      "toxicity": {
+        "en": "Non-toxic to pets; safe around cats and dogs.",
+        "bg": "Нетоксично за домашни любимци; безопасно около котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Chrysanthemum morifolium",
+    "imageUrl": null,
+    "commonNameEn": "Florist Chrysanthemum",
+    "commonNameBg": "Хрисантемум",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of the northern hemisphere",
+    "nativeRegionBg": "Умерени зони на северното полукълбо",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade depending on species.",
+        "bg": "Пълно слънце до частична сянка в зависимост от вида."
+      },
+      "watering": {
+        "en": "Water every 5–10 days; tolerates brief dry spells when established.",
+        "bg": "Поливайте на 5–10 дни; понася кратко засушаване след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to outdoor humidity; drought-tolerant when established.",
+        "bg": "Адаптира се към влажността на открито; устойчиво на суша след установяване."
+      },
+      "temperature": {
+        "en": "Hardy; most survive winter cold down to -10 °C or lower.",
+        "bg": "Издръжливо; повечето оцеляват при зимен студ до -10 °C или по-ниско."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring when new growth appears.",
+        "bg": "Торете веднъж напролет при поява на нов растеж."
+      },
+      "toxicity": {
+        "en": "Toxicity varies by species; check before planting near pets.",
+        "bg": "Токсичността варира по вид; проверете преди засаждане близо до домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Echinops ritro",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/30296828/medium.jpg",
+    "commonNameEn": "Small Globe Thistle",
+    "commonNameBg": "бодлив челядник",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of the northern hemisphere",
+    "nativeRegionBg": "Умерени зони на северното полукълбо",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade depending on species.",
+        "bg": "Пълно слънце до частична сянка в зависимост от вида."
+      },
+      "watering": {
+        "en": "Water every 5–10 days; tolerates brief dry spells when established.",
+        "bg": "Поливайте на 5–10 дни; понася кратко засушаване след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to outdoor humidity; drought-tolerant when established.",
+        "bg": "Адаптира се към влажността на открито; устойчиво на суша след установяване."
+      },
+      "temperature": {
+        "en": "Hardy; most survive winter cold down to -10 °C or lower.",
+        "bg": "Издръжливо; повечето оцеляват при зимен студ до -10 °C или по-ниско."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring when new growth appears.",
+        "bg": "Торете веднъж напролет при поява на нов растеж."
+      },
+      "toxicity": {
+        "en": "Toxicity varies by species; check before planting near pets.",
+        "bg": "Токсичността варира по вид; проверете преди засаждане близо до домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Digitalis purpurea",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/179728943/medium.jpeg",
+    "commonNameEn": "Foxglove",
+    "commonNameBg": "Червен напръстник",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of the northern hemisphere",
+    "nativeRegionBg": "Умерени зони на северното полукълбо",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": true,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade depending on species.",
+        "bg": "Пълно слънце до частична сянка в зависимост от вида."
+      },
+      "watering": {
+        "en": "Water every 5–10 days; tolerates brief dry spells when established.",
+        "bg": "Поливайте на 5–10 дни; понася кратко засушаване след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to outdoor humidity; drought-tolerant when established.",
+        "bg": "Адаптира се към влажността на открито; устойчиво на суша след установяване."
+      },
+      "temperature": {
+        "en": "Hardy; most survive winter cold down to -10 °C or lower.",
+        "bg": "Издръжливо; повечето оцеляват при зимен студ до -10 °C или по-ниско."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring when new growth appears.",
+        "bg": "Торете веднъж напролет при поява на нов растеж."
+      },
+      "toxicity": {
+        "en": "Toxic to cats and dogs — keep out of reach.",
+        "bg": "Токсично за котки и кучета — пазете от домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Lupinus polyphyllus",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/135866080/medium.jpg",
+    "commonNameEn": "Garden Lupin",
+    "commonNameBg": "Лупинус",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of the northern hemisphere",
+    "nativeRegionBg": "Умерени зони на северното полукълбо",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": true,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade depending on species.",
+        "bg": "Пълно слънце до частична сянка в зависимост от вида."
+      },
+      "watering": {
+        "en": "Water every 5–10 days; tolerates brief dry spells when established.",
+        "bg": "Поливайте на 5–10 дни; понася кратко засушаване след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to outdoor humidity; drought-tolerant when established.",
+        "bg": "Адаптира се към влажността на открито; устойчиво на суша след установяване."
+      },
+      "temperature": {
+        "en": "Hardy; most survive winter cold down to -10 °C or lower.",
+        "bg": "Издръжливо; повечето оцеляват при зимен студ до -10 °C или по-ниско."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring when new growth appears.",
+        "bg": "Торете веднъж напролет при поява на нов растеж."
+      },
+      "toxicity": {
+        "en": "Toxic to cats and dogs — keep out of reach.",
+        "bg": "Токсично за котки и кучета — пазете от домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Kniphofia uvaria",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/32371726/medium.jpg",
+    "commonNameEn": "Red Hot Poker",
+    "commonNameBg": "Книфофиа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of the northern hemisphere",
+    "nativeRegionBg": "Умерени зони на северното полукълбо",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade depending on species.",
+        "bg": "Пълно слънце до частична сянка в зависимост от вида."
+      },
+      "watering": {
+        "en": "Water every 5–10 days; tolerates brief dry spells when established.",
+        "bg": "Поливайте на 5–10 дни; понася кратко засушаване след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to outdoor humidity; drought-tolerant when established.",
+        "bg": "Адаптира се към влажността на открито; устойчиво на суша след установяване."
+      },
+      "temperature": {
+        "en": "Hardy; most survive winter cold down to -10 °C or lower.",
+        "bg": "Издръжливо; повечето оцеляват при зимен студ до -10 °C или по-ниско."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring when new growth appears.",
+        "bg": "Торете веднъж напролет при поява на нов растеж."
+      },
+      "toxicity": {
+        "en": "Toxicity varies by species; check before planting near pets.",
+        "bg": "Токсичността варира по вид; проверете преди засаждане близо до домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Coreopsis verticillata",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/127119/medium.jpg",
+    "commonNameEn": "Threadleaf Coreopsis",
+    "commonNameBg": "Кореопсис",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of the northern hemisphere",
+    "nativeRegionBg": "Умерени зони на северното полукълбо",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade depending on species.",
+        "bg": "Пълно слънце до частична сянка в зависимост от вида."
+      },
+      "watering": {
+        "en": "Water every 5–10 days; tolerates brief dry spells when established.",
+        "bg": "Поливайте на 5–10 дни; понася кратко засушаване след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to outdoor humidity; drought-tolerant when established.",
+        "bg": "Адаптира се към влажността на открито; устойчиво на суша след установяване."
+      },
+      "temperature": {
+        "en": "Hardy; most survive winter cold down to -10 °C or lower.",
+        "bg": "Издръжливо; повечето оцеляват при зимен студ до -10 °C или по-ниско."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring when new growth appears.",
+        "bg": "Торете веднъж напролет при поява на нов растеж."
+      },
+      "toxicity": {
+        "en": "Toxicity varies by species; check before planting near pets.",
+        "bg": "Токсичността варира по вид; проверете преди засаждане близо до домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Geum chiloense",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/168109667/medium.jpg",
+    "commonNameEn": "Chilean Avens",
+    "commonNameBg": "Геум",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of the northern hemisphere",
+    "nativeRegionBg": "Умерени зони на северното полукълбо",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade depending on species.",
+        "bg": "Пълно слънце до частична сянка в зависимост от вида."
+      },
+      "watering": {
+        "en": "Water every 5–10 days; tolerates brief dry spells when established.",
+        "bg": "Поливайте на 5–10 дни; понася кратко засушаване след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to outdoor humidity; drought-tolerant when established.",
+        "bg": "Адаптира се към влажността на открито; устойчиво на суша след установяване."
+      },
+      "temperature": {
+        "en": "Hardy; most survive winter cold down to -10 °C or lower.",
+        "bg": "Издръжливо; повечето оцеляват при зимен студ до -10 °C или по-ниско."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring when new growth appears.",
+        "bg": "Торете веднъж напролет при поява на нов растеж."
+      },
+      "toxicity": {
+        "en": "Toxicity varies by species; check before planting near pets.",
+        "bg": "Токсичността варира по вид; проверете преди засаждане близо до домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Scabiosa caucasica",
+    "imageUrl": null,
+    "commonNameEn": "Caucasian Pincushion Flower",
+    "commonNameBg": "Скабиоса",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Various worldwide regions",
+    "nativeRegionBg": "Различни региони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 3,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 6,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most prefer 6+ hours of sun.",
+        "bg": "Пълно слънце до частична сянка; повечето предпочитат 6+ часа слънце."
+      },
+      "watering": {
+        "en": "Water regularly every 2–4 days; do not let soil dry completely.",
+        "bg": "Поливайте редовно на 2–4 дни; не оставяйте почвата да изсъхне напълно."
+      },
+      "humidity": {
+        "en": "Adapts to normal outdoor humidity.",
+        "bg": "Адаптира се към нормалната влажност на открито."
+      },
+      "temperature": {
+        "en": "Plant after frost; most grow well at 15–28 °C.",
+        "bg": "Засаждайте след замръзването; повечето растат добре при 15–28 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 2 weeks with flowering plant fertilizer.",
+        "bg": "Торете на 2 седмици с тор за цъфтящи растения."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; keep pets from eating flowering plants.",
+        "bg": "Токсичността варира; пазете домашни любимци от яденето на цъфтящи растения."
+      }
+    }
+  },
+  {
+    "scientificName": "Perovskia atriplicifolia",
+    "imageUrl": null,
+    "commonNameEn": "Russian Sage",
+    "commonNameBg": "Перовскиа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of the northern hemisphere",
+    "nativeRegionBg": "Умерени зони на северното полукълбо",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade depending on species.",
+        "bg": "Пълно слънце до частична сянка в зависимост от вида."
+      },
+      "watering": {
+        "en": "Water every 5–10 days; tolerates brief dry spells when established.",
+        "bg": "Поливайте на 5–10 дни; понася кратко засушаване след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to outdoor humidity; drought-tolerant when established.",
+        "bg": "Адаптира се към влажността на открито; устойчиво на суша след установяване."
+      },
+      "temperature": {
+        "en": "Hardy; most survive winter cold down to -10 °C or lower.",
+        "bg": "Издръжливо; повечето оцеляват при зимен студ до -10 °C или по-ниско."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring when new growth appears.",
+        "bg": "Торете веднъж напролет при поява на нов растеж."
+      },
+      "toxicity": {
+        "en": "Toxicity varies by species; check before planting near pets.",
+        "bg": "Токсичността варира по вид; проверете преди засаждане близо до домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Veronicastrum virginicum",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/2173863/medium.jpg",
+    "commonNameEn": "Culver's Root",
+    "commonNameBg": "Вероникаструм",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of the northern hemisphere",
+    "nativeRegionBg": "Умерени зони на северното полукълбо",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade depending on species.",
+        "bg": "Пълно слънце до частична сянка в зависимост от вида."
+      },
+      "watering": {
+        "en": "Water every 5–10 days; tolerates brief dry spells when established.",
+        "bg": "Поливайте на 5–10 дни; понася кратко засушаване след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to outdoor humidity; drought-tolerant when established.",
+        "bg": "Адаптира се към влажността на открито; устойчиво на суша след установяване."
+      },
+      "temperature": {
+        "en": "Hardy; most survive winter cold down to -10 °C or lower.",
+        "bg": "Издръжливо; повечето оцеляват при зимен студ до -10 °C или по-ниско."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring when new growth appears.",
+        "bg": "Торете веднъж напролет при поява на нов растеж."
+      },
+      "toxicity": {
+        "en": "Toxicity varies by species; check before planting near pets.",
+        "bg": "Токсичността варира по вид; проверете преди засаждане близо до домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Filipendula ulmaria",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/51718/medium.jpg",
+    "commonNameEn": "Meadowsweet",
+    "commonNameBg": "блатен тъжник",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of the northern hemisphere",
+    "nativeRegionBg": "Умерени зони на северното полукълбо",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade depending on species.",
+        "bg": "Пълно слънце до частична сянка в зависимост от вида."
+      },
+      "watering": {
+        "en": "Water every 5–10 days; tolerates brief dry spells when established.",
+        "bg": "Поливайте на 5–10 дни; понася кратко засушаване след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to outdoor humidity; drought-tolerant when established.",
+        "bg": "Адаптира се към влажността на открито; устойчиво на суша след установяване."
+      },
+      "temperature": {
+        "en": "Hardy; most survive winter cold down to -10 °C or lower.",
+        "bg": "Издръжливо; повечето оцеляват при зимен студ до -10 °C или по-ниско."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring when new growth appears.",
+        "bg": "Торете веднъж напролет при поява на нов растеж."
+      },
+      "toxicity": {
+        "en": "Toxicity varies by species; check before planting near pets.",
+        "bg": "Токсичността варира по вид; проверете преди засаждане близо до домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Ligularia dentata",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/571277/medium.jpg",
+    "commonNameEn": "Leopard Plant",
+    "commonNameBg": "Лигулариа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of the northern hemisphere",
+    "nativeRegionBg": "Умерени зони на северното полукълбо",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade depending on species.",
+        "bg": "Пълно слънце до частична сянка в зависимост от вида."
+      },
+      "watering": {
+        "en": "Water every 5–10 days; tolerates brief dry spells when established.",
+        "bg": "Поливайте на 5–10 дни; понася кратко засушаване след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to outdoor humidity; drought-tolerant when established.",
+        "bg": "Адаптира се към влажността на открито; устойчиво на суша след установяване."
+      },
+      "temperature": {
+        "en": "Hardy; most survive winter cold down to -10 °C or lower.",
+        "bg": "Издръжливо; повечето оцеляват при зимен студ до -10 °C или по-ниско."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring when new growth appears.",
+        "bg": "Торете веднъж напролет при поява на нов растеж."
+      },
+      "toxicity": {
+        "en": "Toxicity varies by species; check before planting near pets.",
+        "bg": "Токсичността варира по вид; проверете преди засаждане близо до домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Agastache foeniculum",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/417901162/medium.jpeg",
+    "commonNameEn": "Anise Hyssop",
+    "commonNameBg": "Агастахе",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of the northern hemisphere",
+    "nativeRegionBg": "Умерени зони на северното полукълбо",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade depending on species.",
+        "bg": "Пълно слънце до частична сянка в зависимост от вида."
+      },
+      "watering": {
+        "en": "Water every 5–10 days; tolerates brief dry spells when established.",
+        "bg": "Поливайте на 5–10 дни; понася кратко засушаване след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to outdoor humidity; drought-tolerant when established.",
+        "bg": "Адаптира се към влажността на открито; устойчиво на суша след установяване."
+      },
+      "temperature": {
+        "en": "Hardy; most survive winter cold down to -10 °C or lower.",
+        "bg": "Издръжливо; повечето оцеляват при зимен студ до -10 °C или по-ниско."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring when new growth appears.",
+        "bg": "Торете веднъж напролет при поява на нов растеж."
+      },
+      "toxicity": {
+        "en": "Toxicity varies by species; check before planting near pets.",
+        "bg": "Токсичността варира по вид; проверете преди засаждане близо до домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Centranthus ruber",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/524544102/medium.jpg",
+    "commonNameEn": "Red Valerian",
+    "commonNameBg": "Кентрантус",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of the northern hemisphere",
+    "nativeRegionBg": "Умерени зони на северното полукълбо",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade depending on species.",
+        "bg": "Пълно слънце до частична сянка в зависимост от вида."
+      },
+      "watering": {
+        "en": "Water every 5–10 days; tolerates brief dry spells when established.",
+        "bg": "Поливайте на 5–10 дни; понася кратко засушаване след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to outdoor humidity; drought-tolerant when established.",
+        "bg": "Адаптира се към влажността на открито; устойчиво на суша след установяване."
+      },
+      "temperature": {
+        "en": "Hardy; most survive winter cold down to -10 °C or lower.",
+        "bg": "Издръжливо; повечето оцеляват при зимен студ до -10 °C или по-ниско."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring when new growth appears.",
+        "bg": "Торете веднъж напролет при поява на нов растеж."
+      },
+      "toxicity": {
+        "en": "Toxicity varies by species; check before planting near pets.",
+        "bg": "Токсичността варира по вид; проверете преди засаждане близо до домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Hesperis matronalis",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/202467231/medium.jpeg",
+    "commonNameEn": "Dame's Rocket",
+    "commonNameBg": "вечерница",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of the northern hemisphere",
+    "nativeRegionBg": "Умерени зони на северното полукълбо",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade depending on species.",
+        "bg": "Пълно слънце до частична сянка в зависимост от вида."
+      },
+      "watering": {
+        "en": "Water every 5–10 days; tolerates brief dry spells when established.",
+        "bg": "Поливайте на 5–10 дни; понася кратко засушаване след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to outdoor humidity; drought-tolerant when established.",
+        "bg": "Адаптира се към влажността на открито; устойчиво на суша след установяване."
+      },
+      "temperature": {
+        "en": "Hardy; most survive winter cold down to -10 °C or lower.",
+        "bg": "Издръжливо; повечето оцеляват при зимен студ до -10 °C или по-ниско."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring when new growth appears.",
+        "bg": "Торете веднъж напролет при поява на нов растеж."
+      },
+      "toxicity": {
+        "en": "Toxicity varies by species; check before planting near pets.",
+        "bg": "Токсичността варира по вид; проверете преди засаждане близо до домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Polemonium caeruleum",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/54428993/medium.jpeg",
+    "commonNameEn": "Jacob's Ladder",
+    "commonNameBg": "Полемониум",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of the northern hemisphere",
+    "nativeRegionBg": "Умерени зони на северното полукълбо",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade depending on species.",
+        "bg": "Пълно слънце до частична сянка в зависимост от вида."
+      },
+      "watering": {
+        "en": "Water every 5–10 days; tolerates brief dry spells when established.",
+        "bg": "Поливайте на 5–10 дни; понася кратко засушаване след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to outdoor humidity; drought-tolerant when established.",
+        "bg": "Адаптира се към влажността на открито; устойчиво на суша след установяване."
+      },
+      "temperature": {
+        "en": "Hardy; most survive winter cold down to -10 °C or lower.",
+        "bg": "Издръжливо; повечето оцеляват при зимен студ до -10 °C или по-ниско."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring when new growth appears.",
+        "bg": "Торете веднъж напролет при поява на нов растеж."
+      },
+      "toxicity": {
+        "en": "Toxicity varies by species; check before planting near pets.",
+        "bg": "Токсичността варира по вид; проверете преди засаждане близо до домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Armeria maritima",
+    "imageUrl": "https://static.inaturalist.org/photos/176790677/medium.jpeg",
+    "commonNameEn": "Sea Thrift",
+    "commonNameBg": "Армериа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of the northern hemisphere",
+    "nativeRegionBg": "Умерени зони на северното полукълбо",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade depending on species.",
+        "bg": "Пълно слънце до частична сянка в зависимост от вида."
+      },
+      "watering": {
+        "en": "Water every 5–10 days; tolerates brief dry spells when established.",
+        "bg": "Поливайте на 5–10 дни; понася кратко засушаване след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to outdoor humidity; drought-tolerant when established.",
+        "bg": "Адаптира се към влажността на открито; устойчиво на суша след установяване."
+      },
+      "temperature": {
+        "en": "Hardy; most survive winter cold down to -10 °C or lower.",
+        "bg": "Издръжливо; повечето оцеляват при зимен студ до -10 °C или по-ниско."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring when new growth appears.",
+        "bg": "Торете веднъж напролет при поява на нов растеж."
+      },
+      "toxicity": {
+        "en": "Toxicity varies by species; check before planting near pets.",
+        "bg": "Токсичността варира по вид; проверете преди засаждане близо до домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Erysimum cheiri",
+    "imageUrl": null,
+    "commonNameEn": "Wallflower",
+    "commonNameBg": "Ерисимум",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of the northern hemisphere",
+    "nativeRegionBg": "Умерени зони на северното полукълбо",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade depending on species.",
+        "bg": "Пълно слънце до частична сянка в зависимост от вида."
+      },
+      "watering": {
+        "en": "Water every 5–10 days; tolerates brief dry spells when established.",
+        "bg": "Поливайте на 5–10 дни; понася кратко засушаване след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to outdoor humidity; drought-tolerant when established.",
+        "bg": "Адаптира се към влажността на открито; устойчиво на суша след установяване."
+      },
+      "temperature": {
+        "en": "Hardy; most survive winter cold down to -10 °C or lower.",
+        "bg": "Издръжливо; повечето оцеляват при зимен студ до -10 °C или по-ниско."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring when new growth appears.",
+        "bg": "Торете веднъж напролет при поява на нов растеж."
+      },
+      "toxicity": {
+        "en": "Toxicity varies by species; check before planting near pets.",
+        "bg": "Токсичността варира по вид; проверете преди засаждане близо до домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Gaura lindheimeri",
+    "imageUrl": null,
+    "commonNameEn": "Gaura",
+    "commonNameBg": "Гаура",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of the northern hemisphere",
+    "nativeRegionBg": "Умерени зони на северното полукълбо",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade depending on species.",
+        "bg": "Пълно слънце до частична сянка в зависимост от вида."
+      },
+      "watering": {
+        "en": "Water every 5–10 days; tolerates brief dry spells when established.",
+        "bg": "Поливайте на 5–10 дни; понася кратко засушаване след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to outdoor humidity; drought-tolerant when established.",
+        "bg": "Адаптира се към влажността на открито; устойчиво на суша след установяване."
+      },
+      "temperature": {
+        "en": "Hardy; most survive winter cold down to -10 °C or lower.",
+        "bg": "Издръжливо; повечето оцеляват при зимен студ до -10 °C или по-ниско."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring when new growth appears.",
+        "bg": "Торете веднъж напролет при поява на нов растеж."
+      },
+      "toxicity": {
+        "en": "Toxicity varies by species; check before planting near pets.",
+        "bg": "Токсичността варира по вид; проверете преди засаждане близо до домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Lythrum salicaria",
+    "imageUrl": "https://static.inaturalist.org/photos/63744014/medium.jpeg",
+    "commonNameEn": "Purple Loosestrife",
+    "commonNameBg": "Обикновена блатия",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of the northern hemisphere",
+    "nativeRegionBg": "Умерени зони на северното полукълбо",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade depending on species.",
+        "bg": "Пълно слънце до частична сянка в зависимост от вида."
+      },
+      "watering": {
+        "en": "Water every 5–10 days; tolerates brief dry spells when established.",
+        "bg": "Поливайте на 5–10 дни; понася кратко засушаване след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to outdoor humidity; drought-tolerant when established.",
+        "bg": "Адаптира се към влажността на открито; устойчиво на суша след установяване."
+      },
+      "temperature": {
+        "en": "Hardy; most survive winter cold down to -10 °C or lower.",
+        "bg": "Издръжливо; повечето оцеляват при зимен студ до -10 °C или по-ниско."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring when new growth appears.",
+        "bg": "Торете веднъж напролет при поява на нов растеж."
+      },
+      "toxicity": {
+        "en": "Toxicity varies by species; check before planting near pets.",
+        "bg": "Токсичността варира по вид; проверете преди засаждане близо до домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Penstemon digitalis",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/200036822/medium.jpeg",
+    "commonNameEn": "Foxglove Beardtongue",
+    "commonNameBg": "Пенстемон",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of the northern hemisphere",
+    "nativeRegionBg": "Умерени зони на северното полукълбо",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade depending on species.",
+        "bg": "Пълно слънце до частична сянка в зависимост от вида."
+      },
+      "watering": {
+        "en": "Water every 5–10 days; tolerates brief dry spells when established.",
+        "bg": "Поливайте на 5–10 дни; понася кратко засушаване след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to outdoor humidity; drought-tolerant when established.",
+        "bg": "Адаптира се към влажността на открито; устойчиво на суша след установяване."
+      },
+      "temperature": {
+        "en": "Hardy; most survive winter cold down to -10 °C or lower.",
+        "bg": "Издръжливо; повечето оцеляват при зимен студ до -10 °C или по-ниско."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring when new growth appears.",
+        "bg": "Торете веднъж напролет при поява на нов растеж."
+      },
+      "toxicity": {
+        "en": "Toxicity varies by species; check before planting near pets.",
+        "bg": "Токсичността варира по вид; проверете преди засаждане близо до домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Sidalcea malviflora",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/962/medium.jpg",
+    "commonNameEn": "Prairie Mallow",
+    "commonNameBg": "Сидалкеа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of the northern hemisphere",
+    "nativeRegionBg": "Умерени зони на северното полукълбо",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade depending on species.",
+        "bg": "Пълно слънце до частична сянка в зависимост от вида."
+      },
+      "watering": {
+        "en": "Water every 5–10 days; tolerates brief dry spells when established.",
+        "bg": "Поливайте на 5–10 дни; понася кратко засушаване след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to outdoor humidity; drought-tolerant when established.",
+        "bg": "Адаптира се към влажността на открито; устойчиво на суша след установяване."
+      },
+      "temperature": {
+        "en": "Hardy; most survive winter cold down to -10 °C or lower.",
+        "bg": "Издръжливо; повечето оцеляват при зимен студ до -10 °C или по-ниско."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring when new growth appears.",
+        "bg": "Торете веднъж напролет при поява на нов растеж."
+      },
+      "toxicity": {
+        "en": "Toxicity varies by species; check before planting near pets.",
+        "bg": "Токсичността варира по вид; проверете преди засаждане близо до домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Tulipa gesneriana",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/20539855/medium.jpg",
+    "commonNameEn": "Garden Tulip",
+    "commonNameBg": "лале на Геснер",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of Europe and Asia",
+    "nativeRegionBg": "Умерени зони на Европа и Азия",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": false,
+    "isToxicToPets": true,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; plant in an open, sunny position.",
+        "bg": "Пълно слънце; засаждайте на открито, слънчево място."
+      },
+      "watering": {
+        "en": "Water regularly during growth; reduce after foliage dies back.",
+        "bg": "Поливайте редовно по време на растеж; намалете след отмирането на листата."
+      },
+      "humidity": {
+        "en": "Average humidity; good drainage prevents bulb rot.",
+        "bg": "Средна влажност; добър дренаж предотвратява гниенето на луковиците."
+      },
+      "temperature": {
+        "en": "Hardy; bulbs require a cold period to bloom the following year.",
+        "bg": "Издръжливо; луковиците се нуждаят от студен период за цъфтеж следващата година."
+      },
+      "fertilizer": {
+        "en": "Fertilize with bulb fertilizer in autumn and when in growth.",
+        "bg": "Торете с тор за луковици есента и по време на растеж."
+      },
+      "toxicity": {
+        "en": "Toxic to cats and dogs — keep out of reach.",
+        "bg": "Токсично за котки и кучета — пазете от домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Tulipa kaufmanniana",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/288062936/medium.jpeg",
+    "commonNameEn": "Waterlily Tulip",
+    "commonNameBg": "Тулипа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of Europe and Asia",
+    "nativeRegionBg": "Умерени зони на Европа и Азия",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": false,
+    "isToxicToPets": true,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; plant in an open, sunny position.",
+        "bg": "Пълно слънце; засаждайте на открито, слънчево място."
+      },
+      "watering": {
+        "en": "Water regularly during growth; reduce after foliage dies back.",
+        "bg": "Поливайте редовно по време на растеж; намалете след отмирането на листата."
+      },
+      "humidity": {
+        "en": "Average humidity; good drainage prevents bulb rot.",
+        "bg": "Средна влажност; добър дренаж предотвратява гниенето на луковиците."
+      },
+      "temperature": {
+        "en": "Hardy; bulbs require a cold period to bloom the following year.",
+        "bg": "Издръжливо; луковиците се нуждаят от студен период за цъфтеж следващата година."
+      },
+      "fertilizer": {
+        "en": "Fertilize with bulb fertilizer in autumn and when in growth.",
+        "bg": "Торете с тор за луковици есента и по време на растеж."
+      },
+      "toxicity": {
+        "en": "Toxic to cats and dogs — keep out of reach.",
+        "bg": "Токсично за котки и кучета — пазете от домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Narcissus pseudonarcissus",
+    "imageUrl": "https://static.inaturalist.org/photos/119190821/medium.jpg",
+    "commonNameEn": "Daffodil",
+    "commonNameBg": "Наркиссус",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of Europe and Asia",
+    "nativeRegionBg": "Умерени зони на Европа и Азия",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": false,
+    "isToxicToPets": true,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; plant in an open, sunny position.",
+        "bg": "Пълно слънце; засаждайте на открито, слънчево място."
+      },
+      "watering": {
+        "en": "Water regularly during growth; reduce after foliage dies back.",
+        "bg": "Поливайте редовно по време на растеж; намалете след отмирането на листата."
+      },
+      "humidity": {
+        "en": "Average humidity; good drainage prevents bulb rot.",
+        "bg": "Средна влажност; добър дренаж предотвратява гниенето на луковиците."
+      },
+      "temperature": {
+        "en": "Hardy; bulbs require a cold period to bloom the following year.",
+        "bg": "Издръжливо; луковиците се нуждаят от студен период за цъфтеж следващата година."
+      },
+      "fertilizer": {
+        "en": "Fertilize with bulb fertilizer in autumn and when in growth.",
+        "bg": "Торете с тор за луковици есента и по време на растеж."
+      },
+      "toxicity": {
+        "en": "Toxic to cats and dogs — keep out of reach.",
+        "bg": "Токсично за котки и кучета — пазете от домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Narcissus poeticus",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/490132077/medium.jpeg",
+    "commonNameEn": "Poet's Daffodil",
+    "commonNameBg": "Наркиссус",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of Europe and Asia",
+    "nativeRegionBg": "Умерени зони на Европа и Азия",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": false,
+    "isToxicToPets": true,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; plant in an open, sunny position.",
+        "bg": "Пълно слънце; засаждайте на открито, слънчево място."
+      },
+      "watering": {
+        "en": "Water regularly during growth; reduce after foliage dies back.",
+        "bg": "Поливайте редовно по време на растеж; намалете след отмирането на листата."
+      },
+      "humidity": {
+        "en": "Average humidity; good drainage prevents bulb rot.",
+        "bg": "Средна влажност; добър дренаж предотвратява гниенето на луковиците."
+      },
+      "temperature": {
+        "en": "Hardy; bulbs require a cold period to bloom the following year.",
+        "bg": "Издръжливо; луковиците се нуждаят от студен период за цъфтеж следващата година."
+      },
+      "fertilizer": {
+        "en": "Fertilize with bulb fertilizer in autumn and when in growth.",
+        "bg": "Торете с тор за луковици есента и по време на растеж."
+      },
+      "toxicity": {
+        "en": "Toxic to cats and dogs — keep out of reach.",
+        "bg": "Токсично за котки и кучета — пазете от домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Hyacinthus orientalis",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/42029432/medium.jpg",
+    "commonNameEn": "Common Hyacinth",
+    "commonNameBg": "обикновен зюмбюл",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of Europe and Asia",
+    "nativeRegionBg": "Умерени зони на Европа и Азия",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": false,
+    "isToxicToPets": true,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; plant in an open, sunny position.",
+        "bg": "Пълно слънце; засаждайте на открито, слънчево място."
+      },
+      "watering": {
+        "en": "Water regularly during growth; reduce after foliage dies back.",
+        "bg": "Поливайте редовно по време на растеж; намалете след отмирането на листата."
+      },
+      "humidity": {
+        "en": "Average humidity; good drainage prevents bulb rot.",
+        "bg": "Средна влажност; добър дренаж предотвратява гниенето на луковиците."
+      },
+      "temperature": {
+        "en": "Hardy; bulbs require a cold period to bloom the following year.",
+        "bg": "Издръжливо; луковиците се нуждаят от студен период за цъфтеж следващата година."
+      },
+      "fertilizer": {
+        "en": "Fertilize with bulb fertilizer in autumn and when in growth.",
+        "bg": "Торете с тор за луковици есента и по време на растеж."
+      },
+      "toxicity": {
+        "en": "Toxic to cats and dogs — keep out of reach.",
+        "bg": "Токсично за котки и кучета — пазете от домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Crocus sativus",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/28500579/medium.jpg",
+    "commonNameEn": "Saffron Crocus",
+    "commonNameBg": "шафранов минзухар",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of Europe and Asia",
+    "nativeRegionBg": "Умерени зони на Европа и Азия",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; plant in an open, sunny position.",
+        "bg": "Пълно слънце; засаждайте на открито, слънчево място."
+      },
+      "watering": {
+        "en": "Water regularly during growth; reduce after foliage dies back.",
+        "bg": "Поливайте редовно по време на растеж; намалете след отмирането на листата."
+      },
+      "humidity": {
+        "en": "Average humidity; good drainage prevents bulb rot.",
+        "bg": "Средна влажност; добър дренаж предотвратява гниенето на луковиците."
+      },
+      "temperature": {
+        "en": "Hardy; bulbs require a cold period to bloom the following year.",
+        "bg": "Издръжливо; луковиците се нуждаят от студен период за цъфтеж следващата година."
+      },
+      "fertilizer": {
+        "en": "Fertilize with bulb fertilizer in autumn and when in growth.",
+        "bg": "Торете с тор за луковици есента и по време на растеж."
+      },
+      "toxicity": {
+        "en": "Many bulbs are toxic to pets — especially daffodils and tulips.",
+        "bg": "Много луковици са токсични за домашни любимци — особено нарциси и лалета."
+      }
+    }
+  },
+  {
+    "scientificName": "Crocus vernus",
+    "imageUrl": "https://static.inaturalist.org/photos/282771894/medium.jpeg",
+    "commonNameEn": "Spring Crocus",
+    "commonNameBg": "Пролетен минзухар",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of Europe and Asia",
+    "nativeRegionBg": "Умерени зони на Европа и Азия",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; plant in an open, sunny position.",
+        "bg": "Пълно слънце; засаждайте на открито, слънчево място."
+      },
+      "watering": {
+        "en": "Water regularly during growth; reduce after foliage dies back.",
+        "bg": "Поливайте редовно по време на растеж; намалете след отмирането на листата."
+      },
+      "humidity": {
+        "en": "Average humidity; good drainage prevents bulb rot.",
+        "bg": "Средна влажност; добър дренаж предотвратява гниенето на луковиците."
+      },
+      "temperature": {
+        "en": "Hardy; bulbs require a cold period to bloom the following year.",
+        "bg": "Издръжливо; луковиците се нуждаят от студен период за цъфтеж следващата година."
+      },
+      "fertilizer": {
+        "en": "Fertilize with bulb fertilizer in autumn and when in growth.",
+        "bg": "Торете с тор за луковици есента и по време на растеж."
+      },
+      "toxicity": {
+        "en": "Many bulbs are toxic to pets — especially daffodils and tulips.",
+        "bg": "Много луковици са токсични за домашни любимци — особено нарциси и лалета."
+      }
+    }
+  },
+  {
+    "scientificName": "Muscari armeniacum",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/189814575/medium.jpg",
+    "commonNameEn": "Grape Hyacinth",
+    "commonNameBg": "Мускари",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of Europe and Asia",
+    "nativeRegionBg": "Умерени зони на Европа и Азия",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": false,
+    "isToxicToPets": true,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; plant in an open, sunny position.",
+        "bg": "Пълно слънце; засаждайте на открито, слънчево място."
+      },
+      "watering": {
+        "en": "Water regularly during growth; reduce after foliage dies back.",
+        "bg": "Поливайте редовно по време на растеж; намалете след отмирането на листата."
+      },
+      "humidity": {
+        "en": "Average humidity; good drainage prevents bulb rot.",
+        "bg": "Средна влажност; добър дренаж предотвратява гниенето на луковиците."
+      },
+      "temperature": {
+        "en": "Hardy; bulbs require a cold period to bloom the following year.",
+        "bg": "Издръжливо; луковиците се нуждаят от студен период за цъфтеж следващата година."
+      },
+      "fertilizer": {
+        "en": "Fertilize with bulb fertilizer in autumn and when in growth.",
+        "bg": "Торете с тор за луковици есента и по време на растеж."
+      },
+      "toxicity": {
+        "en": "Toxic to cats and dogs — keep out of reach.",
+        "bg": "Токсично за котки и кучета — пазете от домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Allium giganteum",
+    "imageUrl": "https://static.inaturalist.org/photos/273655277/medium.jpeg",
+    "commonNameEn": "Giant Allium",
+    "commonNameBg": "гигантски лук",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Mediterranean and temperate regions",
+    "nativeRegionBg": "Средиземноморие и умерени региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 5,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; at least 6 hours of direct sunlight daily.",
+        "bg": "Пълно слънце; поне 6 часа пряка слънчева светлина дневно."
+      },
+      "watering": {
+        "en": "Water every 4–6 days; let top soil dry slightly between waterings.",
+        "bg": "Поливайте на 4–6 дни; оставете горния слой почва леко да изсъхне."
+      },
+      "humidity": {
+        "en": "Average humidity; ensure good air circulation.",
+        "bg": "Средна влажност; осигурете добра циркулация на въздуха."
+      },
+      "temperature": {
+        "en": "Most herbs prefer 15–25 °C; protect from frost.",
+        "bg": "Повечето билки предпочитат 15–25 °C; пазете от замръзване."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 3 weeks with balanced fertilizer during growth.",
+        "bg": "Торете на 3 седмици с балансиран тор по време на растеж."
+      },
+      "toxicity": {
+        "en": "Culinary herbs are safe for humans; some may affect pets.",
+        "bg": "Кулинарните билки са безвредни за хора; някои може да засегнат домашни животни."
+      }
+    }
+  },
+  {
+    "scientificName": "Allium hollandicum",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/669667213/medium.jpg",
+    "commonNameEn": "Dutch Garlic",
+    "commonNameBg": "холандски лук",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Mediterranean and temperate regions",
+    "nativeRegionBg": "Средиземноморие и умерени региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 5,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; at least 6 hours of direct sunlight daily.",
+        "bg": "Пълно слънце; поне 6 часа пряка слънчева светлина дневно."
+      },
+      "watering": {
+        "en": "Water every 4–6 days; let top soil dry slightly between waterings.",
+        "bg": "Поливайте на 4–6 дни; оставете горния слой почва леко да изсъхне."
+      },
+      "humidity": {
+        "en": "Average humidity; ensure good air circulation.",
+        "bg": "Средна влажност; осигурете добра циркулация на въздуха."
+      },
+      "temperature": {
+        "en": "Most herbs prefer 15–25 °C; protect from frost.",
+        "bg": "Повечето билки предпочитат 15–25 °C; пазете от замръзване."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 3 weeks with balanced fertilizer during growth.",
+        "bg": "Торете на 3 седмици с балансиран тор по време на растеж."
+      },
+      "toxicity": {
+        "en": "Culinary herbs are safe for humans; some may affect pets.",
+        "bg": "Кулинарните билки са безвредни за хора; някои може да засегнат домашни животни."
+      }
+    }
+  },
+  {
+    "scientificName": "Lilium candidum",
+    "imageUrl": "https://static.inaturalist.org/photos/166792719/medium.jpg",
+    "commonNameEn": "Madonna Lily",
+    "commonNameBg": "бял крем",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of Europe and Asia",
+    "nativeRegionBg": "Умерени зони на Европа и Азия",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": false,
+    "isToxicToPets": true,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; plant in an open, sunny position.",
+        "bg": "Пълно слънце; засаждайте на открито, слънчево място."
+      },
+      "watering": {
+        "en": "Water regularly during growth; reduce after foliage dies back.",
+        "bg": "Поливайте редовно по време на растеж; намалете след отмирането на листата."
+      },
+      "humidity": {
+        "en": "Average humidity; good drainage prevents bulb rot.",
+        "bg": "Средна влажност; добър дренаж предотвратява гниенето на луковиците."
+      },
+      "temperature": {
+        "en": "Hardy; bulbs require a cold period to bloom the following year.",
+        "bg": "Издръжливо; луковиците се нуждаят от студен период за цъфтеж следващата година."
+      },
+      "fertilizer": {
+        "en": "Fertilize with bulb fertilizer in autumn and when in growth.",
+        "bg": "Торете с тор за луковици есента и по време на растеж."
+      },
+      "toxicity": {
+        "en": "Toxic to cats and dogs — keep out of reach.",
+        "bg": "Токсично за котки и кучета — пазете от домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Lilium tigrinum",
+    "imageUrl": "https://static.inaturalist.org/photos/18681764/medium.jpg",
+    "commonNameEn": "Tiger Lily",
+    "commonNameBg": "Лилиум",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of Europe and Asia",
+    "nativeRegionBg": "Умерени зони на Европа и Азия",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": false,
+    "isToxicToPets": true,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; plant in an open, sunny position.",
+        "bg": "Пълно слънце; засаждайте на открито, слънчево място."
+      },
+      "watering": {
+        "en": "Water regularly during growth; reduce after foliage dies back.",
+        "bg": "Поливайте редовно по време на растеж; намалете след отмирането на листата."
+      },
+      "humidity": {
+        "en": "Average humidity; good drainage prevents bulb rot.",
+        "bg": "Средна влажност; добър дренаж предотвратява гниенето на луковиците."
+      },
+      "temperature": {
+        "en": "Hardy; bulbs require a cold period to bloom the following year.",
+        "bg": "Издръжливо; луковиците се нуждаят от студен период за цъфтеж следващата година."
+      },
+      "fertilizer": {
+        "en": "Fertilize with bulb fertilizer in autumn and when in growth.",
+        "bg": "Торете с тор за луковици есента и по време на растеж."
+      },
+      "toxicity": {
+        "en": "Toxic to cats and dogs — keep out of reach.",
+        "bg": "Токсично за котки и кучета — пазете от домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Lilium speciosum",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/167651615/medium.jpeg",
+    "commonNameEn": "Showy Japanese Lily",
+    "commonNameBg": "Лилиум",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of Europe and Asia",
+    "nativeRegionBg": "Умерени зони на Европа и Азия",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": false,
+    "isToxicToPets": true,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; plant in an open, sunny position.",
+        "bg": "Пълно слънце; засаждайте на открито, слънчево място."
+      },
+      "watering": {
+        "en": "Water regularly during growth; reduce after foliage dies back.",
+        "bg": "Поливайте редовно по време на растеж; намалете след отмирането на листата."
+      },
+      "humidity": {
+        "en": "Average humidity; good drainage prevents bulb rot.",
+        "bg": "Средна влажност; добър дренаж предотвратява гниенето на луковиците."
+      },
+      "temperature": {
+        "en": "Hardy; bulbs require a cold period to bloom the following year.",
+        "bg": "Издръжливо; луковиците се нуждаят от студен период за цъфтеж следващата година."
+      },
+      "fertilizer": {
+        "en": "Fertilize with bulb fertilizer in autumn and when in growth.",
+        "bg": "Торете с тор за луковици есента и по време на растеж."
+      },
+      "toxicity": {
+        "en": "Toxic to cats and dogs — keep out of reach.",
+        "bg": "Токсично за котки и кучета — пазете от домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Iris germanica",
+    "imageUrl": null,
+    "commonNameEn": "Bearded Iris",
+    "commonNameBg": "Ирис",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of Europe and Asia",
+    "nativeRegionBg": "Умерени зони на Европа и Азия",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": false,
+    "isToxicToPets": true,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; plant in an open, sunny position.",
+        "bg": "Пълно слънце; засаждайте на открито, слънчево място."
+      },
+      "watering": {
+        "en": "Water regularly during growth; reduce after foliage dies back.",
+        "bg": "Поливайте редовно по време на растеж; намалете след отмирането на листата."
+      },
+      "humidity": {
+        "en": "Average humidity; good drainage prevents bulb rot.",
+        "bg": "Средна влажност; добър дренаж предотвратява гниенето на луковиците."
+      },
+      "temperature": {
+        "en": "Hardy; bulbs require a cold period to bloom the following year.",
+        "bg": "Издръжливо; луковиците се нуждаят от студен период за цъфтеж следващата година."
+      },
+      "fertilizer": {
+        "en": "Fertilize with bulb fertilizer in autumn and when in growth.",
+        "bg": "Торете с тор за луковици есента и по време на растеж."
+      },
+      "toxicity": {
+        "en": "Toxic to cats and dogs — keep out of reach.",
+        "bg": "Токсично за котки и кучета — пазете от домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Iris sibirica",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/212481113/medium.jpg",
+    "commonNameEn": "Siberian Iris",
+    "commonNameBg": "сибирска перуника",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of Europe and Asia",
+    "nativeRegionBg": "Умерени зони на Европа и Азия",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": false,
+    "isToxicToPets": true,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; plant in an open, sunny position.",
+        "bg": "Пълно слънце; засаждайте на открито, слънчево място."
+      },
+      "watering": {
+        "en": "Water regularly during growth; reduce after foliage dies back.",
+        "bg": "Поливайте редовно по време на растеж; намалете след отмирането на листата."
+      },
+      "humidity": {
+        "en": "Average humidity; good drainage prevents bulb rot.",
+        "bg": "Средна влажност; добър дренаж предотвратява гниенето на луковиците."
+      },
+      "temperature": {
+        "en": "Hardy; bulbs require a cold period to bloom the following year.",
+        "bg": "Издръжливо; луковиците се нуждаят от студен период за цъфтеж следващата година."
+      },
+      "fertilizer": {
+        "en": "Fertilize with bulb fertilizer in autumn and when in growth.",
+        "bg": "Торете с тор за луковици есента и по време на растеж."
+      },
+      "toxicity": {
+        "en": "Toxic to cats and dogs — keep out of reach.",
+        "bg": "Токсично за котки и кучета — пазете от домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Iris reticulata",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/12540107/medium.jpg",
+    "commonNameEn": "Netted Iris",
+    "commonNameBg": "Ирис",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of Europe and Asia",
+    "nativeRegionBg": "Умерени зони на Европа и Азия",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": false,
+    "isToxicToPets": true,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; plant in an open, sunny position.",
+        "bg": "Пълно слънце; засаждайте на открито, слънчево място."
+      },
+      "watering": {
+        "en": "Water regularly during growth; reduce after foliage dies back.",
+        "bg": "Поливайте редовно по време на растеж; намалете след отмирането на листата."
+      },
+      "humidity": {
+        "en": "Average humidity; good drainage prevents bulb rot.",
+        "bg": "Средна влажност; добър дренаж предотвратява гниенето на луковиците."
+      },
+      "temperature": {
+        "en": "Hardy; bulbs require a cold period to bloom the following year.",
+        "bg": "Издръжливо; луковиците се нуждаят от студен период за цъфтеж следващата година."
+      },
+      "fertilizer": {
+        "en": "Fertilize with bulb fertilizer in autumn and when in growth.",
+        "bg": "Торете с тор за луковици есента и по време на растеж."
+      },
+      "toxicity": {
+        "en": "Toxic to cats and dogs — keep out of reach.",
+        "bg": "Токсично за котки и кучета — пазете от домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Gladiolus communis",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/384436697/medium.jpeg",
+    "commonNameEn": "Common Gladiolus",
+    "commonNameBg": "обикновено петльово перо",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of Europe and Asia",
+    "nativeRegionBg": "Умерени зони на Европа и Азия",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; plant in an open, sunny position.",
+        "bg": "Пълно слънце; засаждайте на открито, слънчево място."
+      },
+      "watering": {
+        "en": "Water regularly during growth; reduce after foliage dies back.",
+        "bg": "Поливайте редовно по време на растеж; намалете след отмирането на листата."
+      },
+      "humidity": {
+        "en": "Average humidity; good drainage prevents bulb rot.",
+        "bg": "Средна влажност; добър дренаж предотвратява гниенето на луковиците."
+      },
+      "temperature": {
+        "en": "Hardy; bulbs require a cold period to bloom the following year.",
+        "bg": "Издръжливо; луковиците се нуждаят от студен период за цъфтеж следващата година."
+      },
+      "fertilizer": {
+        "en": "Fertilize with bulb fertilizer in autumn and when in growth.",
+        "bg": "Торете с тор за луковици есента и по време на растеж."
+      },
+      "toxicity": {
+        "en": "Many bulbs are toxic to pets — especially daffodils and tulips.",
+        "bg": "Много луковици са токсични за домашни любимци — особено нарциси и лалета."
+      }
+    }
+  },
+  {
+    "scientificName": "Dahlia pinnata",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/571049090/medium.jpg",
+    "commonNameEn": "Garden Dahlia",
+    "commonNameBg": "Дахлиа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of Europe and Asia",
+    "nativeRegionBg": "Умерени зони на Европа и Азия",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; plant in an open, sunny position.",
+        "bg": "Пълно слънце; засаждайте на открито, слънчево място."
+      },
+      "watering": {
+        "en": "Water regularly during growth; reduce after foliage dies back.",
+        "bg": "Поливайте редовно по време на растеж; намалете след отмирането на листата."
+      },
+      "humidity": {
+        "en": "Average humidity; good drainage prevents bulb rot.",
+        "bg": "Средна влажност; добър дренаж предотвратява гниенето на луковиците."
+      },
+      "temperature": {
+        "en": "Hardy; bulbs require a cold period to bloom the following year.",
+        "bg": "Издръжливо; луковиците се нуждаят от студен период за цъфтеж следващата година."
+      },
+      "fertilizer": {
+        "en": "Fertilize with bulb fertilizer in autumn and when in growth.",
+        "bg": "Торете с тор за луковици есента и по време на растеж."
+      },
+      "toxicity": {
+        "en": "Many bulbs are toxic to pets — especially daffodils and tulips.",
+        "bg": "Много луковици са токсични за домашни любимци — особено нарциси и лалета."
+      }
+    }
+  },
+  {
+    "scientificName": "Ranunculus asiaticus",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/222987795/medium.jpeg",
+    "commonNameEn": "Persian Buttercup",
+    "commonNameBg": "азиатско лютиче",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of Europe and Asia",
+    "nativeRegionBg": "Умерени зони на Европа и Азия",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": false,
+    "isToxicToPets": true,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; plant in an open, sunny position.",
+        "bg": "Пълно слънце; засаждайте на открито, слънчево място."
+      },
+      "watering": {
+        "en": "Water regularly during growth; reduce after foliage dies back.",
+        "bg": "Поливайте редовно по време на растеж; намалете след отмирането на листата."
+      },
+      "humidity": {
+        "en": "Average humidity; good drainage prevents bulb rot.",
+        "bg": "Средна влажност; добър дренаж предотвратява гниенето на луковиците."
+      },
+      "temperature": {
+        "en": "Hardy; bulbs require a cold period to bloom the following year.",
+        "bg": "Издръжливо; луковиците се нуждаят от студен период за цъфтеж следващата година."
+      },
+      "fertilizer": {
+        "en": "Fertilize with bulb fertilizer in autumn and when in growth.",
+        "bg": "Торете с тор за луковици есента и по време на растеж."
+      },
+      "toxicity": {
+        "en": "Toxic to cats and dogs — keep out of reach.",
+        "bg": "Токсично за котки и кучета — пазете от домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Freesia refracta",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/15474410/medium.jpg",
+    "commonNameEn": "Freesia",
+    "commonNameBg": "Фреесиа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of Europe and Asia",
+    "nativeRegionBg": "Умерени зони на Европа и Азия",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; plant in an open, sunny position.",
+        "bg": "Пълно слънце; засаждайте на открито, слънчево място."
+      },
+      "watering": {
+        "en": "Water regularly during growth; reduce after foliage dies back.",
+        "bg": "Поливайте редовно по време на растеж; намалете след отмирането на листата."
+      },
+      "humidity": {
+        "en": "Average humidity; good drainage prevents bulb rot.",
+        "bg": "Средна влажност; добър дренаж предотвратява гниенето на луковиците."
+      },
+      "temperature": {
+        "en": "Hardy; bulbs require a cold period to bloom the following year.",
+        "bg": "Издръжливо; луковиците се нуждаят от студен период за цъфтеж следващата година."
+      },
+      "fertilizer": {
+        "en": "Fertilize with bulb fertilizer in autumn and when in growth.",
+        "bg": "Торете с тор за луковици есента и по време на растеж."
+      },
+      "toxicity": {
+        "en": "Many bulbs are toxic to pets — especially daffodils and tulips.",
+        "bg": "Много луковици са токсични за домашни любимци — особено нарциси и лалета."
+      }
+    }
+  },
+  {
+    "scientificName": "Anemone coronaria",
+    "imageUrl": "https://static.inaturalist.org/photos/112107848/medium.jpg",
+    "commonNameEn": "Poppy Anemone",
+    "commonNameBg": "кичеста съсънка",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of Europe and Asia",
+    "nativeRegionBg": "Умерени зони на Европа и Азия",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": false,
+    "isToxicToPets": true,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; plant in an open, sunny position.",
+        "bg": "Пълно слънце; засаждайте на открито, слънчево място."
+      },
+      "watering": {
+        "en": "Water regularly during growth; reduce after foliage dies back.",
+        "bg": "Поливайте редовно по време на растеж; намалете след отмирането на листата."
+      },
+      "humidity": {
+        "en": "Average humidity; good drainage prevents bulb rot.",
+        "bg": "Средна влажност; добър дренаж предотвратява гниенето на луковиците."
+      },
+      "temperature": {
+        "en": "Hardy; bulbs require a cold period to bloom the following year.",
+        "bg": "Издръжливо; луковиците се нуждаят от студен период за цъфтеж следващата година."
+      },
+      "fertilizer": {
+        "en": "Fertilize with bulb fertilizer in autumn and when in growth.",
+        "bg": "Торете с тор за луковици есента и по време на растеж."
+      },
+      "toxicity": {
+        "en": "Toxic to cats and dogs — keep out of reach.",
+        "bg": "Токсично за котки и кучета — пазете от домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Chionodoxa luciliae",
+    "imageUrl": null,
+    "commonNameEn": "Glory of the Snow",
+    "commonNameBg": "Хионодокса",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of Europe and Asia",
+    "nativeRegionBg": "Умерени зони на Европа и Азия",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; plant in an open, sunny position.",
+        "bg": "Пълно слънце; засаждайте на открито, слънчево място."
+      },
+      "watering": {
+        "en": "Water regularly during growth; reduce after foliage dies back.",
+        "bg": "Поливайте редовно по време на растеж; намалете след отмирането на листата."
+      },
+      "humidity": {
+        "en": "Average humidity; good drainage prevents bulb rot.",
+        "bg": "Средна влажност; добър дренаж предотвратява гниенето на луковиците."
+      },
+      "temperature": {
+        "en": "Hardy; bulbs require a cold period to bloom the following year.",
+        "bg": "Издръжливо; луковиците се нуждаят от студен период за цъфтеж следващата година."
+      },
+      "fertilizer": {
+        "en": "Fertilize with bulb fertilizer in autumn and when in growth.",
+        "bg": "Торете с тор за луковици есента и по време на растеж."
+      },
+      "toxicity": {
+        "en": "Many bulbs are toxic to pets — especially daffodils and tulips.",
+        "bg": "Много луковици са токсични за домашни любимци — особено нарциси и лалета."
+      }
+    }
+  },
+  {
+    "scientificName": "Scilla siberica",
+    "imageUrl": "https://static.inaturalist.org/photos/120014360/medium.jpg",
+    "commonNameEn": "Siberian Squill",
+    "commonNameBg": "сибирски синчец",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of Europe and Asia",
+    "nativeRegionBg": "Умерени зони на Европа и Азия",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; plant in an open, sunny position.",
+        "bg": "Пълно слънце; засаждайте на открито, слънчево място."
+      },
+      "watering": {
+        "en": "Water regularly during growth; reduce after foliage dies back.",
+        "bg": "Поливайте редовно по време на растеж; намалете след отмирането на листата."
+      },
+      "humidity": {
+        "en": "Average humidity; good drainage prevents bulb rot.",
+        "bg": "Средна влажност; добър дренаж предотвратява гниенето на луковиците."
+      },
+      "temperature": {
+        "en": "Hardy; bulbs require a cold period to bloom the following year.",
+        "bg": "Издръжливо; луковиците се нуждаят от студен период за цъфтеж следващата година."
+      },
+      "fertilizer": {
+        "en": "Fertilize with bulb fertilizer in autumn and when in growth.",
+        "bg": "Торете с тор за луковици есента и по време на растеж."
+      },
+      "toxicity": {
+        "en": "Many bulbs are toxic to pets — especially daffodils and tulips.",
+        "bg": "Много луковици са токсични за домашни любимци — особено нарциси и лалета."
+      }
+    }
+  },
+  {
+    "scientificName": "Galanthus nivalis",
+    "imageUrl": "https://static.inaturalist.org/photos/625776078/medium.jpg",
+    "commonNameEn": "Common Snowdrop",
+    "commonNameBg": "Обикновено кокиче",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of Europe and Asia",
+    "nativeRegionBg": "Умерени зони на Европа и Азия",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; plant in an open, sunny position.",
+        "bg": "Пълно слънце; засаждайте на открито, слънчево място."
+      },
+      "watering": {
+        "en": "Water regularly during growth; reduce after foliage dies back.",
+        "bg": "Поливайте редовно по време на растеж; намалете след отмирането на листата."
+      },
+      "humidity": {
+        "en": "Average humidity; good drainage prevents bulb rot.",
+        "bg": "Средна влажност; добър дренаж предотвратява гниенето на луковиците."
+      },
+      "temperature": {
+        "en": "Hardy; bulbs require a cold period to bloom the following year.",
+        "bg": "Издръжливо; луковиците се нуждаят от студен период за цъфтеж следващата година."
+      },
+      "fertilizer": {
+        "en": "Fertilize with bulb fertilizer in autumn and when in growth.",
+        "bg": "Торете с тор за луковици есента и по време на растеж."
+      },
+      "toxicity": {
+        "en": "Many bulbs are toxic to pets — especially daffodils and tulips.",
+        "bg": "Много луковици са токсични за домашни любимци — особено нарциси и лалета."
+      }
+    }
+  },
+  {
+    "scientificName": "Leucojum vernum",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/474290861/medium.jpeg",
+    "commonNameEn": "Spring Snowflake",
+    "commonNameBg": "пролетно блатно кокиче",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of Europe and Asia",
+    "nativeRegionBg": "Умерени зони на Европа и Азия",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; plant in an open, sunny position.",
+        "bg": "Пълно слънце; засаждайте на открито, слънчево място."
+      },
+      "watering": {
+        "en": "Water regularly during growth; reduce after foliage dies back.",
+        "bg": "Поливайте редовно по време на растеж; намалете след отмирането на листата."
+      },
+      "humidity": {
+        "en": "Average humidity; good drainage prevents bulb rot.",
+        "bg": "Средна влажност; добър дренаж предотвратява гниенето на луковиците."
+      },
+      "temperature": {
+        "en": "Hardy; bulbs require a cold period to bloom the following year.",
+        "bg": "Издръжливо; луковиците се нуждаят от студен период за цъфтеж следващата година."
+      },
+      "fertilizer": {
+        "en": "Fertilize with bulb fertilizer in autumn and when in growth.",
+        "bg": "Торете с тор за луковици есента и по време на растеж."
+      },
+      "toxicity": {
+        "en": "Many bulbs are toxic to pets — especially daffodils and tulips.",
+        "bg": "Много луковици са токсични за домашни любимци — особено нарциси и лалета."
+      }
+    }
+  },
+  {
+    "scientificName": "Eranthis hyemalis",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/218153324/medium.jpg",
+    "commonNameEn": "Winter Aconite",
+    "commonNameBg": "презимуващ ерантис",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of Europe and Asia",
+    "nativeRegionBg": "Умерени зони на Европа и Азия",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; plant in an open, sunny position.",
+        "bg": "Пълно слънце; засаждайте на открито, слънчево място."
+      },
+      "watering": {
+        "en": "Water regularly during growth; reduce after foliage dies back.",
+        "bg": "Поливайте редовно по време на растеж; намалете след отмирането на листата."
+      },
+      "humidity": {
+        "en": "Average humidity; good drainage prevents bulb rot.",
+        "bg": "Средна влажност; добър дренаж предотвратява гниенето на луковиците."
+      },
+      "temperature": {
+        "en": "Hardy; bulbs require a cold period to bloom the following year.",
+        "bg": "Издръжливо; луковиците се нуждаят от студен период за цъфтеж следващата година."
+      },
+      "fertilizer": {
+        "en": "Fertilize with bulb fertilizer in autumn and when in growth.",
+        "bg": "Торете с тор за луковици есента и по време на растеж."
+      },
+      "toxicity": {
+        "en": "Many bulbs are toxic to pets — especially daffodils and tulips.",
+        "bg": "Много луковици са токсични за домашни любимци — особено нарциси и лалета."
+      }
+    }
+  },
+  {
+    "scientificName": "Crocosmia masoniorum",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/83292372/medium.jpg",
+    "commonNameEn": "Montbretia",
+    "commonNameBg": "Крокосмиа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of Europe and Asia",
+    "nativeRegionBg": "Умерени зони на Европа и Азия",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; plant in an open, sunny position.",
+        "bg": "Пълно слънце; засаждайте на открито, слънчево място."
+      },
+      "watering": {
+        "en": "Water regularly during growth; reduce after foliage dies back.",
+        "bg": "Поливайте редовно по време на растеж; намалете след отмирането на листата."
+      },
+      "humidity": {
+        "en": "Average humidity; good drainage prevents bulb rot.",
+        "bg": "Средна влажност; добър дренаж предотвратява гниенето на луковиците."
+      },
+      "temperature": {
+        "en": "Hardy; bulbs require a cold period to bloom the following year.",
+        "bg": "Издръжливо; луковиците се нуждаят от студен период за цъфтеж следващата година."
+      },
+      "fertilizer": {
+        "en": "Fertilize with bulb fertilizer in autumn and when in growth.",
+        "bg": "Торете с тор за луковици есента и по време на растеж."
+      },
+      "toxicity": {
+        "en": "Many bulbs are toxic to pets — especially daffodils and tulips.",
+        "bg": "Много луковици са токсични за домашни любимци — особено нарциси и лалета."
+      }
+    }
+  },
+  {
+    "scientificName": "Ornithogalum umbellatum",
+    "imageUrl": "https://static.inaturalist.org/photos/5094071/medium.jpg",
+    "commonNameEn": "Star of Bethlehem",
+    "commonNameBg": "Сенниковиден гарвански лук",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of Europe and Asia",
+    "nativeRegionBg": "Умерени зони на Европа и Азия",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; plant in an open, sunny position.",
+        "bg": "Пълно слънце; засаждайте на открито, слънчево място."
+      },
+      "watering": {
+        "en": "Water regularly during growth; reduce after foliage dies back.",
+        "bg": "Поливайте редовно по време на растеж; намалете след отмирането на листата."
+      },
+      "humidity": {
+        "en": "Average humidity; good drainage prevents bulb rot.",
+        "bg": "Средна влажност; добър дренаж предотвратява гниенето на луковиците."
+      },
+      "temperature": {
+        "en": "Hardy; bulbs require a cold period to bloom the following year.",
+        "bg": "Издръжливо; луковиците се нуждаят от студен период за цъфтеж следващата година."
+      },
+      "fertilizer": {
+        "en": "Fertilize with bulb fertilizer in autumn and when in growth.",
+        "bg": "Торете с тор за луковици есента и по време на растеж."
+      },
+      "toxicity": {
+        "en": "Many bulbs are toxic to pets — especially daffodils and tulips.",
+        "bg": "Много луковици са токсични за домашни любимци — особено нарциси и лалета."
+      }
+    }
+  },
+  {
+    "scientificName": "Camassia quamash",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/6447829/medium.jpeg",
+    "commonNameEn": "Common Camas",
+    "commonNameBg": "Камассиа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of Europe and Asia",
+    "nativeRegionBg": "Умерени зони на Европа и Азия",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; plant in an open, sunny position.",
+        "bg": "Пълно слънце; засаждайте на открито, слънчево място."
+      },
+      "watering": {
+        "en": "Water regularly during growth; reduce after foliage dies back.",
+        "bg": "Поливайте редовно по време на растеж; намалете след отмирането на листата."
+      },
+      "humidity": {
+        "en": "Average humidity; good drainage prevents bulb rot.",
+        "bg": "Средна влажност; добър дренаж предотвратява гниенето на луковиците."
+      },
+      "temperature": {
+        "en": "Hardy; bulbs require a cold period to bloom the following year.",
+        "bg": "Издръжливо; луковиците се нуждаят от студен период за цъфтеж следващата година."
+      },
+      "fertilizer": {
+        "en": "Fertilize with bulb fertilizer in autumn and when in growth.",
+        "bg": "Торете с тор за луковици есента и по време на растеж."
+      },
+      "toxicity": {
+        "en": "Many bulbs are toxic to pets — especially daffodils and tulips.",
+        "bg": "Много луковици са токсични за домашни любимци — особено нарциси и лалета."
+      }
+    }
+  },
+  {
+    "scientificName": "Sprekelia formosissima",
+    "imageUrl": null,
+    "commonNameEn": "Aztec Lily",
+    "commonNameBg": "Спрекелиа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of Europe and Asia",
+    "nativeRegionBg": "Умерени зони на Европа и Азия",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; plant in an open, sunny position.",
+        "bg": "Пълно слънце; засаждайте на открито, слънчево място."
+      },
+      "watering": {
+        "en": "Water regularly during growth; reduce after foliage dies back.",
+        "bg": "Поливайте редовно по време на растеж; намалете след отмирането на листата."
+      },
+      "humidity": {
+        "en": "Average humidity; good drainage prevents bulb rot.",
+        "bg": "Средна влажност; добър дренаж предотвратява гниенето на луковиците."
+      },
+      "temperature": {
+        "en": "Hardy; bulbs require a cold period to bloom the following year.",
+        "bg": "Издръжливо; луковиците се нуждаят от студен период за цъфтеж следващата година."
+      },
+      "fertilizer": {
+        "en": "Fertilize with bulb fertilizer in autumn and when in growth.",
+        "bg": "Торете с тор за луковици есента и по време на растеж."
+      },
+      "toxicity": {
+        "en": "Many bulbs are toxic to pets — especially daffodils and tulips.",
+        "bg": "Много луковици са токсични за домашни любимци — особено нарциси и лалета."
+      }
+    }
+  },
+  {
+    "scientificName": "Rosa canina",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/43901474/medium.jpeg",
+    "commonNameEn": "Dog Rose",
+    "commonNameBg": "Обикновена шипка",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Rosaceae",
+    "nativeRegionEn": "Asia, Europe and North America",
+    "nativeRegionBg": "Азия, Европа и Северна Америка",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 5,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; minimum 6 hours of direct sunlight daily.",
+        "bg": "Пълно слънце; минимум 6 часа пряка слънчева светлина дневно."
+      },
+      "watering": {
+        "en": "Water at base every 3–7 days; avoid wetting foliage.",
+        "bg": "Поливайте в основата на 3–7 дни; избягвайте намокряне на листата."
+      },
+      "humidity": {
+        "en": "Prefers moderate humidity with good air circulation.",
+        "bg": "Предпочита умерена влажност с добра циркулация на въздуха."
+      },
+      "temperature": {
+        "en": "Hardy; most roses survive down to -10 °C with mulching.",
+        "bg": "Издръжлива; повечето рози оцеляват до -10 °C при мулчиране."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 2 weeks during growing season with rose fertilizer.",
+        "bg": "Торете на 2 седмици по време на растеж с тор за рози."
+      },
+      "toxicity": {
+        "en": "Non-toxic to pets; safe around cats and dogs.",
+        "bg": "Нетоксично за домашни любимци; безопасно около котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Rosa gallica",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/30934790/medium.jpg",
+    "commonNameEn": "French Rose",
+    "commonNameBg": "галска роза",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Rosaceae",
+    "nativeRegionEn": "Asia, Europe and North America",
+    "nativeRegionBg": "Азия, Европа и Северна Америка",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 5,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; minimum 6 hours of direct sunlight daily.",
+        "bg": "Пълно слънце; минимум 6 часа пряка слънчева светлина дневно."
+      },
+      "watering": {
+        "en": "Water at base every 3–7 days; avoid wetting foliage.",
+        "bg": "Поливайте в основата на 3–7 дни; избягвайте намокряне на листата."
+      },
+      "humidity": {
+        "en": "Prefers moderate humidity with good air circulation.",
+        "bg": "Предпочита умерена влажност с добра циркулация на въздуха."
+      },
+      "temperature": {
+        "en": "Hardy; most roses survive down to -10 °C with mulching.",
+        "bg": "Издръжлива; повечето рози оцеляват до -10 °C при мулчиране."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 2 weeks during growing season with rose fertilizer.",
+        "bg": "Торете на 2 седмици по време на растеж с тор за рози."
+      },
+      "toxicity": {
+        "en": "Non-toxic to pets; safe around cats and dogs.",
+        "bg": "Нетоксично за домашни любимци; безопасно около котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Rosa damascena",
+    "imageUrl": null,
+    "commonNameEn": "Damask Rose",
+    "commonNameBg": "Роса",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Rosaceae",
+    "nativeRegionEn": "Asia, Europe and North America",
+    "nativeRegionBg": "Азия, Европа и Северна Америка",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 5,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; minimum 6 hours of direct sunlight daily.",
+        "bg": "Пълно слънце; минимум 6 часа пряка слънчева светлина дневно."
+      },
+      "watering": {
+        "en": "Water at base every 3–7 days; avoid wetting foliage.",
+        "bg": "Поливайте в основата на 3–7 дни; избягвайте намокряне на листата."
+      },
+      "humidity": {
+        "en": "Prefers moderate humidity with good air circulation.",
+        "bg": "Предпочита умерена влажност с добра циркулация на въздуха."
+      },
+      "temperature": {
+        "en": "Hardy; most roses survive down to -10 °C with mulching.",
+        "bg": "Издръжлива; повечето рози оцеляват до -10 °C при мулчиране."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 2 weeks during growing season with rose fertilizer.",
+        "bg": "Торете на 2 седмици по време на растеж с тор за рози."
+      },
+      "toxicity": {
+        "en": "Non-toxic to pets; safe around cats and dogs.",
+        "bg": "Нетоксично за домашни любимци; безопасно около котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Rosa centifolia",
+    "imageUrl": null,
+    "commonNameEn": "Cabbage Rose",
+    "commonNameBg": "Роса",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Rosaceae",
+    "nativeRegionEn": "Asia, Europe and North America",
+    "nativeRegionBg": "Азия, Европа и Северна Америка",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 5,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; minimum 6 hours of direct sunlight daily.",
+        "bg": "Пълно слънце; минимум 6 часа пряка слънчева светлина дневно."
+      },
+      "watering": {
+        "en": "Water at base every 3–7 days; avoid wetting foliage.",
+        "bg": "Поливайте в основата на 3–7 дни; избягвайте намокряне на листата."
+      },
+      "humidity": {
+        "en": "Prefers moderate humidity with good air circulation.",
+        "bg": "Предпочита умерена влажност с добра циркулация на въздуха."
+      },
+      "temperature": {
+        "en": "Hardy; most roses survive down to -10 °C with mulching.",
+        "bg": "Издръжлива; повечето рози оцеляват до -10 °C при мулчиране."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 2 weeks during growing season with rose fertilizer.",
+        "bg": "Торете на 2 седмици по време на растеж с тор за рози."
+      },
+      "toxicity": {
+        "en": "Non-toxic to pets; safe around cats and dogs.",
+        "bg": "Нетоксично за домашни любимци; безопасно около котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Rosa rugosa",
+    "imageUrl": "https://static.inaturalist.org/photos/74197363/medium.jpg",
+    "commonNameEn": "Rugosa Rose",
+    "commonNameBg": "Азиатска шипка",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Rosaceae",
+    "nativeRegionEn": "Asia, Europe and North America",
+    "nativeRegionBg": "Азия, Европа и Северна Америка",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 5,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; minimum 6 hours of direct sunlight daily.",
+        "bg": "Пълно слънце; минимум 6 часа пряка слънчева светлина дневно."
+      },
+      "watering": {
+        "en": "Water at base every 3–7 days; avoid wetting foliage.",
+        "bg": "Поливайте в основата на 3–7 дни; избягвайте намокряне на листата."
+      },
+      "humidity": {
+        "en": "Prefers moderate humidity with good air circulation.",
+        "bg": "Предпочита умерена влажност с добра циркулация на въздуха."
+      },
+      "temperature": {
+        "en": "Hardy; most roses survive down to -10 °C with mulching.",
+        "bg": "Издръжлива; повечето рози оцеляват до -10 °C при мулчиране."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 2 weeks during growing season with rose fertilizer.",
+        "bg": "Торете на 2 седмици по време на растеж с тор за рози."
+      },
+      "toxicity": {
+        "en": "Non-toxic to pets; safe around cats and dogs.",
+        "bg": "Нетоксично за домашни любимци; безопасно около котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Rosa moschata",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/111841335/medium.jpeg",
+    "commonNameEn": "Musk Rose",
+    "commonNameBg": "Роса",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Rosaceae",
+    "nativeRegionEn": "Asia, Europe and North America",
+    "nativeRegionBg": "Азия, Европа и Северна Америка",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 5,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; minimum 6 hours of direct sunlight daily.",
+        "bg": "Пълно слънце; минимум 6 часа пряка слънчева светлина дневно."
+      },
+      "watering": {
+        "en": "Water at base every 3–7 days; avoid wetting foliage.",
+        "bg": "Поливайте в основата на 3–7 дни; избягвайте намокряне на листата."
+      },
+      "humidity": {
+        "en": "Prefers moderate humidity with good air circulation.",
+        "bg": "Предпочита умерена влажност с добра циркулация на въздуха."
+      },
+      "temperature": {
+        "en": "Hardy; most roses survive down to -10 °C with mulching.",
+        "bg": "Издръжлива; повечето рози оцеляват до -10 °C при мулчиране."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 2 weeks during growing season with rose fertilizer.",
+        "bg": "Торете на 2 седмици по време на растеж с тор за рози."
+      },
+      "toxicity": {
+        "en": "Non-toxic to pets; safe around cats and dogs.",
+        "bg": "Нетоксично за домашни любимци; безопасно около котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Rosa banksiae",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/122545712/medium.jpeg",
+    "commonNameEn": "Banksia Rose",
+    "commonNameBg": "Роса",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Rosaceae",
+    "nativeRegionEn": "Asia, Europe and North America",
+    "nativeRegionBg": "Азия, Европа и Северна Америка",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 5,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; minimum 6 hours of direct sunlight daily.",
+        "bg": "Пълно слънце; минимум 6 часа пряка слънчева светлина дневно."
+      },
+      "watering": {
+        "en": "Water at base every 3–7 days; avoid wetting foliage.",
+        "bg": "Поливайте в основата на 3–7 дни; избягвайте намокряне на листата."
+      },
+      "humidity": {
+        "en": "Prefers moderate humidity with good air circulation.",
+        "bg": "Предпочита умерена влажност с добра циркулация на въздуха."
+      },
+      "temperature": {
+        "en": "Hardy; most roses survive down to -10 °C with mulching.",
+        "bg": "Издръжлива; повечето рози оцеляват до -10 °C при мулчиране."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 2 weeks during growing season with rose fertilizer.",
+        "bg": "Торете на 2 седмици по време на растеж с тор за рози."
+      },
+      "toxicity": {
+        "en": "Non-toxic to pets; safe around cats and dogs.",
+        "bg": "Нетоксично за домашни любимци; безопасно около котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Rosa multiflora",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/252786276/medium.jpg",
+    "commonNameEn": "Multiflora Rose",
+    "commonNameBg": "трендафил",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Rosaceae",
+    "nativeRegionEn": "Asia, Europe and North America",
+    "nativeRegionBg": "Азия, Европа и Северна Америка",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 5,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; minimum 6 hours of direct sunlight daily.",
+        "bg": "Пълно слънце; минимум 6 часа пряка слънчева светлина дневно."
+      },
+      "watering": {
+        "en": "Water at base every 3–7 days; avoid wetting foliage.",
+        "bg": "Поливайте в основата на 3–7 дни; избягвайте намокряне на листата."
+      },
+      "humidity": {
+        "en": "Prefers moderate humidity with good air circulation.",
+        "bg": "Предпочита умерена влажност с добра циркулация на въздуха."
+      },
+      "temperature": {
+        "en": "Hardy; most roses survive down to -10 °C with mulching.",
+        "bg": "Издръжлива; повечето рози оцеляват до -10 °C при мулчиране."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 2 weeks during growing season with rose fertilizer.",
+        "bg": "Торете на 2 седмици по време на растеж с тор за рози."
+      },
+      "toxicity": {
+        "en": "Non-toxic to pets; safe around cats and dogs.",
+        "bg": "Нетоксично за домашни любимци; безопасно около котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Rosa wichuraiana",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Rosa_wichuraiana.jpg/960px-Rosa_wichuraiana.jpg",
+    "commonNameEn": "Memorial Rose",
+    "commonNameBg": "Роса",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Rosaceae",
+    "nativeRegionEn": "Asia, Europe and North America",
+    "nativeRegionBg": "Азия, Европа и Северна Америка",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 5,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; minimum 6 hours of direct sunlight daily.",
+        "bg": "Пълно слънце; минимум 6 часа пряка слънчева светлина дневно."
+      },
+      "watering": {
+        "en": "Water at base every 3–7 days; avoid wetting foliage.",
+        "bg": "Поливайте в основата на 3–7 дни; избягвайте намокряне на листата."
+      },
+      "humidity": {
+        "en": "Prefers moderate humidity with good air circulation.",
+        "bg": "Предпочита умерена влажност с добра циркулация на въздуха."
+      },
+      "temperature": {
+        "en": "Hardy; most roses survive down to -10 °C with mulching.",
+        "bg": "Издръжлива; повечето рози оцеляват до -10 °C при мулчиране."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 2 weeks during growing season with rose fertilizer.",
+        "bg": "Торете на 2 седмици по време на растеж с тор за рози."
+      },
+      "toxicity": {
+        "en": "Non-toxic to pets; safe around cats and dogs.",
+        "bg": "Нетоксично за домашни любимци; безопасно около котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Rosa eglanteria",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Wild_Rosa_rubiginosa.jpg/960px-Wild_Rosa_rubiginosa.jpg",
+    "commonNameEn": "Sweet Briar",
+    "commonNameBg": "Роса",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Rosaceae",
+    "nativeRegionEn": "Asia, Europe and North America",
+    "nativeRegionBg": "Азия, Европа и Северна Америка",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 5,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": false,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; minimum 6 hours of direct sunlight daily.",
+        "bg": "Пълно слънце; минимум 6 часа пряка слънчева светлина дневно."
+      },
+      "watering": {
+        "en": "Water at base every 3–7 days; avoid wetting foliage.",
+        "bg": "Поливайте в основата на 3–7 дни; избягвайте намокряне на листата."
+      },
+      "humidity": {
+        "en": "Prefers moderate humidity with good air circulation.",
+        "bg": "Предпочита умерена влажност с добра циркулация на въздуха."
+      },
+      "temperature": {
+        "en": "Hardy; most roses survive down to -10 °C with mulching.",
+        "bg": "Издръжлива; повечето рози оцеляват до -10 °C при мулчиране."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 2 weeks during growing season with rose fertilizer.",
+        "bg": "Торете на 2 седмици по време на растеж с тор за рози."
+      },
+      "toxicity": {
+        "en": "Non-toxic to pets; safe around cats and dogs.",
+        "bg": "Нетоксично за домашни любимци; безопасно около котки и кучета."
+      }
+    }
+  },
+  {
+    "scientificName": "Hydrangea macrophylla",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/%28Natural%29_Hydrangea_macrophylla%2C_Iwafune%2C_Isumi%2C_Chiba%2C_Japan_2.jpg/960px-%28Natural%29_Hydrangea_macrophylla%2C_Iwafune%2C_Isumi%2C_Chiba%2C_Japan_2.jpg",
+    "commonNameEn": "Bigleaf Hydrangea",
+    "commonNameBg": "едролистна хортензия",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions worldwide",
+    "nativeRegionBg": "Умерени зони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most flowering shrubs prefer full sun.",
+        "bg": "Пълно слънце до частична сянка; повечето цъфтящи храсти предпочитат пълно слънце."
+      },
+      "watering": {
+        "en": "Water regularly when establishing; drought-tolerant once established.",
+        "bg": "Поливайте редовно при установяване; устойчив на суша след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to typical outdoor humidity conditions.",
+        "bg": "Адаптира се към типичните условия на влажност на открито."
+      },
+      "temperature": {
+        "en": "Hardy; most survive Bulgarian winters without protection.",
+        "bg": "Издръжлив; повечето оцеляват bulgarian зимите без защита."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring with slow-release fertilizer.",
+        "bg": "Торете веднъж напролет с бавноосвобождаващ тор."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; some shrubs are toxic to pets.",
+        "bg": "Токсичността варира; някои храсти са токсични за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Hydrangea paniculata",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/56235268/medium.jpg",
+    "commonNameEn": "Panicle Hydrangea",
+    "commonNameBg": "Хидрангеа",
+    "descriptionEn": "Hydrangea paniculata, or panicled hydrangea, is a species of flowering plant in the family Hydrangeaceae native to southern and eastern China, Korea, Japan and Russia (Sakhalin). It was first formally described by Philipp Franz von Siebold in 1829.",
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions worldwide",
+    "nativeRegionBg": "Умерени зони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most flowering shrubs prefer full sun.",
+        "bg": "Пълно слънце до частична сянка; повечето цъфтящи храсти предпочитат пълно слънце."
+      },
+      "watering": {
+        "en": "Water regularly when establishing; drought-tolerant once established.",
+        "bg": "Поливайте редовно при установяване; устойчив на суша след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to typical outdoor humidity conditions.",
+        "bg": "Адаптира се към типичните условия на влажност на открито."
+      },
+      "temperature": {
+        "en": "Hardy; most survive Bulgarian winters without protection.",
+        "bg": "Издръжлив; повечето оцеляват bulgarian зимите без защита."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring with slow-release fertilizer.",
+        "bg": "Торете веднъж напролет с бавноосвобождаващ тор."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; some shrubs are toxic to pets.",
+        "bg": "Токсичността варира; някои храсти са токсични за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Hydrangea arborescens",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/177832046/medium.jpg",
+    "commonNameEn": "Smooth Hydrangea",
+    "commonNameBg": "дървовидна хортензия",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions worldwide",
+    "nativeRegionBg": "Умерени зони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most flowering shrubs prefer full sun.",
+        "bg": "Пълно слънце до частична сянка; повечето цъфтящи храсти предпочитат пълно слънце."
+      },
+      "watering": {
+        "en": "Water regularly when establishing; drought-tolerant once established.",
+        "bg": "Поливайте редовно при установяване; устойчив на суша след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to typical outdoor humidity conditions.",
+        "bg": "Адаптира се към типичните условия на влажност на открито."
+      },
+      "temperature": {
+        "en": "Hardy; most survive Bulgarian winters without protection.",
+        "bg": "Издръжлив; повечето оцеляват bulgarian зимите без защита."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring with slow-release fertilizer.",
+        "bg": "Торете веднъж напролет с бавноосвобождаващ тор."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; some shrubs are toxic to pets.",
+        "bg": "Токсичността варира; някои храсти са токсични за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Hydrangea quercifolia",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Hydrangea_quercifolia_BhamBotGdn.jpg/960px-Hydrangea_quercifolia_BhamBotGdn.jpg",
+    "commonNameEn": "Oakleaf Hydrangea",
+    "commonNameBg": "Хидрангеа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions worldwide",
+    "nativeRegionBg": "Умерени зони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most flowering shrubs prefer full sun.",
+        "bg": "Пълно слънце до частична сянка; повечето цъфтящи храсти предпочитат пълно слънце."
+      },
+      "watering": {
+        "en": "Water regularly when establishing; drought-tolerant once established.",
+        "bg": "Поливайте редовно при установяване; устойчив на суша след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to typical outdoor humidity conditions.",
+        "bg": "Адаптира се към типичните условия на влажност на открито."
+      },
+      "temperature": {
+        "en": "Hardy; most survive Bulgarian winters without protection.",
+        "bg": "Издръжлив; повечето оцеляват bulgarian зимите без защита."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring with slow-release fertilizer.",
+        "bg": "Торете веднъж напролет с бавноосвобождаващ тор."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; some shrubs are toxic to pets.",
+        "bg": "Токсичността варира; някои храсти са токсични за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Syringa vulgaris",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Lilac_Flower%26Leaves%2C_SC%2C_Vic%2C_13.10.2007.jpg/960px-Lilac_Flower%26Leaves%2C_SC%2C_Vic%2C_13.10.2007.jpg",
+    "commonNameEn": "Common Lilac",
+    "commonNameBg": "обикновен люляк",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions worldwide",
+    "nativeRegionBg": "Умерени зони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most flowering shrubs prefer full sun.",
+        "bg": "Пълно слънце до частична сянка; повечето цъфтящи храсти предпочитат пълно слънце."
+      },
+      "watering": {
+        "en": "Water regularly when establishing; drought-tolerant once established.",
+        "bg": "Поливайте редовно при установяване; устойчив на суша след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to typical outdoor humidity conditions.",
+        "bg": "Адаптира се към типичните условия на влажност на открито."
+      },
+      "temperature": {
+        "en": "Hardy; most survive Bulgarian winters without protection.",
+        "bg": "Издръжлив; повечето оцеляват bulgarian зимите без защита."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring with slow-release fertilizer.",
+        "bg": "Торете веднъж напролет с бавноосвобождаващ тор."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; some shrubs are toxic to pets.",
+        "bg": "Токсичността варира; някои храсти са токсични за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Forsythia suspensa",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Forsythia_suspensa1.jpg/960px-Forsythia_suspensa1.jpg",
+    "commonNameEn": "Weeping Forsythia",
+    "commonNameBg": "Форситиа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions worldwide",
+    "nativeRegionBg": "Умерени зони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most flowering shrubs prefer full sun.",
+        "bg": "Пълно слънце до частична сянка; повечето цъфтящи храсти предпочитат пълно слънце."
+      },
+      "watering": {
+        "en": "Water regularly when establishing; drought-tolerant once established.",
+        "bg": "Поливайте редовно при установяване; устойчив на суша след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to typical outdoor humidity conditions.",
+        "bg": "Адаптира се към типичните условия на влажност на открито."
+      },
+      "temperature": {
+        "en": "Hardy; most survive Bulgarian winters without protection.",
+        "bg": "Издръжлив; повечето оцеляват bulgarian зимите без защита."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring with slow-release fertilizer.",
+        "bg": "Торете веднъж напролет с бавноосвобождаващ тор."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; some shrubs are toxic to pets.",
+        "bg": "Токсичността варира; някои храсти са токсични за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Forsythia viridissima",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Forsythia_viridissima_B.JPG/960px-Forsythia_viridissima_B.JPG",
+    "commonNameEn": "Greenstem Forsythia",
+    "commonNameBg": "Форситиа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions worldwide",
+    "nativeRegionBg": "Умерени зони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most flowering shrubs prefer full sun.",
+        "bg": "Пълно слънце до частична сянка; повечето цъфтящи храсти предпочитат пълно слънце."
+      },
+      "watering": {
+        "en": "Water regularly when establishing; drought-tolerant once established.",
+        "bg": "Поливайте редовно при установяване; устойчив на суша след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to typical outdoor humidity conditions.",
+        "bg": "Адаптира се към типичните условия на влажност на открито."
+      },
+      "temperature": {
+        "en": "Hardy; most survive Bulgarian winters without protection.",
+        "bg": "Издръжлив; повечето оцеляват bulgarian зимите без защита."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring with slow-release fertilizer.",
+        "bg": "Торете веднъж напролет с бавноосвобождаващ тор."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; some shrubs are toxic to pets.",
+        "bg": "Токсичността варира; някои храсти са токсични за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Spiraea japonica",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/449207/medium.jpg",
+    "commonNameEn": "Japanese Spirea",
+    "commonNameBg": "японска спирея",
+    "descriptionEn": "Spiraea japonica, the Japanese meadowsweet or Japanese spiraea, is a plant in the family Rosaceae. Synonyms for the species name are Spiraea bumalda Burv. and Spiraea japonica var.",
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions worldwide",
+    "nativeRegionBg": "Умерени зони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most flowering shrubs prefer full sun.",
+        "bg": "Пълно слънце до частична сянка; повечето цъфтящи храсти предпочитат пълно слънце."
+      },
+      "watering": {
+        "en": "Water regularly when establishing; drought-tolerant once established.",
+        "bg": "Поливайте редовно при установяване; устойчив на суша след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to typical outdoor humidity conditions.",
+        "bg": "Адаптира се към типичните условия на влажност на открито."
+      },
+      "temperature": {
+        "en": "Hardy; most survive Bulgarian winters without protection.",
+        "bg": "Издръжлив; повечето оцеляват bulgarian зимите без защита."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring with slow-release fertilizer.",
+        "bg": "Торете веднъж напролет с бавноосвобождаващ тор."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; some shrubs are toxic to pets.",
+        "bg": "Токсичността варира; някои храсти са токсични за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Spiraea vanhouttei",
+    "imageUrl": null,
+    "commonNameEn": "Vanhoutte Spirea",
+    "commonNameBg": "Спиреа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions worldwide",
+    "nativeRegionBg": "Умерени зони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most flowering shrubs prefer full sun.",
+        "bg": "Пълно слънце до частична сянка; повечето цъфтящи храсти предпочитат пълно слънце."
+      },
+      "watering": {
+        "en": "Water regularly when establishing; drought-tolerant once established.",
+        "bg": "Поливайте редовно при установяване; устойчив на суша след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to typical outdoor humidity conditions.",
+        "bg": "Адаптира се към типичните условия на влажност на открито."
+      },
+      "temperature": {
+        "en": "Hardy; most survive Bulgarian winters without protection.",
+        "bg": "Издръжлив; повечето оцеляват bulgarian зимите без защита."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring with slow-release fertilizer.",
+        "bg": "Торете веднъж напролет с бавноосвобождаващ тор."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; some shrubs are toxic to pets.",
+        "bg": "Токсичността варира; някои храсти са токсични за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Weigela florida",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/119710285/medium.jpeg",
+    "commonNameEn": "Old-Fashioned Weigela",
+    "commonNameBg": "Веигела",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions worldwide",
+    "nativeRegionBg": "Умерени зони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most flowering shrubs prefer full sun.",
+        "bg": "Пълно слънце до частична сянка; повечето цъфтящи храсти предпочитат пълно слънце."
+      },
+      "watering": {
+        "en": "Water regularly when establishing; drought-tolerant once established.",
+        "bg": "Поливайте редовно при установяване; устойчив на суша след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to typical outdoor humidity conditions.",
+        "bg": "Адаптира се към типичните условия на влажност на открито."
+      },
+      "temperature": {
+        "en": "Hardy; most survive Bulgarian winters without protection.",
+        "bg": "Издръжлив; повечето оцеляват bulgarian зимите без защита."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring with slow-release fertilizer.",
+        "bg": "Торете веднъж напролет с бавноосвобождаващ тор."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; some shrubs are toxic to pets.",
+        "bg": "Токсичността варира; някои храсти са токсични за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Deutzia gracilis",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/16704530/medium.jpg",
+    "commonNameEn": "Slender Deutzia",
+    "commonNameBg": "стройна дойция",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions worldwide",
+    "nativeRegionBg": "Умерени зони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most flowering shrubs prefer full sun.",
+        "bg": "Пълно слънце до частична сянка; повечето цъфтящи храсти предпочитат пълно слънце."
+      },
+      "watering": {
+        "en": "Water regularly when establishing; drought-tolerant once established.",
+        "bg": "Поливайте редовно при установяване; устойчив на суша след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to typical outdoor humidity conditions.",
+        "bg": "Адаптира се към типичните условия на влажност на открито."
+      },
+      "temperature": {
+        "en": "Hardy; most survive Bulgarian winters without protection.",
+        "bg": "Издръжлив; повечето оцеляват bulgarian зимите без защита."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring with slow-release fertilizer.",
+        "bg": "Торете веднъж напролет с бавноосвобождаващ тор."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; some shrubs are toxic to pets.",
+        "bg": "Токсичността варира; някои храсти са токсични за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Deutzia scabra",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/291144248/medium.jpg",
+    "commonNameEn": "Fuzzy Deutzia",
+    "commonNameBg": "грапава дойция",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions worldwide",
+    "nativeRegionBg": "Умерени зони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most flowering shrubs prefer full sun.",
+        "bg": "Пълно слънце до частична сянка; повечето цъфтящи храсти предпочитат пълно слънце."
+      },
+      "watering": {
+        "en": "Water regularly when establishing; drought-tolerant once established.",
+        "bg": "Поливайте редовно при установяване; устойчив на суша след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to typical outdoor humidity conditions.",
+        "bg": "Адаптира се към типичните условия на влажност на открито."
+      },
+      "temperature": {
+        "en": "Hardy; most survive Bulgarian winters without protection.",
+        "bg": "Издръжлив; повечето оцеляват bulgarian зимите без защита."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring with slow-release fertilizer.",
+        "bg": "Торете веднъж напролет с бавноосвобождаващ тор."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; some shrubs are toxic to pets.",
+        "bg": "Токсичността варира; някои храсти са токсични за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Buxus sempervirens",
+    "imageUrl": "https://static.inaturalist.org/photos/43384449/medium.jpeg",
+    "commonNameEn": "Common Boxwood",
+    "commonNameBg": "Буксус",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions worldwide",
+    "nativeRegionBg": "Умерени зони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most flowering shrubs prefer full sun.",
+        "bg": "Пълно слънце до частична сянка; повечето цъфтящи храсти предпочитат пълно слънце."
+      },
+      "watering": {
+        "en": "Water regularly when establishing; drought-tolerant once established.",
+        "bg": "Поливайте редовно при установяване; устойчив на суша след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to typical outdoor humidity conditions.",
+        "bg": "Адаптира се към типичните условия на влажност на открито."
+      },
+      "temperature": {
+        "en": "Hardy; most survive Bulgarian winters without protection.",
+        "bg": "Издръжлив; повечето оцеляват bulgarian зимите без защита."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring with slow-release fertilizer.",
+        "bg": "Торете веднъж напролет с бавноосвобождаващ тор."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; some shrubs are toxic to pets.",
+        "bg": "Токсичността варира; някои храсти са токсични за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Thuja occidentalis",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/4684247/medium.jpeg",
+    "commonNameEn": "Eastern Arborvitae",
+    "commonNameBg": "Западна туя",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions worldwide",
+    "nativeRegionBg": "Умерени зони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most flowering shrubs prefer full sun.",
+        "bg": "Пълно слънце до частична сянка; повечето цъфтящи храсти предпочитат пълно слънце."
+      },
+      "watering": {
+        "en": "Water regularly when establishing; drought-tolerant once established.",
+        "bg": "Поливайте редовно при установяване; устойчив на суша след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to typical outdoor humidity conditions.",
+        "bg": "Адаптира се към типичните условия на влажност на открито."
+      },
+      "temperature": {
+        "en": "Hardy; most survive Bulgarian winters without protection.",
+        "bg": "Издръжлив; повечето оцеляват bulgarian зимите без защита."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring with slow-release fertilizer.",
+        "bg": "Торете веднъж напролет с бавноосвобождаващ тор."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; some shrubs are toxic to pets.",
+        "bg": "Токсичността варира; някои храсти са токсични за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Thuja plicata",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/7846522/medium.jpeg",
+    "commonNameEn": "Western Red Cedar",
+    "commonNameBg": "Туйа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions worldwide",
+    "nativeRegionBg": "Умерени зони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most flowering shrubs prefer full sun.",
+        "bg": "Пълно слънце до частична сянка; повечето цъфтящи храсти предпочитат пълно слънце."
+      },
+      "watering": {
+        "en": "Water regularly when establishing; drought-tolerant once established.",
+        "bg": "Поливайте редовно при установяване; устойчив на суша след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to typical outdoor humidity conditions.",
+        "bg": "Адаптира се към типичните условия на влажност на открито."
+      },
+      "temperature": {
+        "en": "Hardy; most survive Bulgarian winters without protection.",
+        "bg": "Издръжлив; повечето оцеляват bulgarian зимите без защита."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring with slow-release fertilizer.",
+        "bg": "Торете веднъж напролет с бавноосвобождаващ тор."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; some shrubs are toxic to pets.",
+        "bg": "Токсичността варира; някои храсти са токсични за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Euonymus fortunei",
+    "imageUrl": "https://static.inaturalist.org/photos/28139660/medium.jpeg",
+    "commonNameEn": "Wintercreeper Euonymus",
+    "commonNameBg": "Еуонимус",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions worldwide",
+    "nativeRegionBg": "Умерени зони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most flowering shrubs prefer full sun.",
+        "bg": "Пълно слънце до частична сянка; повечето цъфтящи храсти предпочитат пълно слънце."
+      },
+      "watering": {
+        "en": "Water regularly when establishing; drought-tolerant once established.",
+        "bg": "Поливайте редовно при установяване; устойчив на суша след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to typical outdoor humidity conditions.",
+        "bg": "Адаптира се към типичните условия на влажност на открито."
+      },
+      "temperature": {
+        "en": "Hardy; most survive Bulgarian winters without protection.",
+        "bg": "Издръжлив; повечето оцеляват bulgarian зимите без защита."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring with slow-release fertilizer.",
+        "bg": "Торете веднъж напролет с бавноосвобождаващ тор."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; some shrubs are toxic to pets.",
+        "bg": "Токсичността варира; някои храсти са токсични за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Euonymus alatus",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Euonymous_alatus.jpg/960px-Euonymous_alatus.jpg",
+    "commonNameEn": "Burning Bush",
+    "commonNameBg": "Еуонимус",
+    "descriptionEn": "Euonymus alatus, known variously as burning bush, winged euonymus, winged spindle, and winged spindle-tree, is a species of flowering plant in the family Celastraceae, native to central and northern China, Japan, and Korea. It is a popular ornamental plant in gardens and parks due to its bright pink or orange fruit and attractive autumn color: The common name \"burning bush\" refers to its bright red autumn color. The cultivars 'Compactus' and 'Fire Ball' have gained the Royal Horticultural Society's Award of Garden Merit.",
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions worldwide",
+    "nativeRegionBg": "Умерени зони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most flowering shrubs prefer full sun.",
+        "bg": "Пълно слънце до частична сянка; повечето цъфтящи храсти предпочитат пълно слънце."
+      },
+      "watering": {
+        "en": "Water regularly when establishing; drought-tolerant once established.",
+        "bg": "Поливайте редовно при установяване; устойчив на суша след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to typical outdoor humidity conditions.",
+        "bg": "Адаптира се към типичните условия на влажност на открито."
+      },
+      "temperature": {
+        "en": "Hardy; most survive Bulgarian winters without protection.",
+        "bg": "Издръжлив; повечето оцеляват bulgarian зимите без защита."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring with slow-release fertilizer.",
+        "bg": "Торете веднъж напролет с бавноосвобождаващ тор."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; some shrubs are toxic to pets.",
+        "bg": "Токсичността варира; някои храсти са токсични за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Berberis thunbergii",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Berberis_thunb_frt.jpg",
+    "commonNameEn": "Japanese Barberry",
+    "commonNameBg": "Берберис",
+    "descriptionEn": "Berberis thunbergii, the Japanese barberry, Thunberg's barberry, or red barberry, is a species of flowering plant in the barberry family Berberidaceae, native to Japan and eastern Asia, though widely naturalized in China and North America, where it has become a problematic invasive in many places, leading to declines in species diversity, increased tick habitat, and soil changes. Growing to 1 m (3 ft 3 in) tall by 2.5 m (8 ft 2 in) broad, it is a small deciduous shrub with green leaves turning red in the autumn, brilliant red fruits in autumn and pale yellow flowers in spring.",
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions worldwide",
+    "nativeRegionBg": "Умерени зони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most flowering shrubs prefer full sun.",
+        "bg": "Пълно слънце до частична сянка; повечето цъфтящи храсти предпочитат пълно слънце."
+      },
+      "watering": {
+        "en": "Water regularly when establishing; drought-tolerant once established.",
+        "bg": "Поливайте редовно при установяване; устойчив на суша след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to typical outdoor humidity conditions.",
+        "bg": "Адаптира се към типичните условия на влажност на открито."
+      },
+      "temperature": {
+        "en": "Hardy; most survive Bulgarian winters without protection.",
+        "bg": "Издръжлив; повечето оцеляват bulgarian зимите без защита."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring with slow-release fertilizer.",
+        "bg": "Торете веднъж напролет с бавноосвобождаващ тор."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; some shrubs are toxic to pets.",
+        "bg": "Токсичността варира; някои храсти са токсични за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Cotoneaster horizontalis",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Cotoneaster_horizontalis_%2813937637589%29.jpg/960px-Cotoneaster_horizontalis_%2813937637589%29.jpg",
+    "commonNameEn": "Rockspray Cotoneaster",
+    "commonNameBg": "Котонеастер",
+    "descriptionEn": "Cotoneaster horizontalis is a species of flowering plant in the genus Cotoneaster of the family Rosaceae.",
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions worldwide",
+    "nativeRegionBg": "Умерени зони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most flowering shrubs prefer full sun.",
+        "bg": "Пълно слънце до частична сянка; повечето цъфтящи храсти предпочитат пълно слънце."
+      },
+      "watering": {
+        "en": "Water regularly when establishing; drought-tolerant once established.",
+        "bg": "Поливайте редовно при установяване; устойчив на суша след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to typical outdoor humidity conditions.",
+        "bg": "Адаптира се към типичните условия на влажност на открито."
+      },
+      "temperature": {
+        "en": "Hardy; most survive Bulgarian winters without protection.",
+        "bg": "Издръжлив; повечето оцеляват bulgarian зимите без защита."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring with slow-release fertilizer.",
+        "bg": "Торете веднъж напролет с бавноосвобождаващ тор."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; some shrubs are toxic to pets.",
+        "bg": "Токсичността варира; някои храсти са токсични за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Viburnum opulus",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Viburnum_01.JPG/960px-Viburnum_01.JPG",
+    "commonNameEn": "European Cranberrybush",
+    "commonNameBg": "червена калина",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions worldwide",
+    "nativeRegionBg": "Умерени зони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most flowering shrubs prefer full sun.",
+        "bg": "Пълно слънце до частична сянка; повечето цъфтящи храсти предпочитат пълно слънце."
+      },
+      "watering": {
+        "en": "Water regularly when establishing; drought-tolerant once established.",
+        "bg": "Поливайте редовно при установяване; устойчив на суша след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to typical outdoor humidity conditions.",
+        "bg": "Адаптира се към типичните условия на влажност на открито."
+      },
+      "temperature": {
+        "en": "Hardy; most survive Bulgarian winters without protection.",
+        "bg": "Издръжлив; повечето оцеляват bulgarian зимите без защита."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring with slow-release fertilizer.",
+        "bg": "Торете веднъж напролет с бавноосвобождаващ тор."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; some shrubs are toxic to pets.",
+        "bg": "Токсичността варира; някои храсти са токсични за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Viburnum tinus",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/11569121/medium.jpg",
+    "commonNameEn": "Laurustinus",
+    "commonNameBg": "лавролистна калина",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions worldwide",
+    "nativeRegionBg": "Умерени зони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most flowering shrubs prefer full sun.",
+        "bg": "Пълно слънце до частична сянка; повечето цъфтящи храсти предпочитат пълно слънце."
+      },
+      "watering": {
+        "en": "Water regularly when establishing; drought-tolerant once established.",
+        "bg": "Поливайте редовно при установяване; устойчив на суша след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to typical outdoor humidity conditions.",
+        "bg": "Адаптира се към типичните условия на влажност на открито."
+      },
+      "temperature": {
+        "en": "Hardy; most survive Bulgarian winters without protection.",
+        "bg": "Издръжлив; повечето оцеляват bulgarian зимите без защита."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring with slow-release fertilizer.",
+        "bg": "Торете веднъж напролет с бавноосвобождаващ тор."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; some shrubs are toxic to pets.",
+        "bg": "Токсичността варира; някои храсти са токсични за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Buddleja davidii",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/87998902/medium.jpg",
+    "commonNameEn": "Butterfly Bush",
+    "commonNameBg": "Буддлейа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions worldwide",
+    "nativeRegionBg": "Умерени зони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most flowering shrubs prefer full sun.",
+        "bg": "Пълно слънце до частична сянка; повечето цъфтящи храсти предпочитат пълно слънце."
+      },
+      "watering": {
+        "en": "Water regularly when establishing; drought-tolerant once established.",
+        "bg": "Поливайте редовно при установяване; устойчив на суша след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to typical outdoor humidity conditions.",
+        "bg": "Адаптира се към типичните условия на влажност на открито."
+      },
+      "temperature": {
+        "en": "Hardy; most survive Bulgarian winters without protection.",
+        "bg": "Издръжлив; повечето оцеляват bulgarian зимите без защита."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring with slow-release fertilizer.",
+        "bg": "Торете веднъж напролет с бавноосвобождаващ тор."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; some shrubs are toxic to pets.",
+        "bg": "Токсичността варира; някои храсти са токсични за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Potentilla fruticosa",
+    "imageUrl": null,
+    "commonNameEn": "Shrubby Cinquefoil",
+    "commonNameBg": "Потентилла",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions worldwide",
+    "nativeRegionBg": "Умерени зони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most flowering shrubs prefer full sun.",
+        "bg": "Пълно слънце до частична сянка; повечето цъфтящи храсти предпочитат пълно слънце."
+      },
+      "watering": {
+        "en": "Water regularly when establishing; drought-tolerant once established.",
+        "bg": "Поливайте редовно при установяване; устойчив на суша след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to typical outdoor humidity conditions.",
+        "bg": "Адаптира се към типичните условия на влажност на открито."
+      },
+      "temperature": {
+        "en": "Hardy; most survive Bulgarian winters without protection.",
+        "bg": "Издръжлив; повечето оцеляват bulgarian зимите без защита."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring with slow-release fertilizer.",
+        "bg": "Торете веднъж напролет с бавноосвобождаващ тор."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; some shrubs are toxic to pets.",
+        "bg": "Токсичността варира; някои храсти са токсични за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Kolkwitzia amabilis",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/44278471/medium.jpg",
+    "commonNameEn": "Beauty Bush",
+    "commonNameBg": "Колквитзиа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions worldwide",
+    "nativeRegionBg": "Умерени зони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most flowering shrubs prefer full sun.",
+        "bg": "Пълно слънце до частична сянка; повечето цъфтящи храсти предпочитат пълно слънце."
+      },
+      "watering": {
+        "en": "Water regularly when establishing; drought-tolerant once established.",
+        "bg": "Поливайте редовно при установяване; устойчив на суша след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to typical outdoor humidity conditions.",
+        "bg": "Адаптира се към типичните условия на влажност на открито."
+      },
+      "temperature": {
+        "en": "Hardy; most survive Bulgarian winters without protection.",
+        "bg": "Издръжлив; повечето оцеляват bulgarian зимите без защита."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring with slow-release fertilizer.",
+        "bg": "Торете веднъж напролет с бавноосвобождаващ тор."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; some shrubs are toxic to pets.",
+        "bg": "Токсичността варира; някои храсти са токсични за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Philadelphus coronarius",
+    "imageUrl": "https://static.inaturalist.org/photos/79457044/medium.jpg",
+    "commonNameEn": "Mock Orange",
+    "commonNameBg": "Филаделфус",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions worldwide",
+    "nativeRegionBg": "Умерени зони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most flowering shrubs prefer full sun.",
+        "bg": "Пълно слънце до частична сянка; повечето цъфтящи храсти предпочитат пълно слънце."
+      },
+      "watering": {
+        "en": "Water regularly when establishing; drought-tolerant once established.",
+        "bg": "Поливайте редовно при установяване; устойчив на суша след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to typical outdoor humidity conditions.",
+        "bg": "Адаптира се към типичните условия на влажност на открито."
+      },
+      "temperature": {
+        "en": "Hardy; most survive Bulgarian winters without protection.",
+        "bg": "Издръжлив; повечето оцеляват bulgarian зимите без защита."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring with slow-release fertilizer.",
+        "bg": "Торете веднъж напролет с бавноосвобождаващ тор."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; some shrubs are toxic to pets.",
+        "bg": "Токсичността варира; някои храсти са токсични за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Physocarpus opulifolius",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/135237890/medium.jpeg",
+    "commonNameEn": "Ninebark",
+    "commonNameBg": "Фисокарпус",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions worldwide",
+    "nativeRegionBg": "Умерени зони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most flowering shrubs prefer full sun.",
+        "bg": "Пълно слънце до частична сянка; повечето цъфтящи храсти предпочитат пълно слънце."
+      },
+      "watering": {
+        "en": "Water regularly when establishing; drought-tolerant once established.",
+        "bg": "Поливайте редовно при установяване; устойчив на суша след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to typical outdoor humidity conditions.",
+        "bg": "Адаптира се към типичните условия на влажност на открито."
+      },
+      "temperature": {
+        "en": "Hardy; most survive Bulgarian winters without protection.",
+        "bg": "Издръжлив; повечето оцеляват bulgarian зимите без защита."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring with slow-release fertilizer.",
+        "bg": "Торете веднъж напролет с бавноосвобождаващ тор."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; some shrubs are toxic to pets.",
+        "bg": "Токсичността варира; някои храсти са токсични за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Kerria japonica",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/244411204/medium.jpg",
+    "commonNameEn": "Japanese Kerria",
+    "commonNameBg": "Японска керия",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions worldwide",
+    "nativeRegionBg": "Умерени зони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most flowering shrubs prefer full sun.",
+        "bg": "Пълно слънце до частична сянка; повечето цъфтящи храсти предпочитат пълно слънце."
+      },
+      "watering": {
+        "en": "Water regularly when establishing; drought-tolerant once established.",
+        "bg": "Поливайте редовно при установяване; устойчив на суша след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to typical outdoor humidity conditions.",
+        "bg": "Адаптира се към типичните условия на влажност на открито."
+      },
+      "temperature": {
+        "en": "Hardy; most survive Bulgarian winters without protection.",
+        "bg": "Издръжлив; повечето оцеляват bulgarian зимите без защита."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring with slow-release fertilizer.",
+        "bg": "Торете веднъж напролет с бавноосвобождаващ тор."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; some shrubs are toxic to pets.",
+        "bg": "Токсичността варира; някои храсти са токсични за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Chaenomeles speciosa",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/1089240/medium.jpg",
+    "commonNameEn": "Flowering Quince",
+    "commonNameBg": "Хеномелес",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions worldwide",
+    "nativeRegionBg": "Умерени зони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most flowering shrubs prefer full sun.",
+        "bg": "Пълно слънце до частична сянка; повечето цъфтящи храсти предпочитат пълно слънце."
+      },
+      "watering": {
+        "en": "Water regularly when establishing; drought-tolerant once established.",
+        "bg": "Поливайте редовно при установяване; устойчив на суша след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to typical outdoor humidity conditions.",
+        "bg": "Адаптира се към типичните условия на влажност на открито."
+      },
+      "temperature": {
+        "en": "Hardy; most survive Bulgarian winters without protection.",
+        "bg": "Издръжлив; повечето оцеляват bulgarian зимите без защита."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring with slow-release fertilizer.",
+        "bg": "Торете веднъж напролет с бавноосвобождаващ тор."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; some shrubs are toxic to pets.",
+        "bg": "Токсичността варира; някои храсти са токсични за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Pyracantha coccinea",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/334597305/medium.jpeg",
+    "commonNameEn": "Scarlet Firethorn",
+    "commonNameBg": "червена пираканта",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions worldwide",
+    "nativeRegionBg": "Умерени зони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most flowering shrubs prefer full sun.",
+        "bg": "Пълно слънце до частична сянка; повечето цъфтящи храсти предпочитат пълно слънце."
+      },
+      "watering": {
+        "en": "Water regularly when establishing; drought-tolerant once established.",
+        "bg": "Поливайте редовно при установяване; устойчив на суша след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to typical outdoor humidity conditions.",
+        "bg": "Адаптира се към типичните условия на влажност на открито."
+      },
+      "temperature": {
+        "en": "Hardy; most survive Bulgarian winters without protection.",
+        "bg": "Издръжлив; повечето оцеляват bulgarian зимите без защита."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring with slow-release fertilizer.",
+        "bg": "Торете веднъж напролет с бавноосвобождаващ тор."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; some shrubs are toxic to pets.",
+        "bg": "Токсичността варира; някои храсти са токсични за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Ligustrum ovalifolium",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/63213435/medium.jpeg",
+    "commonNameEn": "Garden Privet",
+    "commonNameBg": "Кръглолистно птиче грозде",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions worldwide",
+    "nativeRegionBg": "Умерени зони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most flowering shrubs prefer full sun.",
+        "bg": "Пълно слънце до частична сянка; повечето цъфтящи храсти предпочитат пълно слънце."
+      },
+      "watering": {
+        "en": "Water regularly when establishing; drought-tolerant once established.",
+        "bg": "Поливайте редовно при установяване; устойчив на суша след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to typical outdoor humidity conditions.",
+        "bg": "Адаптира се към типичните условия на влажност на открито."
+      },
+      "temperature": {
+        "en": "Hardy; most survive Bulgarian winters without protection.",
+        "bg": "Издръжлив; повечето оцеляват bulgarian зимите без защита."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring with slow-release fertilizer.",
+        "bg": "Торете веднъж напролет с бавноосвобождаващ тор."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; some shrubs are toxic to pets.",
+        "bg": "Токсичността варира; някои храсти са токсични за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Lonicera nitida",
+    "imageUrl": null,
+    "commonNameEn": "Box-Leaved Honeysuckle",
+    "commonNameBg": "Лоникера",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions worldwide",
+    "nativeRegionBg": "Умерени зони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most flowering shrubs prefer full sun.",
+        "bg": "Пълно слънце до частична сянка; повечето цъфтящи храсти предпочитат пълно слънце."
+      },
+      "watering": {
+        "en": "Water regularly when establishing; drought-tolerant once established.",
+        "bg": "Поливайте редовно при установяване; устойчив на суша след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to typical outdoor humidity conditions.",
+        "bg": "Адаптира се към типичните условия на влажност на открито."
+      },
+      "temperature": {
+        "en": "Hardy; most survive Bulgarian winters without protection.",
+        "bg": "Издръжлив; повечето оцеляват bulgarian зимите без защита."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring with slow-release fertilizer.",
+        "bg": "Торете веднъж напролет с бавноосвобождаващ тор."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; some shrubs are toxic to pets.",
+        "bg": "Токсичността варира; някои храсти са токсични за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Hibiscus syriacus",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/94974/medium.jpg",
+    "commonNameEn": "Rose of Sharon",
+    "commonNameBg": "Дървовидна ружа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Tropical America",
+    "nativeRegionBg": "Тропическа Америка",
+    "careDifficulty": "moderate",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 18,
+    "mistingNeeded": true,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Bright indirect light; avoid direct midday sun.",
+        "bg": "Ярка непряка светлина; избягвайте пряко пладнешко слънце."
+      },
+      "watering": {
+        "en": "Water when top 2–3 cm of soil dry out, every 7–10 days.",
+        "bg": "Поливайте когато горните 2–3 см почва изсъхнат, на 7–10 дни."
+      },
+      "humidity": {
+        "en": "Prefers 50–70% humidity; mist leaves or use a humidifier.",
+        "bg": "Обича 50–70% влажност; пръскайте листата или ползвайте овлажнител."
+      },
+      "temperature": {
+        "en": "Keep at 18–27 °C; protect from cold drafts.",
+        "bg": "Дръжте при 18–27 °C; пазете от студени течения."
+      },
+      "fertilizer": {
+        "en": "Fertilize with liquid fertilizer every 3 weeks during growth.",
+        "bg": "Торете с течен тор на 3 седмици по време на растеж."
+      },
+      "toxicity": {
+        "en": "Check species — many aroids are toxic to pets.",
+        "bg": "Проверете вида — много ароиди са токсични за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Cotinus coggygria",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/136745491/medium.jpg",
+    "commonNameEn": "Smoke Bush",
+    "commonNameBg": "обикновена смрадлика",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions worldwide",
+    "nativeRegionBg": "Умерени зони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most flowering shrubs prefer full sun.",
+        "bg": "Пълно слънце до частична сянка; повечето цъфтящи храсти предпочитат пълно слънце."
+      },
+      "watering": {
+        "en": "Water regularly when establishing; drought-tolerant once established.",
+        "bg": "Поливайте редовно при установяване; устойчив на суша след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to typical outdoor humidity conditions.",
+        "bg": "Адаптира се към типичните условия на влажност на открито."
+      },
+      "temperature": {
+        "en": "Hardy; most survive Bulgarian winters without protection.",
+        "bg": "Издръжлив; повечето оцеляват bulgarian зимите без защита."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring with slow-release fertilizer.",
+        "bg": "Торете веднъж напролет с бавноосвобождаващ тор."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; some shrubs are toxic to pets.",
+        "bg": "Токсичността варира; някои храсти са токсични за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Amelanchier lamarckii",
+    "imageUrl": null,
+    "commonNameEn": "Juneberry",
+    "commonNameBg": "Амеланхиер",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions worldwide",
+    "nativeRegionBg": "Умерени зони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most flowering shrubs prefer full sun.",
+        "bg": "Пълно слънце до частична сянка; повечето цъфтящи храсти предпочитат пълно слънце."
+      },
+      "watering": {
+        "en": "Water regularly when establishing; drought-tolerant once established.",
+        "bg": "Поливайте редовно при установяване; устойчив на суша след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to typical outdoor humidity conditions.",
+        "bg": "Адаптира се към типичните условия на влажност на открито."
+      },
+      "temperature": {
+        "en": "Hardy; most survive Bulgarian winters without protection.",
+        "bg": "Издръжлив; повечето оцеляват bulgarian зимите без защита."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring with slow-release fertilizer.",
+        "bg": "Торете веднъж напролет с бавноосвобождаващ тор."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; some shrubs are toxic to pets.",
+        "bg": "Токсичността варира; някои храсти са токсични за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Caryopteris incana",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/173804914/medium.jpeg",
+    "commonNameEn": "Bluebeard",
+    "commonNameBg": "Кариоптерис",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions worldwide",
+    "nativeRegionBg": "Умерени зони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most flowering shrubs prefer full sun.",
+        "bg": "Пълно слънце до частична сянка; повечето цъфтящи храсти предпочитат пълно слънце."
+      },
+      "watering": {
+        "en": "Water regularly when establishing; drought-tolerant once established.",
+        "bg": "Поливайте редовно при установяване; устойчив на суша след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to typical outdoor humidity conditions.",
+        "bg": "Адаптира се към типичните условия на влажност на открито."
+      },
+      "temperature": {
+        "en": "Hardy; most survive Bulgarian winters without protection.",
+        "bg": "Издръжлив; повечето оцеляват bulgarian зимите без защита."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring with slow-release fertilizer.",
+        "bg": "Торете веднъж напролет с бавноосвобождаващ тор."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; some shrubs are toxic to pets.",
+        "bg": "Токсичността варира; някои храсти са токсични за домашни любимци."
+      }
+    }
   },
   {
     "scientificName": "Magnolia grandiflora",
-    "commonNameEn": "southern magnolia",
     "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/82254330/medium.jpg",
+    "commonNameEn": "Southern Magnolia",
+    "commonNameBg": "Едроцветна магнолия",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions worldwide",
+    "nativeRegionBg": "Умерени зони по целия свят",
     "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
+    "wateringIntervalDays": 10,
+    "fertilizingIntervalDays": 60,
+    "repottingIntervalMonths": 60,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; plant in an open position with at least 6 hours sun.",
+        "bg": "Пълно слънце; засаждайте на открито с поне 6 часа слънце."
+      },
+      "watering": {
+        "en": "Water young trees weekly; established trees are mostly self-sufficient.",
+        "bg": "Поливайте младите дървета седмично; установените дървета са предимно самодостатъчни."
+      },
+      "humidity": {
+        "en": "Adapts to outdoor humidity; tolerates Bulgarian climate.",
+        "bg": "Адаптира се към влажността на открито; понася bulgarski климат."
+      },
+      "temperature": {
+        "en": "Hardy; most ornamental trees tolerate Bulgarian winters.",
+        "bg": "Издръжливи; повечето декоративни дървета понасят bulgarski зими."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in early spring.",
+        "bg": "Торете веднъж в началото на пролетта."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; some trees produce toxic berries or seeds.",
+        "bg": "Токсичността варира; някои дървета произвеждат токсични плодове или семена."
+      }
+    }
   },
   {
-    "scientificName": "Calystegia sepium",
-    "commonNameEn": "hedge bindweed",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/5313410/medium.jpg",
+    "scientificName": "Magnolia stellata",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/66470463/medium.jpg",
+    "commonNameEn": "Star Magnolia",
+    "commonNameBg": "звездна магнолия",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions worldwide",
+    "nativeRegionBg": "Умерени зони по целия свят",
     "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
+    "wateringIntervalDays": 10,
+    "fertilizingIntervalDays": 60,
+    "repottingIntervalMonths": 60,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; plant in an open position with at least 6 hours sun.",
+        "bg": "Пълно слънце; засаждайте на открито с поне 6 часа слънце."
+      },
+      "watering": {
+        "en": "Water young trees weekly; established trees are mostly self-sufficient.",
+        "bg": "Поливайте младите дървета седмично; установените дървета са предимно самодостатъчни."
+      },
+      "humidity": {
+        "en": "Adapts to outdoor humidity; tolerates Bulgarian climate.",
+        "bg": "Адаптира се към влажността на открито; понася bulgarski климат."
+      },
+      "temperature": {
+        "en": "Hardy; most ornamental trees tolerate Bulgarian winters.",
+        "bg": "Издръжливи; повечето декоративни дървета понасят bulgarski зими."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in early spring.",
+        "bg": "Торете веднъж в началото на пролетта."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; some trees produce toxic berries or seeds.",
+        "bg": "Токсичността варира; някои дървета произвеждат токсични плодове или семена."
+      }
+    }
   },
   {
-    "scientificName": "Medicago sativa",
-    "commonNameEn": "Alfalfa",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/604247569/medium.jpg",
+    "scientificName": "Prunus cerasifera",
+    "imageUrl": "https://static.inaturalist.org/photos/62295627/medium.jpg",
+    "commonNameEn": "Cherry Plum",
+    "commonNameBg": "Джанка",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions worldwide",
+    "nativeRegionBg": "Умерени зони по целия свят",
     "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
+    "wateringIntervalDays": 10,
+    "fertilizingIntervalDays": 60,
+    "repottingIntervalMonths": 60,
+    "mistingNeeded": false,
+    "isToxicToPets": true,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; plant in an open position with at least 6 hours sun.",
+        "bg": "Пълно слънце; засаждайте на открито с поне 6 часа слънце."
+      },
+      "watering": {
+        "en": "Water young trees weekly; established trees are mostly self-sufficient.",
+        "bg": "Поливайте младите дървета седмично; установените дървета са предимно самодостатъчни."
+      },
+      "humidity": {
+        "en": "Adapts to outdoor humidity; tolerates Bulgarian climate.",
+        "bg": "Адаптира се към влажността на открито; понася bulgarski климат."
+      },
+      "temperature": {
+        "en": "Hardy; most ornamental trees tolerate Bulgarian winters.",
+        "bg": "Издръжливи; повечето декоративни дървета понасят bulgarski зими."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in early spring.",
+        "bg": "Торете веднъж в началото на пролетта."
+      },
+      "toxicity": {
+        "en": "Toxic to cats and dogs — keep out of reach.",
+        "bg": "Токсично за котки и кучета — пазете от домашни любимци."
+      }
+    }
   },
   {
-    "scientificName": "Conium maculatum",
-    "commonNameEn": "poison hemlock",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/18903781/medium.jpg",
+    "scientificName": "Prunus serrulata",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/90432717/medium.jpeg",
+    "commonNameEn": "Japanese Cherry",
+    "commonNameBg": "Японска вишна",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions worldwide",
+    "nativeRegionBg": "Умерени зони по целия свят",
     "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
+    "wateringIntervalDays": 10,
+    "fertilizingIntervalDays": 60,
+    "repottingIntervalMonths": 60,
+    "mistingNeeded": false,
+    "isToxicToPets": true,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; plant in an open position with at least 6 hours sun.",
+        "bg": "Пълно слънце; засаждайте на открито с поне 6 часа слънце."
+      },
+      "watering": {
+        "en": "Water young trees weekly; established trees are mostly self-sufficient.",
+        "bg": "Поливайте младите дървета седмично; установените дървета са предимно самодостатъчни."
+      },
+      "humidity": {
+        "en": "Adapts to outdoor humidity; tolerates Bulgarian climate.",
+        "bg": "Адаптира се към влажността на открито; понася bulgarski климат."
+      },
+      "temperature": {
+        "en": "Hardy; most ornamental trees tolerate Bulgarian winters.",
+        "bg": "Издръжливи; повечето декоративни дървета понасят bulgarski зими."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in early spring.",
+        "bg": "Торете веднъж в началото на пролетта."
+      },
+      "toxicity": {
+        "en": "Toxic to cats and dogs — keep out of reach.",
+        "bg": "Токсично за котки и кучета — пазете от домашни любимци."
+      }
+    }
   },
   {
-    "scientificName": "Cypripedium acaule",
-    "commonNameEn": "pink lady's slipper",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/353812234/medium.jpeg",
+    "scientificName": "Acer palmatum",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/5641007/medium.jpg",
+    "commonNameEn": "Japanese Maple",
+    "commonNameBg": "японски клен",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions worldwide",
+    "nativeRegionBg": "Умерени зони по целия свят",
     "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
+    "wateringIntervalDays": 10,
+    "fertilizingIntervalDays": 60,
+    "repottingIntervalMonths": 60,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; plant in an open position with at least 6 hours sun.",
+        "bg": "Пълно слънце; засаждайте на открито с поне 6 часа слънце."
+      },
+      "watering": {
+        "en": "Water young trees weekly; established trees are mostly self-sufficient.",
+        "bg": "Поливайте младите дървета седмично; установените дървета са предимно самодостатъчни."
+      },
+      "humidity": {
+        "en": "Adapts to outdoor humidity; tolerates Bulgarian climate.",
+        "bg": "Адаптира се към влажността на открито; понася bulgarski климат."
+      },
+      "temperature": {
+        "en": "Hardy; most ornamental trees tolerate Bulgarian winters.",
+        "bg": "Издръжливи; повечето декоративни дървета понасят bulgarski зими."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in early spring.",
+        "bg": "Торете веднъж в началото на пролетта."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; some trees produce toxic berries or seeds.",
+        "bg": "Токсичността варира; някои дървета произвеждат токсични плодове или семена."
+      }
+    }
   },
   {
-    "scientificName": "Solanum carolinense",
-    "commonNameEn": "Carolina horsenettle",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/232226140/medium.jpg",
+    "scientificName": "Cercis siliquastrum",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/594991963/medium.jpg",
+    "commonNameEn": "Judas Tree",
+    "commonNameBg": "дърво на Юда",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions worldwide",
+    "nativeRegionBg": "Умерени зони по целия свят",
     "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
+    "wateringIntervalDays": 10,
+    "fertilizingIntervalDays": 60,
+    "repottingIntervalMonths": 60,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; plant in an open position with at least 6 hours sun.",
+        "bg": "Пълно слънце; засаждайте на открито с поне 6 часа слънце."
+      },
+      "watering": {
+        "en": "Water young trees weekly; established trees are mostly self-sufficient.",
+        "bg": "Поливайте младите дървета седмично; установените дървета са предимно самодостатъчни."
+      },
+      "humidity": {
+        "en": "Adapts to outdoor humidity; tolerates Bulgarian climate.",
+        "bg": "Адаптира се към влажността на открито; понася bulgarski климат."
+      },
+      "temperature": {
+        "en": "Hardy; most ornamental trees tolerate Bulgarian winters.",
+        "bg": "Издръжливи; повечето декоративни дървета понасят bulgarski зими."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in early spring.",
+        "bg": "Торете веднъж в началото на пролетта."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; some trees produce toxic berries or seeds.",
+        "bg": "Токсичността варира; някои дървета произвеждат токсични плодове или семена."
+      }
+    }
   },
   {
-    "scientificName": "Symphyotrichum novae-angliae",
-    "commonNameEn": "New England aster",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/52293886/medium.jpg",
+    "scientificName": "Betula pendula",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/36257611/medium.jpeg",
+    "commonNameEn": "Silver Birch",
+    "commonNameBg": "Бяла бреза",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions worldwide",
+    "nativeRegionBg": "Умерени зони по целия свят",
     "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
+    "wateringIntervalDays": 10,
+    "fertilizingIntervalDays": 60,
+    "repottingIntervalMonths": 60,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; plant in an open position with at least 6 hours sun.",
+        "bg": "Пълно слънце; засаждайте на открито с поне 6 часа слънце."
+      },
+      "watering": {
+        "en": "Water young trees weekly; established trees are mostly self-sufficient.",
+        "bg": "Поливайте младите дървета седмично; установените дървета са предимно самодостатъчни."
+      },
+      "humidity": {
+        "en": "Adapts to outdoor humidity; tolerates Bulgarian climate.",
+        "bg": "Адаптира се към влажността на открито; понася bulgarski климат."
+      },
+      "temperature": {
+        "en": "Hardy; most ornamental trees tolerate Bulgarian winters.",
+        "bg": "Издръжливи; повечето декоративни дървета понасят bulgarski зими."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in early spring.",
+        "bg": "Торете веднъж в началото на пролетта."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; some trees produce toxic berries or seeds.",
+        "bg": "Токсичността варира; някои дървета произвеждат токсични плодове или семена."
+      }
+    }
   },
   {
-    "scientificName": "Oxalis pes-caprae",
-    "commonNameEn": "Bermuda buttercup",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/454705867/medium.jpg",
+    "scientificName": "Sorbus aucuparia",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/10450/medium.jpg",
+    "commonNameEn": "Mountain Ash",
+    "commonNameBg": "Офика",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions worldwide",
+    "nativeRegionBg": "Умерени зони по целия свят",
     "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
-    "fertilizingIntervalDays": 30,
-    "repottingIntervalMonths": 24,
-    "mistingNeeded": false
+    "wateringIntervalDays": 10,
+    "fertilizingIntervalDays": 60,
+    "repottingIntervalMonths": 60,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; plant in an open position with at least 6 hours sun.",
+        "bg": "Пълно слънце; засаждайте на открито с поне 6 часа слънце."
+      },
+      "watering": {
+        "en": "Water young trees weekly; established trees are mostly self-sufficient.",
+        "bg": "Поливайте младите дървета седмично; установените дървета са предимно самодостатъчни."
+      },
+      "humidity": {
+        "en": "Adapts to outdoor humidity; tolerates Bulgarian climate.",
+        "bg": "Адаптира се към влажността на открито; понася bulgarski климат."
+      },
+      "temperature": {
+        "en": "Hardy; most ornamental trees tolerate Bulgarian winters.",
+        "bg": "Издръжливи; повечето декоративни дървета понасят bulgarski зими."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in early spring.",
+        "bg": "Торете веднъж в началото на пролетта."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; some trees produce toxic berries or seeds.",
+        "bg": "Токсичността варира; някои дървета произвеждат токсични плодове или семена."
+      }
+    }
   },
   {
-    "scientificName": "Impatiens glandulifera",
-    "commonNameEn": "Himalayan balsam",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/1204644/medium.",
+    "scientificName": "Cornus mas",
+    "imageUrl": "https://static.inaturalist.org/photos/48590986/medium.jpeg",
+    "commonNameEn": "Cornelian Cherry",
+    "commonNameBg": "Обикновен дрян",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions worldwide",
+    "nativeRegionBg": "Умерени зони по целия свят",
     "careDifficulty": "easy",
-    "wateringIntervalDays": 14,
+    "wateringIntervalDays": 10,
+    "fertilizingIntervalDays": 60,
+    "repottingIntervalMonths": 60,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; plant in an open position with at least 6 hours sun.",
+        "bg": "Пълно слънце; засаждайте на открито с поне 6 часа слънце."
+      },
+      "watering": {
+        "en": "Water young trees weekly; established trees are mostly self-sufficient.",
+        "bg": "Поливайте младите дървета седмично; установените дървета са предимно самодостатъчни."
+      },
+      "humidity": {
+        "en": "Adapts to outdoor humidity; tolerates Bulgarian climate.",
+        "bg": "Адаптира се към влажността на открито; понася bulgarski климат."
+      },
+      "temperature": {
+        "en": "Hardy; most ornamental trees tolerate Bulgarian winters.",
+        "bg": "Издръжливи; повечето декоративни дървета понасят bulgarski зими."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in early spring.",
+        "bg": "Торете веднъж в началото на пролетта."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; some trees produce toxic berries or seeds.",
+        "bg": "Токсичността варира; някои дървета произвеждат токсични плодове или семена."
+      }
+    }
+  },
+  {
+    "scientificName": "Catalpa bignonioides",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/415075/medium.JPG",
+    "commonNameEn": "Indian Bean Tree",
+    "commonNameBg": "Бигнониевидна каталпа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions worldwide",
+    "nativeRegionBg": "Умерени зони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 10,
+    "fertilizingIntervalDays": 60,
+    "repottingIntervalMonths": 60,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; plant in an open position with at least 6 hours sun.",
+        "bg": "Пълно слънце; засаждайте на открито с поне 6 часа слънце."
+      },
+      "watering": {
+        "en": "Water young trees weekly; established trees are mostly self-sufficient.",
+        "bg": "Поливайте младите дървета седмично; установените дървета са предимно самодостатъчни."
+      },
+      "humidity": {
+        "en": "Adapts to outdoor humidity; tolerates Bulgarian climate.",
+        "bg": "Адаптира се към влажността на открито; понася bulgarski климат."
+      },
+      "temperature": {
+        "en": "Hardy; most ornamental trees tolerate Bulgarian winters.",
+        "bg": "Издръжливи; повечето декоративни дървета понасят bulgarski зими."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in early spring.",
+        "bg": "Торете веднъж в началото на пролетта."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; some trees produce toxic berries or seeds.",
+        "bg": "Токсичността варира; някои дървета произвеждат токсични плодове или семена."
+      }
+    }
+  },
+  {
+    "scientificName": "Salix babylonica",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/21231731/medium.jpeg",
+    "commonNameEn": "Weeping Willow",
+    "commonNameBg": "плачеща върба",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions worldwide",
+    "nativeRegionBg": "Умерени зони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 10,
+    "fertilizingIntervalDays": 60,
+    "repottingIntervalMonths": 60,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; plant in an open position with at least 6 hours sun.",
+        "bg": "Пълно слънце; засаждайте на открито с поне 6 часа слънце."
+      },
+      "watering": {
+        "en": "Water young trees weekly; established trees are mostly self-sufficient.",
+        "bg": "Поливайте младите дървета седмично; установените дървета са предимно самодостатъчни."
+      },
+      "humidity": {
+        "en": "Adapts to outdoor humidity; tolerates Bulgarian climate.",
+        "bg": "Адаптира се към влажността на открито; понася bulgarski климат."
+      },
+      "temperature": {
+        "en": "Hardy; most ornamental trees tolerate Bulgarian winters.",
+        "bg": "Издръжливи; повечето декоративни дървета понасят bulgarski зими."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in early spring.",
+        "bg": "Торете веднъж в началото на пролетта."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; some trees produce toxic berries or seeds.",
+        "bg": "Токсичността варира; някои дървета произвеждат токсични плодове или семена."
+      }
+    }
+  },
+  {
+    "scientificName": "Pyrus communis",
+    "imageUrl": "https://static.inaturalist.org/photos/17253854/medium.jpeg",
+    "commonNameEn": "Common Pear",
+    "commonNameBg": "Питомна круша",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions worldwide",
+    "nativeRegionBg": "Умерени зони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 10,
+    "fertilizingIntervalDays": 60,
+    "repottingIntervalMonths": 60,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; plant in an open position with at least 6 hours sun.",
+        "bg": "Пълно слънце; засаждайте на открито с поне 6 часа слънце."
+      },
+      "watering": {
+        "en": "Water young trees weekly; established trees are mostly self-sufficient.",
+        "bg": "Поливайте младите дървета седмично; установените дървета са предимно самодостатъчни."
+      },
+      "humidity": {
+        "en": "Adapts to outdoor humidity; tolerates Bulgarian climate.",
+        "bg": "Адаптира се към влажността на открито; понася bulgarski климат."
+      },
+      "temperature": {
+        "en": "Hardy; most ornamental trees tolerate Bulgarian winters.",
+        "bg": "Издръжливи; повечето декоративни дървета понасят bulgarski зими."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in early spring.",
+        "bg": "Торете веднъж в началото на пролетта."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; some trees produce toxic berries or seeds.",
+        "bg": "Токсичността варира; някои дървета произвеждат токсични плодове или семена."
+      }
+    }
+  },
+  {
+    "scientificName": "Liriodendron tulipifera",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/867903/medium.jpg",
+    "commonNameEn": "Tulip Tree",
+    "commonNameBg": "Лириодендрон",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions worldwide",
+    "nativeRegionBg": "Умерени зони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 10,
+    "fertilizingIntervalDays": 60,
+    "repottingIntervalMonths": 60,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; plant in an open position with at least 6 hours sun.",
+        "bg": "Пълно слънце; засаждайте на открито с поне 6 часа слънце."
+      },
+      "watering": {
+        "en": "Water young trees weekly; established trees are mostly self-sufficient.",
+        "bg": "Поливайте младите дървета седмично; установените дървета са предимно самодостатъчни."
+      },
+      "humidity": {
+        "en": "Adapts to outdoor humidity; tolerates Bulgarian climate.",
+        "bg": "Адаптира се към влажността на открито; понася bulgarski климат."
+      },
+      "temperature": {
+        "en": "Hardy; most ornamental trees tolerate Bulgarian winters.",
+        "bg": "Издръжливи; повечето декоративни дървета понасят bulgarski зими."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in early spring.",
+        "bg": "Торете веднъж в началото на пролетта."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; some trees produce toxic berries or seeds.",
+        "bg": "Токсичността варира; някои дървета произвеждат токсични плодове или семена."
+      }
+    }
+  },
+  {
+    "scientificName": "Robinia pseudoacacia",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/37431398/medium.jpeg",
+    "commonNameEn": "Black Locust",
+    "commonNameBg": "Бял салкъм",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions worldwide",
+    "nativeRegionBg": "Умерени зони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 10,
+    "fertilizingIntervalDays": 60,
+    "repottingIntervalMonths": 60,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; plant in an open position with at least 6 hours sun.",
+        "bg": "Пълно слънце; засаждайте на открито с поне 6 часа слънце."
+      },
+      "watering": {
+        "en": "Water young trees weekly; established trees are mostly self-sufficient.",
+        "bg": "Поливайте младите дървета седмично; установените дървета са предимно самодостатъчни."
+      },
+      "humidity": {
+        "en": "Adapts to outdoor humidity; tolerates Bulgarian climate.",
+        "bg": "Адаптира се към влажността на открито; понася bulgarski климат."
+      },
+      "temperature": {
+        "en": "Hardy; most ornamental trees tolerate Bulgarian winters.",
+        "bg": "Издръжливи; повечето декоративни дървета понасят bulgarski зими."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in early spring.",
+        "bg": "Торете веднъж в началото на пролетта."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; some trees produce toxic berries or seeds.",
+        "bg": "Токсичността варира; някои дървета произвеждат токсични плодове или семена."
+      }
+    }
+  },
+  {
+    "scientificName": "Paulownia tomentosa",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/118596314/medium.jpeg",
+    "commonNameEn": "Empress Tree",
+    "commonNameBg": "Пауловниа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions worldwide",
+    "nativeRegionBg": "Умерени зони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 10,
+    "fertilizingIntervalDays": 60,
+    "repottingIntervalMonths": 60,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; plant in an open position with at least 6 hours sun.",
+        "bg": "Пълно слънце; засаждайте на открито с поне 6 часа слънце."
+      },
+      "watering": {
+        "en": "Water young trees weekly; established trees are mostly self-sufficient.",
+        "bg": "Поливайте младите дървета седмично; установените дървета са предимно самодостатъчни."
+      },
+      "humidity": {
+        "en": "Adapts to outdoor humidity; tolerates Bulgarian climate.",
+        "bg": "Адаптира се към влажността на открито; понася bulgarski климат."
+      },
+      "temperature": {
+        "en": "Hardy; most ornamental trees tolerate Bulgarian winters.",
+        "bg": "Издръжливи; повечето декоративни дървета понасят bulgarski зими."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in early spring.",
+        "bg": "Торете веднъж в началото на пролетта."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; some trees produce toxic berries or seeds.",
+        "bg": "Токсичността варира; някои дървета произвеждат токсични плодове или семена."
+      }
+    }
+  },
+  {
+    "scientificName": "Wisteria sinensis",
+    "imageUrl": "https://static.inaturalist.org/photos/481476468/medium.jpeg",
+    "commonNameEn": "Chinese Wisteria",
+    "commonNameBg": "Китайска глициния",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate and subtropical regions",
+    "nativeRegionBg": "Умерени и субтропични региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": true,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most climbers prefer a sunny position.",
+        "bg": "Пълно слънце до частична сянка; повечето катерливи предпочитат слънчево място."
+      },
+      "watering": {
+        "en": "Water weekly during dry periods; established plants are fairly drought-tolerant.",
+        "bg": "Поливайте седмично в сухи периоди; установените растения са сравнително устойчиви на суша."
+      },
+      "humidity": {
+        "en": "Tolerates average outdoor humidity.",
+        "bg": "Понася средна влажност на открито."
+      },
+      "temperature": {
+        "en": "Most are hardy; protect young plants from hard frosts.",
+        "bg": "Повечето са издръжливи; пазете младите растения от силни замръзвания."
+      },
+      "fertilizer": {
+        "en": "Fertilize in spring and midsummer.",
+        "bg": "Торете напролет и в средата на лятото."
+      },
+      "toxicity": {
+        "en": "Toxic to cats and dogs — keep out of reach.",
+        "bg": "Токсично за котки и кучета — пазете от домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Clematis vitalba",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/218591388/medium.jpeg",
+    "commonNameEn": "Old Man's Beard Clematis",
+    "commonNameBg": "Обикновен повет",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate and subtropical regions",
+    "nativeRegionBg": "Умерени и субтропични региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most climbers prefer a sunny position.",
+        "bg": "Пълно слънце до частична сянка; повечето катерливи предпочитат слънчево място."
+      },
+      "watering": {
+        "en": "Water weekly during dry periods; established plants are fairly drought-tolerant.",
+        "bg": "Поливайте седмично в сухи периоди; установените растения са сравнително устойчиви на суша."
+      },
+      "humidity": {
+        "en": "Tolerates average outdoor humidity.",
+        "bg": "Понася средна влажност на открито."
+      },
+      "temperature": {
+        "en": "Most are hardy; protect young plants from hard frosts.",
+        "bg": "Повечето са издръжливи; пазете младите растения от силни замръзвания."
+      },
+      "fertilizer": {
+        "en": "Fertilize in spring and midsummer.",
+        "bg": "Торете напролет и в средата на лятото."
+      },
+      "toxicity": {
+        "en": "Toxicity varies by species.",
+        "bg": "Токсичността варира по вид."
+      }
+    }
+  },
+  {
+    "scientificName": "Clematis montana",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/315770182/medium.jpeg",
+    "commonNameEn": "Mountain Clematis",
+    "commonNameBg": "планински повет",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate and subtropical regions",
+    "nativeRegionBg": "Умерени и субтропични региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most climbers prefer a sunny position.",
+        "bg": "Пълно слънце до частична сянка; повечето катерливи предпочитат слънчево място."
+      },
+      "watering": {
+        "en": "Water weekly during dry periods; established plants are fairly drought-tolerant.",
+        "bg": "Поливайте седмично в сухи периоди; установените растения са сравнително устойчиви на суша."
+      },
+      "humidity": {
+        "en": "Tolerates average outdoor humidity.",
+        "bg": "Понася средна влажност на открито."
+      },
+      "temperature": {
+        "en": "Most are hardy; protect young plants from hard frosts.",
+        "bg": "Повечето са издръжливи; пазете младите растения от силни замръзвания."
+      },
+      "fertilizer": {
+        "en": "Fertilize in spring and midsummer.",
+        "bg": "Торете напролет и в средата на лятото."
+      },
+      "toxicity": {
+        "en": "Toxicity varies by species.",
+        "bg": "Токсичността варира по вид."
+      }
+    }
+  },
+  {
+    "scientificName": "Clematis jackmanii",
+    "imageUrl": null,
+    "commonNameEn": "Jackman Clematis",
+    "commonNameBg": "Клематис",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate and subtropical regions",
+    "nativeRegionBg": "Умерени и субтропични региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most climbers prefer a sunny position.",
+        "bg": "Пълно слънце до частична сянка; повечето катерливи предпочитат слънчево място."
+      },
+      "watering": {
+        "en": "Water weekly during dry periods; established plants are fairly drought-tolerant.",
+        "bg": "Поливайте седмично в сухи периоди; установените растения са сравнително устойчиви на суша."
+      },
+      "humidity": {
+        "en": "Tolerates average outdoor humidity.",
+        "bg": "Понася средна влажност на открито."
+      },
+      "temperature": {
+        "en": "Most are hardy; protect young plants from hard frosts.",
+        "bg": "Повечето са издръжливи; пазете младите растения от силни замръзвания."
+      },
+      "fertilizer": {
+        "en": "Fertilize in spring and midsummer.",
+        "bg": "Торете напролет и в средата на лятото."
+      },
+      "toxicity": {
+        "en": "Toxicity varies by species.",
+        "bg": "Токсичността варира по вид."
+      }
+    }
+  },
+  {
+    "scientificName": "Jasminum officinale",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/185690403/medium.jpg",
+    "commonNameEn": "Common Jasmine",
+    "commonNameBg": "бял жасмин",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate and subtropical regions",
+    "nativeRegionBg": "Умерени и субтропични региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most climbers prefer a sunny position.",
+        "bg": "Пълно слънце до частична сянка; повечето катерливи предпочитат слънчево място."
+      },
+      "watering": {
+        "en": "Water weekly during dry periods; established plants are fairly drought-tolerant.",
+        "bg": "Поливайте седмично в сухи периоди; установените растения са сравнително устойчиви на суша."
+      },
+      "humidity": {
+        "en": "Tolerates average outdoor humidity.",
+        "bg": "Понася средна влажност на открито."
+      },
+      "temperature": {
+        "en": "Most are hardy; protect young plants from hard frosts.",
+        "bg": "Повечето са издръжливи; пазете младите растения от силни замръзвания."
+      },
+      "fertilizer": {
+        "en": "Fertilize in spring and midsummer.",
+        "bg": "Торете напролет и в средата на лятото."
+      },
+      "toxicity": {
+        "en": "Toxicity varies by species.",
+        "bg": "Токсичността варира по вид."
+      }
+    }
+  },
+  {
+    "scientificName": "Jasminum nudiflorum",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/361222488/medium.jpeg",
+    "commonNameEn": "Winter Jasmine",
+    "commonNameBg": "Йасминум",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate and subtropical regions",
+    "nativeRegionBg": "Умерени и субтропични региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most climbers prefer a sunny position.",
+        "bg": "Пълно слънце до частична сянка; повечето катерливи предпочитат слънчево място."
+      },
+      "watering": {
+        "en": "Water weekly during dry periods; established plants are fairly drought-tolerant.",
+        "bg": "Поливайте седмично в сухи периоди; установените растения са сравнително устойчиви на суша."
+      },
+      "humidity": {
+        "en": "Tolerates average outdoor humidity.",
+        "bg": "Понася средна влажност на открито."
+      },
+      "temperature": {
+        "en": "Most are hardy; protect young plants from hard frosts.",
+        "bg": "Повечето са издръжливи; пазете младите растения от силни замръзвания."
+      },
+      "fertilizer": {
+        "en": "Fertilize in spring and midsummer.",
+        "bg": "Торете напролет и в средата на лятото."
+      },
+      "toxicity": {
+        "en": "Toxicity varies by species.",
+        "bg": "Токсичността варира по вид."
+      }
+    }
+  },
+  {
+    "scientificName": "Lonicera japonica",
+    "imageUrl": "https://static.inaturalist.org/photos/13558833/medium.jpeg",
+    "commonNameEn": "Japanese Honeysuckle",
+    "commonNameBg": "Лоникера",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions worldwide",
+    "nativeRegionBg": "Умерени зони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most flowering shrubs prefer full sun.",
+        "bg": "Пълно слънце до частична сянка; повечето цъфтящи храсти предпочитат пълно слънце."
+      },
+      "watering": {
+        "en": "Water regularly when establishing; drought-tolerant once established.",
+        "bg": "Поливайте редовно при установяване; устойчив на суша след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to typical outdoor humidity conditions.",
+        "bg": "Адаптира се към типичните условия на влажност на открито."
+      },
+      "temperature": {
+        "en": "Hardy; most survive Bulgarian winters without protection.",
+        "bg": "Издръжлив; повечето оцеляват bulgarian зимите без защита."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring with slow-release fertilizer.",
+        "bg": "Торете веднъж напролет с бавноосвобождаващ тор."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; some shrubs are toxic to pets.",
+        "bg": "Токсичността варира; някои храсти са токсични за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Lonicera periclymenum",
+    "imageUrl": "https://static.inaturalist.org/photos/78836578/medium.jpg",
+    "commonNameEn": "European Honeysuckle",
+    "commonNameBg": "Лоникера",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions worldwide",
+    "nativeRegionBg": "Умерени зони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most flowering shrubs prefer full sun.",
+        "bg": "Пълно слънце до частична сянка; повечето цъфтящи храсти предпочитат пълно слънце."
+      },
+      "watering": {
+        "en": "Water regularly when establishing; drought-tolerant once established.",
+        "bg": "Поливайте редовно при установяване; устойчив на суша след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to typical outdoor humidity conditions.",
+        "bg": "Адаптира се към типичните условия на влажност на открито."
+      },
+      "temperature": {
+        "en": "Hardy; most survive Bulgarian winters without protection.",
+        "bg": "Издръжлив; повечето оцеляват bulgarian зимите без защита."
+      },
+      "fertilizer": {
+        "en": "Fertilize once in spring with slow-release fertilizer.",
+        "bg": "Торете веднъж напролет с бавноосвобождаващ тор."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; some shrubs are toxic to pets.",
+        "bg": "Токсичността варира; някои храсти са токсични за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Passiflora caerulea",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/40082393/medium.jpg",
+    "commonNameEn": "Blue Passionflower",
+    "commonNameBg": "синя пасифлора",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate and subtropical regions",
+    "nativeRegionBg": "Умерени и субтропични региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most climbers prefer a sunny position.",
+        "bg": "Пълно слънце до частична сянка; повечето катерливи предпочитат слънчево място."
+      },
+      "watering": {
+        "en": "Water weekly during dry periods; established plants are fairly drought-tolerant.",
+        "bg": "Поливайте седмично в сухи периоди; установените растения са сравнително устойчиви на суша."
+      },
+      "humidity": {
+        "en": "Tolerates average outdoor humidity.",
+        "bg": "Понася средна влажност на открито."
+      },
+      "temperature": {
+        "en": "Most are hardy; protect young plants from hard frosts.",
+        "bg": "Повечето са издръжливи; пазете младите растения от силни замръзвания."
+      },
+      "fertilizer": {
+        "en": "Fertilize in spring and midsummer.",
+        "bg": "Торете напролет и в средата на лятото."
+      },
+      "toxicity": {
+        "en": "Toxicity varies by species.",
+        "bg": "Токсичността варира по вид."
+      }
+    }
+  },
+  {
+    "scientificName": "Campsis radicans",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/7300976/medium.jpeg",
+    "commonNameEn": "Trumpet Vine",
+    "commonNameBg": "Кампсис",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate and subtropical regions",
+    "nativeRegionBg": "Умерени и субтропични региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most climbers prefer a sunny position.",
+        "bg": "Пълно слънце до частична сянка; повечето катерливи предпочитат слънчево място."
+      },
+      "watering": {
+        "en": "Water weekly during dry periods; established plants are fairly drought-tolerant.",
+        "bg": "Поливайте седмично в сухи периоди; установените растения са сравнително устойчиви на суша."
+      },
+      "humidity": {
+        "en": "Tolerates average outdoor humidity.",
+        "bg": "Понася средна влажност на открито."
+      },
+      "temperature": {
+        "en": "Most are hardy; protect young plants from hard frosts.",
+        "bg": "Повечето са издръжливи; пазете младите растения от силни замръзвания."
+      },
+      "fertilizer": {
+        "en": "Fertilize in spring and midsummer.",
+        "bg": "Торете напролет и в средата на лятото."
+      },
+      "toxicity": {
+        "en": "Toxicity varies by species.",
+        "bg": "Токсичността варира по вид."
+      }
+    }
+  },
+  {
+    "scientificName": "Parthenocissus tricuspidata",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/161427647/medium.jpeg",
+    "commonNameEn": "Boston Ivy",
+    "commonNameBg": "Партенокиссус",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate and subtropical regions",
+    "nativeRegionBg": "Умерени и субтропични региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most climbers prefer a sunny position.",
+        "bg": "Пълно слънце до частична сянка; повечето катерливи предпочитат слънчево място."
+      },
+      "watering": {
+        "en": "Water weekly during dry periods; established plants are fairly drought-tolerant.",
+        "bg": "Поливайте седмично в сухи периоди; установените растения са сравнително устойчиви на суша."
+      },
+      "humidity": {
+        "en": "Tolerates average outdoor humidity.",
+        "bg": "Понася средна влажност на открито."
+      },
+      "temperature": {
+        "en": "Most are hardy; protect young plants from hard frosts.",
+        "bg": "Повечето са издръжливи; пазете младите растения от силни замръзвания."
+      },
+      "fertilizer": {
+        "en": "Fertilize in spring and midsummer.",
+        "bg": "Торете напролет и в средата на лятото."
+      },
+      "toxicity": {
+        "en": "Toxicity varies by species.",
+        "bg": "Токсичността варира по вид."
+      }
+    }
+  },
+  {
+    "scientificName": "Humulus lupulus",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/16500/medium.jpg",
+    "commonNameEn": "Common Hop",
+    "commonNameBg": "обикновен хмел",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate and subtropical regions",
+    "nativeRegionBg": "Умерени и субтропични региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most climbers prefer a sunny position.",
+        "bg": "Пълно слънце до частична сянка; повечето катерливи предпочитат слънчево място."
+      },
+      "watering": {
+        "en": "Water weekly during dry periods; established plants are fairly drought-tolerant.",
+        "bg": "Поливайте седмично в сухи периоди; установените растения са сравнително устойчиви на суша."
+      },
+      "humidity": {
+        "en": "Tolerates average outdoor humidity.",
+        "bg": "Понася средна влажност на открито."
+      },
+      "temperature": {
+        "en": "Most are hardy; protect young plants from hard frosts.",
+        "bg": "Повечето са издръжливи; пазете младите растения от силни замръзвания."
+      },
+      "fertilizer": {
+        "en": "Fertilize in spring and midsummer.",
+        "bg": "Торете напролет и в средата на лятото."
+      },
+      "toxicity": {
+        "en": "Toxicity varies by species.",
+        "bg": "Токсичността варира по вид."
+      }
+    }
+  },
+  {
+    "scientificName": "Lathyrus latifolius",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/522746705/medium.jpg",
+    "commonNameEn": "Everlasting Sweet Pea",
+    "commonNameBg": "широколистно секирче",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Various worldwide regions",
+    "nativeRegionBg": "Различни региони по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 3,
+    "fertilizingIntervalDays": 14,
+    "repottingIntervalMonths": 6,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most prefer 6+ hours of sun.",
+        "bg": "Пълно слънце до частична сянка; повечето предпочитат 6+ часа слънце."
+      },
+      "watering": {
+        "en": "Water regularly every 2–4 days; do not let soil dry completely.",
+        "bg": "Поливайте редовно на 2–4 дни; не оставяйте почвата да изсъхне напълно."
+      },
+      "humidity": {
+        "en": "Adapts to normal outdoor humidity.",
+        "bg": "Адаптира се към нормалната влажност на открито."
+      },
+      "temperature": {
+        "en": "Plant after frost; most grow well at 15–28 °C.",
+        "bg": "Засаждайте след замръзването; повечето растат добре при 15–28 °C."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 2 weeks with flowering plant fertilizer.",
+        "bg": "Торете на 2 седмици с тор за цъфтящи растения."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; keep pets from eating flowering plants.",
+        "bg": "Токсичността варира; пазете домашни любимци от яденето на цъфтящи растения."
+      }
+    }
+  },
+  {
+    "scientificName": "Actinidia deliciosa",
+    "imageUrl": null,
+    "commonNameEn": "Kiwi Vine",
+    "commonNameBg": "киви",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate and subtropical regions",
+    "nativeRegionBg": "Умерени и субтропични региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most climbers prefer a sunny position.",
+        "bg": "Пълно слънце до частична сянка; повечето катерливи предпочитат слънчево място."
+      },
+      "watering": {
+        "en": "Water weekly during dry periods; established plants are fairly drought-tolerant.",
+        "bg": "Поливайте седмично в сухи периоди; установените растения са сравнително устойчиви на суша."
+      },
+      "humidity": {
+        "en": "Tolerates average outdoor humidity.",
+        "bg": "Понася средна влажност на открито."
+      },
+      "temperature": {
+        "en": "Most are hardy; protect young plants from hard frosts.",
+        "bg": "Повечето са издръжливи; пазете младите растения от силни замръзвания."
+      },
+      "fertilizer": {
+        "en": "Fertilize in spring and midsummer.",
+        "bg": "Торете напролет и в средата на лятото."
+      },
+      "toxicity": {
+        "en": "Toxicity varies by species.",
+        "bg": "Токсичността варира по вид."
+      }
+    }
+  },
+  {
+    "scientificName": "Aristolochia macrophylla",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/113548878/medium.jpeg",
+    "commonNameEn": "Dutchman's Pipe",
+    "commonNameBg": "Аристолохиа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate and subtropical regions",
+    "nativeRegionBg": "Умерени и субтропични региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most climbers prefer a sunny position.",
+        "bg": "Пълно слънце до частична сянка; повечето катерливи предпочитат слънчево място."
+      },
+      "watering": {
+        "en": "Water weekly during dry periods; established plants are fairly drought-tolerant.",
+        "bg": "Поливайте седмично в сухи периоди; установените растения са сравнително устойчиви на суша."
+      },
+      "humidity": {
+        "en": "Tolerates average outdoor humidity.",
+        "bg": "Понася средна влажност на открито."
+      },
+      "temperature": {
+        "en": "Most are hardy; protect young plants from hard frosts.",
+        "bg": "Повечето са издръжливи; пазете младите растения от силни замръзвания."
+      },
+      "fertilizer": {
+        "en": "Fertilize in spring and midsummer.",
+        "bg": "Торете напролет и в средата на лятото."
+      },
+      "toxicity": {
+        "en": "Toxicity varies by species.",
+        "bg": "Токсичността варира по вид."
+      }
+    }
+  },
+  {
+    "scientificName": "Nymphaea alba",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/2016_Kwiat_grzybieni_bia%C5%82ych_2.jpg/960px-2016_Kwiat_grzybieni_bia%C5%82ych_2.jpg",
+    "commonNameEn": "White Water Lily",
+    "commonNameBg": "бяла водна лилия",
+    "descriptionEn": "Nymphaea alba – commonly called the white water lily, European white water lily, or white nenuphar ( NEN-yuu-far) – is an aquatic flowering plant in the family Nymphaeaceae. It is native to North Africa, temperate Asia, Europe, and tropical Asia (Jammu and Kashmir). Since Nymphaea alba is an aquatic plant, its specialized trichomes are hydropotes, formed at an abaxial surface of the young leaf and packed tightly in the rosette at the rhizome's flattened apex.",
+    "descriptionBg": "Бялата водна лилия (Nymphaea alba) е вид растение от семейство Водни лилии (Nymphaeaceae).",
+    "family": null,
+    "nativeRegionEn": "Freshwater habitats worldwide",
+    "nativeRegionBg": "Сладководни местообитания по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 1,
     "fertilizingIntervalDays": 30,
     "repottingIntervalMonths": 24,
-    "mistingNeeded": false
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade depending on species.",
+        "bg": "Пълно слънце до частична сянка в зависимост от вида."
+      },
+      "watering": {
+        "en": "Grow in water or permanently moist soil.",
+        "bg": "Отглеждайте във вода или постоянно влажна почва."
+      },
+      "humidity": {
+        "en": "High humidity naturally present in aquatic environment.",
+        "bg": "Висока влажност е естествено присъща на водната среда."
+      },
+      "temperature": {
+        "en": "Most water plants prefer 15–28 °C water temperature.",
+        "bg": "Повечето водни растения предпочитат 15–28 °C температура на водата."
+      },
+      "fertilizer": {
+        "en": "Use aquatic plant fertilizer tablets monthly.",
+        "bg": "Използвайте таблетки тор за водни растения месечно."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; check before adding to ponds with fish or pets.",
+        "bg": "Токсичността варира; проверете преди добавяне в езерца с риби или домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Nuphar lutea",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Nuphar_lutea_%28Detail%29_24072005-1.jpg/960px-Nuphar_lutea_%28Detail%29_24072005-1.jpg",
+    "commonNameEn": "Yellow Pond Lily",
+    "commonNameBg": "жълта водна лилия",
+    "descriptionEn": "Nuphar lutea, the yellow water-lily, is an aquatic plant of the family Nymphaeaceae, native to northern temperate and some subtropical regions of Europe, northwest Africa, and western Asia. This species was used as a food source and in medicinal practices from prehistoric times with potential research and medical applications going forward.",
+    "descriptionBg": "Жълтата водна лилия, още жълта водна роза (Nuphar lutea) е вид многогодишно, покритосеменно водно растение от семейство Водни лилии (Nymphaeaceae).",
+    "family": null,
+    "nativeRegionEn": "Freshwater habitats worldwide",
+    "nativeRegionBg": "Сладководни местообитания по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 1,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade depending on species.",
+        "bg": "Пълно слънце до частична сянка в зависимост от вида."
+      },
+      "watering": {
+        "en": "Grow in water or permanently moist soil.",
+        "bg": "Отглеждайте във вода или постоянно влажна почва."
+      },
+      "humidity": {
+        "en": "High humidity naturally present in aquatic environment.",
+        "bg": "Висока влажност е естествено присъща на водната среда."
+      },
+      "temperature": {
+        "en": "Most water plants prefer 15–28 °C water temperature.",
+        "bg": "Повечето водни растения предпочитат 15–28 °C температура на водата."
+      },
+      "fertilizer": {
+        "en": "Use aquatic plant fertilizer tablets monthly.",
+        "bg": "Използвайте таблетки тор за водни растения месечно."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; check before adding to ponds with fish or pets.",
+        "bg": "Токсичността варира; проверете преди добавяне в езерца с риби или домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Iris pseudacorus",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Iris_pseudacorus_iris_des_marais.jpg/960px-Iris_pseudacorus_iris_des_marais.jpg",
+    "commonNameEn": "Yellow Flag Iris",
+    "commonNameBg": "блатна перуника",
+    "descriptionEn": "Iris pseudacorus, the yellow flag, yellow iris, or water flag, is a species of flowering plant in the family Iridaceae. It is native to Europe, western Asia and northwest Africa. Its specific epithet pseudacorus means \"false acorus\", referring to the similarity of its leaves to those of Acorus calamus (sweet flag), as they have a prominently veined mid-rib and sword-like shape.",
+    "descriptionBg": "Блатна перуника (Iris pseudacorus) е растение от семейство Перуникови. Среща се и в България.",
+    "family": null,
+    "nativeRegionEn": "Temperate regions of Europe and Asia",
+    "nativeRegionBg": "Умерени зони на Европа и Азия",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 7,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": false,
+    "isToxicToPets": true,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; plant in an open, sunny position.",
+        "bg": "Пълно слънце; засаждайте на открито, слънчево място."
+      },
+      "watering": {
+        "en": "Water regularly during growth; reduce after foliage dies back.",
+        "bg": "Поливайте редовно по време на растеж; намалете след отмирането на листата."
+      },
+      "humidity": {
+        "en": "Average humidity; good drainage prevents bulb rot.",
+        "bg": "Средна влажност; добър дренаж предотвратява гниенето на луковиците."
+      },
+      "temperature": {
+        "en": "Hardy; bulbs require a cold period to bloom the following year.",
+        "bg": "Издръжливо; луковиците се нуждаят от студен период за цъфтеж следващата година."
+      },
+      "fertilizer": {
+        "en": "Fertilize with bulb fertilizer in autumn and when in growth.",
+        "bg": "Торете с тор за луковици есента и по време на растеж."
+      },
+      "toxicity": {
+        "en": "Toxic to cats and dogs — keep out of reach.",
+        "bg": "Токсично за котки и кучета — пазете от домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Typha latifolia",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Bulrush_%28Typha_latifolia%29_%288139113636%29.jpg/960px-Bulrush_%28Typha_latifolia%29_%288139113636%29.jpg",
+    "commonNameEn": "Common Cattail",
+    "commonNameBg": "широколистен папур",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Freshwater habitats worldwide",
+    "nativeRegionBg": "Сладководни местообитания по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 1,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade depending on species.",
+        "bg": "Пълно слънце до частична сянка в зависимост от вида."
+      },
+      "watering": {
+        "en": "Grow in water or permanently moist soil.",
+        "bg": "Отглеждайте във вода или постоянно влажна почва."
+      },
+      "humidity": {
+        "en": "High humidity naturally present in aquatic environment.",
+        "bg": "Висока влажност е естествено присъща на водната среда."
+      },
+      "temperature": {
+        "en": "Most water plants prefer 15–28 °C water temperature.",
+        "bg": "Повечето водни растения предпочитат 15–28 °C температура на водата."
+      },
+      "fertilizer": {
+        "en": "Use aquatic plant fertilizer tablets monthly.",
+        "bg": "Използвайте таблетки тор за водни растения месечно."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; check before adding to ponds with fish or pets.",
+        "bg": "Токсичността варира; проверете преди добавяне в езерца с риби или домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Pontederia cordata",
+    "imageUrl": "https://static.inaturalist.org/photos/20738067/medium.jpg",
+    "commonNameEn": "Pickerelweed",
+    "commonNameBg": "Понтедериа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Freshwater habitats worldwide",
+    "nativeRegionBg": "Сладководни местообитания по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 1,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade depending on species.",
+        "bg": "Пълно слънце до частична сянка в зависимост от вида."
+      },
+      "watering": {
+        "en": "Grow in water or permanently moist soil.",
+        "bg": "Отглеждайте във вода или постоянно влажна почва."
+      },
+      "humidity": {
+        "en": "High humidity naturally present in aquatic environment.",
+        "bg": "Висока влажност е естествено присъща на водната среда."
+      },
+      "temperature": {
+        "en": "Most water plants prefer 15–28 °C water temperature.",
+        "bg": "Повечето водни растения предпочитат 15–28 °C температура на водата."
+      },
+      "fertilizer": {
+        "en": "Use aquatic plant fertilizer tablets monthly.",
+        "bg": "Използвайте таблетки тор за водни растения месечно."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; check before adding to ponds with fish or pets.",
+        "bg": "Токсичността варира; проверете преди добавяне в езерца с риби или домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Sagittaria sagittifolia",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/32342151/medium.jpeg",
+    "commonNameEn": "Arrowhead Plant",
+    "commonNameBg": "обикновен стрелолист",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Freshwater habitats worldwide",
+    "nativeRegionBg": "Сладководни местообитания по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 1,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade depending on species.",
+        "bg": "Пълно слънце до частична сянка в зависимост от вида."
+      },
+      "watering": {
+        "en": "Grow in water or permanently moist soil.",
+        "bg": "Отглеждайте във вода или постоянно влажна почва."
+      },
+      "humidity": {
+        "en": "High humidity naturally present in aquatic environment.",
+        "bg": "Висока влажност е естествено присъща на водната среда."
+      },
+      "temperature": {
+        "en": "Most water plants prefer 15–28 °C water temperature.",
+        "bg": "Повечето водни растения предпочитат 15–28 °C температура на водата."
+      },
+      "fertilizer": {
+        "en": "Use aquatic plant fertilizer tablets monthly.",
+        "bg": "Използвайте таблетки тор за водни растения месечно."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; check before adding to ponds with fish or pets.",
+        "bg": "Токсичността варира; проверете преди добавяне в езерца с риби или домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Caltha palustris",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/324010734/medium.jpeg",
+    "commonNameEn": "Marsh Marigold",
+    "commonNameBg": "обикновен блатняк",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Freshwater habitats worldwide",
+    "nativeRegionBg": "Сладководни местообитания по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 1,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade depending on species.",
+        "bg": "Пълно слънце до частична сянка в зависимост от вида."
+      },
+      "watering": {
+        "en": "Grow in water or permanently moist soil.",
+        "bg": "Отглеждайте във вода или постоянно влажна почва."
+      },
+      "humidity": {
+        "en": "High humidity naturally present in aquatic environment.",
+        "bg": "Висока влажност е естествено присъща на водната среда."
+      },
+      "temperature": {
+        "en": "Most water plants prefer 15–28 °C water temperature.",
+        "bg": "Повечето водни растения предпочитат 15–28 °C температура на водата."
+      },
+      "fertilizer": {
+        "en": "Use aquatic plant fertilizer tablets monthly.",
+        "bg": "Използвайте таблетки тор за водни растения месечно."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; check before adding to ponds with fish or pets.",
+        "bg": "Токсичността варира; проверете преди добавяне в езерца с риби или домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Nelumbo nucifera",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/116385724/medium.jpeg",
+    "commonNameEn": "Sacred Lotus",
+    "commonNameBg": "Индийски лотос",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Freshwater habitats worldwide",
+    "nativeRegionBg": "Сладководни местообитания по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 1,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade depending on species.",
+        "bg": "Пълно слънце до частична сянка в зависимост от вида."
+      },
+      "watering": {
+        "en": "Grow in water or permanently moist soil.",
+        "bg": "Отглеждайте във вода или постоянно влажна почва."
+      },
+      "humidity": {
+        "en": "High humidity naturally present in aquatic environment.",
+        "bg": "Висока влажност е естествено присъща на водната среда."
+      },
+      "temperature": {
+        "en": "Most water plants prefer 15–28 °C water temperature.",
+        "bg": "Повечето водни растения предпочитат 15–28 °C температура на водата."
+      },
+      "fertilizer": {
+        "en": "Use aquatic plant fertilizer tablets monthly.",
+        "bg": "Използвайте таблетки тор за водни растения месечно."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; check before adding to ponds with fish or pets.",
+        "bg": "Токсичността варира; проверете преди добавяне в езерца с риби или домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Eichhornia crassipes",
+    "imageUrl": null,
+    "commonNameEn": "Water Hyacinth",
+    "commonNameBg": "воден хиацинт",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Freshwater habitats worldwide",
+    "nativeRegionBg": "Сладководни местообитания по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 1,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade depending on species.",
+        "bg": "Пълно слънце до частична сянка в зависимост от вида."
+      },
+      "watering": {
+        "en": "Grow in water or permanently moist soil.",
+        "bg": "Отглеждайте във вода или постоянно влажна почва."
+      },
+      "humidity": {
+        "en": "High humidity naturally present in aquatic environment.",
+        "bg": "Висока влажност е естествено присъща на водната среда."
+      },
+      "temperature": {
+        "en": "Most water plants prefer 15–28 °C water temperature.",
+        "bg": "Повечето водни растения предпочитат 15–28 °C температура на водата."
+      },
+      "fertilizer": {
+        "en": "Use aquatic plant fertilizer tablets monthly.",
+        "bg": "Използвайте таблетки тор за водни растения месечно."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; check before adding to ponds with fish or pets.",
+        "bg": "Токсичността варира; проверете преди добавяне в езерца с риби или домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Pistia stratiotes",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/309359974/medium.jpeg",
+    "commonNameEn": "Water Lettuce",
+    "commonNameBg": "мидено цвете",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Freshwater habitats worldwide",
+    "nativeRegionBg": "Сладководни местообитания по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 1,
+    "fertilizingIntervalDays": 30,
+    "repottingIntervalMonths": 24,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade depending on species.",
+        "bg": "Пълно слънце до частична сянка в зависимост от вида."
+      },
+      "watering": {
+        "en": "Grow in water or permanently moist soil.",
+        "bg": "Отглеждайте във вода или постоянно влажна почва."
+      },
+      "humidity": {
+        "en": "High humidity naturally present in aquatic environment.",
+        "bg": "Висока влажност е естествено присъща на водната среда."
+      },
+      "temperature": {
+        "en": "Most water plants prefer 15–28 °C water temperature.",
+        "bg": "Повечето водни растения предпочитат 15–28 °C температура на водата."
+      },
+      "fertilizer": {
+        "en": "Use aquatic plant fertilizer tablets monthly.",
+        "bg": "Използвайте таблетки тор за водни растения месечно."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; check before adding to ponds with fish or pets.",
+        "bg": "Токсичността варира; проверете преди добавяне в езерца с риби или домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Pennisetum alopecuroides",
+    "imageUrl": null,
+    "commonNameEn": "Fountain Grass",
+    "commonNameBg": "Пеннисетум",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Poaceae",
+    "nativeRegionEn": "Grasslands and open habitats worldwide",
+    "nativeRegionBg": "Ливади и открити местообитания по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 10,
+    "fertilizingIntervalDays": 60,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most ornamental grasses prefer sun.",
+        "bg": "Пълно слънце до частична сянка; повечето декоративни треви предпочитат слънце."
+      },
+      "watering": {
+        "en": "Water weekly when establishing; drought-tolerant once established.",
+        "bg": "Поливайте седмично при установяване; устойчиво на суша след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to outdoor humidity conditions.",
+        "bg": "Адаптира се към условията на влажност на открито."
+      },
+      "temperature": {
+        "en": "Most ornamental grasses are hardy in Bulgarian conditions.",
+        "bg": "Повечето декоративни треви са издръжливи в bulgarski условия."
+      },
+      "fertilizer": {
+        "en": "Fertilize lightly once in spring.",
+        "bg": "Торете леко веднъж напролет."
+      },
+      "toxicity": {
+        "en": "Generally non-toxic to pets.",
+        "bg": "Обикновено нетоксично за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Miscanthus sinensis",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/113871134/medium.jpeg",
+    "commonNameEn": "Chinese Silver Grass",
+    "commonNameBg": "Мискантус",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Poaceae",
+    "nativeRegionEn": "Grasslands and open habitats worldwide",
+    "nativeRegionBg": "Ливади и открити местообитания по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 10,
+    "fertilizingIntervalDays": 60,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most ornamental grasses prefer sun.",
+        "bg": "Пълно слънце до частична сянка; повечето декоративни треви предпочитат слънце."
+      },
+      "watering": {
+        "en": "Water weekly when establishing; drought-tolerant once established.",
+        "bg": "Поливайте седмично при установяване; устойчиво на суша след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to outdoor humidity conditions.",
+        "bg": "Адаптира се към условията на влажност на открито."
+      },
+      "temperature": {
+        "en": "Most ornamental grasses are hardy in Bulgarian conditions.",
+        "bg": "Повечето декоративни треви са издръжливи в bulgarski условия."
+      },
+      "fertilizer": {
+        "en": "Fertilize lightly once in spring.",
+        "bg": "Торете леко веднъж напролет."
+      },
+      "toxicity": {
+        "en": "Generally non-toxic to pets.",
+        "bg": "Обикновено нетоксично за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Festuca glauca",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/123857131/medium.jpg",
+    "commonNameEn": "Blue Fescue",
+    "commonNameBg": "Фестука",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Poaceae",
+    "nativeRegionEn": "Grasslands and open habitats worldwide",
+    "nativeRegionBg": "Ливади и открити местообитания по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 10,
+    "fertilizingIntervalDays": 60,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most ornamental grasses prefer sun.",
+        "bg": "Пълно слънце до частична сянка; повечето декоративни треви предпочитат слънце."
+      },
+      "watering": {
+        "en": "Water weekly when establishing; drought-tolerant once established.",
+        "bg": "Поливайте седмично при установяване; устойчиво на суша след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to outdoor humidity conditions.",
+        "bg": "Адаптира се към условията на влажност на открито."
+      },
+      "temperature": {
+        "en": "Most ornamental grasses are hardy in Bulgarian conditions.",
+        "bg": "Повечето декоративни треви са издръжливи в bulgarski условия."
+      },
+      "fertilizer": {
+        "en": "Fertilize lightly once in spring.",
+        "bg": "Торете леко веднъж напролет."
+      },
+      "toxicity": {
+        "en": "Generally non-toxic to pets.",
+        "bg": "Обикновено нетоксично за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Carex morrowii",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/4777501/medium.jpg",
+    "commonNameEn": "Morrow's Sedge",
+    "commonNameBg": "Карекс",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Poaceae",
+    "nativeRegionEn": "Grasslands and open habitats worldwide",
+    "nativeRegionBg": "Ливади и открити местообитания по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 10,
+    "fertilizingIntervalDays": 60,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most ornamental grasses prefer sun.",
+        "bg": "Пълно слънце до частична сянка; повечето декоративни треви предпочитат слънце."
+      },
+      "watering": {
+        "en": "Water weekly when establishing; drought-tolerant once established.",
+        "bg": "Поливайте седмично при установяване; устойчиво на суша след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to outdoor humidity conditions.",
+        "bg": "Адаптира се към условията на влажност на открито."
+      },
+      "temperature": {
+        "en": "Most ornamental grasses are hardy in Bulgarian conditions.",
+        "bg": "Повечето декоративни треви са издръжливи в bulgarski условия."
+      },
+      "fertilizer": {
+        "en": "Fertilize lightly once in spring.",
+        "bg": "Торете леко веднъж напролет."
+      },
+      "toxicity": {
+        "en": "Generally non-toxic to pets.",
+        "bg": "Обикновено нетоксично за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Stipa tenuissima",
+    "imageUrl": null,
+    "commonNameEn": "Mexican Feather Grass",
+    "commonNameBg": "Стипа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Poaceae",
+    "nativeRegionEn": "Grasslands and open habitats worldwide",
+    "nativeRegionBg": "Ливади и открити местообитания по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 10,
+    "fertilizingIntervalDays": 60,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most ornamental grasses prefer sun.",
+        "bg": "Пълно слънце до частична сянка; повечето декоративни треви предпочитат слънце."
+      },
+      "watering": {
+        "en": "Water weekly when establishing; drought-tolerant once established.",
+        "bg": "Поливайте седмично при установяване; устойчиво на суша след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to outdoor humidity conditions.",
+        "bg": "Адаптира се към условията на влажност на открито."
+      },
+      "temperature": {
+        "en": "Most ornamental grasses are hardy in Bulgarian conditions.",
+        "bg": "Повечето декоративни треви са издръжливи в bulgarski условия."
+      },
+      "fertilizer": {
+        "en": "Fertilize lightly once in spring.",
+        "bg": "Торете леко веднъж напролет."
+      },
+      "toxicity": {
+        "en": "Generally non-toxic to pets.",
+        "bg": "Обикновено нетоксично за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Molinia caerulea",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/89752331/medium.jpg",
+    "commonNameEn": "Purple Moor Grass",
+    "commonNameBg": "синкава молиния",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Poaceae",
+    "nativeRegionEn": "Grasslands and open habitats worldwide",
+    "nativeRegionBg": "Ливади и открити местообитания по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 10,
+    "fertilizingIntervalDays": 60,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most ornamental grasses prefer sun.",
+        "bg": "Пълно слънце до частична сянка; повечето декоративни треви предпочитат слънце."
+      },
+      "watering": {
+        "en": "Water weekly when establishing; drought-tolerant once established.",
+        "bg": "Поливайте седмично при установяване; устойчиво на суша след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to outdoor humidity conditions.",
+        "bg": "Адаптира се към условията на влажност на открито."
+      },
+      "temperature": {
+        "en": "Most ornamental grasses are hardy in Bulgarian conditions.",
+        "bg": "Повечето декоративни треви са издръжливи в bulgarski условия."
+      },
+      "fertilizer": {
+        "en": "Fertilize lightly once in spring.",
+        "bg": "Торете леко веднъж напролет."
+      },
+      "toxicity": {
+        "en": "Generally non-toxic to pets.",
+        "bg": "Обикновено нетоксично за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Cortaderia selloana",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/173109660/medium.jpg",
+    "commonNameEn": "Pampas Grass",
+    "commonNameBg": "Кортадериа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Poaceae",
+    "nativeRegionEn": "Grasslands and open habitats worldwide",
+    "nativeRegionBg": "Ливади и открити местообитания по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 10,
+    "fertilizingIntervalDays": 60,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most ornamental grasses prefer sun.",
+        "bg": "Пълно слънце до частична сянка; повечето декоративни треви предпочитат слънце."
+      },
+      "watering": {
+        "en": "Water weekly when establishing; drought-tolerant once established.",
+        "bg": "Поливайте седмично при установяване; устойчиво на суша след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to outdoor humidity conditions.",
+        "bg": "Адаптира се към условията на влажност на открито."
+      },
+      "temperature": {
+        "en": "Most ornamental grasses are hardy in Bulgarian conditions.",
+        "bg": "Повечето декоративни треви са издръжливи в bulgarski условия."
+      },
+      "fertilizer": {
+        "en": "Fertilize lightly once in spring.",
+        "bg": "Торете леко веднъж напролет."
+      },
+      "toxicity": {
+        "en": "Generally non-toxic to pets.",
+        "bg": "Обикновено нетоксично за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Phyllostachys aurea",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/365026800/medium.jpeg",
+    "commonNameEn": "Golden Bamboo",
+    "commonNameBg": "Филлостахис",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Poaceae",
+    "nativeRegionEn": "Grasslands and open habitats worldwide",
+    "nativeRegionBg": "Ливади и открити местообитания по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 10,
+    "fertilizingIntervalDays": 60,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most ornamental grasses prefer sun.",
+        "bg": "Пълно слънце до частична сянка; повечето декоративни треви предпочитат слънце."
+      },
+      "watering": {
+        "en": "Water weekly when establishing; drought-tolerant once established.",
+        "bg": "Поливайте седмично при установяване; устойчиво на суша след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to outdoor humidity conditions.",
+        "bg": "Адаптира се към условията на влажност на открито."
+      },
+      "temperature": {
+        "en": "Most ornamental grasses are hardy in Bulgarian conditions.",
+        "bg": "Повечето декоративни треви са издръжливи в bulgarski условия."
+      },
+      "fertilizer": {
+        "en": "Fertilize lightly once in spring.",
+        "bg": "Торете леко веднъж напролет."
+      },
+      "toxicity": {
+        "en": "Generally non-toxic to pets.",
+        "bg": "Обикновено нетоксично за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Helictotrichon sempervirens",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/132363467/medium.jpg",
+    "commonNameEn": "Blue Oat Grass",
+    "commonNameBg": "Хеликтотрихон",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Poaceae",
+    "nativeRegionEn": "Grasslands and open habitats worldwide",
+    "nativeRegionBg": "Ливади и открити местообитания по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 10,
+    "fertilizingIntervalDays": 60,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most ornamental grasses prefer sun.",
+        "bg": "Пълно слънце до частична сянка; повечето декоративни треви предпочитат слънце."
+      },
+      "watering": {
+        "en": "Water weekly when establishing; drought-tolerant once established.",
+        "bg": "Поливайте седмично при установяване; устойчиво на суша след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to outdoor humidity conditions.",
+        "bg": "Адаптира се към условията на влажност на открито."
+      },
+      "temperature": {
+        "en": "Most ornamental grasses are hardy in Bulgarian conditions.",
+        "bg": "Повечето декоративни треви са издръжливи в bulgarski условия."
+      },
+      "fertilizer": {
+        "en": "Fertilize lightly once in spring.",
+        "bg": "Торете леко веднъж напролет."
+      },
+      "toxicity": {
+        "en": "Generally non-toxic to pets.",
+        "bg": "Обикновено нетоксично за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Hakonechloa macra",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/8251779/medium.jpg",
+    "commonNameEn": "Japanese Forest Grass",
+    "commonNameBg": "Хаконехлоа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": "Poaceae",
+    "nativeRegionEn": "Grasslands and open habitats worldwide",
+    "nativeRegionBg": "Ливади и открити местообитания по целия свят",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 10,
+    "fertilizingIntervalDays": 60,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun to partial shade; most ornamental grasses prefer sun.",
+        "bg": "Пълно слънце до частична сянка; повечето декоративни треви предпочитат слънце."
+      },
+      "watering": {
+        "en": "Water weekly when establishing; drought-tolerant once established.",
+        "bg": "Поливайте седмично при установяване; устойчиво на суша след установяване."
+      },
+      "humidity": {
+        "en": "Adapts to outdoor humidity conditions.",
+        "bg": "Адаптира се към условията на влажност на открито."
+      },
+      "temperature": {
+        "en": "Most ornamental grasses are hardy in Bulgarian conditions.",
+        "bg": "Повечето декоративни треви са издръжливи в bulgarski условия."
+      },
+      "fertilizer": {
+        "en": "Fertilize lightly once in spring.",
+        "bg": "Торете леко веднъж напролет."
+      },
+      "toxicity": {
+        "en": "Generally non-toxic to pets.",
+        "bg": "Обикновено нетоксично за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Vinca minor",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/374485244/medium.jpg",
+    "commonNameEn": "Lesser Periwinkle",
+    "commonNameBg": "Малък зимзелен",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of Europe and Asia",
+    "nativeRegionBg": "Умерени зони на Европа и Азия",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 10,
+    "fertilizingIntervalDays": 60,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Partial shade to full shade; ideal for under trees and shrubs.",
+        "bg": "Частична до пълна сянка; идеален за под дървета и храсти."
+      },
+      "watering": {
+        "en": "Water during dry periods; established plants need little care.",
+        "bg": "Поливайте в сухи периоди; установените растения се нуждаят от малко грижи."
+      },
+      "humidity": {
+        "en": "Tolerates average outdoor humidity.",
+        "bg": "Понася средна влажност на открито."
+      },
+      "temperature": {
+        "en": "Hardy; most ground covers survive Bulgarian winters.",
+        "bg": "Издръжливи; повечето почвопокривни растения оцеляват bulgarski зими."
+      },
+      "fertilizer": {
+        "en": "Light fertilization once a year in spring is sufficient.",
+        "bg": "Леко торене веднъж годишно напролет е достатъчно."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; some common ground covers are toxic to pets.",
+        "bg": "Токсичността варира; някои почвопокривни растения са токсични за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Vinca major",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/187076568/medium.jpeg",
+    "commonNameEn": "Greater Periwinkle",
+    "commonNameBg": "голяма винка",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of Europe and Asia",
+    "nativeRegionBg": "Умерени зони на Европа и Азия",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 10,
+    "fertilizingIntervalDays": 60,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Partial shade to full shade; ideal for under trees and shrubs.",
+        "bg": "Частична до пълна сянка; идеален за под дървета и храсти."
+      },
+      "watering": {
+        "en": "Water during dry periods; established plants need little care.",
+        "bg": "Поливайте в сухи периоди; установените растения се нуждаят от малко грижи."
+      },
+      "humidity": {
+        "en": "Tolerates average outdoor humidity.",
+        "bg": "Понася средна влажност на открито."
+      },
+      "temperature": {
+        "en": "Hardy; most ground covers survive Bulgarian winters.",
+        "bg": "Издръжливи; повечето почвопокривни растения оцеляват bulgarski зими."
+      },
+      "fertilizer": {
+        "en": "Light fertilization once a year in spring is sufficient.",
+        "bg": "Леко торене веднъж годишно напролет е достатъчно."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; some common ground covers are toxic to pets.",
+        "bg": "Токсичността варира; някои почвопокривни растения са токсични за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Pachysandra terminalis",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/111375239/medium.jpeg",
+    "commonNameEn": "Japanese Spurge",
+    "commonNameBg": "Пахисандра",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of Europe and Asia",
+    "nativeRegionBg": "Умерени зони на Европа и Азия",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 10,
+    "fertilizingIntervalDays": 60,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Partial shade to full shade; ideal for under trees and shrubs.",
+        "bg": "Частична до пълна сянка; идеален за под дървета и храсти."
+      },
+      "watering": {
+        "en": "Water during dry periods; established plants need little care.",
+        "bg": "Поливайте в сухи периоди; установените растения се нуждаят от малко грижи."
+      },
+      "humidity": {
+        "en": "Tolerates average outdoor humidity.",
+        "bg": "Понася средна влажност на открито."
+      },
+      "temperature": {
+        "en": "Hardy; most ground covers survive Bulgarian winters.",
+        "bg": "Издръжливи; повечето почвопокривни растения оцеляват bulgarski зими."
+      },
+      "fertilizer": {
+        "en": "Light fertilization once a year in spring is sufficient.",
+        "bg": "Леко торене веднъж годишно напролет е достатъчно."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; some common ground covers are toxic to pets.",
+        "bg": "Токсичността варира; някои почвопокривни растения са токсични за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Ajuga reptans",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/28863996/medium.jpeg",
+    "commonNameEn": "Bugle Weed",
+    "commonNameBg": "Пълзящо срещниче",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of Europe and Asia",
+    "nativeRegionBg": "Умерени зони на Европа и Азия",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 10,
+    "fertilizingIntervalDays": 60,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Partial shade to full shade; ideal for under trees and shrubs.",
+        "bg": "Частична до пълна сянка; идеален за под дървета и храсти."
+      },
+      "watering": {
+        "en": "Water during dry periods; established plants need little care.",
+        "bg": "Поливайте в сухи периоди; установените растения се нуждаят от малко грижи."
+      },
+      "humidity": {
+        "en": "Tolerates average outdoor humidity.",
+        "bg": "Понася средна влажност на открито."
+      },
+      "temperature": {
+        "en": "Hardy; most ground covers survive Bulgarian winters.",
+        "bg": "Издръжливи; повечето почвопокривни растения оцеляват bulgarski зими."
+      },
+      "fertilizer": {
+        "en": "Light fertilization once a year in spring is sufficient.",
+        "bg": "Леко торене веднъж годишно напролет е достатъчно."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; some common ground covers are toxic to pets.",
+        "bg": "Токсичността варира; някои почвопокривни растения са токсични за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Lamium maculatum",
+    "imageUrl": "https://static.inaturalist.org/photos/615346582/medium.jpg",
+    "commonNameEn": "Spotted Dead Nettle",
+    "commonNameBg": "Петниста мъртва коприва",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of Europe and Asia",
+    "nativeRegionBg": "Умерени зони на Европа и Азия",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 10,
+    "fertilizingIntervalDays": 60,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Partial shade to full shade; ideal for under trees and shrubs.",
+        "bg": "Частична до пълна сянка; идеален за под дървета и храсти."
+      },
+      "watering": {
+        "en": "Water during dry periods; established plants need little care.",
+        "bg": "Поливайте в сухи периоди; установените растения се нуждаят от малко грижи."
+      },
+      "humidity": {
+        "en": "Tolerates average outdoor humidity.",
+        "bg": "Понася средна влажност на открито."
+      },
+      "temperature": {
+        "en": "Hardy; most ground covers survive Bulgarian winters.",
+        "bg": "Издръжливи; повечето почвопокривни растения оцеляват bulgarski зими."
+      },
+      "fertilizer": {
+        "en": "Light fertilization once a year in spring is sufficient.",
+        "bg": "Леко торене веднъж годишно напролет е достатъчно."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; some common ground covers are toxic to pets.",
+        "bg": "Токсичността варира; някои почвопокривни растения са токсични за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Arabis caucasica",
+    "imageUrl": "https://static.inaturalist.org/photos/1653198/medium.jpg",
+    "commonNameEn": "Rock Cress",
+    "commonNameBg": "Арабис",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of Europe and Asia",
+    "nativeRegionBg": "Умерени зони на Европа и Азия",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 10,
+    "fertilizingIntervalDays": 60,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Partial shade to full shade; ideal for under trees and shrubs.",
+        "bg": "Частична до пълна сянка; идеален за под дървета и храсти."
+      },
+      "watering": {
+        "en": "Water during dry periods; established plants need little care.",
+        "bg": "Поливайте в сухи периоди; установените растения се нуждаят от малко грижи."
+      },
+      "humidity": {
+        "en": "Tolerates average outdoor humidity.",
+        "bg": "Понася средна влажност на открито."
+      },
+      "temperature": {
+        "en": "Hardy; most ground covers survive Bulgarian winters.",
+        "bg": "Издръжливи; повечето почвопокривни растения оцеляват bulgarski зими."
+      },
+      "fertilizer": {
+        "en": "Light fertilization once a year in spring is sufficient.",
+        "bg": "Леко торене веднъж годишно напролет е достатъчно."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; some common ground covers are toxic to pets.",
+        "bg": "Токсичността варира; някои почвопокривни растения са токсични за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Aubrieta deltoidea",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/1150161/medium.jpg",
+    "commonNameEn": "Aubrieta",
+    "commonNameBg": "Аубриета",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of Europe and Asia",
+    "nativeRegionBg": "Умерени зони на Европа и Азия",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 10,
+    "fertilizingIntervalDays": 60,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Partial shade to full shade; ideal for under trees and shrubs.",
+        "bg": "Частична до пълна сянка; идеален за под дървета и храсти."
+      },
+      "watering": {
+        "en": "Water during dry periods; established plants need little care.",
+        "bg": "Поливайте в сухи периоди; установените растения се нуждаят от малко грижи."
+      },
+      "humidity": {
+        "en": "Tolerates average outdoor humidity.",
+        "bg": "Понася средна влажност на открито."
+      },
+      "temperature": {
+        "en": "Hardy; most ground covers survive Bulgarian winters.",
+        "bg": "Издръжливи; повечето почвопокривни растения оцеляват bulgarski зими."
+      },
+      "fertilizer": {
+        "en": "Light fertilization once a year in spring is sufficient.",
+        "bg": "Леко торене веднъж годишно напролет е достатъчно."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; some common ground covers are toxic to pets.",
+        "bg": "Токсичността варира; някои почвопокривни растения са токсични за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Aurinia saxatilis",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/932775/medium.jpeg",
+    "commonNameEn": "Basket of Gold",
+    "commonNameBg": "Ауриниа",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Temperate regions of Europe and Asia",
+    "nativeRegionBg": "Умерени зони на Европа и Азия",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 10,
+    "fertilizingIntervalDays": 60,
+    "repottingIntervalMonths": 36,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Partial shade to full shade; ideal for under trees and shrubs.",
+        "bg": "Частична до пълна сянка; идеален за под дървета и храсти."
+      },
+      "watering": {
+        "en": "Water during dry periods; established plants need little care.",
+        "bg": "Поливайте в сухи периоди; установените растения се нуждаят от малко грижи."
+      },
+      "humidity": {
+        "en": "Tolerates average outdoor humidity.",
+        "bg": "Понася средна влажност на открито."
+      },
+      "temperature": {
+        "en": "Hardy; most ground covers survive Bulgarian winters.",
+        "bg": "Издръжливи; повечето почвопокривни растения оцеляват bulgarski зими."
+      },
+      "fertilizer": {
+        "en": "Light fertilization once a year in spring is sufficient.",
+        "bg": "Леко торене веднъж годишно напролет е достатъчно."
+      },
+      "toxicity": {
+        "en": "Toxicity varies; some common ground covers are toxic to pets.",
+        "bg": "Токсичността варира; някои почвопокривни растения са токсични за домашни любимци."
+      }
+    }
+  },
+  {
+    "scientificName": "Thymus pseudolanuginosus",
+    "imageUrl": "https://static.inaturalist.org/photos/27262132/medium.jpeg",
+    "commonNameEn": "Woolly Thyme",
+    "commonNameBg": "мъхната мащерка",
+    "descriptionEn": null,
+    "descriptionBg": null,
+    "family": null,
+    "nativeRegionEn": "Mediterranean and temperate regions",
+    "nativeRegionBg": "Средиземноморие и умерени региони",
+    "careDifficulty": "easy",
+    "wateringIntervalDays": 5,
+    "fertilizingIntervalDays": 21,
+    "repottingIntervalMonths": 12,
+    "mistingNeeded": false,
+    "isToxicToPets": null,
+    "careGuide": {
+      "light": {
+        "en": "Full sun; at least 6 hours of direct sunlight daily.",
+        "bg": "Пълно слънце; поне 6 часа пряка слънчева светлина дневно."
+      },
+      "watering": {
+        "en": "Water every 4–6 days; let top soil dry slightly between waterings.",
+        "bg": "Поливайте на 4–6 дни; оставете горния слой почва леко да изсъхне."
+      },
+      "humidity": {
+        "en": "Average humidity; ensure good air circulation.",
+        "bg": "Средна влажност; осигурете добра циркулация на въздуха."
+      },
+      "temperature": {
+        "en": "Most herbs prefer 15–25 °C; protect from frost.",
+        "bg": "Повечето билки предпочитат 15–25 °C; пазете от замръзване."
+      },
+      "fertilizer": {
+        "en": "Fertilize every 3 weeks with balanced fertilizer during growth.",
+        "bg": "Торете на 3 седмици с балансиран тор по време на растеж."
+      },
+      "toxicity": {
+        "en": "Culinary herbs are safe for humans; some may affect pets.",
+        "bg": "Кулинарните билки са безвредни за хора; някои може да засегнат домашни животни."
+      }
+    }
   }
 ];
