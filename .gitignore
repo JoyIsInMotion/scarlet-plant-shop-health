@@ -15,8 +15,8 @@ build/
 .env.development.local
 .env.test.local
 .env.production.local
-apps/web/.env.local
-apps/mobile/.env
+web/.env.local
+mobile/.env
 
 # Logs
 npm-debug.log*
@@ -36,12 +36,12 @@ Thumbs.db
 *.sln
 
 # Expo
-apps/mobile/.expo/
-apps/mobile/ios/
-apps/mobile/android/
+mobile/.expo/
+mobile/ios/
+mobile/android/
 
 # Drizzle
-apps/web/src/lib/db/migrations/meta/
+web/src/lib/db/migrations/meta/
 
 # TypeScript
 *.tsbuildinfo
