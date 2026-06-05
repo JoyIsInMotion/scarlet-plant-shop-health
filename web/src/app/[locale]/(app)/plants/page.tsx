@@ -14,7 +14,7 @@ async function getPlants(page: number) {
     if (!token) return { plants: [], total: 0 };
 
     const offset = (page - 1) * PAGE_SIZE;
-    const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000';
+    const baseUrl = process.env.NEXT_PUBLIC_APP_URL ?? 'http://localhost:3000';
     const res = await fetch(`${baseUrl}/api/plants?limit=${PAGE_SIZE}&offset=${offset}`, {
       headers: { 'Authorization': `Bearer ${token}` },
     });
