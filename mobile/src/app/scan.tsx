@@ -1,10 +1,20 @@
 import { StyleSheet, Text, View } from 'react-native';
+import { AuthGuard } from '@/components/auth-guard';
 
-export default function ScanScreen() {
+function ScanContent() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Scan</Text>
+      <Text style={styles.subtitle}>AI plant health scanning coming soon.</Text>
     </View>
+  );
+}
+
+export default function ScanScreen() {
+  return (
+    <AuthGuard>
+      <ScanContent />
+    </AuthGuard>
   );
 }
 
@@ -14,9 +24,14 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 24,
+    gap: 8,
   },
   title: {
     fontSize: 22,
     fontWeight: '600',
+  },
+  subtitle: {
+    fontSize: 15,
+    color: '#60646C',
   },
 });
