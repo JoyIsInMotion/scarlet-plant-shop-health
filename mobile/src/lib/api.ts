@@ -1,4 +1,12 @@
-import { LoginResult, ProductList, User } from './types';
+import {
+  AIAnalysisResult,
+  AnalysisList,
+  LoginResult,
+  Plant,
+  PlantList,
+  ProductList,
+  User,
+} from './types';
 
 // Backend base URL. Override per-environment with EXPO_PUBLIC_API_URL
 // (e.g. your machine's LAN IP when testing on a physical device).
@@ -92,4 +100,31 @@ export function getMe(token: string): Promise<User> {
 
 export function getProducts(token?: string | null): Promise<ProductList> {
   return request<ProductList>('/api/products', { token });
+}
+
+// ─── Plants ──────────────────────────────────────────────────────────────────
+
+export function getPlants(
+  token: string,
+  { limit = 12, offset = 0 }: { limit?: number; offset?: number } = {}
+): Promise<PlantList> {
+  return request<PlantList>(`/api/plants?limit=${limit}&offset=${offset}`, { token });
+}
+
+export function getPlant(id: string, token: string): Promise<Plant> {
+  return request<Plant>(`/api/plants/${id}`, { token });
+}
+
+export function getPlantAnalyses(
+  id: string,
+  token: string,
+  { limit = 5, offset = 0 }: { limit?: number; offset?: number } = {}
+): Promise<AnalysisList> {
+  return request<AnalysisList>(`/api/plants/${id}/analyses?limit=${limit}&offset=${offset}`, {
+    token,
+  });
+}
+
+export function runPlantAnalysis(id: string, token: string): Promise<AIAnalysisResult> {
+  return request<AIAnalysisResult>(`/api/plants/${id}/ai-analysis`, { method: 'POST', token });
 }

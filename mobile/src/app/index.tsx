@@ -20,6 +20,9 @@ export default function HomeScreen() {
         <Link href="/shop" style={styles.navLink}>
           Shop
         </Link>
+        <Link href="/plants" style={styles.navLink}>
+          My plants
+        </Link>
         <Link href="/scan" style={styles.navLink}>
           Scan a plant
         </Link>
