@@ -188,8 +188,7 @@ scarlet/
 │  └─ messages/                # next-intl translations (bg.json, en.json)
 ├─ mobile/                     # Expo (React Native) companion app — in progress
 ├─ shared/                     # shared TypeScript types & Zod validators
-├─ AGENTS.md                   # instructions for AI dev agents
-└─ web/docs/                   # project status & plan
+└─ AGENTS.md                   # instructions for AI dev agents
 ```
 
 ---
@@ -255,5 +254,3 @@ npm run dev:mobile
 | `npm run db:seed` | Seed sample data |
 
 > More agent/architecture conventions are documented in [`AGENTS.md`](AGENTS.md).
-> Project status and the capstone self-assessment live in
-> [`web/docs/performance-plan.md`](web/docs/performance-plan.md).

@@ -1094,7 +1094,7 @@ const GENUS_PROFILE: Record<string, ProfileKey> = {
   // Indoor easy
   Zamioculcas:'INDOOR_EASY', Sansevieria:'INDOOR_EASY', Aspidistra:'INDOOR_EASY',
   Chlorophytum:'INDOOR_EASY', Dracaena:'INDOOR_EASY', Yucca:'INDOOR_EASY',
-  Beaucarnea:'INDOOR_EASY', Scindapsus:'INDOOR_EASY', Epipremnum:'INDOOR_EASY',
+  Scindapsus:'INDOOR_EASY', Epipremnum:'INDOOR_EASY',
   Clivia:'INDOOR_EASY', Fatsia:'INDOOR_EASY', Rhapis:'INDOOR_EASY',
   Schefflera:'INDOOR_EASY', Tradescantia:'INDOOR_EASY', Hedera:'INDOOR_EASY',
   Soleirolia:'INDOOR_EASY', Nematanthus:'INDOOR_EASY', Oxalis:'INDOOR_EASY',
@@ -1109,7 +1109,7 @@ const GENUS_PROFILE: Record<string, ProfileKey> = {
   Peperomia:'INDOOR_MODERATE', Cycas:'INDOOR_MODERATE', Columnea:'INDOOR_MODERATE',
   Aeschynanthus:'INDOOR_MODERATE', Streptocarpus:'INDOOR_MODERATE',
   Medinilla:'INDOOR_MODERATE', Hibiscus:'INDOOR_MODERATE', Gardenia:'INDOOR_MODERATE',
-  Plumeria:'INDOOR_MODERATE', Impatiens:'INDOOR_MODERATE', Oxalis:'INDOOR_EASY',
+  Plumeria:'INDOOR_MODERATE',
   // Indoor humid
   Calathea:'INDOOR_HUMID', Maranta:'INDOOR_HUMID', Ctenanthe:'INDOOR_HUMID',
   Stromanthe:'INDOOR_HUMID', Fittonia:'INDOOR_HUMID', Saintpaulia:'INDOOR_HUMID',

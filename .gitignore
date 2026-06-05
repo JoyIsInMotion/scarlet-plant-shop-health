@@ -36,6 +36,7 @@ Thumbs.db
 *.sln
 
 # Expo
+.expo/
 mobile/.expo/
 mobile/ios/
 mobile/android/
@@ -49,5 +50,8 @@ web/src/db/.fetch-progress.json
 # TypeScript
 *.tsbuildinfo
 
-# Claude Code local settings
-.claude/settings.local.json
+# Claude Code
+.claude/
+
+# Local Netlify folder
+.netlify
