@@ -58,20 +58,20 @@ Client-server, in a Node.js monorepo:
 
 ```
             ┌─────────────────────────────┐
-            │      apps/web (Next.js)      │
+            │      web (Next.js)      │
  Browser ──▶│  Server Components/Actions   │──▶ Drizzle ──▶ Neon PostgreSQL
             │  Route Handlers (REST API)   │──▶ Cloudflare R2 (photos)
             └──────────────┬──────────────┘──▶ Groq API (AI analysis)
                            │ REST + JWT Bearer
             ┌──────────────▼──────────────┐
-            │   apps/mobile (Expo) [WIP]   │
+            │   mobile (Expo) [WIP]   │
             └─────────────────────────────┘
 ```
 
 - **Web → Backend:** Server Actions (mutations) + Server Components (data fetch),
-  calling the **service layer** in `apps/web/src/services/*`.
+  calling the **service layer** in `web/src/services/*`.
 - **Mobile → Backend:** the same logic is exposed as a **RESTful API** under
-  `apps/web/src/app/api/*`, authenticated with a JWT Bearer token.
+  `web/src/app/api/*`, authenticated with a JWT Bearer token.
 - **Auth:** access token (short-lived) + refresh token. Web stores them in
   httpOnly cookies; mobile uses `expo-secure-store` + `Authorization` header.
 - **Business logic** lives in services so both Server Actions and the REST API
@@ -83,8 +83,8 @@ Client-server, in a Node.js monorepo:
 
 11 tables (UUID primary keys, foreign keys with cascade/restrict rules,
 btree + composite indexes). Defined in
-[`apps/web/src/lib/db/schema.ts`](apps/web/src/lib/db/schema.ts); migrations in
-[`apps/web/src/lib/db/migrations`](apps/web/src/lib/db/migrations).
+[`web/src/db/schema.ts`](web/src/db/schema.ts); migrations in
+[`web/src/drizzle`](web/src/drizzle).
 
 ```mermaid
 erDiagram
@@ -177,20 +177,18 @@ erDiagram
 
 ```
 scarlet/
-├─ apps/
-│  ├─ web/                     # Next.js — web client + REST API backend
-│  │  ├─ src/app/[locale]/     # localized pages: (auth), (app), catalog, shop, community…
-│  │  ├─ src/app/api/          # REST API route handlers
-│  │  ├─ src/services/         # business logic (catalog, orders, community, …)
-│  │  ├─ src/lib/db/           # Drizzle schema + migrations
-│  │  ├─ src/lib/ai/           # Groq plant analyzer + rate limiting
-│  │  ├─ src/lib/r2/           # Cloudflare R2 client
-│  │  ├─ messages/             # next-intl translations (bg.json, en.json)
-│  │  └─ db/                   # seed & data-fetch scripts (tsx)
-│  └─ mobile/                  # Expo (React Native) companion app — in progress
-├─ packages/shared/            # shared TypeScript types & Zod validators
-├─ AGENTS.md                   # instructions for AI dev agents
-└─ apps/web/docs/              # project status & plan
+├─ web/                        # Next.js — web client + REST API backend
+│  ├─ src/app/[locale]/        # localized pages: (auth), (app), catalog, shop, community…
+│  ├─ src/app/api/             # REST API route handlers
+│  ├─ src/services/            # business logic (catalog, orders, community, …)
+│  ├─ src/db/                  # Drizzle schema + seed & data-fetch scripts (tsx)
+│  ├─ src/drizzle/             # Drizzle SQL migrations
+│  ├─ src/lib/ai/              # Groq plant analyzer + rate limiting
+│  ├─ src/lib/r2/              # Cloudflare R2 client
+│  └─ messages/                # next-intl translations (bg.json, en.json)
+├─ mobile/                     # Expo (React Native) companion app — in progress
+├─ shared/                     # shared TypeScript types & Zod validators
+└─ AGENTS.md                   # instructions for AI dev agents
 ```
 
 ---
@@ -222,7 +220,7 @@ git clone https://github.com/JoyIsInMotion/scarlet-plant-shop-health
 cd scarlet-plant-shop-health
 npm install
 
-# 2. Configure apps/web/.env.local
+# 2. Configure web/.env.local
 #   DATABASE_URL=postgresql://...
 #   JWT_ACCESS_SECRET=...        JWT_REFRESH_SECRET=...
 #   JWT_ACCESS_EXPIRES_IN=15m    JWT_REFRESH_EXPIRES_IN=7d
@@ -256,5 +254,3 @@ npm run dev:mobile
 | `npm run db:seed` | Seed sample data |
 
 > More agent/architecture conventions are documented in [`AGENTS.md`](AGENTS.md).
-> Project status and the capstone self-assessment live in
-> [`apps/web/docs/performance-plan.md`](apps/web/docs/performance-plan.md).

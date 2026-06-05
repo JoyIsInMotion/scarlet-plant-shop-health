@@ -2,23 +2,25 @@
   "name": "scarlet",
   "private": true,
   "workspaces": [
-    "apps/*",
-    "packages/*"
+    "web",
+    "mobile",
+    "shared"
   ],
   "scripts": {
-    "dev": "concurrently --names \"web,mobile\" --prefix-colors \"blue,green\" \"npm run dev --workspace=apps/web\" \"npm run start --workspace=apps/mobile\"",
-    "dev:web": "npm run dev --workspace=apps/web",
-    "dev:mobile": "npm run start --workspace=apps/mobile",
-    "build": "npm run build --workspace=apps/web && npm run build --workspace=apps/mobile",
-    "build:web": "npm run build --workspace=apps/web",
-    "build:mobile": "npm run build --workspace=apps/mobile",
-    "db:generate": "npm run db:generate --workspace=apps/web",
-    "db:migrate": "npm run db:migrate --workspace=apps/web",
-    "db:seed": "npm run db:seed --workspace=apps/web"
+    "dev": "concurrently --names \"web,mobile\" --prefix-colors \"blue,green\" \"npm run dev --workspace=web\" \"npm run start --workspace=mobile\"",
+    "dev:web": "npm run dev --workspace=web",
+    "dev:mobile": "npm run start --workspace=mobile",
+    "build": "npm run build --workspace=web && npm run build --workspace=mobile",
+    "build:web": "npm run build --workspace=web",
+    "build:mobile": "npm run build --workspace=mobile",
+    "db:generate": "npm run db:generate --workspace=web",
+    "db:migrate": "npm run db:migrate --workspace=web",
+    "db:seed": "npm run db:seed --workspace=web"
   },
   "devDependencies": {
     "concurrently": "^9.2.1",
-    "expo-router": "~56.2.5"
+    "expo-router": "~56.2.5",
+    "netlify-cli": "^26.1.0"
   },
   "engines": {
     "node": ">=20.0.0"

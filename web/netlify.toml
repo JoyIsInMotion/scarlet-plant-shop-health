@@ -1,0 +1,21 @@
+# Web site (Next.js back-end + front-end).
+# Netlify builds this in monorepo mode with package = web; it installs the npm
+# workspace from the repo root, so @scarlet/shared resolves. Paths here are
+# relative to web/. The Expo mobile web export deploys as a separate Netlify
+# site (package = mobile) with its own mobile/netlify.toml.
+[build]
+  command = "npm run build"   # next build, run inside web/
+  publish = ".next"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+[[headers]]
+  for = "/api/*"
+  [headers.values]
+    Access-Control-Allow-Origin  = "*"
+    Access-Control-Allow-Methods = "GET, POST, PUT, PATCH, DELETE, OPTIONS"
+    Access-Control-Allow-Headers = "Content-Type, Authorization"

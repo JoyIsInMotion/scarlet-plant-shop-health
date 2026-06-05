@@ -7,18 +7,18 @@ Scarlet is a full-stack boutique flower shop application with an embedded plant 
 ## Architecture
 
 ### Monorepo Structure
-- `apps/web` — Next.js 14 App Router: web frontend + REST API backend
-- `apps/mobile` — Expo (React Native): mobile client app
-- `packages/shared` — shared TypeScript types and Zod validators
+- `web` — Next.js 14 App Router: web frontend + REST API backend
+- `mobile` — Expo (React Native): mobile client app
+- `shared` — shared TypeScript types and Zod validators
 
 ### Communication
 - **Web → Backend**: Next.js Server Actions (form submissions) + Server Components (data fetching)
-- **Mobile → Backend**: RESTful API via Axios client (`apps/mobile/src/api/client.ts`)
+- **Mobile → Backend**: RESTful API via Axios client (`mobile/src/api/client.ts`)
 - **Authentication**: JWT access tokens (15m) + refresh tokens (7d). Web uses httpOnly cookies. Mobile uses expo-secure-store + Authorization Bearer header.
 
 ### Data Layer
 - **Database**: Neon serverless PostgreSQL accessed via `@neondatabase/serverless` HTTP driver
-- **ORM**: Drizzle ORM — all schema in `apps/web/src/lib/db/schema.ts`
+- **ORM**: Drizzle ORM — all schema in `web/src/db/schema.ts`
 - **Migrations**: `drizzle-kit generate` → commits SQL files → `drizzle-kit migrate`
 - **Storage**: Cloudflare R2 (S3-compatible) for all user photos and product images
 
@@ -33,7 +33,7 @@ Scarlet is a full-stack boutique flower shop application with an embedded plant 
 - Provider: Groq `llama-4-scout` via the Groq API (env `GROQ_API_KEY`)
 - Returns: species identification (common name, scientific name, family, native region, care difficulty) + health assessment (score 0-100, issues with severity, care recommendations)
 - Rate limit: 5 analyses per user per 24 hours (DB-enforced)
-- Implementation: `apps/web/src/lib/ai/plant-analyzer.ts`
+- Implementation: `web/src/lib/ai/plant-analyzer.ts`
 
 ## Technology Stack
 
@@ -73,8 +73,8 @@ Scarlet is a full-stack boutique flower shop application with an embedded plant 
 
 ### i18n
 - Bulgarian (`bg`) is the default language
-- Translation keys live in `apps/web/messages/bg.json` and `apps/web/messages/en.json`
-- Mobile keys mirror web keys in `apps/mobile/src/i18n/bg.json` and `apps/mobile/src/i18n/en.json`
+- Translation keys live in `web/messages/bg.json` and `web/messages/en.json`
+- Mobile keys mirror web keys in `mobile/src/i18n/bg.json` and `mobile/src/i18n/en.json`
 - Use namespace prefixes: `nav.*`, `auth.*`, `plants.*`, `catalog.*`, `shop.*`, `admin.*`, `ai.*`, `common.*`
 
 ### Error Handling
@@ -98,7 +98,7 @@ cd scarlet
 npm install
 
 # 2. Configure environment
-# Create apps/web/.env.local and fill in:
+# Create web/.env.local and fill in:
 #   DATABASE_URL, JWT_ACCESS_SECRET, JWT_REFRESH_SECRET, GROQ_API_KEY,
 #   and R2_* credentials (R2_ACCOUNT_ID, R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY,
 #   R2_BUCKET_NAME, R2_PUBLIC_URL)
