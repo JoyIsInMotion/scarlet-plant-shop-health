@@ -41,7 +41,10 @@ mobile/ios/
 mobile/android/
 
 # Drizzle
-web/src/lib/db/migrations/meta/
+web/src/drizzle/meta/
+
+# DB seed/fetch runtime caches
+web/src/db/.fetch-progress.json
 
 # TypeScript
 *.tsbuildinfo

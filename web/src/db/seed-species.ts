@@ -1,5 +1,5 @@
 import { db, chunkInsert } from './seed-utils';
-import * as schema from '../src/lib/db/schema';
+import * as schema from './schema';
 import { getCategoryForSpecies } from './plant-categories';
 
 export function careGuideFallback(d: 'easy' | 'moderate' | 'difficult') {

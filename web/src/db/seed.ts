@@ -6,7 +6,7 @@
  *   orders 1,002 (rebuilt). Safe to run on the current DB or a fresh one.
  */
 import { db } from './seed-utils';
-import * as schema from '../src/lib/db/schema';
+import * as schema from './schema';
 import {
   ensureUsers, reconcileSpecies, ensurePlants, ensureSchedules, ensureCareLogs,
 } from './seed-core';

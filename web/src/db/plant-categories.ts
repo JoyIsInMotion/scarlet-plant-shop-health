@@ -9,4 +9,4 @@ export {
   GENUS_TO_CATEGORY,
   getCategoryForSpecies,
   type PlantCategory,
-} from '../src/lib/plants/categories';
+} from '../lib/plants/categories';

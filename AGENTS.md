@@ -18,7 +18,7 @@ Scarlet is a full-stack boutique flower shop application with an embedded plant 
 
 ### Data Layer
 - **Database**: Neon serverless PostgreSQL accessed via `@neondatabase/serverless` HTTP driver
-- **ORM**: Drizzle ORM — all schema in `web/src/lib/db/schema.ts`
+- **ORM**: Drizzle ORM — all schema in `web/src/db/schema.ts`
 - **Migrations**: `drizzle-kit generate` → commits SQL files → `drizzle-kit migrate`
 - **Storage**: Cloudflare R2 (S3-compatible) for all user photos and product images
 

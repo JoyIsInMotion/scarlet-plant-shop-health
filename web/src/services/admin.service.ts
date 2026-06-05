@@ -1,6 +1,6 @@
 import { count, sum, gte } from 'drizzle-orm';
-import { db } from '@/lib/db';
-import { users, plants, orders, aiAnalyses } from '@/lib/db/schema';
+import { db } from '@/db';
+import { users, plants, orders, aiAnalyses } from '@/db/schema';
 
 export async function getAdminStats() {
   const todayStart = new Date();

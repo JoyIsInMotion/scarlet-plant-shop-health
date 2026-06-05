@@ -83,8 +83,8 @@ Client-server, in a Node.js monorepo:
 
 11 tables (UUID primary keys, foreign keys with cascade/restrict rules,
 btree + composite indexes). Defined in
-[`web/src/lib/db/schema.ts`](web/src/lib/db/schema.ts); migrations in
-[`web/src/lib/db/migrations`](web/src/lib/db/migrations).
+[`web/src/db/schema.ts`](web/src/db/schema.ts); migrations in
+[`web/src/drizzle`](web/src/drizzle).
 
 ```mermaid
 erDiagram
@@ -181,11 +181,11 @@ scarlet/
 │  ├─ src/app/[locale]/        # localized pages: (auth), (app), catalog, shop, community…
 │  ├─ src/app/api/             # REST API route handlers
 │  ├─ src/services/            # business logic (catalog, orders, community, …)
-│  ├─ src/lib/db/              # Drizzle schema + migrations
+│  ├─ src/db/                  # Drizzle schema + seed & data-fetch scripts (tsx)
+│  ├─ src/drizzle/             # Drizzle SQL migrations
 │  ├─ src/lib/ai/              # Groq plant analyzer + rate limiting
 │  ├─ src/lib/r2/              # Cloudflare R2 client
-│  ├─ messages/                # next-intl translations (bg.json, en.json)
-│  └─ db/                      # seed & data-fetch scripts (tsx)
+│  └─ messages/                # next-intl translations (bg.json, en.json)
 ├─ mobile/                     # Expo (React Native) companion app — in progress
 ├─ shared/                     # shared TypeScript types & Zod validators
 ├─ AGENTS.md                   # instructions for AI dev agents

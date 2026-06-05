@@ -1,6 +1,6 @@
 import { eq, ilike, or, and, asc, desc, count } from 'drizzle-orm';
-import { db } from '@/lib/db';
-import { products } from '@/lib/db/schema';
+import { db } from '@/db';
+import { products } from '@/db/schema';
 import { slugify } from '@/lib/utils/slugify';
 import { ServiceError } from './service-error';
 

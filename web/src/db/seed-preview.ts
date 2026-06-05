@@ -12,7 +12,7 @@ dotenv.config({ path: '.env.local' });
 import { neon } from '@neondatabase/serverless';
 import { drizzle } from 'drizzle-orm/neon-http';
 import { inArray } from 'drizzle-orm';
-import * as schema from '../src/lib/db/schema';
+import * as schema from './schema';
 import { getCategoryForSpecies } from './plant-categories';
 import { writeFileSync, readFileSync, existsSync } from 'fs';
 import { join } from 'path';

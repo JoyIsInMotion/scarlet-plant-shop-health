@@ -1,8 +1,8 @@
 import bcrypt from 'bcryptjs';
 import crypto from 'crypto';
 import { eq, and, gt } from 'drizzle-orm';
-import { db } from '@/lib/db';
-import { users, refreshTokens } from '@/lib/db/schema';
+import { db } from '@/db';
+import { users, refreshTokens } from '@/db/schema';
 import { signAccessToken, signRefreshToken, verifyRefreshToken } from '@/lib/auth/jwt';
 import { ServiceError } from './service-error';
 

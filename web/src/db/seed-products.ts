@@ -1,6 +1,6 @@
 import { and, eq, isNull } from 'drizzle-orm';
 import { db, chunkInsert } from './seed-utils';
-import * as schema from '../src/lib/db/schema';
+import * as schema from './schema';
 import { CATEGORY_QUERIES, fetchPexelsPhotos } from './update-product-images';
 
 type ProductCategory = typeof schema.productCategoryEnum.enumValues[number];

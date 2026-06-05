@@ -1,5 +1,5 @@
 import { db, chunkInsert } from './seed-utils';
-import * as schema from '../src/lib/db/schema';
+import * as schema from './schema';
 import { faker } from '@faker-js/faker';
 
 faker.seed(42);

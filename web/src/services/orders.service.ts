@@ -1,6 +1,6 @@
 import { eq, and, desc, inArray, count, gte, lte, ilike, or, sql } from 'drizzle-orm';
-import { db } from '@/lib/db';
-import { orders, orderItems, products, users } from '@/lib/db/schema';
+import { db } from '@/db';
+import { orders, orderItems, products, users } from '@/db/schema';
 import { orderSchema } from '@scarlet/shared';
 import { ServiceError } from './service-error';
 

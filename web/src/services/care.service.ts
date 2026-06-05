@@ -1,6 +1,6 @@
 import { eq, and, desc, count } from 'drizzle-orm';
-import { db } from '@/lib/db';
-import { plants, plantCareSchedules, plantCareLogs, plantSpecies } from '@/lib/db/schema';
+import { db } from '@/db';
+import { plants, plantCareSchedules, plantCareLogs, plantSpecies } from '@/db/schema';
 import { ServiceError } from './service-error';
 
 async function assertPlantOwner(plantId: string, userId: string) {

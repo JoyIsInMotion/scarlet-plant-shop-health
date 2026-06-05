@@ -1,5 +1,5 @@
-import { db } from '@/lib/db';
-import { aiAnalyses } from '@/lib/db/schema';
+import { db } from '@/db';
+import { aiAnalyses } from '@/db/schema';
 import { eq, and, gte, count } from 'drizzle-orm';
 import { AI_RATE_LIMIT_PER_DAY } from '@scarlet/shared';
 

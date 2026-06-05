@@ -6,7 +6,7 @@ import { eq, isNull, inArray } from 'drizzle-orm';
 import bcrypt from 'bcryptjs';
 import { faker } from '@faker-js/faker';
 import { db, chunkInsert } from './seed-utils';
-import * as schema from '../src/lib/db/schema';
+import * as schema from './schema';
 import { careGuideFallback } from './seed-species';
 import { getCategoryForSpecies } from './plant-categories';
 

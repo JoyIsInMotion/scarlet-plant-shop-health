@@ -1,6 +1,6 @@
 import { eq, ilike, or, and, count } from 'drizzle-orm';
-import { db } from '@/lib/db';
-import { plantSpecies, plants } from '@/lib/db/schema';
+import { db } from '@/db';
+import { plantSpecies, plants } from '@/db/schema';
 import { ServiceError } from './service-error';
 
 export async function listSpecies(query: {

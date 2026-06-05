@@ -1,6 +1,6 @@
 import { eq, ilike, or, and, count, desc, sql } from 'drizzle-orm';
-import { db } from '@/lib/db';
-import { plants, plantSpecies, plantLikes, users } from '@/lib/db/schema';
+import { db } from '@/db';
+import { plants, plantSpecies, plantLikes, users } from '@/db/schema';
 import { ServiceError } from './service-error';
 
 export async function listCommunityPlants(query: {

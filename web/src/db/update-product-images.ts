@@ -13,7 +13,7 @@ dotenv.config({ path: '.env.local' });
 import { neon } from '@neondatabase/serverless';
 import { drizzle } from 'drizzle-orm/neon-http';
 import { eq } from 'drizzle-orm';
-import * as schema from '../src/lib/db/schema';
+import * as schema from './schema';
 
 export const PEXELS_KEY = process.env.PEXELS_API_KEY;
 

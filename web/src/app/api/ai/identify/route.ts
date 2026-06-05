@@ -3,8 +3,8 @@ import { withAuth } from '@/lib/auth/middleware';
 import { ok, err } from '@/lib/api/response';
 import { analyzePlantImage } from '@/lib/ai/plant-analyzer';
 import { ilike } from 'drizzle-orm';
-import { db } from '@/lib/db';
-import { plantSpecies } from '@/lib/db/schema';
+import { db } from '@/db';
+import { plantSpecies } from '@/db/schema';
 import { MAX_FILE_SIZE_BYTES, ALLOWED_IMAGE_TYPES } from '@scarlet/shared';
 
 async function identifyHandler(req: NextRequest) {

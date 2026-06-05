@@ -1,6 +1,6 @@
 import { eq, ilike } from 'drizzle-orm';
-import { db } from '@/lib/db';
-import { plants, aiAnalyses, plantSpecies } from '@/lib/db/schema';
+import { db } from '@/db';
+import { plants, aiAnalyses, plantSpecies } from '@/db/schema';
 import { analyzePlantImage, MODEL_NAME } from '@/lib/ai/plant-analyzer';
 import { checkAIRateLimit } from '@/lib/ai/rate-limit';
 import { uploadToR2 } from '@/lib/r2/client';

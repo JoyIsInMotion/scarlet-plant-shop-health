@@ -1,6 +1,6 @@
 import { eq, ilike, or, desc, count } from 'drizzle-orm';
-import { db } from '@/lib/db';
-import { users } from '@/lib/db/schema';
+import { db } from '@/db';
+import { users } from '@/db/schema';
 import { uploadToR2 } from '@/lib/r2/client';
 import { randomUUID } from 'crypto';
 import { ServiceError } from './service-error';

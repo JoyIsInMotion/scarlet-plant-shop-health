@@ -1,6 +1,6 @@
 import { eq, and, desc, lt, count } from 'drizzle-orm';
-import { db } from '@/lib/db';
-import { plants, plantSpecies, aiAnalyses } from '@/lib/db/schema';
+import { db } from '@/db';
+import { plants, plantSpecies, aiAnalyses } from '@/db/schema';
 import { plantSchema, MAX_FILE_SIZE_BYTES, ALLOWED_IMAGE_TYPES } from '@scarlet/shared';
 import { uploadToR2 } from '@/lib/r2/client';
 import { randomUUID } from 'crypto';

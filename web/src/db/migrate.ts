@@ -13,7 +13,7 @@ async function main() {
   await client.connect();
   console.log('✅ Connected to Neon');
 
-  const migrationsDir = join(__dirname, '../src/lib/db/migrations');
+  const migrationsDir = join(__dirname, '../drizzle');
   const files = readdirSync(migrationsDir)
     .filter(f => f.endsWith('.sql'))
     .sort();
