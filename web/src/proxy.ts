@@ -7,6 +7,45 @@ const intlMiddleware = createMiddleware(routing);
 const protectedPaths = ['/plants', '/scan', '/profile', '/admin'];
 const adminPaths = ['/admin'];
 
+// CORS for the REST API consumed by the Expo mobile app.
+//
+// Why this lives here: the `[[headers]]` block in netlify.toml is applied to
+// static assets, not to the Next.js functions that serve `/api/*`, so those
+// headers never reach API responses. Next.js also has no built-in preflight
+// handling — a route that only exports GET/POST answers an OPTIONS request with
+// 405. Browser-based clients (Expo web, and any client sending an
+// `Authorization` header + JSON, which triggers a preflight) therefore can't
+// talk to the API without this. Native Expo Go doesn't enforce CORS, but
+// handling it here makes the API usable from every mobile target uniformly.
+const CORS_ALLOWED_METHODS = 'GET, POST, PUT, PATCH, DELETE, OPTIONS';
+const CORS_ALLOWED_HEADERS = 'Content-Type, Authorization';
+
+// Optional comma-separated allowlist (e.g. "https://app.scarlet.com,http://localhost:8081").
+// Falls back to "*", which is safe here: the API is stateless and Bearer-authed,
+// so it never relies on cookies being sent cross-origin (we never set
+// Access-Control-Allow-Credentials).
+const corsAllowlist = (process.env.CORS_ALLOWED_ORIGINS ?? '')
+  .split(',')
+  .map((o) => o.trim())
+  .filter(Boolean);
+
+function resolveCorsOrigin(request: NextRequest): string {
+  if (corsAllowlist.length === 0) return '*';
+  const origin = request.headers.get('origin');
+  if (origin && corsAllowlist.includes(origin)) return origin;
+  return corsAllowlist[0];
+}
+
+function withCors(response: NextResponse, origin: string): NextResponse {
+  response.headers.set('Access-Control-Allow-Origin', origin);
+  response.headers.set('Access-Control-Allow-Methods', CORS_ALLOWED_METHODS);
+  response.headers.set('Access-Control-Allow-Headers', CORS_ALLOWED_HEADERS);
+  response.headers.set('Access-Control-Max-Age', '86400');
+  // When the origin is reflected (not "*"), caches must key on it.
+  if (origin !== '*') response.headers.append('Vary', 'Origin');
+  return response;
+}
+
 function isProtected(pathname: string): boolean {
   // Strip locale prefix (e.g. /bg/dashboard → /dashboard)
   const stripped = pathname.replace(/^\/(bg|en)/, '') || pathname;
@@ -21,9 +60,14 @@ function isAdmin(pathname: string): boolean {
 export default function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // Let API routes pass through without locale or auth handling
+  // API routes skip locale/auth handling, but get CORS + preflight handling so
+  // the Expo mobile app (and any browser-based client) can call them.
   if (pathname.startsWith('/api/')) {
-    return NextResponse.next();
+    const origin = resolveCorsOrigin(request);
+    if (request.method === 'OPTIONS') {
+      return withCors(new NextResponse(null, { status: 204 }), origin);
+    }
+    return withCors(NextResponse.next(), origin);
   }
 
   // Run next-intl middleware for all other routes

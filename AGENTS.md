@@ -13,8 +13,9 @@ Scarlet is a full-stack boutique flower shop application with an embedded plant 
 
 ### Communication
 - **Web → Backend**: Next.js Server Actions (form submissions) + Server Components (data fetching)
-- **Mobile → Backend**: RESTful API via Axios client (`mobile/src/api/client.ts`)
+- **Mobile → Backend**: RESTful API over HTTP — full reference served live at `GET /api/docs` (source: `web/src/app/api/docs/route.ts`)
 - **Authentication**: JWT access tokens (15m) + refresh tokens (7d). Web uses httpOnly cookies. Mobile uses expo-secure-store + Authorization Bearer header.
+- **CORS**: `/api/*` CORS + preflight is handled centrally in `web/src/proxy.ts` (Next 16's renamed middleware; the `[[headers]]` in netlify.toml do NOT reach Next.js API routes).
 
 ### Data Layer
 - **Database**: Neon serverless PostgreSQL accessed via `@neondatabase/serverless` HTTP driver
