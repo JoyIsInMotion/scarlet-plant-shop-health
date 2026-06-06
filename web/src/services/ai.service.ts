@@ -105,16 +105,16 @@ export async function analyzeSavedPlant(plantId: string, userId: string, role: s
   return { analysis: savedAnalysis, matchedSpecies, advice: analysis.friendly_advice ?? null, careBasics: analysis.care_basics ?? null };
 }
 
-export async function quickScan(userId: string, role: string, file: File) {
+// Shared pipeline: validate → upload to R2 → run AI → match an existing
+// catalog species (read-only). Used by both the logged-in and anonymous scans.
+async function runQuickAnalysis(file: File, keyPrefix: string) {
   if (file.size > MAX_FILE_SIZE_BYTES) throw new ServiceError('File too large (max 5MB)', 400);
   if (!ALLOWED_IMAGE_TYPES.includes(file.type as (typeof ALLOWED_IMAGE_TYPES)[number])) {
     throw new ServiceError('Invalid file type. Use JPEG, PNG, or WebP', 400);
   }
 
-  await enforceRateLimit(userId, role);
-
   const ext = file.type.split('/')[1];
-  const key = `scans/${userId}/${randomUUID()}.${ext}`;
+  const key = `${keyPrefix}/${randomUUID()}.${ext}`;
   const buffer = Buffer.from(await file.arrayBuffer());
 
   let imageUrl: string;
@@ -137,7 +137,7 @@ export async function quickScan(userId: string, role: string, file: File) {
     throw new ServiceError('AI analysis failed. Please try again.', 500);
   }
 
-  // Only match; quick scans don't create new catalog entries
+  // Only match; quick scans never create new catalog entries
   let matchedSpeciesId: string | null = null;
   if (analysis.species.scientific_name) {
     const [match] = await db
@@ -147,6 +147,18 @@ export async function quickScan(userId: string, role: string, file: File) {
       .limit(1);
     if (match) matchedSpeciesId = match.id;
   }
+
+  const matchedSpecies = matchedSpeciesId
+    ? (await db.select().from(plantSpecies).where(eq(plantSpecies.id, matchedSpeciesId)).limit(1))[0]
+    : null;
+
+  return { analysis, imageUrl, matchedSpeciesId, matchedSpecies };
+}
+
+export async function quickScan(userId: string, role: string, file: File) {
+  await enforceRateLimit(userId, role);
+
+  const { analysis, imageUrl, matchedSpeciesId, matchedSpecies } = await runQuickAnalysis(file, `scans/${userId}`);
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [savedAnalysis] = await (db.insert(aiAnalyses) as any)
@@ -170,9 +182,36 @@ export async function quickScan(userId: string, role: string, file: File) {
     })
     .returning();
 
-  const matchedSpecies = matchedSpeciesId
-    ? (await db.select().from(plantSpecies).where(eq(plantSpecies.id, matchedSpeciesId)).limit(1))[0]
-    : null;
-
   return { analysis: savedAnalysis, imageUrl, matchedSpecies, advice: analysis.friendly_advice ?? null, careBasics: analysis.care_basics ?? null };
+}
+
+// Anonymous teaser scan: runs the full analysis but does NOT persist it
+// (aiAnalyses requires a user) and isn't counted against the per-user daily
+// limit. The route caps anonymous callers at a single scan via a cookie.
+export async function quickScanAnonymous(file: File) {
+  const { analysis, imageUrl, matchedSpeciesId, matchedSpecies } = await runQuickAnalysis(file, 'scans/anon');
+
+  // Mirror the saved-row fields the UI reads, without touching the DB
+  const ephemeral = {
+    id: null,
+    plantId: null,
+    userId: null,
+    imageUrl,
+    healthScore: analysis.health.health_score,
+    overallCondition: analysis.health.overall_condition,
+    issues: analysis.health.issues,
+    careRecommendations: analysis.health.care_recommendations,
+    wateringNeeded: analysis.health.watering_needed,
+    identifiedCommonName: analysis.species.common_name,
+    identifiedScientificName: analysis.species.scientific_name,
+    identifiedFamily: analysis.species.family,
+    identifiedNativeRegion: analysis.species.native_region,
+    identifiedCareDifficulty: analysis.species.care_difficulty,
+    matchedSpeciesId,
+    confidence: analysis.confidence,
+    modelUsed: MODEL_NAME,
+    analyzedAt: new Date().toISOString(),
+  };
+
+  return { analysis: ephemeral, imageUrl, matchedSpecies, advice: analysis.friendly_advice ?? null, careBasics: analysis.care_basics ?? null };
 }

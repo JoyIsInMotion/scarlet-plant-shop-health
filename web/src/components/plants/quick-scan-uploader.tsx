@@ -1,15 +1,20 @@
 'use client';
 import { useRef, useState } from 'react';
 import { useTranslations } from 'next-intl';
-import { Upload, Image as ImageIcon, X } from 'lucide-react';
+import { Upload, Image as ImageIcon, X, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link } from '@/i18n/navigation';
 import { AIAnalysisCard } from './ai-analysis-card';
 import { useToast } from '@/hooks/use-toast';
 import { LoadingSpinner } from '@/components/ui/loading-spinner';
 import { apiFetch } from '@/lib/api/client';
 import type { AIAnalysis } from '@scarlet/shared';
 
-export function QuickScanUploader() {
+interface QuickScanUploaderProps {
+  isAuthed?: boolean;
+}
+
+export function QuickScanUploader({ isAuthed = false }: QuickScanUploaderProps) {
   const t = useTranslations();
   const { toast } = useToast();
   const inputRef = useRef<HTMLInputElement>(null);
@@ -18,6 +23,7 @@ export function QuickScanUploader() {
   const [loading, setLoading] = useState(false);
   const [analysis, setAnalysis] = useState<AIAnalysis | null>(null);
   const [dragOver, setDragOver] = useState(false);
+  const [limitReached, setLimitReached] = useState(false);
 
   function handleFile(f: File) {
     if (!f.type.startsWith('image/')) {
@@ -41,9 +47,18 @@ export function QuickScanUploader() {
       form.append('image', file);
       const res = await apiFetch('/api/ai/quick-scan', { method: 'POST', body: form });
       const json = await res.json();
-      if (!res.ok) throw new Error(json.error ?? t('errors.serverError'));
+      if (!res.ok) {
+        // Anonymous visitor has used their one free scan
+        if (json.code === 'ANON_LIMIT') {
+          setLimitReached(true);
+          return;
+        }
+        throw new Error(json.error ?? t('errors.serverError'));
+      }
       const { analysis, advice, careBasics } = json.data;
       setAnalysis({ ...analysis, adviceEn: advice?.en ?? null, adviceBg: advice?.bg ?? null, careBasics });
+      // After a logged-out visitor's free scan, nudge them to sign up
+      if (!isAuthed) setLimitReached(true);
       toast({ title: t('ai.analysisComplete'), variant: 'success' });
     } catch (err: unknown) {
       toast({
@@ -58,6 +73,14 @@ export function QuickScanUploader() {
 
   return (
     <div className="space-y-6">
+      {/* Free-scan hint for logged-out visitors */}
+      {!isAuthed && !limitReached && !analysis && (
+        <div className="flex items-center gap-2 rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-2.5 text-sm text-emerald-800">
+          <Sparkles className="h-4 w-4 shrink-0 text-emerald-600" />
+          {t('ai.freeScanHint')}
+        </div>
+      )}
+
       {/* Drop zone */}
       <div
         className={`relative rounded-xl border-2 border-dashed transition-colors ${
@@ -111,7 +134,7 @@ export function QuickScanUploader() {
         />
       </div>
 
-      {file && !analysis && (
+      {file && !analysis && !limitReached && (
         <Button onClick={handleScan} isLoading={loading} className="w-full">
           {loading ? t('ai.analyzing') : t('ai.scanButton')}
         </Button>
@@ -124,6 +147,22 @@ export function QuickScanUploader() {
       )}
 
       {analysis && <AIAnalysisCard analysis={analysis} />}
+
+      {/* Register / login CTA after the free scan (or when the limit is hit) */}
+      {!isAuthed && limitReached && (
+        <div className="rounded-2xl border border-scarlet/20 bg-scarlet/5 p-5 text-center">
+          <p className="font-semibold text-foreground">{t('ai.registerForMoreTitle')}</p>
+          <p className="mt-1 text-sm text-muted">{t('ai.registerForMoreDesc')}</p>
+          <div className="mt-4 flex justify-center gap-2">
+            <Button asChild className="rounded-full">
+              <Link href="/register">{t('auth.register')}</Link>
+            </Button>
+            <Button asChild variant="outline" className="rounded-full">
+              <Link href="/login">{t('auth.login')}</Link>
+            </Button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

@@ -196,6 +196,9 @@
     "analysisComplete": "Analysis complete",
     "lastScanned": "Last scanned",
     "scansLeftToday": "scans left today",
+    "freeScanHint": "You get 1 free scan. Sign up for more and to save your plants.",
+    "registerForMoreTitle": "Want to scan more plants?",
+    "registerForMoreDesc": "Create a free account for unlimited scans, saved plants and care schedules.",
     "careBasics": {
       "light": "Light",
       "watering": "Water",
