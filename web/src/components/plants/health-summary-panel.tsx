@@ -1,6 +1,6 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { Droplets, CheckCircle2 } from 'lucide-react';
 import { HealthScoreRing } from './health-score-ring';
 import type { AIAnalysis } from '@scarlet/shared';
@@ -8,6 +8,17 @@ import type { AIAnalysis } from '@scarlet/shared';
 interface HealthSummaryPanelProps {
   healthScore: number;
   analysis?: Pick<AIAnalysis, 'overallCondition' | 'issues' | 'careRecommendations' | 'wateringNeeded'> | null;
+}
+
+// AI analysis issue names/descriptions and recommendations are stored as
+// localized { bg, en } objects (sometimes a plain string). Rendering the object
+// directly crashes React, so always resolve to a string for the active locale.
+type Localized = string | { bg?: string | null; en?: string | null } | null | undefined;
+
+function pickLocalized(value: Localized, locale: string): string {
+  if (value == null) return '';
+  if (typeof value === 'string') return value;
+  return value[locale as 'bg' | 'en'] ?? value.en ?? value.bg ?? '';
 }
 
 function deriveCondition(score: number) {
@@ -26,10 +37,11 @@ const severityColors = {
 
 export function HealthSummaryPanel({ healthScore, analysis }: HealthSummaryPanelProps) {
   const t = useTranslations();
+  const locale = useLocale();
 
   const condition = analysis?.overallCondition ?? deriveCondition(healthScore);
-  const issues = (analysis?.issues ?? []) as Array<{ name: string; severity: string; description: string }>;
-  const recommendations = (analysis?.careRecommendations ?? []) as unknown as Array<{ en: string; bg: string } | string>;
+  const issues = (analysis?.issues ?? []) as Array<{ name: Localized; severity: string; description: Localized }>;
+  const recommendations = (analysis?.careRecommendations ?? []) as unknown as Localized[];
 
   const statusBg =
     healthScore >= 80 ? 'bg-green-50 text-green-800' :
@@ -68,8 +80,8 @@ export function HealthSummaryPanel({ healthScore, analysis }: HealthSummaryPanel
                 <div key={i} className={`flex items-start gap-3 p-3 rounded-lg ${colors.bg}`}>
                   <div className={`w-2.5 h-2.5 rounded-full mt-1 flex-shrink-0 ${colors.dot}`} />
                   <div className="min-w-0">
-                    <p className={`text-sm font-medium ${colors.text}`}>{issue.name}</p>
-                    <p className={`text-xs mt-0.5 ${colors.sub}`}>{issue.description}</p>
+                    <p className={`text-sm font-medium ${colors.text}`}>{pickLocalized(issue.name, locale)}</p>
+                    <p className={`text-xs mt-0.5 ${colors.sub}`}>{pickLocalized(issue.description, locale)}</p>
                   </div>
                 </div>
               );
@@ -95,7 +107,7 @@ export function HealthSummaryPanel({ healthScore, analysis }: HealthSummaryPanel
                 <span className="flex-shrink-0 w-5 h-5 rounded-full bg-red-100 text-red-700 text-xs font-semibold flex items-center justify-center mt-0.5">
                   {i + 1}
                 </span>
-                {typeof rec === 'string' ? rec : rec.en}
+                {pickLocalized(rec, locale)}
               </li>
             ))}
           </ol>
