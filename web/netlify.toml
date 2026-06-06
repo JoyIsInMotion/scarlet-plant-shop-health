@@ -12,6 +12,10 @@
 
 [build.environment]
   NODE_VERSION = "22"
+  # Server Components self-fetch the REST API (/api/...) over HTTP; without this
+  # they fall back to http://localhost:3000 on Netlify and silently return empty
+  # data (My Plants, My Orders, Admin stats all read 0). Must match the live URL.
+  NEXT_PUBLIC_APP_URL = "https://scarletflowers.netlify.app"
 
 [[headers]]
   for = "/api/*"
