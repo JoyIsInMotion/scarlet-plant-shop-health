@@ -102,6 +102,9 @@ export interface ProductQuery {
   limit?: number;
   offset?: number;
   category?: string;
+  search?: string;
+  sort?: 'createdAt' | 'price';
+  order?: 'asc' | 'desc';
 }
 
 export function getProducts(
@@ -112,8 +115,79 @@ export function getProducts(
   if (options.limit != null) qs.set('limit', String(options.limit));
   if (options.offset != null) qs.set('offset', String(options.offset));
   if (options.category) qs.set('category', options.category);
+  if (options.search) qs.set('search', options.search);
+  if (options.sort) qs.set('sort', options.sort);
+  if (options.order) qs.set('order', options.order);
   const suffix = qs.toString() ? `?${qs.toString()}` : '';
   return request<ProductList>(`/api/products${suffix}`, { token });
+}
+
+// ─── Orders ──────────────────────────────────────────────────────────────────
+
+export interface OrderItemInput {
+  productId: string;
+  quantity: number;
+}
+
+export interface CreateOrderInput {
+  items: OrderItemInput[];
+  shippingAddress?: string | null;
+  notes?: string | null;
+}
+
+export interface Order {
+  id: string;
+  userId: string;
+  total: string;
+  status: string;
+  shippingAddress: string | null;
+  notes: string | null;
+  createdAt: string;
+  updatedAt: string;
+}
+
+// Places an order for the items in the cart. The backend validates stock and
+// decrements it, so a 400 here means an item ran out — surface its message.
+export function createOrder(input: CreateOrderInput, token: string): Promise<Order> {
+  return request<Order>('/api/orders', { method: 'POST', body: input, token });
+}
+
+export type OrderStatus =
+  | 'pending'
+  | 'confirmed'
+  | 'processing'
+  | 'shipped'
+  | 'delivered'
+  | 'cancelled';
+
+export interface OrderLineItem {
+  orderId: string;
+  quantity: number;
+  unitPrice: string;
+  nameBg: string | null;
+  nameEn: string | null;
+  imageUrl: string | null;
+}
+
+export interface OrderWithItems extends Order {
+  status: OrderStatus;
+  items: OrderLineItem[];
+}
+
+export interface OrderList {
+  items: OrderWithItems[];
+  total: number;
+  limit: number;
+  offset: number;
+}
+
+// Lists the signed-in user's orders, newest first. Offset-based paging mirrors
+// getProducts.
+export function getOrders(
+  token: string,
+  { limit = 10, offset = 0 }: { limit?: number; offset?: number } = {}
+): Promise<OrderList> {
+  return request<OrderList>(`/api/orders?limit=${limit}&offset=${offset}`, { token });
 }
 
 // ─── Plants ──────────────────────────────────────────────────────────────────
