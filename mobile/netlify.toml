@@ -1,0 +1,21 @@
+# Expo mobile app — deployed as a static Web export (separate Netlify site).
+# Netlify builds this in monorepo mode with package = mobile; it installs the
+# npm workspace from the repo root, so @scarlet/shared resolves. Paths here are
+# relative to mobile/. The Next.js back-end + Web client deploys as a separate
+# Netlify site (package = web) with its own web/netlify.toml.
+[build]
+  command = "npm run build"   # expo export, run inside mobile/
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+  # Point the mobile client at the deployed Next.js REST API (no locale prefix —
+  # api.ts appends /api/... paths to this base).
+  EXPO_PUBLIC_API_URL = "https://scarletflowers.netlify.app"
+
+# SPA fallback: serve the static export for client-side (expo-router) routes
+# that don't map to a pre-rendered .html file.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
