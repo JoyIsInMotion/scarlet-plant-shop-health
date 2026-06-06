@@ -3,7 +3,6 @@ import { withAuth, getAuthFromRequest } from '@/lib/auth/middleware';
 import { ok, err } from '@/lib/api/response';
 import * as plantsService from '@/services/plants.service';
 import { ServiceError } from '@/services/service-error';
-import { apiFetch } from '@/lib/api/client';
 
 type Ctx = { params: Promise<{ id: string }> };
 
@@ -32,8 +31,7 @@ async function uploadPhoto(req: NextRequest, ctx: Ctx) {
 
     if (!file) return err('No image provided', 400);
 
-    // Upload to R2 (reuse existing upload logic)
-    const { uploadPlantImage } = await import('@/services/plants.service');
+    // Upload to R2, then record the photo URL in the DB
     const { url } = await plantsService.uploadPlantImage(id, auth.sub, file);
 
     // Add photo entry to DB

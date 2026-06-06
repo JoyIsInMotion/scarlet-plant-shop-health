@@ -11,7 +11,6 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent } from '@/components/ui/card';
 import { useToast } from '@/hooks/use-toast';
-import { apiFetch } from '@/lib/api/client';
 import type { Plant } from '@scarlet/shared';
 
 const schema = z.object({
@@ -78,7 +77,7 @@ export function PlantEditForm({ plant }: PlantEditFormProps) {
         const res = await fetch(`/api/catalog?search=${encodeURIComponent(query)}&limit=5`);
         if (res.ok) {
           const { data } = await res.json();
-          setSpeciesSuggestions(data.items || []);
+          setSpeciesSuggestions(data.species || []);
         }
       } catch (error) {
         console.error('Failed to search species:', error);
@@ -300,8 +299,11 @@ export function PlantEditForm({ plant }: PlantEditFormProps) {
                   className="pl-9"
                 />
               </div>
-              {speciesSearch && speciesSuggestions.length > 0 && (
+              {speciesSearch.length >= 2 && (isSearchingSpecies || speciesSuggestions.length > 0) && (
                 <div className="absolute top-full left-0 right-0 mt-1 bg-white border border-gray-200 rounded-lg shadow-lg z-10">
+                  {isSearchingSpecies && speciesSuggestions.length === 0 && (
+                    <p className="px-3 py-2 text-sm text-gray-400">{t('common.loading')}</p>
+                  )}
                   {speciesSuggestions.map((species) => (
                     <button
                       key={species.id}

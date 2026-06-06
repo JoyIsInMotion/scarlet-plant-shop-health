@@ -77,13 +77,6 @@ export function PlantPhotoGallery({ plant, analyses }: PlantPhotoGalleryProps) {
 
   const activeAnalysis = activeSlide?.type === 'analysis' ? activeSlide.analysis : null;
 
-  const activeImageUrl =
-    activeSlide == null
-      ? plant.imageUrl
-      : activeSlide.type === 'current'
-        ? activeSlide.imageUrl
-        : activeSlide.analysis.imageUrl;
-
   return (
     <div className="rounded-xl border border-gray-200 shadow-sm overflow-hidden bg-white">
       {/* ── Carousel ── */}

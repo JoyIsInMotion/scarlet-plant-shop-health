@@ -70,7 +70,7 @@ async function getAnalyses(id: string, userId: string): Promise<AIAnalysis[]> {
   }
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
+export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('plants');
   return { title: t('plantDetails') };
 }

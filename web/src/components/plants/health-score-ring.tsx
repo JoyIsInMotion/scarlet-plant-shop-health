@@ -17,7 +17,7 @@ function getColor(score: number): string {
   return '#ef4444';
 }
 
-function getLabel(score: number, t: any): string {
+function getLabel(score: number, t: ReturnType<typeof useTranslations>): string {
   if (score >= 80) return t('health.excellent');
   if (score >= 60) return t('health.good');
   if (score >= 40) return t('health.fair');
