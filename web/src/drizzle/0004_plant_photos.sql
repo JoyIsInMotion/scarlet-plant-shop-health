@@ -4,11 +4,10 @@ CREATE TABLE IF NOT EXISTS plant_photos (
   plant_id UUID NOT NULL REFERENCES plants(id) ON DELETE CASCADE,
   user_id UUID NOT NULL REFERENCES users(id) ON DELETE CASCADE,
   image_url TEXT NOT NULL,
-  uploaded_at TIMESTAMP NOT NULL DEFAULT now(),
-  INDEX plant_photos_plant_idx ON plant_id,
-  INDEX plant_photos_user_idx ON user_id,
-  INDEX plant_photos_uploaded_idx ON uploaded_at
+  uploaded_at TIMESTAMP NOT NULL DEFAULT now()
 );
 
--- Add photo management functions to the plants table (optional but useful)
+CREATE INDEX IF NOT EXISTS plant_photos_plant_idx ON plant_photos(plant_id);
+CREATE INDEX IF NOT EXISTS plant_photos_user_idx ON plant_photos(user_id);
+CREATE INDEX IF NOT EXISTS plant_photos_uploaded_idx ON plant_photos(uploaded_at);
 CREATE INDEX IF NOT EXISTS plant_photos_plant_uploaded_idx ON plant_photos(plant_id, uploaded_at DESC);
