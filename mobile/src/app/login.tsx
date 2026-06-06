@@ -1,4 +1,4 @@
-import { Redirect, useRouter } from 'expo-router';
+import { Redirect, Stack, useRouter, type Href } from 'expo-router';
 import { useState } from 'react';
 import {
   ActivityIndicator,
@@ -15,6 +15,11 @@ import { ApiError } from '@/lib/api';
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+// expo-router serves the (tabs) group index at the clean "/" URL, but this
+// version's typed-routes generator omits "/" (it only emits "/index"), so we
+// cast to keep the URL clean on web.
+const HOME = '/' as Href;
+
 export default function LoginScreen() {
   const router = useRouter();
   const { login, isAuthenticated, isLoading } = useAuth();
@@ -26,8 +31,12 @@ export default function LoginScreen() {
 
   // Already signed in — no reason to show the form.
   if (!isLoading && isAuthenticated) {
-    return <Redirect href="/" />;
+    return <Redirect href={HOME} />;
   }
+
+  // The login screen is often reached via an AuthGuard redirect (which replaces
+  // history), so there may be no entry to pop — fall back to Home.
+  const goBack = () => (router.canGoBack() ? router.back() : router.replace(HOME));
 
   async function onSubmit() {
     setError(null);
@@ -45,7 +54,7 @@ export default function LoginScreen() {
     setSubmitting(true);
     try {
       await login(trimmedEmail, password);
-      router.replace('/');
+      router.replace(HOME);
     } catch (e) {
       // 401 surfaces as "Invalid credentials" from the API; network/other
       // errors carry their own message.
@@ -59,6 +68,16 @@ export default function LoginScreen() {
     <KeyboardAvoidingView
       style={styles.container}
       behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
+      {/* Guarantee a way out even when we arrived here via a redirect. */}
+      <Stack.Screen
+        options={{
+          headerLeft: () => (
+            <Pressable onPress={goBack} hitSlop={12} style={styles.headerBack}>
+              <Text style={styles.headerBackText}>‹ Home</Text>
+            </Pressable>
+          ),
+        }}
+      />
       <View style={styles.form}>
         <Text style={styles.title}>Welcome back</Text>
         <Text style={styles.subtitle}>Sign in to your Scarlet account.</Text>
@@ -117,6 +136,15 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
+  },
+  headerBack: {
+    paddingHorizontal: 8,
+    paddingVertical: 4,
+  },
+  headerBackText: {
+    fontSize: 16,
+    fontWeight: '700',
+    color: '#C2375A',
   },
   form: {
     width: '100%',
