@@ -3,7 +3,7 @@
 // way as the website. The active locale follows the signed-in user's
 // preferredLocale, defaulting to Bulgarian (the shop's primary language).
 
-import { useAuth } from '@/context/auth';
+import { useLocale } from '@/context/locale';
 
 export type Locale = 'bg' | 'en';
 
@@ -15,6 +15,55 @@ const bg = {
     retry: 'Опитай отново',
     loading: 'Зареждане...',
     error: 'Грешка',
+  },
+  landing: {
+    tag: 'Scarlet Boutique',
+    heroTitle: 'Добре дошли в Scarlet',
+    heroSubtitle:
+      'Вашият бутиков магазин за цветя и приложение за здравето на вашите растения',
+    heroButton: 'Разгледай магазина',
+    getStarted: 'Започнете сега',
+    whyUs: 'Защо Scarlet?',
+    feature1Title: 'AI анализ на растения',
+    feature1Desc: 'Сканирайте растенията си и получете подробен здравен анализ',
+    feature2Title: 'Каталог с растения',
+    feature2Desc: '500+ вида растения с ръководства за грижи на български',
+    feature3Title: 'Бутиков магазин',
+    feature3Desc: 'Внимателно подбрани цветя и растения за всеки повод',
+    plantHealthEyebrow: 'Здраве на растенията',
+    plantHealthCTA: 'Следи здравето на растенията си',
+    plantHealthDesc: 'Добавете вашите растения и използвайте AI за анализ на тяхното здраве',
+  },
+  home: {
+    greeting: 'Здравейте',
+    welcomeSub: 'Разгледайте магазина или сканирайте растение.',
+    shop: 'Магазин',
+    shopDesc: 'Букети, саксийни и аксесоари',
+    myPlants: 'Моите растения',
+    plantsDesc: 'Вашата колекция',
+    scan: 'Сканирай растение',
+    scanDesc: 'AI здравен анализ',
+    quickActions: 'Бързи действия',
+    browseCategories: 'Разгледай по категория',
+    home: 'Начало',
+    searchPlaceholder: 'Търси растения и цветя...',
+    collections: 'Колекции',
+    bestSelling: 'Най-продавани',
+    items: 'продукта',
+    viewAll: 'Виж всички',
+    promoTitle: 'Намери своето растение',
+    promoSub: 'Внимателно подбрани цветя и растения',
+    login: 'Влезте, за да започнете',
+    logout: 'Изход',
+    allCategories: 'Всички',
+    categories: {
+      bouquet: 'Букети',
+      potted_plant: 'Саксийни',
+      succulent: 'Сукуленти',
+      tropical: 'Тропически',
+      seasonal: 'Сезонни',
+      accessories: 'Аксесоари',
+    },
   },
   plants: {
     myPlants: 'Моите растения',
@@ -95,6 +144,54 @@ const en: Dict = {
     loading: 'Loading...',
     error: 'Error',
   },
+  landing: {
+    tag: 'Scarlet Boutique',
+    heroTitle: 'Welcome to Scarlet',
+    heroSubtitle: 'Your boutique flower shop and plant health companion',
+    heroButton: 'Browse shop',
+    getStarted: 'Get started',
+    whyUs: 'Why Scarlet?',
+    feature1Title: 'AI plant analysis',
+    feature1Desc: 'Scan your plants and get a detailed health analysis',
+    feature2Title: 'Plant catalog',
+    feature2Desc: '500+ plant species with care guides',
+    feature3Title: 'Boutique shop',
+    feature3Desc: 'Carefully curated flowers and plants for every occasion',
+    plantHealthEyebrow: 'Plant Health',
+    plantHealthCTA: "Track your plant's health",
+    plantHealthDesc: 'Add your plants and use AI to analyze their health',
+  },
+  home: {
+    greeting: 'Hi',
+    welcomeSub: 'Browse the shop or scan a plant.',
+    shop: 'Shop',
+    shopDesc: 'Bouquets, plants & accessories',
+    myPlants: 'My plants',
+    plantsDesc: 'Your collection',
+    scan: 'Scan a plant',
+    scanDesc: 'AI health analysis',
+    quickActions: 'Quick actions',
+    browseCategories: 'Browse by category',
+    home: 'Home',
+    searchPlaceholder: 'Search plants and flowers...',
+    collections: 'Collections',
+    bestSelling: 'Best selling',
+    items: 'items',
+    viewAll: 'View all',
+    promoTitle: 'Find your perfect plant',
+    promoSub: 'Carefully curated flowers & plants',
+    login: 'Log in to get started',
+    logout: 'Log out',
+    allCategories: 'All',
+    categories: {
+      bouquet: 'Bouquets',
+      potted_plant: 'Potted',
+      succulent: 'Succulents',
+      tropical: 'Tropical',
+      seasonal: 'Seasonal',
+      accessories: 'Accessories',
+    },
+  },
   plants: {
     myPlants: 'My Plants',
     manageCollection: 'Review, edit and track your plant collection.',
@@ -173,10 +270,9 @@ export function getMessages(locale: Locale): Dict {
   return dictionaries[locale] ?? bg;
 }
 
-/** Returns the active locale + message bundle for the signed-in user. */
+/** Returns the active locale + message bundle (manual choice or user default). */
 export function useI18n(): { locale: Locale; m: Dict } {
-  const { user } = useAuth();
-  const locale: Locale = user?.preferredLocale === 'en' ? 'en' : 'bg';
+  const { locale } = useLocale();
   return { locale, m: getMessages(locale) };
 }
 
