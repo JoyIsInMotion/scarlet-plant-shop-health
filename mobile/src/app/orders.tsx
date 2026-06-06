@@ -103,7 +103,11 @@ function OrdersContent() {
         getOrders(token, { limit: PAGE_SIZE, offset: orders.length })
       );
       if (id !== requestId.current) return;
-      setOrders((prev) => [...prev, ...res.items]);
+      // De-dupe by id to avoid duplicate React keys if a page overlaps.
+      setOrders((prev) => {
+        const seen = new Set(prev.map((o) => o.id));
+        return [...prev, ...res.items.filter((o) => !seen.has(o.id))];
+      });
       setHasMore(res.offset + res.items.length < res.total);
     } catch {
       /* keep what we have */

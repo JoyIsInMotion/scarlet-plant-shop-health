@@ -131,7 +131,12 @@ function ShopContent() {
       const res = await authedRequest((token) => getProducts(query(products.length), token));
       // Ignore if filters changed mid-flight.
       if (id !== requestId.current) return;
-      setProducts((prev) => [...prev, ...res.items]);
+      // De-dupe by id: offset paging can re-return an item if the catalog
+      // shifts between requests, which would trigger duplicate React keys.
+      setProducts((prev) => {
+        const seen = new Set(prev.map((p) => p.id));
+        return [...prev, ...res.items.filter((p) => !seen.has(p.id))];
+      });
       setHasMore(res.hasMore);
     } catch {
       /* keep what we have; user can pull to refresh */
