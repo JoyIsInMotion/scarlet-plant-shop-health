@@ -1,17 +1,20 @@
 import { Stack } from 'expo-router';
 import { AuthProvider } from '@/context/auth';
+import { LocaleProvider } from '@/context/locale';
 
 export default function RootLayout() {
   return (
     <AuthProvider>
-      <Stack>
-        <Stack.Screen name="index" options={{ title: 'Scarlet' }} />
-        <Stack.Screen name="login" options={{ title: 'Login' }} />
-        <Stack.Screen name="shop" options={{ title: 'Shop' }} />
-        <Stack.Screen name="plants" options={{ title: 'My Plants' }} />
-        <Stack.Screen name="plants/[id]" options={{ title: 'Plant' }} />
-        <Stack.Screen name="scan" options={{ title: 'Scan' }} />
-      </Stack>
+      <LocaleProvider>
+        <Stack>
+          {/* The tab bar lives inside the (tabs) group; it renders its own
+              headers, so the root stack hides its header for that screen. */}
+          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+          {/* Pushed full-screen over the tabs, with an automatic back button. */}
+          <Stack.Screen name="login" options={{ title: 'Login' }} />
+          <Stack.Screen name="plants/[id]" options={{ title: 'Plant' }} />
+        </Stack>
+      </LocaleProvider>
     </AuthProvider>
   );
 }

@@ -98,8 +98,22 @@ export function getMe(token: string): Promise<User> {
   return request<User>('/api/users/me', { token });
 }
 
-export function getProducts(token?: string | null): Promise<ProductList> {
-  return request<ProductList>('/api/products', { token });
+export interface ProductQuery {
+  limit?: number;
+  offset?: number;
+  category?: string;
+}
+
+export function getProducts(
+  options: ProductQuery = {},
+  token?: string | null
+): Promise<ProductList> {
+  const qs = new URLSearchParams();
+  if (options.limit != null) qs.set('limit', String(options.limit));
+  if (options.offset != null) qs.set('offset', String(options.offset));
+  if (options.category) qs.set('category', options.category);
+  const suffix = qs.toString() ? `?${qs.toString()}` : '';
+  return request<ProductList>(`/api/products${suffix}`, { token });
 }
 
 // ─── Plants ──────────────────────────────────────────────────────────────────

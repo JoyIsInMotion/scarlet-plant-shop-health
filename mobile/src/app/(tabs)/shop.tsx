@@ -24,7 +24,7 @@ function ShopContent() {
   const load = useCallback(async () => {
     setError(null);
     try {
-      const list = await authedRequest((token) => getProducts(token));
+      const list = await authedRequest((token) => getProducts({}, token));
       setProducts(list.items);
     } catch (e) {
       setError(e instanceof ApiError ? e.message : 'Failed to load products.');
