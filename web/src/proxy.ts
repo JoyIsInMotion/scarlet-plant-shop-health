@@ -4,7 +4,9 @@ import { routing } from './i18n/routing';
 
 const intlMiddleware = createMiddleware(routing);
 
-const protectedPaths = ['/plants', '/scan', '/profile', '/admin'];
+// Public: /shop, /catalog, /login, /scan (logged-out users can browse + try a scan)
+// Logged-in only: /plants, /community, /orders, /profile, /dashboard, /admin
+const protectedPaths = ['/plants', '/community', '/orders', '/profile', '/dashboard', '/admin'];
 const adminPaths = ['/admin'];
 
 // CORS for the REST API consumed by the Expo mobile app.

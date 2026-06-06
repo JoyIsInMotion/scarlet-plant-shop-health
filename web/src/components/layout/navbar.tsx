@@ -31,8 +31,8 @@ export function Navbar() {
   const authLinks = user
     ? [
         { href: '/plants', label: t('nav.myPlants'), icon: Leaf },
+        { href: '/community', label: t('nav.community'), icon: Users },
         { href: '/orders', label: t('orders.myOrders'), icon: Receipt },
-        { href: '/scan', label: t('nav.scan'), icon: ScanLine },
         ...(user.role === 'admin' ? [{ href: '/admin', label: t('nav.admin'), icon: ShieldCheck }] : []),
       ]
     : [];
@@ -89,7 +89,7 @@ export function Navbar() {
             </div>
 
             <Link href="/catalog" className={navLinkClass}>{t('nav.catalog')}</Link>
-            <Link href="/community" className={navLinkClass}>{t('nav.community')}</Link>
+            <Link href="/scan" className={navLinkClass}>{t('nav.scan')}</Link>
 
             {authLinks.length > 0 && (
               <>
@@ -191,9 +191,9 @@ export function Navbar() {
             <Link href="/catalog" onClick={() => setMobileOpen(false)} className="block rounded-xl px-3 py-2 text-sm text-muted transition-colors hover:bg-cream hover:text-foreground">
               {t('nav.catalog')}
             </Link>
-            <Link href="/community" onClick={() => setMobileOpen(false)} className="flex items-center gap-2 rounded-xl px-3 py-2 text-sm text-muted transition-colors hover:bg-cream hover:text-foreground">
-              <Users className="h-4 w-4" />
-              {t('nav.community')}
+            <Link href="/scan" onClick={() => setMobileOpen(false)} className="flex items-center gap-2 rounded-xl px-3 py-2 text-sm text-muted transition-colors hover:bg-cream hover:text-foreground">
+              <ScanLine className="h-4 w-4" />
+              {t('nav.scan')}
             </Link>
           </div>
 
