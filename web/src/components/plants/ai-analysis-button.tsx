@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
-import { useTranslations } from 'next-intl';
-import { ScanLine } from 'lucide-react';
+import { useTranslations, useLocale } from 'next-intl';
+import { ScanLine, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { AIAnalysisCard } from './ai-analysis-card';
 import { useToast } from '@/hooks/use-toast';
@@ -9,11 +9,14 @@ import type { AIAnalysis } from '@scarlet/shared';
 
 interface AIAnalysisButtonProps {
   plantId: string;
+  latestAnalysis?: (AIAnalysis & { matchedSpeciesId?: string | null }) | null;
+  scansRemaining?: number | null;
   onAnalysisComplete?: (analysis: AIAnalysis) => void;
 }
 
-export function AIAnalysisButton({ plantId, onAnalysisComplete }: AIAnalysisButtonProps) {
+export function AIAnalysisButton({ plantId, latestAnalysis, scansRemaining, onAnalysisComplete }: AIAnalysisButtonProps) {
   const t = useTranslations();
+  const locale = useLocale();
   const { toast } = useToast();
   const [loading, setLoading] = useState(false);
   const [analysis, setAnalysis] = useState<(AIAnalysis & { matchedSpeciesId?: string | null }) | null>(null);
@@ -53,11 +56,31 @@ export function AIAnalysisButton({ plantId, onAnalysisComplete }: AIAnalysisButt
   }
 
   return (
-    <div className="space-y-4">
-      <Button onClick={handleScan} isLoading={loading} className="gap-2">
-        <ScanLine className="h-4 w-4" />
-        {loading ? t('ai.analyzing') : t('ai.scanButton')}
-      </Button>
+    <div className="space-y-3">
+      {/* Context from the last scan — helps decide whether re-scanning is worth it */}
+      {!analysis && latestAnalysis && (
+        <div className="flex items-center gap-1.5 text-xs text-gray-400">
+          <Clock className="h-3.5 w-3.5 shrink-0" />
+          <span>
+            {t('ai.lastScanned')}{' '}
+            {new Intl.DateTimeFormat(locale, { day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit' }).format(new Date(latestAnalysis.analyzedAt))}
+            {latestAnalysis.healthScore != null && ` · ${latestAnalysis.healthScore}/100`}
+            {latestAnalysis.overallCondition && ` · ${t(`ai.condition.${latestAnalysis.overallCondition as 'excellent' | 'good' | 'fair' | 'poor' | 'critical'}`)}`}
+          </span>
+        </div>
+      )}
+
+      <div className="flex items-center gap-3 flex-wrap">
+        <Button onClick={handleScan} isLoading={loading} className="gap-2">
+          <ScanLine className="h-4 w-4" />
+          {loading ? t('ai.analyzing') : t('ai.scanButton')}
+        </Button>
+        {scansRemaining != null && (
+          <span className="text-xs text-gray-400">
+            {scansRemaining} {t('ai.scansLeftToday')}
+          </span>
+        )}
+      </div>
 
       {analysis && (
         <AIAnalysisCard

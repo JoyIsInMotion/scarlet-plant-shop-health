@@ -7,6 +7,7 @@ import { uploadToR2 } from '@/lib/r2/client';
 import { MAX_FILE_SIZE_BYTES, ALLOWED_IMAGE_TYPES } from '@scarlet/shared';
 import { randomUUID } from 'crypto';
 import { ServiceError } from './service-error';
+import { createScheduleFromSpecies } from './care.service';
 
 async function enforceRateLimit(userId: string, role: string) {
   try {
@@ -50,7 +51,9 @@ export async function analyzeSavedPlant(plantId: string, userId: string, role: s
     throw new ServiceError('AI analysis failed. Please try again.', 500);
   }
 
-  // Match existing species or create unverified catalog entry for high-confidence hits
+  // Only ever match against existing catalog species — never create new ones
+  // from a user's AI scan. The catalog is curated; users can link to it but
+  // not add to it.
   let matchedSpeciesId: string | null = null;
   if (analysis.species.scientific_name) {
     const [match] = await db
@@ -59,22 +62,7 @@ export async function analyzeSavedPlant(plantId: string, userId: string, role: s
       .where(ilike(plantSpecies.scientificName, analysis.species.scientific_name))
       .limit(1);
 
-    if (match) {
-      matchedSpeciesId = match.id;
-    } else if (analysis.confidence === 'high') {
-      const [newSpecies] = await db
-        .insert(plantSpecies)
-        .values({
-          scientificName: analysis.species.scientific_name,
-          commonNameEn: analysis.species.common_name,
-          family: analysis.species.family,
-          nativeRegionEn: analysis.species.native_region,
-          careDifficulty: analysis.species.care_difficulty,
-          isVerified: false,
-        })
-        .returning({ id: plantSpecies.id });
-      matchedSpeciesId = newSpecies.id;
-    }
+    if (match) matchedSpeciesId = match.id;
   }
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -102,8 +90,12 @@ export async function analyzeSavedPlant(plantId: string, userId: string, role: s
   if (['medium', 'high'].includes(analysis.confidence)) {
     const plantUpdates: Record<string, unknown> = { updatedAt: new Date() };
     if (analysis.health.health_score !== null) plantUpdates.healthScore = analysis.health.health_score;
-    if (matchedSpeciesId && !plant.speciesConfirmed) plantUpdates.speciesId = matchedSpeciesId;
+    const linksNewSpecies = matchedSpeciesId && !plant.speciesConfirmed;
+    if (linksNewSpecies) plantUpdates.speciesId = matchedSpeciesId;
     await db.update(plants).set(plantUpdates).where(eq(plants.id, plantId));
+
+    // Mirror updatePlant: auto-linking a species also (re)builds its care schedule
+    if (linksNewSpecies) await createScheduleFromSpecies(plantId, matchedSpeciesId!);
   }
 
   const matchedSpecies = matchedSpeciesId

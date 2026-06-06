@@ -17,11 +17,24 @@ interface PlantPhotoGalleryProps {
 
 function buildSlides(plant: PlantPhotoGalleryProps['plant'], analyses: AIAnalysis[]): Slide[] {
   const slides: Slide[] = [];
-  const analysisUrls = new Set(analyses.map((a) => a.imageUrl));
-  if (plant.imageUrl && !analysisUrls.has(plant.imageUrl)) {
+
+  // Re-scanning the same photo creates a new analysis row each time, but the
+  // image (and usually the verdict) is unchanged — show only the latest scan
+  // per unique photo so the carousel doesn't repeat the same picture.
+  const seenUrls = new Set<string>();
+  const latestPerPhoto: AIAnalysis[] = [];
+  for (const a of analyses) {
+    if (a.imageUrl) {
+      if (seenUrls.has(a.imageUrl)) continue;
+      seenUrls.add(a.imageUrl);
+    }
+    latestPerPhoto.push(a);
+  }
+
+  if (plant.imageUrl && !seenUrls.has(plant.imageUrl)) {
     slides.push({ type: 'current', imageUrl: plant.imageUrl, healthScore: plant.healthScore });
   }
-  analyses.forEach((a) => slides.push({ type: 'analysis', analysis: a }));
+  latestPerPhoto.forEach((a) => slides.push({ type: 'analysis', analysis: a }));
   return slides;
 }
 
