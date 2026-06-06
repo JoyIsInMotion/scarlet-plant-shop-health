@@ -1,3 +1,6 @@
+'use client';
+
+import { useTranslations } from 'next-intl';
 import { cn } from '@/lib/utils/cn';
 
 interface HealthScoreRingProps {
@@ -14,15 +17,16 @@ function getColor(score: number): string {
   return '#ef4444';
 }
 
-function getLabel(score: number): string {
-  if (score >= 80) return 'Отлично';
-  if (score >= 60) return 'Добро';
-  if (score >= 40) return 'Задоволително';
-  if (score >= 20) return 'Лошо';
-  return 'Критично';
+function getLabel(score: number, t: any): string {
+  if (score >= 80) return t('health.excellent');
+  if (score >= 60) return t('health.good');
+  if (score >= 40) return t('health.fair');
+  if (score >= 20) return t('health.poor');
+  return t('health.critical');
 }
 
 export function HealthScoreRing({ score, size = 80, className }: HealthScoreRingProps) {
+  const t = useTranslations();
   const radius = (size - 8) / 2;
   const circumference = 2 * Math.PI * radius;
   const progress = (score / 100) * circumference;
@@ -59,7 +63,7 @@ export function HealthScoreRing({ score, size = 80, className }: HealthScoreRing
           {Math.round(score)}
         </span>
         {large && (
-          <span className="text-xs text-gray-500 leading-none">{getLabel(score)}</span>
+          <span className="text-xs text-gray-500 leading-none">{getLabel(score, t)}</span>
         )}
       </div>
     </div>

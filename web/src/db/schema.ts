@@ -294,6 +294,29 @@ export const aiAnalyses = pgTable(
   ]
 );
 
+// ─── plant_photos ─────────────────────────────────────────────────────────────
+
+export const plantPhotos = pgTable(
+  'plant_photos',
+  {
+    id: uuid('id').defaultRandom().primaryKey(),
+    plantId: uuid('plant_id')
+      .notNull()
+      .references(() => plants.id, { onDelete: 'cascade' }),
+    userId: uuid('user_id')
+      .notNull()
+      .references(() => users.id, { onDelete: 'cascade' }),
+    imageUrl: text('image_url').notNull(),
+    uploadedAt: timestamp('uploaded_at').defaultNow().notNull(),
+  },
+  (t) => [
+    index('plant_photos_plant_idx').on(t.plantId),
+    index('plant_photos_user_idx').on(t.userId),
+    index('plant_photos_uploaded_idx').on(t.uploadedAt),
+    index('plant_photos_plant_uploaded_idx').on(t.plantId, t.uploadedAt),
+  ]
+);
+
 // ─── products ─────────────────────────────────────────────────────────────────
 
 export const products = pgTable(

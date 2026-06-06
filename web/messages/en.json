@@ -89,7 +89,31 @@
     "updateImage": "Replace image",
     "saveChanges": "Save changes",
     "currentPhoto": "Current photo",
-    "noPhotos": "No photos yet"
+    "noPhotos": "No photos yet",
+    "additionalPhotos": "Additional photos",
+    "addMorePhotos": "Add more photos",
+    "editSchedule": "Edit schedule",
+    "wateringInterval": "Watering interval",
+    "fertilizingInterval": "Fertilizing interval",
+    "repottingInterval": "Repotting interval",
+    "mistingNeeded": "Needs misting",
+    "days": "days",
+    "months": "months",
+    "deletePlant": "Delete plant",
+    "deleteConfirm": "This action cannot be undone.",
+    "dangerZone": "Danger Zone",
+    "plantDeleted": "Plant deleted successfully",
+    "searchSpecies": "Search plant species...",
+    "linkSpecies": "Link a species",
+    "scanToIdentify": "Scan with AI to identify it",
+    "addManually": "Add manually"
+  },
+  "health": {
+    "excellent": "Excellent",
+    "good": "Good",
+    "fair": "Fair",
+    "poor": "Poor",
+    "critical": "Critical"
   },
   "stats": {
     "water": "Water",
@@ -170,6 +194,8 @@
     "dragAndDrop": "Drag and drop or click to select",
     "linkToPlant": "Link to plant",
     "analysisComplete": "Analysis complete",
+    "lastScanned": "Last scanned",
+    "scansLeftToday": "scans left today",
     "careBasics": {
       "light": "Light",
       "watering": "Water",

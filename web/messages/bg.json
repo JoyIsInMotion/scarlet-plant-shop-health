@@ -89,7 +89,31 @@
     "updateImage": "Сменете снимката",
     "saveChanges": "Запази промените",
     "currentPhoto": "Текуща снимка",
-    "noPhotos": "Все още няма снимки"
+    "noPhotos": "Все още няма снимки",
+    "additionalPhotos": "Допълнителни снимки",
+    "addMorePhotos": "Добавете още снимки",
+    "editSchedule": "Редактирайте график",
+    "wateringInterval": "Интервал на поливане",
+    "fertilizingInterval": "Интервал на торене",
+    "repottingInterval": "Интервал на преглаждане",
+    "mistingNeeded": "Нужно е пръскане",
+    "days": "дни",
+    "months": "месеца",
+    "deletePlant": "Изтриване на растението",
+    "deleteConfirm": "Това действие не може да бъде отменено.",
+    "dangerZone": "Опасна зона",
+    "plantDeleted": "Растението е успешно изтрито",
+    "searchSpecies": "Търсете видове растения...",
+    "linkSpecies": "Свържи вид",
+    "scanToIdentify": "Сканирай с AI, за да го разпознаеш",
+    "addManually": "Добави ръчно"
+  },
+  "health": {
+    "excellent": "Отлично",
+    "good": "Добро",
+    "fair": "Задоволително",
+    "poor": "Лошо",
+    "critical": "Критично"
   },
   "stats": {
     "water": "Вода",
@@ -170,6 +194,8 @@
     "dragAndDrop": "Плъзнете и пуснете или кликнете за избор",
     "linkToPlant": "Свържи с растение",
     "analysisComplete": "Анализът е завършен",
+    "lastScanned": "Последно сканирано",
+    "scansLeftToday": "сканирания остават днес",
     "careBasics": {
       "light": "Светлина",
       "watering": "Вода",

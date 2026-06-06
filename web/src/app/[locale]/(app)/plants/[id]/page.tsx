@@ -1,17 +1,19 @@
 import { getLocale, getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import {
-  ArrowLeft, Pencil, Leaf, Droplets, ExternalLink, History,
-  CalendarDays, FlowerIcon, Wind, AlertCircle,
+  ArrowLeft, Pencil, ExternalLink, History,
 } from 'lucide-react';
 import { PlantPhotoGallery } from '@/components/plants/plant-photo-gallery';
 import { AIAnalysisButton } from '@/components/plants/ai-analysis-button';
-import { LogCareButton } from '@/components/plants/log-care-button';
+import { PlantCareSection } from '@/components/plants/plant-care-section';
+import { CareHistoryCollapsible } from '@/components/plants/care-history-collapsible';
+import { DeletePlantButton } from '@/components/plants/delete-plant-button';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { getAccessToken } from '@/lib/auth/cookies';
 import { verifyAccessToken } from '@/lib/auth/jwt';
+import { getAIScansRemaining } from '@/lib/ai/rate-limit';
 import * as plantsService from '@/services/plants.service';
 import * as careService from '@/services/care.service';
 import { Link } from '@/i18n/navigation';
@@ -49,6 +51,14 @@ async function getRecentCareLogs(id: string, userId: string) {
   }
 }
 
+async function getScansRemaining(userId: string, role: string): Promise<number | null> {
+  try {
+    return await getAIScansRemaining(userId, role as 'user' | 'admin');
+  } catch {
+    return null;
+  }
+}
+
 async function getAnalyses(id: string, userId: string): Promise<AIAnalysis[]> {
   try {
     const { analyses } = await plantsService.getAnalyses(id, userId, 10, 0);
@@ -71,25 +81,6 @@ function daysUntil(date: string | Date | null | undefined): number | null {
   return Math.round(diff / (1000 * 60 * 60 * 24));
 }
 
-function DueBadge({ days, locale }: { days: number | null; locale: string }) {
-  if (days === null) return null;
-  if (days < 0) {
-    return (
-      <span className="inline-flex items-center gap-1 text-xs font-medium text-red-600">
-        <AlertCircle className="h-3 w-3" />
-        {locale === 'en' ? `Overdue by ${Math.abs(days)}d` : `Просрочено с ${Math.abs(days)} дни`}
-      </span>
-    );
-  }
-  if (days === 0) return <span className="text-xs font-medium text-orange-600">{locale === 'en' ? 'Due today' : 'Днес'}</span>;
-  return <span className="text-xs text-gray-500">{locale === 'en' ? `in ${days} days` : `след ${days} дни`}</span>;
-}
-
-const CARE_TYPE_ICONS: Record<string, string> = {
-  watered: '💧', fertilized: '🌱', repotted: '🪴',
-  misted: '💦', pruned: '✂️', rotated: '🔄', observation: '👁️',
-};
-
 export default async function PlantDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const t = await getTranslations();
@@ -104,11 +95,12 @@ export default async function PlantDetailPage({ params }: { params: Promise<{ id
   }
   if (!auth) notFound();
 
-  const [plant, schedule, { logs: careLogs, total: careTotal }, analyses] = await Promise.all([
+  const [plant, schedule, { logs: careLogs, total: careTotal }, analyses, scansRemaining] = await Promise.all([
     getPlant(id, auth.sub, auth.role),
     getSchedule(id, auth.sub),
     getRecentCareLogs(id, auth.sub),
     getAnalyses(id, auth.sub),
+    getScansRemaining(auth.sub, auth.role),
   ]);
 
   if (!plant) notFound();
@@ -138,12 +130,15 @@ export default async function PlantDetailPage({ params }: { params: Promise<{ id
             <p className="text-sm italic text-gray-500 mt-0.5">{speciesName}</p>
           )}
         </div>
-        <Button variant="outline" size="sm" asChild className="rounded-full">
-          <Link href={`/plants/${id}/edit`}>
-            <Pencil className="h-4 w-4" />
-            {t('common.edit')}
-          </Link>
-        </Button>
+        <div className="flex items-center gap-2">
+          <Button variant="outline" size="sm" asChild className="rounded-full">
+            <Link href={`/plants/${id}/edit`}>
+              <Pencil className="h-4 w-4" />
+              {t('common.edit')}
+            </Link>
+          </Button>
+          <DeletePlantButton plantId={id} />
+        </div>
       </div>
 
       {/* ── Main grid ── */}
@@ -156,7 +151,7 @@ export default async function PlantDetailPage({ params }: { params: Promise<{ id
         <div className="space-y-4">
 
           {/* AI scan */}
-          <Card className="border-gray-200 shadow-sm">
+          <Card id="ai-scan-card" className="border-gray-200 shadow-sm scroll-mt-20">
             <CardHeader className="pb-2">
               <div className="flex items-center justify-between">
                 <CardTitle className="text-base">{t('ai.scanButton')}</CardTitle>
@@ -171,137 +166,27 @@ export default async function PlantDetailPage({ params }: { params: Promise<{ id
               </div>
             </CardHeader>
             <CardContent>
-              <AIAnalysisButton plantId={id} />
+              <AIAnalysisButton plantId={id} latestAnalysis={analyses[0] ?? null} scansRemaining={scansRemaining} />
             </CardContent>
           </Card>
 
-          {/* ── Care Schedule ── */}
-          <Card className="border-gray-200 shadow-sm">
-            <CardHeader className="pb-2">
-              <div className="flex items-center justify-between">
-                <CardTitle className="text-base flex items-center gap-1.5">
-                  <CalendarDays className="h-4 w-4 text-emerald-600" />
-                  {locale === 'en' ? 'Care Schedule' : 'График за грижи'}
-                </CardTitle>
-                <div className="flex items-center gap-2">
-                  <LogCareButton plantId={id} locale={locale} />
-                  {schedule && (
-                    <Button variant="ghost" size="sm" asChild className="rounded-full text-xs">
-                      <Link href={`/plants/${id}/edit`}>
-                        {locale === 'en' ? 'Edit' : 'Редактирай'}
-                      </Link>
-                    </Button>
-                  )}
-                </div>
-              </div>
-            </CardHeader>
-            <CardContent className="pt-0 pb-4 space-y-2.5">
-              {schedule ? (
-                <>
-                  <div className="flex items-center justify-between text-sm">
-                    <span className="flex items-center gap-1.5 text-gray-700">
-                      <Droplets className="h-3.5 w-3.5 text-blue-400" />
-                      {locale === 'en' ? 'Water' : 'Поливане'}
-                      <span className="text-xs text-gray-400">({locale === 'en' ? `every ${schedule.wateringIntervalDays}d` : `на ${schedule.wateringIntervalDays} дни`})</span>
-                    </span>
-                    <DueBadge days={waterDays} locale={locale} />
-                  </div>
-                  <div className="flex items-center justify-between text-sm">
-                    <span className="flex items-center gap-1.5 text-gray-700">
-                      <Leaf className="h-3.5 w-3.5 text-green-500" />
-                      {locale === 'en' ? 'Fertilize' : 'Торене'}
-                      <span className="text-xs text-gray-400">({locale === 'en' ? `every ${schedule.fertilizingIntervalDays}d` : `на ${schedule.fertilizingIntervalDays} дни`})</span>
-                    </span>
-                    <DueBadge days={fertilDays} locale={locale} />
-                  </div>
-                  <div className="flex items-center justify-between text-sm">
-                    <span className="flex items-center gap-1.5 text-gray-700">
-                      <FlowerIcon className="h-3.5 w-3.5 text-purple-400" />
-                      {locale === 'en' ? 'Repot' : 'Преглаждане'}
-                      <span className="text-xs text-gray-400">({locale === 'en' ? `every ${schedule.repottingIntervalMonths}mo` : `на ${schedule.repottingIntervalMonths} мес`})</span>
-                    </span>
-                    <DueBadge days={repotDays} locale={locale} />
-                  </div>
-                  {schedule.mistingNeeded && (
-                    <div className="flex items-center justify-between text-sm">
-                      <span className="flex items-center gap-1.5 text-gray-700">
-                        <Wind className="h-3.5 w-3.5 text-cyan-400" />
-                        {locale === 'en' ? 'Mist' : 'Пръскане'}
-                      </span>
-                      <DueBadge days={mistDays} locale={locale} />
-                    </div>
-                  )}
-                  {schedule.isCustomized && (
-                    <p className="text-xs text-gray-400 pt-1">{locale === 'en' ? '✏️ Custom schedule' : '✏️ Персонализиран график'}</p>
-                  )}
-                </>
-              ) : (
-                <p className="text-sm text-gray-500">
-                  {locale === 'en'
-                    ? 'No schedule yet. Link a species or log care to get started.'
-                    : 'Няма график. Свържете вид или запишете грижа.'}
-                </p>
-              )}
-            </CardContent>
-          </Card>
+          {/* ── Care Section (Schedule + Logger) ── */}
+          <PlantCareSection
+            plantId={id}
+            schedule={schedule}
+            waterDays={waterDays}
+            fertilDays={fertilDays}
+            repotDays={repotDays}
+            mistDays={mistDays}
+          />
 
-          {/* ── Care History ── */}
-          {careLogs.length > 0 && (
-            <Card className="border-gray-200 shadow-sm">
-              <CardHeader className="pb-2">
-                <div className="flex items-center justify-between">
-                  <CardTitle className="text-base">{locale === 'en' ? 'Care History' : 'История на грижите'}</CardTitle>
-                  {careTotal > 5 && (
-                    <Button variant="ghost" size="sm" asChild className="rounded-full text-xs">
-                      <Link href={`/plants/${id}/care-logs`}>
-                        {locale === 'en' ? `See all (${careTotal})` : `Всички (${careTotal})`}
-                      </Link>
-                    </Button>
-                  )}
-                </div>
-              </CardHeader>
-              <CardContent className="pt-0 pb-2 space-y-1">
-                {careLogs.map((log: { id: string; careType: string; notes?: string | null; loggedAt: string | Date }) => (
-                  <div key={log.id} className="flex items-center gap-2 py-1.5 border-b border-gray-50 last:border-0 text-sm">
-                    <span className="text-base leading-none">{CARE_TYPE_ICONS[log.careType] ?? '🌿'}</span>
-                    <div className="flex-1 min-w-0">
-                      <span className="font-medium text-gray-700 capitalize">{log.careType}</span>
-                      {log.notes && <p className="text-xs text-gray-400 truncate">{log.notes}</p>}
-                    </div>
-                    <span className="text-xs text-gray-400 flex-shrink-0">
-                      {new Intl.DateTimeFormat(locale, { day: '2-digit', month: 'short' }).format(new Date(log.loggedAt))}
-                    </span>
-                  </div>
-                ))}
-              </CardContent>
-            </Card>
-          )}
-
-          {/* Last watered + catalog meta */}
-          <Card className="border-gray-200 shadow-sm">
-            <CardContent className="pt-4 pb-4 space-y-2">
-              {plant.lastWatered && (
-                <p className="flex items-center gap-1.5 text-sm text-gray-600">
-                  <Droplets className="h-4 w-4 text-blue-400" />
-                  {t('plants.lastWatered')}:{' '}
-                  {new Intl.DateTimeFormat(locale, {
-                    day: '2-digit',
-                    month: 'long',
-                    year: 'numeric',
-                  }).format(new Date(plant.lastWatered))}
-                </p>
-              )}
-              {plant.speciesId && (
-                <p className="flex items-center gap-1.5 text-sm text-green-600">
-                  <Leaf className="h-4 w-4" />
-                  {t('plants.linked')}
-                  {plant.speciesConfirmed && (
-                    <Badge variant="success" className="ml-1">{t('plants.speciesConfirmed')}</Badge>
-                  )}
-                </p>
-              )}
-            </CardContent>
-          </Card>
+          {/* ── Care History (Collapsible) ── */}
+          <CareHistoryCollapsible
+            careLogs={careLogs}
+            careTotal={careTotal}
+            locale={locale}
+            plantId={id}
+          />
 
           {/* Species mini-card */}
           {species && (

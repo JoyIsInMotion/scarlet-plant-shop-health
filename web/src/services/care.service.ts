@@ -188,21 +188,81 @@ export async function createScheduleFromSpecies(plantId: string, speciesId: stri
   const rMonth = species.repottingIntervalMonths ?? 18;
   const mist   = species.mistingNeeded ?? false;
 
-  const [schedule] = await db
+  const values = {
+    wateringIntervalDays:    wDays,
+    wateringNextDue:         new Date(now.getTime() + wDays * 24 * 60 * 60 * 1000),
+    fertilizingIntervalDays: fDays,
+    fertilizingNextDue:      new Date(now.getTime() + fDays * 24 * 60 * 60 * 1000),
+    repottingIntervalMonths: rMonth,
+    repottingNextDue:        new Date(now.getTime() + rMonth * 30 * 24 * 60 * 60 * 1000),
+    mistingNeeded:           mist,
+    mistingNextDue:          mist ? new Date(now.getTime() + 2 * 24 * 60 * 60 * 1000) : null,
+    isCustomized:            false,
+    updatedAt:               now,
+  };
+
+  const [existing] = await db
+    .select({ isCustomized: plantCareSchedules.isCustomized })
+    .from(plantCareSchedules)
+    .where(eq(plantCareSchedules.plantId, plantId))
+    .limit(1);
+
+  // Don't clobber a schedule the user already hand-tuned
+  if (existing?.isCustomized) return null;
+
+  if (existing) {
+    const [updated] = await db
+      .update(plantCareSchedules)
+      .set(values)
+      .where(eq(plantCareSchedules.plantId, plantId))
+      .returning();
+    return updated;
+  }
+
+  const [created] = await db
     .insert(plantCareSchedules)
-    .values({
-      plantId,
-      wateringIntervalDays:    wDays,
-      wateringNextDue:         new Date(now.getTime() + wDays * 24 * 60 * 60 * 1000),
-      fertilizingIntervalDays: fDays,
-      fertilizingNextDue:      new Date(now.getTime() + fDays * 24 * 60 * 60 * 1000),
-      repottingIntervalMonths: rMonth,
-      repottingNextDue:        new Date(now.getTime() + rMonth * 30 * 24 * 60 * 60 * 1000),
-      mistingNeeded:           mist,
-      mistingNextDue:          mist ? new Date(now.getTime() + 2 * 24 * 60 * 60 * 1000) : null,
-      isCustomized:            false,
-    })
+    .values({ plantId, ...values })
+    .returning();
+  return created;
+}
+
+// ── Care log updates and deletes ───────────────────────────────────────────────
+
+export async function updateCareLog(
+  logId: string,
+  userId: string,
+  data: { notes?: string },
+) {
+  const [log] = await db
+    .select({ userId: plantCareLogs.userId })
+    .from(plantCareLogs)
+    .where(eq(plantCareLogs.id, logId))
+    .limit(1);
+
+  if (!log) throw new ServiceError('Care log not found', 404);
+  if (log.userId !== userId) throw new ServiceError('Forbidden', 403);
+
+  const updates: Record<string, unknown> = {};
+  if (data.notes !== undefined) updates.notes = data.notes ?? null;
+
+  const [updated] = await db
+    .update(plantCareLogs)
+    .set(updates)
+    .where(eq(plantCareLogs.id, logId))
     .returning();
 
-  return schedule;
+  return updated;
+}
+
+export async function deleteCareLog(logId: string, userId: string) {
+  const [log] = await db
+    .select({ userId: plantCareLogs.userId })
+    .from(plantCareLogs)
+    .where(eq(plantCareLogs.id, logId))
+    .limit(1);
+
+  if (!log) throw new ServiceError('Care log not found', 404);
+  if (log.userId !== userId) throw new ServiceError('Forbidden', 403);
+
+  await db.delete(plantCareLogs).where(eq(plantCareLogs.id, logId));
 }

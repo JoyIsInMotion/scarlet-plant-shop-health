@@ -38,8 +38,8 @@ async function deletePlant(req: NextRequest, ctx: Ctx) {
   const { id } = await ctx.params;
 
   try {
-    await plantsService.archivePlant(id, auth.sub, auth.role);
-    return ok({ message: 'Plant archived' });
+    await plantsService.deletePlant(id, auth.sub, auth.role);
+    return ok({ message: 'Plant deleted' });
   } catch (e) {
     if (e instanceof ServiceError) return err(e.message, e.status);
     throw e;

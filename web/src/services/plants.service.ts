@@ -1,6 +1,6 @@
 import { eq, and, desc, lt, count } from 'drizzle-orm';
 import { db } from '@/db';
-import { plants, plantSpecies, aiAnalyses } from '@/db/schema';
+import { plants, plantSpecies, aiAnalyses, plantPhotos } from '@/db/schema';
 import { plantSchema, MAX_FILE_SIZE_BYTES, ALLOWED_IMAGE_TYPES } from '@scarlet/shared';
 import { uploadToR2 } from '@/lib/r2/client';
 import { randomUUID } from 'crypto';
@@ -107,7 +107,7 @@ export async function createPlant(userId: string, data: unknown) {
 
 export async function updatePlant(id: string, userId: string, role: string, data: unknown) {
   const [existing] = await db
-    .select({ userId: plants.userId })
+    .select({ userId: plants.userId, speciesId: plants.speciesId })
     .from(plants)
     .where(eq(plants.id, id))
     .limit(1);
@@ -127,6 +127,13 @@ export async function updatePlant(id: string, userId: string, role: string, data
   if (parsed.data.speciesConfirmed !== undefined) updates.speciesConfirmed = parsed.data.speciesConfirmed;
 
   const [updated] = await db.update(plants).set(updates).where(eq(plants.id, id)).returning();
+
+  // Newly linking (or relinking) a species refreshes the care schedule from
+  // that species' defaults — unless the user already customized their schedule.
+  if (parsed.data.speciesId && parsed.data.speciesId !== existing.speciesId) {
+    await createScheduleFromSpecies(updated.id, parsed.data.speciesId);
+  }
+
   return updated;
 }
 
@@ -182,5 +189,75 @@ export async function getAnalyses(plantId: string, userId: string, limit: number
   ]);
 
   return { analyses, total: Number(total) };
+}
+
+// ── Plant photos ──────────────────────────────────────────────────────────────
+
+export async function listPlantPhotos(id: string, userId: string) {
+  const [plant] = await db
+    .select({ userId: plants.userId })
+    .from(plants)
+    .where(eq(plants.id, id))
+    .limit(1);
+
+  if (!plant) throw new ServiceError('Plant not found', 404);
+  if (plant.userId !== userId) throw new ServiceError('Forbidden', 403);
+
+  const photos = await db
+    .select()
+    .from(plantPhotos)
+    .where(eq(plantPhotos.plantId, id))
+    .orderBy(desc(plantPhotos.uploadedAt));
+
+  return photos;
+}
+
+export async function addPlantPhoto(id: string, userId: string, imageUrl: string) {
+  const [plant] = await db
+    .select({ userId: plants.userId })
+    .from(plants)
+    .where(eq(plants.id, id))
+    .limit(1);
+
+  if (!plant) throw new ServiceError('Plant not found', 404);
+  if (plant.userId !== userId) throw new ServiceError('Forbidden', 403);
+
+  const [photo] = await db
+    .insert(plantPhotos)
+    .values({
+      plantId: id,
+      userId,
+      imageUrl,
+      uploadedAt: new Date(),
+    })
+    .returning();
+
+  return photo;
+}
+
+export async function deletePlantPhoto(photoId: string, userId: string) {
+  const [photo] = await db
+    .select({ userId: plantPhotos.userId })
+    .from(plantPhotos)
+    .where(eq(plantPhotos.id, photoId))
+    .limit(1);
+
+  if (!photo) throw new ServiceError('Photo not found', 404);
+  if (photo.userId !== userId) throw new ServiceError('Forbidden', 403);
+
+  await db.delete(plantPhotos).where(eq(plantPhotos.id, photoId));
+}
+
+export async function deletePlant(id: string, userId: string, role: string) {
+  const [existing] = await db
+    .select({ userId: plants.userId })
+    .from(plants)
+    .where(eq(plants.id, id))
+    .limit(1);
+
+  if (!existing && role !== 'admin') throw new ServiceError('Plant not found', 404);
+  if (existing.userId !== userId && role !== 'admin') throw new ServiceError('Forbidden', 403);
+
+  await db.delete(plants).where(eq(plants.id, id));
 }
 
