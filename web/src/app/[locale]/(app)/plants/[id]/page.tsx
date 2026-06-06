@@ -1,5 +1,4 @@
 import { getLocale, getTranslations } from 'next-intl/server';
-import { cookies } from 'next/headers';
 import { notFound } from 'next/navigation';
 import {
   ArrowLeft, Pencil, Leaf, Droplets, ExternalLink, History,
@@ -11,51 +10,54 @@ import { LogCareButton } from '@/components/plants/log-care-button';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { getAccessToken } from '@/lib/auth/cookies';
+import { verifyAccessToken } from '@/lib/auth/jwt';
+import * as plantsService from '@/services/plants.service';
+import * as careService from '@/services/care.service';
 import { Link } from '@/i18n/navigation';
+import type { AIAnalysis } from '@scarlet/shared';
 import type { Metadata } from 'next';
 
-async function getPlant(id: string, token: string) {
-  const base = process.env.NEXT_PUBLIC_APP_URL ?? 'http://localhost:3000';
-  const res = await fetch(`${base}/api/plants/${id}`, {
-    headers: { Authorization: `Bearer ${token}` },
-    cache: 'no-store',
-  });
-  if (!res.ok) return null;
-  const { data } = await res.json();
-  return data;
+// These read the DB directly via the services (same path the REST routes use)
+// instead of the page self-fetching its own /api over HTTP. Self-invocation —
+// especially 4 concurrent calls — is unreliable on Netlify's serverless runtime
+// and was crashing this page. Secondary loads swallow ServiceError so an admin
+// viewing another user's plant (allowed by getPlant, denied by the owner-scoped
+// schedule/care/analyses queries) gets empty sections rather than a crash.
+async function getPlant(id: string, userId: string, role: string) {
+  try {
+    return await plantsService.getPlant(id, userId, role);
+  } catch {
+    return null;
+  }
 }
 
-async function getSchedule(id: string, token: string) {
-  const base = process.env.NEXT_PUBLIC_APP_URL ?? 'http://localhost:3000';
-  const res = await fetch(`${base}/api/plants/${id}/schedule`, {
-    headers: { Authorization: `Bearer ${token}` },
-    cache: 'no-store',
-  });
-  if (!res.ok) return null;
-  const { data } = await res.json();
-  return data;
+async function getSchedule(id: string, userId: string) {
+  try {
+    return await careService.getSchedule(id, userId);
+  } catch {
+    return null;
+  }
 }
 
-async function getRecentCareLogs(id: string, token: string) {
-  const base = process.env.NEXT_PUBLIC_APP_URL ?? 'http://localhost:3000';
-  const res = await fetch(`${base}/api/plants/${id}/care-logs?limit=5`, {
-    headers: { Authorization: `Bearer ${token}` },
-    cache: 'no-store',
-  });
-  if (!res.ok) return { logs: [], total: 0 };
-  const { data } = await res.json();
-  return { logs: data?.logs ?? [], total: data?.total ?? 0 };
+async function getRecentCareLogs(id: string, userId: string) {
+  try {
+    const { logs, total } = await careService.listCareLogs(id, userId, { limit: 5, offset: 0 });
+    return { logs, total };
+  } catch {
+    return { logs: [], total: 0 };
+  }
 }
 
-async function getAnalyses(id: string, token: string) {
-  const base = process.env.NEXT_PUBLIC_APP_URL ?? 'http://localhost:3000';
-  const res = await fetch(`${base}/api/plants/${id}/analyses`, {
-    headers: { Authorization: `Bearer ${token}` },
-    cache: 'no-store',
-  });
-  if (!res.ok) return [];
-  const { data } = await res.json();
-  return data?.analyses ?? [];
+async function getAnalyses(id: string, userId: string): Promise<AIAnalysis[]> {
+  try {
+    const { analyses } = await plantsService.getAnalyses(id, userId, 10, 0);
+    // Service returns raw DB rows; their runtime shape matches the serialized
+    // AIAnalysis the gallery consumes (the REST route returns the same rows).
+    return analyses as unknown as AIAnalysis[];
+  } catch {
+    return [];
+  }
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
@@ -63,7 +65,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   return { title: t('plantDetails') };
 }
 
-function daysUntil(date: string | null | undefined): number | null {
+function daysUntil(date: string | Date | null | undefined): number | null {
   if (!date) return null;
   const diff = new Date(date).getTime() - Date.now();
   return Math.round(diff / (1000 * 60 * 60 * 24));
@@ -92,14 +94,21 @@ export default async function PlantDetailPage({ params }: { params: Promise<{ id
   const { id } = await params;
   const t = await getTranslations();
   const locale = await getLocale();
-  const cookieStore = await cookies();
-  const token = cookieStore.get('access_token')?.value ?? '';
+
+  const token = await getAccessToken();
+  let auth: { sub: string; role: string } | null = null;
+  try {
+    auth = token ? verifyAccessToken(token) : null;
+  } catch {
+    auth = null;
+  }
+  if (!auth) notFound();
 
   const [plant, schedule, { logs: careLogs, total: careTotal }, analyses] = await Promise.all([
-    getPlant(id, token),
-    getSchedule(id, token),
-    getRecentCareLogs(id, token),
-    getAnalyses(id, token),
+    getPlant(id, auth.sub, auth.role),
+    getSchedule(id, auth.sub),
+    getRecentCareLogs(id, auth.sub),
+    getAnalyses(id, auth.sub),
   ]);
 
   if (!plant) notFound();
@@ -252,7 +261,7 @@ export default async function PlantDetailPage({ params }: { params: Promise<{ id
                 </div>
               </CardHeader>
               <CardContent className="pt-0 pb-2 space-y-1">
-                {careLogs.map((log: { id: string; careType: string; notes?: string; loggedAt: string }) => (
+                {careLogs.map((log: { id: string; careType: string; notes?: string | null; loggedAt: string | Date }) => (
                   <div key={log.id} className="flex items-center gap-2 py-1.5 border-b border-gray-50 last:border-0 text-sm">
                     <span className="text-base leading-none">{CARE_TYPE_ICONS[log.careType] ?? '🌿'}</span>
                     <div className="flex-1 min-w-0">
