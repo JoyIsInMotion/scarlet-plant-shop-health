@@ -4,12 +4,12 @@ import { verifyAccessToken, type JWTPayload } from '@/lib/auth/jwt';
 import * as aiService from '@/services/ai.service';
 import { ServiceError } from '@/services/service-error';
 
-// Logged-out visitors get one free scan, tracked by this cookie. It's a
+// Logged-out visitors get one free scan per day, tracked by this cookie. It's a
 // teaser to drive sign-ups — not a hard security boundary (a user can clear
 // cookies), which is fine because anonymous scans aren't persisted or costly
 // beyond a single AI call.
 const ANON_SCAN_COOKIE = 'anon_scan_used';
-const ANON_COOKIE_MAX_AGE = 60 * 60 * 24 * 30; // 30 days
+const ANON_COOKIE_MAX_AGE = 60 * 60 * 24; // 1 day
 
 function resolveAuth(req: NextRequest): JWTPayload | null {
   const token =
