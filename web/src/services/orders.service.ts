@@ -119,6 +119,7 @@ export async function listAllOrders(limit: number, offset: number, opts: ListOrd
       userId: orders.userId,
       total: orders.total,
       status: orders.status,
+      phone: orders.phone,
       shippingAddress: orders.shippingAddress,
       notes: orders.notes,
       createdAt: orders.createdAt,
@@ -224,6 +225,7 @@ export async function createOrder(userId: string, data: unknown) {
     .values({
       userId,
       total: total.toFixed(2),
+      phone: parsed.data.phone,
       shippingAddress: parsed.data.shippingAddress ?? null,
       notes: parsed.data.notes ?? null,
     })

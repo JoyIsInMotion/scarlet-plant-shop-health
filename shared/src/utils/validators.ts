@@ -41,6 +41,8 @@ export const orderSchema = z.object({
     productId: z.string().uuid(),
     quantity: z.number().int().min(1),
   })).min(1, 'Order must have at least one item'),
+  // Required: we call the customer if anything about the order needs clarifying.
+  phone: z.string().min(6, 'A phone number is required').max(30),
   shippingAddress: z.string().max(500).nullable().optional(),
   notes: z.string().max(500).nullable().optional(),
 });

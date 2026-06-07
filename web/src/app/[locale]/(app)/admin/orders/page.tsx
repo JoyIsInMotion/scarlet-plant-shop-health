@@ -135,6 +135,7 @@ export default async function AdminOrdersPage({
                         <td className="px-4 py-3">
                           <div className="font-medium text-gray-900">{o.userName ?? '—'}</div>
                           <div className="text-xs text-gray-400">{o.userEmail ?? ''}</div>
+                          {o.phone && <div className="text-xs text-gray-400">📞 {o.phone}</div>}
                         </td>
                         <td className="px-4 py-3 text-gray-500">{o.items.length}</td>
                         <td className="px-4 py-3 font-semibold text-gray-900">{formatPrice(o.total)}</td>

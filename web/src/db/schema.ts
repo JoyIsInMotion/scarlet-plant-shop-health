@@ -357,6 +357,7 @@ export const orders = pgTable(
       .references(() => users.id, { onDelete: 'restrict' }),
     total: decimal('total', { precision: 10, scale: 2 }).notNull(),
     status: orderStatusEnum('status').default('pending').notNull(),
+    phone: varchar('phone', { length: 30 }),
     shippingAddress: text('shipping_address'),
     notes: text('notes'),
     createdAt: timestamp('created_at').defaultNow().notNull(),

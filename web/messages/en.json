@@ -252,6 +252,9 @@
     "orderNotes": "Order notes",
     "collectFromStore": "Collect from store",
     "collectFromStoreDesc": "Your order will be ready for pickup at our store",
+    "phone": "Contact phone",
+    "phoneRequired": "Please add a phone number so we can reach you about your order.",
+    "callNote": "We'll call you if anything about your order needs to change or be clarified.",
     "fulfillmentMethod": "Fulfillment method",
     "loginToCheckout": "Log in to place order",
     "continueShopping": "Continue shopping"

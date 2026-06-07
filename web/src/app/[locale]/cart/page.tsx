@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 import {
   Minus, Plus, Trash2, ShoppingBag, Store, ArrowRight, CheckCircle,
@@ -18,9 +18,15 @@ export default function CartPage() {
   const { toast } = useToast();
   const router = useRouter();
   const [notes, setNotes] = useState('');
+  const [phone, setPhone] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
+
+  // Prefill the contact phone from the profile (editable per order).
+  useEffect(() => {
+    if (user?.phone && !phone) setPhone(user.phone);
+  }, [user, phone]);
 
   function formatPrice(amount: number) {
     return new Intl.NumberFormat(locale === 'en' ? 'en' : 'bg', {
@@ -35,6 +41,10 @@ export default function CartPage() {
       router.push('/login');
       return;
     }
+    if (!phone.trim()) {
+      setError(t('shop.phoneRequired'));
+      return;
+    }
     setLoading(true);
     setError(null);
     try {
@@ -43,6 +53,7 @@ export default function CartPage() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           items: items.map((i) => ({ productId: i.id, quantity: i.quantity })),
+          phone: phone.trim(),
           notes: notes || null,
           shippingAddress: null,
         }),
@@ -218,6 +229,25 @@ export default function CartPage() {
                 <p className="text-xs text-muted">{t('shop.collectFromStoreDesc')}</p>
               </div>
             </div>
+          </div>
+
+          {/* Contact phone (required — we call about order details) */}
+          <div className="rounded-2xl border border-border bg-surface p-5">
+            <label
+              htmlFor="cart-phone"
+              className="mb-2 block text-[11px] font-bold uppercase tracking-[0.22em] text-muted"
+            >
+              {t('shop.phone')}
+            </label>
+            <input
+              id="cart-phone"
+              type="tel"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              placeholder="+359 ..."
+              className="w-full rounded-xl border border-border bg-cream px-3 py-2 text-sm text-foreground placeholder:text-muted-light focus:border-scarlet focus:outline-none"
+            />
+            <p className="mt-2 text-xs text-muted">{t('shop.callNote')}</p>
           </div>
 
           {/* Notes */}
