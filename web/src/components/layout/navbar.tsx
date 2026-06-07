@@ -18,7 +18,6 @@ export function Navbar() {
   const { user, logout } = useAuth();
   const { count } = useCart();
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [shopOpen, setShopOpen] = useState(false);
 
   // Active when the path matches exactly (home) or sits under the section.
   const isActive = (href: string) =>
@@ -71,20 +70,12 @@ export function Navbar() {
           <nav className="hidden items-center gap-7 md:flex">
             {/* Shop dropdown */}
             <div className="group relative">
-              <button
-                className={`flex items-center gap-1 ${linkClass('/shop')}`}
-                onMouseEnter={() => setShopOpen(true)}
-                onMouseLeave={() => setShopOpen(false)}
-              >
+              <button className={`flex items-center gap-1 ${linkClass('/shop')}`}>
                 {t('nav.shop')}
                 <ChevronDown className="h-3 w-3 transition-transform duration-200 group-hover:rotate-180" />
               </button>
               {/* Dropdown panel */}
-              <div
-                className="invisible absolute left-0 top-full z-50 mt-0 opacity-0 transition-all duration-150 group-hover:visible group-hover:opacity-100"
-                onMouseEnter={() => setShopOpen(true)}
-                onMouseLeave={() => setShopOpen(false)}
-              >
+              <div className="invisible absolute left-0 top-full z-50 mt-0 opacity-0 transition-all duration-150 group-hover:visible group-hover:opacity-100">
                 <div className="mt-2 min-w-48 overflow-hidden rounded-2xl border border-border bg-surface shadow-xl shadow-scarlet/5">
                   {shopCategories.map((cat) => (
                     <Link

@@ -1,5 +1,5 @@
 'use client';
-import { Droplets, Calendar, Leaf } from 'lucide-react';
+import { Droplets, Leaf } from 'lucide-react';
 import { useTranslations, useLocale } from 'next-intl';
 import { HealthScoreRing } from './health-score-ring';
 import { Badge } from '@/components/ui/badge';

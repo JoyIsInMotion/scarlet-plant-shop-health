@@ -13,6 +13,14 @@ const eslintConfig = defineConfig([
     "build/**",
     "next-env.d.ts",
   ]),
+  {
+    rules: {
+      // Intentional mount-once hydration / SSR-guard patterns (cart + auth
+      // providers, client-only charts). The React Compiler rule is too strict
+      // for these one-shot effects, so keep it a warning, not a build error.
+      "react-hooks/set-state-in-effect": "warn",
+    },
+  },
 ]);
 
 export default eslintConfig;

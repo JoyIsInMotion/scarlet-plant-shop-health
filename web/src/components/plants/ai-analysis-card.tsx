@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
-import { Droplets, AlertTriangle, CheckCircle2, ChevronDown, ChevronUp, ExternalLink, Leaf, Sparkles, Sun, Wind, Droplet, Thermometer, Droplets as DropletsFull, Leaf as LeafFull, AlertCircle } from 'lucide-react';
+import { Droplets, AlertTriangle, CheckCircle2, ChevronDown, ChevronUp, ExternalLink, Leaf, Sparkles, Sun, Wind, Thermometer, Leaf as LeafFull, AlertCircle } from 'lucide-react';
 import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';

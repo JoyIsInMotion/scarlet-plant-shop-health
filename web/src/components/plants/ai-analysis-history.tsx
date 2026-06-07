@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import { useLocale, useTranslations } from 'next-intl';
+import { useLocale } from 'next-intl';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import { AIAnalysisCard } from './ai-analysis-card';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -12,7 +12,6 @@ interface AIAnalysisHistoryProps {
 }
 
 export function AIAnalysisHistory({ analyses }: AIAnalysisHistoryProps) {
-  const t = useTranslations();
   const locale = useLocale();
   const [expanded, setExpanded] = useState<string | null>(analyses[0]?.id ?? null);
 

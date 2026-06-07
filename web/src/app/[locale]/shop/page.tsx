@@ -1,9 +1,5 @@
 import { getLocale, getTranslations } from 'next-intl/server';
-import { Pagination } from '@/components/ui/pagination';
 import { listProducts } from '@/services/products.service';
-import { cookies } from 'next/headers';
-import { verifyAccessToken } from '@/lib/auth/jwt';
-import { getAccessToken } from '@/lib/auth/cookies';
 import { ShopClient } from './shop-client';
 import type { Metadata } from 'next';
 

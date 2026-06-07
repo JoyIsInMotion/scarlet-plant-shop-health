@@ -79,7 +79,7 @@ export function QuickCareLogger({ plantId, locale }: QuickCareLoggerProps) {
           setCompletedTypes(new Set());
           router.refresh();
         }, 1500);
-      } catch (error) {
+      } catch {
         toast({
           title: locale === 'en' ? 'Error' : 'Грешка',
           description: locale === 'en' ? 'Failed to log care' : 'Неуспешно записване',

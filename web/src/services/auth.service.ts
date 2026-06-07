@@ -69,6 +69,7 @@ export async function login(email: string, password: string) {
   const { accessToken, refreshToken } = issueTokens(user.id, user.role);
   await storeRefreshToken(user.id, refreshToken);
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { passwordHash: _, ...safeUser } = user;
   return { user: safeUser, accessToken, refreshToken };
 }
