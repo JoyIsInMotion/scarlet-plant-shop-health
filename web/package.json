@@ -19,13 +19,7 @@
     "db:fetch-products": "tsx src/db/fetch-products.ts",
     "db:fetch-products:preview": "tsx src/db/fetch-products.ts --preview",
     "db:fetch-realistic": "tsx src/db/fetch-realistic-data.ts",
-    "db:seed-preview": "tsx src/db/seed-preview.ts",
     "db:patch-images": "tsx src/db/patch-images.ts",
-    "db:seed-users": "tsx src/db/seed-users.ts",
-    "db:seed-species": "tsx src/db/seed-species.ts",
-    "db:seed-plants": "tsx src/db/seed-plants.ts",
-    "db:seed-products": "tsx src/db/seed-products.ts",
-    "db:seed-orders": "tsx src/db/seed-orders.ts",
     "db:run-migrations": "tsx src/db/migrate.ts",
     "db:product-images": "tsx src/db/update-product-images.ts"
   },
