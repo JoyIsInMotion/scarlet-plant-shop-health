@@ -224,3 +224,59 @@ export async function quickScanAnonymous(file: File) {
 
   return { analysis: ephemeral, imageUrl, matchedSpecies, advice: analysis.friendly_advice ?? null, careBasics: analysis.care_basics ?? null };
 }
+
+// Lightweight species identification used by the "add a plant" flow: runs the
+// AI, then tries to match the result to an existing catalog species. Does not
+// persist anything. (Keeps DB access in the service, not the route handler.)
+export async function identifySpecies(file: File) {
+  const buffer = Buffer.from(await file.arrayBuffer());
+  const mimeType = file.type as 'image/jpeg' | 'image/png' | 'image/webp';
+
+  let analysis: Awaited<ReturnType<typeof analyzePlantImage>>;
+  try {
+    analysis = await analyzePlantImage(buffer, mimeType);
+  } catch {
+    throw new ServiceError('AI identification failed. Please try again.', 500);
+  }
+
+  const { species, confidence } = analysis;
+  if (!species.scientific_name && !species.common_name) {
+    return { identified: false, confidence };
+  }
+
+  let matchedSpeciesId: string | null = null;
+  let matchedCommonNameEn: string | null = null;
+  let matchedCommonNameBg: string | null = null;
+  let matchedScientificName: string | null = species.scientific_name;
+
+  if (species.scientific_name) {
+    const [match] = await db
+      .select({
+        id: plantSpecies.id,
+        commonNameEn: plantSpecies.commonNameEn,
+        commonNameBg: plantSpecies.commonNameBg,
+        scientificName: plantSpecies.scientificName,
+      })
+      .from(plantSpecies)
+      .where(ilike(plantSpecies.scientificName, `%${species.scientific_name}%`))
+      .limit(1);
+
+    if (match) {
+      matchedSpeciesId      = match.id;
+      matchedCommonNameEn   = match.commonNameEn;
+      matchedCommonNameBg   = match.commonNameBg;
+      matchedScientificName = match.scientificName;
+    }
+  }
+
+  return {
+    identified:         true,
+    confidence,
+    commonNameEn:       species.common_name,
+    scientificName:     matchedScientificName,
+    matchedSpeciesId,
+    matchedCommonNameEn,
+    matchedCommonNameBg,
+    inOurDatabase:      !!matchedSpeciesId,
+  };
+}
