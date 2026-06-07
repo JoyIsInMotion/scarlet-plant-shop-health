@@ -1,9 +1,10 @@
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, getLocale } from 'next-intl/server';
 import { Flower2, MapPin, Phone, Mail } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
 
 export async function Footer() {
   const t = await getTranslations();
+  const locale = await getLocale();
 
   return (
     <footer className="mt-auto border-t border-border bg-surface">
@@ -18,7 +19,7 @@ export async function Footer() {
               <div className="flex h-8 w-8 items-center justify-center rounded-full bg-scarlet shadow-sm">
                 <Flower2 className="h-4 w-4 text-white" />
               </div>
-              <span className="font-display text-xl font-bold tracking-tight text-foreground">Scarlet</span>
+              <span className="font-display text-xl font-bold tracking-tight text-foreground">{locale === 'bg' ? 'Скарлет' : 'Scarlet'}</span>
             </Link>
             <p className="max-w-xs text-sm leading-relaxed text-muted">
               {t('about.description')}
@@ -34,7 +35,7 @@ export async function Footer() {
           {/* Navigation */}
           <div>
             <h3 className="mb-4 text-[11px] font-bold uppercase tracking-[0.22em] text-foreground">
-              {t('nav.shop')}
+              {t('footer.explore')}
             </h3>
             <ul className="space-y-2.5">
               <li>
@@ -50,11 +51,6 @@ export async function Footer() {
               <li>
                 <Link href="/about" className="text-sm text-muted transition-colors hover:text-foreground">
                   {t('nav.about')}
-                </Link>
-              </li>
-              <li>
-                <Link href="/register" className="text-sm text-muted transition-colors hover:text-foreground">
-                  {t('auth.register')}
                 </Link>
               </li>
             </ul>

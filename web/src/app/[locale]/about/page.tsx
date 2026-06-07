@@ -42,7 +42,7 @@ export default function AboutPage() {
                 <MapPin className="h-4 w-4 text-red-500 mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="font-medium text-gray-700">{t('about.address')}</p>
-                  <p className="text-gray-500">бул. Витоша 42, София 1000</p>
+                  <p className="text-gray-500">{t('about.addressValue')}</p>
                 </div>
               </div>
               <div className="flex items-start gap-3 text-sm">
@@ -63,8 +63,8 @@ export default function AboutPage() {
                 <Clock className="h-4 w-4 text-red-500 mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="font-medium text-gray-700">{t('about.hours')}</p>
-                  <p className="text-gray-500">Пон – Събота: 09:00 – 19:00</p>
-                  <p className="text-gray-500">Неделя: 10:00 – 15:00</p>
+                  <p className="text-gray-500">{t('about.hoursWeekdays')}</p>
+                  <p className="text-gray-500">{t('about.hoursSunday')}</p>
                 </div>
               </div>
             </div>

@@ -32,7 +32,7 @@
     "home": "Home",
     "shop": "Shop",
     "myPlants": "My Plants",
-    "catalog": "Catalog",
+    "catalog": "Plant Species",
     "community": "Community",
     "scan": "Scan",
     "dashboard": "Dashboard",
@@ -196,7 +196,7 @@
     "analysisComplete": "Analysis complete",
     "lastScanned": "Last scanned",
     "scansLeftToday": "scans left today",
-    "freeScanHint": "You get 1 free scan. Sign up for more and to save your plants.",
+    "freeScanHint": "You get 1 free scan per day. Sign up for more and to save your plants.",
     "registerForMoreTitle": "Want to scan more plants?",
     "registerForMoreDesc": "Create a free account for unlimited scans, saved plants and care schedules.",
     "careBasics": {
@@ -333,6 +333,7 @@
     "plantHealthDesc": "Add your plants and use AI to analyze their health",
     "getStarted": "Get started",
     "whyUs": "Why Scarlet?",
+    "whyUsHeading": "Everything your plants need",
     "feature1Title": "AI plant analysis",
     "feature1Desc": "Scan your plants and get a detailed health analysis",
     "feature2Title": "Plant catalog",
@@ -343,14 +344,20 @@
   "about": {
     "title": "About Us",
     "subtitle": "Our story",
-    "description": "Scarlet is a boutique flower shop in the heart of Bulgaria. We believe that flowers and plants bring beauty and joy to everyday life.",
+    "description": "Scarlet is a boutique flower shop in Popovo, Bulgaria. We believe that flowers and plants bring beauty and joy to everyday life.",
     "mission": "Our mission",
-    "missionText": "To connect people with nature through beautiful flowers and innovative plant care solutions.",
+    "missionText": "To connect people with nature through beautiful flowers and an AI helper that keeps every plant healthy — from the first scan to a full care schedule.",
     "contact": "Contact",
     "address": "Address",
+    "addressValue": "1 Svoboda Square, Popovo 7800, Bulgaria",
     "phone": "Phone",
     "email": "Email",
-    "hours": "Opening hours"
+    "hours": "Opening hours",
+    "hoursWeekdays": "Mon – Sat: 09:00 – 19:00",
+    "hoursSunday": "Sunday: 10:00 – 15:00"
+  },
+  "footer": {
+    "explore": "Explore"
   },
   "analyses": {
     "title": "Analysis History",

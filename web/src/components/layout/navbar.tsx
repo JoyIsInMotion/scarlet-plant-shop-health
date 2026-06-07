@@ -1,5 +1,5 @@
 'use client';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import {
   Flower2, ShoppingBag, Leaf, ScanLine, ShieldCheck,
   LogOut, Menu, X, ChevronDown, Users, Receipt,
@@ -9,14 +9,20 @@ import { useAuth } from '@/providers/auth-provider';
 import { LanguageSwitcher } from './language-switcher';
 import { Avatar } from '@/components/ui/avatar';
 import { useCart } from '@/hooks/use-cart';
-import { Link } from '@/i18n/navigation';
+import { Link, usePathname } from '@/i18n/navigation';
 
 export function Navbar() {
   const t = useTranslations();
+  const locale = useLocale();
+  const pathname = usePathname();
   const { user, logout } = useAuth();
   const { count } = useCart();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [shopOpen, setShopOpen] = useState(false);
+
+  // Active when the path matches exactly (home) or sits under the section.
+  const isActive = (href: string) =>
+    href === '/' ? pathname === '/' : pathname === href || pathname.startsWith(`${href}/`);
 
   const shopCategories = [
     { value: '', label: t('shop.allCategories') },
@@ -37,8 +43,14 @@ export function Navbar() {
       ]
     : [];
 
-  const navLinkClass =
-    'text-[11px] font-bold uppercase tracking-[0.22em] text-muted transition-colors hover:text-foreground';
+  const navLinkBase = 'text-[11px] font-bold uppercase tracking-[0.22em] transition-colors';
+  const linkClass = (href: string) =>
+    `${navLinkBase} ${isActive(href) ? 'text-scarlet' : 'text-muted hover:text-foreground'}`;
+  // Mobile rows reuse a softer pill style with the same active accent.
+  const mobileLinkClass = (href: string) =>
+    `flex items-center gap-2 rounded-xl px-3 py-2 text-sm transition-colors ${
+      isActive(href) ? 'bg-cream text-scarlet' : 'text-muted hover:bg-cream hover:text-foreground'
+    }`;
 
   return (
     <header className="sticky top-0 z-40 w-full border-b border-border bg-surface shadow-[0_1px_8px_rgba(194,55,90,0.06)]">
@@ -51,7 +63,7 @@ export function Navbar() {
               <Flower2 className="h-4 w-4 text-white" />
             </div>
             <span className="font-display text-xl font-bold tracking-tight text-foreground">
-              Scarlet
+              {locale === 'bg' ? 'Скарлет' : 'Scarlet'}
             </span>
           </Link>
 
@@ -60,7 +72,7 @@ export function Navbar() {
             {/* Shop dropdown */}
             <div className="group relative">
               <button
-                className={`flex items-center gap-1 ${navLinkClass}`}
+                className={`flex items-center gap-1 ${linkClass('/shop')}`}
                 onMouseEnter={() => setShopOpen(true)}
                 onMouseLeave={() => setShopOpen(false)}
               >
@@ -88,14 +100,14 @@ export function Navbar() {
               </div>
             </div>
 
-            <Link href="/catalog" className={navLinkClass}>{t('nav.catalog')}</Link>
-            <Link href="/scan" className={navLinkClass}>{t('nav.scan')}</Link>
+            <Link href="/catalog" className={linkClass('/catalog')}>{t('nav.catalog')}</Link>
+            <Link href="/scan" className={linkClass('/scan')}>{t('nav.scan')}</Link>
 
             {authLinks.length > 0 && (
               <>
                 <span className="h-3.5 w-px bg-border" />
                 {authLinks.map((link) => (
-                  <Link key={link.href} href={link.href} className={navLinkClass}>
+                  <Link key={link.href} href={link.href} className={linkClass(link.href)}>
                     {link.label}
                   </Link>
                 ))}
@@ -136,7 +148,7 @@ export function Navbar() {
               </div>
             ) : (
               <div className="hidden items-center gap-2 md:flex">
-                <Link href="/login" className={navLinkClass}>
+                <Link href="/login" className={linkClass('/login')}>
                   {t('auth.login')}
                 </Link>
                 <Link
@@ -188,10 +200,10 @@ export function Navbar() {
           </div>
 
           <div className="mb-3 space-y-0.5">
-            <Link href="/catalog" onClick={() => setMobileOpen(false)} className="block rounded-xl px-3 py-2 text-sm text-muted transition-colors hover:bg-cream hover:text-foreground">
+            <Link href="/catalog" onClick={() => setMobileOpen(false)} className={mobileLinkClass('/catalog')}>
               {t('nav.catalog')}
             </Link>
-            <Link href="/scan" onClick={() => setMobileOpen(false)} className="flex items-center gap-2 rounded-xl px-3 py-2 text-sm text-muted transition-colors hover:bg-cream hover:text-foreground">
+            <Link href="/scan" onClick={() => setMobileOpen(false)} className={mobileLinkClass('/scan')}>
               <ScanLine className="h-4 w-4" />
               {t('nav.scan')}
             </Link>
@@ -204,7 +216,7 @@ export function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="flex items-center gap-2 rounded-xl px-3 py-2 text-sm text-muted transition-colors hover:bg-cream hover:text-foreground"
+                  className={mobileLinkClass(link.href)}
                 >
                   <link.icon className="h-4 w-4" />
                   {link.label}

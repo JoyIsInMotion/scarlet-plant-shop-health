@@ -17,18 +17,18 @@ function LandingContent() {
   const t = useTranslations();
 
   const features = [
-    { icon: ScanLine,    title: t('landing.feature1Title'), desc: t('landing.feature1Desc') },
-    { icon: BookOpen,    title: t('landing.feature2Title'), desc: t('landing.feature2Desc') },
-    { icon: ShoppingBag, title: t('landing.feature3Title'), desc: t('landing.feature3Desc') },
+    { icon: ScanLine,    title: t('landing.feature1Title'), desc: t('landing.feature1Desc'), href: '/scan' },
+    { icon: BookOpen,    title: t('landing.feature2Title'), desc: t('landing.feature2Desc'), href: '/catalog' },
+    { icon: ShoppingBag, title: t('landing.feature3Title'), desc: t('landing.feature3Desc'), href: '/shop' },
   ];
 
   const shopCategories = [
-    { value: 'bouquet',      label: 'Букети' },
-    { value: 'potted_plant', label: 'Саксийни' },
-    { value: 'succulent',    label: 'Сукуленти' },
-    { value: 'tropical',     label: 'Тропически' },
-    { value: 'seasonal',     label: 'Сезонни' },
-    { value: 'accessories',  label: 'Аксесоари' },
+    { value: 'bouquet',      label: t('shop.category.bouquet') },
+    { value: 'potted_plant', label: t('shop.category.potted_plant') },
+    { value: 'succulent',    label: t('shop.category.succulent') },
+    { value: 'tropical',     label: t('shop.category.tropical') },
+    { value: 'seasonal',     label: t('shop.category.seasonal') },
+    { value: 'accessories',  label: t('shop.category.accessories') },
   ];
 
   return (
@@ -131,7 +131,7 @@ function LandingContent() {
               {t('landing.whyUs')}
             </p>
             <h2 className="font-display text-3xl font-bold text-foreground sm:text-4xl">
-              {t('landing.whyUs')}
+              {t('landing.whyUsHeading')}
             </h2>
             <div className="mx-auto mt-4 flex items-center justify-center gap-3">
               <div className="h-px w-10 bg-border" />
@@ -142,16 +142,21 @@ function LandingContent() {
 
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-3">
             {features.map((f) => (
-              <div
+              <Link
                 key={f.title}
-                className="group flex flex-col rounded-2xl border border-border-light bg-surface p-8 transition-all hover:border-border hover:shadow-lg hover:shadow-scarlet/5"
+                href={f.href}
+                className="group flex flex-col rounded-2xl border border-border-light bg-surface p-8 transition-all hover:-translate-y-0.5 hover:border-scarlet/30 hover:shadow-lg hover:shadow-scarlet/5"
               >
-                <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-scarlet-light shadow-sm ring-1 ring-border">
-                  <f.icon className="h-5 w-5 text-scarlet" />
+                <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-scarlet-light shadow-sm ring-1 ring-border transition-colors group-hover:bg-scarlet group-hover:ring-scarlet">
+                  <f.icon className="h-5 w-5 text-scarlet transition-colors group-hover:text-white" />
                 </div>
                 <h3 className="font-display text-lg font-semibold text-foreground mb-2">{f.title}</h3>
                 <p className="text-sm leading-relaxed text-muted">{f.desc}</p>
-              </div>
+                <span className="mt-4 inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.2em] text-scarlet opacity-0 transition-opacity group-hover:opacity-100">
+                  {t('common.learnMore')}
+                  <ArrowRight className="h-3.5 w-3.5" />
+                </span>
+              </Link>
             ))}
           </div>
         </div>
@@ -187,7 +192,7 @@ function LandingContent() {
             {t('landing.plantHealthDesc')}
           </p>
           <Link
-            href="scan"
+            href="/login"
             className="inline-flex h-12 items-center gap-2 rounded-full bg-surface px-8 text-sm font-semibold text-botanical-dark shadow-lg transition-all hover:-translate-y-0.5 hover:bg-botanical-light"
           >
             {t('landing.getStarted')}
