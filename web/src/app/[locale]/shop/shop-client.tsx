@@ -35,7 +35,7 @@ const CATEGORIES = [
 export function ShopClient({ products, total, locale, initialParams, page, pageSize }: ShopClientProps) {
   const t = useTranslations();
   const currentLocale = useLocale();
-  const { add } = useCart();
+  const { add, count, total: cartTotal } = useCart();
   const { toast } = useToast();
 
   function getName(p: Product) {
@@ -76,31 +76,33 @@ export function ShopClient({ products, total, locale, initialParams, page, pageS
         </p>
       </div>
 
-      {/* ── Category quick-links ── */}
-      <div className="mb-6 flex flex-wrap gap-2">
-        <Link
-          href="/shop"
-          className={`rounded-full border px-4 py-1.5 text-xs font-semibold transition-colors ${
-            activeCategory === ''
-              ? 'border-scarlet bg-scarlet text-white'
-              : 'border-border bg-surface text-muted hover:border-scarlet/40 hover:text-scarlet'
-          }`}
-        >
-          {t('shop.allCategories')}
-        </Link>
-        {CATEGORIES.map((c) => (
+      {/* ── Category quick-links (sticky so they stay while scrolling) ── */}
+      <div className="sticky top-16 z-30 -mx-4 mb-6 border-b border-border bg-background/95 px-4 py-3 backdrop-blur sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
+        <div className="flex flex-wrap gap-2">
           <Link
-            key={c}
-            href={`/shop?category=${c}`}
+            href="/shop"
             className={`rounded-full border px-4 py-1.5 text-xs font-semibold transition-colors ${
-              activeCategory === c
+              activeCategory === ''
                 ? 'border-scarlet bg-scarlet text-white'
                 : 'border-border bg-surface text-muted hover:border-scarlet/40 hover:text-scarlet'
             }`}
           >
-            {t(`shop.category.${c}`)}
+            {t('shop.allCategories')}
           </Link>
-        ))}
+          {CATEGORIES.map((c) => (
+            <Link
+              key={c}
+              href={`/shop?category=${c}`}
+              className={`rounded-full border px-4 py-1.5 text-xs font-semibold transition-colors ${
+                activeCategory === c
+                  ? 'border-scarlet bg-scarlet text-white'
+                  : 'border-border bg-surface text-muted hover:border-scarlet/40 hover:text-scarlet'
+              }`}
+            >
+              {t(`shop.category.${c}`)}
+            </Link>
+          ))}
+        </div>
       </div>
 
       {/* ── Search + sort ── */}
@@ -216,6 +218,22 @@ export function ShopClient({ products, total, locale, initialParams, page, pageS
             </div>
           )}
         </>
+      )}
+
+      {/* ── Persistent cart button (stays visible while scrolling) ── */}
+      {count > 0 && (
+        <Link
+          href="/cart"
+          className="fixed bottom-6 right-6 z-30 flex items-center gap-3 rounded-full bg-scarlet py-3 pl-4 pr-5 text-white shadow-lg shadow-scarlet/30 transition-all hover:-translate-y-0.5 hover:bg-scarlet-dark"
+        >
+          <span className="relative">
+            <ShoppingBag className="h-5 w-5" />
+            <span className="absolute -right-2 -top-2 flex h-4 min-w-4 items-center justify-center rounded-full bg-white px-1 text-[9px] font-bold text-scarlet">
+              {count > 9 ? '9+' : count}
+            </span>
+          </span>
+          <span className="text-sm font-semibold">{formatPrice(String(cartTotal))}</span>
+        </Link>
       )}
     </div>
   );

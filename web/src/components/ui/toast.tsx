@@ -12,7 +12,9 @@ const ToastViewport = React.forwardRef<
   <ToastPrimitive.Viewport
     ref={ref}
     className={cn(
-      'fixed top-0 right-0 z-[100] flex max-h-screen w-full flex-col-reverse gap-2 p-4 sm:max-w-[420px]',
+      // Sit below the sticky navbar (h-16) so toasts never cover the cart icon,
+      // but above page content and the sticky shop chrome.
+      'fixed top-16 right-0 z-50 flex max-h-screen w-full flex-col-reverse gap-2 p-4 sm:max-w-[420px]',
       className
     )}
     {...props}
