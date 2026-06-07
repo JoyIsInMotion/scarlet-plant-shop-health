@@ -31,7 +31,7 @@ export function CareScheduleEditor({ plantId, schedule, onClose }: CareScheduleE
     setIsLoading(true);
     try {
       const res = await fetch(`/api/plants/${plantId}/schedule`, {
-        method: 'PUT',
+        method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           wateringIntervalDays: parseInt(watering) || undefined,

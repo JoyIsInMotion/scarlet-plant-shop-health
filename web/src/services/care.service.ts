@@ -168,7 +168,11 @@ export async function listCareLogs(
 
 // ── Schedule generation on plant creation ─────────────────────────────────────
 
-export async function createScheduleFromSpecies(plantId: string, speciesId: string) {
+export async function createScheduleFromSpecies(
+  plantId: string,
+  speciesId: string,
+  opts: { force?: boolean } = {},
+) {
   const [species] = await db
     .select({
       wateringIntervalDays: plantSpecies.wateringIntervalDays,
@@ -207,8 +211,9 @@ export async function createScheduleFromSpecies(plantId: string, speciesId: stri
     .where(eq(plantCareSchedules.plantId, plantId))
     .limit(1);
 
-  // Don't clobber a schedule the user already hand-tuned
-  if (existing?.isCustomized) return null;
+  // Don't clobber a schedule the user already hand-tuned — unless they ask to
+  // switch back to the AI/species schedule (force).
+  if (!opts.force && existing?.isCustomized) return null;
 
   if (existing) {
     const [updated] = await db
@@ -256,7 +261,7 @@ export async function updateCareLog(
 
 export async function deleteCareLog(logId: string, userId: string) {
   const [log] = await db
-    .select({ userId: plantCareLogs.userId })
+    .select({ userId: plantCareLogs.userId, plantId: plantCareLogs.plantId, careType: plantCareLogs.careType })
     .from(plantCareLogs)
     .where(eq(plantCareLogs.id, logId))
     .limit(1);
@@ -265,4 +270,69 @@ export async function deleteCareLog(logId: string, userId: string) {
   if (log.userId !== userId) throw new ServiceError('Forbidden', 403);
 
   await db.delete(plantCareLogs).where(eq(plantCareLogs.id, logId));
+
+  // Removing a log can change when the next task is due — recompute from the
+  // most recent remaining log of the same type (or reset if none remain).
+  await recalcScheduleForType(log.plantId, log.careType);
+}
+
+const DAY_MS = 24 * 60 * 60 * 1000;
+
+/**
+ * Recompute the schedule's "next due" for one care type from the latest
+ * remaining log of that type. Used after a log is deleted so the schedule stays
+ * truthful. No-op when the plant has no schedule.
+ */
+async function recalcScheduleForType(
+  plantId: string,
+  careType: typeof plantCareLogs.$inferInsert['careType'],
+) {
+  const [schedule] = await db
+    .select()
+    .from(plantCareSchedules)
+    .where(eq(plantCareSchedules.plantId, plantId))
+    .limit(1);
+  if (!schedule) return;
+
+  const [latest] = await db
+    .select({ loggedAt: plantCareLogs.loggedAt })
+    .from(plantCareLogs)
+    .where(and(eq(plantCareLogs.plantId, plantId), eq(plantCareLogs.careType, careType)))
+    .orderBy(desc(plantCareLogs.loggedAt))
+    .limit(1);
+
+  const base = latest?.loggedAt ?? new Date();
+  const now = new Date();
+  const updates: Record<string, unknown> = { updatedAt: now };
+
+  if (careType === 'watered' && schedule.wateringIntervalDays) {
+    updates.wateringNextDue = new Date(base.getTime() + schedule.wateringIntervalDays * DAY_MS);
+    // Keep the plant's lastWatered in sync with the remaining logs.
+    await db.update(plants).set({ lastWatered: latest?.loggedAt ?? null, updatedAt: now }).where(eq(plants.id, plantId));
+  } else if (careType === 'fertilized' && schedule.fertilizingIntervalDays) {
+    updates.fertilizingNextDue = new Date(base.getTime() + schedule.fertilizingIntervalDays * DAY_MS);
+  } else if (careType === 'repotted' && schedule.repottingIntervalMonths) {
+    updates.repottingNextDue = new Date(base.getTime() + schedule.repottingIntervalMonths * 30 * DAY_MS);
+  } else if (careType === 'misted' && schedule.mistingNeeded) {
+    updates.mistingNextDue = new Date(base.getTime() + 2 * DAY_MS);
+  }
+
+  if (Object.keys(updates).length > 1) {
+    await db.update(plantCareSchedules).set(updates).where(eq(plantCareSchedules.plantId, plantId));
+  }
+}
+
+/**
+ * Build a care schedule from the plant's currently linked species. Lets a user
+ * generate a schedule on demand when one wasn't created automatically (e.g. the
+ * species was linked with low scan confidence).
+ */
+export async function generateScheduleForPlant(plantId: string, userId: string, force = false) {
+  const plant = await assertPlantOwner(plantId, userId);
+  if (!plant.speciesId) throw new ServiceError('Plant has no linked species', 400);
+
+  const created = await createScheduleFromSpecies(plantId, plant.speciesId, { force });
+  // createScheduleFromSpecies returns null when a customized schedule already
+  // exists — in that case just hand back whatever schedule is there.
+  return created ?? (await getSchedule(plantId, userId));
 }

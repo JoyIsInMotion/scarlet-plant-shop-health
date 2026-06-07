@@ -32,8 +32,17 @@ export async function analyzeSavedPlant(plantId: string, userId: string, role: s
 
   await enforceRateLimit(userId, role);
 
-  const imgRes = await fetch(plant.imageUrl);
-  if (!imgRes.ok) throw new ServiceError('Failed to fetch plant image', 500);
+  // Some image CDNs (iNaturalist, Unsplash, Wikimedia) reject header-less
+  // server requests with 403 even though browsers load them fine — send a
+  // browser-like User-Agent/Accept and follow redirects.
+  const imgRes = await fetch(plant.imageUrl, {
+    headers: {
+      'User-Agent': 'Mozilla/5.0 (compatible; ScarletBot/1.0; +https://scarletflowers.netlify.app)',
+      Accept: 'image/avif,image/webp,image/png,image/jpeg,*/*',
+    },
+    redirect: 'follow',
+  });
+  if (!imgRes.ok) throw new ServiceError(`Failed to fetch plant image (${imgRes.status})`, 502);
   const imgBuffer = Buffer.from(await imgRes.arrayBuffer());
   const rawType = imgRes.headers.get('content-type') ?? 'image/jpeg';
   const allowedMimes = ['image/jpeg', 'image/png', 'image/webp'] as const;

@@ -37,5 +37,20 @@ async function updateScheduleHandler(req: NextRequest, { params }: { params: Pro
   }
 }
 
+async function generateScheduleHandler(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
+  const auth = getAuthFromRequest(req);
+  if (!auth) return err('Unauthorized', 401);
+  const { id } = await params;
+
+  try {
+    const body = await req.json().catch(() => ({}));
+    return ok(await careService.generateScheduleForPlant(id, auth.sub, body?.force === true));
+  } catch (e) {
+    if (e instanceof ServiceError) return err(e.message, e.status);
+    throw e;
+  }
+}
+
 export const GET   = withAuth(getScheduleHandler);
+export const POST  = withAuth(generateScheduleHandler);
 export const PATCH = withAuth(updateScheduleHandler);

@@ -6,7 +6,6 @@ import {
 import { PlantPhotoGallery } from '@/components/plants/plant-photo-gallery';
 import { AIAnalysisButton } from '@/components/plants/ai-analysis-button';
 import { PlantCareSection } from '@/components/plants/plant-care-section';
-import { CareHistoryCollapsible } from '@/components/plants/care-history-collapsible';
 import { DeletePlantButton } from '@/components/plants/delete-plant-button';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -170,7 +169,7 @@ export default async function PlantDetailPage({ params }: { params: Promise<{ id
             </CardContent>
           </Card>
 
-          {/* ── Care Section (Schedule + Logger) ── */}
+          {/* ── Care Section (Schedule + Log + recent history) ── */}
           <PlantCareSection
             plantId={id}
             schedule={schedule}
@@ -178,14 +177,9 @@ export default async function PlantDetailPage({ params }: { params: Promise<{ id
             fertilDays={fertilDays}
             repotDays={repotDays}
             mistDays={mistDays}
-          />
-
-          {/* ── Care History (Collapsible) ── */}
-          <CareHistoryCollapsible
-            careLogs={careLogs}
+            hasSpecies={!!plant.speciesId}
+            recentLogs={careLogs}
             careTotal={careTotal}
-            locale={locale}
-            plantId={id}
           />
 
           {/* Species mini-card */}

@@ -5,6 +5,7 @@ import { ScanLine, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { AIAnalysisCard } from './ai-analysis-card';
 import { useToast } from '@/hooks/use-toast';
+import { useRouter } from '@/i18n/navigation';
 import type { AIAnalysis } from '@scarlet/shared';
 
 interface AIAnalysisButtonProps {
@@ -18,6 +19,7 @@ export function AIAnalysisButton({ plantId, latestAnalysis, scansRemaining, onAn
   const t = useTranslations();
   const locale = useLocale();
   const { toast } = useToast();
+  const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [analysis, setAnalysis] = useState<(AIAnalysis & { matchedSpeciesId?: string | null }) | null>(null);
 
@@ -32,6 +34,9 @@ export function AIAnalysisButton({ plantId, latestAnalysis, scansRemaining, onAn
       setAnalysis(json.data.analysis);
       onAnalysisComplete?.(json.data.analysis);
       toast({ title: t('ai.analysisComplete'), variant: 'success' });
+      // A medium/high-confidence match auto-links the species and builds a care
+      // schedule server-side — refresh so the schedule/species cards update.
+      router.refresh();
     } catch (err: unknown) {
       const msg = err instanceof Error ? err.message : t('errors.serverError');
       toast({ title: t('common.error'), description: msg, variant: 'destructive' });
@@ -50,6 +55,8 @@ export function AIAnalysisButton({ plantId, latestAnalysis, scansRemaining, onAn
       });
       if (!res.ok) throw new Error();
       toast({ title: t('ai.speciesApplied'), variant: 'success' });
+      // Applying a species (re)builds the care schedule — refresh to show it.
+      router.refresh();
     } catch {
       toast({ title: t('common.error'), variant: 'destructive' });
     }
