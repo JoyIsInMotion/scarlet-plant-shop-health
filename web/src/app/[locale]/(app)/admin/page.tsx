@@ -1,6 +1,6 @@
 import { getTranslations } from 'next-intl/server';
 import { cookies } from 'next/headers';
-import { Users, Leaf, ShoppingBag, ScanLine, TrendingUp, ArrowRight } from 'lucide-react';
+import { Users, Leaf, ShoppingBag, ScanLine, TrendingUp, ArrowRight, Package } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Pagination } from '@/components/ui/pagination';
 import { Link } from '@/i18n/navigation';
@@ -95,6 +95,22 @@ export default async function AdminPage({
           </div>
           <ArrowRight className="h-4 w-4 text-muted transition-transform group-hover:translate-x-0.5" />
         </Link>
+
+        <Link
+          href="/admin/products"
+          className="group flex items-center justify-between rounded-2xl border border-border bg-surface p-5 transition-colors hover:border-scarlet/40 hover:bg-cream"
+        >
+          <div className="flex items-center gap-3">
+            <div className="inline-flex rounded-lg bg-emerald-50 p-2 text-emerald-600">
+              <Package className="h-5 w-5" />
+            </div>
+            <div>
+              <p className="font-semibold text-gray-900">{t('admin.manageProducts')}</p>
+              <p className="text-xs text-gray-500">{t('admin.newProduct')}</p>
+            </div>
+          </div>
+          <ArrowRight className="h-4 w-4 text-muted transition-transform group-hover:translate-x-0.5" />
+        </Link>
       </div>
 
       {/* Users table */}
@@ -110,15 +126,18 @@ export default async function AdminPage({
                 <tr className="border-b border-gray-100 bg-gray-50">
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wide">{t('auth.name')}</th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wide">{t('auth.email')}</th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wide">Role</th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wide">Status</th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wide">{t('admin.phone')}</th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wide">{t('admin.role')}</th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wide">{t('admin.status')}</th>
+                  <th className="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wide">{t('admin.actions')}</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-100">
-                {users.map((u: { id: string; name: string; email: string; role: string; isActive: boolean }) => (
+                {users.map((u: { id: string; name: string; email: string; phone: string | null; role: string; isActive: boolean }) => (
                   <tr key={u.id} className="hover:bg-gray-50">
                     <td className="px-6 py-3 font-medium text-gray-900">{u.name}</td>
                     <td className="px-6 py-3 text-gray-500">{u.email}</td>
+                    <td className="px-6 py-3 text-gray-500">{u.phone ?? '—'}</td>
                     <td className="px-6 py-3">
                       <span className={`inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium ${
                         u.role === 'admin' ? 'bg-purple-100 text-purple-700' : 'bg-gray-100 text-gray-700'
@@ -130,8 +149,13 @@ export default async function AdminPage({
                       <span className={`inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium ${
                         u.isActive ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'
                       }`}>
-                        {u.isActive ? 'Active' : 'Inactive'}
+                        {u.isActive ? t('admin.active') : t('admin.inactive')}
                       </span>
+                    </td>
+                    <td className="px-6 py-3 text-right">
+                      <Link href={`/admin/users/${u.id}`} className="text-xs font-semibold text-scarlet hover:underline">
+                        {t('admin.userDetails')}
+                      </Link>
                     </td>
                   </tr>
                 ))}

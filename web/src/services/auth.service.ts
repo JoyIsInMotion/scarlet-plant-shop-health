@@ -43,6 +43,7 @@ export async function register(name: string, email: string, password: string) {
       id: users.id,
       name: users.name,
       email: users.email,
+      phone: users.phone,
       role: users.role,
       avatarUrl: users.avatarUrl,
       isActive: users.isActive,

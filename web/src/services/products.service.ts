@@ -33,6 +33,23 @@ export async function listProducts(query: {
   return { items, total: Number(total), limit: query.limit, offset: query.offset, hasMore: query.offset + items.length < Number(total) };
 }
 
+/** Admin: list every product (active + inactive), newest first. */
+export async function listAllProducts(query: { limit: number; offset: number; search?: string }) {
+  const where = query.search
+    ? or(ilike(products.nameBg, `%${query.search}%`), ilike(products.nameEn, `%${query.search}%`))
+    : undefined;
+
+  const base = db.select().from(products);
+  const [items, [{ total }]] = await Promise.all([
+    (where ? base.where(where) : base).orderBy(desc(products.createdAt)).limit(query.limit).offset(query.offset),
+    where
+      ? db.select({ total: count() }).from(products).where(where)
+      : db.select({ total: count() }).from(products),
+  ]);
+
+  return { items, total: Number(total), limit: query.limit, offset: query.offset };
+}
+
 const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
 export async function getProduct(idOrSlug: string) {

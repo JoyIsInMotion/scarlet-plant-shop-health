@@ -14,6 +14,7 @@ export async function getMe(userId: string) {
       id: users.id,
       name: users.name,
       email: users.email,
+      phone: users.phone,
       role: users.role,
       avatarUrl: users.avatarUrl,
       isActive: users.isActive,
@@ -29,10 +30,14 @@ export async function getMe(userId: string) {
   return user;
 }
 
-export async function updateMe(userId: string, data: { name?: string; preferredLocale?: string }) {
+export async function updateMe(
+  userId: string,
+  data: { name?: string; preferredLocale?: string; phone?: string | null },
+) {
   const allowed: Record<string, unknown> = { updatedAt: new Date() };
   if (data.name) allowed.name = data.name;
   if (data.preferredLocale) allowed.preferredLocale = data.preferredLocale;
+  if (data.phone !== undefined) allowed.phone = data.phone || null;
 
   const [updated] = await db
     .update(users)
@@ -42,6 +47,7 @@ export async function updateMe(userId: string, data: { name?: string; preferredL
       id: users.id,
       name: users.name,
       email: users.email,
+      phone: users.phone,
       role: users.role,
       avatarUrl: users.avatarUrl,
       preferredLocale: users.preferredLocale,
@@ -77,6 +83,7 @@ export async function listUsers(query: { search?: string; page: number; limit: n
         id: users.id,
         name: users.name,
         email: users.email,
+        phone: users.phone,
         role: users.role,
         avatarUrl: users.avatarUrl,
         isActive: users.isActive,
@@ -91,4 +98,66 @@ export async function listUsers(query: { search?: string; page: number; limit: n
   ]);
 
   return { users: userList, total, page, limit };
+}
+
+/** Admin: fetch a single user's full profile. */
+export async function getUserById(id: string) {
+  const [user] = await db
+    .select({
+      id: users.id,
+      name: users.name,
+      email: users.email,
+      phone: users.phone,
+      role: users.role,
+      avatarUrl: users.avatarUrl,
+      isActive: users.isActive,
+      preferredLocale: users.preferredLocale,
+      createdAt: users.createdAt,
+      updatedAt: users.updatedAt,
+    })
+    .from(users)
+    .where(eq(users.id, id))
+    .limit(1);
+
+  if (!user) throw new ServiceError('User not found', 404);
+  return user;
+}
+
+/**
+ * Admin: update a user's role / active status / phone. `actingUserId` is the
+ * admin making the change — guards against locking themselves out by demoting
+ * or deactivating their own account.
+ */
+export async function updateUserAdmin(
+  id: string,
+  actingUserId: string,
+  data: { role?: 'user' | 'admin'; isActive?: boolean; phone?: string | null },
+) {
+  const [target] = await db.select({ id: users.id }).from(users).where(eq(users.id, id)).limit(1);
+  if (!target) throw new ServiceError('User not found', 404);
+
+  if (id === actingUserId) {
+    if (data.role === 'user') throw new ServiceError('You cannot remove your own admin role', 400);
+    if (data.isActive === false) throw new ServiceError('You cannot deactivate your own account', 400);
+  }
+
+  const set: Record<string, unknown> = { updatedAt: new Date() };
+  if (data.role !== undefined) set.role = data.role;
+  if (data.isActive !== undefined) set.isActive = data.isActive;
+  if (data.phone !== undefined) set.phone = data.phone || null;
+
+  const [updated] = await db
+    .update(users)
+    .set(set)
+    .where(eq(users.id, id))
+    .returning({
+      id: users.id,
+      name: users.name,
+      email: users.email,
+      phone: users.phone,
+      role: users.role,
+      isActive: users.isActive,
+    });
+
+  return updated;
 }

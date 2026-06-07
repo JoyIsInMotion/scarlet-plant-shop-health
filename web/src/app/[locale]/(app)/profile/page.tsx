@@ -19,10 +19,10 @@ export default function ProfilePage() {
   const [saving, setSaving] = useState(false);
 
   const { register, handleSubmit, formState: { isSubmitting } } = useForm({
-    values: { name: user?.name ?? '', email: user?.email ?? '' },
+    values: { name: user?.name ?? '', email: user?.email ?? '', phone: user?.phone ?? '' },
   });
 
-  async function onSubmit(data: { name: string; email: string }) {
+  async function onSubmit(data: { name: string; email: string; phone: string }) {
     try {
       const res = await fetch('/api/users/me', {
         method: 'PUT',
@@ -98,6 +98,10 @@ export default function ProfilePage() {
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1.5">{t('auth.email')}</label>
                 <Input type="email" {...register('email')} />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1.5">{t('profile.phone')}</label>
+                <Input type="tel" placeholder="+359 ..." {...register('phone')} />
               </div>
               <Button type="submit" isLoading={isSubmitting}>{t('common.save')}</Button>
             </form>

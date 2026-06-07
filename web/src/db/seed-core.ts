@@ -2,7 +2,7 @@
  * Idempotent seed building blocks used by seed.ts. Each function brings one
  * concern up to target WITHOUT wiping reusable data; safe to re-run.
  */
-import { eq, isNull, inArray } from 'drizzle-orm';
+import { eq, and, isNull, inArray } from 'drizzle-orm';
 import bcrypt from 'bcryptjs';
 import { faker } from '@faker-js/faker';
 import { db, chunkInsert } from './seed-utils';
@@ -24,18 +24,27 @@ export async function ensureUsers() {
   const existing = await db.select({ email: schema.users.email }).from(schema.users);
   const have = new Set(existing.map((u) => u.email));
 
+  // A believable Bulgarian mobile number (+359 8x xxx xxxx).
+  const bgPhone = () => `+359 8${faker.number.int({ min: 7, max: 9 })} ${faker.string.numeric(3)} ${faker.string.numeric(4)}`;
+
   // Always make sure the named accounts exist (idempotent by email)
-  const named: Array<{ name: string; email: string; pass: string; role: 'admin' | 'user' }> = [
-    { name: 'Admin', email: 'admin@scarlet.com', pass: 'admin123', role: 'admin' },
-    { name: 'Demo',  email: 'demo@scarlet.com',  pass: 'demo123',  role: 'user'  },
-    { name: 'Мария', email: 'maria@scarlet.com', pass: 'pass123',  role: 'user'  },
-    { name: 'Иван',  email: 'ivan@scarlet.com',  pass: 'pass123',  role: 'user'  },
+  const named: Array<{ name: string; email: string; pass: string; role: 'admin' | 'user'; phone: string }> = [
+    { name: 'Admin', email: 'admin@scarlet.com', pass: 'admin123', role: 'admin', phone: '+359 88 123 4567' },
+    { name: 'Demo',  email: 'demo@scarlet.com',  pass: 'demo123',  role: 'user',  phone: '+359 88 765 4321' },
+    { name: 'Мария', email: 'maria@scarlet.com', pass: 'pass123',  role: 'user',  phone: '+359 89 222 3344' },
+    { name: 'Иван',  email: 'ivan@scarlet.com',  pass: 'pass123',  role: 'user',  phone: '+359 87 555 6677' },
   ];
   for (const u of named) {
-    if (have.has(u.email)) continue;
+    if (have.has(u.email)) {
+      // Backfill phone for accounts that predate the phone column.
+      await db.update(schema.users)
+        .set({ phone: u.phone })
+        .where(and(eq(schema.users.email, u.email), isNull(schema.users.phone)));
+      continue;
+    }
     await db.insert(schema.users).values({
       name: u.name, email: u.email, passwordHash: await bcrypt.hash(u.pass, 10),
-      role: u.role, preferredLocale: 'bg',
+      role: u.role, preferredLocale: 'bg', phone: u.phone,
     });
     have.add(u.email);
   }
@@ -51,7 +60,7 @@ export async function ensureUsers() {
     const email = `topup${n++}@scarlet.app`;
     if (have.has(email)) continue;
     have.add(email);
-    rows.push({ name: faker.person.fullName(), email, passwordHash: hash, role: 'user', preferredLocale: 'bg' });
+    rows.push({ name: faker.person.fullName(), email, passwordHash: hash, role: 'user', preferredLocale: 'bg', phone: bgPhone() });
   }
   await chunkInsert(schema.users, rows, 500);
   console.log(`👤 +${rows.length} users → ${USER_TARGET}`);
