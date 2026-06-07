@@ -8,8 +8,7 @@ analysis and species identification. The app is fully bilingual — **Bulgarian
 
 | | |
 |---|---|
-| **Web (live)** | _… add Netlify URL_ |
-| **Mobile (live)** | _… add Expo web export URL_ |
+| **Web (live)** | https://scarletflowers.netlify.app |
 | **Repo** | https://github.com/JoyIsInMotion/scarlet-plant-shop-health |
 | **Test login** | `demo@scarlet.com` / `demo123` (user) · `admin@scarlet.com` / `admin123` (admin) |
 
@@ -20,18 +19,22 @@ analysis and species identification. The app is fully bilingual — **Bulgarian
 Two domains in one app:
 
 1. **Flower shop** — browse a product catalog (categories, search, pricing),
-   add items to a cart, and place orders with order history.
+   add items to a cart, and place pickup orders (a contact phone is required so
+   the shop can call about details; no shipping address) with order history.
 2. **Plant tracker** — keep a personal plant collection with photos and health
    scores, run **AI health analysis / species ID** (rate-limited to 5/day),
-   track care schedules & logs, and browse a public species catalog of ~470
-   species with bilingual care guides. A community feed lets users share plants
-   publicly and like others’.
+   manage per-plant **care schedules & logs** on a dedicated care page, and
+   browse a public species catalog of ~470 species with bilingual care guides.
+   A community feed lets users share plants publicly and like others’.
 
 ### Roles
 
-- **Visitor** — home, flower catalog, public species catalog, register/login.
-- **User** — manage own plants, run AI scans, shop & order, community feed.
-- **Admin** — manage the species catalog (and, in progress, products).
+- **Visitor** — home, flower catalog, public species catalog, plus **one free AI
+  scan per day** before being prompted to sign up; register/login.
+- **User** — manage own plants & care logs, run AI scans, shop & order,
+  community feed, edit own profile (incl. phone).
+- **Admin** — manage the species catalog, **products** (create/edit/restock/
+  delete) and **users** (role, active status, phone, and their orders).
 
 ---
 
@@ -39,13 +42,13 @@ Two domains in one app:
 
 | Layer | Technology |
 |-------|-----------|
-| Web | Next.js 14 (App Router, Server Components & Actions) · React · TypeScript · Tailwind CSS |
+| Web | Next.js 16 (App Router, Server Components) · React 19 · TypeScript · Tailwind CSS |
 | Mobile | React Native + Expo (Expo Router) — _companion app, in progress_ |
 | Backend | Next.js Route Handlers (REST) + a service layer |
 | Database | Neon serverless PostgreSQL via `@neondatabase/serverless` (HTTP driver) |
 | ORM | Drizzle ORM + Drizzle Kit migrations |
 | Auth | Custom JWT (access + refresh), `bcryptjs` password hashing |
-| AI | **Groq `llama-4-scout`** (plant health analysis & species ID) |
+| AI | **Groq** — Llama 4 Scout vision (`meta-llama/llama-4-scout-17b-16e-instruct`) for plant health analysis & species ID |
 | Storage | Cloudflare R2 (S3-compatible) for user photos & product images |
 | i18n | next-intl (web) — Bulgarian default, English secondary |
 | Deployment | Netlify (web) · EAS / Netlify web export (mobile) |
@@ -209,6 +212,24 @@ All protected routes use the `withAuth` wrapper and a JWT Bearer token.
 
 ---
 
+## Testing & CI
+
+Tests live in [`web/tests`](web/tests):
+
+- **`tests/unit`** — Vitest. Covers Zod validators, JWT sign/verify, the
+  `withAuth` authorization guard (401/403/200), service ownership & admin
+  guardrails, and utilities. Run with `npm test` (in `web/`).
+- **`tests/e2e`** — Playwright smoke tests (home + i18n logo, login success/
+  failure, add-to-cart toast & cart visibility, admin route guard). Run with
+  `npm run test:e2e` against a running dev server (or set `E2E_BASE_URL`).
+
+**GitHub Actions** ([`.github/workflows/ci.yml`](.github/workflows/ci.yml)) runs
+lint, typecheck, and the unit tests on every push/PR to `main`. (E2E runs
+locally — it needs a database.) Security testing follows the OWASP Top 10, with
+explicit coverage of broken access control and input validation.
+
+---
+
 ## Local development
 
 **Prerequisites:** Node.js 20+, a Neon PostgreSQL database, a Cloudflare R2
@@ -252,5 +273,7 @@ npm run dev:mobile
 | `npm run db:generate` | Generate a Drizzle migration from schema changes |
 | `npm run db:migrate` | Apply migrations |
 | `npm run db:seed` | Seed sample data |
+
+Tests run from the `web/` workspace: `npm test` (unit) and `npm run test:e2e` (Playwright).
 
 > More agent/architecture conventions are documented in [`AGENTS.md`](AGENTS.md).
