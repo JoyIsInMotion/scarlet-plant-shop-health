@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl';
 import { Camera } from 'lucide-react';
 import { useAuth } from '@/providers/auth-provider';
 import { useToast } from '@/hooks/use-toast';
+import { toSupportedImage } from '@/lib/images/to-supported-image';
 import { LanguageSwitcher } from '@/components/layout/language-switcher';
 import { Avatar } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
@@ -38,8 +39,15 @@ export default function ProfilePage() {
   }
 
   async function handleAvatarChange(e: React.ChangeEvent<HTMLInputElement>) {
-    const f = e.target.files?.[0];
-    if (!f) return;
+    const raw = e.target.files?.[0];
+    if (!raw) return;
+    let f: File;
+    try {
+      f = await toSupportedImage(raw);
+    } catch {
+      toast({ title: t('common.error'), variant: 'destructive' });
+      return;
+    }
     setSaving(true);
     try {
       const form = new FormData();

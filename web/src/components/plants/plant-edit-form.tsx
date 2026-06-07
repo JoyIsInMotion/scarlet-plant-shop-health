@@ -11,6 +11,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent } from '@/components/ui/card';
 import { useToast } from '@/hooks/use-toast';
+import { toSupportedImage } from '@/lib/images/to-supported-image';
 import type { Plant } from '@scarlet/shared';
 
 const schema = z.object({
@@ -102,10 +103,14 @@ export function PlantEditForm({ plant }: PlantEditFormProps) {
     });
   }, [plant.customName, plant.lastWatered, reset]);
 
-  function handleFileChange(event: React.ChangeEvent<HTMLInputElement>) {
-    const file = event.target.files?.[0];
-    if (!file) return;
-    if (!file.type.startsWith('image/')) {
+  async function handleFileChange(event: React.ChangeEvent<HTMLInputElement>) {
+    const raw = event.target.files?.[0];
+    if (!raw) return;
+    // Convert iPhone HEIC photos to JPEG so phone uploads work everywhere.
+    let file: File;
+    try {
+      file = await toSupportedImage(raw);
+    } catch {
       toast({ title: t('errors.invalidFileType'), variant: 'destructive' });
       return;
     }
@@ -117,7 +122,14 @@ export function PlantEditForm({ plant }: PlantEditFormProps) {
     setPreview(URL.createObjectURL(file));
   }
 
-  async function handleAddPhoto(file: File) {
+  async function handleAddPhoto(raw: File) {
+    let file: File;
+    try {
+      file = await toSupportedImage(raw);
+    } catch {
+      toast({ title: t('errors.invalidFileType'), variant: 'destructive' });
+      return;
+    }
     try {
       const form = new FormData();
       form.append('image', file);

@@ -9,6 +9,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent } from '@/components/ui/card';
 import { useToast } from '@/hooks/use-toast';
+import { toSupportedImage } from '@/lib/images/to-supported-image';
 import { Link, useRouter } from '@/i18n/navigation';
 
 const schema = z.object({
@@ -66,9 +67,21 @@ export default function NewPlantPage() {
     }
   }
 
-  function handleFileChange(e: React.ChangeEvent<HTMLInputElement>) {
-    const f = e.target.files?.[0];
-    if (!f) return;
+  async function handleFileChange(e: React.ChangeEvent<HTMLInputElement>) {
+    const raw = e.target.files?.[0];
+    if (!raw) return;
+    // Convert iPhone HEIC photos to JPEG so phone uploads work everywhere.
+    let f: File;
+    try {
+      f = await toSupportedImage(raw);
+    } catch {
+      toast({
+        title: t('errors.invalidFileType'),
+        description: locale === 'en' ? 'Use JPEG, PNG, WebP or HEIC.' : 'Използвайте JPEG, PNG, WebP или HEIC.',
+        variant: 'destructive',
+      });
+      return;
+    }
     if (f.size > 5 * 1024 * 1024) {
       toast({ title: t('errors.fileTooLarge'), variant: 'destructive' });
       return;
@@ -114,7 +127,16 @@ export default function NewPlantPage() {
       if (imageFile && plant.id) {
         const form = new FormData();
         form.append('image', imageFile);
-        await fetch(`/api/plants/${plant.id}/image`, { method: 'POST', body: form });
+        const imgRes = await fetch(`/api/plants/${plant.id}/image`, { method: 'POST', body: form });
+        if (!imgRes.ok) {
+          // Don't fail the whole save, but tell the user the photo didn't attach.
+          toast({
+            title: locale === 'en' ? 'Plant saved — but the photo failed to upload' : 'Растението е запазено — но снимката не се качи',
+            variant: 'destructive',
+          });
+          router.push(`/plants/${plant.id}`);
+          return;
+        }
       }
 
       toast({ title: t('common.success'), variant: 'success' });
@@ -164,7 +186,7 @@ export default function NewPlantPage() {
                 </>
               )}
             </div>
-            <input ref={fileRef} type="file" accept="image/*" className="hidden" onChange={handleFileChange} />
+            <input ref={fileRef} type="file" accept="image/*,.heic,.heif" className="hidden" onChange={handleFileChange} />
 
             {/* AI identification result */}
             {identifying && (
@@ -211,6 +233,24 @@ export default function NewPlantPage() {
                 <button type="button" onClick={rejectSpecies} className="ml-auto text-emerald-500 hover:text-emerald-700">
                   <XCircle className="h-4 w-4" />
                 </button>
+              </div>
+            )}
+
+            {/* Identified, but not in our catalog — still show the AI guess */}
+            {!identifying && identification?.identified && !identification.matchedSpeciesId && (
+              <div className="rounded-lg border border-emerald-200 bg-emerald-50 px-3 py-2.5">
+                <p className="text-sm text-emerald-800">
+                  {locale === 'en' ? '🌿 Looks like ' : '🌿 Прилича на '}
+                  <span className="font-semibold">{identification.commonNameEn ?? identification.scientificName}</span>
+                  {identification.scientificName && identification.commonNameEn && (
+                    <span className="ml-1 text-xs font-normal italic text-emerald-600">({identification.scientificName})</span>
+                  )}
+                </p>
+                <p className="mt-0.5 text-xs text-emerald-600">
+                  {locale === 'en'
+                    ? 'We filled in the name. This one isn\'t in our species catalog yet — you can link a species later for a care schedule.'
+                    : 'Попълнихме името. Този вид още го няма в каталога ни — можете да свържете вид по-късно за график за грижи.'}
+                </p>
               </div>
             )}
 

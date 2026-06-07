@@ -8,6 +8,7 @@ import { AIAnalysisCard } from './ai-analysis-card';
 import { useToast } from '@/hooks/use-toast';
 import { LoadingSpinner } from '@/components/ui/loading-spinner';
 import { apiFetch } from '@/lib/api/client';
+import { toSupportedImage } from '@/lib/images/to-supported-image';
 import type { AIAnalysis } from '@scarlet/shared';
 
 interface QuickScanUploaderProps {
@@ -25,8 +26,12 @@ export function QuickScanUploader({ isAuthed = false }: QuickScanUploaderProps) 
   const [dragOver, setDragOver] = useState(false);
   const [limitReached, setLimitReached] = useState(false);
 
-  function handleFile(f: File) {
-    if (!f.type.startsWith('image/')) {
+  async function handleFile(raw: File) {
+    // Convert iPhone HEIC photos to JPEG so phone uploads work everywhere.
+    let f: File;
+    try {
+      f = await toSupportedImage(raw);
+    } catch {
       toast({ title: t('errors.invalidFileType'), variant: 'destructive' });
       return;
     }
@@ -128,7 +133,7 @@ export function QuickScanUploader({ isAuthed = false }: QuickScanUploaderProps) 
         <input
           ref={inputRef}
           type="file"
-          accept="image/jpeg,image/png,image/webp"
+          accept="image/*,.heic,.heif"
           className="hidden"
           onChange={(e) => { const f = e.target.files?.[0]; if (f) handleFile(f); }}
         />
