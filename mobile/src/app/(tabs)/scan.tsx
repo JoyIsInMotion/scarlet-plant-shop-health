@@ -9,7 +9,6 @@ import {
   Text,
   View,
 } from 'react-native';
-import { AddPlantModal } from '@/components/add-plant-modal';
 import { AIAnalysisCard } from '@/components/ai-analysis-card';
 import { useAuth } from '@/context/auth';
 import { ApiError, quickScan, type ScanImage } from '@/lib/api';
@@ -46,7 +45,6 @@ export default function ScanScreen() {
   const [result, setResult] = useState<AIAnalysisResult | null>(null);
   const [analyzing, setAnalyzing] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [addPlantOpen, setAddPlantOpen] = useState(false);
   // Logged-out visitors get one free scan per day; after that we prompt them to
   // log in.
   const [limitReached, setLimitReached] = useState(false);
@@ -200,7 +198,18 @@ export default function ScanScreen() {
             <>
               {/* Save to collection */}
               <Pressable
-                onPress={() => setAddPlantOpen(true)}
+                onPress={() => {
+                  router.push({
+                    pathname: '/plants/new',
+                    params: {
+                      name: result?.analysis.identifiedCommonName ?? '',
+                      speciesId: result?.analysis.matchedSpeciesId ?? '',
+                      imageUri: image?.uri ?? '',
+                      imageName: image?.name ?? '',
+                      imageMime: image?.mimeType ?? '',
+                    },
+                  });
+                }}
                 style={({ pressed }) => [styles.saveToCollectionBtn, pressed && styles.pressed]}>
                 <Text style={styles.saveToCollectionText}>🪴 {m.plants.saveToCollection}</Text>
               </Pressable>
@@ -214,15 +223,6 @@ export default function ScanScreen() {
           )}
         </>
       )}
-
-      <AddPlantModal
-        visible={addPlantOpen}
-        initialName={result?.analysis.identifiedCommonName ?? ''}
-        initialSpeciesId={result?.analysis.matchedSpeciesId}
-        image={image}
-        onClose={() => setAddPlantOpen(false)}
-        onSaved={() => setAddPlantOpen(false)}
-      />
 
       {/* Log-in prompt once a guest has used their free scan. */}
       {guestLimited && (
