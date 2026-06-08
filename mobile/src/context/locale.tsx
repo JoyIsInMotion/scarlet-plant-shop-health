@@ -13,7 +13,7 @@ interface LocaleContextValue {
 const LocaleContext = createContext<LocaleContextValue | null>(null);
 
 // Holds the active UI language. A manual choice (persisted) wins; otherwise we
-// follow the signed-in user's preferredLocale, defaulting to Bulgarian.
+// follow the signed-in user's preferredLocale, defaulting to English.
 export function LocaleProvider({ children }: { children: React.ReactNode }) {
   const { user } = useAuth();
   const [override, setOverride] = useState<Locale | null>(null);
@@ -39,7 +39,7 @@ export function LocaleProvider({ children }: { children: React.ReactNode }) {
     });
   }, []);
 
-  const locale: Locale = override ?? (user?.preferredLocale === 'en' ? 'en' : 'bg');
+  const locale: Locale = override ?? (user?.preferredLocale === 'bg' ? 'bg' : 'en');
 
   const value = useMemo<LocaleContextValue>(() => ({ locale, setLocale }), [locale, setLocale]);
 
