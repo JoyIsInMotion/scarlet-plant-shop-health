@@ -1,0 +1,96 @@
+name: Backup
+
+on:
+  schedule:
+    - cron: '0 3 * * *'   # 03:00 UTC every day
+  workflow_dispatch:        # allow manual trigger from the Actions UI
+
+jobs:
+  backup:
+    name: Database & Storage Backup
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    env:
+      AWS_ACCESS_KEY_ID:         ${{ secrets.R2_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY:     ${{ secrets.R2_SECRET_ACCESS_KEY }}
+      AWS_EC2_METADATA_DISABLED: "true"
+      R2_ENDPOINT:               "https://${{ secrets.R2_ACCOUNT_ID }}.r2.cloudflarestorage.com"
+
+    steps:
+      - name: Compute date labels
+        id: d
+        run: |
+          echo "date=$(date -u +%Y-%m-%d)"  >> "$GITHUB_OUTPUT"
+          echo "week=$(date -u +%Y-W%V)"    >> "$GITHUB_OUTPUT"   # ISO week, e.g. 2026-W23
+          echo "month=$(date -u +%Y-%m)"    >> "$GITHUB_OUTPUT"
+          echo "dow=$(date -u +%u)"         >> "$GITHUB_OUTPUT"   # 1=Mon … 7=Sun
+          echo "dom=$(date -u +%-d)"        >> "$GITHUB_OUTPUT"   # day-of-month, no leading zero
+
+      # ── 1. Database ──────────────────────────────────────────────────────────
+
+      - name: Install PostgreSQL client
+        run: sudo apt-get install -y --no-install-recommends postgresql-client
+
+      - name: Dump database (compressed)
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: pg_dump "$DATABASE_URL" | gzip > db.sql.gz
+
+      # ── 2. File storage ──────────────────────────────────────────────────────
+
+      - name: Sync production R2 bucket to local directory
+        run: |
+          mkdir -p ./r2-snapshot
+          aws s3 sync "s3://${{ secrets.R2_BUCKET_NAME }}" ./r2-snapshot/ \
+            --endpoint-url "$R2_ENDPOINT" --quiet
+
+      - name: Archive storage snapshot
+        run: tar czf storage.tar.gz -C ./r2-snapshot .
+
+      # ── 3. Upload backups to the private backup bucket ───────────────────────
+
+      - name: Upload daily backup
+        run: |
+          P="daily/${{ steps.d.outputs.date }}"
+          aws s3 cp db.sql.gz      "s3://${{ secrets.BACKUP_R2_BUCKET_NAME }}/$P/db.sql.gz"      --endpoint-url "$R2_ENDPOINT"
+          aws s3 cp storage.tar.gz "s3://${{ secrets.BACKUP_R2_BUCKET_NAME }}/$P/storage.tar.gz" --endpoint-url "$R2_ENDPOINT"
+
+      - name: Upload weekly backup (every Sunday)
+        if: steps.d.outputs.dow == '7'
+        run: |
+          P="weekly/${{ steps.d.outputs.week }}"
+          aws s3 cp db.sql.gz      "s3://${{ secrets.BACKUP_R2_BUCKET_NAME }}/$P/db.sql.gz"      --endpoint-url "$R2_ENDPOINT"
+          aws s3 cp storage.tar.gz "s3://${{ secrets.BACKUP_R2_BUCKET_NAME }}/$P/storage.tar.gz" --endpoint-url "$R2_ENDPOINT"
+
+      - name: Upload monthly backup (1st of each month)
+        if: steps.d.outputs.dom == '1'
+        run: |
+          P="monthly/${{ steps.d.outputs.month }}"
+          aws s3 cp db.sql.gz      "s3://${{ secrets.BACKUP_R2_BUCKET_NAME }}/$P/db.sql.gz"      --endpoint-url "$R2_ENDPOINT"
+          aws s3 cp storage.tar.gz "s3://${{ secrets.BACKUP_R2_BUCKET_NAME }}/$P/storage.tar.gz" --endpoint-url "$R2_ENDPOINT"
+
+      # ── 4. Retention policy: 7 daily / 5 weekly / 12 monthly ─────────────────
+
+      - name: Apply retention policy
+        run: |
+          BUCKET="${{ secrets.BACKUP_R2_BUCKET_NAME }}"
+
+          # Delete the oldest entries in a given tier, keeping only $keep of them.
+          prune() {
+            local tier=$1 keep=$2
+            mapfile -t folders < <(
+              aws s3 ls "s3://$BUCKET/$tier/" --endpoint-url "$R2_ENDPOINT" \
+                | awk '/PRE/ {print $2}' | sort
+            )
+            local excess=$(( ${#folders[@]} - keep ))
+            for (( i=0; i<excess; i++ )); do
+              echo "Removing $tier/${folders[$i]}"
+              aws s3 rm "s3://$BUCKET/$tier/${folders[$i]}" --recursive \
+                --endpoint-url "$R2_ENDPOINT"
+            done
+          }
+
+          prune daily   7
+          prune weekly  5
+          prune monthly 12
