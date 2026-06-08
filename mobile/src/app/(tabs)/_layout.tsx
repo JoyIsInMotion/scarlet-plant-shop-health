@@ -1,5 +1,6 @@
 import { Tabs } from 'expo-router';
-import { Platform, StyleSheet, Text } from 'react-native';
+import { StyleSheet, Text } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { BrandLogo, HeaderRight } from '@/components/nav-bar';
 import { useAuth } from '@/context/auth';
 import { useI18n } from '@/lib/i18n';
@@ -8,13 +9,27 @@ const SCARLET = '#C2375A';
 const INACTIVE = '#B8A0AC';
 const BORDER = '#EDD8E2';
 
+// Room for the icon + label, before the device's bottom system area is added.
+const BAR_CONTENT_HEIGHT = 58;
+
 function TabIcon({ emoji, focused }: { emoji: string; focused: boolean }) {
-  return <Text style={[styles.icon, focused && styles.iconFocused]}>{emoji}</Text>;
+  return (
+    <Text style={[styles.icon, focused && styles.iconFocused]} numberOfLines={1}>
+      {emoji}
+    </Text>
+  );
 }
 
 export default function TabsLayout() {
   const { m } = useI18n();
   const { isAuthenticated } = useAuth();
+  const insets = useSafeAreaInsets();
+
+  // Sit the bar above the phone's bottom system area — the gesture pill or the
+  // 3-button navigation bar — so labels are never hidden behind it. Keep a
+  // floor so devices that report no inset still leave breathing room under the
+  // labels (where the "p" in "Shop" used to clip).
+  const bottomPad = Math.max(insets.bottom, 12);
 
   return (
     <Tabs
@@ -22,7 +37,14 @@ export default function TabsLayout() {
         tabBarActiveTintColor: SCARLET,
         tabBarInactiveTintColor: INACTIVE,
         tabBarLabelStyle: styles.label,
-        tabBarStyle: styles.bar,
+        // Keep the label under the icon on every device. Without this, large
+        // screens (tablets / landscape) default to a beside-icon layout that
+        // crops the labels in the narrow per-tab column.
+        tabBarLabelPosition: 'below-icon',
+        tabBarStyle: [
+          styles.bar,
+          { height: BAR_CONTENT_HEIGHT + bottomPad, paddingBottom: bottomPad },
+        ],
         headerShadowVisible: false,
         headerStyle: styles.header,
         // The brand logo stands in for the title on every tab, so the auth
@@ -51,7 +73,7 @@ export default function TabsLayout() {
         name="plants"
         options={{
           title: m.plants.myPlants,
-          tabBarLabel: m.home.myPlants,
+          tabBarLabel: m.home.tabPlants,
           tabBarIcon: ({ focused }) => <TabIcon emoji="🌿" focused={focused} />,
           // My Plants is personal — only show the tab to signed-in users.
           href: isAuthenticated ? undefined : null,
@@ -61,7 +83,7 @@ export default function TabsLayout() {
         name="scan"
         options={{
           title: m.home.scan,
-          tabBarLabel: m.home.scan,
+          tabBarLabel: m.home.tabScan,
           tabBarIcon: ({ focused }) => <TabIcon emoji="📷" focused={focused} />,
         }}
       />
@@ -73,16 +95,23 @@ const styles = StyleSheet.create({
   bar: {
     borderTopColor: BORDER,
     backgroundColor: '#FFFFFF',
-    height: Platform.OS === 'ios' ? 88 : 64,
-    paddingTop: 6,
-    paddingBottom: Platform.OS === 'ios' ? 28 : 8,
+    paddingTop: 8,
   },
   label: {
     fontSize: 11,
     fontWeight: '600',
+    lineHeight: 14,
+    // React Navigation pins each tab item to a fixed height; if the icon +
+    // label exceed it, flexbox shrinks the label and its overflow:hidden box
+    // clips the text. Keep the label at its natural height so it can't shrink.
+    flexShrink: 0,
   },
   icon: {
-    fontSize: 20,
+    // Keep the emoji compact so the icon + label fit the fixed item height
+    // without the label being squeezed (which clipped it on web).
+    fontSize: 18,
+    lineHeight: 20,
+    textAlign: 'center',
     opacity: 0.55,
   },
   iconFocused: {

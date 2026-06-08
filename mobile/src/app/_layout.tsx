@@ -1,4 +1,5 @@
 import { Stack } from 'expo-router';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { AuthProvider } from '@/context/auth';
 import { CartProvider } from '@/context/cart';
 import { LocaleProvider } from '@/context/locale';
@@ -24,12 +25,14 @@ function RootStack() {
 
 export default function RootLayout() {
   return (
-    <AuthProvider>
-      <LocaleProvider>
-        <CartProvider>
-          <RootStack />
-        </CartProvider>
-      </LocaleProvider>
-    </AuthProvider>
+    <SafeAreaProvider>
+      <AuthProvider>
+        <LocaleProvider>
+          <CartProvider>
+            <RootStack />
+          </CartProvider>
+        </LocaleProvider>
+      </AuthProvider>
+    </SafeAreaProvider>
   );
 }
