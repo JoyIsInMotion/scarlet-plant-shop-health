@@ -158,6 +158,11 @@ const styles = StyleSheet.create({
     padding: 18,
     paddingBottom: 32,
     gap: 18,
+    // Center the column on tablets / the web build rather than letting the
+    // banners and collection grid stretch across the whole window.
+    width: '100%',
+    maxWidth: 600,
+    alignSelf: 'center',
   },
 
   // Greeting

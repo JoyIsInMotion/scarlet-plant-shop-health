@@ -139,6 +139,10 @@ const styles = StyleSheet.create({
     padding: 16,
     gap: 14,
     paddingBottom: 32,
+    // Center the account form at a readable width on tablets / the web build.
+    width: '100%',
+    maxWidth: 600,
+    alignSelf: 'center',
   },
   card: {
     flexDirection: 'row',

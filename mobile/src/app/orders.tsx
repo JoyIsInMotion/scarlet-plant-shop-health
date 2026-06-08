@@ -256,6 +256,10 @@ const styles = StyleSheet.create({
   list: {
     padding: 16,
     flexGrow: 1,
+    // Center the order list at a readable width on tablets / the web build.
+    width: '100%',
+    maxWidth: 600,
+    alignSelf: 'center',
   },
   separator: {
     height: 12,

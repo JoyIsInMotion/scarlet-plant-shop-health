@@ -328,6 +328,10 @@ const styles = StyleSheet.create({
     padding: 16,
     gap: 14,
     paddingBottom: 32,
+    // Center the cart at a readable width on tablets / the web build.
+    width: '100%',
+    maxWidth: 600,
+    alignSelf: 'center',
   },
   headerRow: {
     flexDirection: 'row',

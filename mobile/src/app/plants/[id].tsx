@@ -1,5 +1,5 @@
 import { Image } from 'expo-image';
-import { Stack, useLocalSearchParams } from 'expo-router';
+import { Stack, useLocalSearchParams, useRouter, type Href } from 'expo-router';
 import { useCallback, useEffect, useState } from 'react';
 import {
   ActivityIndicator,
@@ -43,6 +43,7 @@ function notify(title: string, message: string) {
 function PlantDetailContent({ id }: { id: string }) {
   const { authedRequest } = useAuth();
   const { locale, m } = useI18n();
+  const router = useRouter();
 
   const [plant, setPlant] = useState<Plant | null>(null);
   const [latest, setLatest] = useState<AIAnalysis | null>(null);
@@ -131,9 +132,22 @@ function PlantDetailContent({ id }: { id: string }) {
       )
     : null;
 
+  // No history to pop when opened via a deep link / the web build — fall back
+  // to the plant list so there's always a visible way back.
+  const goBack = () => (router.canGoBack() ? router.back() : router.replace('/plants' as Href));
+
   return (
     <>
-      <Stack.Screen options={{ title: plant.customName }} />
+      <Stack.Screen
+        options={{
+          title: plant.customName,
+          headerLeft: () => (
+            <Pressable onPress={goBack} hitSlop={12} style={styles.headerBack}>
+              <Text style={styles.headerBackText}>‹ {m.common.back}</Text>
+            </Pressable>
+          ),
+        }}
+      />
       <ScrollView contentContainerStyle={styles.container}>
         {/* Photo */}
         <View style={styles.photoWrap}>
@@ -249,6 +263,20 @@ const styles = StyleSheet.create({
   container: {
     padding: 16,
     gap: 16,
+    // Cap the width so the photo and cards don't stretch edge-to-edge (and the
+    // photo balloon) on tablets and the web build.
+    width: '100%',
+    maxWidth: 560,
+    alignSelf: 'center',
+  },
+  headerBack: {
+    paddingHorizontal: 8,
+    paddingVertical: 4,
+  },
+  headerBackText: {
+    fontSize: 16,
+    fontWeight: '700',
+    color: '#C2375A',
   },
   photoWrap: {
     aspectRatio: 4 / 3,

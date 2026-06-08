@@ -167,6 +167,10 @@ const styles = StyleSheet.create({
   list: {
     padding: 16,
     flexGrow: 1,
+    // Keep the 2-column grid centered at a sensible width on tablets / web.
+    width: '100%',
+    maxWidth: 600,
+    alignSelf: 'center',
   },
   row: {
     justifyContent: 'space-between',

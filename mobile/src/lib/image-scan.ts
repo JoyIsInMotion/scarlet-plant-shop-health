@@ -5,9 +5,14 @@ import type { ScanImage } from '@/lib/api';
 // Re-encode the picked photo to a downscaled JPEG. This mirrors the web's
 // client-side downscale: it guarantees a backend-supported format (iOS gallery
 // photos can be HEIC) and keeps the upload under the 5 MB limit.
+const MAX_UPLOAD_WIDTH = 1280;
+
 async function normalize(asset: ImagePicker.ImagePickerAsset): Promise<ScanImage> {
-  const actions =
-    asset.width && asset.width > 1280 ? [{ resize: { width: 1280 } as const }] : [];
+  // Downscale when the source is wider than the cap. The web picker frequently
+  // omits the asset's dimensions, so when the width is unknown we resize anyway
+  // rather than waving through a full-resolution (often multi-MB) photo.
+  const needsResize = !asset.width || asset.width > MAX_UPLOAD_WIDTH;
+  const actions = needsResize ? [{ resize: { width: MAX_UPLOAD_WIDTH } as const }] : [];
   const result = await manipulateAsync(asset.uri, actions, {
     compress: 0.7,
     format: SaveFormat.JPEG,

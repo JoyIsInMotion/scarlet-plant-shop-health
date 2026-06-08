@@ -231,6 +231,11 @@ const styles = StyleSheet.create({
     padding: 16,
     gap: 16,
     paddingBottom: 32,
+    // Keep the column (and the photo preview) a comfortable width on tablets
+    // and the web build instead of stretching edge-to-edge.
+    width: '100%',
+    maxWidth: 560,
+    alignSelf: 'center',
   },
   hero: {
     backgroundColor: COLORS.greenBg,

@@ -118,9 +118,22 @@ export default function ProductDetailScreen() {
     setJustAdded(true);
   }
 
+  // We may arrive here from a deep link or the live web build with no history
+  // to pop, so guarantee a visible way back to the shop list.
+  const goBack = () => (router.canGoBack() ? router.back() : router.replace('/shop' as Href));
+
   return (
     <>
-      <Stack.Screen options={{ title: name }} />
+      <Stack.Screen
+        options={{
+          title: name,
+          headerLeft: () => (
+            <Pressable onPress={goBack} hitSlop={12} style={styles.headerBack}>
+              <Text style={styles.headerBackText}>‹ {m.common.back}</Text>
+            </Pressable>
+          ),
+        }}
+      />
       <ScrollView style={styles.screen} contentContainerStyle={styles.content}>
         {/* Image */}
         <View style={styles.imageWrap}>
@@ -231,6 +244,20 @@ const styles = StyleSheet.create({
     padding: 16,
     paddingBottom: 32,
     gap: 8,
+    // Keep the layout (and the photo) a comfortable reading width on tablets
+    // and the web build instead of stretching edge-to-edge.
+    width: '100%',
+    maxWidth: 560,
+    alignSelf: 'center',
+  },
+  headerBack: {
+    paddingHorizontal: 8,
+    paddingVertical: 4,
+  },
+  headerBackText: {
+    fontSize: 16,
+    fontWeight: '700',
+    color: COLORS.scarlet,
   },
   center: {
     flex: 1,

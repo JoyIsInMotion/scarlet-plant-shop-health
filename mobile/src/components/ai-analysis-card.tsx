@@ -67,16 +67,16 @@ export function AIAnalysisCard({ analysis, advice, careBasics }: Props) {
         {adviceText && <Text style={styles.advice}>✨ {adviceText}</Text>}
 
         {basics && (
-          <View style={styles.basicsGrid}>
+          <View style={styles.basicsList}>
             {Object.entries(CARE_ICONS).map(([key, icon]) => {
               const value = pickLocalized(basics[key], locale);
               if (!value) return null;
               return (
-                <View key={key} style={styles.basicChip}>
+                <View key={key} style={styles.basicRow}>
                   <Text style={styles.basicIcon}>{icon}</Text>
-                  <Text style={styles.basicValue} numberOfLines={1}>
-                    {value}
-                  </Text>
+                  {/* Full-width rows so longer care notes wrap and stay readable
+                      on a phone instead of being clipped to "…". */}
+                  <Text style={styles.basicValue}>{value}</Text>
                 </View>
               );
             })}
@@ -198,28 +198,28 @@ const styles = StyleSheet.create({
     color: '#374151',
     lineHeight: 20,
   },
-  basicsGrid: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
+  basicsList: {
     gap: 8,
   },
-  basicChip: {
+  basicRow: {
     flexDirection: 'row',
-    alignItems: 'center',
-    gap: 6,
+    alignItems: 'flex-start',
+    gap: 8,
     backgroundColor: 'rgba(255,255,255,0.7)',
     borderRadius: 10,
     paddingHorizontal: 10,
-    paddingVertical: 6,
+    paddingVertical: 8,
   },
   basicIcon: {
     fontSize: 13,
+    marginTop: 1,
   },
   basicValue: {
-    fontSize: 12,
+    flex: 1,
+    fontSize: 13,
     fontWeight: '600',
     color: '#374151',
-    maxWidth: 110,
+    lineHeight: 18,
   },
   waterBanner: {
     backgroundColor: '#EFF6FF',
