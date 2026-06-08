@@ -244,10 +244,73 @@ export function getPlants(
 export interface CreatePlantInput {
   customName: string;
   speciesId?: string | null;
+  lastWatered?: string | null;
+  speciesConfirmed?: boolean;
 }
 
 export function createPlant(input: CreatePlantInput, token: string): Promise<Plant> {
   return request<Plant>('/api/plants', { method: 'POST', body: input, token });
+}
+
+export interface IdentifyResult {
+  identified: boolean;
+  confidence: string;
+  commonNameEn?: string | null;
+  scientificName?: string | null;
+  matchedSpeciesId?: string | null;
+  matchedCommonNameEn?: string | null;
+  matchedCommonNameBg?: string | null;
+  inOurDatabase?: boolean;
+}
+
+// AI species identification from a photo. Requires auth.
+export async function identifyPlant(image: ScanImage, token: string): Promise<IdentifyResult> {
+  const form = new FormData();
+  if (Platform.OS === 'web') {
+    const blob = await fetch(image.uri).then((r) => r.blob());
+    form.append('image', blob, image.name);
+  } else {
+    form.append('image', {
+      uri: image.uri,
+      name: image.name,
+      type: image.mimeType,
+    } as unknown as Blob);
+  }
+  return request<IdentifyResult>('/api/ai/identify', { method: 'POST', body: form, token });
+}
+
+export interface CatalogSpecies {
+  id: string;
+  commonNameEn: string | null;
+  commonNameBg: string | null;
+  scientificName: string;
+}
+
+export interface CatalogList {
+  species: CatalogSpecies[];
+  total: number;
+}
+
+// Public species catalog search — no token required.
+export function searchCatalog(query: string): Promise<CatalogList> {
+  return request<CatalogList>(
+    `/api/catalog?search=${encodeURIComponent(query)}&limit=6`
+  );
+}
+
+export interface UpdatePlantInput {
+  customName?: string;
+  speciesId?: string | null;
+  lastWatered?: string | null;
+  speciesConfirmed?: boolean;
+}
+
+export function updatePlant(id: string, input: UpdatePlantInput, token: string): Promise<Plant> {
+  return request<Plant>(`/api/plants/${id}`, { method: 'PUT', body: input, token });
+}
+
+export function deletePlant(id: string, token: string): Promise<{ message: string }> {
+  return request<{ message: string }>(`/api/plants/${id}`, { method: 'DELETE', token });
 }
 
 // Uploads (or replaces) the cover photo for a plant.
