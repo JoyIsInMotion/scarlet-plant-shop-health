@@ -2,11 +2,10 @@ import { useEffect, useState } from 'react';
 import { Link, useRouter } from 'expo-router';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { CollectionCard } from '@/components/collection-card';
-import { FeaturedProductCard } from '@/components/featured-product-card';
 import { useAuth } from '@/context/auth';
 import { getProducts } from '@/lib/api';
 import { useI18n } from '@/lib/i18n';
-import { Product, ProductCategory } from '@/lib/types';
+import { ProductCategory } from '@/lib/types';
 
 // Brand palette mirrored from the website (web/src/app/globals.css).
 const COLORS = {
@@ -38,29 +37,18 @@ interface Collection {
 
 export default function HomeScreen() {
   const { isAuthenticated, user, logout } = useAuth();
-  const { locale, m } = useI18n();
+  const { m } = useI18n();
   const router = useRouter();
   const [collections, setCollections] = useState<Collection[]>(
     CATEGORY_ORDER.map((category) => ({ category, cover: null, count: 0 }))
   );
-  const [featured, setFeatured] = useState<Product[]>([]);
 
   // The products endpoint is public, so the landing screen shows real shop
   // photos without requiring a session. We fetch one product per category so
   // every collection gets its own cover photo (a single wide page can be
   // dominated by one category). Failures fall back to emoji art.
-  // The best-selling row is capped at 8 so we don't download a dozen full-size
-  // photos on first paint (the home felt slow loading them all at once).
   useEffect(() => {
     let active = true;
-
-    getProducts({ limit: 8 })
-      .then((res) => {
-        if (active) setFeatured(res.items.filter((p) => p.imageUrl));
-      })
-      .catch(() => {
-        /* offline — best-selling row is simply hidden */
-      });
 
     Promise.all(
       CATEGORY_ORDER.map((category) =>
@@ -85,7 +73,6 @@ export default function HomeScreen() {
       {/* ── GREETING ── */}
       <View style={styles.header}>
         <View>
-          <Text style={styles.eyebrow}>✦ {m.landing.tag.toUpperCase()}</Text>
           <Text style={styles.greeting}>
             {isAuthenticated && user?.name
               ? `${m.home.greeting}, ${user.name} 👋`
@@ -93,14 +80,6 @@ export default function HomeScreen() {
           </Text>
         </View>
       </View>
-
-      {/* ── SEARCH (taps through to the shop) ── */}
-      <Pressable
-        onPress={() => router.push('/shop')}
-        style={({ pressed }) => [styles.search, pressed && styles.pressed]}>
-        <Text style={styles.searchIcon}>🔍</Text>
-        <Text style={styles.searchPlaceholder}>{m.home.searchPlaceholder}</Text>
-      </Pressable>
 
       {/* ── PROMO BANNER ── */}
       <Pressable
@@ -114,6 +93,21 @@ export default function HomeScreen() {
           </View>
         </View>
         <Text style={styles.promoEmoji}>🌷</Text>
+      </Pressable>
+
+      {/* ── PLANT HEALTH (sits right under the promo banner) ── */}
+      <Pressable
+        onPress={() => router.push('/scan')}
+        style={({ pressed }) => [styles.health, pressed && styles.pressed]}>
+        <View style={styles.healthText}>
+          <Text style={styles.healthEyebrow}>{m.landing.plantHealthEyebrow.toUpperCase()}</Text>
+          <Text style={styles.healthTitle}>{m.landing.plantHealthCTA}</Text>
+          <Text style={styles.healthDesc}>{m.landing.plantHealthDesc}</Text>
+          <View style={styles.healthBtn}>
+            <Text style={styles.healthBtnText}>{m.landing.plantHealthButton} →</Text>
+          </View>
+        </View>
+        <Text style={styles.healthEmoji}>🪴</Text>
       </Pressable>
 
       {/* ── COLLECTIONS ── */}
@@ -136,38 +130,6 @@ export default function HomeScreen() {
           </View>
         ))}
       </View>
-
-      {/* ── BEST SELLING ── */}
-      {featured.length > 0 && (
-        <>
-          <View style={styles.sectionHead}>
-            <Text style={styles.sectionTitle}>{m.home.bestSelling}</Text>
-            <Link href="/shop" style={styles.viewAll}>
-              {m.home.viewAll} →
-            </Link>
-          </View>
-          <ScrollView
-            horizontal
-            showsHorizontalScrollIndicator={false}
-            contentContainerStyle={styles.featuredRow}>
-            {featured.map((p) => (
-              <FeaturedProductCard key={p.id} product={p} locale={locale} />
-            ))}
-          </ScrollView>
-        </>
-      )}
-
-      {/* ── PLANT HEALTH ── */}
-      <Pressable
-        onPress={() => router.push('/scan')}
-        style={({ pressed }) => [styles.health, pressed && styles.pressed]}>
-        <View style={styles.healthText}>
-          <Text style={styles.healthEyebrow}>{m.landing.plantHealthEyebrow.toUpperCase()}</Text>
-          <Text style={styles.healthTitle}>{m.landing.plantHealthCTA}</Text>
-          <Text style={styles.healthDesc}>{m.landing.plantHealthDesc}</Text>
-        </View>
-        <Text style={styles.healthEmoji}>🪴</Text>
-      </Pressable>
 
       {/* ── AUTH FOOTER ── */}
       {isAuthenticated ? (
@@ -204,35 +166,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
   },
-  eyebrow: {
-    fontSize: 10,
-    fontWeight: '800',
-    letterSpacing: 1.5,
-    color: COLORS.scarlet,
-    marginBottom: 4,
-  },
   greeting: {
     fontSize: 24,
     fontWeight: '800',
     color: COLORS.foreground,
-  },
-
-  // Search
-  search: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 10,
-    backgroundColor: '#F7EEF2',
-    borderRadius: 14,
-    paddingHorizontal: 16,
-    paddingVertical: 14,
-  },
-  searchIcon: {
-    fontSize: 15,
-  },
-  searchPlaceholder: {
-    fontSize: 14,
-    color: COLORS.muted,
   },
 
   // Promo banner
@@ -308,14 +245,6 @@ const styles = StyleSheet.create({
     width: '48%',
   },
 
-  // Best selling row
-  featuredRow: {
-    flexDirection: 'row',
-    gap: 12,
-    paddingVertical: 2,
-    paddingRight: 6,
-  },
-
   // Plant health
   health: {
     flexDirection: 'row',
@@ -345,6 +274,19 @@ const styles = StyleSheet.create({
     fontSize: 13,
     lineHeight: 19,
     color: COLORS.botanicalLight,
+  },
+  healthBtn: {
+    alignSelf: 'flex-start',
+    marginTop: 10,
+    backgroundColor: '#FFFFFF',
+    borderRadius: 999,
+    paddingHorizontal: 16,
+    paddingVertical: 8,
+  },
+  healthBtnText: {
+    fontSize: 13,
+    fontWeight: '800',
+    color: COLORS.botanicalDark,
   },
   healthEmoji: {
     fontSize: 40,

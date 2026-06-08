@@ -55,6 +55,7 @@ const bg = {
     plantHealthEyebrow: 'Здраве на растенията',
     plantHealthCTA: 'Следи здравето на растенията си',
     plantHealthDesc: 'Добавете вашите растения и използвайте AI за анализ на тяхното здраве',
+    plantHealthButton: 'Пробвай 1 безплатно сканиране',
   },
   home: {
     greeting: 'Здравейте',
@@ -285,6 +286,7 @@ const en: Dict = {
     plantHealthEyebrow: 'Plant Health',
     plantHealthCTA: "Track your plant's health",
     plantHealthDesc: 'Add your plants and use AI to analyze their health',
+    plantHealthButton: 'Try 1 free scan',
   },
   home: {
     greeting: 'Hi',
