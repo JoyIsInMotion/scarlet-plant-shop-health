@@ -1,4 +1,4 @@
-import { eq, and, desc, lt, count } from 'drizzle-orm';
+import { eq, and, desc, lt, count, or, ilike } from 'drizzle-orm';
 import { db } from '@/db';
 import { plants, plantSpecies, aiAnalyses, plantPhotos } from '@/db/schema';
 import { plantSchema, MAX_FILE_SIZE_BYTES, ALLOWED_IMAGE_TYPES } from '@scarlet/shared';
@@ -32,26 +32,48 @@ const plantSelectShape = {
 export async function listPlants(
   userId: string,
   limit: number,
-  options: { cursor?: string; offset?: number } = {},
+  options: { cursor?: string; offset?: number; search?: string; difficulty?: string } = {},
 ) {
-  const baseConditions = [eq(plants.userId, userId), eq(plants.isArchived, false)];
+  const conditions = [eq(plants.userId, userId), eq(plants.isArchived, false)];
+
+  if (options.search) {
+    const q = `%${options.search}%`;
+    const clause = or(
+      ilike(plants.customName, q),
+      ilike(plantSpecies.commonNameEn, q),
+      ilike(plantSpecies.commonNameBg, q),
+      ilike(plantSpecies.scientificName, q),
+    );
+    if (clause) conditions.push(clause);
+  }
+
+  if (options.difficulty && ['easy', 'moderate', 'difficult'].includes(options.difficulty)) {
+    conditions.push(eq(plantSpecies.careDifficulty, options.difficulty as 'easy' | 'moderate' | 'difficult'));
+  }
+
+  const hasSpeciesFilter = !!(options.search || options.difficulty);
 
   if (options.offset !== undefined) {
+    const baseQuery = db
+      .select(plantSelectShape)
+      .from(plants)
+      .leftJoin(plantSpecies, eq(plants.speciesId, plantSpecies.id))
+      .where(and(...conditions));
+
+    const countQuery = hasSpeciesFilter
+      ? db.select({ total: count() }).from(plants)
+          .leftJoin(plantSpecies, eq(plants.speciesId, plantSpecies.id))
+          .where(and(...conditions))
+      : db.select({ total: count() }).from(plants)
+          .where(and(...conditions));
+
     const [items, [{ total }]] = await Promise.all([
-      db
-        .select(plantSelectShape)
-        .from(plants)
-        .leftJoin(plantSpecies, eq(plants.speciesId, plantSpecies.id))
-        .where(and(...baseConditions))
-        .orderBy(desc(plants.createdAt))
-        .limit(limit)
-        .offset(options.offset),
-      db.select({ total: count() }).from(plants).where(and(...baseConditions)),
+      baseQuery.orderBy(desc(plants.createdAt)).limit(limit).offset(options.offset),
+      countQuery,
     ]);
     return { plants: items, total, hasMore: options.offset + limit < total, nextCursor: null };
   }
 
-  const conditions = [...baseConditions];
   if (options.cursor) conditions.push(lt(plants.createdAt, new Date(options.cursor)));
 
   const items = await db

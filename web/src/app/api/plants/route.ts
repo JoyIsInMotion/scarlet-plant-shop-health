@@ -13,8 +13,10 @@ async function getPlants(req: NextRequest) {
   const cursor = sp.get('cursor') ?? undefined;
   const rawOffset = sp.get('offset');
   const offset = rawOffset !== null ? parseInt(rawOffset, 10) : undefined;
+  const search = sp.get('search') ?? undefined;
+  const difficulty = sp.get('difficulty') ?? undefined;
 
-  return ok(await plantsService.listPlants(auth.sub, limit, { cursor, offset }));
+  return ok(await plantsService.listPlants(auth.sub, limit, { cursor, offset, search, difficulty }));
 }
 
 async function createPlant(req: NextRequest) {
