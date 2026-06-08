@@ -25,7 +25,8 @@
     "db:run-migrations": "tsx src/db/migrate.ts",
     "db:product-images": "tsx src/db/update-product-images.ts",
     "db:refill-species-images": "tsx src/db/refill-species-images.ts",
-    "db:fix-product-descriptions": "tsx src/db/fix-product-descriptions.ts"
+    "db:fix-product-descriptions": "tsx src/db/fix-product-descriptions.ts",
+    "db:fix-bg-names": "tsx src/db/fix-bg-names.ts"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.1045.0",
