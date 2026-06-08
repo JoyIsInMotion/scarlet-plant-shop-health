@@ -9,6 +9,7 @@ import {
   View,
 } from 'react-native';
 import { AuthGuard } from '@/components/auth-guard';
+import { AddPlantModal } from '@/components/add-plant-modal';
 import { PlantCard } from '@/components/plant-card';
 import { useAuth } from '@/context/auth';
 import { ApiError, getPlants } from '@/lib/api';
@@ -27,6 +28,7 @@ function PlantsContent() {
   const [refreshing, setRefreshing] = useState(false);
   const [loadingMore, setLoadingMore] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [addPlantOpen, setAddPlantOpen] = useState(false);
   // Guards onEndReached from firing repeated page loads mid-flight.
   const loadingMoreRef = useRef(false);
 
@@ -105,46 +107,67 @@ function PlantsContent() {
   }
 
   return (
-    <FlatList
-      data={plants}
-      keyExtractor={(item) => item.id}
-      renderItem={({ item }) => (
-        <View style={styles.gridItem}>
-          <PlantCard plant={item} />
-        </View>
-      )}
-      numColumns={2}
-      columnWrapperStyle={styles.row}
-      contentContainerStyle={styles.list}
-      ItemSeparatorComponent={() => <View style={styles.separator} />}
-      refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}
-      onEndReached={onEndReached}
-      onEndReachedThreshold={0.4}
-      ListHeaderComponent={
-        <View style={styles.hero}>
-          <Text style={styles.eyebrow}>{m.plants.myPlants.toUpperCase()}</Text>
-          <Text style={styles.title}>{m.plants.myPlants}</Text>
-          <Text style={styles.subtitle}>{m.plants.manageCollection}</Text>
-          {total != null && (
-            <Text style={styles.count}>
-              {total} {m.plants.plantsCount}
-            </Text>
-          )}
-        </View>
-      }
-      ListEmptyComponent={
-        <View style={styles.center}>
-          <Text style={styles.emptyText}>{m.plants.noPlants}</Text>
-        </View>
-      }
-      ListFooterComponent={
-        loadingMore ? (
-          <View style={styles.footer}>
-            <ActivityIndicator />
+    <View style={styles.flex}>
+      <FlatList
+        data={plants}
+        keyExtractor={(item) => item.id}
+        renderItem={({ item }) => (
+          <View style={styles.gridItem}>
+            <PlantCard plant={item} />
           </View>
-        ) : null
-      }
-    />
+        )}
+        numColumns={2}
+        columnWrapperStyle={styles.row}
+        contentContainerStyle={styles.list}
+        ItemSeparatorComponent={() => <View style={styles.separator} />}
+        refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}
+        onEndReached={onEndReached}
+        onEndReachedThreshold={0.4}
+        ListHeaderComponent={
+          <View style={styles.hero}>
+            <Text style={styles.eyebrow}>{m.plants.myPlants.toUpperCase()}</Text>
+            <Text style={styles.title}>{m.plants.myPlants}</Text>
+            <Text style={styles.subtitle}>{m.plants.manageCollection}</Text>
+            {total != null && (
+              <Text style={styles.count}>
+                {total} {m.plants.plantsCount}
+              </Text>
+            )}
+          </View>
+        }
+        ListEmptyComponent={
+          <View style={styles.center}>
+            <Text style={styles.emptyText}>{m.plants.noPlants}</Text>
+          </View>
+        }
+        ListFooterComponent={
+          loadingMore ? (
+            <View style={styles.footer}>
+              <ActivityIndicator />
+            </View>
+          ) : null
+        }
+      />
+
+      {/* Floating add button */}
+      <Pressable
+        onPress={() => setAddPlantOpen(true)}
+        style={({ pressed }) => [styles.fab, pressed && styles.pressed]}
+        accessibilityLabel={m.plants.addPlant}>
+        <Text style={styles.fabText}>+</Text>
+      </Pressable>
+
+      <AddPlantModal
+        visible={addPlantOpen}
+        onClose={() => setAddPlantOpen(false)}
+        onSaved={() => {
+          setAddPlantOpen(false);
+          // Reload the list so the new plant appears immediately.
+          setLoading(true);
+          loadFirst().finally(() => setLoading(false));
+        }}
+      />
+    </View>
   );
 }
 
@@ -156,7 +179,39 @@ export default function PlantsScreen() {
   );
 }
 
+const SCARLET = '#C2375A';
+
 const styles = StyleSheet.create({
+  flex: {
+    flex: 1,
+  },
+  fab: {
+    position: 'absolute',
+    bottom: 24,
+    right: 20,
+    width: 56,
+    height: 56,
+    borderRadius: 28,
+    backgroundColor: SCARLET,
+    alignItems: 'center',
+    justifyContent: 'center',
+    // Subtle shadow so the FAB lifts off the list.
+    shadowColor: SCARLET,
+    shadowOpacity: 0.4,
+    shadowRadius: 10,
+    shadowOffset: { width: 0, height: 4 },
+    elevation: 6,
+  },
+  fabText: {
+    color: '#fff',
+    fontSize: 28,
+    fontWeight: '300',
+    lineHeight: 30,
+    textAlign: 'center',
+  },
+  pressed: {
+    opacity: 0.8,
+  },
   center: {
     flex: 1,
     justifyContent: 'center',
@@ -231,9 +286,6 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     paddingHorizontal: 24,
     paddingVertical: 10,
-  },
-  pressed: {
-    opacity: 0.7,
   },
   retryText: {
     color: '#C8102E',

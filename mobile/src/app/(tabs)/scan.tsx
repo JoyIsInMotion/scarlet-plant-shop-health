@@ -9,6 +9,7 @@ import {
   Text,
   View,
 } from 'react-native';
+import { AddPlantModal } from '@/components/add-plant-modal';
 import { AIAnalysisCard } from '@/components/ai-analysis-card';
 import { useAuth } from '@/context/auth';
 import { ApiError, quickScan, type ScanImage } from '@/lib/api';
@@ -45,6 +46,7 @@ export default function ScanScreen() {
   const [result, setResult] = useState<AIAnalysisResult | null>(null);
   const [analyzing, setAnalyzing] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [addPlantOpen, setAddPlantOpen] = useState(false);
   // Logged-out visitors get one free scan per day; after that we prompt them to
   // log in.
   const [limitReached, setLimitReached] = useState(false);
@@ -194,17 +196,33 @@ export default function ScanScreen() {
             advice={result.advice}
             careBasics={result.careBasics}
           />
-          {/* Logged-in users can keep scanning (5/day); guests are nudged to
-              log in for more after their one free scan. */}
           {isAuthenticated && (
-            <Pressable
-              onPress={reset}
-              style={({ pressed }) => [styles.secondaryBtn, pressed && styles.pressed]}>
-              <Text style={styles.secondaryBtnText}>{m.ai.scanAnother}</Text>
-            </Pressable>
+            <>
+              {/* Save to collection */}
+              <Pressable
+                onPress={() => setAddPlantOpen(true)}
+                style={({ pressed }) => [styles.saveToCollectionBtn, pressed && styles.pressed]}>
+                <Text style={styles.saveToCollectionText}>🪴 {m.plants.saveToCollection}</Text>
+              </Pressable>
+              {/* Scan another */}
+              <Pressable
+                onPress={reset}
+                style={({ pressed }) => [styles.secondaryBtn, pressed && styles.pressed]}>
+                <Text style={styles.secondaryBtnText}>{m.ai.scanAnother}</Text>
+              </Pressable>
+            </>
           )}
         </>
       )}
+
+      <AddPlantModal
+        visible={addPlantOpen}
+        initialName={result?.analysis.identifiedCommonName ?? ''}
+        initialSpeciesId={result?.analysis.matchedSpeciesId}
+        image={image}
+        onClose={() => setAddPlantOpen(false)}
+        onSaved={() => setAddPlantOpen(false)}
+      />
 
       {/* Log-in prompt once a guest has used their free scan. */}
       {guestLimited && (
@@ -367,6 +385,19 @@ const styles = StyleSheet.create({
     minHeight: 52,
   },
   scanBtnText: {
+    color: '#FFFFFF',
+    fontSize: 16,
+    fontWeight: '700',
+  },
+  saveToCollectionBtn: {
+    backgroundColor: COLORS.green,
+    borderRadius: 14,
+    paddingVertical: 15,
+    alignItems: 'center',
+    justifyContent: 'center',
+    minHeight: 52,
+  },
+  saveToCollectionText: {
     color: '#FFFFFF',
     fontSize: 16,
     fontWeight: '700',

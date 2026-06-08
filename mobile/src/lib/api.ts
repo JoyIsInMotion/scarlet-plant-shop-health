@@ -241,6 +241,35 @@ export function getPlants(
   return request<PlantList>(`/api/plants?limit=${limit}&offset=${offset}`, { token });
 }
 
+export interface CreatePlantInput {
+  customName: string;
+  speciesId?: string | null;
+}
+
+export function createPlant(input: CreatePlantInput, token: string): Promise<Plant> {
+  return request<Plant>('/api/plants', { method: 'POST', body: input, token });
+}
+
+// Uploads (or replaces) the cover photo for a plant.
+export async function uploadPlantImage(
+  plantId: string,
+  image: ScanImage,
+  token: string
+): Promise<Plant> {
+  const form = new FormData();
+  if (Platform.OS === 'web') {
+    const blob = await fetch(image.uri).then((r) => r.blob());
+    form.append('image', blob, image.name);
+  } else {
+    form.append('image', {
+      uri: image.uri,
+      name: image.name,
+      type: image.mimeType,
+    } as unknown as Blob);
+  }
+  return request<Plant>(`/api/plants/${plantId}/image`, { method: 'POST', body: form, token });
+}
+
 export function getPlant(id: string, token: string): Promise<Plant> {
   return request<Plant>(`/api/plants/${id}`, { token });
 }
