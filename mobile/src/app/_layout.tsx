@@ -17,6 +17,8 @@ function RootStack() {
       <Stack.Screen name="register" options={{ title: 'Sign up' }} />
       <Stack.Screen name="account" options={{ title: m.account.title }} />
       <Stack.Screen name="plants/[id]" options={{ title: 'Plant' }} />
+      <Stack.Screen name="plants/new" options={{ title: '' }} />
+      <Stack.Screen name="plants/[id]/edit" options={{ title: '' }} />
       <Stack.Screen name="shop/[id]" options={{ title: m.shop.title }} />
       <Stack.Screen name="cart" options={{ title: m.cart.title }} />
       <Stack.Screen name="orders" options={{ title: m.orders.myOrders }} />
