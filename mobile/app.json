@@ -13,6 +13,7 @@
       }
     },
     "android": {
+      "package": "com.joyisinmotion.mobile",
       "predictiveBackGestureEnabled": false
     },
     "web": {
@@ -26,7 +27,15 @@
         }
       ],
       "expo-image",
-      "expo-secure-store"
+      "expo-secure-store",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Allow Scarlet to access your photos so you can scan a plant.",
+          "cameraPermission": "Allow Scarlet to use the camera so you can photograph a plant to scan.",
+          "microphonePermission": false
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true,
@@ -39,6 +48,7 @@
       "eas": {
         "projectId": "1b6362cc-a126-4cf8-9088-aa63b829a071"
       }
-    }
+    },
+    "owner": "joyisinmotion"
   }
 }

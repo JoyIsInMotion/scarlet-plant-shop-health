@@ -1,6 +1,7 @@
 import { Tabs } from 'expo-router';
 import { Platform, StyleSheet, Text } from 'react-native';
-import { LanguageToggle } from '@/components/language-toggle';
+import { BrandLogo, HeaderRight } from '@/components/nav-bar';
+import { useAuth } from '@/context/auth';
 import { useI18n } from '@/lib/i18n';
 
 const SCARLET = '#C2375A';
@@ -13,6 +14,7 @@ function TabIcon({ emoji, focused }: { emoji: string; focused: boolean }) {
 
 export default function TabsLayout() {
   const { m } = useI18n();
+  const { isAuthenticated } = useAuth();
 
   return (
     <Tabs
@@ -21,10 +23,13 @@ export default function TabsLayout() {
         tabBarInactiveTintColor: INACTIVE,
         tabBarLabelStyle: styles.label,
         tabBarStyle: styles.bar,
-        headerTitleStyle: styles.headerTitle,
         headerShadowVisible: false,
         headerStyle: styles.header,
-        headerRight: () => <LanguageToggle />,
+        // The brand logo stands in for the title on every tab, so the auth
+        // controls and language toggle are reachable from anywhere.
+        headerTitle: () => null,
+        headerLeft: () => <BrandLogo />,
+        headerRight: () => <HeaderRight />,
       }}>
       <Tabs.Screen
         name="index"
@@ -48,6 +53,8 @@ export default function TabsLayout() {
           title: m.plants.myPlants,
           tabBarLabel: m.home.myPlants,
           tabBarIcon: ({ focused }) => <TabIcon emoji="🌿" focused={focused} />,
+          // My Plants is personal — only show the tab to signed-in users.
+          href: isAuthenticated ? undefined : null,
         }}
       />
       <Tabs.Screen
@@ -83,9 +90,5 @@ const styles = StyleSheet.create({
   },
   header: {
     backgroundColor: '#FFFFFF',
-  },
-  headerTitle: {
-    fontWeight: '800',
-    color: '#1A0D12',
   },
 });

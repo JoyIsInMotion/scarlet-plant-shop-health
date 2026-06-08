@@ -1,10 +1,32 @@
 # 🌹 Scarlet — Flower Shop & Plant Health Tracker
 
+> **Buy plants, then keep them alive.** Scarlet is a boutique online flower &
+> plant shop with a built-in AI plant-care assistant. Snap a photo of any plant
+> and an AI vision model scores its health, spots problems (pests, over-watering,
+> nutrient issues), identifies the species, and tells you exactly how to fix and
+> care for it — all in plain Bulgarian or English.
+
 Scarlet is a multi-platform full-stack application built for the SoftUni
-**“Full Stack Apps with AI”** capstone. It combines a boutique **flower shop**
-with a personal **plant collection tracker** that uses AI for plant health
-analysis and species identification. The app is fully bilingual — **Bulgarian
-(default) and English**.
+**“Full Stack Apps with AI”** capstone. It pairs two things people normally need
+two separate apps for: a place to **buy** plants and flowers, and a tool to
+**look after** the ones you own. The whole experience is bilingual —
+**Bulgarian (default) and English** — and runs on web, with a companion mobile
+app.
+
+**Who it's for & what they can do:**
+
+- 🛒 **Shoppers** browse a flower & plant catalog, add to a cart, and place a
+  pickup order — no account needed to look around.
+- 🪴 **Plant owners** build a personal collection, track each plant's health
+  over time, get AI care advice, and never forget a watering with per-plant care
+  schedules and logs.
+- 📷 **Anyone curious** can point the camera at a plant (even one they don't own)
+  for an instant AI health scan and species guess — one free scan a day before
+  signing up.
+- 🌍 **The community** shares plants publicly and likes each other's — a feed of
+  real, thriving (or struggling!) plants.
+- 🛠️ **Admins** manage the product shop, the species encyclopedia, users, and
+  orders from a dedicated admin panel.
 
 | | |
 |---|---|

@@ -49,10 +49,12 @@ export default function HomeScreen() {
   // photos without requiring a session. We fetch one product per category so
   // every collection gets its own cover photo (a single wide page can be
   // dominated by one category). Failures fall back to emoji art.
+  // The best-selling row is capped at 8 so we don't download a dozen full-size
+  // photos on first paint (the home felt slow loading them all at once).
   useEffect(() => {
     let active = true;
 
-    getProducts({ limit: 12 })
+    getProducts({ limit: 8 })
       .then((res) => {
         if (active) setFeatured(res.items.filter((p) => p.imageUrl));
       })

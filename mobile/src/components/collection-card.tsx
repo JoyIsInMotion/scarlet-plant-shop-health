@@ -35,7 +35,14 @@ export function CollectionCard({
       onPress={() => router.push(`/shop?category=${category}`)}
       style={({ pressed }) => [styles.card, pressed && styles.pressed]}>
       {imageUrl ? (
-        <Image source={{ uri: imageUrl }} style={styles.image} contentFit="cover" transition={150} />
+        <Image
+          source={{ uri: imageUrl }}
+          style={styles.image}
+          contentFit="cover"
+          transition={150}
+          cachePolicy="memory-disk"
+          priority="high"
+        />
       ) : (
         <View style={[styles.image, styles.placeholder]}>
           <Text style={styles.placeholderEmoji}>{EMOJI[category]}</Text>

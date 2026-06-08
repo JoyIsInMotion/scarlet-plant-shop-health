@@ -16,7 +16,7 @@ function formatDate(value: string, locale: Locale): string {
 }
 
 export function PlantCard({ plant }: { plant: Plant }) {
-  const { locale, m } = useI18n();
+  const { locale } = useI18n();
   const name = speciesName(plant.species, locale);
 
   return (
@@ -29,35 +29,34 @@ export function PlantCard({ plant }: { plant: Plant }) {
               style={styles.image}
               contentFit="cover"
               transition={150}
+              cachePolicy="memory-disk"
+              recyclingKey={plant.id}
             />
           ) : (
             <View style={[styles.image, styles.imagePlaceholder]}>
               <Text style={styles.placeholderText}>🌿</Text>
             </View>
           )}
+          {/* Health ring overlaid so the card stays narrow in the 2-up grid. */}
+          <View style={styles.badgeOverlay}>
+            <HealthScoreBadge score={plant.healthScore} locale={locale} size={40} />
+          </View>
         </View>
 
         <View style={styles.body}>
-          <View style={styles.headerRow}>
-            <View style={styles.titleCol}>
-              <Text style={styles.name} numberOfLines={1}>
-                {plant.customName}
-              </Text>
-              {name && (
-                <Text style={styles.species} numberOfLines={1}>
-                  {name}
-                </Text>
-              )}
-            </View>
-            <HealthScoreBadge score={plant.healthScore} locale={locale} size={48} />
-          </View>
-
-          <View style={styles.metaRow}>
-            {plant.lastWatered && (
-              <Text style={styles.meta}>💧 {formatDate(plant.lastWatered, locale)}</Text>
-            )}
-            {plant.speciesId && <Text style={styles.metaLinked}>🌱 {m.plants.linked}</Text>}
-          </View>
+          <Text style={styles.name} numberOfLines={1}>
+            {plant.customName}
+          </Text>
+          {name && (
+            <Text style={styles.species} numberOfLines={1}>
+              {name}
+            </Text>
+          )}
+          {plant.lastWatered && (
+            <Text style={styles.meta} numberOfLines={1}>
+              💧 {formatDate(plant.lastWatered, locale)}
+            </Text>
+          )}
         </View>
       </Pressable>
     </Link>
@@ -81,7 +80,7 @@ const styles = StyleSheet.create({
     opacity: 0.85,
   },
   imageWrap: {
-    aspectRatio: 4 / 3,
+    aspectRatio: 1,
     backgroundColor: '#F1F5F2',
   },
   image: {
@@ -93,44 +92,33 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   placeholderText: {
-    fontSize: 40,
+    fontSize: 36,
+  },
+  badgeOverlay: {
+    position: 'absolute',
+    top: 6,
+    right: 6,
+    backgroundColor: 'rgba(255,255,255,0.9)',
+    borderRadius: 24,
+    padding: 2,
   },
   body: {
-    padding: 14,
-    gap: 10,
-  },
-  headerRow: {
-    flexDirection: 'row',
-    alignItems: 'flex-start',
-    justifyContent: 'space-between',
-    gap: 10,
-  },
-  titleCol: {
-    flex: 1,
+    padding: 10,
     gap: 2,
   },
   name: {
-    fontSize: 16,
+    fontSize: 14,
     fontWeight: '700',
     color: '#11181C',
   },
   species: {
-    fontSize: 13,
+    fontSize: 12,
     fontStyle: 'italic',
     color: '#8B9097',
   },
-  metaRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 12,
-  },
   meta: {
-    fontSize: 12,
+    fontSize: 11,
     color: '#60646C',
-  },
-  metaLinked: {
-    fontSize: 12,
-    color: '#16A34A',
-    fontWeight: '600',
+    marginTop: 2,
   },
 });

@@ -11,7 +11,6 @@ import {
   TextInput,
   View,
 } from 'react-native';
-import { AuthGuard } from '@/components/auth-guard';
 import { useAuth } from '@/context/auth';
 import { CartItem, useCart } from '@/context/cart';
 import { ApiError, createOrder } from '@/lib/api';
@@ -52,10 +51,14 @@ function confirmAction(message: string, onConfirm: () => void) {
 function CartContent() {
   const { m } = useI18n();
   const router = useRouter();
-  const { authedRequest } = useAuth();
+  const { authedRequest, user, isAuthenticated } = useAuth();
   const { items, total, count, remove, update, clear } = useCart();
 
   const [notes, setNotes] = useState('');
+  // Prefill the contact phone from the saved profile (editable per order).
+  // AuthGuard guarantees the user is loaded before this screen mounts, so a
+  // lazy initial value is enough — no syncing effect needed.
+  const [phone, setPhone] = useState(user?.phone ?? '');
   const [placing, setPlacing] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
@@ -67,6 +70,16 @@ function CartContent() {
   }
 
   async function placeOrder() {
+    // Browsing and building a cart is open to guests; ordering needs an account.
+    if (!isAuthenticated) {
+      router.push('/login');
+      return;
+    }
+    // The backend requires a contact phone — block early with a clear message.
+    if (phone.trim().length < 6) {
+      setError(m.cart.phoneRequired);
+      return;
+    }
     setPlacing(true);
     setError(null);
     try {
@@ -74,6 +87,7 @@ function CartContent() {
         createOrder(
           {
             items: items.map((i) => ({ productId: i.id, quantity: i.quantity })),
+            phone: phone.trim(),
             notes: notes.trim() || null,
             shippingAddress: null,
           },
@@ -177,6 +191,21 @@ function CartContent() {
         </View>
       </View>
 
+      {/* Contact phone (required — we call about order details) */}
+      <View style={styles.card}>
+        <Text style={styles.cardLabel}>{m.cart.phone}</Text>
+        <TextInput
+          style={styles.phoneInput}
+          value={phone}
+          onChangeText={setPhone}
+          placeholder={m.cart.phonePlaceholder}
+          placeholderTextColor={COLORS.muted}
+          keyboardType="phone-pad"
+          autoCorrect={false}
+        />
+        <Text style={styles.fulfillDesc}>{m.cart.callNote}</Text>
+      </View>
+
       {/* Notes */}
       <View style={styles.card}>
         <Text style={styles.cardLabel}>
@@ -212,7 +241,7 @@ function CartContent() {
           disabled={placing}
           onPress={placeOrder}>
           <Text style={styles.primaryBtnText}>
-            {placing ? m.cart.placing : m.cart.checkout}
+            {placing ? m.cart.placing : isAuthenticated ? m.cart.checkout : m.cart.loginToCheckout}
           </Text>
         </Pressable>
       </View>
@@ -287,11 +316,7 @@ function CartRow({
 }
 
 export default function CartScreen() {
-  return (
-    <AuthGuard>
-      <CartContent />
-    </AuthGuard>
-  );
+  return <CartContent />;
 }
 
 const styles = StyleSheet.create({
@@ -461,6 +486,16 @@ const styles = StyleSheet.create({
   },
   flex1: {
     flex: 1,
+  },
+  phoneInput: {
+    borderWidth: 1,
+    borderColor: COLORS.border,
+    borderRadius: 12,
+    backgroundColor: COLORS.cream,
+    paddingHorizontal: 12,
+    paddingVertical: 12,
+    fontSize: 15,
+    color: COLORS.foreground,
   },
   notesInput: {
     minHeight: 72,

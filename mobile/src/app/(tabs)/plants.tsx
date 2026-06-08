@@ -108,7 +108,13 @@ function PlantsContent() {
     <FlatList
       data={plants}
       keyExtractor={(item) => item.id}
-      renderItem={({ item }) => <PlantCard plant={item} />}
+      renderItem={({ item }) => (
+        <View style={styles.gridItem}>
+          <PlantCard plant={item} />
+        </View>
+      )}
+      numColumns={2}
+      columnWrapperStyle={styles.row}
       contentContainerStyle={styles.list}
       ItemSeparatorComponent={() => <View style={styles.separator} />}
       refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}
@@ -161,6 +167,12 @@ const styles = StyleSheet.create({
   list: {
     padding: 16,
     flexGrow: 1,
+  },
+  row: {
+    justifyContent: 'space-between',
+  },
+  gridItem: {
+    width: '48%',
   },
   hero: {
     backgroundColor: '#F0FDF4',

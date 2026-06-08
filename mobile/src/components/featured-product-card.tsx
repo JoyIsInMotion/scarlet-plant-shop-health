@@ -1,5 +1,5 @@
 import { Image } from 'expo-image';
-import { useRouter } from 'expo-router';
+import { useRouter, type Href } from 'expo-router';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { Locale } from '@/lib/i18n';
 import { Product } from '@/lib/types';
@@ -15,7 +15,7 @@ export function FeaturedProductCard({ product, locale }: { product: Product; loc
 
   return (
     <Pressable
-      onPress={() => router.push(`/shop?category=${product.category}`)}
+      onPress={() => router.push(`/shop/${product.id}` as Href)}
       style={({ pressed }) => [styles.card, pressed && styles.pressed]}>
       <View style={styles.imageWrap}>
         {product.imageUrl ? (
@@ -24,6 +24,8 @@ export function FeaturedProductCard({ product, locale }: { product: Product; loc
             style={styles.image}
             contentFit="cover"
             transition={150}
+            cachePolicy="memory-disk"
+            priority="low"
           />
         ) : (
           <View style={[styles.image, styles.placeholder]}>

@@ -28,6 +28,8 @@ interface AuthContextValue {
   isLoading: boolean;
   login: (email: string, password: string) => Promise<void>;
   logout: () => Promise<void>;
+  /** Replaces the cached user (e.g. after a profile edit) and persists it. */
+  updateUser: (user: User) => Promise<void>;
   /**
    * Runs an authenticated API call, injecting the current access token. On a
    * 401 it transparently refreshes the token once and retries; if the refresh
@@ -154,6 +156,15 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     [writeSession]
   );
 
+  const updateUser = useCallback(
+    async (user: User) => {
+      const current = sessionRef.current;
+      if (!current) return;
+      await writeSession({ ...current, user });
+    },
+    [writeSession]
+  );
+
   const logout = useCallback(async () => {
     const refreshToken = sessionRef.current?.refreshToken ?? null;
     await writeSession(null);
@@ -173,9 +184,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       isLoading,
       login,
       logout,
+      updateUser,
       authedRequest,
     }),
-    [session, isLoading, login, logout, authedRequest]
+    [session, isLoading, login, logout, updateUser, authedRequest]
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

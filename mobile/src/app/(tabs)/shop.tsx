@@ -10,8 +10,7 @@ import {
   TextInput,
   View,
 } from 'react-native';
-import { useRouter } from 'expo-router';
-import { AuthGuard } from '@/components/auth-guard';
+import { useLocalSearchParams, useRouter } from 'expo-router';
 import { ProductCard } from '@/components/product-card';
 import { useAuth } from '@/context/auth';
 import { useCart } from '@/context/cart';
@@ -40,6 +39,8 @@ const CATEGORY_ORDER: ProductCategory[] = [
   'accessories',
 ];
 
+const CATEGORY_SET = new Set<string>(CATEGORY_ORDER);
+
 type SortKey = 'newest' | 'priceAsc' | 'priceDesc';
 
 const SORTS: Record<SortKey, Pick<ProductQuery, 'sort' | 'order'>> = {
@@ -49,16 +50,37 @@ const SORTS: Record<SortKey, Pick<ProductQuery, 'sort' | 'order'>> = {
 };
 
 function ShopContent() {
-  const { authedRequest } = useAuth();
+  // Products are public, so the shop is browsable while logged out. Auth only
+  // gates the order-history shortcut and checkout.
+  const { isAuthenticated } = useAuth();
   const { locale, m } = useI18n();
   const router = useRouter();
   const { count } = useCart();
 
+  // A `?category=` param (e.g. tapping a collection on the home screen) presets
+  // the category filter.
+  const params = useLocalSearchParams<{ category?: string }>();
+  const paramCategory =
+    typeof params.category === 'string' && CATEGORY_SET.has(params.category)
+      ? (params.category as ProductCategory)
+      : null;
+
   // Filters
   const [searchInput, setSearchInput] = useState('');
   const [search, setSearch] = useState('');
-  const [category, setCategory] = useState<ProductCategory | null>(null);
+  const [category, setCategory] = useState<ProductCategory | null>(paramCategory);
   const [sort, setSort] = useState<SortKey>('newest');
+
+  // Sync when the incoming category param changes (navigating in while the tab
+  // is already mounted). A ref tracks the last applied value so manual chip
+  // changes aren't clobbered.
+  const lastParam = useRef<string | null>(params.category ?? null);
+  useEffect(() => {
+    if (params.category !== lastParam.current) {
+      lastParam.current = params.category ?? null;
+      setCategory(paramCategory);
+    }
+  }, [params.category, paramCategory]);
   // Category + sort chips stay collapsed until the filter icon is tapped.
   const [showFilters, setShowFilters] = useState(false);
 
@@ -100,7 +122,7 @@ function ShopContent() {
     const id = ++requestId.current;
     setError(null);
     try {
-      const res = await authedRequest((token) => getProducts(query(0), token));
+      const res = await getProducts(query(0));
       if (id !== requestId.current) return;
       setProducts(res.items);
       setTotal(res.total);
@@ -109,7 +131,7 @@ function ShopContent() {
       if (id !== requestId.current) return;
       setError(e instanceof ApiError ? e.message : m.shop.loadError);
     }
-  }, [authedRequest, query, m.shop.loadError]);
+  }, [query, m.shop.loadError]);
 
   // Re-run whenever filters change.
   useEffect(() => {
@@ -128,7 +150,7 @@ function ShopContent() {
     const id = requestId.current;
     setLoadingMore(true);
     try {
-      const res = await authedRequest((token) => getProducts(query(products.length), token));
+      const res = await getProducts(query(products.length));
       // Ignore if filters changed mid-flight.
       if (id !== requestId.current) return;
       // De-dupe by id: offset paging can re-return an item if the catalog
@@ -143,7 +165,7 @@ function ShopContent() {
     } finally {
       setLoadingMore(false);
     }
-  }, [authedRequest, query, products.length, hasMore, loading, loadingMore]);
+  }, [query, products.length, hasMore, loading, loadingMore]);
 
   const onRefresh = useCallback(async () => {
     setRefreshing(true);
@@ -167,12 +189,14 @@ function ShopContent() {
             </View>
           )}
         </Pressable>
-        <Pressable
-          style={({ pressed }) => [styles.actionBtn, pressed && styles.pressed]}
-          onPress={() => router.push('/orders')}>
-          <Text style={styles.actionEmoji}>📦</Text>
-          <Text style={styles.actionText}>{m.orders.myOrders}</Text>
-        </Pressable>
+        {isAuthenticated && (
+          <Pressable
+            style={({ pressed }) => [styles.actionBtn, pressed && styles.pressed]}
+            onPress={() => router.push('/orders')}>
+            <Text style={styles.actionEmoji}>📦</Text>
+            <Text style={styles.actionText}>{m.orders.myOrders}</Text>
+          </Pressable>
+        )}
       </View>
 
       <View style={styles.searchRow}>
@@ -361,11 +385,7 @@ function Chip({
 }
 
 export default function ShopScreen() {
-  return (
-    <AuthGuard>
-      <ShopContent />
-    </AuthGuard>
-  );
+  return <ShopContent />;
 }
 
 const styles = StyleSheet.create({
