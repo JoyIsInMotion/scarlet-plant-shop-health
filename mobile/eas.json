@@ -10,17 +10,21 @@
     },
     "preview": {
       "distribution": "internal",
+      "node": "24.15.0",
       "android": {
         "buildType": "apk"
       },
       "env": {
-        "EXPO_PUBLIC_API_URL": "https://scarletflowers.netlify.app"
+        "EXPO_PUBLIC_API_URL": "https://scarletflowers.netlify.app",
+        "NPM_CONFIG_IGNORE_SCRIPTS": "true"
       }
     },
     "production": {
       "autoIncrement": true,
+      "node": "24.15.0",
       "env": {
-        "EXPO_PUBLIC_API_URL": "https://scarletflowers.netlify.app"
+        "EXPO_PUBLIC_API_URL": "https://scarletflowers.netlify.app",
+        "NPM_CONFIG_IGNORE_SCRIPTS": "true"
       }
     }
   },

@@ -31,6 +31,7 @@ app.
 | | |
 |---|---|
 | **Web (live)** | https://scarletflowers.netlify.app |
+| **Mobile (live web build)** | https://scarletshop.netlify.app |
 | **Repo** | https://github.com/JoyIsInMotion/scarlet-plant-shop-health |
 | **Test login** | `demo@scarlet.com` / `demo123` (user) · `admin@scarlet.com` / `admin123` (admin) |
 
