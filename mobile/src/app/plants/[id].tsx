@@ -15,7 +15,7 @@ import { AuthGuard } from '@/components/auth-guard';
 import { AIAnalysisCard } from '@/components/ai-analysis-card';
 import { HealthScoreBadge } from '@/components/health-score-badge';
 import { useAuth } from '@/context/auth';
-import { ApiError, getPlant, getPlantAnalyses, runPlantAnalysis } from '@/lib/api';
+import { ApiError, deletePlant, getPlant, getPlantAnalyses, runPlantAnalysis } from '@/lib/api';
 import { Locale, pickLocalized, speciesName, useI18n } from '@/lib/i18n';
 import { AIAnalysis, Localized, Plant } from '@/lib/types';
 
@@ -53,6 +53,7 @@ function PlantDetailContent({ id }: { id: string }) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [analyzing, setAnalyzing] = useState(false);
+  const [deleting, setDeleting] = useState(false);
 
   const load = useCallback(async () => {
     setError(null);
@@ -78,6 +79,28 @@ function PlantDetailContent({ id }: { id: string }) {
       active = false;
     };
   }, [load]);
+
+  const onDelete = useCallback(async () => {
+    const confirmed =
+      Platform.OS === 'web'
+        ? window.confirm(m.plants.deleteConfirm)
+        : await new Promise<boolean>((resolve) =>
+            Alert.alert(m.plants.deletePlant, m.plants.deleteConfirm, [
+              { text: m.common.cancel, onPress: () => resolve(false), style: 'cancel' },
+              { text: m.plants.deletePlant, onPress: () => resolve(true), style: 'destructive' },
+            ])
+          );
+    if (!confirmed) return;
+    setDeleting(true);
+    try {
+      await authedRequest((token) => deletePlant(id, token));
+      router.replace('/plants');
+    } catch (e) {
+      notify(m.common.error, e instanceof ApiError ? e.message : m.plants.deleteFailed);
+    } finally {
+      setDeleting(false);
+    }
+  }, [authedRequest, id, m, router]);
 
   const onRunAnalysis = useCallback(async () => {
     setAnalyzing(true);
@@ -144,6 +167,14 @@ function PlantDetailContent({ id }: { id: string }) {
           headerLeft: () => (
             <Pressable onPress={goBack} hitSlop={12} style={styles.headerBack}>
               <Text style={styles.headerBackText}>‹ {m.common.back}</Text>
+            </Pressable>
+          ),
+          headerRight: () => (
+            <Pressable
+              onPress={() => router.push(`/plants/${id}/edit`)}
+              hitSlop={12}
+              style={styles.headerBack}>
+              <Text style={styles.headerEditText}>{m.plants.editPlant}</Text>
             </Pressable>
           ),
         }}
@@ -238,6 +269,22 @@ function PlantDetailContent({ id }: { id: string }) {
             <Text style={styles.analyzeText}>🔬 {m.ai.runAnalysis}</Text>
           )}
         </Pressable>
+
+        {/* Danger zone */}
+        <Pressable
+          style={({ pressed }) => [
+            styles.deleteButton,
+            pressed && styles.pressed,
+            deleting && styles.buttonDisabled,
+          ]}
+          onPress={onDelete}
+          disabled={deleting}>
+          {deleting ? (
+            <ActivityIndicator color="#C2375A" />
+          ) : (
+            <Text style={styles.deleteText}>🗑 {m.plants.deletePlant}</Text>
+          )}
+        </Pressable>
       </ScrollView>
     </>
   );
@@ -276,6 +323,11 @@ const styles = StyleSheet.create({
   headerBackText: {
     fontSize: 16,
     fontWeight: '700',
+    color: '#C2375A',
+  },
+  headerEditText: {
+    fontSize: 15,
+    fontWeight: '600',
     color: '#C2375A',
   },
   photoWrap: {
@@ -419,6 +471,22 @@ const styles = StyleSheet.create({
   },
   retryText: {
     color: '#C8102E',
+    fontWeight: '600',
+  },
+  deleteButton: {
+    borderWidth: 1,
+    borderColor: '#FECACA',
+    borderRadius: 12,
+    paddingVertical: 15,
+    alignItems: 'center',
+    justifyContent: 'center',
+    minHeight: 52,
+    marginBottom: 8,
+    backgroundColor: '#FEF2F2',
+  },
+  deleteText: {
+    color: '#C2375A',
+    fontSize: 15,
     fontWeight: '600',
   },
 });
