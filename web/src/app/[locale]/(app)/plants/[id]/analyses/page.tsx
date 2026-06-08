@@ -161,10 +161,14 @@ export default async function AnalysesPage({
                             {t(`ai.statusMessage.${analysis.overallCondition}`)}
                           </p>
                         )}
-                        {analysis.identifiedCommonName && (
+                        {(analysis.matchedSpecies?.commonNameBg || analysis.identifiedCommonName) && (
                           <p className="flex items-center gap-1 text-xs text-gray-500 mt-0.5">
                             <Leaf className="h-3 w-3 flex-shrink-0" />
-                            <span className="truncate">{analysis.identifiedCommonName}</span>
+                            <span className="truncate">
+                              {locale === 'bg'
+                                ? (analysis.matchedSpecies?.commonNameBg ?? analysis.identifiedCommonName)
+                                : analysis.identifiedCommonName}
+                            </span>
                           </p>
                         )}
                       </div>

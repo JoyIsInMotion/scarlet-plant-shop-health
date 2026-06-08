@@ -31,8 +31,9 @@ export function AIAnalysisButton({ plantId, latestAnalysis, scansRemaining, onAn
       if (!res.ok) {
         throw new Error(json.error ?? t('errors.serverError'));
       }
-      setAnalysis(json.data.analysis);
-      onAnalysisComplete?.(json.data.analysis);
+      const enriched = { ...json.data.analysis, matchedSpecies: json.data.matchedSpecies ?? null };
+      setAnalysis(enriched);
+      onAnalysisComplete?.(enriched);
       toast({ title: t('ai.analysisComplete'), variant: 'success' });
       // A medium/high-confidence match auto-links the species and builds a care
       // schedule server-side — refresh so the schedule/species cards update.

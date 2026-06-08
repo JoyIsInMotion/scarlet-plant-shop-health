@@ -199,10 +199,11 @@ export async function getAnalyses(plantId: string, userId: string, limit: number
 
   if (!plant) throw new ServiceError('Not found', 404);
 
-  const [analyses, [{ total }]] = await Promise.all([
+  const [rows, [{ total }]] = await Promise.all([
     db
       .select()
       .from(aiAnalyses)
+      .leftJoin(plantSpecies, eq(aiAnalyses.matchedSpeciesId, plantSpecies.id))
       .where(eq(aiAnalyses.plantId, plantId))
       .orderBy(desc(aiAnalyses.analyzedAt))
       .limit(limit)
@@ -210,6 +211,7 @@ export async function getAnalyses(plantId: string, userId: string, limit: number
     db.select({ total: count() }).from(aiAnalyses).where(eq(aiAnalyses.plantId, plantId)),
   ]);
 
+  const analyses = rows.map((r) => ({ ...r.ai_analyses, matchedSpecies: r.plant_species ?? null }));
   return { analyses, total: Number(total) };
 }
 

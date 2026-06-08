@@ -60,8 +60,8 @@ export function QuickScanUploader({ isAuthed = false }: QuickScanUploaderProps) 
         }
         throw new Error(json.error ?? t('errors.serverError'));
       }
-      const { analysis, advice, careBasics } = json.data;
-      setAnalysis({ ...analysis, adviceEn: advice?.en ?? null, adviceBg: advice?.bg ?? null, careBasics });
+      const { analysis, advice, careBasics, matchedSpecies } = json.data;
+      setAnalysis({ ...analysis, adviceEn: advice?.en ?? null, adviceBg: advice?.bg ?? null, careBasics, matchedSpecies: matchedSpecies ?? null });
       // After a logged-out visitor's free scan, nudge them to sign up
       if (!isAuthed) setLimitReached(true);
       toast({ title: t('ai.analysisComplete'), variant: 'success' });

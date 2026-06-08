@@ -88,7 +88,9 @@ export function AIAnalysisCard({ analysis, onApplySpecies, showApplyButton }: AI
   const [showDetails, setShowDetails] = useState(false);
 
   const advice = locale === 'bg' ? analysis.adviceBg : analysis.adviceEn;
-  const plantName = analysis.identifiedCommonName;
+  const plantName = locale === 'bg'
+    ? (analysis.matchedSpecies?.commonNameBg ?? analysis.identifiedCommonName)
+    : analysis.identifiedCommonName;
 
   const conditionColor =
     analysis.overallCondition === 'excellent' || analysis.overallCondition === 'good'
