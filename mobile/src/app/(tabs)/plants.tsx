@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import {
   ActivityIndicator,
   FlatList,
@@ -6,21 +6,28 @@ import {
   RefreshControl,
   StyleSheet,
   Text,
+  TextInput,
   View,
 } from 'react-native';
+import { useRouter } from 'expo-router';
 import { AuthGuard } from '@/components/auth-guard';
-import { AddPlantModal } from '@/components/add-plant-modal';
 import { PlantCard } from '@/components/plant-card';
 import { useAuth } from '@/context/auth';
 import { ApiError, getPlants } from '@/lib/api';
 import { useI18n } from '@/lib/i18n';
-import { Plant } from '@/lib/types';
+import { CareDifficulty, Plant } from '@/lib/types';
 
 const PAGE_SIZE = 12;
+const ALL_LIMIT = 500;
+
+type DifficultyFilter = CareDifficulty | 'all';
 
 function PlantsContent() {
   const { authedRequest } = useAuth();
   const { m } = useI18n();
+  const router = useRouter();
+
+  // ── Paginated data (no-filter mode) ──────────────────────────────────────
   const [plants, setPlants] = useState<Plant[]>([]);
   const [total, setTotal] = useState<number | null>(null);
   const [hasMore, setHasMore] = useState(false);
@@ -28,10 +35,19 @@ function PlantsContent() {
   const [refreshing, setRefreshing] = useState(false);
   const [loadingMore, setLoadingMore] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [addPlantOpen, setAddPlantOpen] = useState(false);
-  // Guards onEndReached from firing repeated page loads mid-flight.
   const loadingMoreRef = useRef(false);
 
+  // ── Filter state ──────────────────────────────────────────────────────────
+  const [search, setSearch] = useState('');
+  const [difficulty, setDifficulty] = useState<DifficultyFilter>('all');
+
+  // ── Full-list cache used when any filter is active ────────────────────────
+  const [allPlants, setAllPlants] = useState<Plant[] | null>(null);
+  const [loadingAll, setLoadingAll] = useState(false);
+
+  const isFiltering = search.trim().length > 0 || difficulty !== 'all';
+
+  // ── Core data loading ─────────────────────────────────────────────────────
   const loadPage = useCallback(
     async (offset: number) => {
       const res = await authedRequest((token) => getPlants(token, { limit: PAGE_SIZE, offset }));
@@ -62,14 +78,50 @@ function PlantsContent() {
     };
   }, [loadFirst]);
 
+  // ── Load all plants when filters become active ────────────────────────────
+  useEffect(() => {
+    if (!isFiltering) {
+      setAllPlants(null);
+      return;
+    }
+    if (allPlants !== null) return;
+    setLoadingAll(true);
+    authedRequest((token) => getPlants(token, { limit: ALL_LIMIT, offset: 0 }))
+      .then((res) => setAllPlants(res.plants))
+      .catch(() => setAllPlants([]))
+      .finally(() => setLoadingAll(false));
+  }, [isFiltering, allPlants, authedRequest]);
+
+  // ── Client-side filtering ─────────────────────────────────────────────────
+  const displayedPlants = useMemo(() => {
+    if (!isFiltering) return plants;
+    const source = allPlants ?? [];
+    const q = search.trim().toLowerCase();
+    return source.filter((p) => {
+      if (difficulty !== 'all' && p.species?.careDifficulty !== difficulty) return false;
+      if (q) {
+        const matches =
+          p.customName.toLowerCase().includes(q) ||
+          (p.species?.commonNameEn ?? '').toLowerCase().includes(q) ||
+          (p.species?.commonNameBg ?? '').toLowerCase().includes(q) ||
+          (p.species?.scientificName ?? '').toLowerCase().includes(q);
+        if (!matches) return false;
+      }
+      return true;
+    });
+  }, [isFiltering, allPlants, plants, search, difficulty]);
+
+  // ── Pull-to-refresh ───────────────────────────────────────────────────────
   const onRefresh = useCallback(async () => {
     setRefreshing(true);
+    setAllPlants(null);
     await loadFirst();
     setRefreshing(false);
   }, [loadFirst]);
 
+  // ── Infinite scroll (only in no-filter mode) ──────────────────────────────
   const onEndReached = useCallback(async () => {
-    if (loadingMoreRef.current || !hasMore) return;
+    if (isFiltering || loadingMoreRef.current || !hasMore) return;
     loadingMoreRef.current = true;
     setLoadingMore(true);
     try {
@@ -80,8 +132,90 @@ function PlantsContent() {
       loadingMoreRef.current = false;
       setLoadingMore(false);
     }
-  }, [hasMore, loadPage, plants.length]);
+  }, [isFiltering, hasMore, loadPage, plants.length]);
 
+  // ── Difficulty chip options ───────────────────────────────────────────────
+  const CHIPS: Array<{ value: DifficultyFilter; label: string }> = [
+    { value: 'all', label: m.shop.all },
+    { value: 'easy', label: m.catalog.easy },
+    { value: 'moderate', label: m.catalog.moderate },
+    { value: 'difficult', label: m.catalog.difficult },
+  ];
+
+  // ── List header (hero + search + chips) ───────────────────────────────────
+  const ListHeader = (
+    <>
+      <View style={styles.hero}>
+        <View style={styles.heroTopRow}>
+          <View style={styles.heroText}>
+            <Text style={styles.eyebrow}>{m.plants.myPlants.toUpperCase()}</Text>
+            <Text style={styles.title}>{m.plants.myPlants}</Text>
+          </View>
+          <Pressable
+            onPress={() => router.push('/plants/new')}
+            style={({ pressed }) => [styles.addBtn, pressed && styles.pressed]}
+            accessibilityLabel={m.plants.addPlant}>
+            <Text style={styles.addBtnText}>+ {m.plants.addPlant}</Text>
+          </Pressable>
+        </View>
+        <Text style={styles.subtitle}>{m.plants.manageCollection}</Text>
+        {total != null && !isFiltering && (
+          <Text style={styles.count}>
+            {total} {m.plants.plantsCount}
+          </Text>
+        )}
+      </View>
+
+      {/* Search input */}
+      <View style={styles.searchWrap}>
+        <Text style={styles.searchIcon}>🔍</Text>
+        <TextInput
+          style={styles.searchInput}
+          value={search}
+          onChangeText={setSearch}
+          placeholder={m.plants.searchPlants}
+          placeholderTextColor="#9CA3AF"
+          returnKeyType="search"
+          autoCapitalize="none"
+          autoCorrect={false}
+        />
+        {search.length > 0 && (
+          <Pressable onPress={() => setSearch('')} style={styles.clearBtn} hitSlop={8}>
+            <Text style={styles.clearBtnText}>✕</Text>
+          </Pressable>
+        )}
+      </View>
+
+      {/* Difficulty filter chips */}
+      <View style={styles.chipsRow}>
+        {CHIPS.map(({ value, label }) => (
+          <Pressable
+            key={value}
+            onPress={() => setDifficulty(value)}
+            style={[styles.chip, difficulty === value && styles.chipActive]}>
+            <Text style={[styles.chipText, difficulty === value && styles.chipTextActive]}>
+              {label}
+            </Text>
+          </Pressable>
+        ))}
+      </View>
+
+      {/* Results count / loading indicator while fetching all plants */}
+      {isFiltering && (
+        <View style={styles.filterMeta}>
+          {loadingAll ? (
+            <ActivityIndicator size="small" color={SCARLET} />
+          ) : (
+            <Text style={styles.filterCount}>
+              {displayedPlants.length} {m.plants.plantsCount}
+            </Text>
+          )}
+        </View>
+      )}
+    </>
+  );
+
+  // ── Error state ───────────────────────────────────────────────────────────
   if (loading) {
     return (
       <View style={styles.center}>
@@ -109,7 +243,7 @@ function PlantsContent() {
   return (
     <View style={styles.flex}>
       <FlatList
-        data={plants}
+        data={displayedPlants}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
           <View style={styles.gridItem}>
@@ -123,21 +257,12 @@ function PlantsContent() {
         refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}
         onEndReached={onEndReached}
         onEndReachedThreshold={0.4}
-        ListHeaderComponent={
-          <View style={styles.hero}>
-            <Text style={styles.eyebrow}>{m.plants.myPlants.toUpperCase()}</Text>
-            <Text style={styles.title}>{m.plants.myPlants}</Text>
-            <Text style={styles.subtitle}>{m.plants.manageCollection}</Text>
-            {total != null && (
-              <Text style={styles.count}>
-                {total} {m.plants.plantsCount}
-              </Text>
-            )}
-          </View>
-        }
+        ListHeaderComponent={ListHeader}
         ListEmptyComponent={
           <View style={styles.center}>
-            <Text style={styles.emptyText}>{m.plants.noPlants}</Text>
+            <Text style={styles.emptyText}>
+              {isFiltering ? m.plants.noResults : m.plants.noPlants}
+            </Text>
           </View>
         }
         ListFooterComponent={
@@ -151,22 +276,11 @@ function PlantsContent() {
 
       {/* Floating add button */}
       <Pressable
-        onPress={() => setAddPlantOpen(true)}
+        onPress={() => router.push('/plants/new')}
         style={({ pressed }) => [styles.fab, pressed && styles.pressed]}
         accessibilityLabel={m.plants.addPlant}>
         <Text style={styles.fabText}>+</Text>
       </Pressable>
-
-      <AddPlantModal
-        visible={addPlantOpen}
-        onClose={() => setAddPlantOpen(false)}
-        onSaved={() => {
-          setAddPlantOpen(false);
-          // Reload the list so the new plant appears immediately.
-          setLoading(true);
-          loadFirst().finally(() => setLoading(false));
-        }}
-      />
     </View>
   );
 }
@@ -185,6 +299,28 @@ const styles = StyleSheet.create({
   flex: {
     flex: 1,
   },
+  heroTopRow: {
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    justifyContent: 'space-between',
+    gap: 12,
+  },
+  heroText: {
+    flex: 1,
+    gap: 2,
+  },
+  addBtn: {
+    backgroundColor: SCARLET,
+    borderRadius: 999,
+    paddingHorizontal: 14,
+    paddingVertical: 9,
+    alignSelf: 'flex-start',
+  },
+  addBtnText: {
+    color: '#fff',
+    fontSize: 13,
+    fontWeight: '700',
+  },
   fab: {
     position: 'absolute',
     bottom: 24,
@@ -195,7 +331,7 @@ const styles = StyleSheet.create({
     backgroundColor: SCARLET,
     alignItems: 'center',
     justifyContent: 'center',
-    // Subtle shadow so the FAB lifts off the list.
+    zIndex: 10,
     shadowColor: SCARLET,
     shadowOpacity: 0.4,
     shadowRadius: 10,
@@ -222,7 +358,6 @@ const styles = StyleSheet.create({
   list: {
     padding: 16,
     flexGrow: 1,
-    // Keep the 2-column grid centered at a sensible width on tablets / web.
     width: '100%',
     maxWidth: 600,
     alignSelf: 'center',
@@ -239,7 +374,7 @@ const styles = StyleSheet.create({
     borderColor: '#D1FAE5',
     borderRadius: 20,
     padding: 18,
-    marginBottom: 16,
+    marginBottom: 12,
     gap: 6,
   },
   eyebrow: {
@@ -264,6 +399,73 @@ const styles = StyleSheet.create({
     color: '#6B7280',
     marginTop: 2,
   },
+  // ── Search ──────────────────────────────────────────────────────────────
+  searchWrap: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#F9FAFB',
+    borderWidth: 1,
+    borderColor: '#E5E7EB',
+    borderRadius: 12,
+    paddingHorizontal: 12,
+    paddingVertical: 8,
+    marginBottom: 10,
+    gap: 8,
+  },
+  searchIcon: {
+    fontSize: 14,
+  },
+  searchInput: {
+    flex: 1,
+    fontSize: 14,
+    color: '#11181C',
+    paddingVertical: 0,
+  },
+  clearBtn: {
+    padding: 2,
+  },
+  clearBtnText: {
+    fontSize: 12,
+    color: '#9CA3AF',
+  },
+  // ── Filter chips ─────────────────────────────────────────────────────────
+  chipsRow: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 8,
+    marginBottom: 10,
+  },
+  chip: {
+    borderWidth: 1,
+    borderColor: '#D1D5DB',
+    borderRadius: 999,
+    paddingHorizontal: 14,
+    paddingVertical: 6,
+    backgroundColor: '#fff',
+  },
+  chipActive: {
+    backgroundColor: SCARLET,
+    borderColor: SCARLET,
+  },
+  chipText: {
+    fontSize: 13,
+    color: '#374151',
+    fontWeight: '500',
+  },
+  chipTextActive: {
+    color: '#fff',
+  },
+  filterMeta: {
+    marginBottom: 8,
+    minHeight: 20,
+    justifyContent: 'center',
+  },
+  filterCount: {
+    fontSize: 13,
+    fontWeight: '600',
+    color: '#6B7280',
+  },
+  // ── List decorations ──────────────────────────────────────────────────────
   separator: {
     height: 14,
   },
