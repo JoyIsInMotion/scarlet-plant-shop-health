@@ -106,7 +106,7 @@ function PlantDetailContent({ id }: { id: string }) {
     setAnalyzing(true);
     try {
       const result = await authedRequest((token) => runPlantAnalysis(id, token));
-      setLatest(result.analysis);
+      setLatest({ ...result.analysis, matchedSpecies: result.matchedSpecies ?? null });
       setFreshAdvice(result.advice);
       setFreshBasics(result.careBasics);
       // Refresh the plant so the (possibly updated) health score shows.

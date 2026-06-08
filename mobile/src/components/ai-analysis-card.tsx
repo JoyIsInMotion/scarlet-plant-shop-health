@@ -37,7 +37,9 @@ export function AIAnalysisCard({ analysis, advice, careBasics }: Props) {
   const { locale, m } = useI18n();
   const cond = analysis.overallCondition;
   const condStyle = cond ? CONDITION_STYLE[cond] : null;
-  const plantName = analysis.identifiedCommonName ?? m.ai.unknownPlant;
+  const plantName = locale === 'bg'
+    ? (analysis.matchedSpecies?.commonNameBg ?? analysis.identifiedCommonName ?? m.ai.unknownPlant)
+    : (analysis.identifiedCommonName ?? m.ai.unknownPlant);
 
   const issues = analysis.issues ?? [];
   const recommendations = analysis.careRecommendations ?? [];

@@ -190,7 +190,7 @@ export default function ScanScreen() {
       {result && (
         <>
           <AIAnalysisCard
-            analysis={result.analysis}
+            analysis={{ ...result.analysis, matchedSpecies: result.matchedSpecies ?? null }}
             advice={result.advice}
             careBasics={result.careBasics}
           />

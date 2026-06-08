@@ -122,6 +122,7 @@ export interface AIAnalysis {
   identifiedCareDifficulty: CareDifficulty | null;
   confidence: AIConfidence | null;
   matchedSpeciesId: string | null;
+  matchedSpecies?: PlantSpecies | null;
   modelUsed: string;
   analyzedAt: string;
 }
