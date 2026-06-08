@@ -27,6 +27,7 @@ interface AuthContextValue {
   /** True while restoring a persisted session on startup. */
   isLoading: boolean;
   login: (email: string, password: string) => Promise<void>;
+  register: (name: string, email: string, password: string) => Promise<void>;
   logout: () => Promise<void>;
   /** Replaces the cached user (e.g. after a profile edit) and persists it. */
   updateUser: (user: User) => Promise<void>;
@@ -156,6 +157,18 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     [writeSession]
   );
 
+  const register = useCallback(
+    async (name: string, email: string, password: string) => {
+      const result = await api.register(name, email, password);
+      await writeSession({
+        user: result.user,
+        accessToken: result.accessToken,
+        refreshToken: result.refreshToken,
+      });
+    },
+    [writeSession]
+  );
+
   const updateUser = useCallback(
     async (user: User) => {
       const current = sessionRef.current;
@@ -183,11 +196,12 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       isAuthenticated: !!session,
       isLoading,
       login,
+      register,
       logout,
       updateUser,
       authedRequest,
     }),
-    [session, isLoading, login, logout, updateUser, authedRequest]
+    [session, isLoading, login, register, logout, updateUser, authedRequest]
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

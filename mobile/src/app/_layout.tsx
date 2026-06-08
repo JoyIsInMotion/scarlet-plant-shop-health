@@ -14,6 +14,7 @@ function RootStack() {
       <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
       {/* Pushed full-screen over the tabs, with an automatic back button. */}
       <Stack.Screen name="login" options={{ title: 'Login' }} />
+      <Stack.Screen name="register" options={{ title: 'Sign up' }} />
       <Stack.Screen name="account" options={{ title: m.account.title }} />
       <Stack.Screen name="plants/[id]" options={{ title: 'Plant' }} />
       <Stack.Screen name="shop/[id]" options={{ title: m.shop.title }} />

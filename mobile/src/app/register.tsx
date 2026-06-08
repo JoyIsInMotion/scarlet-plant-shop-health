@@ -20,10 +20,11 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 // cast to keep the URL clean on web.
 const HOME = '/' as Href;
 
-export default function LoginScreen() {
+export default function RegisterScreen() {
   const router = useRouter();
-  const { login, isAuthenticated, isLoading } = useAuth();
+  const { register, isAuthenticated, isLoading } = useAuth();
 
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState<string | null>(null);
@@ -34,29 +35,34 @@ export default function LoginScreen() {
     return <Redirect href={HOME} />;
   }
 
-  // The login screen is often reached via an AuthGuard redirect (which replaces
-  // history), so there may be no entry to pop — fall back to Home.
+  // Mirrors login: we may arrive here via a redirect with no history to pop.
   const goBack = () => (router.canGoBack() ? router.back() : router.replace(HOME));
 
   async function onSubmit() {
     setError(null);
 
+    const trimmedName = name.trim();
     const trimmedEmail = email.trim();
+    // Match the backend's registerSchema so we fail fast with a clear message.
+    if (trimmedName.length < 2) {
+      setError('Please enter your name (at least 2 characters).');
+      return;
+    }
     if (!EMAIL_RE.test(trimmedEmail)) {
       setError('Please enter a valid email address.');
       return;
     }
-    if (password.length === 0) {
-      setError('Please enter your password.');
+    if (password.length < 8) {
+      setError('Password must be at least 8 characters.');
       return;
     }
 
     setSubmitting(true);
     try {
-      await login(trimmedEmail, password);
+      await register(trimmedName, trimmedEmail, password);
       router.replace(HOME);
     } catch (e) {
-      // 401 surfaces as "Invalid credentials" from the API; network/other
+      // 409 surfaces as "Email already registered" from the API; network/other
       // errors carry their own message.
       setError(e instanceof ApiError ? e.message : 'Something went wrong. Please try again.');
     } finally {
@@ -79,8 +85,21 @@ export default function LoginScreen() {
         }}
       />
       <View style={styles.form}>
-        <Text style={styles.title}>Welcome back</Text>
-        <Text style={styles.subtitle}>Sign in to your Scarlet account.</Text>
+        <Text style={styles.title}>Create your account</Text>
+        <Text style={styles.subtitle}>Join Scarlet to track and care for your plants.</Text>
+
+        <TextInput
+          style={styles.input}
+          placeholder="Name"
+          placeholderTextColor="#9AA0A6"
+          value={name}
+          onChangeText={setName}
+          autoCapitalize="words"
+          autoComplete="name"
+          textContentType="name"
+          editable={!submitting}
+          returnKeyType="next"
+        />
 
         <TextInput
           style={styles.input}
@@ -98,14 +117,14 @@ export default function LoginScreen() {
 
         <TextInput
           style={styles.input}
-          placeholder="Password"
+          placeholder="Password (min. 8 characters)"
           placeholderTextColor="#9AA0A6"
           value={password}
           onChangeText={setPassword}
           secureTextEntry
           autoCapitalize="none"
-          autoComplete="password"
-          textContentType="password"
+          autoComplete="password-new"
+          textContentType="newPassword"
           editable={!submitting}
           returnKeyType="go"
           onSubmitEditing={onSubmit}
@@ -124,15 +143,15 @@ export default function LoginScreen() {
           {submitting ? (
             <ActivityIndicator color="#ffffff" />
           ) : (
-            <Text style={styles.buttonText}>Log in</Text>
+            <Text style={styles.buttonText}>Create account</Text>
           )}
         </Pressable>
 
         <View style={styles.footer}>
-          <Text style={styles.footerText}>New to Scarlet? </Text>
-          <Link href="/register" replace asChild>
+          <Text style={styles.footerText}>Already have an account? </Text>
+          <Link href="/login" replace asChild>
             <Pressable hitSlop={8} disabled={submitting}>
-              <Text style={styles.footerLink}>Create an account</Text>
+              <Text style={styles.footerLink}>Log in</Text>
             </Pressable>
           </Link>
         </View>

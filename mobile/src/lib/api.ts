@@ -84,6 +84,20 @@ export function login(email: string, password: string): Promise<LoginResult> {
   });
 }
 
+// Creates a new account and returns a ready-to-use session (same shape as
+// login). The backend validates name (≥2), email, and password (≥8) and
+// replies 409 if the email is already taken.
+export function register(
+  name: string,
+  email: string,
+  password: string
+): Promise<LoginResult> {
+  return request<LoginResult>('/api/auth/register', {
+    method: 'POST',
+    body: { name, email, password },
+  });
+}
+
 export function logout(refreshToken: string | null): Promise<{ message: string }> {
   return request<{ message: string }>('/api/auth/logout', {
     method: 'POST',
