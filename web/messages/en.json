@@ -106,7 +106,9 @@
     "searchSpecies": "Search plant species...",
     "linkSpecies": "Link a species",
     "scanToIdentify": "Scan with AI to identify it",
-    "addManually": "Add manually"
+    "addManually": "Add manually",
+    "searchPlants": "Search by name or species...",
+    "clearFilters": "Clear filters"
   },
   "health": {
     "excellent": "Excellent",

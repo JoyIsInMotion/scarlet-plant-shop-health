@@ -106,7 +106,9 @@
     "searchSpecies": "Търсете видове растения...",
     "linkSpecies": "Свържи вид",
     "scanToIdentify": "Сканирай с AI, за да го разпознаеш",
-    "addManually": "Добави ръчно"
+    "addManually": "Добави ръчно",
+    "searchPlants": "Търси по име или вид...",
+    "clearFilters": "Изчисти филтрите"
   },
   "health": {
     "excellent": "Отлично",
