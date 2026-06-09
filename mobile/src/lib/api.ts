@@ -35,19 +35,20 @@ interface RequestOptions {
   method?: string;
   body?: unknown;
   token?: string | null;
+  timeoutMs?: number;
 }
 
 const REQUEST_TIMEOUT_MS = 15_000;
 
 async function request<T>(path: string, options: RequestOptions = {}): Promise<T> {
-  const { method = 'GET', body, token } = options;
+  const { method = 'GET', body, token, timeoutMs = REQUEST_TIMEOUT_MS } = options;
 
   // FormData (multipart uploads) must not be JSON-stringified, and the
   // Content-Type header must be left for fetch to set with the right boundary.
   const isForm = typeof FormData !== 'undefined' && body instanceof FormData;
 
   const controller = new AbortController();
-  const timeoutId = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
+  const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
 
   let res: Response;
   try {
@@ -288,7 +289,7 @@ export async function identifyPlant(image: ScanImage, token: string): Promise<Id
       type: image.mimeType,
     } as unknown as Blob);
   }
-  return request<IdentifyResult>('/api/ai/identify', { method: 'POST', body: form, token });
+  return request<IdentifyResult>('/api/ai/identify', { method: 'POST', body: form, token, timeoutMs: 60_000 });
 }
 
 export interface CatalogSpecies {
@@ -360,7 +361,7 @@ export function getPlantAnalyses(
 }
 
 export function runPlantAnalysis(id: string, token: string): Promise<AIAnalysisResult> {
-  return request<AIAnalysisResult>(`/api/plants/${id}/ai-analysis`, { method: 'POST', token });
+  return request<AIAnalysisResult>(`/api/plants/${id}/ai-analysis`, { method: 'POST', token, timeoutMs: 60_000 });
 }
 
 // ─── AI quick scan ─────────────────────────────────────────────────────────
@@ -396,5 +397,5 @@ export async function quickScan(
       type: image.mimeType,
     } as unknown as Blob);
   }
-  return request<AIAnalysisResult>('/api/ai/quick-scan', { method: 'POST', body: form, token });
+  return request<AIAnalysisResult>('/api/ai/quick-scan', { method: 'POST', body: form, token, timeoutMs: 60_000 });
 }
