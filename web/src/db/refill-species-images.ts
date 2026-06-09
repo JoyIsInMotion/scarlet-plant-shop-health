@@ -4,8 +4,7 @@
  * Falls back to iNaturalist open-data S3 URLs (also hotlink-safe).
  * Never touches rows that already have a photo.
  *
- * Run (preview): npm run db:refill-species-images -- --preview
- * Run (apply):   npm run db:refill-species-images
+ * Run: npm run db:refill-species-images
  */
 import * as dotenv from 'dotenv';
 dotenv.config({ path: '.env.local' });
@@ -14,8 +13,6 @@ import { isNull, eq } from 'drizzle-orm';
 import { neon } from '@neondatabase/serverless';
 import { drizzle } from 'drizzle-orm/neon-http';
 import * as schema from './schema';
-
-const PREVIEW = process.argv.includes('--preview');
 
 const sql = neon(process.env.DATABASE_URL!);
 const db = drizzle(sql, { schema });
@@ -91,7 +88,7 @@ async function main() {
     return;
   }
 
-  console.log(`Found ${missing.length} species with no photo.${PREVIEW ? ' (PREVIEW — no DB writes)' : ''}\n`);
+  console.log(`Found ${missing.length} species with no photo.\n`);
 
   let ok = 0;
   let failed = 0;
@@ -108,19 +105,13 @@ async function main() {
       continue;
     }
 
-    if (!PREVIEW) {
-      await db.update(plantSpecies).set({ imageUrl: result.url }).where(eq(plantSpecies.id, id));
-    }
+    await db.update(plantSpecies).set({ imageUrl: result.url }).where(eq(plantSpecies.id, id));
 
     ok++;
     console.log(`✓ [${result.src}] ${result.url}`);
   }
 
-  if (PREVIEW) {
-    console.log(`\nWould update ${ok}/${missing.length}. Run without --preview to apply.\n`);
-  } else {
-    console.log(`\n✅ ${ok} updated   ✗ ${failed} not found\n`);
-  }
+  console.log(`\n✅ ${ok} updated   ✗ ${failed} not found\n`);
 }
 
 main().catch((err) => {

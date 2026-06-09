@@ -2,8 +2,7 @@
  * Replaces template-generated product descriptions with proper ones.
  * Currently targets the `accessories` category (200 products).
  *
- * Run (preview): npm run db:fix-product-descriptions -- --preview
- * Run (apply):   npm run db:fix-product-descriptions
+ * Run: npm run db:fix-product-descriptions
  */
 import * as dotenv from 'dotenv';
 dotenv.config({ path: '.env.local' });
@@ -16,8 +15,6 @@ import * as schema from './schema';
 const sql = neon(process.env.DATABASE_URL!);
 const db = drizzle(sql, { schema });
 const { products } = schema;
-
-const PREVIEW = process.argv.includes('--preview');
 
 // ── Descriptions keyed by EN keyword found in the product nameEn ─────────────
 
@@ -87,11 +84,11 @@ function descriptionFor(nameEn: string): { en: string; bg: string } | null {
 
 async function main() {
   const rows = await db
-    .select({ id: products.id, nameEn: products.nameEn, descriptionEn: products.descriptionEn })
+    .select({ id: products.id, nameEn: products.nameEn })
     .from(products)
     .where(eq(products.category, 'accessories'));
 
-  console.log(`\n🛠  Fix product descriptions — ${rows.length} accessories${PREVIEW ? ' (PREVIEW)' : ''}\n`);
+  console.log(`\n🛠  Fix product descriptions — ${rows.length} accessories\n`);
 
   let updated = 0;
   let skipped = 0;
@@ -103,26 +100,14 @@ async function main() {
       skipped++;
       continue;
     }
-
-    if (PREVIEW) {
-      console.log(`  → ${row.nameEn}`);
-      console.log(`     EN: ${desc.en}`);
-      console.log(`     BG: ${desc.bg}\n`);
-    } else {
-      await db
-        .update(products)
-        .set({ descriptionEn: desc.en, descriptionBg: desc.bg })
-        .where(eq(products.id, row.id));
-    }
+    await db
+      .update(products)
+      .set({ descriptionEn: desc.en, descriptionBg: desc.bg })
+      .where(eq(products.id, row.id));
     updated++;
   }
 
-  if (PREVIEW) {
-    console.log(`Would update ${updated} products, ${skipped} without a template.\n`);
-    console.log('Run without --preview to apply.\n');
-  } else {
-    console.log(`\n✅ Updated ${updated} products.${skipped > 0 ? ` ⚠  ${skipped} skipped (no template).` : ''}\n`);
-  }
+  console.log(`\n✅ Updated ${updated} products.${skipped > 0 ? ` ⚠  ${skipped} skipped (no template).` : ''}\n`);
 }
 
 main().catch((err) => {
