@@ -12,7 +12,7 @@ import { getAccessToken } from '@/lib/auth/cookies';
 import { verifyAccessToken } from '@/lib/auth/jwt';
 import { getPlant as fetchPlant, getAnalyses } from '@/services/plants.service';
 import type { Metadata } from 'next';
-import type { AIAnalysis, Plant } from '@scarlet/shared';
+import type { Plant } from '@scarlet/shared';
 
 const PAGE_SIZE = 10;
 
@@ -50,10 +50,10 @@ export default async function AnalysesPage({
   const locale = await getLocale();
   const user = await resolveUser();
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [plant, analysesResult] = await Promise.all([
     user ? fetchPlant(id, user.sub, user.role).catch(() => null) : Promise.resolve(null),
     user ? getAnalyses(id, user.sub, PAGE_SIZE, (page - 1) * PAGE_SIZE).catch(() => ({ analyses: [], total: 0 })) : Promise.resolve({ analyses: [], total: 0 }),
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
   ]) as [any, { analyses: any[]; total: number }];
   const { analyses, total } = analysesResult;
 
