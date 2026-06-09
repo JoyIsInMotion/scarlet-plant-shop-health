@@ -1,32 +1,19 @@
 import { getTranslations } from 'next-intl/server';
-import { cookies } from 'next/headers';
 import Link from 'next/link';
 import { Plus, Leaf } from 'lucide-react';
 import { PlantCard } from '@/components/plants/plant-card';
 import { Pagination } from '@/components/ui/pagination';
 import { Button } from '@/components/ui/button';
+import { getAccessToken } from '@/lib/auth/cookies';
+import { verifyAccessToken } from '@/lib/auth/jwt';
+import { listPlants } from '@/services/plants.service';
 import type { Metadata } from 'next';
-import type { Plant } from '@scarlet/shared';
 
 const PAGE_SIZE = 12;
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('nav');
   return { title: t('dashboard') };
-}
-
-async function getPlants(accessToken: string, offset: number) {
-  const baseUrl = process.env.NEXT_PUBLIC_APP_URL ?? 'http://localhost:3000';
-  const res = await fetch(
-    `${baseUrl}/api/plants?limit=${PAGE_SIZE}&offset=${offset}`,
-    { headers: { Authorization: `Bearer ${accessToken}` }, cache: 'no-store' },
-  );
-  if (!res.ok) return { plants: [], total: 0 };
-  const { data } = await res.json();
-  return {
-    plants: (data?.plants ?? []) as (Plant & { species?: { commonNameBg: string | null } | null })[],
-    total: (data?.total ?? 0) as number,
-  };
 }
 
 export default async function DashboardPage({
@@ -39,10 +26,18 @@ export default async function DashboardPage({
   const page = Math.max(1, parseInt(sp.page ?? '1', 10));
   const offset = (page - 1) * PAGE_SIZE;
 
-  const cookieStore = await cookies();
-  const token = cookieStore.get('access_token')?.value ?? '';
-
-  const { plants, total } = await getPlants(token, offset);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  let plants: any[] = [];
+  let total = 0;
+  try {
+    const token = await getAccessToken();
+    if (token) {
+      const { sub: userId } = verifyAccessToken(token);
+      const result = await listPlants(userId, PAGE_SIZE, { offset });
+      plants = result.plants;
+      total = result.total ?? 0;
+    }
+  } catch { /* expired token or unauthenticated — middleware will redirect */ }
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">

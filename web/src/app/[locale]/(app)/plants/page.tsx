@@ -5,34 +5,19 @@ import { PlantCard } from '@/components/plants/plant-card';
 import { PlantFilters } from '@/components/plants/plant-filters';
 import { Pagination } from '@/components/ui/pagination';
 import { getAccessToken } from '@/lib/auth/cookies';
+import { verifyAccessToken } from '@/lib/auth/jwt';
+import { listPlants } from '@/services/plants.service';
 import { Link } from '@/i18n/navigation';
 
 const PAGE_SIZE = 12;
 
-async function getPlants(
-  page: number,
-  search?: string,
-  difficulty?: string,
-) {
+async function getPlants(page: number, search?: string, difficulty?: string) {
   try {
     const token = await getAccessToken();
     if (!token) return { plants: [], total: 0 };
-
+    const { sub: userId } = verifyAccessToken(token);
     const offset = (page - 1) * PAGE_SIZE;
-    const baseUrl = process.env.NEXT_PUBLIC_APP_URL ?? 'http://localhost:3000';
-    const params = new URLSearchParams({ limit: String(PAGE_SIZE), offset: String(offset) });
-    if (search) params.set('search', search);
-    if (difficulty) params.set('difficulty', difficulty);
-
-    const res = await fetch(`${baseUrl}/api/plants?${params.toString()}`, {
-      headers: { Authorization: `Bearer ${token}` },
-    });
-    if (!res.ok) return { plants: [], total: 0 };
-    const response = await res.json();
-    return {
-      plants: Array.isArray(response.data?.plants) ? response.data.plants : [],
-      total: response.data?.total ?? 0,
-    };
+    return await listPlants(userId, PAGE_SIZE, { offset, search, difficulty });
   } catch {
     return { plants: [], total: 0 };
   }
@@ -50,7 +35,8 @@ export default async function PlantsPage({
   const search = sp.search ?? '';
   const difficulty = sp.difficulty ?? '';
 
-  const { plants, total } = await getPlants(page, search || undefined, difficulty || undefined);
+  const { plants, total: rawTotal } = await getPlants(page, search || undefined, difficulty || undefined);
+  const total = rawTotal ?? 0;
 
   const isFiltering = search.length > 0 || difficulty.length > 0;
 

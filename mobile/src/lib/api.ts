@@ -37,6 +37,8 @@ interface RequestOptions {
   token?: string | null;
 }
 
+const REQUEST_TIMEOUT_MS = 15_000;
+
 async function request<T>(path: string, options: RequestOptions = {}): Promise<T> {
   const { method = 'GET', body, token } = options;
 
@@ -44,10 +46,14 @@ async function request<T>(path: string, options: RequestOptions = {}): Promise<T
   // Content-Type header must be left for fetch to set with the right boundary.
   const isForm = typeof FormData !== 'undefined' && body instanceof FormData;
 
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
+
   let res: Response;
   try {
     res = await fetch(`${API_BASE_URL}${path}`, {
       method,
+      signal: controller.signal,
       headers: {
         Accept: 'application/json',
         ...(body && !isForm ? { 'Content-Type': 'application/json' } : {}),
@@ -55,9 +61,15 @@ async function request<T>(path: string, options: RequestOptions = {}): Promise<T
       },
       body: body ? (isForm ? (body as FormData) : JSON.stringify(body)) : undefined,
     });
-  } catch {
-    // Network-level failure (server down, DNS, CORS preflight blocked).
-    throw new ApiError('Cannot reach the server. Check your connection.', 0);
+  } catch (err) {
+    // Network-level failure (server down, DNS, CORS preflight blocked, timeout).
+    const isTimeout = err instanceof Error && err.name === 'AbortError';
+    throw new ApiError(
+      isTimeout ? 'Request timed out. Check your connection.' : 'Cannot reach the server. Check your connection.',
+      0
+    );
+  } finally {
+    clearTimeout(timeoutId);
   }
 
   let payload: ApiEnvelope<T> | null = null;

@@ -1,9 +1,10 @@
 import { getTranslations } from 'next-intl/server';
-import { cookies } from 'next/headers';
 import { Users, Leaf, ShoppingBag, ScanLine, TrendingUp, ArrowRight, Package } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Pagination } from '@/components/ui/pagination';
 import { Link } from '@/i18n/navigation';
+import { getAdminStats } from '@/services/admin.service';
+import { listUsers } from '@/services/users.service';
 import type { Metadata } from 'next';
 
 const PAGE_SIZE = 20;
@@ -11,28 +12,6 @@ const PAGE_SIZE = 20;
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('admin');
   return { title: t('title') };
-}
-
-async function getAdminStats(token: string) {
-  const base = process.env.NEXT_PUBLIC_APP_URL ?? 'http://localhost:3000';
-  const res = await fetch(`${base}/api/admin/stats`, {
-    headers: { Authorization: `Bearer ${token}` },
-    cache: 'no-store',
-  });
-  if (!res.ok) return null;
-  const { data } = await res.json();
-  return data;
-}
-
-async function getUsers(token: string, page: number) {
-  const base = process.env.NEXT_PUBLIC_APP_URL ?? 'http://localhost:3000';
-  const res = await fetch(`${base}/api/users?limit=${PAGE_SIZE}&page=${page}`, {
-    headers: { Authorization: `Bearer ${token}` },
-    cache: 'no-store',
-  });
-  if (!res.ok) return { users: [], total: 0 };
-  const { data } = await res.json();
-  return { users: data?.users ?? [], total: data?.total ?? 0 };
 }
 
 export default async function AdminPage({
@@ -43,12 +22,10 @@ export default async function AdminPage({
   const t = await getTranslations();
   const sp = await searchParams;
   const page = Math.max(1, parseInt(sp.page ?? '1', 10));
-  const cookieStore = await cookies();
-  const token = cookieStore.get('access_token')?.value ?? '';
 
   const [stats, { users, total }] = await Promise.all([
-    getAdminStats(token),
-    getUsers(token, page),
+    getAdminStats().catch(() => null),
+    listUsers({ page, limit: PAGE_SIZE }).catch(() => ({ users: [], total: 0 })),
   ]);
 
   const statCards = [

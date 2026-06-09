@@ -2,12 +2,12 @@
 
 ## Project Overview
 
-Scarlet is a full-stack boutique flower shop application with an embedded plant health tracking feature. It targets Bulgarian users and is fully bilingual (Bulgarian + English). The app allows users to track their personal plant collection, analyze plant health via AI, and shop for flowers.
+Scarlet is a full-stack boutique flower shop application with an embedded plant health tracking feature. It is fully bilingual (English default + Bulgarian). The app allows users to track their personal plant collection, analyze plant health via AI, and shop for flowers.
 
 ## Architecture
 
 ### Monorepo Structure
-- `web` — Next.js 14 App Router: web frontend + REST API backend
+- `web` — Next.js 16 App Router: web frontend + REST API backend
 - `mobile` — Expo (React Native): mobile client app
 - `shared` — shared TypeScript types and Zod validators
 
@@ -40,17 +40,16 @@ Scarlet is a full-stack boutique flower shop application with an embedded plant 
 
 | Layer | Technology |
 |-------|-----------|
-| Web framework | Next.js 14 (App Router, Server Components, Server Actions) |
+| Web framework | Next.js 16 (App Router, Server Components, Server Actions) |
 | Web styling | Tailwind CSS + class-variance-authority |
 | Database | Neon serverless PostgreSQL |
 | ORM | Drizzle ORM |
 | Auth | Custom JWT (jsonwebtoken + bcryptjs) |
 | Storage | Cloudflare R2 via @aws-sdk/client-s3 |
 | AI | Groq llama-4-scout (Groq API) |
-| i18n (web) | next-intl (BG default, EN secondary) |
+| i18n (web) | next-intl (EN default, BG secondary) |
 | Mobile | React Native + Expo (Expo Router) |
-| i18n (mobile) | i18next + react-i18next |
-| State (mobile) | Zustand |
+| i18n (mobile) | Custom locale context (`mobile/src/lib/i18n.ts`) |
 | Deployment | Netlify (web) + EAS (mobile) |
 
 ## Coding Guidelines
@@ -58,7 +57,7 @@ Scarlet is a full-stack boutique flower shop application with an embedded plant 
 ### File Conventions
 - All Next.js pages are Server Components by default — add `"use client"` only when needed (event handlers, hooks, browser APIs)
 - API routes return `{ success: true, data: T }` or `{ success: false, error: string }` via `src/lib/api/response.ts`
-- All text visible to users must use `useTranslations()` (web) or `useTranslation()` (mobile) — no hardcoded strings
+- All text visible to users must use `useTranslations()` (web) or `useI18n()` (mobile) — no hardcoded strings
 
 ### Database
 - Never use raw SQL — always use Drizzle query builder
@@ -73,9 +72,9 @@ Scarlet is a full-stack boutique flower shop application with an embedded plant 
 - Never expose `password_hash` in API responses
 
 ### i18n
-- Bulgarian (`bg`) is the default language
+- English (`en`) is the default language
 - Translation keys live in `web/messages/bg.json` and `web/messages/en.json`
-- Mobile keys mirror web keys in `mobile/src/i18n/bg.json` and `mobile/src/i18n/en.json`
+- Mobile strings are defined inline in `mobile/src/lib/i18n.ts` (not separate JSON files)
 - Use namespace prefixes: `nav.*`, `auth.*`, `plants.*`, `catalog.*`, `shop.*`, `admin.*`, `ai.*`, `common.*`
 
 ### Error Handling

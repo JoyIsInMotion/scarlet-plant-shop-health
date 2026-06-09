@@ -1,5 +1,7 @@
 import { getLocale, getTranslations } from 'next-intl/server';
 import { getAccessToken } from '@/lib/auth/cookies';
+import { verifyAccessToken } from '@/lib/auth/jwt';
+import { listOrders } from '@/services/orders.service';
 import { redirect, Link } from '@/i18n/navigation';
 import { ShoppingBag, Clock, CheckCircle2, Truck, XCircle, Package, Search, SlidersHorizontal } from 'lucide-react';
 import type { Metadata } from 'next';
@@ -23,27 +25,23 @@ const STATUS_STYLES: Record<string, { bg: string; text: string; icon: React.Comp
 };
 
 async function getOrders(
-  token: string,
   page: number,
   filters: { search?: string; status?: string; from?: string; to?: string }
 ) {
-  const base = process.env.NEXT_PUBLIC_APP_URL ?? 'http://localhost:3000';
-  const params = new URLSearchParams({
-    limit: String(PAGE_SIZE),
-    offset: String((page - 1) * PAGE_SIZE),
-  });
-  if (filters.search) params.set('search', filters.search);
-  if (filters.status) params.set('status', filters.status);
-  if (filters.from)   params.set('from', filters.from);
-  if (filters.to)     params.set('to', filters.to);
-
-  const res = await fetch(`${base}/api/orders?${params}`, {
-    headers: { Authorization: `Bearer ${token}` },
-    cache: 'no-store',
-  });
-  if (!res.ok) return { items: [], total: 0 };
-  const { data } = await res.json();
-  return data ?? { items: [], total: 0 };
+  try {
+    const token = await getAccessToken();
+    if (!token) return { items: [], total: 0 };
+    const { sub: userId } = verifyAccessToken(token);
+    const offset = (page - 1) * PAGE_SIZE;
+    return await listOrders(userId, PAGE_SIZE, offset, {
+      search: filters.search,
+      status: filters.status,
+      from: filters.from ? new Date(filters.from) : undefined,
+      to: filters.to ? new Date(filters.to) : undefined,
+    });
+  } catch {
+    return { items: [], total: 0 };
+  }
 }
 
 type OrderItem = {
@@ -85,7 +83,7 @@ export default async function OrdersPage({
   };
   const hasFilters = Object.values(filters).some(Boolean);
 
-  const { items: orderList, total } = await getOrders(token!, page, filters);
+  const { items: orderList, total } = await getOrders(page, filters);
   const totalPages = Math.ceil(total / PAGE_SIZE);
 
   function formatPrice(amount: string | number) {

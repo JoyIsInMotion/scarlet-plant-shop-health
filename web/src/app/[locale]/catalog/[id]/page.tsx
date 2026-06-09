@@ -9,14 +9,11 @@ import { Button } from '@/components/ui/button';
 import { Link } from '@/i18n/navigation';
 import { getAccessToken } from '@/lib/auth/cookies';
 import { verifyAccessToken } from '@/lib/auth/jwt';
+import { getSpecies as fetchSpecies } from '@/services/catalog.service';
 import type { Metadata } from 'next';
 
 async function getSpecies(id: string) {
-  const base = process.env.NEXT_PUBLIC_APP_URL ?? 'http://localhost:3000';
-  const res = await fetch(`${base}/api/catalog/${id}`, { cache: 'no-store' });
-  if (!res.ok) return null;
-  const { data } = await res.json();
-  return data;
+  try { return await fetchSpecies(id); } catch { return null; }
 }
 
 const CARE_CONFIG = [

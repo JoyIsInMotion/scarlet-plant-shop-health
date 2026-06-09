@@ -1,7 +1,7 @@
 // Lightweight i18n for the mobile app. Copy of the relevant strings from the
 // web workspace (web/messages/{bg,en}.json) so the native screens read the same
 // way as the website. The active locale follows the signed-in user's
-// preferredLocale, defaulting to Bulgarian (the shop's primary language).
+// preferredLocale, defaulting to English.
 
 import { useLocale } from '@/context/locale';
 

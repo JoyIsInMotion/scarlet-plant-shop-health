@@ -4,23 +4,18 @@ import { ArrowLeft, Leaf, Tag } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from '@/i18n/navigation';
 import { ProductActions } from '@/components/shop/product-actions';
+import { getProduct as fetchProduct, listProducts } from '@/services/products.service';
 import type { Metadata } from 'next';
 
 async function getProduct(id: string) {
-  const base = process.env.NEXT_PUBLIC_APP_URL ?? 'http://localhost:3000';
-  const res = await fetch(`${base}/api/products/${id}`, { cache: 'no-store' });
-  if (!res.ok) return null;
-  const { data } = await res.json();
-  return data;
+  try { return await fetchProduct(id); } catch { return null; }
 }
 
 async function getRelatedProducts(category: string, currentId: string) {
-  const base = process.env.NEXT_PUBLIC_APP_URL ?? 'http://localhost:3000';
-  const params = new URLSearchParams({ limit: '4', category, sort: 'createdAt', order: 'desc' });
-  const res = await fetch(`${base}/api/products?${params}`, { cache: 'no-store' });
-  if (!res.ok) return [];
-  const { data } = await res.json();
-  return (data?.items ?? []).filter((item: { id: string }) => item.id !== currentId);
+  try {
+    const { items } = await listProducts({ limit: 4, offset: 0, category, sort: 'createdAt', order: 'desc' });
+    return items.filter((item) => item.id !== currentId);
+  } catch { return []; }
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {

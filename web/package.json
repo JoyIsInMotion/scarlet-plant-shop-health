@@ -22,7 +22,6 @@
     "db:fetch-products:preview": "tsx src/db/fetch-products.ts --preview",
     "db:fetch-realistic": "tsx src/db/fetch-realistic-data.ts",
     "db:patch-images": "tsx src/db/patch-images.ts",
-    "db:run-migrations": "tsx src/db/migrate.ts",
     "db:product-images": "tsx src/db/update-product-images.ts",
     "db:refill-species-images": "tsx src/db/refill-species-images.ts",
     "db:fix-product-descriptions": "tsx src/db/fix-product-descriptions.ts",

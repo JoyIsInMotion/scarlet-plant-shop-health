@@ -1,5 +1,4 @@
 import { getLocale, getTranslations } from 'next-intl/server';
-import { cookies } from 'next/headers';
 import { notFound } from 'next/navigation';
 import { ArrowLeft, BrainCircuit, Leaf } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
@@ -9,32 +8,20 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Pagination } from '@/components/ui/pagination';
 import { HealthScoreRing } from '@/components/plants/health-score-ring';
 import { AnalysisTrendChart } from '@/components/plants/analysis-trend-chart';
+import { getAccessToken } from '@/lib/auth/cookies';
+import { verifyAccessToken } from '@/lib/auth/jwt';
+import { getPlant as fetchPlant, getAnalyses } from '@/services/plants.service';
 import type { Metadata } from 'next';
 import type { AIAnalysis, Plant } from '@scarlet/shared';
 
 const PAGE_SIZE = 10;
 
-async function getPlant(id: string, token: string): Promise<Plant | null> {
-  const base = process.env.NEXT_PUBLIC_APP_URL ?? 'http://localhost:3000';
-  const res = await fetch(`${base}/api/plants/${id}`, {
-    headers: { Authorization: `Bearer ${token}` },
-    cache: 'no-store',
-  });
-  if (!res.ok) return null;
-  const { data } = await res.json();
-  return data ?? null;
-}
-
-async function fetchAnalyses(id: string, token: string, page: number): Promise<{ analyses: AIAnalysis[]; total: number }> {
-  const base = process.env.NEXT_PUBLIC_APP_URL ?? 'http://localhost:3000';
-  const offset = (page - 1) * PAGE_SIZE;
-  const res = await fetch(`${base}/api/plants/${id}/analyses?limit=${PAGE_SIZE}&offset=${offset}`, {
-    headers: { Authorization: `Bearer ${token}` },
-    cache: 'no-store',
-  });
-  if (!res.ok) return { analyses: [], total: 0 };
-  const { data } = await res.json();
-  return { analyses: data?.analyses ?? [], total: data?.total ?? 0 };
+async function resolveUser() {
+  try {
+    const token = await getAccessToken();
+    if (!token) return null;
+    return verifyAccessToken(token);
+  } catch { return null; }
 }
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -61,13 +48,14 @@ export default async function AnalysesPage({
 
   const t = await getTranslations();
   const locale = await getLocale();
-  const cookieStore = await cookies();
-  const token = cookieStore.get('access_token')?.value ?? '';
+  const user = await resolveUser();
 
-  const [plant, { analyses, total }] = await Promise.all([
-    getPlant(id, token),
-    fetchAnalyses(id, token, page),
-  ]);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const [plant, analysesResult] = await Promise.all([
+    user ? fetchPlant(id, user.sub, user.role).catch(() => null) : Promise.resolve(null),
+    user ? getAnalyses(id, user.sub, PAGE_SIZE, (page - 1) * PAGE_SIZE).catch(() => ({ analyses: [], total: 0 })) : Promise.resolve({ analyses: [], total: 0 }),
+  ]) as [any, { analyses: any[]; total: number }];
+  const { analyses, total } = analysesResult;
 
   if (!plant) notFound();
 
@@ -176,7 +164,8 @@ export default async function AnalysesPage({
 
                     {issues.length > 0 && (
                       <div className="flex flex-wrap gap-1">
-                        {issues.map((issue, i) => (
+                        {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
+                        {issues.map((issue: any, i: number) => (
                           <span
                             key={i}
                             className="inline-flex items-center gap-1 text-xs bg-gray-100 text-gray-700 px-2 py-0.5 rounded-full"

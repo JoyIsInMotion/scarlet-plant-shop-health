@@ -1,22 +1,13 @@
 import { getTranslations } from 'next-intl/server';
-import { cookies } from 'next/headers';
 import { notFound } from 'next/navigation';
 import { ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { PlantEditForm } from '@/components/plants/plant-edit-form';
 import { Link } from '@/i18n/navigation';
+import { getAccessToken } from '@/lib/auth/cookies';
+import { verifyAccessToken } from '@/lib/auth/jwt';
+import { getPlant } from '@/services/plants.service';
 import type { Metadata } from 'next';
-
-async function getPlant(id: string, token: string) {
-  const base = process.env.NEXT_PUBLIC_APP_URL ?? 'http://localhost:3000';
-  const res = await fetch(`${base}/api/plants/${id}`, {
-    headers: { Authorization: `Bearer ${token}` },
-    cache: 'no-store',
-  });
-  if (!res.ok) return null;
-  const { data } = await res.json();
-  return data;
-}
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('plants');
@@ -26,9 +17,15 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function EditPlantPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const t = await getTranslations();
-  const cookieStore = await cookies();
-  const token = cookieStore.get('access_token')?.value ?? '';
-  const plant = await getPlant(id, token);
+
+  let plant = null;
+  try {
+    const token = await getAccessToken();
+    if (token) {
+      const { sub: userId, role } = verifyAccessToken(token);
+      plant = await getPlant(id, userId, role);
+    }
+  } catch { /* expired or forbidden */ }
 
   if (!plant) notFound();
 
@@ -44,7 +41,8 @@ export default async function EditPlantPage({ params }: { params: Promise<{ id: 
         </div>
       </div>
 
-      <PlantEditForm plant={plant} />
+      {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
+      <PlantEditForm plant={plant as any} />
     </div>
   );
 }
