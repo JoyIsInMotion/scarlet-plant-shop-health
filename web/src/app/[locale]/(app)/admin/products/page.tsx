@@ -12,7 +12,13 @@ export async function generateMetadata(): Promise<Metadata> {
   return { title: t('manageProducts') };
 }
 
-export default async function AdminProductsPage() {
+const PAGE_SIZE = 50;
+
+export default async function AdminProductsPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ q?: string; page?: string }>;
+}) {
   const t = await getTranslations();
   const locale = await getLocale();
 
@@ -23,7 +29,13 @@ export default async function AdminProductsPage() {
   }
   if (!isAdmin) redirect({ href: '/', locale });
 
-  const { items } = await listAllProducts({ limit: 100, offset: 0 });
+  const { q, page } = await searchParams;
+  const currentPage = Math.max(1, parseInt(page ?? '1', 10));
+  const { items, total } = await listAllProducts({
+    limit: PAGE_SIZE,
+    offset: (currentPage - 1) * PAGE_SIZE,
+    search: q ?? undefined,
+  });
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
@@ -37,7 +49,14 @@ export default async function AdminProductsPage() {
         </div>
       </div>
 
-      <ProductManager products={items} locale={locale} />
+      <ProductManager
+        products={items}
+        locale={locale}
+        total={total}
+        page={currentPage}
+        pageSize={PAGE_SIZE}
+        search={q ?? ''}
+      />
     </div>
   );
 }

@@ -36,7 +36,7 @@ export async function listProducts(query: {
 /** Admin: list every product (active + inactive), newest first. */
 export async function listAllProducts(query: { limit: number; offset: number; search?: string }) {
   const where = query.search
-    ? or(ilike(products.nameBg, `%${query.search}%`), ilike(products.nameEn, `%${query.search}%`))
+    ? or(ilike(products.nameBg, `%${query.search}%`), ilike(products.nameEn, `%${query.search}%`), ilike(products.slug, `%${query.search}%`))
     : undefined;
 
   const base = db.select().from(products);

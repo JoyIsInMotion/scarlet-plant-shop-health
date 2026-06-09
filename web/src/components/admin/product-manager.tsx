@@ -1,9 +1,10 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useTranslations } from 'next-intl';
-import { Plus, Pencil, Trash2, PackagePlus, Flower2 } from 'lucide-react';
-import { useRouter } from '@/i18n/navigation';
+import { Plus, Pencil, Trash2, PackagePlus, Flower2, Search, ChevronLeft, ChevronRight } from 'lucide-react';
+import { useRouter, usePathname } from '@/i18n/navigation';
+import { useSearchParams } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import {
@@ -16,6 +17,7 @@ const CATEGORIES = ['bouquet', 'potted_plant', 'succulent', 'tropical', 'seasona
 
 interface Product {
   id: string;
+  slug: string;
   nameBg: string;
   nameEn: string;
   descriptionBg: string | null;
@@ -37,9 +39,15 @@ const emptyForm: FormState = {
   price: '', category: 'bouquet', imageUrl: '', stock: '0', isActive: true,
 };
 
-export function ProductManager({ products, locale }: { products: Product[]; locale: string }) {
+export function ProductManager({
+  products, locale, total, page, pageSize, search: initialSearch,
+}: {
+  products: Product[]; locale: string; total: number; page: number; pageSize: number; search: string;
+}) {
   const t = useTranslations();
   const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
   const { toast } = useToast();
 
   const [formOpen, setFormOpen] = useState(false);
@@ -47,6 +55,22 @@ export function ProductManager({ products, locale }: { products: Product[]; loca
   const [form, setForm] = useState<FormState>(emptyForm);
   const [busy, setBusy] = useState(false);
   const [deleteId, setDeleteId] = useState<string | null>(null);
+  const [search, setSearch] = useState(initialSearch);
+
+  const totalPages = Math.ceil(total / pageSize);
+
+  const pushParams = useCallback((q: string, p: number) => {
+    const params = new URLSearchParams(searchParams.toString());
+    if (q) params.set('q', q); else params.delete('q');
+    if (p > 1) params.set('page', String(p)); else params.delete('page');
+    router.push(`${pathname}?${params.toString()}` as never);
+  }, [pathname, router, searchParams]);
+
+  useEffect(() => {
+    const timer = setTimeout(() => pushParams(search, 1), 350);
+    return () => clearTimeout(timer);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [search]);
 
   const formatPrice = (amount: string | number) =>
     new Intl.NumberFormat(locale === 'en' ? 'en' : 'bg', { style: 'currency', currency: 'BGN' }).format(Number(amount));
@@ -146,8 +170,17 @@ export function ProductManager({ products, locale }: { products: Product[]; loca
 
   return (
     <>
-      <div className="mb-4 flex justify-end">
-        <Button onClick={openCreate} className="gap-1.5">
+      <div className="mb-4 flex items-center gap-3">
+        <div className="relative flex-1">
+          <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" />
+          <Input
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            placeholder={t('common.search')}
+            className="pl-9"
+          />
+        </div>
+        <Button onClick={openCreate} className="shrink-0 gap-1.5">
           <Plus className="h-4 w-4" />
           {t('admin.newProduct')}
         </Button>
@@ -182,6 +215,7 @@ export function ProductManager({ products, locale }: { products: Product[]; loca
                       <div>
                         <div className="font-medium text-gray-900">{locale === 'en' ? p.nameEn : p.nameBg}</div>
                         <div className="text-xs text-gray-400">{locale === 'en' ? p.nameBg : p.nameEn}</div>
+                        <div className="text-xs text-gray-300 font-mono">{p.slug}</div>
                       </div>
                     </div>
                   </td>
@@ -227,6 +261,43 @@ export function ProductManager({ products, locale }: { products: Product[]; loca
               ))}
             </tbody>
           </table>
+        </div>
+      )}
+
+      {totalPages > 1 && (
+        <div className="mt-4 flex items-center justify-between text-sm text-gray-500">
+          <span>{total} products · page {page} of {totalPages}</span>
+          <div className="flex items-center gap-1">
+            <button
+              onClick={() => pushParams(search, page - 1)}
+              disabled={page <= 1}
+              className="rounded-lg border border-border p-1.5 transition-colors hover:bg-cream disabled:opacity-30"
+            >
+              <ChevronLeft className="h-4 w-4" />
+            </button>
+            {Array.from({ length: Math.min(7, totalPages) }, (_, i) => {
+              const p = totalPages <= 7 ? i + 1 : page <= 4 ? i + 1 : page + i - 3;
+              if (p < 1 || p > totalPages) return null;
+              return (
+                <button
+                  key={p}
+                  onClick={() => pushParams(search, p)}
+                  className={`min-w-[2rem] rounded-lg border px-2 py-1 transition-colors ${
+                    p === page ? 'border-scarlet bg-scarlet text-white' : 'border-border hover:bg-cream'
+                  }`}
+                >
+                  {p}
+                </button>
+              );
+            })}
+            <button
+              onClick={() => pushParams(search, page + 1)}
+              disabled={page >= totalPages}
+              className="rounded-lg border border-border p-1.5 transition-colors hover:bg-cream disabled:opacity-30"
+            >
+              <ChevronRight className="h-4 w-4" />
+            </button>
+          </div>
         </div>
       )}
 
