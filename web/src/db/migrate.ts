@@ -34,7 +34,7 @@ async function main() {
         console.log(`   [${i + 1}/${statements.length}] ✅`);
       } catch (err: unknown) {
         const msg = err instanceof Error ? err.message : String(err);
-        if (msg.includes('already exists')) {
+        if (msg.includes('already exists') || msg.includes('permission denied') || msg.includes('must be owner')) {
           console.log(`   [${i + 1}/${statements.length}] ⚠️  already exists — skipping`);
         } else {
           console.error(`   [${i + 1}/${statements.length}] ❌ ${msg}`);
