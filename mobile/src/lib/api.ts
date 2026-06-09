@@ -1,4 +1,3 @@
-import { Platform } from 'react-native';
 import {
   AIAnalysisResult,
   AnalysisList,
@@ -279,16 +278,8 @@ export interface IdentifyResult {
 // AI species identification from a photo. Requires auth.
 export async function identifyPlant(image: ScanImage, token: string): Promise<IdentifyResult> {
   const form = new FormData();
-  if (Platform.OS === 'web') {
-    const blob = await fetch(image.uri).then((r) => r.blob());
-    form.append('image', blob, image.name);
-  } else {
-    form.append('image', {
-      uri: image.uri,
-      name: image.name,
-      type: image.mimeType,
-    } as unknown as Blob);
-  }
+  const blob = await fetch(image.uri).then((r) => r.blob());
+  form.append('image', blob, image.name);
   return request<IdentifyResult>('/api/ai/identify', { method: 'POST', body: form, token, timeoutMs: 60_000 });
 }
 
@@ -333,16 +324,8 @@ export async function uploadPlantImage(
   token: string
 ): Promise<Plant> {
   const form = new FormData();
-  if (Platform.OS === 'web') {
-    const blob = await fetch(image.uri).then((r) => r.blob());
-    form.append('image', blob, image.name);
-  } else {
-    form.append('image', {
-      uri: image.uri,
-      name: image.name,
-      type: image.mimeType,
-    } as unknown as Blob);
-  }
+  const blob = await fetch(image.uri).then((r) => r.blob());
+  form.append('image', blob, image.name);
   return request<Plant>(`/api/plants/${plantId}/image`, { method: 'POST', body: form, token });
 }
 
@@ -383,19 +366,7 @@ export async function quickScan(
   token?: string | null
 ): Promise<AIAnalysisResult> {
   const form = new FormData();
-  if (Platform.OS === 'web') {
-    // Browsers require a real Blob/File — the {uri,name,type} shape is coerced
-    // to "[object Object]" and the server rejects it. Read the (data/blob) URI
-    // produced by the image picker/manipulator back into a Blob.
-    const blob = await fetch(image.uri).then((r) => r.blob());
-    form.append('image', blob, image.name);
-  } else {
-    // React Native's fetch accepts this {uri,name,type} shape for file parts.
-    form.append('image', {
-      uri: image.uri,
-      name: image.name,
-      type: image.mimeType,
-    } as unknown as Blob);
-  }
+  const blob = await fetch(image.uri).then((r) => r.blob());
+  form.append('image', blob, image.name);
   return request<AIAnalysisResult>('/api/ai/quick-scan', { method: 'POST', body: form, token, timeoutMs: 60_000 });
 }
