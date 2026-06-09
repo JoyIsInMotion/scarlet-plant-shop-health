@@ -278,7 +278,8 @@ export interface IdentifyResult {
 // AI species identification from a photo. Requires auth.
 export async function identifyPlant(image: ScanImage, token: string): Promise<IdentifyResult> {
   const form = new FormData();
-  const blob = await fetch(image.uri).then((r) => r.blob());
+  const arrayBuffer = await fetch(image.uri).then((r) => r.arrayBuffer());
+  const blob = new Blob([arrayBuffer], { type: image.mimeType });
   form.append('image', blob, image.name);
   return request<IdentifyResult>('/api/ai/identify', { method: 'POST', body: form, token, timeoutMs: 60_000 });
 }
@@ -324,7 +325,8 @@ export async function uploadPlantImage(
   token: string
 ): Promise<Plant> {
   const form = new FormData();
-  const blob = await fetch(image.uri).then((r) => r.blob());
+  const arrayBuffer = await fetch(image.uri).then((r) => r.arrayBuffer());
+  const blob = new Blob([arrayBuffer], { type: image.mimeType });
   form.append('image', blob, image.name);
   return request<Plant>(`/api/plants/${plantId}/image`, { method: 'POST', body: form, token });
 }
@@ -366,7 +368,8 @@ export async function quickScan(
   token?: string | null
 ): Promise<AIAnalysisResult> {
   const form = new FormData();
-  const blob = await fetch(image.uri).then((r) => r.blob());
+  const arrayBuffer = await fetch(image.uri).then((r) => r.arrayBuffer());
+  const blob = new Blob([arrayBuffer], { type: image.mimeType });
   form.append('image', blob, image.name);
   return request<AIAnalysisResult>('/api/ai/quick-scan', { method: 'POST', body: form, token, timeoutMs: 60_000 });
 }
