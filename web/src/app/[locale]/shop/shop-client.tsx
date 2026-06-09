@@ -81,7 +81,7 @@ export function ShopClient({ products, total, locale, initialParams, page, pageS
         <div className="flex flex-wrap gap-2">
           <Link
             href="/shop"
-            className={`rounded-full border px-4 py-1.5 text-xs font-semibold transition-colors ${
+            className={`shrink-0 rounded-full border px-4 py-1.5 text-xs font-semibold transition-colors ${
               activeCategory === ''
                 ? 'border-scarlet bg-scarlet text-white'
                 : 'border-border bg-surface text-muted hover:border-scarlet/40 hover:text-scarlet'
@@ -93,7 +93,7 @@ export function ShopClient({ products, total, locale, initialParams, page, pageS
             <Link
               key={c}
               href={`/shop?category=${c}`}
-              className={`rounded-full border px-4 py-1.5 text-xs font-semibold transition-colors ${
+              className={`shrink-0 rounded-full border px-4 py-1.5 text-xs font-semibold transition-colors ${
                 activeCategory === c
                   ? 'border-scarlet bg-scarlet text-white'
                   : 'border-border bg-surface text-muted hover:border-scarlet/40 hover:text-scarlet'

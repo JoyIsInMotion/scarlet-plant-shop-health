@@ -174,10 +174,11 @@ const styles = StyleSheet.create({
   },
   addBtnText: {
     fontSize: 24,
-    lineHeight: 26,
+    lineHeight: 24,
     fontWeight: '700',
     color: '#FFFFFF',
     textAlign: 'center',
+    includeFontPadding: false,
   },
   addBtnTextDisabled: {
     color: '#A9A0A5',
