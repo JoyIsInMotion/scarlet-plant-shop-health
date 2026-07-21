@@ -16,10 +16,10 @@ export async function Footer() {
           {/* Brand — spans 2 cols */}
           <div className="sm:col-span-2">
             <Link href="/" className="mb-5 flex items-center gap-2.5">
-              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-scarlet shadow-sm">
-                <Flower2 className="h-4 w-4 text-white" />
+              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[linear-gradient(135deg,var(--ribbon-light)_0%,var(--ribbon)_45%,var(--ribbon-dark)_100%)] shadow-sm shadow-ribbon-dark/30">
+                <Flower2 className="h-4 w-4 text-white" strokeWidth={2.25} />
               </div>
-              <span className="font-display text-xl font-bold tracking-tight text-foreground">{locale === 'bg' ? 'Скарлет' : 'Scarlet'}</span>
+              <span className="font-display bg-[linear-gradient(135deg,var(--ribbon-light)_0%,var(--ribbon)_45%,var(--ribbon-dark)_100%)] bg-clip-text text-xl font-bold tracking-tight text-transparent">{locale === 'bg' ? 'Скарлет' : 'Scarlet'}</span>
             </Link>
             <p className="max-w-xs text-sm leading-relaxed text-muted">
               {t('about.description')}
