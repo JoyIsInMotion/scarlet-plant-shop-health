@@ -119,6 +119,7 @@ function LandingContent() {
                   src={cat.image}
                   alt={cat.label}
                   fill
+                  sizes="(min-width: 1024px) 16vw, (min-width: 640px) 33vw, 50vw"
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-x-2.5 bottom-2.5 rounded-full bg-[linear-gradient(135deg,var(--ribbon-light)_0%,var(--ribbon)_45%,var(--ribbon-dark)_100%)] px-3 py-2.5 text-center shadow-sm">
