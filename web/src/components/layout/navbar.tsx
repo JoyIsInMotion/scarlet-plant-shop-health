@@ -2,7 +2,7 @@
 import { useTranslations } from 'next-intl';
 import {
   Flower2, ShoppingBag, Leaf, ScanLine, ShieldCheck,
-  LogOut, Menu, X, ChevronDown, Users, Receipt,
+  LogOut, Menu, X, ChevronDown, Receipt,
 } from 'lucide-react';
 import { useState } from 'react';
 import { useAuth } from '@/providers/auth-provider';
@@ -47,11 +47,11 @@ export function Navbar() {
 
           {/* ── Logo ── */}
           <Link href="/" className="flex shrink-0 items-center gap-2.5">
-            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-scarlet shadow-sm">
-              <Flower2 className="h-4 w-4 text-white" />
+            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[linear-gradient(135deg,var(--ribbon-light)_0%,var(--ribbon)_45%,var(--ribbon-dark)_100%)] shadow-sm shadow-ribbon-dark/30">
+              <Flower2 className="h-4 w-4 text-white" strokeWidth={2.25} />
             </div>
-            <span className="font-display text-xl font-bold tracking-tight text-foreground">
-              Scarlet
+            <span className="font-display bg-[linear-gradient(135deg,var(--ribbon-light)_0%,var(--ribbon)_45%,var(--ribbon-dark)_100%)] bg-clip-text text-xl font-bold tracking-tight text-transparent">
+              Скарлет
             </span>
           </Link>
 
@@ -89,7 +89,7 @@ export function Navbar() {
             </div>
 
             <Link href="/catalog" className={navLinkClass}>{t('nav.catalog')}</Link>
-            <Link href="/community" className={navLinkClass}>{t('nav.community')}</Link>
+            <Link href="/scan" className={navLinkClass}>{t('nav.aiAnalyzer')}</Link>
 
             {authLinks.length > 0 && (
               <>
@@ -141,7 +141,7 @@ export function Navbar() {
                 </Link>
                 <Link
                   href="/register"
-                  className="rounded-full bg-scarlet px-4 py-2 text-[11px] font-bold uppercase tracking-[0.15em] text-white transition-colors hover:bg-scarlet-dark"
+                  className="rounded-full bg-[linear-gradient(135deg,var(--ribbon-light)_0%,var(--ribbon)_45%,var(--ribbon-dark)_100%)] px-4 py-2 text-[11px] font-bold uppercase tracking-[0.15em] text-white transition-all hover:brightness-110"
                 >
                   {t('auth.register')}
                 </Link>
@@ -191,9 +191,9 @@ export function Navbar() {
             <Link href="/catalog" onClick={() => setMobileOpen(false)} className="block rounded-xl px-3 py-2 text-sm text-muted transition-colors hover:bg-cream hover:text-foreground">
               {t('nav.catalog')}
             </Link>
-            <Link href="/community" onClick={() => setMobileOpen(false)} className="flex items-center gap-2 rounded-xl px-3 py-2 text-sm text-muted transition-colors hover:bg-cream hover:text-foreground">
-              <Users className="h-4 w-4" />
-              {t('nav.community')}
+            <Link href="/scan" onClick={() => setMobileOpen(false)} className="flex items-center gap-2 rounded-xl px-3 py-2 text-sm text-muted transition-colors hover:bg-cream hover:text-foreground">
+              <ScanLine className="h-4 w-4" />
+              {t('nav.aiAnalyzer')}
             </Link>
           </div>
 
@@ -239,7 +239,7 @@ export function Navbar() {
                 <Link
                   href="/register"
                   onClick={() => setMobileOpen(false)}
-                  className="flex h-10 items-center justify-center rounded-full bg-scarlet text-sm font-medium text-white transition-colors hover:bg-scarlet-dark"
+                  className="flex h-10 items-center justify-center rounded-full bg-[linear-gradient(135deg,var(--ribbon-light)_0%,var(--ribbon)_45%,var(--ribbon-dark)_100%)] text-sm font-medium text-white transition-all hover:brightness-110"
                 >
                   {t('auth.register')}
                 </Link>

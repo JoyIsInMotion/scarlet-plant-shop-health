@@ -89,7 +89,11 @@ export default function RegisterPage() {
               {errors.password && <p className="mt-1 text-xs text-red-600">{t('errors.passwordTooShort')}</p>}
             </div>
 
-            <Button type="submit" className="w-full" isLoading={isSubmitting}>
+            <Button
+              type="submit"
+              className="w-full bg-[linear-gradient(135deg,var(--ribbon-light)_0%,var(--ribbon)_45%,var(--ribbon-dark)_100%)] hover:brightness-110"
+              isLoading={isSubmitting}
+            >
               {t('auth.registerButton')}
             </Button>
           </form>

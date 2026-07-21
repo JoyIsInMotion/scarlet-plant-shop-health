@@ -3,6 +3,7 @@ import { Link } from '@/i18n/navigation';
 import { Flower2, ScanLine, BookOpen, ShoppingBag, ArrowRight, Sparkles } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
+import Image from 'next/image';
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('landing');
@@ -23,12 +24,12 @@ function LandingContent() {
   ];
 
   const shopCategories = [
-    { value: 'bouquet',      label: 'Букети' },
-    { value: 'potted_plant', label: 'Саксийни' },
-    { value: 'succulent',    label: 'Сукуленти' },
-    { value: 'tropical',     label: 'Тропически' },
-    { value: 'seasonal',     label: 'Сезонни' },
-    { value: 'accessories',  label: 'Аксесоари' },
+    { value: 'bouquet',      label: 'Букети',     image: '/images/category-bouquet.jpg' },
+    { value: 'potted_plant', label: 'Саксийни',   image: '/images/category-potted-plant.jpg' },
+    { value: 'succulent',    label: 'Сукуленти',  image: '/images/category-succulent.jpg' },
+    { value: 'tropical',     label: 'Тропически', image: '/images/category-tropical.jpg' },
+    { value: 'seasonal',     label: 'Сезонни',    image: '/images/category-seasonal.jpg' },
+    { value: 'accessories',  label: 'Аксесоари',  image: '/images/category-accessories.jpg' },
   ];
 
   return (
@@ -36,62 +37,59 @@ function LandingContent() {
       {/* ────────────────────────────────────────────────── */}
       {/* HERO                                              */}
       {/* ────────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden bg-cream py-24 sm:py-32">
-        {/* Large faded floral decorations */}
-        <Flower2
-          className="pointer-events-none absolute -right-16 -top-10 h-80 w-80 text-scarlet opacity-[0.07]"
-          strokeWidth={0.6}
-        />
-        <Flower2
-          className="pointer-events-none absolute -left-20 bottom-0 h-64 w-64 text-botanical opacity-[0.06]"
-          strokeWidth={0.6}
-        />
-        <Flower2
-          className="pointer-events-none absolute right-1/3 bottom-4 h-24 w-24 text-rose opacity-[0.12]"
-          strokeWidth={0.8}
+      <section className="relative overflow-hidden bg-cream">
+        {/* Full-bleed photo behind the text at every breakpoint */}
+        <Image
+          src="/images/hero-flowers.png"
+          alt=""
+          fill
+          priority
+          className="pointer-events-none object-cover object-center"
         />
 
-        <div className="relative mx-auto max-w-3xl px-4 text-center sm:px-6">
-          {/* Tag */}
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-surface px-4 py-1.5 shadow-sm">
-            <Sparkles className="h-3.5 w-3.5 text-scarlet" />
-            <span className="text-[11px] font-bold uppercase tracking-[0.28em] text-scarlet">
-              Scarlet Boutique
-            </span>
-          </div>
+        <div className="relative mx-auto max-w-xl px-4 py-14 text-center sm:px-6 sm:py-20 lg:py-24">
+          <div className="rounded-2xl border border-white/60 bg-surface/55 px-5 py-6 shadow-lg shadow-scarlet/10 backdrop-blur-lg sm:px-8 sm:py-8">
+            {/* Tag */}
+            <div className="mb-5 inline-flex items-center gap-2">
+              <Sparkles className="h-3.5 w-3.5 text-scarlet" />
+              <span className="text-[11px] font-bold uppercase tracking-[0.28em] text-scarlet">
+                {t('landing.heroTag')}
+              </span>
+            </div>
 
-          {/* Heading */}
-          <h1 className="font-display text-5xl font-bold leading-[1.15] tracking-tight text-foreground sm:text-6xl lg:text-7xl">
-            {t('landing.heroTitle')}
-          </h1>
+            {/* Heading */}
+            <h1 className="font-display text-4xl font-bold leading-[1.15] tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+              {t('landing.heroTitle')}
+            </h1>
 
-          {/* Sub */}
-          <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-muted sm:text-lg">
-            {t('landing.heroSubtitle')}
-          </p>
+            {/* Sub */}
+            <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-muted sm:text-lg">
+              {t('landing.heroSubtitle')}
+            </p>
 
-          {/* Floral divider */}
-          <div className="my-8 flex items-center justify-center gap-3">
-            <div className="h-px w-14 bg-border" />
-            <Flower2 className="h-4 w-4 text-scarlet opacity-60" />
-            <div className="h-px w-14 bg-border" />
-          </div>
+            {/* Floral divider */}
+            <div className="my-7 flex items-center justify-center gap-3">
+              <div className="h-px w-14 bg-border" />
+              <Flower2 className="h-4 w-4 text-scarlet opacity-60" />
+              <div className="h-px w-14 bg-border" />
+            </div>
 
-          {/* CTAs */}
-          <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-            <Link
-              href="shop"
-              className="inline-flex h-12 items-center gap-2 rounded-full bg-scarlet px-8 text-sm font-semibold text-white shadow-md shadow-scarlet/20 transition-all hover:-translate-y-0.5 hover:bg-scarlet-dark hover:shadow-lg hover:shadow-scarlet/25"
-            >
-              {t('landing.heroButton')}
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-            <Link
-              href="register"
-              className="inline-flex h-12 items-center rounded-full border border-border bg-surface px-8 text-sm font-semibold text-foreground transition-all hover:-translate-y-0.5 hover:border-scarlet/30 hover:bg-cream hover:shadow-sm"
-            >
-              {t('landing.getStarted')}
-            </Link>
+            {/* CTAs */}
+            <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+              <Link
+                href="shop"
+                className="inline-flex h-12 items-center gap-2 rounded-full bg-[linear-gradient(135deg,var(--ribbon-light)_0%,var(--ribbon)_45%,var(--ribbon-dark)_100%)] px-8 text-sm font-semibold text-white shadow-md shadow-ribbon-dark/30 transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-ribbon-dark/40 hover:brightness-110"
+              >
+                {t('landing.heroButton')}
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+              <Link
+                href="register"
+                className="inline-flex h-12 items-center rounded-full bg-[linear-gradient(135deg,var(--ribbon-light)_0%,var(--ribbon)_45%,var(--ribbon-dark)_100%)] px-8 text-sm font-semibold text-white shadow-md shadow-ribbon-dark/30 transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-ribbon-dark/40 hover:brightness-110"
+              >
+                {t('landing.getStarted')}
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -99,22 +97,45 @@ function LandingContent() {
       {/* ────────────────────────────────────────────────── */}
       {/* CATEGORY STRIP                                    */}
       {/* ────────────────────────────────────────────────── */}
-      <section className="border-y border-border bg-surface py-5">
+      <section className="border-y border-border bg-gradient-to-b from-cream to-surface py-14">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap items-center justify-center gap-3">
+          <div className="mb-8 text-center sm:mb-10">
+            <p className="mb-2 text-[11px] font-bold uppercase tracking-[0.3em] text-scarlet">
+              {t('shop.tag')}
+            </p>
+            <h2 className="font-display text-2xl font-bold text-foreground sm:text-3xl">
+              {t('shop.title')}
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-5 lg:grid-cols-6">
             {shopCategories.map((cat) => (
               <Link
                 key={cat.value}
                 href={`/shop?category=${cat.value}`}
-                className="rounded-full border border-border bg-background px-5 py-2 text-xs font-semibold text-muted transition-all hover:border-scarlet/40 hover:bg-cream hover:text-scarlet"
+                className="group relative aspect-[4/5] overflow-hidden rounded-3xl border border-white/50 shadow-md shadow-ribbon-dark/10 transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-ribbon-dark/20"
               >
-                {cat.label}
+                <Image
+                  src={cat.image}
+                  alt={cat.label}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-x-2.5 bottom-2.5 rounded-full bg-[linear-gradient(135deg,var(--ribbon-light)_0%,var(--ribbon)_45%,var(--ribbon-dark)_100%)] px-3 py-2.5 text-center shadow-sm">
+                  <span className="text-xs font-semibold text-white sm:text-sm">
+                    {cat.label}
+                  </span>
+                </div>
               </Link>
             ))}
+          </div>
+
+          <div className="mt-8 flex justify-center sm:mt-10">
             <Link
               href="/shop"
-              className="rounded-full bg-scarlet px-5 py-2 text-xs font-semibold text-white transition-all hover:bg-scarlet-dark"
+              className="inline-flex h-11 items-center gap-2 rounded-full bg-[linear-gradient(135deg,var(--ribbon-light)_0%,var(--ribbon)_45%,var(--ribbon-dark)_100%)] px-6 text-sm font-semibold text-white shadow-md shadow-ribbon-dark/25 transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-ribbon-dark/35 hover:brightness-110"
             >
+              <Flower2 className="h-4 w-4" />
               {t('shop.allCategories')}
             </Link>
           </div>
@@ -124,11 +145,19 @@ function LandingContent() {
       {/* ────────────────────────────────────────────────── */}
       {/* WHY SCARLET — Features                            */}
       {/* ────────────────────────────────────────────────── */}
-      <section className="bg-background py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden bg-background py-20">
+        <Image
+          src="/images/why-scarlet-plant.jpg"
+          alt=""
+          fill
+          className="pointer-events-none object-cover object-center"
+        />
+        <div className="pointer-events-none absolute inset-0 bg-background/90" />
+
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-14 text-center">
             <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.3em] text-scarlet">
-              {t('landing.whyUs')}
+              {t('landing.whyUsTag')}
             </p>
             <h2 className="font-display text-3xl font-bold text-foreground sm:text-4xl">
               {t('landing.whyUs')}
@@ -161,6 +190,19 @@ function LandingContent() {
       {/* PLANT HEALTH CTA                                  */}
       {/* ────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden bg-botanical-dark py-20">
+        <Image
+          src="/images/category-potted-plant.jpg"
+          alt=""
+          fill
+          className="pointer-events-none object-cover object-center"
+        />
+        <div
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              'radial-gradient(ellipse 65% 90% at 50% 45%, rgba(61,90,73,0.97) 0%, rgba(61,90,73,0.75) 45%, rgba(61,90,73,0.15) 100%)',
+          }}
+        />
         <Flower2
           className="pointer-events-none absolute right-8 top-1/2 h-56 w-56 -translate-y-1/2 text-white opacity-[0.04]"
           strokeWidth={0.6}
@@ -171,7 +213,7 @@ function LandingContent() {
         />
         <div className="relative mx-auto max-w-3xl px-4 text-center sm:px-6">
           <p className="mb-4 text-[11px] font-bold uppercase tracking-[0.3em] text-botanical-light">
-            Plant Health
+            {t('landing.plantHealthTag')}
           </p>
           <h2 className="font-display text-3xl font-bold text-white sm:text-4xl mb-5">
             {t('landing.plantHealthCTA')}
@@ -188,7 +230,7 @@ function LandingContent() {
           </p>
           <Link
             href="scan"
-            className="inline-flex h-12 items-center gap-2 rounded-full bg-surface px-8 text-sm font-semibold text-botanical-dark shadow-lg transition-all hover:-translate-y-0.5 hover:bg-botanical-light"
+            className="inline-flex h-12 items-center gap-2 rounded-full bg-[linear-gradient(135deg,var(--ribbon-light)_0%,var(--ribbon)_45%,var(--ribbon-dark)_100%)] px-8 text-sm font-semibold text-white shadow-lg shadow-ribbon-dark/30 transition-all hover:-translate-y-0.5 hover:brightness-110"
           >
             {t('landing.getStarted')}
             <ArrowRight className="h-4 w-4" />
