@@ -1,6 +1,6 @@
-import Groq from 'groq-sdk';
+import { GoogleGenerativeAI } from '@google/generative-ai';
 
-const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY!);
 
 export interface AIIssue {
   name: { en: string; bg: string };
@@ -95,36 +95,45 @@ WATERING RULES:
 - NEVER add "water" as a care_recommendation. Instead recommend: "Avoid overwatering" or "Let soil dry between waterings" or specific prevention tips.
 - care_recommendations should focus on preventing common mistakes for THIS species, not watering instructions.`;
 
-export const MODEL_NAME = 'meta-llama/llama-4-scout-17b-16e-instruct';
+export const MODEL_NAME = 'gemini-flash-latest';
+
+const TRANSIENT_RETRY_DELAYS_MS = [500, 1500];
+
+function isTransientError(e: unknown): boolean {
+  const msg = e instanceof Error ? e.message.toLowerCase() : '';
+  return msg.includes('503') || msg.includes('unavailable') || msg.includes('overloaded');
+}
 
 export async function analyzePlantImage(
   imageBuffer: Buffer,
   mimeType: 'image/jpeg' | 'image/png' | 'image/webp'
 ): Promise<PlantAnalysisResult> {
-  const response = await groq.chat.completions.create({
+  const model = genAI.getGenerativeModel({
     model: MODEL_NAME,
-    messages: [
-      {
-        role: 'user',
-        content: [
-          {
-            type: 'image_url',
-            image_url: {
-              url: `data:${mimeType};base64,${imageBuffer.toString('base64')}`,
-            },
-          },
-          {
-            type: 'text',
-            text: PLANT_ANALYSIS_PROMPT,
-          },
-        ],
-      },
-    ],
-    temperature: 0.1,
-    max_tokens: 1024,
+    generationConfig: {
+      temperature: 0.1,
+      maxOutputTokens: 3072,
+      responseMimeType: 'application/json',
+    },
   });
 
-  const text = response.choices[0].message.content?.trim() ?? '';
+  const imagePart = { inlineData: { data: imageBuffer.toString('base64'), mimeType } };
+
+  let text = '';
+  for (let attempt = 0; ; attempt++) {
+    try {
+      const result = await model.generateContent([imagePart, PLANT_ANALYSIS_PROMPT]);
+      text = result.response.text().trim();
+      break;
+    } catch (e) {
+      if (attempt < TRANSIENT_RETRY_DELAYS_MS.length && isTransientError(e)) {
+        await new Promise((r) => setTimeout(r, TRANSIENT_RETRY_DELAYS_MS[attempt]));
+        continue;
+      }
+      throw e;
+    }
+  }
+
   const json = text.replace(/^```(?:json)?\n?/, '').replace(/\n?```$/, '').trim();
 
   try {

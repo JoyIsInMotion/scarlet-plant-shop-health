@@ -58,10 +58,10 @@ export function Navbar() {
 
           {/* ── Logo ── */}
           <Link href="/" className="flex shrink-0 items-center gap-2.5">
-            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-scarlet shadow-sm">
-              <Flower2 className="h-4 w-4 text-white" />
+            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[linear-gradient(135deg,var(--ribbon-light)_0%,var(--ribbon)_45%,var(--ribbon-dark)_100%)] shadow-sm shadow-ribbon-dark/30">
+              <Flower2 className="h-4 w-4 text-white" strokeWidth={2.25} />
             </div>
-            <span className="font-display text-xl font-bold tracking-tight text-foreground">
+            <span className="font-display bg-[linear-gradient(135deg,var(--ribbon-light)_0%,var(--ribbon)_45%,var(--ribbon-dark)_100%)] bg-clip-text text-xl font-bold tracking-tight text-transparent">
               {locale === 'bg' ? 'Скарлет' : 'Scarlet'}
             </span>
           </Link>
@@ -92,7 +92,7 @@ export function Navbar() {
             </div>
 
             <Link href="/catalog" className={linkClass('/catalog')}>{t('nav.catalog')}</Link>
-            <Link href="/scan" className={linkClass('/scan')}>{t('nav.scan')}</Link>
+            <Link href="/scan" className={linkClass('/scan')}>{t('nav.aiAnalyzer')}</Link>
 
             {authLinks.length > 0 && (
               <>
@@ -144,7 +144,7 @@ export function Navbar() {
                 </Link>
                 <Link
                   href="/register"
-                  className="rounded-full bg-scarlet px-4 py-2 text-[11px] font-bold uppercase tracking-[0.15em] text-white transition-colors hover:bg-scarlet-dark"
+                  className="rounded-full bg-[linear-gradient(135deg,var(--ribbon-light)_0%,var(--ribbon)_45%,var(--ribbon-dark)_100%)] px-4 py-2 text-[11px] font-bold uppercase tracking-[0.15em] text-white transition-all hover:brightness-110"
                 >
                   {t('auth.register')}
                 </Link>
@@ -196,7 +196,7 @@ export function Navbar() {
             </Link>
             <Link href="/scan" onClick={() => setMobileOpen(false)} className={mobileLinkClass('/scan')}>
               <ScanLine className="h-4 w-4" />
-              {t('nav.scan')}
+              {t('nav.aiAnalyzer')}
             </Link>
           </div>
 
@@ -242,7 +242,7 @@ export function Navbar() {
                 <Link
                   href="/register"
                   onClick={() => setMobileOpen(false)}
-                  className="flex h-10 items-center justify-center rounded-full bg-scarlet text-sm font-medium text-white transition-colors hover:bg-scarlet-dark"
+                  className="flex h-10 items-center justify-center rounded-full bg-[linear-gradient(135deg,var(--ribbon-light)_0%,var(--ribbon)_45%,var(--ribbon-dark)_100%)] text-sm font-medium text-white transition-all hover:brightness-110"
                 >
                   {t('auth.register')}
                 </Link>

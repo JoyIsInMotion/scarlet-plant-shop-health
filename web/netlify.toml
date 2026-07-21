@@ -12,6 +12,9 @@
 
 [build.environment]
   NODE_VERSION = "22"
+  # NOTE: deploy previews build against a PR branch, not scarletflowers.netlify.app itself —
+  # NEXT_PUBLIC_APP_URL below only matches production; self-fetches from a preview build
+  # still point at prod. Not fixed here; flagging for whoever revisits this.
   # Server Components self-fetch the REST API (/api/...) over HTTP; without this
   # they fall back to http://localhost:3000 on Netlify and silently return empty
   # data (My Plants, My Orders, Admin stats all read 0). Must match the live URL.

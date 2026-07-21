@@ -7,6 +7,11 @@
   --scarlet-light: #FCEEF3;
   --rose: #E8829A;
 
+  /* ── Ribbon: deep satin red for buttons ── */
+  --ribbon: #9E1B32;
+  --ribbon-dark: #6B0F22;
+  --ribbon-light: #C43850;
+
   /* ── Botanical Sage ── */
   --botanical: #5A7A65;
   --botanical-dark: #3D5A49;
@@ -41,6 +46,10 @@
   --color-scarlet-dark: var(--scarlet-dark);
   --color-scarlet-light: var(--scarlet-light);
   --color-rose: var(--rose);
+
+  --color-ribbon: var(--ribbon);
+  --color-ribbon-dark: var(--ribbon-dark);
+  --color-ribbon-light: var(--ribbon-light);
 
   --color-botanical: var(--botanical);
   --color-botanical-dark: var(--botanical-dark);

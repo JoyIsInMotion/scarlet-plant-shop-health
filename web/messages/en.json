@@ -34,6 +34,7 @@
     "myPlants": "My Plants",
     "catalog": "Plant Species",
     "community": "Community",
+    "aiAnalyzer": "AI Analyzer",
     "scan": "Scan",
     "dashboard": "Dashboard",
     "profile": "Profile",
@@ -220,6 +221,7 @@
     }
   },
   "shop": {
+    "tag": "Categories",
     "title": "Shop",
     "subtitle": "Discover our collection of flowers and plants",
     "addToCart": "Add to cart",
@@ -358,12 +360,15 @@
   },
   "landing": {
     "heroTitle": "Welcome to Scarlet",
+    "heroTag": "Scarlet Boutique",
     "heroSubtitle": "Your boutique flower shop and plant health companion",
     "heroButton": "Browse shop",
     "featuredProducts": "Featured products",
+    "plantHealthTag": "Plant Health",
     "plantHealthCTA": "Track your plant's health",
     "plantHealthDesc": "Add your plants and use AI to analyze their health",
     "getStarted": "Get started",
+    "whyUsTag": "Advantages",
     "whyUs": "Why Scarlet?",
     "whyUsHeading": "Everything your plants need",
     "feature1Title": "AI plant analysis",
